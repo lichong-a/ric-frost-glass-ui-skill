@@ -64,9 +64,11 @@
 | 下拉浮层 | `aw-popover` | fixed；定位坐标、碰撞处理由行为层提供 |
 | 菜单内容 | `aw-menu` | 内部 `aw-menu-item`；`aw-menu-separator`；`aw-menu-meta` |
 | 弹窗 | `aw-dialog` | `aw-dialog-header/body/footer`；模态语义由原语完成 |
+| 四向抽屉 | `aw-drawer` | `data-side="left\|right\|top\|bottom"`；焦点、遮罩和关闭由原语完成 |
 | 模态遮罩 | `aw-dialog-backdrop` | 不是 `<dialog>` 的必需额外包装；原生 dialog 有 ::backdrop |
 | 上传区 | `aw-upload-zone` | `data-state="dragging\|error"` |
-| Toast | `aw-toast-stack` + `aw-toast` | `data-tone="success\|danger\|warning"`；正文 `aw-toast-copy` |
+| Toast | `aw-toast-stack` + `aw-toast` | `data-tone="success\|danger\|warning\|info"`；正文 `aw-toast-copy` |
+| 角落 Notice | `aw-notice-stack` + `aw-notice` | `aw-notice-copy/title/description/actions`；关闭与计时由通知服务管理 |
 | 空状态 | `aw-empty` | 可加图标、标题、说明和恢复入口 |
 | 骨架 | `aw-skeleton` | `data-size="short\|icon"`；装饰元素 aria-hidden |
 
@@ -162,3 +164,47 @@ node scripts/validate-tokens.mjs
 ```
 
 组件与样式统一在 [示例工程](example/README.md) 中查看。在项目根目录运行 `node scripts/example.mjs dev --port 5174`。修改 Token 后先重新生成 CSS；修改示例或文档元数据后运行 `node scripts/example.mjs docs`，同步单项指南与 Skill 入口。
+
+## 8. 统一滚动条
+
+引入 `theme.css` 并使滚动区域位于 `.aw-theme` 范围内即可。样式入口同时覆盖主题根的视口滚动条，以及目录、表格、代码、输入和弹层正文的原生滚动条；不额外设置 overflow 或固定高度。
+
+| Token | 用途 |
+|---|---|
+| `--aw-scrollbar-thumb` / `--aw-scrollbar-track` | 标准属性的滑块与轨道颜色 |
+| `--aw-scrollbar-size` | 兼容实现的宽度 / 高度 8 px |
+| `--aw-scrollbar-thumb-hover` | 兼容实现的滑块悬停色 |
+| `--aw-scrollbar-min-thumb-size` / `--aw-scrollbar-radius` | 兼容实现的最小滑块长度与圆角 |
+| `--aw-scrollbar-touch-size` | 粗指针下的兼容宽度 12 px |
+
+标准 `scrollbar-width: thin` 的实际宽度由浏览器决定；标准颜色生效时不叠加伪元素皮肤。粗指针恢复默认宽度，强制颜色使用系统颜色。项目应修改 Token 后生成 CSS，不在每个列表里重复定义滚动条。可按需要为独立滚动容器加 `scrollbar-gutter: stable`、键盘焦点和可访问名称。
+
+## 9. 弹窗、抽屉与角落通知
+
+| 场景 | 外观入口 | 尺寸 / 位置 |
+|---|---|---|
+| 说明、短表单与导入 | `aw-dialog` | 默认 520 px |
+| 操作确认 | `aw-dialog[data-kind="confirm"]` | 400 px |
+| 详情、较宽表单与步骤 | `aw-dialog[data-size="wide"]` | 720 px，受视口边距限制 |
+| 媒体或全屏任务 | `aw-dialog[data-size="fullscreen"]` | 视口减两侧 16 px 边距 |
+| 左右抽屉 | `aw-drawer[data-side="left\|right"]` | 默认 420 px，高度为可用视口 |
+| 上下抽屉 | `aw-drawer[data-side="top\|bottom"]` | 全宽，按内容增长，最大 70dvh |
+| 短结果 Toast | `aw-toast-stack` 中的 `aw-toast` | 400 px；默认桌面右上、窄屏右下 |
+| 含标题、说明和操作的 Notice | `aw-notice-stack` 中的 `aw-notice` | 420 px；同一位置与安全区规则 |
+
+通知栈的 `data-placement` 使用 `top-start`、`top-end`、`bottom-start`、`bottom-end`，LTR 分别对应左上、右上、左下、右下，RTL 镜像。顶部栈向下、底部栈向上扩展；窄屏顶部位置统一转到底部同侧。卡片使用 `data-tone="success|danger|warning|info"`；`kind="error"` 仍需映射为 `danger`。
+
+```html
+<div class="aw-notice-stack" data-placement="bottom-end">
+  <section class="aw-notice" data-tone="info" aria-labelledby="task-notice-title">
+    <div class="aw-notice-copy">
+      <h2 class="aw-notice-title" id="task-notice-title">任务结果待查看</h2>
+      <p class="aw-notice-description">这里展示业务层提供的真实任务说明。</p>
+      <div class="aw-notice-actions"><button class="aw-button" type="button">查看结果</button></div>
+    </div>
+    <button class="aw-button" type="button" data-icon-only="true" aria-label="关闭任务结果通知">×</button>
+  </section>
+</div>
+```
+
+这段是结构与外观示例，按钮需要真实事件与状态。模态 / 非模态、遮罩点击、Escape、焦点、未保存内容、通知队列和暂停计时由交互层实现，分别按主规范第 11、12 节和组件契约第 15、17、19 节读取。类型或属性只表达已实现的行为，不以 CSS 类名代替模态原语或后台成功结果。

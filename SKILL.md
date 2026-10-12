@@ -37,8 +37,10 @@ node scripts/find-component.mjs "Glass Surface" --provider effects --exact
 | 对结构化记录搜索排序分页 | DataTable | 卡片浏览用 DataView，层级数据用 TreeTable |
 | 按父子关系选择对象 | CascadeSelect、TreeSelect | 浏览目录用 Tree，固定平级项用 Select |
 | 临时确认与背景阻断 | Dialog | 长详情用 Drawer，轻量锚点内容用 Popover |
+| 左右详情或上下短操作面板 | Drawer | 根据任务选择方向；模态与非模态分别处理焦点 |
 | 主导航与当前项 | NavigationMenu、Sidebar | 一次性动作使用 Menu 或 CommandMenu |
 | 非阻断操作反馈 | Toast | 必须处理的错误用常显 Message 或 Dialog |
+| 标题、说明与后续操作组成的角落通知 | Notice 外观与通知契约 | 先读反馈规范；不将短 Toast 的自动关闭直接用于持续错误 |
 | 真实完成比例与等待状态 | ProgressBar、ProgressSpinner | 不编造进度或工具执行成功 |
 | 已发生事件与未完成步骤 | Timeline、Stepper | 两者不要混用 |
 | 任务勾选或装饰性微交互 | 已有 Spring Check 等效果 | 常规布尔字段优先业务 Checkbox |
@@ -50,6 +52,10 @@ node scripts/find-component.mjs "Glass Surface" --provider effects --exact
 
 - 需要按场景选型：先读一个 [业务类别](example/docs/business/task-router.md)，然后选一个组件。
 - 需要页面布局：按 [任务路由](example/docs/task-router.md) 读取相应 AppShell、菜单、表格和异步契约分片。
+- 需要统一滚动：只读 [尺寸与滚动条](example/docs/spec/06-geometry.md) 的滚动条条目，再按 CSS API 使用 `scrollbar.*` Token。
+- 需要选择说明、确认、危险、表单、步骤、详情或全屏弹窗：只读 [浮层规范](example/docs/spec/11-overlays.md) 的类型选型和 [共同契约](example/docs/contracts/19-overlays-keyboard.md)。
+- 需要上下左右抽屉：追加 [Drawer 契约](example/docs/contracts/17-drawer-tooltip.md)，按实际方向参数与模态行为接入。
+- 需要四角 Notice 或 Toast：只读 [反馈与通知位置](example/docs/spec/12-feedback.md) 和 [通知契约](example/docs/contracts/15-feedback.md)，确认内容、持续时间、位置与关闭语义。
 - 需要皮肤：按 [CSS API](CSS_API.md) 检索当前语义 Token；不要一次读全部 Token。
 - 需要动效、GPU 或设备行为：读取被选效果指南和 [加载与降级](example/docs/effects-policy.md)。缺官方源时只为这个 slug 执行文档给出的 setup 命令。
 - 需要核对本次能力范围：读取 [业务覆盖对照](example/docs/business/coverage.md)；源码接入数量不等于浏览器验收结果。

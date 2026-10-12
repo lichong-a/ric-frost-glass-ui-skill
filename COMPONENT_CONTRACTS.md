@@ -326,6 +326,8 @@ interface ConfirmDialogProps { kind: "disable" | "delete"; target: { id: string;
 
 ```ts
 interface ToastMessage { id: string; kind: "success" | "error" | "info"; title: string; description?: string; actionLabel?: string; onAction?(): void; onDismiss(): void }
+type NoticePlacement = "top-start" | "top-end" | "bottom-start" | "bottom-end";
+interface NoticeMessage { id: string; operationId?: string; kind: "success" | "error" | "warning" | "info"; title: string; description: string; persistent: boolean; onDismiss(): void; actionLabel?: string; onAction?(): void }
 interface InlineFeedbackProps { kind: "warning" | "error" | "info"; message: string; persistent: boolean; retry?(): void }
 ```
 
@@ -335,6 +337,11 @@ interface InlineFeedbackProps { kind: "warning" | "error" | "info"; message: str
 - Toast 不抢焦点；关闭按钮名称包含目标消息。重试复用已确认安全的操作语义，不盲目重复可能已成功的导入。
 - 表单字段错误留在字段附近；数据加载失败留在数据区；扫描警告留在记录上下文，Toast 不能代替这些反馈。
 - 通知进入与离开遵守主规范动效和减少动效设置；出现 Toast 不挤动页面布局。
+- Notice 用于较完整的结果、任务与恢复说明；错误、警告或带操作的 Notice 默认不自动消失。`placement` 由所属页面或通知服务统一设置，同一范围不同时创建四个互相竞争的通知栈。
+- 四个位置使用同一宽度、间距、状态色与关闭行为；窄屏顶部位置降到同侧底部。最多三条同时可见，余下进入队列或可访问列表，重复 operationId 更新原消息。
+- 顶部通知按事件顺序向下扩展，底部通知向上扩展；使用 DOM 顺序与键盘读取顺序一致的队列，不通过视觉 reverse 反转焦点顺序。
+- 暂停计时累计剩余时间，离开悬停或焦点后从剩余时长继续；页面隐藏也暂停。关闭、替换与卸载时清理计时器，不逐帧向辅助技术播报倒计时。
+- 模态内产生的通知应位于当前可访问和 top-layer 上下文，不能被背景 inert 隐藏；无需处理的提示不抢焦点，必须决定的失败使用 Dialog。
 
 ## 16．Pagination
 
@@ -355,8 +362,19 @@ interface PaginationProps { page: number; pageSize: number; total: number | null
 | Drawer | closed／opening／open／closing | 窄屏导航使用模态 dialog；有标题、关闭按钮、焦点约束与背景 inert |
 | Tooltip | hidden／visible | hover 与 focus 可触发，Escape 可隐藏，内容本身不可交互，不吸收焦点 |
 
+建议 Drawer 接口包含 `placement: "left" | "right" | "top" | "bottom"`、`modal`、`open`、可访问标题、`onClose(reason)` 与可选的未保存状态。这里是行为边界建议；本包示例的实际方向参数名为 `side`，应读取真实类型后适配。
+
+| 方向 | 业务用途 | 行为边界 |
+|---|---|---|
+| right | 与列表对照的记录详情、属性编辑 | 打开保留列表筛选与选择；编辑失败保留草稿 |
+| left | 导航、目录、筛选 | 导航完成后关闭并将焦点移到新页面；筛选取消不重置原条件 |
+| top | 靠近顶部入口的短选项与页面辅助操作 | 避开顶栏交互；内容超高时正文滚动 |
+| bottom | 窄屏动作、选项选择或短编辑 | 可见关闭按钮；兼容安全区、输入法和键盘，不以拖动作为唯一退出路径 |
+
 - Drawer 沿用对话框键盘规则；打开时聚焦标题或首项，关闭后返回原触发器；导航成功则移至新页标题。
 - 大屏常驻详情区域不是模态 Drawer；若采用非模态抽屉，不设置 aria-modal、不锁焦点，也不让背景 inert。
+- 关闭原因区分按钮、Escape、外部点击、导航完成与提交完成。关闭视图不会自动取消服务器任务；未保存内容按明确的保存 / 放弃契约处理。
+- 四个方向沿用同一开启、加载、提交、失败、关闭状态机；改变方向或视口不丢失表单值。正文滚动时标题与关闭、提交入口始终可达。
 - Tooltip 使用 role="tooltip" 与 aria-describedby；按钮自身仍有名称。信息必须可在键盘操作下获取。
 - 可点击链接、确认按钮、长篇报告放在 Popover 或 Dialog，不能放进 Tooltip。
 
@@ -377,6 +395,21 @@ interface PaginationProps { page: number; pageSize: number; total: number | null
 - Switch 若采用乐观更新，失败必须回滚且说明；涉及高影响业务的开关按业务约定确认，不能仅凭截图决定。
 
 ## 19．浮层与键盘公共规则
+
+### 弹窗类型与关闭契约
+
+| 类型 | 初始焦点与操作 | 必须保留的结果 |
+|---|---|---|
+| 说明 / 详情 | 标题或首个合理操作；长内容从可理解的位置开始 | 可见关闭按钮，完整可读内容，不依赖悬停 |
+| 确认 / 危险 / alertdialog | 取消或说明区域；按钮名称表达实际动作 | 影响范围、失败与恢复；不因按下 Enter 就跳过危险确认 |
+| 创建 / 编辑 / 导入表单 | 首个合理字段或标题；就近校验 | 未保存值、提交状态、重复提交保护与失败恢复 |
+| 步骤 / 任务 | 当前步骤标题；步骤完成后进入下一步 | 已填状态、阶段结果、返回步骤与明确取消语义 |
+| 媒体 / 全屏 | 关闭或主要浏览控制 | 内容说明、键盘浏览、资源失败、安全区和关闭可达性 |
+| 非模态窗口 | 按任务决定是否聚焦，不强制焦点循环 | 背景仍可操作，不设置 aria-modal、不使背景 inert |
+
+外部点击仅对无未保存输入、无阻断风险的可关闭视图默认启用。请求中关闭后需要明确真实任务状态；若后端不支持取消，不展示会暗示已取消的控件。不可关闭的阶段必须有原因和状态反馈，不能只隐藏所有退出入口。
+
+### 所有浮层的公共要求
 
 - 全部浮层共享层级 Token 和 Portal；挂载点不得位于会裁切菜单的表格、玻璃卡片或隐藏的祖先中。
 - 使用锚点定位与视口碰撞计算；剩余高度不足时调整方向和最大高度，窄屏保留 edge 16，间距按 gap 8。

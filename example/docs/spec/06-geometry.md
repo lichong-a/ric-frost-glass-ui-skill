@@ -39,6 +39,23 @@
 
 触屏上按钮、图标按钮、导航和菜单条目的点击范围采用本项目 **44 × 44 px** 的舒适目标；视觉图标可以较小。此项目值高于 WCAG 2.2 AA 的一般最小尺寸基线，不应把 44 px 误写成所有场景都强制的 AA 数值。[W3C 目标尺寸说明](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)
 
+### 6.3 滚动条与滚动区域
+
+页面、左侧目录、表格、代码区、长文本输入、选项列表以及浮层正文使用同一组 `scrollbar.*` Token。默认滑块为低饱和深茶绿，轨道透明，不使用原生亮蓝、玻璃高光白或每个区域一套颜色。
+
+| 项目 | 规范 |
+|---|---|
+| 标准样式 | `scrollbar-width: thin`；滑块 `scrollbar.thumb`，轨道 `scrollbar.track` |
+| 兼容样式 | 8 px 宽 / 高，胶囊滑块，最小滑块长度 24 px；悬停用 `scrollbar.thumbHover` |
+| 粗指针 | 恢复系统默认宽度；兼容实现使用 12 px，不隐藏可拖动区域 |
+| 强制颜色 | 使用系统滚动条颜色，不以主题色覆盖用户的高对比设置 |
+| 横向滚动 | 仅表格、代码或真实宽内容产生横向滚动；整页不因单项撑宽而横滚 |
+| 滚动稳定性 | 在表格、浮层正文等会切换溢出状态的区域按需使用 `scrollbar-gutter: stable` |
+
+`theme.css` 在 `.aw-theme` 范围内统一样式，不改变各区域的高度、overflow 或原生滚动事件。标准属性支持时使用浏览器的原生窄滚动条；具体像素宽度由浏览器决定。兼容的伪元素样式只在不支持标准颜色属性时启用，避免两套机制互相覆盖。[MDN scrollbar-color](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scrollbar-color)、[scrollbar-width](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scrollbar-width)
+
+不使用 `scrollbar-width: none`、负外边距或自制拖动层隐藏普通业务滚动条。滚动区必须保留键盘滚动路径；必要时为独立区域提供 `tabindex="0"` 和名称。模态内容长时优先滚动正文，标题与关闭、确认入口保持可达；仅局部使用 `overscroll-behavior: contain`，不禁止全页正常滚动。
+
 ---
 
 规范来源：[AGENT_WAN_UI_SPEC.md](../../../AGENT_WAN_UI_SPEC.md)。本文件由主规范按章节生成；修改主规范后重新生成，不独立维护第二套规则。

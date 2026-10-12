@@ -3,7 +3,11 @@ import ts from 'typescript';
 const root = new URL('../', import.meta.url);
 const manifest = JSON.parse(await readFile(new URL('catalog/upstream-manifest.json', root), 'utf8'));
 const recipes = JSON.parse(await readFile(new URL('catalog/demo-recipes.json', root), 'utf8'));
-for (const recipe of recipes) {
+const args = process.argv.slice(2);
+if (args.length && (args.length !== 2 || args[0] !== '--component')) throw new Error('Usage: node scripts/build-demos.mjs [--component slug]');
+const selected = args.length ? recipes.filter(recipe => recipe.slug === args[1]) : recipes;
+if (!selected.length) throw new Error(`No demonstration recipe: ${args[1]}`);
+for (const recipe of selected) {
   const entry = manifest.components.find(item => item.slug === recipe.slug);
   if (!entry) throw new Error(`Unknown component ${recipe.slug}`);
   const names = new Set(['palette', 'MEDIA', 'LOGO', 'DemoPanel']);
@@ -35,4 +39,4 @@ for (const recipe of recipes) {
   const result = `// Authored integration demo; implementation is installed from the pinned official source.\n${sourceImport}\n${sharedImport}${imports.join('\n')}\n${notes}\n\nexport default function ${entry.id}Demo() {\n  ${recipe.beforeCode ?? ''}\n  return (\n    <div className="aw-demo-stage"${recipe.wrapperStyleCode ? ` style={${recipe.wrapperStyleCode}}` : ''}>\n      ${code}\n    </div>\n  );\n}\n`;
   await writeFile(new URL(`src/demos/${entry.slug}.tsx`, root), result);
 }
-console.log(`Generated ${recipes.length} standalone integration demos.`);
+console.log(`Generated ${selected.length} standalone integration demos.`);

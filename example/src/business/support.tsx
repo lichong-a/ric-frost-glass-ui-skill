@@ -23,7 +23,7 @@ export function Field({ label, children, hint, htmlFor }: { label: string; child
   return <div className="aw-business-field"><label id={`${generatedId}-label`} htmlFor={isControl || htmlFor ? controlId : undefined}>{label}</label>{content}{hint ? <small id={hintId}>{hint}</small> : null}</div>;
 }
 
-export function Dialog({ open, onClose, title, children, side }: { open: boolean; onClose: () => void; title: string; children: ReactNode; side?: 'right' | 'left' }) {
+export function Dialog({ open, onClose, title, children, side }: { open: boolean; onClose: () => void; title: string; children: ReactNode; side?: 'right' | 'left' | 'top' | 'bottom' }) {
   const ref = useRef<HTMLDialogElement>(null);
   const titleId = useId();
   useEffect(() => {

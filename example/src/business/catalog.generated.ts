@@ -1263,7 +1263,12 @@ export const entries: CatalogEntry[] = [
       "Drawer",
       "侧边抽屉",
       "详情编辑",
-      "侧栏表单"
+      "侧栏表单",
+      "左侧抽屉",
+      "右侧抽屉",
+      "顶部抽屉",
+      "底部抽屉",
+      "上下左右抽屉"
     ],
     "dependencies": [
       "react",

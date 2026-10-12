@@ -29,10 +29,11 @@
 | 页面外壳 / 侧栏 / 顶栏 | [页面框架](spec/08-app-shell.md)、[AppShell](contracts/01-app-shell.md) | [Sidebar](contracts/02-sidebar.md)、[Header](contracts/03-header.md) |
 | 按钮 / 输入 / 选择 / 开关 | [基础视觉](spec/09-controls.md) | [Button](contracts/04-button.md)、[Input](contracts/05-input.md)、[Select](contracts/06-select.md)、[Segmented / Tabs](contracts/07-segmented-tabs.md) |
 | 表格 / 筛选 / 行操作 / 分页 | [表格](spec/10-table.md)、[DataTable](contracts/11-data-table.md) | [RowActions](contracts/12-row-actions.md)、[Pagination](contracts/16-pagination.md) |
-| 菜单 / 弹窗 / 抽屉 / 提示 | [浮层](spec/11-overlays.md)、[浮层与键盘](contracts/19-overlays-keyboard.md) | [确认弹窗](contracts/14-confirm-dialog.md)、[抽屉与Tooltip](contracts/17-drawer-tooltip.md) |
+| 菜单 / 各类弹窗 / 四向抽屉 / 提示 | [浮层](spec/11-overlays.md)、[浮层与键盘](contracts/19-overlays-keyboard.md) | [确认弹窗](contracts/14-confirm-dialog.md)、[抽屉与Tooltip](contracts/17-drawer-tooltip.md) |
 | 租户切换 / 导入与扫描 | [TenantSwitcher](contracts/08-tenant-switcher.md) 或 [ImportDialog](contracts/13-import-dialog.md) | 只读取所涉状态和失败回退 |
-| 状态 / 计时 / Toast / 空态 | [反馈](spec/12-feedback.md)、[反馈契约](contracts/15-feedback.md) | Micro 中按具体名称检索；真实任务与示例数据分开 |
+| 状态 / 计时 / 四角Notice / Toast / 空态 | [反馈](spec/12-feedback.md)、[反馈契约](contracts/15-feedback.md) | Micro 中按具体名称检索；真实任务与示例数据分开 |
 | 动效 / 指针 / Canvas / WebGL | [效果与降级](effects-policy.md) | 只读所选组件的实际依赖与源码 |
+| 统一滚动条 / 长正文与局部滚动 | [尺寸与滚动条](spec/06-geometry.md)、[滚动条样式入口](../../CSS_API.md) | 表格、弹窗或抽屉只追加自身相关契约 |
 | 接入 Token / 主题 / Portal | [CSS API](../../CSS_API.md) | [工程接入](spec/14-integration.md) |
 | 验证当前结果 | 单组件文档的验收项 | [UI验收](spec/16-acceptance.md)、[完整验收清单](../../ACCEPTANCE.md)（只选本次范围） |
 

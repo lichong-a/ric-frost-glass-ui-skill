@@ -34,6 +34,8 @@
 .aw-business-dialog-content { display:grid; gap:16px; }
 .aw-business-dialog[data-side] { position:fixed; margin:0; inset:0 0 0 auto; height:100dvh; max-height:100dvh; width:min(420px,100vw); border-radius:var(--aw-radius-panel) 0 0 var(--aw-radius-panel); }
 .aw-business-dialog[data-side=left] { inset:0 auto 0 0; border-radius:0 var(--aw-radius-panel) var(--aw-radius-panel) 0; }
+.aw-business-dialog[data-side=top] { inset:0 0 auto; width:100vw; max-width:100vw; height:auto; max-height:var(--aw-drawer-max-block-size); border-radius:0 0 var(--aw-radius-panel) var(--aw-radius-panel); }
+.aw-business-dialog[data-side=bottom] { inset:auto 0 0; width:100vw; max-width:100vw; height:auto; max-height:var(--aw-drawer-max-block-size); border-radius:var(--aw-radius-panel) var(--aw-radius-panel) 0 0; padding-bottom:max(var(--aw-drawer-padding),env(safe-area-inset-bottom)); }
 body:has(.aw-business-dialog[open]) { overflow:hidden; }
 .aw-business-popover { position:fixed; z-index:30; padding:12px; max-height:calc(100dvh - 32px); overflow:auto; }
 .aw-business-popover :is(button,input) { font:inherit; }

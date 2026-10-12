@@ -102,6 +102,8 @@ node scripts/find-component.mjs "标题逐字出现" --provider effects --limit 
 
 视觉数值以项目根 `tokens.json` 为准，修改后重建 Token。业务能力维护实际 demo 与 `business-catalog.json`；效果参数配方维护在 `catalog/demo-recipes.json`，对应 wrapper 通过 `scripts/build-demos.mjs` 生成。其余独立效果源文件直接维护。
 
+只重建一项效果时，在示例目录执行 `node scripts/build-demos.mjs --component count-up`。数字展示如用于组件总数，读取页面共用的 `gallery-catalog.ts`，避免在配方与示例中写死数量。滚动条和浮层外观入口见 [CSS API](../CSS_API.md)，类型、方向、关闭与通知规则按主规范对应章节读取。
+
 修改示例、场景或生成器后，在项目根同步文档：
 
 ```bash
