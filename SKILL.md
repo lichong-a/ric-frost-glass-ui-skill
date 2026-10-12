@@ -9,8 +9,8 @@ description: "Build and adapt Agent Wan natural-color frosted-glass React compon
 
 ## 渐进式执行
 
-1. 只读 [核心视觉约束](examples/reactbits/docs/design-core.md)，明确目标项目、页面和业务行为。技术栈、状态、数据、权限与路由沿用目标项目。
-2. **普通业务先查基础组件**：输入、选择、数据、导航、临时交互、反馈使用 [业务场景路由](examples/reactbits/docs/business/task-router.md)。文字入场、悬停、粒子与背景等明确要求的装饰效果，再查 [效果路由](examples/reactbits/docs/task-router.md)。
+1. 只读 [核心视觉约束](example/docs/design-core.md)，明确目标项目、页面和业务行为。技术栈、状态、数据、权限与路由沿用目标项目。
+2. **普通业务先查基础组件**：输入、选择、数据、导航、临时交互、反馈使用 [业务场景路由](example/docs/business/task-router.md)。文字入场、悬停、粒子与背景等明确要求的装饰效果，再查 [效果路由](example/docs/task-router.md)。
 3. 有精确组件名直接查询；只有目标时用中文场景查询。脚本只输出命中项的用途、替代边界、指南与源码路径；不要把索引全文放入上下文。
 4. 只读命中指南的“什么场景使用”和“不适合或优先替代”。确需比较时最多先读同类 2–3 项。功能同名时用 `--provider business` 或 `--provider effects` 消歧。
 5. 单组件指南 → 自有示例 → 本例用到的共享符号和样式 → 当前任务涉及的契约。没有用到的共享函数、类别和组件不继续加载。
@@ -26,7 +26,7 @@ node scripts/find-component.mjs "排序分页" --provider business --limit 3
 node scripts/find-component.mjs "Glass Surface" --provider effects --exact
 ```
 
-精确名称无需先读类别页。无工具时只在 `examples/reactbits/docs/component-index.json` 中定向检索名称或别名，随后读取对应指南；不把全部匹配资源逐项展开。
+精确名称无需先读类别页。无工具时只在 `example/docs/component-index.json` 中定向检索名称或别名，随后读取对应指南；不把全部匹配资源逐项展开。
 
 ## 场景判断
 
@@ -48,11 +48,11 @@ node scripts/find-component.mjs "Glass Surface" --provider effects --exact
 
 ## 只在需要时读取
 
-- 需要按场景选型：先读一个 [业务类别](examples/reactbits/docs/business/task-router.md)，然后选一个组件。
-- 需要页面布局：按 [任务路由](examples/reactbits/docs/task-router.md) 读取相应 AppShell、菜单、表格和异步契约分片。
+- 需要按场景选型：先读一个 [业务类别](example/docs/business/task-router.md)，然后选一个组件。
+- 需要页面布局：按 [任务路由](example/docs/task-router.md) 读取相应 AppShell、菜单、表格和异步契约分片。
 - 需要皮肤：按 [CSS API](CSS_API.md) 检索当前语义 Token；不要一次读全部 Token。
-- 需要动效、GPU 或设备行为：读取被选效果指南和 [加载与降级](examples/reactbits/docs/effects-policy.md)。缺官方源时只为这个 slug 执行文档给出的 setup 命令。
-- 需要核对本次能力范围：读取 [业务覆盖对照](examples/reactbits/docs/business/coverage.md)；源码接入数量不等于浏览器验收结果。
+- 需要动效、GPU 或设备行为：读取被选效果指南和 [加载与降级](example/docs/effects-policy.md)。缺官方源时只为这个 slug 执行文档给出的 setup 命令。
+- 需要核对本次能力范围：读取 [业务覆盖对照](example/docs/business/coverage.md)；源码接入数量不等于浏览器验收结果。
 
 ## 实现边界
 
@@ -60,4 +60,4 @@ node scripts/find-component.mjs "Glass Surface" --provider effects --exact
 
 保留所选效果的实际机制。减少运动时停用装饰过渡，但保留必要表单、导航和状态。文件示例只选择、验证和移除本地文件，真实上传需要既有接口和授权；终端示例只处理有限的本地命令，不执行 shell。示例数组和状态不代表真实业务结果。
 
-本包规范与源图是稳定视觉依据；`examples/reactbits/docs/spec/`、`examples/reactbits/docs/contracts/` 是按章节生成的分片，不独立维护第二套规则。只复制目标项目当前需要的实现和直接依赖，保留来源说明。
+本包规范与源图是稳定视觉依据；`example/docs/spec/`、`example/docs/contracts/` 是按章节生成的分片，不独立维护第二套规则。只复制目标项目当前需要的实现和直接依赖，保留来源说明。

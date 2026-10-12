@@ -8,10 +8,10 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED_DIRS = {"node_modules", ".upstream", "dist", ".vite", ".git", "__pycache__"}
 EXCLUDED_PREFIXES = (
-    "examples/reactbits/public/assets/3d/",
-    "examples/reactbits/public/assets/draco/",
+    "example/public/assets/3d/",
+    "example/public/assets/draco/",
 )
-EXCLUDED_FILES = {"examples/reactbits/public/assets/fonts/RobotoFlex.ttf"}
+EXCLUDED_FILES = {"example/public/assets/fonts/RobotoFlex.ttf"}
 
 def included(path):
     relative = path.relative_to(ROOT).as_posix()
@@ -24,7 +24,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT.parent / "AGENT_WAN_UI_KIT.zip")
     args = parser.parse_args()
-    project = ROOT / "examples/reactbits"
+    project = ROOT / "example"
     manifest = json.loads((project / "catalog/upstream-manifest.json").read_text())
     for component in manifest["components"]:
         slug = component["slug"]

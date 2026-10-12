@@ -159,7 +159,6 @@ z-index 的具体数值以 `tokens.json` 的 `semantic.z` 为准。不要只复�
 ```bash
 node scripts/build-tokens.mjs
 node scripts/validate-tokens.mjs
-node scripts/build-reference.mjs
 ```
 
-`CSS_REFERENCE.html` 是生成后的自包含样式查看页，不需要网络或依赖安装。修改 Token 或主题后重新生成它。样式查看页的展示网格、色卡与说明文案属于文档排版，不是业务页面的强制布局。
+组件与样式统一在 [示例工程](example/README.md) 中查看。在项目根目录运行 `node scripts/example.mjs dev --port 5174`。修改 Token 后先重新生成 CSS；修改示例或文档元数据后运行 `node scripts/example.mjs docs`，同步单项指南与 Skill 入口。

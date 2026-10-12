@@ -7,9 +7,9 @@
 ```text
 请按 Agent Wan Frost Glass UI 技能完成当前页面或组件。
 
-先读 SKILL.md，并按任务只读 examples/reactbits/docs/design-core.md，不要一次加载所有规范、Token 或源码。
+先读 SKILL.md，并按任务只读 example/docs/design-core.md，不要一次加载所有规范、Token 或源码。
 
-普通业务组件先读 examples/reactbits/docs/business/task-router.md，或运行 scripts/find-component.mjs "组件名" --provider business --exact；只知道业务场景时用中文意图查询，比较最多2–3项。
+普通业务组件先读 example/docs/business/task-router.md，或运行 scripts/find-component.mjs "组件名" --provider business --exact；只知道业务场景时用中文意图查询，比较最多2–3项。
 
 只读被选组件的“适用场景”和“替代边界”，然后按需读它的示例、共享符号、样式和契约。装饰效果用 --provider effects 定位，不读全目录。业务组件的使用方式以本包示例和类型为准。
 

@@ -40,7 +40,7 @@
 
 想比较方案时，只读一个类别并选择最多两三项；有精确名称时，直接查询单项指南。
 
-**[业务场景导航](examples/reactbits/docs/business/task-router.md)** · **[交互效果导航](examples/reactbits/docs/task-router.md)** · **[能力清单](examples/reactbits/docs/business/coverage.md)**
+**[业务场景导航](example/docs/business/task-router.md)** · **[交互效果导航](example/docs/task-router.md)** · **[能力清单](example/docs/business/coverage.md)**
 
 ## 开始使用
 
@@ -97,12 +97,12 @@ Skill 入口
 
 | 入口 | 在什么时候读取 |
 | --- | --- |
-| [核心视觉约束](examples/reactbits/docs/design-core.md) | 开始设计或改造一个页面时 |
+| [核心视觉约束](example/docs/design-core.md) | 开始设计或改造一个页面时 |
 | [视觉规范](AGENT_WAN_UI_SPEC.md) | 需要确认颜色、字体、材质与布局时 |
 | [CSS API](CSS_API.md) | 需要复用样式与语义 Token 时 |
 | [行为契约](COMPONENT_CONTRACTS.md) | 涉及表单、权限、异步、焦点与恢复时 |
 | [Agent 交接入口](AGENT_HANDOFF.md) | 将任务交给另一位协作者时 |
-| [示例维护说明](examples/reactbits/README.md) | 修改示例、场景数据或生成文档时 |
+| [示例维护说明](example/README.md) | 修改示例、场景数据或生成文档时 |
 
 业务状态、接口与权限继续归属于目标项目。组件示例展示交互用法；文件选择、短命令和本地状态不会替代真实业务执行。
 

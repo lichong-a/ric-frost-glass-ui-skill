@@ -15,10 +15,8 @@
 ```bash
 node scripts/build-tokens.mjs --check
 node scripts/validate-tokens.mjs
-node scripts/build-reference.mjs
 node --check scripts/build-tokens.mjs
 node --check scripts/validate-tokens.mjs
-node --check scripts/build-reference.mjs
 ```
 
 | 检查 | 实际结果 |
@@ -28,7 +26,7 @@ node --check scripts/build-reference.mjs
 | 主题变量 | `theme.css` 使用的 182 个不同变量均存在 |
 | 断点一致性 | 1280、1024、768 px 与 Token 保持一致；媒体查询未使用无效的 CSS var() |
 | 颜色检查 | 19 项声明的纯色配对或指定背景合成样本均通过各自阈值 |
-| 工具脚本 | 三个 Node 脚本语法检查通过；样式页生成成功 |
+| 工具脚本 | Token 生成与校验脚本语法检查通过 |
 
 颜色检查计算相对亮度与对比度，使用未四舍五入的结果判定；显示数值保留两位小数。文字样本阈值为 4.5:1，指定控件边界与焦点外环样本为 3:1。要求依据见 [WCAG 文字对比](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) 与 [非文本对比](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)。
 
@@ -59,6 +57,8 @@ node --check scripts/build-reference.mjs
 上述结果不覆盖任意图片背景、渐变的每个像素、所有嵌套透明层或未来新增颜色。正式页面必须在实际合成背景的深浅位置重新检查，尤其是辅助文字和控件边界。
 
 ## 3. 文档、HTML 与原图检查
+
+下表保留旧版样式样本的历史检查结果。当前组件展示统一通过 `example/` 启动，旧样式样本与生成流程已移除；这些历史结果不作为当前示例的交互验收。
 
 | 检查 | 实际结果 |
 |---|---|
@@ -117,7 +117,7 @@ node --check scripts/build-reference.mjs
 | 渐进读取 | 5 类路由、215 个单组件入口、17 个规范分片、22 个契约分片；精确名称和中文意图查询返回单项资源 |
 | 基础视觉源 | v1.0 原图和主要视觉值保持；Token 增加 3 个低饱和效果色，总数由 243 变为 246 |
 
-复现命令在 `examples/reactbits/` 执行：
+复现命令在 `example/` 执行：
 
 ```bash
 npm ci
@@ -130,17 +130,17 @@ npm run build
 node scripts/check-build.mjs
 ```
 
-机器可读结果见 `examples/reactbits/catalog/coverage-report.json` 与 `build-report.json`。
+机器可读结果见 `example/catalog/coverage-report.json` 与 `build-report.json`。
 
 ### 6.1 上游类型兼容
 
-在当前锁定的 React / TypeScript / Node 类型组合下，原始源码直接使用 tsc 会产生 13 条上游诊断。项目通过五条精确匹配的内存类型修正解决 Target Cursor、Animated List、Glass Surface、Shuffle 和 Split Flap Text 的收窄/命名空间/计时器类型问题，不修改原文件、不过滤诊断，也不使用 ts-ignore。五个适配前后编译出的 JavaScript 逐字节一致，原源文件散列仍匹配。详情见 [上游类型兼容说明](examples/reactbits/UPSTREAM_TYPE_COMPATIBILITY.md)。
+在当前锁定的 React / TypeScript / Node 类型组合下，原始源码直接使用 tsc 会产生 13 条上游诊断。项目通过五条精确匹配的内存类型修正解决 Target Cursor、Animated List、Glass Surface、Shuffle 和 Split Flap Text 的收窄/命名空间/计时器类型问题，不修改原文件、不过滤诊断，也不使用 ts-ignore。五个适配前后编译出的 JavaScript 逐字节一致，原源文件散列仍匹配。详情见 [上游类型兼容说明](example/UPSTREAM_TYPE_COMPATIBILITY.md)。
 
 Vite 与类型检查共用这些类型修正及必要的资源接入转换。上下文与锁定版本不一致时立即报错，不静默套用过期补丁。
 
 ### 6.2 资源与执行边界
 
-Fluid Glass 的压缩模型解码器与三维文字字体改为本地路径；Grid Scan 的默认模型加载由 webcam 状态控制；Variable Proximity 去除远程字体导入。图片使用自有本地素材。Reflective Card 仅在点击后请求摄像头，Voice Pill 为模拟输入，Prompt Bar 的消息/附件/语音回调为明确的本地演示。详情见 [运行条件](examples/reactbits/UPSTREAM_RUNTIME_AUDIT.md) 和 [资源审计](examples/reactbits/RESOURCE_AUDIT.md)。
+Fluid Glass 的压缩模型解码器与三维文字字体改为本地路径；Grid Scan 的默认模型加载由 webcam 状态控制；Variable Proximity 去除远程字体导入。图片使用自有本地素材。Reflective Card 仅在点击后请求摄像头，Voice Pill 为模拟输入，Prompt Bar 的消息/附件/语音回调为明确的本地演示。详情见 [运行条件](example/UPSTREAM_RUNTIME_AUDIT.md) 和 [资源审计](example/RESOURCE_AUDIT.md)。
 
 预览按需加载单个组件。父页面在切换、暂停、离开区域、页面隐藏、改变动效偏好或收到运行错误时销毁对应 iframe，以停止包含未完整清理全局循环的上游效果。能力不足或用户减少运动时显示说明与可选的重试/播放入口。显示「已挂载」只代表 React commit，不代表像素或交互验收。
 

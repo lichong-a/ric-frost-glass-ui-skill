@@ -40,7 +40,7 @@
 
 ### 1.2 按任务渐进阅读
 
-从 `AGENT_HANDOFF.md` 开始，先读核心视觉约束，再定位当前任务所需的组件或规范章节。**不要求初始化时把完整规范、所有 Token、组件契约与 215 个示例一起读入上下文。** 下表是资源地图，不是启动时的全文读取清单。精确名称或中文效果查询可直接定位单组件文档，相关路由见 `examples/reactbits/docs/task-router.md`。
+从 `AGENT_HANDOFF.md` 开始，先读核心视觉约束，再定位当前任务所需的组件或规范章节。**不要求初始化时把完整规范、所有 Token、组件契约与全部示例一起读入上下文。** 下表是资源地图，不是启动时的全文读取清单。精确名称或中文效果查询可直接定位单组件文档，相关路由见 `example/docs/task-router.md`。
 
 | 文件 | 用途 |
 |---|---|
@@ -50,10 +50,9 @@
 | `tokens.css` | 生成后的 CSS 自定义属性 |
 | `theme.css` | 消费变量的基础样式；不承担数据与复杂交互逻辑 |
 | `CSS_API.md` | 实际类名、状态属性与组件 Props 到 DOM 的接入映射 |
-| `CSS_REFERENCE.html` | 自包含的颜色、材质与组件样式查看页 |
-| [示例维护说明](examples/reactbits/README.md) | 303 个独立示例的运行方式与集成说明 |
-| `examples/reactbits/docs/components/` | 逐组件真实用法、源码路径、依赖和验收项 |
-| `examples/reactbits/scripts/find-component.mjs` | 按英文名称、slug 或中文意图定位单组件 |
+| [示例维护说明](example/README.md) | 303 个独立示例的运行方式与集成说明 |
+| `example/docs/components/` | 逐组件真实用法、源码路径、依赖和验收项 |
+| `example/scripts/find-component.mjs` | 按英文名称、slug 或中文意图定位单组件 |
 | `COMPONENT_CONTRACTS.md` | 下拉、切换、表格、导入等状态及键盘行为 |
 | `ACCEPTANCE.md` | 复现检查、状态检查与截图验收要求 |
 | `VALIDATION_REPORT.md` | 本版本实际执行的检查结果及验证范围 |

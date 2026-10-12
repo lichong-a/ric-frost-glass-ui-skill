@@ -3,7 +3,7 @@ import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const project = fileURLToPath(new URL('../examples/reactbits/', import.meta.url));
+const project = fileURLToPath(new URL('../example/', import.meta.url));
 const [action = 'dev', ...args] = process.argv.slice(2);
 async function run(command, parameters) {
   const child = spawn(command, parameters, { cwd: project, stdio: 'inherit' });
