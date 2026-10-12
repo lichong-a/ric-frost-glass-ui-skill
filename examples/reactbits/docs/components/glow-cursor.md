@@ -15,15 +15,14 @@
 | 资源 | 位置与用途 |
 |---|---|
 | 自有示例（随包） | [examples/reactbits/src/demos/glow-cursor.tsx](../../src/demos/glow-cursor.tsx) |
-| 官方实现（setup 后存在） | [examples/reactbits/.upstream/src/ts-default/Animations/GlowCursor/GlowCursor.tsx](../../.upstream/src/ts-default/Animations/GlowCursor/GlowCursor.tsx) |
-| 官方 CSS（setup 后存在） | [examples/reactbits/.upstream/src/ts-default/Animations/GlowCursor/GlowCursor.css](../../.upstream/src/ts-default/Animations/GlowCursor/GlowCursor.css) |
-| 官方文档 | [Glow Cursor](https://reactbits.dev/animations/glow-cursor) |
+| 组件实现（准备后存在） | [examples/reactbits/.upstream/src/ts-default/Animations/GlowCursor/GlowCursor.tsx](../../.upstream/src/ts-default/Animations/GlowCursor/GlowCursor.tsx) |
+| 组件 CSS（准备后存在） | [examples/reactbits/.upstream/src/ts-default/Animations/GlowCursor/GlowCursor.css](../../.upstream/src/ts-default/Animations/GlowCursor/GlowCursor.css) |
 | 固定版本 | `2139cb3098d4fedc6264f13e50dcb4694224ba7c` |
 
-先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在 `examples/reactbits` 运行：
+先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在包根运行：
 
 ```bash
-npm run setup:reactbits -- --component glow-cursor
+node scripts/example.mjs setup --component glow-cursor
 ```
 
 安装完成再读取对应源码及直接依赖。无需加载其余 214 项。

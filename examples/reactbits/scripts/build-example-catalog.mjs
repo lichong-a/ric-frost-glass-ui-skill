@@ -13,7 +13,7 @@ const entries = catalog.components.map(item => ({
   id:item.slug, name:item.name, category:item.category, exportName:item.id,
   description:descriptions[item.slug]?.effectContract ?? item.name,
   aliases:descriptions[item.slug]?.aliases ?? [],
-  dependencies:item.dependencies, docsUrl:item.docsUrl,
+  dependencies:item.dependencies, docsUrl:'',
   sourcePath:`.upstream/${item.sourceRoot}/${item.id}.tsx`,
   demoPath:`src/demos/${item.slug}.tsx`,
   motion:['micro','components'].includes(item.category)?'interactive':'continuous',

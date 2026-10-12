@@ -6,7 +6,6 @@
 
 ## 版本与作用范围
 
-- 官方仓库：<https://github.com/DavidHDev/react-bits>
 - 固定提交：`2139cb3098d4fedc6264f13e50dcb4694224ba7c`
 - 组件来源：`src/ts-default` 的 TypeScript + CSS 变体。
 - 本次检查环境：TypeScript `5.9.2`、React `19.1.1`、`@types/react` `19.1.13`、`@types/node` `24.19.2`。
@@ -50,7 +49,7 @@ TypeScript checked 215 demonstration modules and the application: 0 diagnostics.
 
 ```bash
 npm ci --ignore-scripts
-npm run setup:reactbits
+npm run setup:components
 npm run check:types
 npm run build
 ```

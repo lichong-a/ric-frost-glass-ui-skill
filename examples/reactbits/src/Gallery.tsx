@@ -9,8 +9,8 @@ const initialEntry = () => entries.find(entry => entry.id === window.location.ha
 const subtitleFor = (item: (typeof entries)[number]) => item.subtitle ?? item.aliases[0];
 type View = 'preview' | 'code' | 'guide';
 
-function Icon({ name }: { name: 'search' | 'arrow' | 'pause' | 'play' | 'copy' }) {
-  const paths = { search: 'm21 21-4.4-4.4M19 10.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0', arrow: 'M7 17 17 7M7 7h10v10', pause: 'M8 5v14M16 5v14', play: 'm8 5 11 7-11 7z', copy: 'M9 9h12v12H9zM15 9V3H3v12h6' };
+function Icon({ name }: { name: 'search' | 'pause' | 'play' | 'copy' }) {
+  const paths = { search: 'm21 21-4.4-4.4M19 10.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0', pause: 'M8 5v14M16 5v14', play: 'm8 5 11 7-11 7z', copy: 'M9 9h12v12H9zM15 9V3H3v12h6' };
   return <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name]} /></svg>;
 }
 
@@ -111,13 +111,13 @@ export function Gallery() {
           <div className="aw-example-content-panel" id={`panel-${view}`} role="tabpanel" aria-labelledby={`tab-${view}`} tabIndex={0}>
             {view === 'preview' ? <IsolatedPreview entry={entry} previewUrl={`${import.meta.env.BASE_URL}preview.html`} motion={motion} active={active} /> : <div className="aw-source-view">{textState ? <p role="status">{textState}</p> : <pre className={view === 'guide' ? 'aw-guide-text' : ''}><code>{text}</code></pre>}</div>}
           </div>
-          <div className="aw-example-footer"><span>{view === 'preview' ? '在预览区域内移动、点击或滚动，体验当前组件。' : entry.demoPath}</span><a href={entry.docsUrl} className="aw-external" target="_blank" rel="noreferrer">{entry.id.startsWith('business-') ? '功能参考' : '官方说明'} <Icon name="arrow" /></a></div>
+          <div className="aw-example-footer"><span>{view === 'preview' ? '在预览区域内移动、点击或滚动，体验当前组件。' : entry.demoPath}</span></div>
         </section>
 
         <section className="aw-integration-grid" aria-label="组件集成信息">
           <article className="aw-detail-card aw-glass"><span className="aw-section-number">01</span><h2>带入你的界面</h2><p>从当前示例保留结构、Props 和交互，将内容替换为产品数据。颜色与材质继续使用 Agent Wan tokens。</p><button type="button" onClick={() => setView('code')}>查看独立用法 <span aria-hidden="true">↗</span></button></article>
           <article className="aw-detail-card aw-glass"><span className="aw-section-number">02</span><h2>按需交给 Agent</h2><p>Skill 先读取核心视觉规则，再定位当前组件文档；只继续加载该组件需要的规范章节与源文件。</p><button type="button" onClick={() => copy(`使用 Agent Wan 自然色霜玻璃规范实现 ${entry.name}。先查询 ${entry.id} 对应组件指南，再读取必要的 token、契约和示例文件，保留该组件的关键交互。`)}>复制 Agent 指令 <span aria-hidden="true">↗</span></button></article>
-          <article className="aw-detail-card aw-glass"><span className="aw-section-number">03</span><h2>组件依赖</h2><div className="aw-dependency-list">{entry.dependencies.map(name => <code key={name}>{name}</code>)}</div><p>版本随工程锁定，所选组件和样式在独立预览内加载。</p></article>
+          <article className="aw-detail-card aw-glass"><span className="aw-section-number">03</span><h2>使用边界</h2><p>只接入当前任务需要的组件。保留真实数据、状态与操作，必要时提供减少动效、错误提示和恢复入口。</p></article>
         </section>
         <p className="aw-gallery-footnote">演示采用本地素材与本地状态。摄像头组件由明确操作开启；模拟语音与任务状态会在示例中标注。</p>
         <span className="aw-copy-status" role="status" aria-live="polite">{copied}</span>

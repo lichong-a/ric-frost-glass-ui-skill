@@ -23,7 +23,7 @@
 | `theme.css` | 消费变量的基础样式；不承担数据与复杂交互逻辑 |
 | `CSS_API.md` | 实际类名、状态属性与组件 Props 到 DOM 的接入映射 |
 | `CSS_REFERENCE.html` | 自包含的颜色、材质与组件样式查看页 |
-| `examples/reactbits/README.md` | 215 个 React Bits 独立示例的运行方式与集成说明 |
+| [示例维护说明](../../README.md) | 303 个独立示例的运行方式与集成说明 |
 | `examples/reactbits/docs/components/` | 逐组件真实用法、源码路径、依赖和验收项 |
 | `examples/reactbits/scripts/find-component.mjs` | 按英文名称、slug 或中文意图定位单组件 |
 | `COMPONENT_CONTRACTS.md` | 下拉、切换、表格、导入等状态及键盘行为 |

@@ -1,6 +1,6 @@
 ---
 name: artifact-template-agent-wan-frost-glass-ui
-description: "Build and adapt Agent Wan natural-color frosted-glass React components and pages. Use for matching business forms, autocomplete, tables, dialogs, navigation, feedback, media and accessibility helpers, as well as requested React Bits text, animation and background effects. Choose by concrete business scenario, load only the selected component guide and necessary source, and preserve existing product contracts."
+description: "Build and adapt Agent Wan natural-color frosted-glass React components and pages. Use for business forms, autocomplete, tables, dialogs, navigation, feedback, media and accessibility helpers, as well as requested text, animation and background effects. Choose by concrete business scenario, load only the selected component guide and necessary source, and preserve existing product contracts."
 ---
 
 # Agent Wan Frost Glass UI
@@ -12,7 +12,7 @@ description: "Build and adapt Agent Wan natural-color frosted-glass React compon
 1. 只读 [核心视觉约束](examples/reactbits/docs/design-core.md)，明确目标项目、页面和业务行为。技术栈、状态、数据、权限与路由沿用目标项目。
 2. **普通业务先查基础组件**：输入、选择、数据、导航、临时交互、反馈使用 [业务场景路由](examples/reactbits/docs/business/task-router.md)。文字入场、悬停、粒子与背景等明确要求的装饰效果，再查 [效果路由](examples/reactbits/docs/task-router.md)。
 3. 有精确组件名直接查询；只有目标时用中文场景查询。脚本只输出命中项的用途、替代边界、指南与源码路径；不要把索引全文放入上下文。
-4. 只读命中指南的“什么场景使用”和“不适合或优先替代”。确需比较时最多先读同类 2–3 项。功能同名时用 `--provider business` 或 `--provider reactbits` 消歧。
+4. 只读命中指南的“什么场景使用”和“不适合或优先替代”。确需比较时最多先读同类 2–3 项。功能同名时用 `--provider business` 或 `--provider effects` 消歧。
 5. 单组件指南 → 自有示例 → 本例用到的共享符号和样式 → 当前任务涉及的契约。没有用到的共享函数、类别和组件不继续加载。
 6. 在目标项目里接入当前组件，替换示例数据与回调，保留真实状态、键盘、失败与取消路径。只导入所需入口；装饰效果不成为业务唯一入口。
 7. 交付实际代码或页面，并明确运行过与未运行的检查。用户自行验收时遵从用户要求，不追加审核或测试流程。
@@ -20,10 +20,10 @@ description: "Build and adapt Agent Wan natural-color frosted-glass React compon
 ## 查询一个组件
 
 ```bash
-node examples/reactbits/scripts/find-component.mjs "AutoComplete" --provider business --exact
-node examples/reactbits/scripts/find-component.mjs "搜索建议" --provider business --limit 3
-node examples/reactbits/scripts/find-component.mjs "排序分页" --provider business --limit 3
-node examples/reactbits/scripts/find-component.mjs "Glass Surface" --provider reactbits --exact
+node scripts/find-component.mjs "AutoComplete" --provider business --exact
+node scripts/find-component.mjs "搜索建议" --provider business --limit 3
+node scripts/find-component.mjs "排序分页" --provider business --limit 3
+node scripts/find-component.mjs "Glass Surface" --provider effects --exact
 ```
 
 精确名称无需先读类别页。无工具时只在 `examples/reactbits/docs/component-index.json` 中定向检索名称或别名，随后读取对应指南；不把全部匹配资源逐项展开。
@@ -42,9 +42,9 @@ node examples/reactbits/scripts/find-component.mjs "Glass Surface" --provider re
 | 真实完成比例与等待状态 | ProgressBar、ProgressSpinner | 不编造进度或工具执行成功 |
 | 已发生事件与未完成步骤 | Timeline、Stepper | 两者不要混用 |
 | 任务勾选或装饰性微交互 | 已有 Spring Check 等效果 | 常规布尔字段优先业务 Checkbox |
-| 字符入场、光标、粒子与背景 | 用户指定的 React Bits 组件 | 普通业务页面不默认引入持续动效 |
+| 字符入场、光标、粒子与背景 | 用户明确选择的效果组件 | 普通业务页面不默认引入持续动效 |
 
-上述名称指本包能力。新增业务实现使用自有 React、原生 HTML 与 CSS，PrimeReact 仅作为功能目录参考；不要求安装它，也不沿用或臆造它的组件 Props。当前实现以自有示例和类型为准。
+上述名称指本包能力。业务实现使用 React、原生 HTML 与 CSS，当前交互、类型和回调以自有示例为准。
 
 ## 只在需要时读取
 

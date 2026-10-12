@@ -64,23 +64,21 @@ node scripts/validate-tokens.mjs
 
 这是结构和样式接入示例，不把点击按钮后的业务结果伪装成已完成。完整组件行为以组件契约为准。
 
-### 14.6 React Bits 全量示例与按需引导
+### 14.6 组件示例与按需引导
 
-`examples/reactbits/` 接入指定 [React Bits 索引](https://reactbits.dev/get-started/index) 在 2026-10-12 的全部 **215 个组件身份**：文字动画 33、动画效果 41、组合组件 48、微交互 34、背景效果 59。统一采用 TypeScript + CSS，不把 JS / TS 与 CSS / Tailwind 四种语法变体重复计数。对应仓库提交固定为 `2139cb3098d4fedc6264f13e50dcb4694224ba7c`。
+示例库包含 **303 个独立入口**：215 个交互效果与 88 个业务基础能力。效果目录包含文字动画 33、动画效果 41、组合组件 48、微交互 34、背景效果 59。每个身份计为一项，不重复统计语言或样式变体。基础能力覆盖表单、数据、导航、弹层、状态、媒体与辅助语义，按场景选择并逐项读取。
 
 每个组件包含独立的 `src/demos/<slug>.tsx`、明确的 lazy import 以及 `docs/components/<slug>.md`。文档写明可观察的效果机制、真实 Props 用法、依赖、源文件、资源与验收要求。目录页支持英文名、中文意图与类别查询；选中项在独立 iframe 中运行，切换、暂停或离开预览区域会销毁旧实例。
 
 ```bash
-cd examples/reactbits
-npm ci
-npm run setup:reactbits
-npm run dev
+node scripts/example.mjs setup
+node scripts/example.mjs dev
 
 # Agent 仅定位一个组件；不输出整个索引
 node scripts/find-component.mjs "毛玻璃卡片" --limit 3
 ```
 
-React Bits 的官方源码按其 [许可](https://github.com/DavidHDev/react-bits/blob/2139cb3098d4fedc6264f13e50dcb4694224ba7c/LICENSE.md) 从锁定提交安装到 `.upstream/`；本包保留自有示例、主题适配、来源清单、散列校验和授权文本。`.upstream/` 与包含官方实现的构建产物不随模板再次分发。首次运行需要获取依赖与官方资源，下载失败可重跑安装脚本并复用已校验文件。
+需要额外资源的效果按固定清单准备到本地缓存；本包保留独立示例、主题、安装清单、散列校验和必要声明。安装缓存与包含额外实现的构建产物不随模板再次分发。首次运行需要获取依赖与资源，下载失败可重跑准备命令并复用已校验文件。详细安装与校验记录在示例目录维护，页面文案不展示外部目录或仓库入口。
 
 颜色继续以 `tokens.json` 为唯一源。v1.1 增加 `palette.effectSage`、`palette.effectSand`、`palette.effectTerra` 三个低饱和效果色；`src/shared/palette.generated.ts` 由 Token 生成，供需要实际颜色字符串的 Canvas / WebGL 参数使用。深墨色背景仅用于需要暗底观察的局部效果舞台，不定义一套新的业务暗色主题。
 

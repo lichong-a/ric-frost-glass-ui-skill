@@ -26,7 +26,7 @@
 | Paper Crumple / Refine Frame | 使用自有 SVG 纹理或本地内嵌图像，具备实际像素输入。 |
 | 各图片画廊 / Shader | 用本地 MEDIA / items 传参；Fluid Glass 等无法传入的默认图片 URL 在构建适配层转为本地素材。 |
 
-安装后的官方源和资源共 **421 个校验条目**。来源、字节数和散列分别保存在 `catalog/upstream-manifest.json` 与 `catalog/asset-lock.json`。官方源字节不被修改；`scripts/adapt-upstream.mjs` 在内存中进行有限、明确的集成变换。授权文本保存在 `notices/`，包括 React Bits、Roboto Flex 与 Draco。
+安装后的官方源和资源共 **421 个校验条目**。来源、字节数和散列分别保存在 `catalog/upstream-manifest.json` 与 `catalog/asset-lock.json`。官方源字节不被修改；`scripts/adapt-upstream.mjs` 在内存中进行有限、明确的集成变换。授权文本保存在 `notices/`，包括组件实现、字体与解码器。
 
 本示例项目默认按站点根路径 `/` 运行。嵌入非根路径时设置 Vite base，例如 `/demo/`；自有示例资源和内存适配后的上游默认 GLB、Draco、字体、媒体路径采用同一配置。
 

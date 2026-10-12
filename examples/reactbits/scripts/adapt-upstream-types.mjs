@@ -1,4 +1,4 @@
-// Type-only compatibility for the pinned official React Bits TypeScript sources.
+// Type-only compatibility for the pinned component TypeScript sources.
 // Official source bytes and their recorded hashes remain unchanged on disk.
 // Pin: 2139cb3098d4fedc6264f13e50dcb4694224ba7c
 export const upstreamTypeCompatibilityRules = [

@@ -4,7 +4,7 @@
 
 ## 1. 结论与范围
 
-本包已完成原图与基础规范检查，并将 React Bits 指定索引的 215 个组件接入真实独立示例。当前版本通过 Token 检查、全量源码/资源散列校验、示例与文档覆盖核对、完整工程类型检查、16 项纯逻辑测试及 Vite 生产构建。
+本包已完成原图与基础规范检查，并将 固定目录中的 215 个效果组件接入真实独立示例。当前版本通过 Token 检查、全量源码/资源散列校验、示例与文档覆盖核对、完整工程类型检查、16 项纯逻辑测试及 Vite 生产构建。
 
 **本记录验证规范包、示例接入与构建，不代表某个业务网站已实现，或 215 个效果已完成浏览器、GPU、交互与可访问性验收。** `ACCEPTANCE.md` 是后续编码 Agent 在真实项目中要执行的验收要求。
 
@@ -90,9 +90,9 @@ node --check scripts/build-reference.mjs
 
 效果图没有提供原始字体或源码。包内值是为复现视觉关系而确定的工程基准，不能据此宣称恢复了原始 CSS，或保证不同平台逐像素相同。
 
-## 6. v1.1 全量 React Bits 示例
+## 6. v1.1 效果示例覆盖
 
-范围来自 [用户指定的官方索引](https://reactbits.dev/get-started/index)，固定仓库提交为 `2139cb3098d4fedc6264f13e50dcb4694224ba7c`。统计单位为组件身份，统一采用 TypeScript + CSS；不重复统计另外三种语法变体，不包含独立 Pro 产品或目录未列出的实验项。
+范围由固定资源清单确定，安装版本为 `2139cb3098d4fedc6264f13e50dcb4694224ba7c`。统计单位为组件身份，统一采用 TypeScript + CSS；不重复统计另外三种语法变体，不统计未登记项。
 
 | 分类 | 官方身份 | 独立示例 | 单组件文档 |
 |---|---:|---:|---:|
@@ -121,7 +121,7 @@ node --check scripts/build-reference.mjs
 
 ```bash
 npm ci
-npm run setup:reactbits
+npm run setup:components
 node scripts/verify-upstream.mjs
 npm run check:coverage
 npm run check:types
@@ -148,7 +148,7 @@ Fluid Glass 的压缩模型解码器与三维文字字体改为本地路径；Gr
 
 ### 6.3 分发与保存
 
-依照 [React Bits 许可](https://github.com/DavidHDev/react-bits/blob/2139cb3098d4fedc6264f13e50dcb4694224ba7c/LICENSE.md)，下载包与模板保留本项目的独立示例、主题、安装和适配脚本、锁定清单、文档与授权文本；官方组件从固定版本安装到 `.upstream/`。安装后的官方源码、node_modules、含其实现的 dist 和安装得到的字体/模型/解码器不会被再次放入分发包。首次使用需要运行依赖安装与 setup，不是离线双击 HTML 即可运行全部效果。
+按照包内资源声明，下载包与模板保留本项目的独立示例、主题、安装和适配脚本、锁定清单、文档与授权文本；官方组件从固定版本安装到 `.upstream/`。安装后的官方源码、node_modules、含其实现的 dist 和安装得到的字体/模型/解码器不会被再次放入分发包。首次使用需要运行依赖安装与 setup，不是离线双击 HTML 即可运行全部效果。
 
 包内脚本可以重新生成 Token、文档与归档。原模板名称、图库类别、Agent 设置及原始预览图保持不变；用户通过模板卡的 Save changes 接受这次更新。
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package authored resources; never redistribute the installed React Bits source."""
+"""Package authored resources; exclude installed implementation caches."""
 from pathlib import Path
 import argparse
 import json

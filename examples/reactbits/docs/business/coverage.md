@@ -1,6 +1,6 @@
 # 业务组件覆盖对照
 
-参考日期：2026-10-12。来源：[Styled 目录](https://primereact.dev/docs/styled/components/autocomplete)、[Primitive 目录](https://primereact.dev/docs/primitive/components/autocomplete)。两种目录按组件身份去重得到 88 个核心能力，不包括独立 PRO Suite。
+版本记录：2026-10-12。本目录包含 88 个业务核心能力，每项提供独立的使用场景与示例。
 
 此次补充前：19 项存在相邻效果示例，69 项缺少独立业务运行示例。规范、CSS 和名称相似不能直接当作完整业务覆盖。此次每项均有独立自有实现和渐进指南；这是源码接入状态，不是浏览器验收结论。
 
@@ -95,4 +95,4 @@
 | [Portal](components/business-portal.md) | 没有独立运行项 | [自有 React 示例](../../src/business/demos/business-portal.tsx) |
 | [VisuallyHidden](components/business-visuallyhidden.md) | 没有独立运行项 | [自有 React 示例](../../src/business/demos/business-visuallyhidden.tsx) |
 
-不新增运行时依赖；原有 215 项 React Bits 身份与实现继续保留。
+不新增运行时依赖；原有 215 项效果组件身份与实现继续保留。

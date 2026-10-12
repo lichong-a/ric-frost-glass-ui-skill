@@ -15,7 +15,7 @@ const localSource = get('--local-source');
 if (selected && !manifest.components.some(item => item.slug === selected)) throw new Error(`Unknown component: ${selected}`);
 const components = selected ? manifest.components.filter(item => item.slug === selected) : manifest.components;
 const allowed = new Set(['--component', '--local-source']);
-for (let i=0; i<args.length; i+=2) if (!allowed.has(args[i]) || !args[i+1]) throw new Error('Usage: setup-reactbits.mjs [--component slug] [--local-source official-checkout]');
+for (let i=0; i<args.length; i+=2) if (!allowed.has(args[i]) || !args[i+1]) throw new Error('Usage: node scripts/example.mjs setup [--component slug] [--local-source checkout]');
 const hash = data => createHash('sha256').update(data).digest('hex');
 async function download(url) {
   const attempts = 3;
@@ -70,8 +70,8 @@ const extra = assets.files.filter(file => !selected || !file.components || file.
 const jobs = [...files, ...extra];
 let cursor = 0, finished = 0, processed = 0;
 const errors = [];
-console.log(`Installing ${components.length} React Bits example dependencies at ${manifest.sources.commit.slice(0,12)}.`);
-console.log('Official source remains in .upstream and is excluded from redistributable template archives. See notices/REACT_BITS_LICENSE.md.');
+console.log(`Preparing ${components.length} Agent Wan effect components at ${manifest.sources.commit.slice(0,12)}.`);
+console.log('Prepared implementations remain in the local cache and are excluded from template archives. Resource declarations are kept in notices/.');
 await Promise.all(Array.from({ length: 6 }, async () => {
   while (cursor < jobs.length) {
     const item = jobs[cursor++];

@@ -1,65 +1,132 @@
-# Agent Wan Frost Glass UI Skill
+<div align="center">
 
-Agent Wan 自然色霜玻璃 UI 的可复用 Skill、设计规范和 React 组件示例。当前包含 **215 个 React Bits 效果示例 + 88 个自有业务能力，共 303 个独立入口**。
+# Agent Wan UI
 
-从 [SKILL.md](SKILL.md) 开始。Agent 按具体业务场景定位组件，只读取命中的指南、示例和必要共享资源；普通业务能力与装饰效果分别选型，沿用目标项目的技术栈、权限、路由和数据契约。
+**自然色霜玻璃界面 · 清晰交互 · 按需读取**
 
-## 内容
+面向 React 页面与组件的设计规范、交互示例和渐进式 Skill。
 
-| 入口 | 用途 |
-|---|---|
-| [SKILL.md](SKILL.md) | Skill 触发、场景判断与渐进式读取规则 |
-| [业务场景路由](examples/reactbits/docs/business/task-router.md) | 表单、数据、布局、弹层、导航、反馈、媒体与辅助能力 |
-| [业务覆盖对照](examples/reactbits/docs/business/coverage.md) | 88 项能力的原有相邻示例与新增自有实现 |
-| [效果路由](examples/reactbits/docs/task-router.md) | 按需选择 React Bits 文字、交互、组合组件、微交互与背景 |
-| [示例工程说明](examples/reactbits/README.md) | 安装、运行、目录和维护方式 |
-| [视觉规范](AGENT_WAN_UI_SPEC.md) | 自然色、材质、字体、布局与交互约束 |
-| [组件行为契约](COMPONENT_CONTRACTS.md) | 业务状态、键盘、权限、异步与恢复边界 |
-| [CSS API](CSS_API.md) | 主题样式与语义 Token 的接入 |
-| [Agent 交接入口](AGENT_HANDOFF.md) | 可直接复用的任务提示与引用方式 |
+[开始使用](#开始使用) · [浏览能力](#组件能力) · [交给 Agent](#交给-agent) · [视觉规范](AGENT_WAN_UI_SPEC.md)
 
-新增业务示例由本项目使用 React、原生 HTML 和 CSS 独立实现。PrimeReact 仅作为功能目录参考，不需要安装其运行时；每项的适用场景、替代边界和实际用法以当前指南与源码为准。
+<img src="assets/readme/readme-hero-v02.png" width="920" alt="档案架上的多数资料保持闭合，角色只取出一册资料，沿一条纸带逐层展开当前工作需要的内容。" />
 
-## 运行示例
+</div>
 
-需要 Node.js **22.12 或更新版本**。
+> 先找到当前任务需要的能力，再读取它的用法与边界。让界面保持安静，让操作与状态清楚可见。
+
+| 组件示例 | 业务基础 | 交互与效果 | 场景指南 |
+| :---: | :---: | :---: | :---: |
+| **303** | **88** | **215** | **逐项可查** |
+
+## 这里有什么
+
+- **统一的视觉语言**：茶绿、沙米、象牙白与深墨色；稳定阅读面、清晰边界、柔和层次。
+- **可操作的示例**：输入、选择、排序、分页、展开、确认和反馈都有对应的状态与操作。
+- **克制的加载方式**：目录只加载轻量信息，选中一项才加载它的演示；暂停或切换时释放当前预览。
+- **渐进式的 Agent 入口**：先看场景与替代边界，再读单个指南、代码和必要契约。
+
+## 组件能力
+
+| 需要完成的事情 | 可以从这些组件开始 |
+| --- | --- |
+| 输入、选择与表单反馈 | AutoComplete、InputText、Select、DatePicker、InputTags、InputOtp |
+| 浏览和整理数据 | DataTable、DataView、Tree、TreeTable、PickList、Paginator |
+| 组织内容与流程 | Accordion、Panel、Tabs、Stepper、Splitter、Inplace |
+| 临时输入与就地操作 | Dialog、Drawer、Popover、Menu、CommandMenu |
+| 展示状态与结果 | Message、Toast、Badge、Tag、ProgressBar、Skeleton |
+| 图片与媒体浏览 | Gallery、Carousel、Compare |
+| 文字、指针与局部动效 | Split Text、Shiny Text、Click Spark、Glass Surface |
+| 焦点、挂载与辅助说明 | FocusTrap、Portal、VisuallyHidden |
+
+想比较方案时，只读一个类别并选择最多两三项；有精确名称时，直接查询单项指南。
+
+**[业务场景导航](examples/reactbits/docs/business/task-router.md)** · **[交互效果导航](examples/reactbits/docs/task-router.md)** · **[能力清单](examples/reactbits/docs/business/coverage.md)**
+
+## 开始使用
+
+需要 **Node.js 22.12 或更新版本**。在项目根目录执行：
 
 ```bash
-git clone https://github.com/lichong-a/artifact-template-agent-wan-frost-glass-ui-skill.git agent-wan-frost-glass-ui-skill
-cd agent-wan-frost-glass-ui-skill/examples/reactbits
-npm ci
-npm run setup:reactbits
-npm run dev
+# 首次准备依赖与组件资源
+node scripts/example.mjs setup
+
+# 打开本地示例
+node scripts/example.mjs dev --port 5174
 ```
 
-打开终端显示的本地地址。组件支持名称和中文意图查询，选中项在独立 iframe 中延迟加载；切换或暂停时释放预览。左侧原有 React Bits 保留原中文子标题，新增业务能力使用逐项细化的中文描述。
+打开终端显示的地址即可。目录支持英文名称、中文意图和类别筛选，每项都有交互预览、用法源码与接入说明。
 
-首次运行 setup 需要网络，它按固定清单获取上游源码、字体、模型与解码器，并校验 SHA-256。失败可有限重试或重新运行，已校验文件会复用。
-
-## 给 Agent 按需使用
-
-在仓库根目录运行：
+初次资源准备需要网络，文件按固定清单校验；中断后可以重新执行，已校验资源会复用。仅需某一项时可单独准备：
 
 ```bash
-node examples/reactbits/scripts/find-component.mjs "AutoComplete" --provider business --exact
-node examples/reactbits/scripts/find-component.mjs "排序分页" --provider business --limit 3
-node examples/reactbits/scripts/find-component.mjs "Glass Surface" --provider reactbits --exact
+node scripts/example.mjs setup --component glass-surface
 ```
 
-查询返回单项指南、源码位置、适用场景和替代边界。读取顺序为 **Skill 入口 → 业务或效果 → 单项指南 → 本例源码 → 必要共享符号与契约**，不把整个索引或全部组件送入上下文。
+## 交给 Agent
 
-本仓库根目录可作为 Skill 目录使用，资源路径相对仓库根解析。是否被具体宿主发现或加载，以该宿主的实际安装与加载结果为准。
+从 **[SKILL.md](SKILL.md)** 开始。它首先区分业务行为与装饰效果，再定位当前任务需要的一项能力。
 
-## 维护与验证
+```bash
+node scripts/find-component.mjs "AutoComplete" --provider business --exact
+node scripts/find-component.mjs "排序分页" --provider business --limit 3
+node scripts/find-component.mjs "Glass Surface" --provider effects --exact
+```
 
-在 `examples/reactbits/` 中，修改自有示例或场景元数据后运行 `npm run docs:build`，同步指南、查询索引、懒加载入口、包根 Skill 与分发模板。生成文件通过对应脚本重建；设计值以 `tokens.json` 为准。
+查询结果会给出：适用场景、替代边界、先读哪份指南，以及必要的代码入口。
 
-项目提供类型检查、覆盖检查、测试和生产构建命令，见示例说明。仓库保留的验证记录有各自范围与时间；文件齐全、类型或构建通过均不代表所有组件已经完成浏览器视觉和交互验收。
+```text
+Skill 入口
+   ↓
+业务场景 / 明确效果
+   ↓
+一个组件的用途与边界
+   ↓
+当前示例 → 必要共享符号 → 相关行为契约
+```
 
-## 源码与资源边界
+可直接使用的任务提示：
 
-Git 保存自有代码、固定清单、文档、主题、原始参考图和来源说明。`node_modules/`、`.upstream/`、`dist/`、安装得到的字体、GLB 和 Draco 文件属于本地运行资源，首次使用由安装命令生成。
+```text
+使用 Agent Wan UI 完成当前页面。
+先按业务场景定位组件，只读命中项的指南和代码。
+保持自然色霜玻璃规范，接入项目已有数据、权限与路由。
+保留键盘操作、错误状态与恢复入口；装饰效果按需启用。
+```
 
-React Bits 来源与授权说明保存在 [notices](examples/reactbits/notices/)。原始上游源码与资源按锁定版本获取，本项目的集成适配在内存中执行。固定目录不承诺未来上游新增项自动存在。
+## 设计与接入
 
-可运行 `python3 scripts/package-ui-kit.py --output /path/to/agent-wan-ui.zip` 打包自有规范与示例，归档保持相同的资源边界。
+| 入口 | 在什么时候读取 |
+| --- | --- |
+| [核心视觉约束](examples/reactbits/docs/design-core.md) | 开始设计或改造一个页面时 |
+| [视觉规范](AGENT_WAN_UI_SPEC.md) | 需要确认颜色、字体、材质与布局时 |
+| [CSS API](CSS_API.md) | 需要复用样式与语义 Token 时 |
+| [行为契约](COMPONENT_CONTRACTS.md) | 涉及表单、权限、异步、焦点与恢复时 |
+| [Agent 交接入口](AGENT_HANDOFF.md) | 将任务交给另一位协作者时 |
+| [示例维护说明](examples/reactbits/README.md) | 修改示例、场景数据或生成文档时 |
+
+业务状态、接口与权限继续归属于目标项目。组件示例展示交互用法；文件选择、短命令和本地状态不会替代真实业务执行。
+
+## 维护这个组件库
+
+设计值以 `tokens.json` 为准。修改示例或场景数据后同步指南与入口：
+
+```bash
+node scripts/example.mjs docs
+```
+
+需要生产构建或查看构建结果时：
+
+```bash
+node scripts/example.mjs build
+node scripts/example.mjs preview
+```
+
+只接入当前需要的实现和直接依赖。保留输入语义、焦点路径、空数据、错误与取消处理；减少运动时停用装饰过渡，必要的操作继续可用。
+
+---
+
+<div align="center">
+
+**界面安静，交互清晰。**
+
+</div>

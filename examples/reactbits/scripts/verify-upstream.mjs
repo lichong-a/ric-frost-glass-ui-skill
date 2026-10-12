@@ -13,7 +13,7 @@ for (const file of files) {
   } catch { missing.push(file.destination); }
 }
 if (missing.length) {
-  console.error(`${missing.length} source/asset files missing or changed. Run npm run setup:reactbits first.`);
+  console.error(`${missing.length} source/asset files missing or changed. Run npm run setup:components first.`);
   console.error(missing.slice(0,8).join('\n'));
   process.exitCode=1;
 } else console.log(`PASS ${manifest.total} components and ${files.length} locked source/asset files.`);

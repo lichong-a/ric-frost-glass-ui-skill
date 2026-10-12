@@ -1,12 +1,12 @@
 # 示例运行资源审计
 
-审计范围：`catalog/upstream-manifest.json` 锁定的 215 个 React Bits 免费组件、各自的真实示例 Props、`scripts/adapt-upstream.mjs` 转换后的源码，以及 Vite 构建产物的引用关系。上游提交为 `2139cb3098d4fedc6264f13e50dcb4694224ba7c`。
+审计范围：`catalog/upstream-manifest.json` 锁定的 215 个效果组件、各自的真实示例 Props、`scripts/adapt-upstream.mjs` 转换后的源码，以及 Vite 构建产物的引用关系。上游提交为 `2139cb3098d4fedc6264f13e50dcb4694224ba7c`。
 
 这是一份静态审计。它核对资源路径、加载分支、文件内容和依赖图；没有执行浏览器渲染、摄像头授权、交互、网络测速或 GPU 性能测试。生成的画面、跨浏览器兼容性和交互手感仍需在实际运行环境验收。
 
 ## 当前接入方式
 
-每个组件都由独立的 `src/demos/<slug>.tsx` 示例挂载对应的官方实现。示例图片采用自有的本地 SVG，字体、GLB 模型和 Draco 解码器由 `setup:reactbits` 按固定来源与 SHA-256 安装到本地。
+每个组件都由独立的 `src/demos/<slug>.tsx` 示例挂载对应的官方实现。示例图片采用自有的本地 SVG，字体、GLB 模型和 Draco 解码器由 `setup:components` 按固定来源与 SHA-256 安装到本地。
 
 `src/main.tsx` 负责画廊，`src/preview.tsx` 负责独立 iframe。`src/demo-loaders.ts` 保存延迟导入函数；组件进入活动预览后才加载实现及其依赖。查看用法或指南时，画廊另行导入对应的纯文本文件。暂停、隐藏或离开可见区域时，父级预览会销毁 iframe。
 
@@ -36,7 +36,7 @@ PaperCrumple、RefineFrame 和 ElectricLogo 还使用自有 data SVG。Shredder 
 
 上游 `FluidGlass.tsx` 在 `ModeWrapper` 中调用 `useGLTF(glb)`。当前 Drei 的默认 Draco 路径是 Google 托管的解码器目录；由于 `lens.glb` 确实需要 Draco，该默认地址会在透镜加载时被使用。适配代码已将这一处调用改为 `useGLTF(glb, '/assets/draco/')`。Drei 的第二参数支持字符串解码器路径，使用该路径创建实际的 `DRACOLoader`。
 
-上游两个 `<Text>` 标签原本没有传入字体。当前 Troika 会为没有覆盖的文字查询默认的 Unicode 字体解析 CDN。适配代码现为两个标签显式设置 `font="/assets/fonts/RobotoFlex.ttf"`，并将透镜示例标题设为 `Agent Wan`。在当前安装的 Troika 解析器上进行的纯字体解析确认，`Agent Wan`、`React Bits`、`Home About Contact` 所需字符均被该 TTF 覆盖并产生 glyph。这个检查没有生成或观察画面。
+上游两个 `<Text>` 标签原本没有传入字体。当前 Troika 会为没有覆盖的文字查询默认的 Unicode 字体解析 CDN。适配代码现为两个标签显式设置 `font="/assets/fonts/RobotoFlex.ttf"`，并将透镜示例标题设为 `Agent Wan`。在当前安装的 Troika 解析器上进行的纯字体解析确认，已核验的标题及导航字符均被该 TTF 覆盖并产生 glyph。这个检查没有生成或观察画面。
 
 如果以后把三维文字改为该字体未覆盖的字符，需要同时提供覆盖那些字符的本地字体，否则 Troika 的缺字回退仍可能使用外部字体解析服务。
 

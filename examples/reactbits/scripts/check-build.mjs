@@ -62,7 +62,7 @@ async function audit() {
   try { bytes = await readFile(path.join(root, report.paths.manifest)); }
   catch (error) {
     if (error.code !== 'ENOENT') throw error;
-    pending.push({ code: 'vite-manifest-missing', detail: 'Run npm run setup:reactbits and npm run build before this check.' });
+    pending.push({ code: 'vite-manifest-missing', detail: 'Run npm run setup:components and npm run build before this check.' });
     return;
   }
   const manifest = JSON.parse(bytes.toString('utf8'));

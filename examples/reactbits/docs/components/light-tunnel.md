@@ -15,15 +15,14 @@
 | 资源 | 位置与用途 |
 |---|---|
 | 自有示例（随包） | [examples/reactbits/src/demos/light-tunnel.tsx](../../src/demos/light-tunnel.tsx) |
-| 官方实现（setup 后存在） | [examples/reactbits/.upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx](../../.upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx) |
-| 官方 CSS（setup 后存在） | [examples/reactbits/.upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.css](../../.upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.css) |
-| 官方文档 | [Light Tunnel](https://reactbits.dev/backgrounds/light-tunnel) |
+| 组件实现（准备后存在） | [examples/reactbits/.upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx](../../.upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx) |
+| 组件 CSS（准备后存在） | [examples/reactbits/.upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.css](../../.upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.css) |
 | 固定版本 | `2139cb3098d4fedc6264f13e50dcb4694224ba7c` |
 
-先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在 `examples/reactbits` 运行：
+先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在包根运行：
 
 ```bash
-npm run setup:reactbits -- --component light-tunnel
+node scripts/example.mjs setup --component light-tunnel
 ```
 
 安装完成再读取对应源码及直接依赖。无需加载其余 214 项。

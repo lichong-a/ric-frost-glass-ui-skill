@@ -1,53 +1,57 @@
-# Agent Wan 技能更新与使用
+# Agent Wan Skill 维护与使用
 
-## 本次更新
+本包包含 303 个独立示例：88 个业务基础能力与 215 个交互效果。Skill 名称、设计值和四张视觉基准图保持稳定，按实际场景逐层读取资料。
 
-保留技能名 `artifact-template-agent-wan-frost-glass-ui`、显示名 `Agent Wan Frost Glass UI`、模板类别与四张原始图。保留 React Bits 的 215 项效果示例，并补充 88 项自有业务能力与按场景逐层读取的入口。新增项使用既有 React 和原生 HTML；不用安装 PrimeReact。
+## 默认读取顺序
 
-新的默认读取顺序：
+1. 从 `SKILL.md` 确认目标任务、技术栈和文件边界。
+2. 读取核心视觉约束，确认自然色霜玻璃规范。
+3. 输入、选择、数据、导航与反馈先查业务路由，使用 `--provider business`；明确需要装饰效果时使用 `--provider effects`。
+4. 只读命中项的适用场景、替代边界和当前用法。需要比较时先读同类 2–3 项。
+5. 实际示例 → 本例使用的共享符号与样式 → 任务涉及的行为契约。
 
-1. `SKILL.md`：短入口，确认当前任务和文件边界。
-2. `references/reactbits/design-core.md`：核心视觉约束。
-3. 先判断业务或效果。普通业务查 `references/reactbits/business/task-router.md`，使用 `--provider business`；明确装饰效果使用 `--provider reactbits`。
-4. 业务只读 `references/reactbits/business/components/<id>.md` 的适用场景、替代边界和当前用法；效果只读 `references/reactbits/components/<slug>.md`。需要比较时先读最多2–3项。
-5. 根据该文档读取自有演示、实际 Props、CSS 与安装后的官方源码。
+已有明确名称时，直接从项目根查询：
 
-普通业务页面需要的 AppShell、表格、菜单、输入和异步行为，继续使用原始规范；通过 `references/reactbits/spec/` 和 `references/reactbits/contracts/` 分片读取，不再要求先读完整主规范与全部契约。
-
-## 按名称使用
-
-```text
-使用 Agent Wan Frost Glass UI。
-为当前页面接入 Glass Surface 和 Split Text。
-通过精确检索读取这两个组件的文档、示例和必要源码；
-保留现有业务状态，用 Agent Wan 皮肤统一配色与阅读面。
+```bash
+node scripts/find-component.mjs "AutoComplete" --provider business --exact
+node scripts/find-component.mjs "Glass Surface" --provider effects --exact
 ```
 
-## 按中文意图使用
+只有业务目标时，用中文场景检索：
 
-```text
-使用 Agent Wan Frost Glass UI。
-给聊天页面增加可折叠的公开步骤摘要、工具调用状态和底部输入框。
-先按中文意图定位对应 Micro 组件，比较需要的少量候选；
-状态和计时来自已有业务数据，不编造模型内部推理或工具结果。
+```bash
+node scripts/find-component.mjs "排序分页" --provider business --limit 3
+node scripts/find-component.mjs "思考过程" --provider effects --limit 3
 ```
 
-## 只读取所需官方源码
+## 任务提示词
 
-进入技能中的 `assets/ui-kit/examples/reactbits/`，可以按单个 slug 执行 setup。首次运行完整示例库时执行全量安装，再启动开发服务器。已安装的官方源码位于 `.upstream/`，不需要把整个目录发送到 Agent 上下文。
+```text
+使用 Agent Wan Frost Glass UI 完成当前页面。
+先按英文名称或中文场景定位组件，读取用途与优先替代边界。
+只加载当前指南、实际示例及必要依赖，保持已有数据、权限与路由。
+界面沿用自然色霜玻璃规范，状态和回调连接真实业务。
+保留键盘、错误与取消入口；装饰效果按需启用。
+```
 
-## 后续升级目录
+## 只准备当前资源
 
-上游新增组件时，先重新确认用户指定目录与固定提交，再更新清单；不要仅按宣传数字增大总数。新增项至少补齐真实自有演示、加载入口、中文意图、单组件文档和所需资源；修改项按相同版本校验 Props、状态、依赖与效果机制。
+在项目根执行单项准备命令，不将完整实现缓存放入 Agent 上下文：
 
-更新视觉数值时先修改主 Token 与规范，再生成 CSS 和读取分片。更新示例 Props 后重新生成单组件文档，避免示例与文档出现两套参数。源码安装仍使用明确固定的提交和散列，不能静默切到 latest。
+```bash
+node scripts/example.mjs setup --component glass-surface
+```
 
-## 已有项目接入
+首次运行整个示例库时执行不带组件参数的全量准备，然后启动开发服务器。资源按固定版本与散列校验；不得静默切换版本或忽略校验失败。
 
-可以在项目自己的规范入口追加对本技能或规范包的引用，不覆盖原有 `AGENTS.md`。只复制当前项目需要的组件与共享依赖；保持现有路由、权限和状态管理。
+## 更新能力与指南
 
-任务完成后分别说明实际实现、构建、交互、视觉检查与未验证范围。保存新的技能资源不等于已经修改用户现有网站；安装模板或发布站点的实际状态以本次交付结果为准。
+新增能力先完成可操作的实现，再补中文子标题、适用场景、替代边界、加载入口和必要资源。业务元数据维护在 `catalog/business-catalog.json`，业务实现维护在对应 demo；效果资源与参数分别按固定清单和配方维护。
 
-## 包内入口与重建
+修改后从项目根执行 `node scripts/example.mjs docs`，同步路由、单项指南、检索索引、Skill 与交接入口。生成结果不独立维护第二套规则。视觉修改先更新 Token 与主规范，再生成 CSS 与规范分片。
 
-规范包根目录现在也包含可直接读取的 `SKILL.md`。`npm run docs:build` 会同时更新包内入口与分发模板所需文档，不修改用户级安装目录。业务元数据只维护 `catalog/business-catalog.json`，源代码只维护对应自有示例；生成输出不作为第二套事实源。
+## 接入已有项目
+
+可以在已有 `AGENTS.md` 追加简短 Skill 入口，保留原项目约束。只复制当前需要的实现和直接依赖，保持现有状态、路由与权限；行为契约按章节读取。
+
+交付时说明实际修改、运行方法与执行过的检查，区分构建、挂载、视觉和业务结果。保存 Skill 资源或创建示例不等于已经接入用户的真实业务服务。

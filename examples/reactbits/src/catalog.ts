@@ -16,7 +16,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/tech-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/TechText/TechText.tsx",
     "demoPath": "src/demos/tech-text.tsx",
     "motion": "continuous",
@@ -38,7 +38,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/text-loop",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/TextLoop/TextLoop.tsx",
     "demoPath": "src/demos/text-loop.tsx",
     "motion": "continuous",
@@ -60,7 +60,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/masked-heading",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/MaskedHeading/MaskedHeading.tsx",
     "demoPath": "src/demos/masked-heading.tsx",
     "motion": "continuous",
@@ -80,7 +80,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/particle-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
     "demoPath": "src/demos/particle-text.tsx",
     "motion": "continuous",
@@ -101,7 +101,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/split-flap-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
     "demoPath": "src/demos/split-flap-text.tsx",
     "motion": "continuous",
@@ -122,7 +122,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/warp-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/WarpText/WarpText.tsx",
     "demoPath": "src/demos/warp-text.tsx",
     "motion": "continuous",
@@ -144,7 +144,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/stroke-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/StrokeText/StrokeText.tsx",
     "demoPath": "src/demos/stroke-text.tsx",
     "motion": "continuous",
@@ -165,7 +165,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/depth-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/DepthText/DepthText.tsx",
     "demoPath": "src/demos/depth-text.tsx",
     "motion": "continuous",
@@ -186,7 +186,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/fold-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
     "demoPath": "src/demos/fold-text.tsx",
     "motion": "continuous",
@@ -206,7 +206,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/echo-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
     "demoPath": "src/demos/echo-text.tsx",
     "motion": "continuous",
@@ -230,7 +230,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/split-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
     "demoPath": "src/demos/split-text.tsx",
     "motion": "continuous",
@@ -252,7 +252,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/blur-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
     "demoPath": "src/demos/blur-text.tsx",
     "motion": "continuous",
@@ -274,7 +274,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/circular-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
     "demoPath": "src/demos/circular-text.tsx",
     "motion": "continuous",
@@ -296,7 +296,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/text-type",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/TextType/TextType.tsx",
     "demoPath": "src/demos/text-type.tsx",
     "motion": "continuous",
@@ -318,7 +318,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/shuffle",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/Shuffle/Shuffle.tsx",
     "demoPath": "src/demos/shuffle.tsx",
     "motion": "continuous",
@@ -339,7 +339,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/shiny-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/ShinyText/ShinyText.tsx",
     "demoPath": "src/demos/shiny-text.tsx",
     "motion": "continuous",
@@ -359,7 +359,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/text-pressure",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/TextPressure/TextPressure.tsx",
     "demoPath": "src/demos/text-pressure.tsx",
     "motion": "continuous",
@@ -379,7 +379,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/curved-loop",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
     "demoPath": "src/demos/curved-loop.tsx",
     "motion": "continuous",
@@ -400,7 +400,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/fuzzy-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/FuzzyText/FuzzyText.tsx",
     "demoPath": "src/demos/fuzzy-text.tsx",
     "motion": "continuous",
@@ -420,7 +420,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/gradient-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/GradientText/GradientText.tsx",
     "demoPath": "src/demos/gradient-text.tsx",
     "motion": "continuous",
@@ -442,7 +442,7 @@ export const entries: CatalogEntry[] = [
       "matter-js",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/falling-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
     "demoPath": "src/demos/falling-text.tsx",
     "motion": "continuous",
@@ -462,7 +462,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/text-cursor",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
     "demoPath": "src/demos/text-cursor.tsx",
     "motion": "continuous",
@@ -483,7 +483,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/decrypted-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/DecryptedText/DecryptedText.tsx",
     "demoPath": "src/demos/decrypted-text.tsx",
     "motion": "continuous",
@@ -504,7 +504,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/true-focus",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
     "demoPath": "src/demos/true-focus.tsx",
     "motion": "continuous",
@@ -525,7 +525,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/scroll-float",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
     "demoPath": "src/demos/scroll-float.tsx",
     "motion": "continuous",
@@ -546,7 +546,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/scroll-reveal",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
     "demoPath": "src/demos/scroll-reveal.tsx",
     "motion": "continuous",
@@ -566,7 +566,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/ascii-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
     "demoPath": "src/demos/ascii-text.tsx",
     "motion": "continuous",
@@ -587,7 +587,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/scrambled-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
     "demoPath": "src/demos/scrambled-text.tsx",
     "motion": "continuous",
@@ -609,7 +609,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/rotating-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/RotatingText/RotatingText.tsx",
     "demoPath": "src/demos/rotating-text.tsx",
     "motion": "continuous",
@@ -629,7 +629,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/glitch-text",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
     "demoPath": "src/demos/glitch-text.tsx",
     "motion": "continuous",
@@ -650,7 +650,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/scroll-velocity",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
     "demoPath": "src/demos/scroll-velocity.tsx",
     "motion": "continuous",
@@ -672,7 +672,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/variable-proximity",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
     "demoPath": "src/demos/variable-proximity.tsx",
     "motion": "continuous",
@@ -694,7 +694,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/text-animations/count-up",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/TextAnimations/CountUp/CountUp.tsx",
     "demoPath": "src/demos/count-up.tsx",
     "motion": "continuous",
@@ -716,7 +716,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/crystalized-ball",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
     "demoPath": "src/demos/crystalized-ball.tsx",
     "motion": "continuous",
@@ -737,7 +737,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/electric-logo",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/ElectricLogo/ElectricLogo.tsx",
     "demoPath": "src/demos/electric-logo.tsx",
     "motion": "continuous",
@@ -758,7 +758,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/dither-veil",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
     "demoPath": "src/demos/dither-veil.tsx",
     "motion": "continuous",
@@ -778,7 +778,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/glow-cursor",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/GlowCursor/GlowCursor.tsx",
     "demoPath": "src/demos/glow-cursor.tsx",
     "motion": "continuous",
@@ -798,7 +798,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/scroll-expand",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/ScrollExpand/ScrollExpand.tsx",
     "demoPath": "src/demos/scroll-expand.tsx",
     "motion": "continuous",
@@ -819,7 +819,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/ripple-distortion",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/RippleDistortion/RippleDistortion.tsx",
     "demoPath": "src/demos/ripple-distortion.tsx",
     "motion": "continuous",
@@ -840,7 +840,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/elastic-mesh",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/ElasticMesh/ElasticMesh.tsx",
     "demoPath": "src/demos/elastic-mesh.tsx",
     "motion": "continuous",
@@ -861,7 +861,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/swarm-cursor",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
     "demoPath": "src/demos/swarm-cursor.tsx",
     "motion": "continuous",
@@ -881,7 +881,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/halftone-reveal",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/HalftoneReveal/HalftoneReveal.tsx",
     "demoPath": "src/demos/halftone-reveal.tsx",
     "motion": "continuous",
@@ -901,7 +901,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/pixel-swap",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/PixelSwap/PixelSwap.tsx",
     "demoPath": "src/demos/pixel-swap.tsx",
     "motion": "continuous",
@@ -921,7 +921,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/cursor-grid",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/CursorGrid/CursorGrid.tsx",
     "demoPath": "src/demos/cursor-grid.tsx",
     "motion": "continuous",
@@ -943,7 +943,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/animated-content",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/AnimatedContent/AnimatedContent.tsx",
     "demoPath": "src/demos/animated-content.tsx",
     "motion": "continuous",
@@ -965,7 +965,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/fade-content",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/FadeContent/FadeContent.tsx",
     "demoPath": "src/demos/fade-content.tsx",
     "motion": "continuous",
@@ -985,7 +985,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/electric-border",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
     "demoPath": "src/demos/electric-border.tsx",
     "motion": "continuous",
@@ -1006,7 +1006,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/orbit-images",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/OrbitImages/OrbitImages.tsx",
     "demoPath": "src/demos/orbit-images.tsx",
     "motion": "continuous",
@@ -1026,7 +1026,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/pixel-transition",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
     "demoPath": "src/demos/pixel-transition.tsx",
     "motion": "continuous",
@@ -1046,7 +1046,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/glare-hover",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/GlareHover/GlareHover.tsx",
     "demoPath": "src/demos/glare-hover.tsx",
     "motion": "continuous",
@@ -1068,7 +1068,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/animations/antigravity",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/Antigravity/Antigravity.tsx",
     "demoPath": "src/demos/antigravity.tsx",
     "motion": "continuous",
@@ -1088,7 +1088,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/logo-loop",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
     "demoPath": "src/demos/logo-loop.tsx",
     "motion": "continuous",
@@ -1110,7 +1110,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://reactbits.dev/animations/target-cursor",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/TargetCursor/TargetCursor.tsx",
     "demoPath": "src/demos/target-cursor.tsx",
     "motion": "continuous",
@@ -1131,7 +1131,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/animations/magic-rings",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
     "demoPath": "src/demos/magic-rings.tsx",
     "motion": "continuous",
@@ -1151,7 +1151,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/laser-flow",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
     "demoPath": "src/demos/laser-flow.tsx",
     "motion": "continuous",
@@ -1171,7 +1171,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/magnet-lines",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
     "demoPath": "src/demos/magnet-lines.tsx",
     "motion": "continuous",
@@ -1192,7 +1192,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/animations/ghost-cursor",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
     "demoPath": "src/demos/ghost-cursor.tsx",
     "motion": "continuous",
@@ -1212,7 +1212,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/gradual-blur",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/GradualBlur/GradualBlur.tsx",
     "demoPath": "src/demos/gradual-blur.tsx",
     "motion": "continuous",
@@ -1232,7 +1232,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/click-spark",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
     "demoPath": "src/demos/click-spark.tsx",
     "motion": "continuous",
@@ -1252,7 +1252,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/magnet",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
     "demoPath": "src/demos/magnet.tsx",
     "motion": "continuous",
@@ -1273,7 +1273,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/strands",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
     "demoPath": "src/demos/strands.tsx",
     "motion": "continuous",
@@ -1294,7 +1294,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/sticker-peel",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/StickerPeel/StickerPeel.tsx",
     "demoPath": "src/demos/sticker-peel.tsx",
     "motion": "continuous",
@@ -1314,7 +1314,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/pixel-trail",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
     "demoPath": "src/demos/pixel-trail.tsx",
     "motion": "continuous",
@@ -1334,7 +1334,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/cubes",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
     "demoPath": "src/demos/cubes.tsx",
     "motion": "continuous",
@@ -1354,7 +1354,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/metallic-paint",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
     "demoPath": "src/demos/metallic-paint.tsx",
     "motion": "continuous",
@@ -1375,7 +1375,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/noise",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
     "demoPath": "src/demos/noise.tsx",
     "motion": "continuous",
@@ -1395,7 +1395,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/shape-blur",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/ShapeBlur/ShapeBlur.tsx",
     "demoPath": "src/demos/shape-blur.tsx",
     "motion": "continuous",
@@ -1415,7 +1415,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/crosshair",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
     "demoPath": "src/demos/crosshair.tsx",
     "motion": "continuous",
@@ -1436,7 +1436,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/image-trail",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
     "demoPath": "src/demos/image-trail.tsx",
     "motion": "continuous",
@@ -1456,7 +1456,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/ribbons",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/Ribbons/Ribbons.tsx",
     "demoPath": "src/demos/ribbons.tsx",
     "motion": "continuous",
@@ -1476,7 +1476,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/splash-cursor",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
     "demoPath": "src/demos/splash-cursor.tsx",
     "motion": "continuous",
@@ -1496,7 +1496,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/meta-balls",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
     "demoPath": "src/demos/meta-balls.tsx",
     "motion": "continuous",
@@ -1517,7 +1517,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/animations/blob-cursor",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
     "demoPath": "src/demos/blob-cursor.tsx",
     "motion": "continuous",
@@ -1537,7 +1537,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/animations/star-border",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Animations/StarBorder/StarBorder.tsx",
     "demoPath": "src/demos/star-border.tsx",
     "motion": "continuous",
@@ -1557,7 +1557,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/holo-card",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/HoloCard/HoloCard.tsx",
     "demoPath": "src/demos/holo-card.tsx",
     "motion": "interactive",
@@ -1577,7 +1577,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/circular-carousel",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
     "demoPath": "src/demos/circular-carousel.tsx",
     "motion": "interactive",
@@ -1598,7 +1598,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/flex-carousel",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
     "demoPath": "src/demos/flex-carousel.tsx",
     "motion": "interactive",
@@ -1618,7 +1618,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/infinite-spiral",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
     "demoPath": "src/demos/infinite-spiral.tsx",
     "motion": "interactive",
@@ -1639,7 +1639,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/depth-carousel",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/DepthCarousel/DepthCarousel.tsx",
     "demoPath": "src/demos/depth-carousel.tsx",
     "motion": "interactive",
@@ -1661,7 +1661,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/morph-slider",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
     "demoPath": "src/demos/morph-slider.tsx",
     "motion": "interactive",
@@ -1681,7 +1681,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/drift-wall",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
     "demoPath": "src/demos/drift-wall.tsx",
     "motion": "interactive",
@@ -1702,7 +1702,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/accordion-gallery",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/AccordionGallery/AccordionGallery.tsx",
     "demoPath": "src/demos/accordion-gallery.tsx",
     "motion": "interactive",
@@ -1722,7 +1722,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/specular-button",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/SpecularButton/SpecularButton.tsx",
     "demoPath": "src/demos/specular-button.tsx",
     "motion": "interactive",
@@ -1742,7 +1742,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/option-wheel",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
     "demoPath": "src/demos/option-wheel.tsx",
     "motion": "interactive",
@@ -1762,7 +1762,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/curved-input",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/CurvedInput/CurvedInput.tsx",
     "demoPath": "src/demos/curved-input.tsx",
     "motion": "interactive",
@@ -1782,7 +1782,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/line-sidebar",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
     "demoPath": "src/demos/line-sidebar.tsx",
     "motion": "interactive",
@@ -1805,7 +1805,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/animated-list",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
     "demoPath": "src/demos/animated-list.tsx",
     "motion": "interactive",
@@ -1825,7 +1825,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/scroll-stack",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/ScrollStack/ScrollStack.tsx",
     "demoPath": "src/demos/scroll-stack.tsx",
     "motion": "interactive",
@@ -1846,7 +1846,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/bubble-menu",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/BubbleMenu/BubbleMenu.tsx",
     "demoPath": "src/demos/bubble-menu.tsx",
     "motion": "interactive",
@@ -1867,7 +1867,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/magic-bento",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/MagicBento/MagicBento.tsx",
     "demoPath": "src/demos/magic-bento.tsx",
     "motion": "interactive",
@@ -1888,7 +1888,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/circular-gallery",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
     "demoPath": "src/demos/circular-gallery.tsx",
     "motion": "interactive",
@@ -1909,7 +1909,7 @@ export const entries: CatalogEntry[] = [
       "lucide-react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/reflective-card",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/ReflectiveCard/ReflectiveCard.tsx",
     "demoPath": "src/demos/reflective-card.tsx",
     "motion": "interactive",
@@ -1931,7 +1931,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-icons"
     ],
-    "docsUrl": "https://reactbits.dev/components/card-nav",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/CardNav/CardNav.tsx",
     "demoPath": "src/demos/card-nav.tsx",
     "motion": "interactive",
@@ -1952,7 +1952,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/stack",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/Stack/Stack.tsx",
     "demoPath": "src/demos/stack.tsx",
     "motion": "interactive",
@@ -1976,7 +1976,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/components/fluid-glass",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
     "demoPath": "src/demos/fluid-glass.tsx",
     "motion": "interactive",
@@ -1998,7 +1998,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-router-dom"
     ],
-    "docsUrl": "https://reactbits.dev/components/pill-nav",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/PillNav/PillNav.tsx",
     "demoPath": "src/demos/pill-nav.tsx",
     "motion": "interactive",
@@ -2019,7 +2019,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/tilted-card",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/TiltedCard/TiltedCard.tsx",
     "demoPath": "src/demos/tilted-card.tsx",
     "motion": "interactive",
@@ -2040,7 +2040,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/masonry",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
     "demoPath": "src/demos/masonry.tsx",
     "motion": "interactive",
@@ -2062,7 +2062,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/glass-surface",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
     "demoPath": "src/demos/glass-surface.tsx",
     "motion": "interactive",
@@ -2083,7 +2083,7 @@ export const entries: CatalogEntry[] = [
       "@use-gesture/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/dome-gallery",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/DomeGallery/DomeGallery.tsx",
     "demoPath": "src/demos/dome-gallery.tsx",
     "motion": "interactive",
@@ -2103,7 +2103,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/chroma-grid",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
     "demoPath": "src/demos/chroma-grid.tsx",
     "motion": "interactive",
@@ -2123,7 +2123,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/folder",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/Folder/Folder.tsx",
     "demoPath": "src/demos/folder.tsx",
     "motion": "interactive",
@@ -2144,7 +2144,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/staggered-menu",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
     "demoPath": "src/demos/staggered-menu.tsx",
     "motion": "interactive",
@@ -2167,7 +2167,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/components/model-viewer",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
     "demoPath": "src/demos/model-viewer.tsx",
     "motion": "interactive",
@@ -2188,7 +2188,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/components/lanyard",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
     "demoPath": "src/demos/lanyard.tsx",
     "motion": "interactive",
@@ -2210,7 +2210,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/profile-card",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/ProfileCard/ProfileCard.tsx",
     "demoPath": "src/demos/profile-card.tsx",
     "motion": "interactive",
@@ -2232,7 +2232,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://reactbits.dev/components/dock",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
     "demoPath": "src/demos/dock.tsx",
     "motion": "interactive",
@@ -2252,7 +2252,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/gooey-nav",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
     "demoPath": "src/demos/gooey-nav.tsx",
     "motion": "interactive",
@@ -2272,7 +2272,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/pixel-card",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/PixelCard/PixelCard.tsx",
     "demoPath": "src/demos/pixel-card.tsx",
     "motion": "interactive",
@@ -2295,7 +2295,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/carousel",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
     "demoPath": "src/demos/carousel.tsx",
     "motion": "interactive",
@@ -2315,7 +2315,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/spotlight-card",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
     "demoPath": "src/demos/spotlight-card.tsx",
     "motion": "interactive",
@@ -2335,7 +2335,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/border-glow",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
     "demoPath": "src/demos/border-glow.tsx",
     "motion": "interactive",
@@ -2355,7 +2355,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/flying-posters",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
     "demoPath": "src/demos/flying-posters.tsx",
     "motion": "interactive",
@@ -2377,7 +2377,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/card-swap",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/CardSwap/CardSwap.tsx",
     "demoPath": "src/demos/card-swap.tsx",
     "motion": "interactive",
@@ -2397,7 +2397,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/glass-icons",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/GlassIcons/GlassIcons.tsx",
     "demoPath": "src/demos/glass-icons.tsx",
     "motion": "interactive",
@@ -2417,7 +2417,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/decay-card",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/DecayCard/DecayCard.tsx",
     "demoPath": "src/demos/decay-card.tsx",
     "motion": "interactive",
@@ -2438,7 +2438,7 @@ export const entries: CatalogEntry[] = [
       "gsap",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/flowing-menu",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
     "demoPath": "src/demos/flowing-menu.tsx",
     "motion": "interactive",
@@ -2461,7 +2461,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-icons"
     ],
-    "docsUrl": "https://reactbits.dev/components/elastic-slider",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/ElasticSlider/ElasticSlider.tsx",
     "demoPath": "src/demos/elastic-slider.tsx",
     "motion": "interactive",
@@ -2482,7 +2482,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/counter",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/Counter/Counter.tsx",
     "demoPath": "src/demos/counter.tsx",
     "motion": "interactive",
@@ -2502,7 +2502,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/infinite-menu",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
     "demoPath": "src/demos/infinite-menu.tsx",
     "motion": "interactive",
@@ -2525,7 +2525,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/stepper",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
     "demoPath": "src/demos/stepper.tsx",
     "motion": "interactive",
@@ -2545,7 +2545,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/components/bounce-cards",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
     "demoPath": "src/demos/bounce-cards.tsx",
     "motion": "interactive",
@@ -2566,7 +2566,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://reactbits.dev/micro/shredder",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/Shredder/Shredder.tsx",
     "demoPath": "src/demos/shredder.tsx",
     "motion": "interactive",
@@ -2587,7 +2587,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/micro/paper-crumple",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
     "demoPath": "src/demos/paper-crumple.tsx",
     "motion": "interactive",
@@ -2608,7 +2608,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/tear-ticket",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/TearTicket/TearTicket.tsx",
     "demoPath": "src/demos/tear-ticket.tsx",
     "motion": "interactive",
@@ -2629,7 +2629,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/flip-card",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/FlipCard/FlipCard.tsx",
     "demoPath": "src/demos/flip-card.tsx",
     "motion": "interactive",
@@ -2651,7 +2651,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/branched-menu",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
     "demoPath": "src/demos/branched-menu.tsx",
     "motion": "interactive",
@@ -2672,7 +2672,7 @@ export const entries: CatalogEntry[] = [
       "matter-js",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/folder-float",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
     "demoPath": "src/demos/folder-float.tsx",
     "motion": "interactive",
@@ -2695,7 +2695,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/refine-frame",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
     "demoPath": "src/demos/refine-frame.tsx",
     "motion": "interactive",
@@ -2720,7 +2720,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/thought-line",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
     "demoPath": "src/demos/thought-line.tsx",
     "motion": "interactive",
@@ -2743,7 +2743,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/voice-pill",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
     "demoPath": "src/demos/voice-pill.tsx",
     "motion": "interactive",
@@ -2764,7 +2764,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/slosh-gauge",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/SloshGauge/SloshGauge.tsx",
     "demoPath": "src/demos/slosh-gauge.tsx",
     "motion": "interactive",
@@ -2789,7 +2789,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/prompt-bar",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
     "demoPath": "src/demos/prompt-bar.tsx",
     "motion": "interactive",
@@ -2812,7 +2812,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/swipe-toast",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/SwipeToast/SwipeToast.tsx",
     "demoPath": "src/demos/swipe-toast.tsx",
     "motion": "interactive",
@@ -2835,7 +2835,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/sling-button",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/SlingButton/SlingButton.tsx",
     "demoPath": "src/demos/sling-button.tsx",
     "motion": "interactive",
@@ -2858,7 +2858,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/bell-toggle",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
     "demoPath": "src/demos/bell-toggle.tsx",
     "motion": "interactive",
@@ -2881,7 +2881,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/call-chip",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/CallChip/CallChip.tsx",
     "demoPath": "src/demos/call-chip.tsx",
     "motion": "interactive",
@@ -2903,7 +2903,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/status-mark",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/StatusMark/StatusMark.tsx",
     "demoPath": "src/demos/status-mark.tsx",
     "motion": "interactive",
@@ -2925,7 +2925,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/glide-select",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
     "demoPath": "src/demos/glide-select.tsx",
     "motion": "interactive",
@@ -2949,7 +2949,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/swipe-row",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
     "demoPath": "src/demos/swipe-row.tsx",
     "motion": "interactive",
@@ -2970,7 +2970,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/jelly-radio",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
     "demoPath": "src/demos/jelly-radio.tsx",
     "motion": "interactive",
@@ -2991,7 +2991,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/comet-dial",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/CometDial/CometDial.tsx",
     "demoPath": "src/demos/comet-dial.tsx",
     "motion": "interactive",
@@ -3012,7 +3012,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/wake-slider",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/WakeSlider/WakeSlider.tsx",
     "demoPath": "src/demos/wake-slider.tsx",
     "motion": "interactive",
@@ -3036,7 +3036,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/code-slots",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/CodeSlots/CodeSlots.tsx",
     "demoPath": "src/demos/code-slots.tsx",
     "motion": "interactive",
@@ -3057,7 +3057,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/dodge-field",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
     "demoPath": "src/demos/dodge-field.tsx",
     "motion": "interactive",
@@ -3078,7 +3078,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/lattice-loader",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
     "demoPath": "src/demos/lattice-loader.tsx",
     "motion": "interactive",
@@ -3100,7 +3100,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/scrub-field",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/ScrubField/ScrubField.tsx",
     "demoPath": "src/demos/scrub-field.tsx",
     "motion": "interactive",
@@ -3122,7 +3122,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/fuse-button",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
     "demoPath": "src/demos/fuse-button.tsx",
     "motion": "interactive",
@@ -3145,7 +3145,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://reactbits.dev/micro/warm-tooltip",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
     "demoPath": "src/demos/warm-tooltip.tsx",
     "motion": "interactive",
@@ -3168,7 +3168,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/slide-commit",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/SlideCommit/SlideCommit.tsx",
     "demoPath": "src/demos/slide-commit.tsx",
     "motion": "interactive",
@@ -3189,7 +3189,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/rubber-segment",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
     "demoPath": "src/demos/rubber-segment.tsx",
     "motion": "interactive",
@@ -3210,7 +3210,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/core-free-icons",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/pulse-heart",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
     "demoPath": "src/demos/pulse-heart.tsx",
     "motion": "interactive",
@@ -3233,7 +3233,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/spring-check",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/SpringCheck/SpringCheck.tsx",
     "demoPath": "src/demos/spring-check.tsx",
     "motion": "interactive",
@@ -3255,7 +3255,7 @@ export const entries: CatalogEntry[] = [
       "@hugeicons/react",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/peek-rating",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
     "demoPath": "src/demos/peek-rating.tsx",
     "motion": "interactive",
@@ -3275,7 +3275,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/hold-button",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/HoldButton/HoldButton.tsx",
     "demoPath": "src/demos/hold-button.tsx",
     "motion": "interactive",
@@ -3296,7 +3296,7 @@ export const entries: CatalogEntry[] = [
       "motion",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/micro/squish-switch",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Micro/SquishSwitch/SquishSwitch.tsx",
     "demoPath": "src/demos/squish-switch.tsx",
     "motion": "interactive",
@@ -3316,7 +3316,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/flux-lines",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/FluxLines/FluxLines.tsx",
     "demoPath": "src/demos/flux-lines.tsx",
     "motion": "continuous",
@@ -3337,7 +3337,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/pattern-waves",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/PatternWaves/PatternWaves.tsx",
     "demoPath": "src/demos/pattern-waves.tsx",
     "motion": "continuous",
@@ -3358,7 +3358,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/micro-slats",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
     "demoPath": "src/demos/micro-slats.tsx",
     "motion": "continuous",
@@ -3379,7 +3379,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "vgpu"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/shape-waves",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/ShapeWaves/ShapeWaves.tsx",
     "demoPath": "src/demos/shape-waves.tsx",
     "motion": "continuous",
@@ -3400,7 +3400,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "vgpu"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/aero-shards",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
     "demoPath": "src/demos/aero-shards.tsx",
     "motion": "continuous",
@@ -3420,7 +3420,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/ghost-fibers",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/GhostFibers/GhostFibers.tsx",
     "demoPath": "src/demos/ghost-fibers.tsx",
     "motion": "continuous",
@@ -3441,7 +3441,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/crt-warp",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/CRTWarp/CRTWarp.tsx",
     "demoPath": "src/demos/crt-warp.tsx",
     "motion": "continuous",
@@ -3462,7 +3462,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/molten-metal",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/MoltenMetal/MoltenMetal.tsx",
     "demoPath": "src/demos/molten-metal.tsx",
     "motion": "continuous",
@@ -3483,7 +3483,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/gradient-waves",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/GradientWaves/GradientWaves.tsx",
     "demoPath": "src/demos/gradient-waves.tsx",
     "motion": "continuous",
@@ -3504,7 +3504,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/web-threads",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/WebThreads/WebThreads.tsx",
     "demoPath": "src/demos/web-threads.tsx",
     "motion": "continuous",
@@ -3525,7 +3525,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/topography",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Topography/Topography.tsx",
     "demoPath": "src/demos/topography.tsx",
     "motion": "continuous",
@@ -3546,7 +3546,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/light-tunnel",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
     "demoPath": "src/demos/light-tunnel.tsx",
     "motion": "continuous",
@@ -3566,7 +3566,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/sliced-waves",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/SlicedWaves/SlicedWaves.tsx",
     "demoPath": "src/demos/sliced-waves.tsx",
     "motion": "continuous",
@@ -3586,7 +3586,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/acid-squares",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
     "demoPath": "src/demos/acid-squares.tsx",
     "motion": "continuous",
@@ -3607,7 +3607,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/scanner",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Scanner/Scanner.tsx",
     "demoPath": "src/demos/scanner.tsx",
     "motion": "continuous",
@@ -3627,7 +3627,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/ferrofluid",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Ferrofluid/Ferrofluid.tsx",
     "demoPath": "src/demos/ferrofluid.tsx",
     "motion": "continuous",
@@ -3647,7 +3647,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/lightfall",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
     "demoPath": "src/demos/lightfall.tsx",
     "motion": "continuous",
@@ -3668,7 +3668,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/liquid-ether",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
     "demoPath": "src/demos/liquid-ether.tsx",
     "motion": "continuous",
@@ -3689,7 +3689,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/prism",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Prism/Prism.tsx",
     "demoPath": "src/demos/prism.tsx",
     "motion": "continuous",
@@ -3709,7 +3709,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/dark-veil",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/DarkVeil/DarkVeil.tsx",
     "demoPath": "src/demos/dark-veil.tsx",
     "motion": "continuous",
@@ -3729,7 +3729,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/light-pillar",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/LightPillar/LightPillar.tsx",
     "demoPath": "src/demos/light-pillar.tsx",
     "motion": "continuous",
@@ -3749,7 +3749,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/silk",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Silk/Silk.tsx",
     "demoPath": "src/demos/silk.tsx",
     "motion": "continuous",
@@ -3770,7 +3770,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/floating-lines",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
     "demoPath": "src/demos/floating-lines.tsx",
     "motion": "continuous",
@@ -3791,7 +3791,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/side-rays",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
     "demoPath": "src/demos/side-rays.tsx",
     "motion": "continuous",
@@ -3812,7 +3812,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/light-rays",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
     "demoPath": "src/demos/light-rays.tsx",
     "motion": "continuous",
@@ -3834,7 +3834,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/pixel-blast",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
     "demoPath": "src/demos/pixel-blast.tsx",
     "motion": "continuous",
@@ -3855,7 +3855,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/color-bends",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/ColorBends/ColorBends.tsx",
     "demoPath": "src/demos/color-bends.tsx",
     "motion": "continuous",
@@ -3876,7 +3876,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/line-waves",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/LineWaves/LineWaves.tsx",
     "demoPath": "src/demos/line-waves.tsx",
     "motion": "continuous",
@@ -3896,7 +3896,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/radar",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Radar/Radar.tsx",
     "demoPath": "src/demos/radar.tsx",
     "motion": "continuous",
@@ -3917,7 +3917,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/soft-aurora",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/SoftAurora/SoftAurora.tsx",
     "demoPath": "src/demos/soft-aurora.tsx",
     "motion": "continuous",
@@ -3937,7 +3937,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/aurora",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Aurora/Aurora.tsx",
     "demoPath": "src/demos/aurora.tsx",
     "motion": "continuous",
@@ -3957,7 +3957,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/plasma",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Plasma/Plasma.tsx",
     "demoPath": "src/demos/plasma.tsx",
     "motion": "continuous",
@@ -3977,7 +3977,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/plasma-wave",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
     "demoPath": "src/demos/plasma-wave.tsx",
     "motion": "continuous",
@@ -3997,7 +3997,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/particles",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
     "demoPath": "src/demos/particles.tsx",
     "motion": "continuous",
@@ -4018,7 +4018,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/gradient-blinds",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/GradientBlinds/GradientBlinds.tsx",
     "demoPath": "src/demos/gradient-blinds.tsx",
     "motion": "continuous",
@@ -4039,7 +4039,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/grainient",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Grainient/Grainient.tsx",
     "demoPath": "src/demos/grainient.tsx",
     "motion": "continuous",
@@ -4062,7 +4062,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/grid-scan",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/GridScan/GridScan.tsx",
     "demoPath": "src/demos/grid-scan.tsx",
     "motion": "continuous",
@@ -4082,7 +4082,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/beams",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Beams/Beams.tsx",
     "demoPath": "src/demos/beams.tsx",
     "motion": "continuous",
@@ -4102,7 +4102,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/pixel-snow",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/PixelSnow/PixelSnow.tsx",
     "demoPath": "src/demos/pixel-snow.tsx",
     "motion": "continuous",
@@ -4122,7 +4122,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/lightning",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Lightning/Lightning.tsx",
     "demoPath": "src/demos/lightning.tsx",
     "motion": "continuous",
@@ -4143,7 +4143,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/prismatic-burst",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/PrismaticBurst/PrismaticBurst.tsx",
     "demoPath": "src/demos/prismatic-burst.tsx",
     "motion": "continuous",
@@ -4163,7 +4163,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/galaxy",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
     "demoPath": "src/demos/galaxy.tsx",
     "motion": "continuous",
@@ -4183,7 +4183,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/dither",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Dither/Dither.tsx",
     "demoPath": "src/demos/dither.tsx",
     "motion": "continuous",
@@ -4204,7 +4204,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/faulty-terminal",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/FaultyTerminal/FaultyTerminal.tsx",
     "demoPath": "src/demos/faulty-terminal.tsx",
     "motion": "continuous",
@@ -4224,7 +4224,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/ripple-grid",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
     "demoPath": "src/demos/ripple-grid.tsx",
     "motion": "continuous",
@@ -4244,7 +4244,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/dot-field",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/DotField/DotField.tsx",
     "demoPath": "src/demos/dot-field.tsx",
     "motion": "continuous",
@@ -4264,7 +4264,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/dot-grid",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
     "demoPath": "src/demos/dot-grid.tsx",
     "motion": "continuous",
@@ -4284,7 +4284,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/threads",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Threads/Threads.tsx",
     "demoPath": "src/demos/threads.tsx",
     "motion": "continuous",
@@ -4305,7 +4305,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/hyperspeed",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Hyperspeed/Hyperspeed.tsx",
     "demoPath": "src/demos/hyperspeed.tsx",
     "motion": "continuous",
@@ -4325,7 +4325,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/iridescence",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Iridescence/Iridescence.tsx",
     "demoPath": "src/demos/iridescence.tsx",
     "motion": "continuous",
@@ -4345,7 +4345,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/waves",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Waves/Waves.tsx",
     "demoPath": "src/demos/waves.tsx",
     "motion": "continuous",
@@ -4365,7 +4365,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/grid-distortion",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/GridDistortion/GridDistortion.tsx",
     "demoPath": "src/demos/grid-distortion.tsx",
     "motion": "continuous",
@@ -4387,7 +4387,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "three"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/ballpit",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
     "demoPath": "src/demos/ballpit.tsx",
     "motion": "continuous",
@@ -4407,7 +4407,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/orb",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Orb/Orb.tsx",
     "demoPath": "src/demos/orb.tsx",
     "motion": "continuous",
@@ -4427,7 +4427,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/letter-glitch",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/LetterGlitch/LetterGlitch.tsx",
     "demoPath": "src/demos/letter-glitch.tsx",
     "motion": "continuous",
@@ -4447,7 +4447,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/grid-motion",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
     "demoPath": "src/demos/grid-motion.tsx",
     "motion": "continuous",
@@ -4467,7 +4467,7 @@ export const entries: CatalogEntry[] = [
     "dependencies": [
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/shape-grid",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
     "demoPath": "src/demos/shape-grid.tsx",
     "motion": "continuous",
@@ -4488,7 +4488,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/liquid-chrome",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/LiquidChrome/LiquidChrome.tsx",
     "demoPath": "src/demos/liquid-chrome.tsx",
     "motion": "continuous",
@@ -4509,7 +4509,7 @@ export const entries: CatalogEntry[] = [
       "ogl",
       "react"
     ],
-    "docsUrl": "https://reactbits.dev/backgrounds/balatro",
+    "docsUrl": "",
     "sourcePath": ".upstream/src/ts-default/Backgrounds/Balatro/Balatro.tsx",
     "demoPath": "src/demos/balatro.tsx",
     "motion": "continuous",

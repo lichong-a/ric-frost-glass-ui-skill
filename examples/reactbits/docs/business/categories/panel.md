@@ -5,7 +5,7 @@
 | 组件 | 什么时候使用 | 什么时候换用其它能力 |
 |---|---|---|
 | [Accordion](../components/business-accordion.md) | 独立内容段按需展开，触发按钮关联可见区域 | 互斥页面视图用Tabs；关键内容不应默认隐藏 |
-| [Card](../components/business-card.md) | 将一个对象的标题、摘要与相关动作组合在阅读面 | 密集结构化比较用DataTable；装饰特效卡按需选择React Bits |
+| [Card](../components/business-card.md) | 将一个对象的标题、摘要与相关动作组合在阅读面 | 密集结构化比较用DataTable；装饰特效卡按需选择对应效果组件 |
 | [Divider](../components/business-divider.md) | 视觉和语义分隔不同内容组，保持分隔方向与标签 | 有状态的内容切换用Tabs而非分隔线 |
 | [Fieldset](../components/business-fieldset.md) | 相关表单字段共享组含义，使用legend命名 | 不相关字段不应只为加边框而放入同一组 |
 | [Panel](../components/business-panel.md) | 一个有标题的内容区需要可选展开收起与局部动作 | 多独立面板用Accordion；不同视图用Tabs |

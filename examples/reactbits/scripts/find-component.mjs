@@ -15,7 +15,7 @@ for (let i = 0; i < args.length; i++) {
   else if (a === '--provider') options.provider = args[++i] || '';
   else if (a === '--index') options.index = args[++i];
   else if (a === '--help' || a === '-h') {
-    process.stdout.write('Usage: node scripts/find-component.mjs "AutoComplete" [--provider business|reactbits] [--exact] [--category CATEGORY] [--limit 5] [--json]\n按精确名称或中文业务场景查询，只返回所需文档和源码入口。\n');
+    process.stdout.write('Usage: node scripts/find-component.mjs "AutoComplete" [--provider business|effects] [--exact] [--category CATEGORY] [--limit 5] [--json]\n按精确名称或中文业务场景查询，只返回所需文档和源码入口。\n');
     process.exit(0);
   } else if (a.startsWith('--')) throw new Error(`Unknown option: ${a}`);
   else terms.push(a);
@@ -23,7 +23,8 @@ for (let i = 0; i < args.length; i++) {
 if (!Number.isInteger(options.limit) || options.limit < 1 || options.limit > 20) {
   throw new Error('--limit must be an integer from 1 through 20.');
 }
-if (options.provider && !['business', 'reactbits'].includes(options.provider)) throw new Error('--provider must be business or reactbits.');
+if (options.provider === 'reactbits') options.provider = 'effects';
+if (options.provider && !['business', 'effects'].includes(options.provider)) throw new Error('--provider must be business or effects.');
 const query = terms.join(' ').trim();
 if (!query && !options.category) throw new Error('Provide a component name, Chinese intent, or --category.');
 const normalize = s => String(s ?? '').normalize('NFKC').toLowerCase().replace(/[\s_\-./()]+/g, '');
@@ -33,7 +34,7 @@ const indexPath = options.index ? path.resolve(options.index) : path.resolve(pat
 const index = JSON.parse(await readFile(indexPath, 'utf8'));
 const entries = index.components || index;
 const rank = component => {
-  if (options.provider && (component.provider || 'reactbits') !== options.provider) return 0;
+  if (options.provider && (component.provider === 'reactbits' ? 'effects' : component.provider || 'effects') !== options.provider) return 0;
   if (options.category && ![component.category, component.categoryLabel].some(v => normalize(v) === normalize(options.category))) return 0;
   if (!queryKey) return 1;
   const canonical = [component.id, component.name].map(normalize);
@@ -67,7 +68,7 @@ const matches = ranked.slice(0, options.limit).map(({ component, score }) => ({
   id: component.id,
   name: component.name,
   category: component.category,
-  provider: component.provider || 'reactbits',
+  provider: component.provider === 'reactbits' ? 'effects' : component.provider || 'effects',
   intent: component.aliases,
   score,
   readFirst: component.docPath,

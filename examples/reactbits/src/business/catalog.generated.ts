@@ -19,7 +19,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/autocomplete",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-autocomplete.tsx",
     "demoPath": "src/business/demos/business-autocomplete.tsx",
     "guidePath": "docs/business/components/business-autocomplete.md",
@@ -44,7 +44,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/checkbox",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-checkbox.tsx",
     "demoPath": "src/business/demos/business-checkbox.tsx",
     "guidePath": "docs/business/components/business-checkbox.md",
@@ -69,7 +69,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/checkboxgroup",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-checkboxgroup.tsx",
     "demoPath": "src/business/demos/business-checkboxgroup.tsx",
     "guidePath": "docs/business/components/business-checkboxgroup.md",
@@ -94,7 +94,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/datepicker",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-datepicker.tsx",
     "demoPath": "src/business/demos/business-datepicker.tsx",
     "guidePath": "docs/business/components/business-datepicker.md",
@@ -119,7 +119,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/floatlabel",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-floatlabel.tsx",
     "demoPath": "src/business/demos/business-floatlabel.tsx",
     "guidePath": "docs/business/components/business-floatlabel.md",
@@ -144,7 +144,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/iconfield",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-iconfield.tsx",
     "demoPath": "src/business/demos/business-iconfield.tsx",
     "guidePath": "docs/business/components/business-iconfield.md",
@@ -169,7 +169,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/iftalabel",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-iftalabel.tsx",
     "demoPath": "src/business/demos/business-iftalabel.tsx",
     "guidePath": "docs/business/components/business-iftalabel.md",
@@ -194,7 +194,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/inputcolor",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-inputcolor.tsx",
     "demoPath": "src/business/demos/business-inputcolor.tsx",
     "guidePath": "docs/business/components/business-inputcolor.md",
@@ -219,7 +219,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/inputgroup",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-inputgroup.tsx",
     "demoPath": "src/business/demos/business-inputgroup.tsx",
     "guidePath": "docs/business/components/business-inputgroup.md",
@@ -244,7 +244,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/inputmask",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-inputmask.tsx",
     "demoPath": "src/business/demos/business-inputmask.tsx",
     "guidePath": "docs/business/components/business-inputmask.md",
@@ -269,7 +269,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/inputnumber",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-inputnumber.tsx",
     "demoPath": "src/business/demos/business-inputnumber.tsx",
     "guidePath": "docs/business/components/business-inputnumber.md",
@@ -294,7 +294,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/inputotp",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-inputotp.tsx",
     "demoPath": "src/business/demos/business-inputotp.tsx",
     "guidePath": "docs/business/components/business-inputotp.md",
@@ -319,7 +319,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/inputpassword",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-inputpassword.tsx",
     "demoPath": "src/business/demos/business-inputpassword.tsx",
     "guidePath": "docs/business/components/business-inputpassword.md",
@@ -344,7 +344,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/inputtags",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-inputtags.tsx",
     "demoPath": "src/business/demos/business-inputtags.tsx",
     "guidePath": "docs/business/components/business-inputtags.md",
@@ -369,7 +369,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/inputtext",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-inputtext.tsx",
     "demoPath": "src/business/demos/business-inputtext.tsx",
     "guidePath": "docs/business/components/business-inputtext.md",
@@ -394,7 +394,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/keyfilter",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-keyfilter.tsx",
     "demoPath": "src/business/demos/business-keyfilter.tsx",
     "guidePath": "docs/business/components/business-keyfilter.md",
@@ -419,7 +419,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/knob",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-knob.tsx",
     "demoPath": "src/business/demos/business-knob.tsx",
     "guidePath": "docs/business/components/business-knob.md",
@@ -444,7 +444,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/label",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-label.tsx",
     "demoPath": "src/business/demos/business-label.tsx",
     "guidePath": "docs/business/components/business-label.md",
@@ -469,7 +469,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/listbox",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-listbox.tsx",
     "demoPath": "src/business/demos/business-listbox.tsx",
     "guidePath": "docs/business/components/business-listbox.md",
@@ -494,7 +494,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/radiobutton",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-radiobutton.tsx",
     "demoPath": "src/business/demos/business-radiobutton.tsx",
     "guidePath": "docs/business/components/business-radiobutton.md",
@@ -519,7 +519,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/rating",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-rating.tsx",
     "demoPath": "src/business/demos/business-rating.tsx",
     "guidePath": "docs/business/components/business-rating.md",
@@ -544,7 +544,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/select",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-select.tsx",
     "demoPath": "src/business/demos/business-select.tsx",
     "guidePath": "docs/business/components/business-select.md",
@@ -569,7 +569,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/slider",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-slider.tsx",
     "demoPath": "src/business/demos/business-slider.tsx",
     "guidePath": "docs/business/components/business-slider.md",
@@ -594,7 +594,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/textarea",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-textarea.tsx",
     "demoPath": "src/business/demos/business-textarea.tsx",
     "guidePath": "docs/business/components/business-textarea.md",
@@ -619,7 +619,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/togglebutton",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-togglebutton.tsx",
     "demoPath": "src/business/demos/business-togglebutton.tsx",
     "guidePath": "docs/business/components/business-togglebutton.md",
@@ -644,7 +644,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/togglebuttongroup",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-togglebuttongroup.tsx",
     "demoPath": "src/business/demos/business-togglebuttongroup.tsx",
     "guidePath": "docs/business/components/business-togglebuttongroup.md",
@@ -669,7 +669,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/toggleswitch",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-toggleswitch.tsx",
     "demoPath": "src/business/demos/business-toggleswitch.tsx",
     "guidePath": "docs/business/components/business-toggleswitch.md",
@@ -694,7 +694,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/button",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-button.tsx",
     "demoPath": "src/business/demos/business-button.tsx",
     "guidePath": "docs/business/components/business-button.md",
@@ -719,7 +719,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/buttongroup",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-buttongroup.tsx",
     "demoPath": "src/business/demos/business-buttongroup.tsx",
     "guidePath": "docs/business/components/business-buttongroup.md",
@@ -744,7 +744,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/speeddial",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-speeddial.tsx",
     "demoPath": "src/business/demos/business-speeddial.tsx",
     "guidePath": "docs/business/components/business-speeddial.md",
@@ -769,7 +769,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/datatable",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-datatable.tsx",
     "demoPath": "src/business/demos/business-datatable.tsx",
     "guidePath": "docs/business/components/business-datatable.md",
@@ -794,7 +794,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/dataview",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-dataview.tsx",
     "demoPath": "src/business/demos/business-dataview.tsx",
     "guidePath": "docs/business/components/business-dataview.md",
@@ -819,7 +819,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/orderlist",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-orderlist.tsx",
     "demoPath": "src/business/demos/business-orderlist.tsx",
     "guidePath": "docs/business/components/business-orderlist.md",
@@ -844,7 +844,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/organizationchart",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-organizationchart.tsx",
     "demoPath": "src/business/demos/business-organizationchart.tsx",
     "guidePath": "docs/business/components/business-organizationchart.md",
@@ -869,7 +869,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/paginator",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-paginator.tsx",
     "demoPath": "src/business/demos/business-paginator.tsx",
     "guidePath": "docs/business/components/business-paginator.md",
@@ -894,7 +894,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/picklist",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-picklist.tsx",
     "demoPath": "src/business/demos/business-picklist.tsx",
     "guidePath": "docs/business/components/business-picklist.md",
@@ -919,7 +919,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/timeline",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-timeline.tsx",
     "demoPath": "src/business/demos/business-timeline.tsx",
     "guidePath": "docs/business/components/business-timeline.md",
@@ -944,7 +944,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/tree",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-tree.tsx",
     "demoPath": "src/business/demos/business-tree.tsx",
     "guidePath": "docs/business/components/business-tree.md",
@@ -969,7 +969,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/treetable",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-treetable.tsx",
     "demoPath": "src/business/demos/business-treetable.tsx",
     "guidePath": "docs/business/components/business-treetable.md",
@@ -994,7 +994,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/accordion",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-accordion.tsx",
     "demoPath": "src/business/demos/business-accordion.tsx",
     "guidePath": "docs/business/components/business-accordion.md",
@@ -1019,7 +1019,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/card",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-card.tsx",
     "demoPath": "src/business/demos/business-card.tsx",
     "guidePath": "docs/business/components/business-card.md",
@@ -1044,7 +1044,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/divider",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-divider.tsx",
     "demoPath": "src/business/demos/business-divider.tsx",
     "guidePath": "docs/business/components/business-divider.md",
@@ -1069,7 +1069,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/fieldset",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-fieldset.tsx",
     "demoPath": "src/business/demos/business-fieldset.tsx",
     "guidePath": "docs/business/components/business-fieldset.md",
@@ -1094,7 +1094,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/panel",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-panel.tsx",
     "demoPath": "src/business/demos/business-panel.tsx",
     "guidePath": "docs/business/components/business-panel.md",
@@ -1119,7 +1119,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/scrollarea",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-scrollarea.tsx",
     "demoPath": "src/business/demos/business-scrollarea.tsx",
     "guidePath": "docs/business/components/business-scrollarea.md",
@@ -1144,7 +1144,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/splitter",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-splitter.tsx",
     "demoPath": "src/business/demos/business-splitter.tsx",
     "guidePath": "docs/business/components/business-splitter.md",
@@ -1169,7 +1169,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/stepper",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-stepper.tsx",
     "demoPath": "src/business/demos/business-stepper.tsx",
     "guidePath": "docs/business/components/business-stepper.md",
@@ -1194,7 +1194,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/tabs",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-tabs.tsx",
     "demoPath": "src/business/demos/business-tabs.tsx",
     "guidePath": "docs/business/components/business-tabs.md",
@@ -1219,7 +1219,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/toolbar",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-toolbar.tsx",
     "demoPath": "src/business/demos/business-toolbar.tsx",
     "guidePath": "docs/business/components/business-toolbar.md",
@@ -1244,7 +1244,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/dialog",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-dialog.tsx",
     "demoPath": "src/business/demos/business-dialog.tsx",
     "guidePath": "docs/business/components/business-dialog.md",
@@ -1269,7 +1269,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/drawer",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-drawer.tsx",
     "demoPath": "src/business/demos/business-drawer.tsx",
     "guidePath": "docs/business/components/business-drawer.md",
@@ -1294,7 +1294,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/overlaymanager",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-overlaymanager.tsx",
     "demoPath": "src/business/demos/business-overlaymanager.tsx",
     "guidePath": "docs/business/components/business-overlaymanager.md",
@@ -1319,7 +1319,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/popover",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-popover.tsx",
     "demoPath": "src/business/demos/business-popover.tsx",
     "guidePath": "docs/business/components/business-popover.md",
@@ -1344,7 +1344,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/tooltip",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-tooltip.tsx",
     "demoPath": "src/business/demos/business-tooltip.tsx",
     "guidePath": "docs/business/components/business-tooltip.md",
@@ -1369,7 +1369,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/fileupload",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-fileupload.tsx",
     "demoPath": "src/business/demos/business-fileupload.tsx",
     "guidePath": "docs/business/components/business-fileupload.md",
@@ -1394,7 +1394,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/breadcrumb",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-breadcrumb.tsx",
     "demoPath": "src/business/demos/business-breadcrumb.tsx",
     "guidePath": "docs/business/components/business-breadcrumb.md",
@@ -1419,7 +1419,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/contextmenu",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-contextmenu.tsx",
     "demoPath": "src/business/demos/business-contextmenu.tsx",
     "guidePath": "docs/business/components/business-contextmenu.md",
@@ -1444,7 +1444,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/menu",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-menu.tsx",
     "demoPath": "src/business/demos/business-menu.tsx",
     "guidePath": "docs/business/components/business-menu.md",
@@ -1469,7 +1469,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/navigationmenu",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-navigationmenu.tsx",
     "demoPath": "src/business/demos/business-navigationmenu.tsx",
     "guidePath": "docs/business/components/business-navigationmenu.md",
@@ -1494,7 +1494,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/sidebar",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-sidebar.tsx",
     "demoPath": "src/business/demos/business-sidebar.tsx",
     "guidePath": "docs/business/components/business-sidebar.md",
@@ -1519,7 +1519,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/message",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-message.tsx",
     "demoPath": "src/business/demos/business-message.tsx",
     "guidePath": "docs/business/components/business-message.md",
@@ -1544,7 +1544,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/toast",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-toast.tsx",
     "demoPath": "src/business/demos/business-toast.tsx",
     "guidePath": "docs/business/components/business-toast.md",
@@ -1569,7 +1569,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/carousel",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-carousel.tsx",
     "demoPath": "src/business/demos/business-carousel.tsx",
     "guidePath": "docs/business/components/business-carousel.md",
@@ -1594,7 +1594,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/compare",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-compare.tsx",
     "demoPath": "src/business/demos/business-compare.tsx",
     "guidePath": "docs/business/components/business-compare.md",
@@ -1619,7 +1619,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/gallery",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-gallery.tsx",
     "demoPath": "src/business/demos/business-gallery.tsx",
     "guidePath": "docs/business/components/business-gallery.md",
@@ -1644,7 +1644,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/animateonscroll",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-animateonscroll.tsx",
     "demoPath": "src/business/demos/business-animateonscroll.tsx",
     "guidePath": "docs/business/components/business-animateonscroll.md",
@@ -1669,7 +1669,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/avatar",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-avatar.tsx",
     "demoPath": "src/business/demos/business-avatar.tsx",
     "guidePath": "docs/business/components/business-avatar.md",
@@ -1694,7 +1694,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/badge",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-badge.tsx",
     "demoPath": "src/business/demos/business-badge.tsx",
     "guidePath": "docs/business/components/business-badge.md",
@@ -1719,7 +1719,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/chip",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-chip.tsx",
     "demoPath": "src/business/demos/business-chip.tsx",
     "guidePath": "docs/business/components/business-chip.md",
@@ -1744,7 +1744,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/fluid",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-fluid.tsx",
     "demoPath": "src/business/demos/business-fluid.tsx",
     "guidePath": "docs/business/components/business-fluid.md",
@@ -1769,7 +1769,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/focustrap",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-focustrap.tsx",
     "demoPath": "src/business/demos/business-focustrap.tsx",
     "guidePath": "docs/business/components/business-focustrap.md",
@@ -1794,7 +1794,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/inplace",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-inplace.tsx",
     "demoPath": "src/business/demos/business-inplace.tsx",
     "guidePath": "docs/business/components/business-inplace.md",
@@ -1819,7 +1819,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/metergroup",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-metergroup.tsx",
     "demoPath": "src/business/demos/business-metergroup.tsx",
     "guidePath": "docs/business/components/business-metergroup.md",
@@ -1844,7 +1844,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/progressbar",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-progressbar.tsx",
     "demoPath": "src/business/demos/business-progressbar.tsx",
     "guidePath": "docs/business/components/business-progressbar.md",
@@ -1869,7 +1869,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/progressspinner",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-progressspinner.tsx",
     "demoPath": "src/business/demos/business-progressspinner.tsx",
     "guidePath": "docs/business/components/business-progressspinner.md",
@@ -1894,7 +1894,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/skeleton",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-skeleton.tsx",
     "demoPath": "src/business/demos/business-skeleton.tsx",
     "guidePath": "docs/business/components/business-skeleton.md",
@@ -1919,7 +1919,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/tag",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-tag.tsx",
     "demoPath": "src/business/demos/business-tag.tsx",
     "guidePath": "docs/business/components/business-tag.md",
@@ -1944,7 +1944,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/terminal",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-terminal.tsx",
     "demoPath": "src/business/demos/business-terminal.tsx",
     "guidePath": "docs/business/components/business-terminal.md",
@@ -1969,7 +1969,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/cascadeselect",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-cascadeselect.tsx",
     "demoPath": "src/business/demos/business-cascadeselect.tsx",
     "guidePath": "docs/business/components/business-cascadeselect.md",
@@ -1994,7 +1994,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/commandmenu",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-commandmenu.tsx",
     "demoPath": "src/business/demos/business-commandmenu.tsx",
     "guidePath": "docs/business/components/business-commandmenu.md",
@@ -2019,7 +2019,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/splitbutton",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-splitbutton.tsx",
     "demoPath": "src/business/demos/business-splitbutton.tsx",
     "guidePath": "docs/business/components/business-splitbutton.md",
@@ -2044,7 +2044,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/styled/components/treeselect",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-treeselect.tsx",
     "demoPath": "src/business/demos/business-treeselect.tsx",
     "guidePath": "docs/business/components/business-treeselect.md",
@@ -2069,7 +2069,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/primitive/components/styleclass",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-styleclass.tsx",
     "demoPath": "src/business/demos/business-styleclass.tsx",
     "guidePath": "docs/business/components/business-styleclass.md",
@@ -2094,7 +2094,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/primitive/components/backdrop",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-backdrop.tsx",
     "demoPath": "src/business/demos/business-backdrop.tsx",
     "guidePath": "docs/business/components/business-backdrop.md",
@@ -2119,7 +2119,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/primitive/components/collapsible",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-collapsible.tsx",
     "demoPath": "src/business/demos/business-collapsible.tsx",
     "guidePath": "docs/business/components/business-collapsible.md",
@@ -2144,7 +2144,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/primitive/components/motion",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-motion.tsx",
     "demoPath": "src/business/demos/business-motion.tsx",
     "guidePath": "docs/business/components/business-motion.md",
@@ -2169,7 +2169,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/primitive/components/portal",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-portal.tsx",
     "demoPath": "src/business/demos/business-portal.tsx",
     "guidePath": "docs/business/components/business-portal.md",
@@ -2194,7 +2194,7 @@ export const entries: CatalogEntry[] = [
       "react",
       "react-dom"
     ],
-    "docsUrl": "https://primereact.dev/docs/primitive/components/visuallyhidden",
+    "docsUrl": "",
     "sourcePath": "src/business/demos/business-visuallyhidden.tsx",
     "demoPath": "src/business/demos/business-visuallyhidden.tsx",
     "guidePath": "docs/business/components/business-visuallyhidden.md",

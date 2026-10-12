@@ -8,7 +8,7 @@
 
 **不适合或优先替代：**通用文件目录用Tree；大量树形记录用TreeTable。
 
-先确认本次任务要解决的业务行为，再选择本组件。普通业务页面优先使用这里的基础能力；只有用户明确要求装饰效果时才追加 React Bits。
+先确认本次任务要解决的业务行为，再选择本组件。普通业务页面优先使用这里的基础能力；只有用户明确要求装饰效果时才追加效果组件。
 
 ## 2. 只加载这一项
 
@@ -18,7 +18,7 @@
 4. 涉及业务错误、权限、数据或异步行为时才追加对应契约：[11-data-table](../../contracts/11-data-table.md)、[16-pagination](../../contracts/16-pagination.md)、[13-import-dialog](../../contracts/13-import-dialog.md)。
 5. 预览库使用本项独立 import() 入口；复制到目标项目时也只接入所需组件和直接依赖。
 
-所有实现使用本项目已有 React、原生 HTML 和 CSS。PrimeReact 文档只作为功能目录参考，本例不依赖或承诺匹配 PrimeReact 的库 API；无需安装它。完整交互、类型与回调以当前示例代码为准。
+所有实现使用本项目已有 React、原生 HTML 和 CSS。完整交互、类型与回调以当前示例代码为准。
 
 ## 3. 本例真实用法
 
@@ -51,6 +51,6 @@ export default function BusinessOrganizationChartDemo() {
 
 按第 1 节实际业务任务检查状态变化、键盘路径、边界值、失败和取消。只报告运行过的检查；本指南和源码存在不等于已完成浏览器验收。
 
-功能目录来源：[OrganizationChart](https://primereact.dev/docs/styled/components/organizationchart)。与原有目录的对照：此前没有独立可运行业务示例，规范和 CSS 不作为运行覆盖。
+能力对照：此前没有独立可运行业务示例，规范和 CSS 不作为运行覆盖。
 
 选型有疑问时返回 [数据与文件](../categories/data.md)，先比较最多 2–3 项。
