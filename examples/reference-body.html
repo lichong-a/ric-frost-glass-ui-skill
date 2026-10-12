@@ -1,0 +1,96 @@
+<div class="aw-canvas aw-canvas-layer" aria-hidden="true"></div>
+<main class="spec-document">
+  <header class="spec-header">
+    <div>
+      <p class="spec-eyebrow">AGENT WAN / DESIGN SYSTEM / V1.0</p>
+      <h1 class="aw-page-title">自然色霜玻璃 · 样式参考</h1>
+      <p class="aw-page-description">用于查看 Token 与 CSS 的实际效果。此页为基础样式样本，业务交互按组件契约实现。新增的 215 个 React Bits 交互示例位于完整包的 examples/reactbits/，启动方式见该目录 README.md。</p>
+    </div>
+    <label class="aw-choice-label spec-toggle"><input id="reduce-transparency" type="checkbox" class="aw-check">减少透明度</label>
+  </header>
+
+  <section class="spec-palette" aria-label="基准配色">
+    <div style="--sample:var(--aw-color-canvas)"><i aria-hidden="true"></i><span>暖灰米底<br><small>#E8E4D7</small></span></div>
+    <div style="--sample:var(--aw-palette-ivory)"><i aria-hidden="true"></i><span>象牙白<br><small>#FAF7F0</small></span></div>
+    <div style="--sample:var(--aw-color-action-primary)"><i aria-hidden="true"></i><span>苔绿主色<br><small>#52604E</small></span></div>
+    <div style="--sample:var(--aw-color-state-success-bg)"><i aria-hidden="true"></i><span>浅茶绿<br><small>#E0E6D2</small></span></div>
+    <div style="--sample:var(--aw-color-state-warning-bg)"><i aria-hidden="true"></i><span>沙金浅底<br><small>#F4E5C8</small></span></div>
+    <div style="--sample:var(--aw-color-state-danger-bg)"><i aria-hidden="true"></i><span>陶土浅底<br><small>#F1DFD5</small></span></div>
+  </section>
+
+  <div class="spec-grid">
+    <section class="aw-panel spec-card" aria-labelledby="buttons-heading">
+      <div><p class="spec-eyebrow">01 / ACTIONS</p><h2 class="aw-component-title" id="buttons-heading">按钮与状态</h2><p class="aw-caption">悬停、按下或用 Tab 查看焦点环</p></div>
+      <div class="spec-row"><button type="button" class="aw-button" data-variant="primary">导入 Skill</button><button type="button" class="aw-button" data-variant="secondary">AI 创建 Skill</button><button type="button" class="aw-button" data-variant="ghost">管理标签</button></div>
+      <div class="spec-row"><button type="button" class="aw-button" data-variant="primary" disabled>已禁用</button><button type="button" class="aw-button" data-variant="primary" aria-busy="true" data-state="loading"><span class="aw-spinner" aria-hidden="true"></span>导入中…</button></div>
+      <div class="spec-row"><button type="button" class="aw-button" data-variant="danger-outline">删除</button><button type="button" class="aw-button" data-variant="warning">确认停用</button><button type="button" class="aw-button" data-size="sm">小尺寸</button></div>
+      <p class="aw-caption">示例按钮仅展示外观，不执行导入、删除或账户操作。</p>
+    </section>
+
+    <section class="aw-panel spec-card" aria-labelledby="inputs-heading">
+      <div><p class="spec-eyebrow">02 / INPUTS</p><h2 class="aw-component-title" id="inputs-heading">输入与校验</h2></div>
+      <label class="aw-field"><span class="aw-label">搜索技能</span><input class="aw-input" type="search" placeholder="搜索技能名称或用途…"></label>
+      <label class="aw-field"><span class="aw-label">技能名称</span><input class="aw-input" value="客服消息礼貌改写"></label>
+      <label class="aw-field"><span class="aw-label">错误状态</span><input class="aw-input" aria-invalid="true" aria-describedby="error-help" placeholder="请输入技能名称"><span class="aw-field-error" id="error-help">请输入技能名称后继续。</span></label>
+      <label class="aw-field"><span class="aw-label">只读状态</span><input class="aw-input" value="系统内置技能" readonly></label>
+    </section>
+
+    <section class="aw-panel spec-card" aria-labelledby="status-heading">
+      <div><p class="spec-eyebrow">03 / SEMANTICS</p><h2 class="aw-component-title" id="status-heading">标签与选择</h2></div>
+      <div class="spec-row"><span class="aw-tag" data-tone="success">可用</span><span class="aw-tag">内测</span><span class="aw-tag" data-tone="warning">已废弃</span><span class="aw-tag">已停用</span></div>
+      <div class="spec-row"><span class="aw-tag" data-tone="success">低风险</span><span class="aw-tag" data-tone="warning">中风险</span><span class="aw-tag" data-tone="danger">高风险</span><span class="aw-tag" data-tone="forbidden">禁止使用</span></div>
+      <div class="spec-row"><span class="aw-tag" data-tone="sand">客服</span><span class="aw-tag" data-tone="success">文本处理</span><span class="aw-tag">CSV</span></div>
+      <div class="spec-row"><label class="aw-choice-label"><input class="aw-check" type="checkbox" checked>已选中</label><label class="aw-choice-label"><input class="aw-check" type="checkbox">未选中</label><label class="aw-choice-label"><input class="aw-check" type="checkbox" disabled>禁用</label></div>
+      <div class="spec-row"><label class="aw-choice-label"><input class="aw-radio" type="radio" name="example-radio" checked>列表</label><label class="aw-choice-label"><input class="aw-radio" type="radio" name="example-radio">网格</label></div>
+      <p class="aw-caption">此处选择控件仅改变样本自身状态。</p>
+    </section>
+
+    <section class="aw-glass spec-card" data-material="frame" aria-labelledby="materials-heading">
+      <div><p class="spec-eyebrow">04 / MATERIALS</p><h2 class="aw-component-title" id="materials-heading">表面与层次</h2></div>
+      <p>外层为 frame：较通透的框架，背景透色更明显。</p>
+      <div class="spec-material-surface" style="background:var(--aw-surface-table)"><strong>阅读面 / table</strong><p class="aw-caption">提高不透明度，让数据始终清晰；不再增加独立模糊。</p></div>
+      <dl class="spec-definitions"><div><dt>框架</dt><dd>0.38 / blur 24 px</dd></div><div><dt>内容</dt><dd>0.68 / blur 16 px</dd></div><div><dt>浮层</dt><dd>0.82 / blur 28 px</dd></div><div><dt>弹窗</dt><dd>0.88 / blur 32 px</dd></div></dl>
+    </section>
+
+    <section class="aw-glass spec-card" data-material="popover" aria-labelledby="menu-heading">
+      <div><p class="spec-eyebrow">05 / POPOVER</p><h2 class="aw-component-title" id="menu-heading">切换租户 · 样式样本</h2></div>
+      <label class="aw-field"><span class="aw-sr-only">搜索组织样本</span><input class="aw-input" placeholder="搜索组织…"></label>
+      <p class="aw-caption">组织</p>
+      <ul class="spec-static-list"><li class="spec-static-item spec-static-selected"><span>默认组织</span><span class="aw-tag" data-tone="sand">管理员 · 当前</span></li><li class="spec-static-item"><span>研发团队</span><span class="aw-tag">成员</span></li><li class="spec-static-item"><span>演示组织</span><span class="aw-tag" data-tone="sand">访客</span></li></ul>
+      <hr class="aw-menu-separator"><p class="aw-caption">当前空间</p><div class="spec-static-item spec-static-selected"><span>默认空间</span><span>已选中</span></div>
+      <p class="aw-caption">这是静态内容面板；未连接组织数据或切换行为。</p>
+    </section>
+
+    <section class="aw-glass spec-card" data-material="dialog" aria-labelledby="dialog-heading">
+      <div><p class="spec-eyebrow">06 / DIALOG MATERIAL</p><h2 class="aw-dialog-title" id="dialog-heading">导入 Skill</h2><p class="aw-caption">查看弹窗的材料与内容间距</p></div>
+      <div class="aw-upload-zone"><strong>软件包上传区域</strong><p class="aw-caption">格式和体积限制由应用配置提供</p></div>
+      <div class="spec-static-item"><span>customer-reply.zip</span><span class="aw-tag" data-tone="success">初步校验通过</span></div>
+      <label class="aw-field"><span class="aw-label">技能名称</span><input class="aw-input" value="客服消息礼貌改写"></label>
+      <div class="aw-page-actions spec-end"><button type="button" class="aw-button">取消</button><button type="button" class="aw-button" data-variant="primary">导入</button></div>
+      <p class="aw-caption">此处不使用 dialog 角色；真实模态需实现遮罩、焦点与提交状态。</p>
+    </section>
+  </div>
+
+  <section class="aw-table-panel spec-table" aria-labelledby="table-heading">
+    <div class="aw-table-summary" id="table-heading">表格样式 · 示例记录</div>
+    <div class="aw-table-wrap">
+      <table class="aw-table"><caption class="aw-sr-only">技能示例表，展示默认、悬停和选中行的材料</caption>
+      <thead><tr><th scope="col">名称</th><th scope="col">用途</th><th scope="col">标签</th><th scope="col">状态</th><th scope="col">版本</th><th scope="col">说明</th></tr></thead>
+      <tbody><tr><td><span class="aw-cell-title">客服消息礼貌改写</span></td><td class="aw-cell-description">将客服回复改写为礼貌、简洁的表达</td><td><span class="aw-tag" data-tone="sand">客服</span></td><td><span class="aw-tag" data-tone="success">可用</span></td><td class="aw-cell-number">0.1.5</td><td>默认行</td></tr>
+      <tr><td><span class="aw-cell-title">行记录 CSV 转换</span></td><td class="aw-cell-description">将结构化记录转换为 CSV 文件</td><td><span class="aw-tag">数据处理</span></td><td><span class="aw-tag" data-tone="success">可用</span></td><td class="aw-cell-number">0.1.5</td><td>移入查看 hover</td></tr>
+      <tr data-state="selected"><td><span class="aw-cell-title">纯文本摘要</span></td><td class="aw-cell-description">提取文本要点并生成简明摘要</td><td><span class="aw-tag" data-tone="success">文本处理</span></td><td><span class="aw-tag" data-tone="success">可用</span></td><td class="aw-cell-number">0.1.0</td><td>选中样式</td></tr>
+      </tbody></table>
+    </div>
+    <div class="aw-pagination"><span>3 条样本；不代表业务总数</span><span class="aw-caption">标准行高 52 px · 正文 14 px</span></div>
+  </section>
+  <footer class="spec-footer"><p>完整规范：AGENT_WAN_UI_SPEC.md · 交互契约：COMPONENT_CONTRACTS.md · 验收：ACCEPTANCE.md</p><p>样式表是实现基础；效果图提供视觉方向，业务组件需要在目标项目内实现并验收。</p></footer>
+</main>
+<script>
+document.getElementById('reduce-transparency').addEventListener('change', function () {
+  if (this.checked) document.documentElement.setAttribute('data-transparency', 'reduce');
+  else document.documentElement.removeAttribute('data-transparency');
+});
+document.querySelectorAll('[aria-disabled="true"], [data-state="loading"]').forEach(function (element) {
+  element.addEventListener('click', function (event) { event.preventDefault(); event.stopImmediatePropagation(); });
+});
+</script>

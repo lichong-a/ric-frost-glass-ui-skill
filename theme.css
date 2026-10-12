@@ -1,0 +1,793 @@
+/*
+ * Agent Wan · 自然色霜玻璃 / implementation styles v1.0.0
+ * Token source: tokens.json → node scripts/build-tokens.mjs → tokens.css.
+ * tokens.css is generated; this stylesheet only consumes/overrides named tokens.
+ * All selectors are opt-in under .aw-theme; only body.aw-app-page controls the viewport.
+ * This is a styling layer. Routing, disabled activation guards, loading, form validation,
+ * menu/combobox keys, focus management, modal behavior and portal positioning belong
+ * to the application or an accessible component primitive. CSS is not that behavior.
+ * Put .aw-theme on html/body (recommended) so portals inherit both tokens and styles.
+ */
+@import url('./tokens.css');
+
+/* Scoped foundations. No global resets or remote font requests. */
+.aw-theme {
+  color: var(--aw-color-text-primary);
+  font-family: var(--aw-font-family-sans);
+  font-size: var(--aw-font-size-body);
+  font-weight: var(--aw-font-weight-regular);
+  line-height: var(--aw-font-line-height-body);
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+}
+.aw-theme :where(*, *::before, *::after) { box-sizing: border-box; }
+.aw-theme :where(button, input, textarea, select) { font: inherit; }
+.aw-theme :where(button, a, input, select, textarea) { -webkit-tap-highlight-color: transparent; }
+.aw-theme :where(h1, h2, h3, p) { margin: 0; }
+.aw-theme :where(button) { color: inherit; }
+.aw-theme :where(svg) { flex-shrink: 0; }
+.aw-theme [hidden] { display: none !important; }
+.aw-theme .aw-sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.aw-theme .aw-icon {
+  inline-size: var(--aw-control-icon-size);
+  block-size: var(--aw-control-icon-size);
+  stroke-width: var(--aw-stroke-icon);
+  color: currentColor;
+}
+.aw-theme .aw-muted { color: var(--aw-color-text-muted); }
+.aw-theme .aw-caption {
+  color: var(--aw-color-text-secondary);
+  font-size: var(--aw-font-size-caption);
+  line-height: var(--aw-font-line-height-caption);
+}
+.aw-theme .aw-component-title {
+  font-family: var(--aw-font-family-sans);
+  font-size: var(--aw-font-size-component);
+  font-weight: var(--aw-font-weight-semibold);
+  line-height: var(--aw-font-line-height-component);
+}
+
+/* Material boundaries. Never put opacity or filter on a container containing text.
+ * backdrop-filter is confined to material surfaces, never added to individual controls.
+ * Avoid wrapping the whole application in transform/filter/opacity effects: such ancestors
+ * change stacking/backdrop behavior and may prevent a portaled overlay from sampling the canvas.
+ */
+.aw-theme .aw-canvas,
+.aw-theme.aw-canvas {
+  background-color: var(--aw-color-canvas);
+  background-image: var(--aw-background-scene);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.aw-theme .aw-canvas-layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--aw-z-base);
+  pointer-events: none;
+}
+.aw-theme .aw-glass,
+.aw-theme .aw-panel {
+  background: var(--aw-surface-panel);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-decorative);
+  border-radius: var(--aw-radius-panel);
+  box-shadow: var(--aw-shadow-panel);
+  -webkit-backdrop-filter: blur(var(--aw-blur-panel));
+  backdrop-filter: blur(var(--aw-blur-panel));
+}
+.aw-theme .aw-panel { padding: var(--aw-space-5); }
+.aw-theme .aw-glass[data-material='frame'] {
+  background: var(--aw-surface-frame);
+  box-shadow: var(--aw-shadow-frame);
+  -webkit-backdrop-filter: blur(var(--aw-blur-frame));
+  backdrop-filter: blur(var(--aw-blur-frame));
+}
+.aw-theme .aw-glass[data-material='popover'] {
+  background: var(--aw-surface-popover);
+  border-radius: var(--aw-radius-popover);
+  box-shadow: var(--aw-shadow-popover);
+  -webkit-backdrop-filter: blur(var(--aw-blur-popover));
+  backdrop-filter: blur(var(--aw-blur-popover));
+}
+.aw-theme .aw-glass[data-material='dialog'] {
+  background: var(--aw-surface-dialog);
+  border-radius: var(--aw-radius-dialog);
+  box-shadow: var(--aw-shadow-dialog);
+  -webkit-backdrop-filter: blur(var(--aw-blur-dialog));
+  backdrop-filter: blur(var(--aw-blur-dialog));
+}
+.aw-theme .aw-glass[data-material='control'] {
+  background: var(--aw-surface-control);
+  border: var(--aw-control-border);
+  border-radius: var(--aw-radius-control);
+  box-shadow: var(--aw-shadow-control);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.aw-theme .aw-glass[data-material='table'] {
+  background: var(--aw-surface-table);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* Desktop application shell: one main vertical content scroller. */
+body.aw-app-page { margin: 0; overflow: hidden; }
+.aw-theme .aw-app-shell {
+  position: relative;
+  z-index: auto;
+  display: grid;
+  grid-template-rows: var(--aw-shell-topbar-height) minmax(0, 1fr);
+  gap: var(--aw-shell-row-gap);
+  block-size: 100dvh;
+  min-inline-size: 0;
+  padding: var(--aw-shell-outer-block) var(--aw-shell-outer-inline);
+}
+.aw-theme .aw-topbar {
+  z-index: var(--aw-z-header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--aw-space-4);
+  min-inline-size: 0;
+  block-size: var(--aw-shell-topbar-height);
+  padding-inline: var(--aw-space-5);
+  background: var(--aw-surface-frame);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-decorative);
+  border-radius: var(--aw-radius-panel);
+  box-shadow: var(--aw-shadow-frame);
+  -webkit-backdrop-filter: blur(var(--aw-blur-frame));
+  backdrop-filter: blur(var(--aw-blur-frame));
+}
+.aw-theme .aw-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aw-space-3);
+  min-inline-size: 0;
+  color: var(--aw-color-text-primary);
+  text-decoration: none;
+  font-size: var(--aw-font-size-brand);
+  font-weight: var(--aw-font-weight-semibold);
+  line-height: var(--aw-font-line-height-brand);
+  white-space: nowrap;
+}
+.aw-theme .aw-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--aw-space-3);
+  min-inline-size: 0;
+}
+.aw-theme .aw-topbar-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aw-space-2);
+}
+.aw-theme .aw-trigger-copy {
+  display: grid;
+  text-align: start;
+  font-size: var(--aw-font-size-caption);
+  line-height: var(--aw-font-line-height-caption);
+}
+.aw-theme .aw-workspace {
+  display: grid;
+  grid-template-columns: var(--aw-shell-sidebar-width) minmax(0, 1fr);
+  gap: var(--aw-shell-column-gap);
+  min-block-size: 0;
+  min-inline-size: 0;
+}
+.aw-theme .aw-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aw-space-5);
+  min-block-size: 0;
+  padding: var(--aw-space-4) var(--aw-space-3);
+  overflow-y: auto;
+  background: var(--aw-surface-frame);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-decorative);
+  border-radius: var(--aw-radius-sidebar);
+  box-shadow: var(--aw-shadow-frame);
+  -webkit-backdrop-filter: blur(var(--aw-blur-frame));
+  backdrop-filter: blur(var(--aw-blur-frame));
+}
+.aw-theme .aw-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--aw-z-drawer-backdrop);
+  background: var(--aw-surface-scrim);
+}
+.aw-theme .aw-nav-group { display: grid; gap: var(--aw-space-1); }
+.aw-theme .aw-nav-group-label {
+  padding: var(--aw-space-2) var(--aw-space-3);
+  color: var(--aw-color-text-secondary);
+  font-size: var(--aw-font-size-caption);
+}
+.aw-theme .aw-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--aw-space-3);
+  min-block-size: var(--aw-navigation-item-height);
+  padding: var(--aw-space-2) var(--aw-space-3);
+  color: var(--aw-color-text-primary);
+  text-align: start;
+  text-decoration: none;
+  border: 0;
+  border-radius: var(--aw-navigation-item-radius);
+  background: transparent;
+  font-size: var(--aw-font-size-navigation);
+  line-height: var(--aw-font-line-height-navigation);
+  cursor: pointer;
+  transition: background-color var(--aw-duration-fast) var(--aw-easing-standard);
+}
+.aw-theme .aw-nav-item:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-surface-hover); }
+.aw-theme .aw-nav-item[aria-current='page'] {
+  color: var(--aw-navigation-selected-fg);
+  background: var(--aw-navigation-selected-bg);
+  font-weight: var(--aw-font-weight-medium);
+}
+.aw-theme .aw-nav-item[aria-current='page']::before {
+  position: absolute;
+  inset-block: var(--aw-space-2);
+  inset-inline-start: 0;
+  inline-size: var(--aw-navigation-indicator-width);
+  border-radius: var(--aw-radius-control);
+  background: var(--aw-color-action-primary);
+  content: '';
+}
+.aw-theme .aw-sidebar-footer {
+  margin-block-start: auto;
+  padding-block-start: var(--aw-space-4);
+  border-block-start: var(--aw-stroke-hairline) solid var(--aw-color-border-divider);
+}
+.aw-theme .aw-navigation-trigger { display: none; }
+.aw-theme .aw-main {
+  min-inline-size: 0;
+  min-block-size: 0;
+  padding: var(--aw-shell-content-padding);
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: var(--aw-surface-frame);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-decorative);
+  border-radius: var(--aw-radius-page);
+  box-shadow: var(--aw-shadow-frame);
+  -webkit-backdrop-filter: blur(var(--aw-blur-frame));
+  backdrop-filter: blur(var(--aw-blur-frame));
+}
+.aw-theme .aw-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--aw-space-2);
+  margin-block-end: var(--aw-space-2);
+  color: var(--aw-color-text-secondary);
+  font-size: var(--aw-font-size-caption);
+  line-height: var(--aw-font-line-height-caption);
+}
+.aw-theme .aw-page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--aw-space-4);
+  margin-block-end: var(--aw-space-5);
+}
+.aw-theme .aw-page-title {
+  font-family: var(--aw-font-family-serif);
+  font-size: var(--aw-font-size-page);
+  font-weight: var(--aw-font-weight-medium);
+  line-height: var(--aw-font-line-height-page);
+}
+.aw-theme .aw-page-description { color: var(--aw-color-text-secondary); }
+.aw-theme .aw-page-actions { display: flex; flex-wrap: wrap; gap: var(--aw-space-3); }
+.aw-theme .aw-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--aw-space-3);
+  margin-block-end: var(--aw-space-5);
+}
+.aw-theme .aw-toolbar-search { flex: 1 1 var(--aw-menu-width); min-inline-size: 0; }
+.aw-theme .aw-toolbar-group { display: flex; flex-wrap: wrap; align-items: center; gap: var(--aw-space-2); }
+
+/* Controls: rgba backgrounds, opaque text, meaningful solid boundaries. */
+.aw-theme .aw-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--aw-control-gap);
+  min-block-size: var(--aw-control-height);
+  padding: var(--aw-space-2) var(--aw-control-padding-inline);
+  color: var(--aw-button-fg);
+  background: var(--aw-button-bg);
+  border: var(--aw-control-border);
+  border-radius: var(--aw-button-radius);
+  box-shadow: var(--aw-shadow-control);
+  font-size: var(--aw-font-size-label);
+  font-weight: var(--aw-font-weight-medium);
+  line-height: var(--aw-font-line-height-body);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--aw-duration-control) var(--aw-easing-standard), border-color var(--aw-duration-control) var(--aw-easing-standard), box-shadow var(--aw-duration-control) var(--aw-easing-standard);
+}
+.aw-theme .aw-button[data-size='sm'] {
+  min-block-size: var(--aw-control-height-sm);
+  padding: var(--aw-space-1) var(--aw-space-3);
+}
+.aw-theme .aw-button[data-size='lg'] { min-block-size: var(--aw-control-height-lg); }
+.aw-theme .aw-button[data-icon-only='true'] {
+  inline-size: var(--aw-control-height);
+  min-inline-size: var(--aw-control-height);
+  padding-inline: var(--aw-space-2);
+}
+.aw-theme .aw-button[data-icon-only='true'][data-size='sm'] { inline-size: var(--aw-control-height-sm); min-inline-size: var(--aw-control-height-sm); }
+.aw-theme .aw-button[data-icon-only='true'][data-size='lg'] { inline-size: var(--aw-control-height-lg); min-inline-size: var(--aw-control-height-lg); }
+/* Gate interaction without increasing specificity: disabled/busy/loading controls
+ * do not acquire hover/active appearance, and the final focus ring still wins. */
+.aw-theme .aw-button:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-surface-fallback); box-shadow: var(--aw-shadow-control-hover); }
+.aw-theme .aw-button:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):active { background: var(--aw-surface-selected); box-shadow: var(--aw-shadow-control); }
+.aw-theme .aw-button[data-variant='primary'],
+.aw-theme .aw-button[aria-pressed='true'],
+.aw-theme .aw-button[aria-selected='true'],
+.aw-theme :where(.aw-segmented) [role='radio'][aria-checked='true'] {
+  color: var(--aw-button-primary-fg);
+  background: var(--aw-button-primary-bg);
+  border-color: var(--aw-color-action-primary);
+  box-shadow: var(--aw-shadow-primary);
+}
+.aw-theme .aw-button[data-variant='primary']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover,
+.aw-theme .aw-button[aria-pressed='true']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover,
+.aw-theme .aw-button[aria-selected='true']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover,
+.aw-theme :where(.aw-segmented) [role='radio'][aria-checked='true']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-color-action-hover); border-color: var(--aw-color-action-hover); }
+.aw-theme .aw-button[data-variant='primary']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):active,
+.aw-theme .aw-button[aria-pressed='true']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):active,
+.aw-theme .aw-button[aria-selected='true']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):active,
+.aw-theme :where(.aw-segmented) [role='radio'][aria-checked='true']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):active { background: var(--aw-color-action-active); border-color: var(--aw-color-action-active); }
+.aw-theme .aw-button[data-variant='ghost'] { background: transparent; border-color: transparent; box-shadow: none; }
+.aw-theme .aw-button[data-variant='ghost']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-surface-hover); }
+.aw-theme .aw-button[data-variant='danger-outline'] { color: var(--aw-color-action-danger); border-color: var(--aw-color-action-danger); }
+.aw-theme .aw-button[data-variant='danger-outline']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-color-state-danger-bg); }
+.aw-theme .aw-button[data-variant='danger'] { color: var(--aw-color-text-on-primary); background: var(--aw-color-action-danger); border-color: var(--aw-color-action-danger); }
+.aw-theme .aw-button[data-variant='danger']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-color-action-danger-hover); border-color: var(--aw-color-action-danger-hover); }
+.aw-theme .aw-button[data-variant='warning'] { color: var(--aw-color-state-warning-fg); background: var(--aw-color-state-warning-bg); border-color: var(--aw-color-state-warning-fg); }
+.aw-theme .aw-button:is([aria-busy='true'], [data-state='loading']) { cursor: progress; }
+/* Keep loading text opaque. The component must prevent duplicate activation itself. */
+.aw-theme .aw-button:is(:disabled, [aria-disabled='true']),
+.aw-theme :where(.aw-segmented) [role='radio']:is(:disabled, [aria-disabled='true']) {
+  color: var(--aw-color-text-disabled);
+  background: var(--aw-surface-disabled);
+  border-color: var(--aw-color-border-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.aw-theme .aw-spinner {
+  display: inline-block;
+  inline-size: var(--aw-control-icon-size);
+  block-size: var(--aw-control-icon-size);
+  border: var(--aw-stroke-focus) solid currentColor;
+  border-inline-end-color: transparent;
+  border-radius: var(--aw-radius-badge);
+  animation: aw-spin var(--aw-duration-spinner) linear infinite;
+}
+@keyframes aw-spin { to { transform: rotate(360deg); } }
+
+.aw-theme .aw-field { display: grid; gap: var(--aw-space-2); }
+.aw-theme .aw-label { font-weight: var(--aw-font-weight-medium); }
+.aw-theme .aw-input,
+.aw-theme .aw-select {
+  min-inline-size: 0;
+  inline-size: 100%;
+  min-block-size: var(--aw-control-height);
+  padding: var(--aw-space-2) var(--aw-space-3);
+  color: var(--aw-input-fg);
+  background: var(--aw-input-bg);
+  border: var(--aw-control-border);
+  border-radius: var(--aw-input-radius);
+  box-shadow: var(--aw-shadow-control);
+  font-size: var(--aw-font-size-body);
+  line-height: var(--aw-font-line-height-body);
+  transition: border-color var(--aw-duration-control) var(--aw-easing-standard), background-color var(--aw-duration-control) var(--aw-easing-standard), box-shadow var(--aw-duration-control) var(--aw-easing-standard);
+}
+.aw-theme textarea.aw-input { resize: vertical; min-block-size: calc(var(--aw-control-height) * 3); }
+.aw-theme .aw-input::placeholder { color: var(--aw-input-placeholder); opacity: 1; }
+.aw-theme .aw-input:hover,
+.aw-theme .aw-select:hover { border-color: var(--aw-color-action-primary); }
+.aw-theme .aw-input[readonly] {
+  color: var(--aw-color-text-secondary);
+  background: var(--aw-surface-readonly);
+  cursor: text;
+}
+/* Native select has no readonly attribute. aria-readonly is only for an appropriate
+ * custom combobox/listbox primitive with its read-only behavior implemented. */
+.aw-theme .aw-select[aria-readonly='true'] { background: var(--aw-surface-readonly); color: var(--aw-color-text-secondary); }
+.aw-theme :is(.aw-input, .aw-select):is([aria-invalid='true'], [data-state='error']) { background: var(--aw-input-error-bg); border-color: var(--aw-color-border-danger); }
+.aw-theme .aw-field-error { color: var(--aw-color-state-danger-fg); font-size: var(--aw-font-size-caption); line-height: var(--aw-font-line-height-caption); }
+.aw-theme :is(.aw-input, .aw-select):is(:disabled, [aria-disabled='true']) {
+  color: var(--aw-color-text-disabled);
+  background: var(--aw-surface-disabled);
+  border-color: var(--aw-color-border-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.aw-theme .aw-search-field { position: relative; }
+.aw-theme .aw-search-field > .aw-icon { position: absolute; inset-inline-start: var(--aw-space-3); inset-block-start: calc((var(--aw-control-height) - var(--aw-control-icon-size)) / 2); pointer-events: none; }
+.aw-theme .aw-search-field > .aw-input { padding-inline-start: calc(var(--aw-space-3) * 2 + var(--aw-control-icon-size)); }
+.aw-theme .aw-check,
+.aw-theme .aw-radio { inline-size: var(--aw-control-check-size); block-size: var(--aw-control-check-size); margin: 0; accent-color: var(--aw-color-action-primary); cursor: pointer; }
+.aw-theme :is(.aw-check, .aw-radio):disabled { cursor: not-allowed; }
+.aw-theme .aw-choice-label { display: inline-flex; align-items: center; gap: var(--aw-space-2); min-block-size: var(--aw-control-height); }
+
+.aw-theme .aw-switch {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  inline-size: var(--aw-switch-width);
+  block-size: var(--aw-switch-height);
+  padding: 0;
+  background: var(--aw-switch-off-bg);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-control);
+  border-radius: var(--aw-radius-badge);
+  cursor: pointer;
+  transition: background-color var(--aw-duration-control) var(--aw-easing-standard);
+}
+.aw-theme .aw-switch-thumb {
+  position: absolute;
+  inset-inline-start: var(--aw-switch-thumb-inset);
+  inset-block-start: var(--aw-switch-thumb-inset);
+  inline-size: var(--aw-switch-thumb-size);
+  block-size: var(--aw-switch-thumb-size);
+  background: var(--aw-color-text-on-primary);
+  border-radius: var(--aw-radius-badge);
+  box-shadow: var(--aw-shadow-control);
+  transition: transform var(--aw-duration-control) var(--aw-easing-standard);
+}
+.aw-theme .aw-switch[aria-checked='true'] { background: var(--aw-switch-on-bg); border-color: var(--aw-switch-on-bg); }
+.aw-theme .aw-switch[aria-checked='true'] .aw-switch-thumb { transform: translateX(var(--aw-switch-thumb-travel)); }
+.aw-theme [dir='rtl'] .aw-switch[aria-checked='true'] .aw-switch-thumb,
+.aw-theme[dir='rtl'] .aw-switch[aria-checked='true'] .aw-switch-thumb { transform: translateX(calc(-1 * var(--aw-switch-thumb-travel))); }
+.aw-theme .aw-switch:is(:disabled, [aria-disabled='true']) { background: var(--aw-surface-disabled); border-color: var(--aw-color-border-disabled); cursor: not-allowed; }
+/* Reserve a separate target box: <span class="aw-switch-target"><button
+ * class="aw-switch" role="switch" ...><span class="aw-switch-thumb"
+ * aria-hidden="true"></span></button></span>. Keep the text label outside this
+ * wrapper and connect it with aria-labelledby. The wrapper prevents hit overlap. */
+.aw-theme .aw-switch-target {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-inline-size: var(--aw-control-touch-target);
+  min-block-size: var(--aw-control-touch-target);
+  vertical-align: middle;
+}
+
+/* Segments and tabs are styled separately from menus: do not substitute ARIA roles. */
+.aw-theme .aw-segmented { display: inline-flex; flex-wrap: wrap; gap: var(--aw-space-2); }
+.aw-theme .aw-tabs { display: flex; gap: var(--aw-space-6); border-block-end: var(--aw-stroke-hairline) solid var(--aw-color-border-divider); }
+.aw-theme .aw-tab {
+  min-block-size: var(--aw-control-height);
+  padding: var(--aw-space-2) 0;
+  color: var(--aw-color-text-secondary);
+  background: transparent;
+  border: 0;
+  border-block-end: var(--aw-stroke-focus) solid transparent;
+  cursor: pointer;
+}
+.aw-theme .aw-tab[aria-selected='true'] { color: var(--aw-color-text-primary); border-block-end-color: var(--aw-color-action-primary); font-weight: var(--aw-font-weight-medium); }
+.aw-theme .aw-tab:is(:disabled, [aria-disabled='true']) { color: var(--aw-color-text-disabled); cursor: not-allowed; }
+
+/* Status always includes a text label; color is supplementary. */
+.aw-theme .aw-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--aw-space-1);
+  min-block-size: var(--aw-tag-height);
+  padding-inline: var(--aw-tag-padding-inline);
+  color: var(--aw-tag-neutral-fg);
+  background: var(--aw-tag-neutral-bg);
+  border: var(--aw-stroke-hairline) solid transparent;
+  border-radius: var(--aw-radius-badge);
+  font-size: var(--aw-tag-font-size);
+  line-height: var(--aw-font-line-height-tag);
+  white-space: nowrap;
+}
+.aw-theme .aw-tag[data-tone='success'] { color: var(--aw-color-state-success-fg); background: var(--aw-color-state-success-bg); }
+.aw-theme .aw-tag[data-tone='warning'] { color: var(--aw-color-state-warning-fg); background: var(--aw-color-state-warning-bg); }
+.aw-theme .aw-tag[data-tone='danger'] { color: var(--aw-color-state-danger-fg); background: var(--aw-color-state-danger-bg); }
+.aw-theme .aw-tag[data-tone='info'] { color: var(--aw-color-state-info-fg); background: var(--aw-color-state-info-bg); }
+.aw-theme .aw-tag[data-tone='sand'] { color: var(--aw-tag-sand-fg); background: var(--aw-tag-sand-bg); }
+.aw-theme .aw-tag[data-tone='forbidden'] { color: var(--aw-color-state-danger-fg); background: var(--aw-surface-fallback); border-color: var(--aw-color-border-danger); }
+.aw-theme .aw-count { min-inline-size: var(--aw-tag-height); min-block-size: var(--aw-tag-height); padding-inline: var(--aw-space-2); font-variant-numeric: tabular-nums; }
+
+/* Native semantic table; no fixed height and no default sticky header. */
+.aw-theme .aw-table-panel {
+  padding: 0;
+  background: var(--aw-table-bg);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-decorative);
+  border-radius: var(--aw-radius-panel);
+  box-shadow: var(--aw-shadow-panel);
+}
+.aw-theme .aw-table-summary { padding: var(--aw-space-3) var(--aw-space-5); font-weight: var(--aw-font-weight-medium); }
+.aw-theme .aw-table-wrap { max-inline-size: 100%; overflow-x: auto; }
+.aw-theme .aw-table {
+  inline-size: 100%;
+  min-inline-size: var(--aw-table-min-width);
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--aw-table-font-size);
+  line-height: var(--aw-font-line-height-body);
+  text-align: start;
+}
+.aw-theme .aw-table th {
+  block-size: var(--aw-table-header-height);
+  padding: var(--aw-table-cell-padding-block) var(--aw-table-cell-padding-inline);
+  color: var(--aw-color-text-secondary);
+  background: var(--aw-surface-table-header);
+  font-weight: var(--aw-font-weight-medium);
+  text-align: start;
+  white-space: nowrap;
+}
+.aw-theme .aw-table td {
+  block-size: var(--aw-table-row-height);
+  padding: var(--aw-table-cell-padding-block) var(--aw-table-cell-padding-inline);
+  border-block-end: var(--aw-stroke-hairline) solid var(--aw-color-border-divider);
+  vertical-align: middle;
+}
+.aw-theme .aw-table tbody tr:last-child td { border-block-end: 0; }
+.aw-theme .aw-table tbody tr:hover { background: var(--aw-surface-hover); }
+.aw-theme .aw-table tbody tr[aria-selected='true'],
+.aw-theme .aw-table tbody tr[data-state='selected'] { background: var(--aw-table-selected-bg); }
+.aw-theme .aw-table tbody tr[aria-selected='true']:hover,
+.aw-theme .aw-table tbody tr[data-state='selected']:hover { background: var(--aw-table-selected-hover-bg); }
+.aw-theme .aw-cell-title { display: flex; align-items: center; gap: var(--aw-space-3); font-weight: var(--aw-font-weight-medium); }
+.aw-theme .aw-cell-description { color: var(--aw-color-text-secondary); }
+.aw-theme .aw-cell-number { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.aw-theme .aw-row-actions { display: inline-flex; align-items: center; gap: var(--aw-space-2); white-space: nowrap; }
+.aw-theme .aw-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--aw-space-3);
+  padding: var(--aw-space-3) var(--aw-space-5);
+  color: var(--aw-color-text-secondary);
+}
+.aw-theme .aw-pagination-items { display: flex; align-items: center; gap: var(--aw-space-1); }
+.aw-theme .aw-pagination .aw-button { min-inline-size: var(--aw-control-height-sm); min-block-size: var(--aw-control-height-sm); padding: var(--aw-space-1) var(--aw-space-2); }
+.aw-theme .aw-pagination .aw-button[aria-current='page'] { color: var(--aw-color-text-on-primary); background: var(--aw-color-action-primary); border-color: var(--aw-color-action-primary); box-shadow: var(--aw-shadow-primary); }
+
+/* Portaled overlays: library applies measured x/y, collision handling and focus behavior.
+ * Do not keep a popover inside an overflow:auto table/main just to position it. */
+.aw-theme .aw-popover {
+  position: fixed;
+  z-index: var(--aw-z-popover);
+  inline-size: var(--aw-menu-width);
+  max-inline-size: calc(100vw - var(--aw-space-4) * 2);
+  max-block-size: calc(100dvh - var(--aw-space-4) * 2);
+  overflow: auto;
+  padding: var(--aw-menu-padding);
+  color: var(--aw-color-text-primary);
+  background: var(--aw-surface-popover);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-decorative);
+  border-radius: var(--aw-radius-popover);
+  box-shadow: var(--aw-shadow-popover);
+  -webkit-backdrop-filter: blur(var(--aw-blur-popover));
+  backdrop-filter: blur(var(--aw-blur-popover));
+}
+.aw-theme .aw-popover[data-size='wide'] { inline-size: var(--aw-menu-wide-width); padding: var(--aw-space-5); }
+.aw-theme .aw-popover[data-kind='todo'] { inline-size: var(--aw-menu-todo-width); padding: var(--aw-space-5); }
+.aw-theme .aw-popover[data-kind='tenant'] { inline-size: var(--aw-menu-tenant-width); padding: var(--aw-space-5); }
+.aw-theme .aw-popover[data-kind='user'] { inline-size: var(--aw-menu-user-width); padding: var(--aw-space-5); }
+.aw-theme .aw-popover[data-layer='modal'] { z-index: var(--aw-z-modal-child); }
+.aw-theme .aw-popover-header { display: flex; align-items: center; justify-content: space-between; gap: var(--aw-space-3); padding-block-end: var(--aw-space-3); }
+.aw-theme .aw-menu { display: grid; gap: var(--aw-space-half); padding: 0; margin: 0; list-style: none; }
+.aw-theme .aw-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--aw-space-3);
+  inline-size: 100%;
+  min-block-size: var(--aw-menu-item-height);
+  padding: var(--aw-space-2) var(--aw-space-3);
+  color: var(--aw-color-text-primary);
+  background: transparent;
+  border: 0;
+  border-radius: var(--aw-menu-item-radius);
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+}
+.aw-theme .aw-menu-item:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover,
+.aw-theme .aw-menu-item:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading']))[data-highlighted='true'] { background: var(--aw-surface-hover); }
+.aw-theme .aw-menu-item:is([aria-selected='true'], [aria-checked='true'], [data-state='checked']) { background: var(--aw-surface-selected); font-weight: var(--aw-font-weight-medium); }
+.aw-theme .aw-menu-item:is([aria-selected='true'], [aria-checked='true'], [data-state='checked']):where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-surface-selected-hover); }
+.aw-theme .aw-menu-item[data-tone='danger'] { color: var(--aw-color-state-danger-fg); }
+.aw-theme .aw-menu-item:is(:disabled, [aria-disabled='true']) { color: var(--aw-color-text-disabled); background: transparent; cursor: not-allowed; }
+.aw-theme .aw-menu-meta { margin-inline-start: auto; }
+.aw-theme .aw-menu-separator { block-size: var(--aw-stroke-hairline); margin-block: var(--aw-space-2); background: var(--aw-color-border-divider); border: 0; }
+.aw-theme .aw-popover-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--aw-space-3); margin-block-start: var(--aw-space-3); padding-block-start: var(--aw-space-3); border-block-start: var(--aw-stroke-hairline) solid var(--aw-color-border-divider); }
+
+.aw-theme .aw-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--aw-z-modal-backdrop);
+  display: grid;
+  place-items: center;
+  padding: var(--aw-space-4);
+  background: var(--aw-surface-scrim);
+}
+.aw-theme .aw-dialog {
+  z-index: var(--aw-z-modal);
+  inline-size: min(var(--aw-dialog-width), calc(100vw - var(--aw-space-4) * 2));
+  max-block-size: calc(100dvh - var(--aw-space-4) * 2);
+  margin: auto;
+  padding: var(--aw-dialog-padding);
+  overflow: auto;
+  color: var(--aw-color-text-primary);
+  background: var(--aw-surface-dialog);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-decorative);
+  border-radius: var(--aw-radius-dialog);
+  box-shadow: var(--aw-shadow-dialog);
+  -webkit-backdrop-filter: blur(var(--aw-blur-dialog));
+  backdrop-filter: blur(var(--aw-blur-dialog));
+}
+.aw-theme .aw-dialog-backdrop .aw-dialog { position: relative; }
+.aw-theme dialog.aw-dialog::backdrop { background: var(--aw-surface-scrim); }
+.aw-theme .aw-dialog[data-kind='confirm'] { inline-size: min(var(--aw-dialog-confirm-width), calc(100vw - var(--aw-space-4) * 2)); }
+.aw-theme .aw-dialog-header { display: flex; align-items: start; justify-content: space-between; gap: var(--aw-space-4); margin-block-end: var(--aw-dialog-section-gap); }
+.aw-theme .aw-dialog-title { font-family: var(--aw-font-family-serif); font-size: var(--aw-font-size-dialog); line-height: var(--aw-font-line-height-dialog); font-weight: var(--aw-font-weight-medium); }
+.aw-theme .aw-dialog-body { display: grid; gap: var(--aw-dialog-section-gap); }
+.aw-theme .aw-dialog-footer { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--aw-space-3); margin-block-start: var(--aw-space-6); }
+.aw-theme .aw-upload-zone { display: grid; place-items: center; gap: var(--aw-space-2); min-block-size: calc(var(--aw-control-height) * 3); padding: var(--aw-space-5); background: var(--aw-surface-control); border: var(--aw-stroke-hairline) dashed var(--aw-color-border-control); border-radius: var(--aw-radius-control); text-align: center; }
+.aw-theme .aw-upload-zone[data-state='dragging'] { background: var(--aw-surface-selected); border-color: var(--aw-color-action-primary); }
+.aw-theme .aw-upload-zone[data-state='error'] { background: var(--aw-color-state-danger-bg); border-color: var(--aw-color-border-danger); }
+
+.aw-theme .aw-toast-stack { position: fixed; z-index: var(--aw-z-toast); inset-inline-end: var(--aw-space-6); inset-block-start: calc(var(--aw-shell-outer-block) + var(--aw-shell-topbar-height) + var(--aw-space-3)); display: grid; gap: var(--aw-space-3); inline-size: min(var(--aw-toast-width), calc(100vw - var(--aw-space-4) * 2)); }
+.aw-theme .aw-toast {
+  display: flex;
+  align-items: center;
+  gap: var(--aw-space-3);
+  min-block-size: var(--aw-toast-min-height);
+  padding: var(--aw-toast-padding);
+  color: var(--aw-color-text-primary);
+  background: var(--aw-surface-popover);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-decorative);
+  border-radius: var(--aw-radius-panel);
+  box-shadow: var(--aw-shadow-popover);
+  -webkit-backdrop-filter: blur(var(--aw-blur-popover));
+  backdrop-filter: blur(var(--aw-blur-popover));
+}
+.aw-theme .aw-toast-copy { flex: 1; min-inline-size: 0; }
+.aw-theme .aw-toast[data-tone='success'] > .aw-icon { color: var(--aw-color-state-success-fg); }
+.aw-theme .aw-toast[data-tone='danger'] > .aw-icon { color: var(--aw-color-state-danger-fg); }
+.aw-theme .aw-toast[data-tone='warning'] { background: var(--aw-color-state-warning-bg); }
+.aw-theme .aw-toast[data-tone='warning'] > .aw-icon { color: var(--aw-color-state-warning-fg); }
+.aw-theme .aw-empty { display: grid; place-content: center; justify-items: center; gap: var(--aw-space-3); min-block-size: var(--aw-empty-min-height); padding: var(--aw-space-8); text-align: center; }
+.aw-theme .aw-empty > .aw-icon { inline-size: var(--aw-control-height); block-size: var(--aw-control-height); color: var(--aw-color-text-muted); }
+.aw-theme .aw-skeleton { display: block; inline-size: 100%; block-size: var(--aw-font-size-body); border-radius: var(--aw-radius-scale-r4); background-color: var(--aw-surface-skeleton); background-image: linear-gradient(90deg, var(--aw-surface-skeleton), var(--aw-surface-skeleton-highlight), var(--aw-surface-skeleton)); background-size: 200% 100%; animation: aw-shimmer var(--aw-duration-skeleton) linear infinite; }
+.aw-theme .aw-skeleton[data-size='short'] { inline-size: 60%; }
+.aw-theme .aw-skeleton[data-size='icon'] { inline-size: var(--aw-control-height-sm); block-size: var(--aw-control-height-sm); border-radius: var(--aw-radius-control); }
+@keyframes aw-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+/* Apply last so variant/hover rules cannot remove the two-color focus indicator.
+ * No blanket outline:none rule. High contrast mode replaces the decorative shadow. */
+.aw-theme :is(.aw-button, .aw-input, .aw-select, .aw-switch, .aw-check, .aw-radio, .aw-menu-item, .aw-nav-item, .aw-tab, .aw-upload-zone, .aw-logo):focus-visible {
+  outline: var(--aw-stroke-focus) solid transparent;
+  outline-offset: var(--aw-space-half);
+  box-shadow: var(--aw-shadow-focus);
+}
+
+/* Literal breakpoints mirror tokens.json; CSS custom properties do not work in queries. */
+@media (width >= 1280px) {
+  .aw-theme .aw-app-shell[data-navigation='collapsed'] .aw-workspace { grid-template-columns: var(--aw-shell-rail-width) minmax(0, 1fr); }
+  .aw-theme .aw-app-shell[data-navigation='collapsed'] .aw-sidebar { padding-inline: var(--aw-space-2); }
+  .aw-theme .aw-app-shell[data-navigation='collapsed'] .aw-nav-item { justify-content: center; padding-inline: var(--aw-space-2); }
+  .aw-theme .aw-app-shell[data-navigation='collapsed'] :is(.aw-nav-label, .aw-nav-group-label, .aw-sidebar-footer-text) { display: none; }
+}
+@media (1024px <= width < 1280px) {
+  .aw-theme .aw-workspace { grid-template-columns: var(--aw-shell-rail-width) minmax(0, 1fr); }
+  .aw-theme .aw-sidebar { padding-inline: var(--aw-space-2); }
+  .aw-theme .aw-nav-item { justify-content: center; padding-inline: var(--aw-space-2); }
+  .aw-theme :is(.aw-nav-label, .aw-nav-group-label, .aw-sidebar-footer-text) { display: none; }
+  /* Rail icon buttons/links require an accessible name and an accessible tooltip. */
+}
+@media (width < 1024px) {
+  body.aw-app-page { overflow: auto; }
+  .aw-theme .aw-app-shell { block-size: auto; min-block-size: 100dvh; grid-template-rows: var(--aw-shell-topbar-height) auto; }
+  .aw-theme .aw-workspace { display: block; }
+  .aw-theme .aw-main { padding: var(--aw-shell-compact-padding); overflow: visible; min-block-size: calc(100dvh - var(--aw-shell-topbar-height) - var(--aw-space-8)); }
+  .aw-theme .aw-sidebar { display: none; position: fixed; z-index: var(--aw-z-drawer); inset-block: var(--aw-space-2); inset-inline-start: var(--aw-space-2); inline-size: var(--aw-shell-sidebar-width); background: var(--aw-surface-dialog); box-shadow: var(--aw-shadow-dialog); }
+  .aw-theme .aw-sidebar[data-state='open'] { display: flex; }
+  .aw-theme .aw-navigation-trigger { display: inline-flex; }
+  .aw-theme .aw-topbar { padding-inline: var(--aw-space-3); gap: var(--aw-space-2); }
+  .aw-theme .aw-topbar-actions { gap: var(--aw-space-2); }
+  .aw-theme .aw-topbar-actions .aw-trigger-copy { display: none; }
+  /* Drawer needs a separate dismissible backdrop, focus trap and restoration in JS. */
+}
+@media (width < 768px) {
+  .aw-theme .aw-app-shell { padding-inline: var(--aw-space-2); }
+  .aw-theme .aw-main { padding: var(--aw-shell-compact-padding); border-radius: var(--aw-radius-panel); }
+  .aw-theme .aw-logo { font-size: var(--aw-font-size-component); line-height: var(--aw-font-line-height-component); }
+  .aw-theme .aw-topbar-actions .aw-button { padding-inline: var(--aw-space-2); }
+  .aw-theme .aw-topbar-actions .aw-trigger-label { display: none; }
+  .aw-theme .aw-page-heading { align-items: start; }
+  .aw-theme .aw-page-title { font-size: var(--aw-font-size-page-compact); line-height: var(--aw-font-line-height-page-compact); }
+  .aw-theme .aw-toolbar-search { flex-basis: 100%; }
+  .aw-theme .aw-pagination { padding-inline: var(--aw-space-3); }
+  .aw-theme .aw-pagination-items { flex-wrap: wrap; }
+  .aw-theme .aw-toast-stack { inset-inline-end: var(--aw-space-4); inset-block-start: auto; inset-block-end: var(--aw-space-4); }
+}
+@media (pointer: coarse) {
+  .aw-theme :is(.aw-button, .aw-menu-item, .aw-nav-item, .aw-tab, .aw-input, .aw-select),
+  .aw-theme .aw-button[data-size='sm'],
+  .aw-theme .aw-pagination .aw-button,
+  .aw-theme .aw-choice-label {
+    min-inline-size: var(--aw-control-touch-target);
+    min-block-size: var(--aw-control-touch-target);
+  }
+  .aw-theme .aw-button[data-icon-only='true']:not([data-size='lg']) {
+    inline-size: var(--aw-control-touch-target);
+    min-inline-size: var(--aw-control-touch-target);
+    min-block-size: var(--aw-control-touch-target);
+  }
+  /* The centered 44px transparent pseudo-element belongs to the actual button;
+   * its complete area fits inside the separately reserved 44px wrapper. */
+  .aw-theme .aw-switch-target > .aw-switch::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    inline-size: var(--aw-control-touch-target);
+    block-size: var(--aw-control-touch-target);
+    transform: translate(-50%, -50%);
+    border-radius: var(--aw-radius-control);
+    content: '';
+  }
+}
+
+/* Fallback surfaces retain the same palette, structure and meaning. The background
+ * remains gentle color fields; lowered transparency never changes label opacity. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .aw-theme {
+    --aw-surface-frame: var(--aw-surface-fallback);
+    --aw-surface-panel: var(--aw-surface-fallback);
+    --aw-surface-popover: var(--aw-surface-fallback);
+    --aw-surface-dialog: var(--aw-surface-fallback);
+    --aw-surface-control: var(--aw-surface-fallback);
+    --aw-surface-table: var(--aw-surface-fallback);
+  }
+  .aw-theme :is(.aw-glass, .aw-panel, .aw-topbar, .aw-sidebar, .aw-main, .aw-popover, .aw-dialog, .aw-toast) { -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+.aw-theme[data-transparency='reduce'] {
+  --aw-surface-frame: var(--aw-surface-fallback);
+  --aw-surface-panel: var(--aw-surface-fallback);
+  --aw-surface-popover: var(--aw-surface-fallback);
+  --aw-surface-dialog: var(--aw-surface-fallback);
+  --aw-surface-control: var(--aw-surface-fallback);
+  --aw-surface-table: var(--aw-surface-fallback);
+}
+.aw-theme[data-transparency='reduce'] :is(.aw-glass, .aw-panel, .aw-topbar, .aw-sidebar, .aw-main, .aw-popover, .aw-dialog, .aw-toast) { -webkit-backdrop-filter: none; backdrop-filter: none; }
+@media (prefers-reduced-motion: reduce) {
+  .aw-theme *, .aw-theme *::before, .aw-theme *::after { animation-duration: var(--aw-duration-reduced) !important; animation-iteration-count: 1 !important; transition-duration: var(--aw-duration-reduced) !important; scroll-behavior: auto !important; }
+  .aw-theme .aw-skeleton { animation: none; background-image: none; }
+  .aw-theme .aw-spinner { animation: none; }
+}
+@media (forced-colors: active) {
+  .aw-theme { color: CanvasText; }
+  .aw-theme .aw-canvas { background: Canvas; }
+  .aw-theme :is(.aw-glass, .aw-panel, .aw-topbar, .aw-sidebar, .aw-main, .aw-table-panel, .aw-popover, .aw-dialog, .aw-toast) { color: CanvasText; background: Canvas; border: var(--aw-stroke-hairline) solid CanvasText; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .aw-theme :is(.aw-button, .aw-input, .aw-select, .aw-switch, .aw-tag, .aw-upload-zone) { color: ButtonText; background: ButtonFace; border-color: ButtonText; box-shadow: none; }
+  .aw-theme :is(.aw-button, .aw-menu-item, .aw-nav-item, .aw-tab):is([aria-selected='true'], [aria-pressed='true'], [aria-checked='true'], [aria-current='page']),
+  .aw-theme .aw-switch[aria-checked='true'], .aw-theme .aw-menu-item[data-state='checked'] { color: HighlightText; background: Highlight; border-color: Highlight; }
+  .aw-theme .aw-table tr:is([aria-selected='true'], [data-state='selected']) { outline: var(--aw-stroke-focus) solid Highlight; outline-offset: calc(-1 * var(--aw-stroke-focus)); }
+  .aw-theme .aw-switch-thumb { background: ButtonText; box-shadow: none; }
+  .aw-theme :is(.aw-button, .aw-input, .aw-select, .aw-switch, .aw-check, .aw-radio, .aw-menu-item, .aw-nav-item, .aw-tab, .aw-upload-zone, .aw-logo):focus-visible { outline: var(--aw-stroke-focus) solid Highlight; outline-offset: var(--aw-space-half); box-shadow: none; }
+  .aw-theme :is(.aw-button, .aw-input, .aw-select, .aw-menu-item, .aw-tab):is(:disabled, [aria-disabled='true']) { color: GrayText; border-color: GrayText; }
+  .aw-theme .aw-skeleton { background: GrayText; background-image: none; }
+}
