@@ -1,0 +1,1591 @@
+{
+  "version": 1,
+  "id": "rubber-segment",
+  "name": "Rubber Segment",
+  "sourcePath": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+  "demoPath": "src/demos/form/rubber-segment.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "RubberSegmentItem[]",
+      "defaultValue": [
+        {
+          "value": "overview",
+          "label": "概览"
+        },
+        {
+          "value": "activity",
+          "label": "活动"
+        },
+        {
+          "value": "settings",
+          "label": "设置"
+        }
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "string"
+            },
+            {
+              "kind": "object",
+              "properties": {
+                "value": {
+                  "kind": "string"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ]
+            }
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trackColor",
+      "name": "trackColor",
+      "label": "trackColor · t0",
+      "description": "轨道颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trackColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "rgb(250 247 240 / 0.82)",
+      "upstreamDefault": "'#27272a'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.thumbColor",
+      "name": "thumbColor",
+      "label": "thumbColor · t0",
+      "description": "滑块颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "thumbColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#fafafa'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#fafafa'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.activeTextColor",
+      "name": "activeTextColor",
+      "label": "activeTextColor · t0",
+      "description": "激活文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "activeTextColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#18181b'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.equalSlots",
+      "name": "equalSlots",
+      "label": "equalSlots · t0",
+      "description": "是否让分段选项占用相同宽度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "equalSlots"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.draggable",
+      "name": "draggable",
+      "label": "draggable · t0",
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "draggable"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.aria-label",
+      "name": "aria-label",
+      "label": "aria-label · t0",
+      "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aria-label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "切换演示信息分组",
+      "upstreamDefault": "'Segmented control'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "RubberSegmentSize",
+      "defaultValue": "md",
+      "upstreamDefault": "'md'",
+      "control": "select",
+      "options": [
+        {
+          "label": "sm",
+          "value": "sm"
+        },
+        {
+          "label": "md",
+          "value": "md"
+        },
+        {
+          "label": "lg",
+          "value": "lg"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.inset",
+      "name": "inset",
+      "label": "inset · t0",
+      "description": "内缩，控制 rubber segment 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "inset"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stretch",
+      "name": "stretch",
+      "label": "stretch · t0",
+      "description": "拉伸，控制 rubber segment 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stretch"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 100,
+      "upstreamDefault": "100",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.squash",
+      "name": "squash",
+      "label": "squash · t0",
+      "description": "挤压，控制 rubber segment 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "squash"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glide",
+      "name": "glide",
+      "label": "glide · t0",
+      "description": "滑移，控制 rubber segment 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glide"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 75,
+      "upstreamDefault": "75",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.value",
+      "name": "value",
+      "label": "当前值",
+      "description": "示例的受控状态 value；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "overview",
+      "control": "select",
+      "options": [
+        {
+          "label": "概览",
+          "value": "overview"
+        },
+        {
+          "label": "活动",
+          "value": "activity"
+        },
+        {
+          "label": "设置",
+          "value": "settings"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "RubberSegmentItem[]",
+      "required": true,
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 12
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "RubberSegmentItem",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "{ value: string; label: ReactNode; icon?: ReactNode; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "label",
+                    "type": "ReactNode",
+                    "required": true
+                  },
+                  {
+                    "name": "icon",
+                    "type": "ReactNode",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={items}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={items}"
+      ]
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false,
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 13
+      },
+      "codeExample": "value={value}",
+      "usageExamples": [
+        "value={value}"
+      ]
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "list[0]?.value",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 108,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "非受控模式的初始值；挂载后更新通常通过内部状态或受控 value 完成。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 14
+      },
+      "codeExample": "defaultValue={\"示例\"}"
+    },
+    {
+      "name": "onChange",
+      "type": "(value: string, index: number) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((value: string, index: number) => void) | undefined"
+      },
+      "codeExample": "onChange={setValue}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={setValue}"
+      ]
+    },
+    {
+      "name": "trackColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#27272a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 90,
+        "kind": "parameter"
+      },
+      "defaultValue": "#27272a",
+      "description": "轨道颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 16
+      },
+      "codeExample": "trackColor={palette.surface}",
+      "usageExamples": [
+        "trackColor={palette.surface}"
+      ]
+    },
+    {
+      "name": "thumbColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#fafafa'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 91,
+        "kind": "parameter"
+      },
+      "defaultValue": "#fafafa",
+      "description": "滑块颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 17
+      },
+      "codeExample": "thumbColor={palette.primary}",
+      "usageExamples": [
+        "thumbColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#fafafa'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 92,
+        "kind": "parameter"
+      },
+      "defaultValue": "#fafafa",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 18
+      },
+      "codeExample": "textColor={palette.ink}",
+      "usageExamples": [
+        "textColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "activeTextColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#18181b'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 93,
+        "kind": "parameter"
+      },
+      "defaultValue": "#18181b",
+      "description": "激活文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 19
+      },
+      "codeExample": "activeTextColor={palette.ivory}",
+      "usageExamples": [
+        "activeTextColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "RubberSegmentSize",
+      "required": false,
+      "defaultExpression": "'md'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 94,
+        "kind": "parameter"
+      },
+      "defaultValue": "md",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "codeExample": "size={\"md\"}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 95,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 21
+      },
+      "codeExample": "radius={10}",
+      "usageExamples": [
+        "radius={10}"
+      ]
+    },
+    {
+      "name": "inset",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 96,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "内缩，控制 rubber segment 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 22
+      },
+      "codeExample": "inset={3}"
+    },
+    {
+      "name": "equalSlots",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 97,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否让分段选项占用相同宽度。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "equalSlots",
+      "usageExamples": [
+        "equalSlots"
+      ]
+    },
+    {
+      "name": "stretch",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 98,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "拉伸，控制 rubber segment 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 24
+      },
+      "codeExample": "stretch={100}"
+    },
+    {
+      "name": "squash",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 99,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "挤压，控制 rubber segment 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 25
+      },
+      "codeExample": "squash={3}"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 100,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 26
+      },
+      "codeExample": "speed={1}"
+    },
+    {
+      "name": "glide",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "75",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 101,
+        "kind": "parameter"
+      },
+      "defaultValue": 75,
+      "description": "滑移，控制 rubber segment 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 27
+      },
+      "codeExample": "glide={75}"
+    },
+    {
+      "name": "draggable",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 102,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "draggable",
+      "usageExamples": [
+        "draggable"
+      ]
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 103,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 104,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 30
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Segmented control'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 105,
+        "kind": "parameter"
+      },
+      "defaultValue": "Segmented control",
+      "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+        "line": 31
+      },
+      "codeExample": "aria-label=\"切换演示信息分组\"",
+      "usageExamples": [
+        "aria-label=\"切换演示信息分组\""
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport RubberSegment from '../../../.upstream/src/ts-default/Micro/RubberSegment/RubberSegment';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nconst items = [{ value: 'overview', label: '概览' }, { value: 'activity', label: '活动' }, { value: 'settings', label: '设置' }];\nexport default function RubberSegmentDemo() {\n  const [value, setValue] = useState(/*__AW_STATE_state.value__*/);\n  return <DemoPanel title=\"Rubber Segment · 弹性分段\"><div className={cn(\"aw-micro-stack\")}>\n    <RubberSegment  value={value} onChange={setValue}         /*__AW_PROPS_t0__*/  />\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">当前分组：{items.find(item => item.value === value)?.label}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "RubberSegment",
+      "sourcePath": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "RubberSegmentItem[]",
+          "required": true,
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 12
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "RubberSegmentItem",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "{ value: string; label: ReactNode; icon?: ReactNode; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "label",
+                        "type": "ReactNode",
+                        "required": true
+                      },
+                      {
+                        "name": "icon",
+                        "type": "ReactNode",
+                        "required": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={items}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={items}"
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 13
+          },
+          "codeExample": "value={value}",
+          "usageExamples": [
+            "value={value}"
+          ]
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "list[0]?.value",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 108,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "非受控模式的初始值；挂载后更新通常通过内部状态或受控 value 完成。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 14
+          },
+          "codeExample": "defaultValue={\"示例\"}"
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string, index: number) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((value: string, index: number) => void) | undefined"
+          },
+          "codeExample": "onChange={setValue}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={setValue}"
+          ]
+        },
+        {
+          "name": "trackColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#27272a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 90,
+            "kind": "parameter"
+          },
+          "defaultValue": "#27272a",
+          "description": "轨道颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 16
+          },
+          "codeExample": "trackColor={palette.surface}",
+          "usageExamples": [
+            "trackColor={palette.surface}"
+          ]
+        },
+        {
+          "name": "thumbColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#fafafa'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 91,
+            "kind": "parameter"
+          },
+          "defaultValue": "#fafafa",
+          "description": "滑块颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 17
+          },
+          "codeExample": "thumbColor={palette.primary}",
+          "usageExamples": [
+            "thumbColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#fafafa'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 92,
+            "kind": "parameter"
+          },
+          "defaultValue": "#fafafa",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 18
+          },
+          "codeExample": "textColor={palette.ink}",
+          "usageExamples": [
+            "textColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "activeTextColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#18181b'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 93,
+            "kind": "parameter"
+          },
+          "defaultValue": "#18181b",
+          "description": "激活文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 19
+          },
+          "codeExample": "activeTextColor={palette.ivory}",
+          "usageExamples": [
+            "activeTextColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "RubberSegmentSize",
+          "required": false,
+          "defaultExpression": "'md'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 94,
+            "kind": "parameter"
+          },
+          "defaultValue": "md",
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "codeExample": "size={\"md\"}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 95,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 21
+          },
+          "codeExample": "radius={10}",
+          "usageExamples": [
+            "radius={10}"
+          ]
+        },
+        {
+          "name": "inset",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 96,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "内缩，控制 rubber segment 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 22
+          },
+          "codeExample": "inset={3}"
+        },
+        {
+          "name": "equalSlots",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 97,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否让分段选项占用相同宽度。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "equalSlots",
+          "usageExamples": [
+            "equalSlots"
+          ]
+        },
+        {
+          "name": "stretch",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 98,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "拉伸，控制 rubber segment 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 24
+          },
+          "codeExample": "stretch={100}"
+        },
+        {
+          "name": "squash",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 99,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "挤压，控制 rubber segment 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 25
+          },
+          "codeExample": "squash={3}"
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 100,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 26
+          },
+          "codeExample": "speed={1}"
+        },
+        {
+          "name": "glide",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "75",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 101,
+            "kind": "parameter"
+          },
+          "defaultValue": 75,
+          "description": "滑移，控制 rubber segment 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 27
+          },
+          "codeExample": "glide={75}"
+        },
+        {
+          "name": "draggable",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 102,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否可拖动，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "draggable",
+          "usageExamples": [
+            "draggable"
+          ]
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 103,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 104,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 30
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "aria-label",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Segmented control'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 105,
+            "kind": "parameter"
+          },
+          "defaultValue": "Segmented control",
+          "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RubberSegment/RubberSegment.tsx",
+            "line": 31
+          },
+          "codeExample": "aria-label=\"切换演示信息分组\"",
+          "usageExamples": [
+            "aria-label=\"切换演示信息分组\""
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,1950 @@
+{
+  "version": 1,
+  "id": "shape-grid",
+  "name": "Shape Grid",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+  "demoPath": "src/demos/background/shape-grid.tsx",
+  "fields": [
+    {
+      "key": "t0.shape",
+      "name": "shape",
+      "label": "shape · t0",
+      "description": "形状，控制 shape grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shape"
+        }
+      ],
+      "type": "'square' | 'tile' | 'hexagon' | 'triangle' | 'diamond' | 'circle' | 'cross' | 'dot'",
+      "defaultValue": "hexagon",
+      "upstreamDefault": "'square'",
+      "control": "select",
+      "options": [
+        {
+          "label": "square",
+          "value": "square"
+        },
+        {
+          "label": "tile",
+          "value": "tile"
+        },
+        {
+          "label": "hexagon",
+          "value": "hexagon"
+        },
+        {
+          "label": "triangle",
+          "value": "triangle"
+        },
+        {
+          "label": "diamond",
+          "value": "diamond"
+        },
+        {
+          "label": "circle",
+          "value": "circle"
+        },
+        {
+          "label": "cross",
+          "value": "cross"
+        },
+        {
+          "label": "dot",
+          "value": "dot"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cellSize",
+      "name": "cellSize",
+      "label": "cellSize · t0",
+      "description": "单元尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cellSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 40,
+      "upstreamDefault": "40",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineColor",
+      "name": "lineColor",
+      "label": "lineColor · t0",
+      "description": "线条颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#2a2734'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverColor",
+      "name": "hoverColor",
+      "label": "hoverColor · t0",
+      "description": "悬停颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverFillColor",
+      "name": "hoverFillColor",
+      "label": "hoverFillColor · t0",
+      "description": "悬停填充颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverFillColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "hoverColor",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'transparent'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fillOpacity",
+      "name": "fillOpacity",
+      "label": "fillOpacity · t0",
+      "description": "填充不透明度，控制 shape grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fillOpacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.15",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 shape grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.35",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rainbow",
+      "name": "rainbow",
+      "label": "rainbow · t0",
+      "description": "是否彩虹，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rainbow"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clickCascade",
+      "name": "clickCascade",
+      "label": "clickCascade · t0",
+      "description": "是否点击级联，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clickCascade"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineWidth",
+      "name": "lineWidth",
+      "label": "lineWidth · t0",
+      "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 shape grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "'diagonal' | 'up' | 'down' | 'left' | 'right' | 'none'",
+      "defaultValue": "diagonal",
+      "upstreamDefault": "'diagonal'",
+      "control": "select",
+      "options": [
+        {
+          "label": "diagonal",
+          "value": "diagonal"
+        },
+        {
+          "label": "up",
+          "value": "up"
+        },
+        {
+          "label": "down",
+          "value": "down"
+        },
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tiltX",
+      "name": "tiltX",
+      "label": "tiltX · t0",
+      "description": "倾斜X轴，控制 shape grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tiltX"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tiltY",
+      "name": "tiltY",
+      "label": "tiltY · t0",
+      "description": "倾斜Y轴，控制 shape grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tiltY"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trail",
+      "name": "trail",
+      "label": "trail · t0",
+      "description": "轨迹，控制 shape grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trail"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.twinkle",
+      "name": "twinkle",
+      "label": "twinkle · t0",
+      "description": "闪烁，控制 shape grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "twinkle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 shape grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 shape grid 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "shape",
+      "type": "'square' | 'tile' | 'hexagon' | 'triangle' | 'diamond' | 'circle' | 'cross' | 'dot'",
+      "required": false,
+      "defaultExpression": "'square'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 350,
+        "kind": "parameter"
+      },
+      "defaultValue": "square",
+      "description": "形状，控制 shape grid 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "square",
+        "tile",
+        "hexagon",
+        "triangle",
+        "diamond",
+        "circle",
+        "cross",
+        "dot"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 8
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "square",
+          "tile",
+          "hexagon",
+          "triangle",
+          "diamond",
+          "circle",
+          "cross",
+          "dot"
+        ]
+      },
+      "codeExample": "shape=\"hexagon\"",
+      "usageExamples": [
+        "shape=\"hexagon\""
+      ]
+    },
+    {
+      "name": "cellSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "40",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 351,
+        "kind": "parameter"
+      },
+      "defaultValue": 40,
+      "description": "单元尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 9
+      },
+      "codeExample": "cellSize={40}",
+      "usageExamples": [
+        "cellSize={40}"
+      ]
+    },
+    {
+      "name": "lineWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 352,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 10
+      },
+      "codeExample": "lineWidth={1}"
+    },
+    {
+      "name": "direction",
+      "type": "'diagonal' | 'up' | 'down' | 'left' | 'right' | 'none'",
+      "required": false,
+      "defaultExpression": "'diagonal'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 353,
+        "kind": "parameter"
+      },
+      "defaultValue": "diagonal",
+      "description": "方向，控制 shape grid 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "diagonal",
+        "up",
+        "down",
+        "left",
+        "right",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "diagonal",
+          "up",
+          "down",
+          "left",
+          "right",
+          "none"
+        ]
+      },
+      "codeExample": "direction={\"diagonal\"}"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 354,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 12
+      },
+      "codeExample": "speed={0.3}",
+      "usageExamples": [
+        "speed={0.3}"
+      ]
+    },
+    {
+      "name": "lineColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#2a2734'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 355,
+        "kind": "parameter"
+      },
+      "defaultValue": "#2a2734",
+      "description": "线条颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 13
+      },
+      "codeExample": "lineColor={palette.primary}",
+      "usageExamples": [
+        "lineColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "hoverColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 356,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "悬停颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 14
+      },
+      "codeExample": "hoverColor={palette.sage}",
+      "usageExamples": [
+        "hoverColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "hoverFillColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "hoverColor",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 389,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "悬停填充颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 15
+      },
+      "codeExample": "hoverFillColor={palette.primary}",
+      "usageExamples": [
+        "hoverFillColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "fillOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 358,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.15,
+      "description": "填充不透明度，控制 shape grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 16
+      },
+      "codeExample": "fillOpacity={0.2}",
+      "usageExamples": [
+        "fillOpacity={0.2}"
+      ]
+    },
+    {
+      "name": "rainbow",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 359,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否彩虹，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "rainbow={false}",
+      "usageExamples": [
+        "rainbow={false}"
+      ]
+    },
+    {
+      "name": "tiltX",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 360,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "倾斜X轴，控制 shape grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 18
+      },
+      "codeExample": "tiltX={0}"
+    },
+    {
+      "name": "tiltY",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 361,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "倾斜Y轴，控制 shape grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 19
+      },
+      "codeExample": "tiltY={0}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 362,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 20
+      },
+      "codeExample": "radius={1.5}"
+    },
+    {
+      "name": "trail",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 363,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "轨迹，控制 shape grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 21
+      },
+      "codeExample": "trail={0.6}"
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.35",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 364,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.35,
+      "description": "辉光，控制 shape grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 22
+      },
+      "codeExample": "glow={0.2}",
+      "usageExamples": [
+        "glow={0.2}"
+      ]
+    },
+    {
+      "name": "twinkle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 365,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "闪烁，控制 shape grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 23
+      },
+      "codeExample": "twinkle={0}"
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 366,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "淡出，控制 shape grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 24
+      },
+      "codeExample": "fade={1}"
+    },
+    {
+      "name": "clickCascade",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 367,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否点击级联，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickCascade",
+      "usageExamples": [
+        "clickCascade"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 368,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 369,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 shape grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 27
+      },
+      "codeExample": "opacity={1}"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'transparent'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 370,
+        "kind": "parameter"
+      },
+      "defaultValue": "transparent",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 28
+      },
+      "codeExample": "backgroundColor={palette.ink}",
+      "usageExamples": [
+        "backgroundColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 371,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 30
+      },
+      "codeExample": "dpr={1}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 373,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 31
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+        "line": 32
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid';\n\n\n/** Agent Wan natural-tone preset for the real Shape Grid component. */\nexport default function ShapeGridDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ShapeGrid",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+      "props": [
+        {
+          "name": "shape",
+          "type": "'square' | 'tile' | 'hexagon' | 'triangle' | 'diamond' | 'circle' | 'cross' | 'dot'",
+          "required": false,
+          "defaultExpression": "'square'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 350,
+            "kind": "parameter"
+          },
+          "defaultValue": "square",
+          "description": "形状，控制 shape grid 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "square",
+            "tile",
+            "hexagon",
+            "triangle",
+            "diamond",
+            "circle",
+            "cross",
+            "dot"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "square",
+              "tile",
+              "hexagon",
+              "triangle",
+              "diamond",
+              "circle",
+              "cross",
+              "dot"
+            ]
+          },
+          "codeExample": "shape=\"hexagon\"",
+          "usageExamples": [
+            "shape=\"hexagon\""
+          ]
+        },
+        {
+          "name": "cellSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "40",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 351,
+            "kind": "parameter"
+          },
+          "defaultValue": 40,
+          "description": "单元尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 9
+          },
+          "codeExample": "cellSize={40}",
+          "usageExamples": [
+            "cellSize={40}"
+          ]
+        },
+        {
+          "name": "lineWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 352,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 10
+          },
+          "codeExample": "lineWidth={1}"
+        },
+        {
+          "name": "direction",
+          "type": "'diagonal' | 'up' | 'down' | 'left' | 'right' | 'none'",
+          "required": false,
+          "defaultExpression": "'diagonal'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 353,
+            "kind": "parameter"
+          },
+          "defaultValue": "diagonal",
+          "description": "方向，控制 shape grid 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "diagonal",
+            "up",
+            "down",
+            "left",
+            "right",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "diagonal",
+              "up",
+              "down",
+              "left",
+              "right",
+              "none"
+            ]
+          },
+          "codeExample": "direction={\"diagonal\"}"
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 354,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 12
+          },
+          "codeExample": "speed={0.3}",
+          "usageExamples": [
+            "speed={0.3}"
+          ]
+        },
+        {
+          "name": "lineColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#2a2734'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 355,
+            "kind": "parameter"
+          },
+          "defaultValue": "#2a2734",
+          "description": "线条颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 13
+          },
+          "codeExample": "lineColor={palette.primary}",
+          "usageExamples": [
+            "lineColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "hoverColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 356,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "悬停颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 14
+          },
+          "codeExample": "hoverColor={palette.sage}",
+          "usageExamples": [
+            "hoverColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "hoverFillColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "hoverColor",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 389,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "悬停填充颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 15
+          },
+          "codeExample": "hoverFillColor={palette.primary}",
+          "usageExamples": [
+            "hoverFillColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "fillOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 358,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.15,
+          "description": "填充不透明度，控制 shape grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 16
+          },
+          "codeExample": "fillOpacity={0.2}",
+          "usageExamples": [
+            "fillOpacity={0.2}"
+          ]
+        },
+        {
+          "name": "rainbow",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 359,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否彩虹，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "rainbow={false}",
+          "usageExamples": [
+            "rainbow={false}"
+          ]
+        },
+        {
+          "name": "tiltX",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 360,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "倾斜X轴，控制 shape grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 18
+          },
+          "codeExample": "tiltX={0}"
+        },
+        {
+          "name": "tiltY",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 361,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "倾斜Y轴，控制 shape grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 19
+          },
+          "codeExample": "tiltY={0}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 362,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 20
+          },
+          "codeExample": "radius={1.5}"
+        },
+        {
+          "name": "trail",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 363,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "轨迹，控制 shape grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 21
+          },
+          "codeExample": "trail={0.6}"
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.35",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 364,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.35,
+          "description": "辉光，控制 shape grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 22
+          },
+          "codeExample": "glow={0.2}",
+          "usageExamples": [
+            "glow={0.2}"
+          ]
+        },
+        {
+          "name": "twinkle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 365,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "闪烁，控制 shape grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 23
+          },
+          "codeExample": "twinkle={0}"
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 366,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "淡出，控制 shape grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 24
+          },
+          "codeExample": "fade={1}"
+        },
+        {
+          "name": "clickCascade",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 367,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否点击级联，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickCascade",
+          "usageExamples": [
+            "clickCascade"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 368,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 369,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 shape grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 27
+          },
+          "codeExample": "opacity={1}"
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'transparent'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 370,
+            "kind": "parameter"
+          },
+          "defaultValue": "transparent",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 28
+          },
+          "codeExample": "backgroundColor={palette.ink}",
+          "usageExamples": [
+            "backgroundColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 371,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 30
+          },
+          "codeExample": "dpr={1}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 373,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 31
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/ShapeGrid/ShapeGrid.tsx",
+            "line": 32
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

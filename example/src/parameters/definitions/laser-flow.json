@@ -1,0 +1,1832 @@
+{
+  "version": 1,
+  "id": "laser-flow",
+  "name": "Laser Flow",
+  "sourcePath": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+  "demoPath": "src/demos/background/laser-flow.tsx",
+  "fields": [
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#91c9cc",
+      "upstreamDefault": "'#3847ff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "dark",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intensity",
+      "name": "intensity",
+      "label": "intensity · t0",
+      "description": "强度，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.8,
+      "upstreamDefault": "1.8",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.beamPosition",
+      "name": "beamPosition",
+      "label": "beamPosition · t0",
+      "description": "光束位置，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "beamPosition"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.52,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.flare",
+      "name": "flare",
+      "label": "flare · t0",
+      "description": "耀斑，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "flare"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spread",
+      "name": "spread",
+      "label": "展开距离 · t0",
+      "description": "展开间距，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spill",
+      "name": "spill",
+      "label": "spill · t0",
+      "description": "溢出，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spill"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fog",
+      "name": "fog",
+      "label": "fog · t0",
+      "description": "雾，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fog"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dust",
+      "name": "dust",
+      "label": "dust · t0",
+      "description": "尘点，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dust"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.1,
+      "upstreamDefault": "1.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.2,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseInteraction",
+      "name": "mouseInteraction",
+      "label": "指针响应 · t0",
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseInteraction"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dpr",
+      "name": "dpr",
+      "label": "像素比 · t0",
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dpr"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.surfaceLevel",
+      "name": "surfaceLevel",
+      "label": "surfaceLevel · t0",
+      "description": "表面层级，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "surfaceLevel"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.beamWidth",
+      "name": "beamWidth",
+      "label": "beamWidth · t0",
+      "description": "光束宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "beamWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.streaks",
+      "name": "streaks",
+      "label": "streaks · t0",
+      "description": "拖尾组，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "streaks"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dots",
+      "name": "dots",
+      "label": "dots · t0",
+      "description": "圆点组，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dots"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulse",
+      "name": "pulse",
+      "label": "pulse · t0",
+      "description": "脉冲，控制 laser flow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulse"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.seed",
+      "name": "seed",
+      "label": "seed · t0",
+      "description": "随机种子，控制 laser flow 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。稳定的随机种子。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "seed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "key": "t0.revealRadius",
+      "name": "revealRadius",
+      "label": "revealRadius · t0",
+      "description": "显现半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。指针揭示区域的半径。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "revealRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 220,
+      "upstreamDefault": "220",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 40,
+      "max": 500,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "key": "t0.revealOpacity",
+      "name": "revealOpacity",
+      "label": "revealOpacity · t0",
+      "description": "显现不透明度，控制 laser flow 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。指针揭示区域的不透明度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "revealOpacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "surfaceRef",
+      "type": "RefObject<HTMLElement | null>",
+      "required": false,
+      "description": "连接弹出面板的 DOM ref，供调用方测量与管理焦点。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 8
+      },
+      "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: surfaceRef={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+      "usageExamples": [
+        "surfaceRef={surfaceRef}"
+      ]
+    },
+    {
+      "name": "beamPosition",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 489,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "光束位置，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 9
+      },
+      "codeExample": "beamPosition={0.52}",
+      "usageExamples": [
+        "beamPosition={0.52}"
+      ]
+    },
+    {
+      "name": "surfaceLevel",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 490,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "表面层级，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 10
+      },
+      "codeExample": "surfaceLevel={1}"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#3847ff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 491,
+        "kind": "parameter"
+      },
+      "defaultValue": "#3847ff",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 11
+      },
+      "codeExample": "color=\"#91c9cc\"",
+      "usageExamples": [
+        "color=\"#91c9cc\""
+      ]
+    },
+    {
+      "name": "intensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 492,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.8,
+      "description": "强度，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 12
+      },
+      "codeExample": "intensity={1.8}",
+      "usageExamples": [
+        "intensity={1.8}"
+      ]
+    },
+    {
+      "name": "beamWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 493,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "光束宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 13
+      },
+      "codeExample": "beamWidth={1.5}"
+    },
+    {
+      "name": "flare",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 494,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "耀斑，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 14
+      },
+      "codeExample": "flare={1.5}",
+      "usageExamples": [
+        "flare={1.5}"
+      ]
+    },
+    {
+      "name": "spread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 495,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "展开间距，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 15
+      },
+      "codeExample": "spread={1.5}",
+      "usageExamples": [
+        "spread={1.5}"
+      ]
+    },
+    {
+      "name": "spill",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 496,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "溢出，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 16
+      },
+      "codeExample": "spill={1.1}",
+      "usageExamples": [
+        "spill={1.1}"
+      ]
+    },
+    {
+      "name": "fog",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 497,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "雾，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 17
+      },
+      "codeExample": "fog={0.2}",
+      "usageExamples": [
+        "fog={0.2}"
+      ]
+    },
+    {
+      "name": "dust",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 498,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.6,
+      "description": "尘点，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 18
+      },
+      "codeExample": "dust={1.1}",
+      "usageExamples": [
+        "dust={1.1}"
+      ]
+    },
+    {
+      "name": "streaks",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 499,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "拖尾组，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 19
+      },
+      "codeExample": "streaks={1.5}"
+    },
+    {
+      "name": "dots",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 500,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "圆点组，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 20
+      },
+      "codeExample": "dots={1}"
+    },
+    {
+      "name": "pulse",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 501,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "脉冲，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 21
+      },
+      "codeExample": "pulse={1.5}"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 502,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 22
+      },
+      "codeExample": "speed={1.2}",
+      "usageExamples": [
+        "speed={1.2}"
+      ]
+    },
+    {
+      "name": "seed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 503,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "随机种子，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 23
+      },
+      "codeExample": "seed={3}"
+    },
+    {
+      "name": "mouseInteraction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 504,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "mouseInteraction",
+      "usageExamples": [
+        "mouseInteraction"
+      ]
+    },
+    {
+      "name": "revealImage",
+      "type": "string",
+      "required": false,
+      "description": "显现图像，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 25
+      },
+      "codeExample": "revealImage={\"示例\"}"
+    },
+    {
+      "name": "revealRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "220",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 506,
+        "kind": "parameter"
+      },
+      "defaultValue": 220,
+      "description": "显现半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 26
+      },
+      "codeExample": "revealRadius={220}"
+    },
+    {
+      "name": "revealOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 507,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "显现不透明度，控制 laser flow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 27
+      },
+      "codeExample": "revealOpacity={0.6}"
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 508,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 509,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 laser flow 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"dark\"",
+      "usageExamples": [
+        "theme=\"dark\""
+      ]
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 510,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+        "line": 31
+      },
+      "codeExample": "dpr={1.5}",
+      "usageExamples": [
+        "dpr={1.5}"
+      ]
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "Omit<HTMLAttributes<HTMLDivElement>, 'color'>",
+      "codeExample": "children={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "Omit<HTMLAttributes<HTMLDivElement>, 'color'>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import { useRef } from 'react';\nimport Component from '../../../.upstream/src/ts-default/Animations/LaserFlow/LaserFlow';\nimport styles from './laser-flow.module.css';\n\nexport default function LaserFlowDemo() {\n  const surfaceRef = useRef<HTMLDivElement>(null);\n  return (\n    <div className={styles.stage} data-visual-demo=\"laser-flow\">\n      <div ref={surfaceRef} className={styles.surface}>\n        <span className={styles.eyebrow}>LIGHT IN MOTION</span>\n        <h3 className={styles.title}>光落在表面</h3>\n        <p className={styles.description}>沿着边缘展开，向两侧流动。</p>\n      </div>\n      <div className={styles.light}>\n        <Component surfaceRef={surfaceRef}\n\n              /*__AW_PROPS_t0__*/  />\n      </div>\n      <p className={styles.hint}>移动指针，观察光束与卡片上边缘接触后的流动。</p>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "LaserFlow",
+      "sourcePath": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+      "props": [
+        {
+          "name": "surfaceRef",
+          "type": "RefObject<HTMLElement | null>",
+          "required": false,
+          "description": "连接弹出面板的 DOM ref，供调用方测量与管理焦点。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 8
+          },
+          "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: surfaceRef={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "surfaceRef={surfaceRef}"
+          ]
+        },
+        {
+          "name": "beamPosition",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 489,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "光束位置，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 9
+          },
+          "codeExample": "beamPosition={0.52}",
+          "usageExamples": [
+            "beamPosition={0.52}"
+          ]
+        },
+        {
+          "name": "surfaceLevel",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 490,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "表面层级，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 10
+          },
+          "codeExample": "surfaceLevel={1}"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#3847ff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 491,
+            "kind": "parameter"
+          },
+          "defaultValue": "#3847ff",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 11
+          },
+          "codeExample": "color=\"#91c9cc\"",
+          "usageExamples": [
+            "color=\"#91c9cc\""
+          ]
+        },
+        {
+          "name": "intensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 492,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.8,
+          "description": "强度，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 12
+          },
+          "codeExample": "intensity={1.8}",
+          "usageExamples": [
+            "intensity={1.8}"
+          ]
+        },
+        {
+          "name": "beamWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 493,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "光束宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 13
+          },
+          "codeExample": "beamWidth={1.5}"
+        },
+        {
+          "name": "flare",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 494,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "耀斑，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 14
+          },
+          "codeExample": "flare={1.5}",
+          "usageExamples": [
+            "flare={1.5}"
+          ]
+        },
+        {
+          "name": "spread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 495,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "展开间距，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 15
+          },
+          "codeExample": "spread={1.5}",
+          "usageExamples": [
+            "spread={1.5}"
+          ]
+        },
+        {
+          "name": "spill",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 496,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "溢出，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 16
+          },
+          "codeExample": "spill={1.1}",
+          "usageExamples": [
+            "spill={1.1}"
+          ]
+        },
+        {
+          "name": "fog",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 497,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "雾，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 17
+          },
+          "codeExample": "fog={0.2}",
+          "usageExamples": [
+            "fog={0.2}"
+          ]
+        },
+        {
+          "name": "dust",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 498,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.6,
+          "description": "尘点，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 18
+          },
+          "codeExample": "dust={1.1}",
+          "usageExamples": [
+            "dust={1.1}"
+          ]
+        },
+        {
+          "name": "streaks",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 499,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "拖尾组，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 19
+          },
+          "codeExample": "streaks={1.5}"
+        },
+        {
+          "name": "dots",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 500,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "圆点组，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 20
+          },
+          "codeExample": "dots={1}"
+        },
+        {
+          "name": "pulse",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 501,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "脉冲，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 21
+          },
+          "codeExample": "pulse={1.5}"
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 502,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 22
+          },
+          "codeExample": "speed={1.2}",
+          "usageExamples": [
+            "speed={1.2}"
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 503,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "随机种子，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 23
+          },
+          "codeExample": "seed={3}"
+        },
+        {
+          "name": "mouseInteraction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 504,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "mouseInteraction",
+          "usageExamples": [
+            "mouseInteraction"
+          ]
+        },
+        {
+          "name": "revealImage",
+          "type": "string",
+          "required": false,
+          "description": "显现图像，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 25
+          },
+          "codeExample": "revealImage={\"示例\"}"
+        },
+        {
+          "name": "revealRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "220",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 506,
+            "kind": "parameter"
+          },
+          "defaultValue": 220,
+          "description": "显现半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 26
+          },
+          "codeExample": "revealRadius={220}"
+        },
+        {
+          "name": "revealOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 507,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "显现不透明度，控制 laser flow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 27
+          },
+          "codeExample": "revealOpacity={0.6}"
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 508,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 509,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 laser flow 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"dark\"",
+          "usageExamples": [
+            "theme=\"dark\""
+          ]
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 510,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LaserFlow/LaserFlow.tsx",
+            "line": 31
+          },
+          "codeExample": "dpr={1.5}",
+          "usageExamples": [
+            "dpr={1.5}"
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "Omit<HTMLAttributes<HTMLDivElement>, 'color'>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "Omit<HTMLAttributes<HTMLDivElement>, 'color'>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

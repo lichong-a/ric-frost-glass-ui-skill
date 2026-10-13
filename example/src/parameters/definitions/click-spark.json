@@ -1,0 +1,771 @@
+{
+  "version": 1,
+  "id": "click-spark",
+  "name": "Click Spark",
+  "sourcePath": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+  "demoPath": "src/demos/pointer/click-spark.tsx",
+  "fields": [
+    {
+      "key": "t0.sparkColor",
+      "name": "sparkColor",
+      "label": "sparkColor · t0",
+      "description": "火花颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sparkColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#fff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sparkSize",
+      "name": "sparkSize",
+      "label": "sparkSize · t0",
+      "description": "火花尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sparkSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 7,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sparkRadius",
+      "name": "sparkRadius",
+      "label": "sparkRadius · t0",
+      "description": "火花半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sparkRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "15",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sparkCount",
+      "name": "sparkCount",
+      "label": "sparkCount · t0",
+      "description": "火花数量，控制 click spark 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sparkCount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 7,
+      "upstreamDefault": "8",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.duration",
+      "name": "duration",
+      "label": "持续时间 · t0",
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "duration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 350,
+      "upstreamDefault": "400",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.easing",
+      "name": "easing",
+      "label": "easing · t0",
+      "description": "动画进度的缓动曲线名称或函数，按类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "easing"
+        }
+      ],
+      "type": "'linear' | 'ease-in' | 'ease-out' | 'ease-in-out'",
+      "defaultValue": "ease-out",
+      "upstreamDefault": "'ease-out'",
+      "control": "select",
+      "options": [
+        {
+          "label": "linear",
+          "value": "linear"
+        },
+        {
+          "label": "ease-in",
+          "value": "ease-in"
+        },
+        {
+          "label": "ease-out",
+          "value": "ease-out"
+        },
+        {
+          "label": "ease-in-out",
+          "value": "ease-in-out"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.extraScale",
+      "name": "extraScale",
+      "label": "extraScale · t0",
+      "description": "额外缩放，控制 click spark 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "extraScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1.0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "sparkColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#fff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 24,
+        "kind": "parameter"
+      },
+      "defaultValue": "#fff",
+      "description": "火花颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 6
+      },
+      "codeExample": "sparkColor={palette.primary}",
+      "usageExamples": [
+        "sparkColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "sparkSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 25,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "火花尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 7
+      },
+      "codeExample": "sparkSize={7}",
+      "usageExamples": [
+        "sparkSize={7}"
+      ]
+    },
+    {
+      "name": "sparkRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 26,
+        "kind": "parameter"
+      },
+      "defaultValue": 15,
+      "description": "火花半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 8
+      },
+      "codeExample": "sparkRadius={20}",
+      "usageExamples": [
+        "sparkRadius={20}"
+      ]
+    },
+    {
+      "name": "sparkCount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 27,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "火花数量，控制 click spark 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 9
+      },
+      "codeExample": "sparkCount={7}",
+      "usageExamples": [
+        "sparkCount={7}"
+      ]
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 28,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 10
+      },
+      "codeExample": "duration={350}",
+      "usageExamples": [
+        "duration={350}"
+      ]
+    },
+    {
+      "name": "easing",
+      "type": "'linear' | 'ease-in' | 'ease-out' | 'ease-in-out'",
+      "required": false,
+      "defaultExpression": "'ease-out'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 29,
+        "kind": "parameter"
+      },
+      "defaultValue": "ease-out",
+      "description": "动画进度的缓动曲线名称或函数，按类型传入。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "linear",
+        "ease-in",
+        "ease-out",
+        "ease-in-out"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "linear",
+          "ease-in",
+          "ease-out",
+          "ease-in-out"
+        ]
+      },
+      "codeExample": "easing=\"ease-out\"",
+      "usageExamples": [
+        "easing=\"ease-out\""
+      ]
+    },
+    {
+      "name": "extraScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 30,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "额外缩放，控制 click spark 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 12
+      },
+      "codeExample": "extraScale={1}"
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+        "line": 13
+      },
+      "codeExample": "children={<><div style={{ width: \"100%\", minHeight: 320, display: \"grid\", placeItems: \"center\" }}><button className=\"aw-button\" data-variant=\"primary\" type=\"button\" onClick={() => setCount(value => value + 1)}>点击产生火花 · {count}</button></div></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><div style={{ width: \"100%\", minHeight: 320, display: \"grid\", placeItems: \"center\" }}><button className=\"aw-button\" data-variant=\"primary\" type=\"button\" onClick={() => setCount(value => value + 1)}>点击产生火花 · {count}</button></div></>}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/ClickSpark/ClickSpark';\nimport { palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 真实点击坐标产生粒子火花，按钮计数验证交互没有被覆盖层吞掉。\n// 此演示使用Canvas；确保容器拥有非零宽高。\n\nexport default function ClickSparkDemo() {\n  const [count, setCount] = useState(0);\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n   /*__AW_PROPS_t0__*/ ><div style={{ width: \"100%\", minHeight: 320, display: \"grid\", placeItems: \"center\" }}><button className=\"aw-button\" data-variant=\"primary\"  onClick={() => setCount(value => value + 1)} /*__AW_PROPS_t1__*/ >点击产生火花 · {count}</button></div></Component>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ClickSpark",
+      "sourcePath": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+      "props": [
+        {
+          "name": "sparkColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#fff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 24,
+            "kind": "parameter"
+          },
+          "defaultValue": "#fff",
+          "description": "火花颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 6
+          },
+          "codeExample": "sparkColor={palette.primary}",
+          "usageExamples": [
+            "sparkColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "sparkSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 25,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "火花尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 7
+          },
+          "codeExample": "sparkSize={7}",
+          "usageExamples": [
+            "sparkSize={7}"
+          ]
+        },
+        {
+          "name": "sparkRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 26,
+            "kind": "parameter"
+          },
+          "defaultValue": 15,
+          "description": "火花半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 8
+          },
+          "codeExample": "sparkRadius={20}",
+          "usageExamples": [
+            "sparkRadius={20}"
+          ]
+        },
+        {
+          "name": "sparkCount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 27,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "火花数量，控制 click spark 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 9
+          },
+          "codeExample": "sparkCount={7}",
+          "usageExamples": [
+            "sparkCount={7}"
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 28,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 10
+          },
+          "codeExample": "duration={350}",
+          "usageExamples": [
+            "duration={350}"
+          ]
+        },
+        {
+          "name": "easing",
+          "type": "'linear' | 'ease-in' | 'ease-out' | 'ease-in-out'",
+          "required": false,
+          "defaultExpression": "'ease-out'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 29,
+            "kind": "parameter"
+          },
+          "defaultValue": "ease-out",
+          "description": "动画进度的缓动曲线名称或函数，按类型传入。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "linear",
+            "ease-in",
+            "ease-out",
+            "ease-in-out"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "linear",
+              "ease-in",
+              "ease-out",
+              "ease-in-out"
+            ]
+          },
+          "codeExample": "easing=\"ease-out\"",
+          "usageExamples": [
+            "easing=\"ease-out\""
+          ]
+        },
+        {
+          "name": "extraScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 30,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "额外缩放，控制 click spark 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 12
+          },
+          "codeExample": "extraScale={1}"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ClickSpark/ClickSpark.tsx",
+            "line": 13
+          },
+          "codeExample": "children={<><div style={{ width: \"100%\", minHeight: 320, display: \"grid\", placeItems: \"center\" }}><button className=\"aw-button\" data-variant=\"primary\" type=\"button\" onClick={() => setCount(value => value + 1)}>点击产生火花 · {count}</button></div></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><div style={{ width: \"100%\", minHeight: 320, display: \"grid\", placeItems: \"center\" }}><button className=\"aw-button\" data-variant=\"primary\" type=\"button\" onClick={() => setCount(value => value + 1)}>点击产生火花 · {count}</button></div></>}"
+          ]
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className=\"aw-button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "data-variant",
+          "type": "any",
+          "required": false,
+          "description": "示例在 DOM 上使用的 variant 数据标记，供局部样式或状态定位读取。",
+          "usageExamples": [
+            "data-variant=\"primary\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>"
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setCount(value => value + 1)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>点击产生火花 · {count}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

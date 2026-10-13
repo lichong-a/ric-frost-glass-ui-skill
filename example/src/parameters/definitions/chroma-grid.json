@@ -1,0 +1,1699 @@
+{
+  "version": 1,
+  "id": "chroma-grid",
+  "name": "Chroma Grid",
+  "sourcePath": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+  "demoPath": "src/demos/cards/chroma-grid.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "ChromaItem[]",
+      "defaultValue": [
+        {
+          "image": "@media/scene-1.svg",
+          "alt": "山雾",
+          "title": "山雾",
+          "subtitle": "自然色图形",
+          "accent": "#52604e"
+        },
+        {
+          "image": "@media/scene-2.svg",
+          "alt": "茶庭",
+          "title": "茶庭",
+          "subtitle": "自然色图形",
+          "accent": "#a6b39a"
+        },
+        {
+          "image": "@media/scene-3.svg",
+          "alt": "沙洲",
+          "title": "沙洲",
+          "subtitle": "自然色图形",
+          "accent": "#c3ae88"
+        },
+        {
+          "image": "@media/scene-4.svg",
+          "alt": "静水",
+          "title": "静水",
+          "subtitle": "自然色图形",
+          "accent": "#52604e"
+        },
+        {
+          "image": "@media/scene-5.svg",
+          "alt": "林间",
+          "title": "林间",
+          "subtitle": "自然色图形",
+          "accent": "#a6b39a"
+        },
+        {
+          "image": "@media/scene-6.svg",
+          "alt": "岩纹",
+          "title": "岩纹",
+          "subtitle": "自然色图形",
+          "accent": "#c3ae88"
+        }
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "image": {
+              "kind": "string"
+            },
+            "title": {
+              "kind": "string"
+            },
+            "subtitle": {
+              "kind": "string"
+            },
+            "accent": {
+              "kind": "string"
+            },
+            "url": {
+              "kind": "string"
+            },
+            "alt": {
+              "kind": "string"
+            },
+            "borderColor": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "image"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.columns",
+      "name": "columns",
+      "label": "columns · t0",
+      "description": "列数，控制 chroma grid 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "columns"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 128,
+      "step": 1
+    },
+    {
+      "key": "t0.minCardWidth",
+      "name": "minCardWidth",
+      "label": "minCardWidth · t0",
+      "description": "最小卡片宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "minCardWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 150,
+      "upstreamDefault": "180",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 14,
+      "upstreamDefault": "12",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 180,
+      "upstreamDefault": "260",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.softness",
+      "name": "softness",
+      "label": "softness · t0",
+      "description": "柔和度，控制 chroma grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "softness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.7,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.damping",
+      "name": "damping",
+      "label": "damping · t0",
+      "description": "阻尼，控制 chroma grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "damping"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.45",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeOut",
+      "name": "fadeOut",
+      "label": "fadeOut · t0",
+      "description": "淡出退出，控制 chroma grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeOut"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grayscale",
+      "name": "grayscale",
+      "label": "grayscale · t0",
+      "description": "灰度，控制 chroma grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grayscale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.75,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dim",
+      "name": "dim",
+      "label": "dim · t0",
+      "description": "暗化，控制 chroma grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dim"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.12",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 chroma grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.borderGlow",
+      "name": "borderGlow",
+      "label": "borderGlow · t0",
+      "description": "边框辉光，控制 chroma grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "borderGlow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.reveal",
+      "name": "reveal",
+      "label": "reveal · t0",
+      "description": "显现，控制 chroma grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "reveal"
+        }
+      ],
+      "type": "'spotlight' | 'card'",
+      "defaultValue": "spotlight",
+      "upstreamDefault": "'spotlight'",
+      "control": "select",
+      "options": [
+        {
+          "label": "spotlight",
+          "value": "spotlight"
+        },
+        {
+          "label": "card",
+          "value": "card"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.aspectRatio",
+      "name": "aspectRatio",
+      "label": "aspectRatio · t0",
+      "description": "宽高比例，控制 chroma grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aspectRatio"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "4 / 3",
+      "upstreamDefault": "'3 / 2'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cardRadius",
+      "name": "cardRadius",
+      "label": "cardRadius · t0",
+      "description": "卡片半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cardRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "22",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showInfo",
+      "name": "showInfo",
+      "label": "showInfo · t0",
+      "description": "是否显示信息，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showInfo"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.frame",
+      "name": "frame",
+      "label": "frame · t0",
+      "description": "是否外框，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "frame"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 chroma grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "light",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "ChromaItem[]",
+      "required": false,
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "ChromaItem",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "image",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "subtitle",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "accent",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "url",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "alt",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "borderColor",
+                "type": "string",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={MEDIA.map((image, index) => ({ image, alt: LABELS[index], title: LABELS[index], subtitle: '自然色图形', accent: [palette.primary, palette.sage, palette.sand][index % 3] }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={MEDIA.map((image, index) => ({ image, alt: LABELS[index], title: LABELS[index], subtitle: '自然色图形', accent: [palette.primary, palette.sage, palette.sand][index % 3] }))}"
+      ]
+    },
+    {
+      "name": "columns",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 128,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "列数，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 18
+      },
+      "codeExample": "columns={3}",
+      "usageExamples": [
+        "columns={3}"
+      ]
+    },
+    {
+      "name": "minCardWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "180",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 129,
+        "kind": "parameter"
+      },
+      "defaultValue": 180,
+      "description": "最小卡片宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 19
+      },
+      "codeExample": "minCardWidth={150}",
+      "usageExamples": [
+        "minCardWidth={150}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 130,
+        "kind": "parameter"
+      },
+      "defaultValue": 12,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 20
+      },
+      "codeExample": "gap={14}",
+      "usageExamples": [
+        "gap={14}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "260",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 131,
+        "kind": "parameter"
+      },
+      "defaultValue": 260,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 21
+      },
+      "codeExample": "radius={180}",
+      "usageExamples": [
+        "radius={180}"
+      ]
+    },
+    {
+      "name": "softness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 132,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "柔和度，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 22
+      },
+      "codeExample": "softness={0.7}",
+      "usageExamples": [
+        "softness={0.7}"
+      ]
+    },
+    {
+      "name": "damping",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.45",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 133,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.45,
+      "description": "阻尼，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 23
+      },
+      "codeExample": "damping={0.3}",
+      "usageExamples": [
+        "damping={0.3}"
+      ]
+    },
+    {
+      "name": "fadeOut",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 134,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "淡出退出，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 24
+      },
+      "codeExample": "fadeOut={0.45}",
+      "usageExamples": [
+        "fadeOut={0.45}"
+      ]
+    },
+    {
+      "name": "grayscale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 135,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "灰度，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 25
+      },
+      "codeExample": "grayscale={0.75}",
+      "usageExamples": [
+        "grayscale={0.75}"
+      ]
+    },
+    {
+      "name": "dim",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 136,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.12,
+      "description": "暗化，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 26
+      },
+      "codeExample": "dim={0.1}",
+      "usageExamples": [
+        "dim={0.1}"
+      ]
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 137,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "辉光，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 27
+      },
+      "codeExample": "glow={0.2}",
+      "usageExamples": [
+        "glow={0.2}"
+      ]
+    },
+    {
+      "name": "borderGlow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 138,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "边框辉光，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 28
+      },
+      "codeExample": "borderGlow={0.2}",
+      "usageExamples": [
+        "borderGlow={0.2}"
+      ]
+    },
+    {
+      "name": "reveal",
+      "type": "'spotlight' | 'card'",
+      "required": false,
+      "defaultExpression": "'spotlight'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 139,
+        "kind": "parameter"
+      },
+      "defaultValue": "spotlight",
+      "description": "显现，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "spotlight",
+        "card"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "spotlight",
+          "card"
+        ]
+      },
+      "codeExample": "reveal=\"spotlight\"",
+      "usageExamples": [
+        "reveal=\"spotlight\""
+      ]
+    },
+    {
+      "name": "aspectRatio",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'3 / 2'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 140,
+        "kind": "parameter"
+      },
+      "defaultValue": "3 / 2",
+      "description": "宽高比例，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 30
+      },
+      "codeExample": "aspectRatio=\"4 / 3\"",
+      "usageExamples": [
+        "aspectRatio=\"4 / 3\""
+      ]
+    },
+    {
+      "name": "cardRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "22",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 141,
+        "kind": "parameter"
+      },
+      "defaultValue": 22,
+      "description": "卡片半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 31
+      },
+      "codeExample": "cardRadius={20}",
+      "usageExamples": [
+        "cardRadius={20}"
+      ]
+    },
+    {
+      "name": "showInfo",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 142,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示信息，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showInfo",
+      "usageExamples": [
+        "showInfo"
+      ]
+    },
+    {
+      "name": "frame",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 143,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否外框，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "frame",
+      "usageExamples": [
+        "frame"
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 144,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 chroma grid 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"light\"",
+      "usageExamples": [
+        "theme=\"light\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 145,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+        "line": 35
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/ChromaGrid/ChromaGrid';\n\n\n// 光斑局部恢复图片颜色与边缘高光，六张真实图片构成网格。\n\nexport default function ChromaGridDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 500, position: 'relative', overflow: 'auto', padding: 20 }}>\n      <Component\n\n\n\n   /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ChromaGrid",
+      "sourcePath": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "ChromaItem[]",
+          "required": false,
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "ChromaItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "image",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "title",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "subtitle",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "accent",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "url",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "borderColor",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={MEDIA.map((image, index) => ({ image, alt: LABELS[index], title: LABELS[index], subtitle: '自然色图形', accent: [palette.primary, palette.sage, palette.sand][index % 3] }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={MEDIA.map((image, index) => ({ image, alt: LABELS[index], title: LABELS[index], subtitle: '自然色图形', accent: [palette.primary, palette.sage, palette.sand][index % 3] }))}"
+          ]
+        },
+        {
+          "name": "columns",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 128,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "列数，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 18
+          },
+          "codeExample": "columns={3}",
+          "usageExamples": [
+            "columns={3}"
+          ]
+        },
+        {
+          "name": "minCardWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "180",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 129,
+            "kind": "parameter"
+          },
+          "defaultValue": 180,
+          "description": "最小卡片宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 19
+          },
+          "codeExample": "minCardWidth={150}",
+          "usageExamples": [
+            "minCardWidth={150}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 130,
+            "kind": "parameter"
+          },
+          "defaultValue": 12,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 20
+          },
+          "codeExample": "gap={14}",
+          "usageExamples": [
+            "gap={14}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "260",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 131,
+            "kind": "parameter"
+          },
+          "defaultValue": 260,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 21
+          },
+          "codeExample": "radius={180}",
+          "usageExamples": [
+            "radius={180}"
+          ]
+        },
+        {
+          "name": "softness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 132,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "柔和度，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 22
+          },
+          "codeExample": "softness={0.7}",
+          "usageExamples": [
+            "softness={0.7}"
+          ]
+        },
+        {
+          "name": "damping",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.45",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 133,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.45,
+          "description": "阻尼，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 23
+          },
+          "codeExample": "damping={0.3}",
+          "usageExamples": [
+            "damping={0.3}"
+          ]
+        },
+        {
+          "name": "fadeOut",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 134,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "淡出退出，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 24
+          },
+          "codeExample": "fadeOut={0.45}",
+          "usageExamples": [
+            "fadeOut={0.45}"
+          ]
+        },
+        {
+          "name": "grayscale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 135,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "灰度，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 25
+          },
+          "codeExample": "grayscale={0.75}",
+          "usageExamples": [
+            "grayscale={0.75}"
+          ]
+        },
+        {
+          "name": "dim",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 136,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.12,
+          "description": "暗化，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 26
+          },
+          "codeExample": "dim={0.1}",
+          "usageExamples": [
+            "dim={0.1}"
+          ]
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 137,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "辉光，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 27
+          },
+          "codeExample": "glow={0.2}",
+          "usageExamples": [
+            "glow={0.2}"
+          ]
+        },
+        {
+          "name": "borderGlow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 138,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "边框辉光，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 28
+          },
+          "codeExample": "borderGlow={0.2}",
+          "usageExamples": [
+            "borderGlow={0.2}"
+          ]
+        },
+        {
+          "name": "reveal",
+          "type": "'spotlight' | 'card'",
+          "required": false,
+          "defaultExpression": "'spotlight'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 139,
+            "kind": "parameter"
+          },
+          "defaultValue": "spotlight",
+          "description": "显现，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "spotlight",
+            "card"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "spotlight",
+              "card"
+            ]
+          },
+          "codeExample": "reveal=\"spotlight\"",
+          "usageExamples": [
+            "reveal=\"spotlight\""
+          ]
+        },
+        {
+          "name": "aspectRatio",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'3 / 2'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 140,
+            "kind": "parameter"
+          },
+          "defaultValue": "3 / 2",
+          "description": "宽高比例，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 30
+          },
+          "codeExample": "aspectRatio=\"4 / 3\"",
+          "usageExamples": [
+            "aspectRatio=\"4 / 3\""
+          ]
+        },
+        {
+          "name": "cardRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "22",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 141,
+            "kind": "parameter"
+          },
+          "defaultValue": 22,
+          "description": "卡片半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 31
+          },
+          "codeExample": "cardRadius={20}",
+          "usageExamples": [
+            "cardRadius={20}"
+          ]
+        },
+        {
+          "name": "showInfo",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 142,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示信息，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showInfo",
+          "usageExamples": [
+            "showInfo"
+          ]
+        },
+        {
+          "name": "frame",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 143,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否外框，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "frame",
+          "usageExamples": [
+            "frame"
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 144,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 chroma grid 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"light\"",
+          "usageExamples": [
+            "theme=\"light\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 145,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ChromaGrid/ChromaGrid.tsx",
+            "line": 35
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

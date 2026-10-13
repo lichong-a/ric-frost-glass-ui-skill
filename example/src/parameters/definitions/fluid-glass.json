@@ -1,0 +1,568 @@
+{
+  "version": 1,
+  "id": "fluid-glass",
+  "name": "Fluid Glass",
+  "sourcePath": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+  "demoPath": "src/demos/cards/fluid-glass.tsx",
+  "fields": [
+    {
+      "key": "t0.mode",
+      "name": "mode",
+      "label": "mode · t0",
+      "description": "选择组件的渲染或交互工作模式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mode"
+        }
+      ],
+      "type": "Mode",
+      "defaultValue": "lens",
+      "upstreamDefault": "'lens'",
+      "control": "select",
+      "options": [
+        {
+          "label": "lens",
+          "value": "lens"
+        },
+        {
+          "label": "bar",
+          "value": "bar"
+        },
+        {
+          "label": "cube",
+          "value": "cube"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#e8e4d7",
+      "upstreamDefault": "'#120F17'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lensProps",
+      "name": "lensProps",
+      "label": "lensProps · t0",
+      "description": "透镜属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lensProps"
+        }
+      ],
+      "type": "ModeProps",
+      "defaultValue": {
+        "ior": 1.12,
+        "thickness": 4,
+        "chromaticAberration": 0.025,
+        "anisotropy": 0.01
+      },
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "ior": {
+            "kind": "number"
+          },
+          "thickness": {
+            "kind": "number"
+          },
+          "chromaticAberration": {
+            "kind": "number"
+          },
+          "anisotropy": {
+            "kind": "number"
+          }
+        },
+        "required": [
+          "ior",
+          "thickness",
+          "chromaticAberration",
+          "anisotropy"
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.barProps",
+      "name": "barProps",
+      "label": "barProps · t0",
+      "description": "条形属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "barProps"
+        }
+      ],
+      "type": "ModeProps",
+      "defaultValue": {},
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {},
+        "required": []
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cubeProps",
+      "name": "cubeProps",
+      "label": "cubeProps · t0",
+      "description": "立方体属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cubeProps"
+        }
+      ],
+      "type": "ModeProps",
+      "defaultValue": {},
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {},
+        "required": []
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "mode",
+      "type": "Mode",
+      "required": false,
+      "defaultExpression": "'lens'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 47,
+        "kind": "parameter"
+      },
+      "defaultValue": "lens",
+      "description": "选择组件的渲染或交互工作模式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "lens",
+        "bar",
+        "cube"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 38
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "lens",
+          "bar",
+          "cube"
+        ]
+      },
+      "codeExample": "mode=\"lens\"",
+      "usageExamples": [
+        "mode=\"lens\""
+      ]
+    },
+    {
+      "name": "lensProps",
+      "type": "ModeProps",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 48,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "透镜属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 39
+      },
+      "codeExample": "lensProps={{ ior: 1.12, thickness: 4, chromaticAberration: 0.025, anisotropy: 0.01 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "lensProps={{ ior: 1.12, thickness: 4, chromaticAberration: 0.025, anisotropy: 0.01 }}"
+      ]
+    },
+    {
+      "name": "barProps",
+      "type": "ModeProps",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 49,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "条形属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 40
+      },
+      "codeExample": "barProps={{}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "cubeProps",
+      "type": "ModeProps",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 50,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "立方体属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 41
+      },
+      "codeExample": "cubeProps={{}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#120F17'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 51,
+        "kind": "parameter"
+      },
+      "defaultValue": "#120F17",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 42
+      },
+      "codeExample": "backgroundColor={palette.canvas}",
+      "usageExamples": [
+        "backgroundColor={palette.canvas}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 52,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+        "line": 43
+      },
+      "codeExample": "textColor={palette.ink}",
+      "usageExamples": [
+        "textColor={palette.ink}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/FluidGlass/FluidGlass';\n\n\n// 真实Three/Fiber折射透镜，默认图片通过本地集成转换替换为自有素材。\n// 需要本地lens.glb、cube.glb、bar.glb模型；按当前选择只展示lens模式，滚动可查看穿过透镜的内容。\n// 此演示需要可用WebGL上下文；不支持时应显示能力提示，不声称效果已运行。\n\nexport default function FluidGlassDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 480, position: 'relative', overflow: 'hidden' }}>\n      <Component\n /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "FluidGlass",
+      "sourcePath": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+      "props": [
+        {
+          "name": "mode",
+          "type": "Mode",
+          "required": false,
+          "defaultExpression": "'lens'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 47,
+            "kind": "parameter"
+          },
+          "defaultValue": "lens",
+          "description": "选择组件的渲染或交互工作模式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "lens",
+            "bar",
+            "cube"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 38
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "lens",
+              "bar",
+              "cube"
+            ]
+          },
+          "codeExample": "mode=\"lens\"",
+          "usageExamples": [
+            "mode=\"lens\""
+          ]
+        },
+        {
+          "name": "lensProps",
+          "type": "ModeProps",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 48,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "透镜属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 39
+          },
+          "codeExample": "lensProps={{ ior: 1.12, thickness: 4, chromaticAberration: 0.025, anisotropy: 0.01 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "lensProps={{ ior: 1.12, thickness: 4, chromaticAberration: 0.025, anisotropy: 0.01 }}"
+          ]
+        },
+        {
+          "name": "barProps",
+          "type": "ModeProps",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 49,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "条形属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 40
+          },
+          "codeExample": "barProps={{}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "cubeProps",
+          "type": "ModeProps",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 50,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "立方体属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 41
+          },
+          "codeExample": "cubeProps={{}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#120F17'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 51,
+            "kind": "parameter"
+          },
+          "defaultValue": "#120F17",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 42
+          },
+          "codeExample": "backgroundColor={palette.canvas}",
+          "usageExamples": [
+            "backgroundColor={palette.canvas}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 52,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FluidGlass/FluidGlass.tsx",
+            "line": 43
+          },
+          "codeExample": "textColor={palette.ink}",
+          "usageExamples": [
+            "textColor={palette.ink}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

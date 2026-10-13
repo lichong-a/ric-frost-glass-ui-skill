@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "capturedAt": "2026-10-12",
-  "scope": "88个独立业务能力，使用现有React、原生HTML与Agent Wan Token。每项提供具体场景、替代边界和真实使用示例。",
+  "scope": "88个独立业务能力，使用现有React、原生语义控件、Motion局部动效与Agent Wan Token。每项提供具体场景、替代边界和真实使用示例。",
   "runtime": "existing-react-native-dom",
   "total": 88,
   "components": [
@@ -9,7 +9,7 @@
       "id": "business-autocomplete",
       "name": "AutoComplete",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "AutoComplete",
         "自动补全",
@@ -20,12 +20,14 @@
       "useWhen": "候选项较多且用户知道部分名称，需要边输入边筛选并选择明确对象",
       "avoidWhen": "只有少量固定候选项时优先Select；自由文本不能强制选项",
       "description": "候选项较多且用户知道部分名称，需要边输入边筛选并选择明确对象",
-      "demoPath": "src/business/demos/business-autocomplete.tsx",
+      "demoPath": "src/business/demos/form/business-autocomplete.tsx",
       "guidePath": "docs/business/components/business-autocomplete.md",
-      "sourcePath": "src/business/demos/business-autocomplete.tsx",
+      "sourcePath": "src/business/demos/form/business-autocomplete.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -40,13 +42,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "输入时搜索并选择候选"
+      "subtitle": "输入时搜索并选择候选",
+      "sourceName": "AutoComplete",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-checkbox",
       "name": "Checkbox",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "Checkbox",
         "复选框",
@@ -54,14 +66,16 @@
         "是否启用"
       ],
       "useWhen": "表单里的独立布尔选项，允许选中或取消",
-      "avoidWhen": "互斥选择用RadioButton；任务完成动效用Spring Check",
+      "avoidWhen": "互斥选择用RadioButton；完成任务并划线的列表项用Spring Check",
       "description": "表单里的独立布尔选项，允许选中或取消",
-      "demoPath": "src/business/demos/business-checkbox.tsx",
+      "demoPath": "src/business/demos/form/business-checkbox.tsx",
       "guidePath": "docs/business/components/business-checkbox.md",
-      "sourcePath": "src/business/demos/business-checkbox.tsx",
+      "sourcePath": "src/business/demos/form/business-checkbox.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -77,13 +91,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "独立布尔选项勾选"
+      "subtitle": "独立布尔选项勾选",
+      "sourceName": "Checkbox",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-checkboxgroup",
       "name": "CheckboxGroup",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "CheckboxGroup",
         "复选组",
@@ -93,12 +117,14 @@
       "useWhen": "同一字段可同时选择多个候选，如通知渠道或权限组合",
       "avoidWhen": "互斥项用RadioButton；大量候选用可搜索选择",
       "description": "同一字段可同时选择多个候选，如通知渠道或权限组合",
-      "demoPath": "src/business/demos/business-checkboxgroup.tsx",
+      "demoPath": "src/business/demos/form/business-checkboxgroup.tsx",
       "guidePath": "docs/business/components/business-checkboxgroup.md",
-      "sourcePath": "src/business/demos/business-checkboxgroup.tsx",
+      "sourcePath": "src/business/demos/form/business-checkboxgroup.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -112,13 +138,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "多个选项组合选择"
+      "subtitle": "多个选项组合选择",
+      "sourceName": "CheckboxGroup",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-datepicker",
       "name": "DatePicker",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "DatePicker",
         "日期选择",
@@ -127,13 +163,15 @@
       ],
       "useWhen": "用户选择单日或起止日，日期值与时区语义明确",
       "avoidWhen": "纯时长用InputNumber；排班拖拽不属于本例",
-      "description": "用户选择单日或起止日，日期值与时区语义明确",
-      "demoPath": "src/business/demos/business-datepicker.tsx",
+      "description": "定制日历、月份过渡、键盘选日与起止区间",
+      "demoPath": "src/business/demos/form/business-datepicker.tsx",
       "guidePath": "docs/business/components/business-datepicker.md",
-      "sourcePath": "src/business/demos/business-datepicker.tsx",
+      "sourcePath": "src/business/demos/form/business-datepicker.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -147,13 +185,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "单日与起止日期选择"
+      "subtitle": "单日与起止日期选择",
+      "sourceName": "DatePicker",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-floatlabel",
       "name": "FloatLabel",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "FloatLabel",
         "浮动标签",
@@ -163,12 +211,14 @@
       "useWhen": "紧凑表单中需要输入前后始终可见的字段名称",
       "avoidWhen": "说明较长或容易误解的字段用普通Label与帮助文字",
       "description": "紧凑表单中需要输入前后始终可见的字段名称",
-      "demoPath": "src/business/demos/business-floatlabel.tsx",
+      "demoPath": "src/business/demos/form/business-floatlabel.tsx",
       "guidePath": "docs/business/components/business-floatlabel.md",
-      "sourcePath": "src/business/demos/business-floatlabel.tsx",
+      "sourcePath": "src/business/demos/form/business-floatlabel.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -182,13 +232,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "输入后浮起的字段标签"
+      "subtitle": "输入后浮起的字段标签",
+      "sourceName": "FloatLabel",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-iconfield",
       "name": "IconField",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "IconField",
         "图标输入",
@@ -198,12 +258,14 @@
       "useWhen": "用图标辅助识别搜索或字段用途，同时保留完整文本标签",
       "avoidWhen": "图标不能代替可访问名称；普通字段不必装饰图标",
       "description": "用图标辅助识别搜索或字段用途，同时保留完整文本标签",
-      "demoPath": "src/business/demos/business-iconfield.tsx",
+      "demoPath": "src/business/demos/form/business-iconfield.tsx",
       "guidePath": "docs/business/components/business-iconfield.md",
-      "sourcePath": "src/business/demos/business-iconfield.tsx",
+      "sourcePath": "src/business/demos/form/business-iconfield.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -217,13 +279,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "带提示图标的输入框"
+      "subtitle": "带提示图标的输入框",
+      "sourceName": "IconField",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-iftalabel",
       "name": "IftaLabel",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "IftaLabel",
         "内置标签",
@@ -233,12 +305,14 @@
       "useWhen": "需要常驻在输入框内部顶部的标签，适合密集设置页",
       "avoidWhen": "长标签与长帮助文字改用Field普通布局",
       "description": "需要常驻在输入框内部顶部的标签，适合密集设置页",
-      "demoPath": "src/business/demos/business-iftalabel.tsx",
+      "demoPath": "src/business/demos/form/business-iftalabel.tsx",
       "guidePath": "docs/business/components/business-iftalabel.md",
-      "sourcePath": "src/business/demos/business-iftalabel.tsx",
+      "sourcePath": "src/business/demos/form/business-iftalabel.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -252,13 +326,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "框内常驻顶部标签"
+      "subtitle": "框内常驻顶部标签",
+      "sourceName": "IftaLabel",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-inputcolor",
       "name": "InputColor",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "InputColor",
         "颜色选择",
@@ -268,12 +352,14 @@
       "useWhen": "为对象标记、画布或允许自定义的配置选择颜色并即时预览",
       "avoidWhen": "不随意修改全局Token；固定状态色用Tag",
       "description": "为对象标记、画布或允许自定义的配置选择颜色并即时预览",
-      "demoPath": "src/business/demos/business-inputcolor.tsx",
+      "demoPath": "src/business/demos/form/business-inputcolor.tsx",
       "guidePath": "docs/business/components/business-inputcolor.md",
-      "sourcePath": "src/business/demos/business-inputcolor.tsx",
+      "sourcePath": "src/business/demos/form/business-inputcolor.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -287,13 +373,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "对象颜色选择与预览"
+      "subtitle": "对象颜色选择与预览",
+      "sourceName": "InputColor",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-inputgroup",
       "name": "InputGroup",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "InputGroup",
         "输入前缀",
@@ -303,12 +399,14 @@
       "useWhen": "字段需要单位、地址前缀或紧邻动作，且输入值与说明分开",
       "avoidWhen": "无关联的多个字段用表单网格，不挤进一个组合",
       "description": "字段需要单位、地址前缀或紧邻动作，且输入值与说明分开",
-      "demoPath": "src/business/demos/business-inputgroup.tsx",
+      "demoPath": "src/business/demos/form/business-inputgroup.tsx",
       "guidePath": "docs/business/components/business-inputgroup.md",
-      "sourcePath": "src/business/demos/business-inputgroup.tsx",
+      "sourcePath": "src/business/demos/form/business-inputgroup.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -322,13 +420,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "附带前后缀的组合输入"
+      "subtitle": "附带前后缀的组合输入",
+      "sourceName": "InputGroup",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-inputmask",
       "name": "InputMask",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "InputMask",
         "格式输入",
@@ -338,12 +446,14 @@
       "useWhen": "录入格式固定的文本标识，帮助用户看出位数与分组",
       "avoidWhen": "掩码不是校验或安全边界；自由说明用InputText",
       "description": "录入格式固定的文本标识，帮助用户看出位数与分组",
-      "demoPath": "src/business/demos/business-inputmask.tsx",
+      "demoPath": "src/business/demos/form/business-inputmask.tsx",
       "guidePath": "docs/business/components/business-inputmask.md",
-      "sourcePath": "src/business/demos/business-inputmask.tsx",
+      "sourcePath": "src/business/demos/form/business-inputmask.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -357,13 +467,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "固定格式与数字分组"
+      "subtitle": "固定格式与数字分组",
+      "sourceName": "InputMask",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-inputnumber",
       "name": "InputNumber",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "InputNumber",
         "数字输入",
@@ -373,12 +493,14 @@
       "useWhen": "录入带单位和上下限的数量，允许清空和精确增减",
       "avoidWhen": "连续探索用Slider；金额业务使用精确单位与服务端校验",
       "description": "录入带单位和上下限的数量，允许清空和精确增减",
-      "demoPath": "src/business/demos/business-inputnumber.tsx",
+      "demoPath": "src/business/demos/form/business-inputnumber.tsx",
       "guidePath": "docs/business/components/business-inputnumber.md",
-      "sourcePath": "src/business/demos/business-inputnumber.tsx",
+      "sourcePath": "src/business/demos/form/business-inputnumber.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -392,13 +514,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "有上下限的数值增减"
+      "subtitle": "有上下限的数值增减",
+      "sourceName": "InputNumber",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-inputotp",
       "name": "InputOtp",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "InputOtp",
         "验证码",
@@ -408,12 +540,14 @@
       "useWhen": "分段录入短验证码，自动移动焦点并支持整体粘贴",
       "avoidWhen": "不能用本地位数检查假装身份验证成功",
       "description": "分段录入短验证码，自动移动焦点并支持整体粘贴",
-      "demoPath": "src/business/demos/business-inputotp.tsx",
+      "demoPath": "src/business/demos/form/business-inputotp.tsx",
       "guidePath": "docs/business/components/business-inputotp.md",
-      "sourcePath": "src/business/demos/business-inputotp.tsx",
+      "sourcePath": "src/business/demos/form/business-inputotp.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -427,13 +561,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "分段验证码与粘贴录入"
+      "subtitle": "分段验证码与粘贴录入",
+      "sourceName": "InputOtp",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-inputpassword",
       "name": "InputPassword",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "InputPassword",
         "密码输入",
@@ -443,12 +587,14 @@
       "useWhen": "敏感文本需要隐藏显示，并提供用户触发的显隐和规则提示",
       "avoidWhen": "不记录密码到日志或持久化；普通文本用InputText",
       "description": "敏感文本需要隐藏显示，并提供用户触发的显隐和规则提示",
-      "demoPath": "src/business/demos/business-inputpassword.tsx",
+      "demoPath": "src/business/demos/form/business-inputpassword.tsx",
       "guidePath": "docs/business/components/business-inputpassword.md",
-      "sourcePath": "src/business/demos/business-inputpassword.tsx",
+      "sourcePath": "src/business/demos/form/business-inputpassword.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -462,13 +608,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "密码显隐与强度提示"
+      "subtitle": "密码显隐与强度提示",
+      "sourceName": "InputPassword",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-inputtags",
       "name": "InputTags",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "InputTags",
         "标签输入",
@@ -478,12 +634,14 @@
       "useWhen": "一个字段包含多个用户自定义短标签，需要添加去重和移除",
       "avoidWhen": "固定标签目录用CheckboxGroup或Select",
       "description": "一个字段包含多个用户自定义短标签，需要添加去重和移除",
-      "demoPath": "src/business/demos/business-inputtags.tsx",
+      "demoPath": "src/business/demos/form/business-inputtags.tsx",
       "guidePath": "docs/business/components/business-inputtags.md",
-      "sourcePath": "src/business/demos/business-inputtags.tsx",
+      "sourcePath": "src/business/demos/form/business-inputtags.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -499,13 +657,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "自由标签添加与移除"
+      "subtitle": "自由标签添加与移除",
+      "sourceName": "InputTags",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-inputtext",
       "name": "InputText",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "InputText",
         "单行文本",
@@ -515,12 +683,14 @@
       "useWhen": "普通短文本字段，需要标签、长度、必填和错误状态",
       "avoidWhen": "多行说明用Textarea；候选对象选择用AutoComplete",
       "description": "普通短文本字段，需要标签、长度、必填和错误状态",
-      "demoPath": "src/business/demos/business-inputtext.tsx",
+      "demoPath": "src/business/demos/form/business-inputtext.tsx",
       "guidePath": "docs/business/components/business-inputtext.md",
-      "sourcePath": "src/business/demos/business-inputtext.tsx",
+      "sourcePath": "src/business/demos/form/business-inputtext.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -534,13 +704,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "短文本与必填提示"
+      "subtitle": "短文本与必填提示",
+      "sourceName": "InputText",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-keyfilter",
       "name": "KeyFilter",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "KeyFilter",
         "字符过滤",
@@ -550,12 +730,14 @@
       "useWhen": "允许的字符集合明确，键入和粘贴使用同一体验规则",
       "avoidWhen": "不能代替完整字段校验与可信服务端验证",
       "description": "允许的字符集合明确，键入和粘贴使用同一体验规则",
-      "demoPath": "src/business/demos/business-keyfilter.tsx",
+      "demoPath": "src/business/demos/form/business-keyfilter.tsx",
       "guidePath": "docs/business/components/business-keyfilter.md",
-      "sourcePath": "src/business/demos/business-keyfilter.tsx",
+      "sourcePath": "src/business/demos/form/business-keyfilter.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -569,13 +751,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "键入和粘贴的字符限制"
+      "subtitle": "键入和粘贴的字符限制",
+      "sourceName": "KeyFilter",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-knob",
       "name": "Knob",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "Knob",
         "数值旋钮",
@@ -585,12 +777,14 @@
       "useWhen": "通过圆形控件调整有界比例，同时提供键盘和精确值",
       "avoidWhen": "精确批量编辑用InputNumber；不要仅允许拖拽",
       "description": "通过圆形控件调整有界比例，同时提供键盘和精确值",
-      "demoPath": "src/business/demos/business-knob.tsx",
+      "demoPath": "src/business/demos/form/business-knob.tsx",
       "guidePath": "docs/business/components/business-knob.md",
-      "sourcePath": "src/business/demos/business-knob.tsx",
+      "sourcePath": "src/business/demos/form/business-knob.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -606,13 +800,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "可拖动的数值旋钮"
+      "subtitle": "可拖动的数值旋钮",
+      "sourceName": "Knob",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-label",
       "name": "Label",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "Label",
         "字段标签",
@@ -622,12 +826,14 @@
       "useWhen": "给输入或选择控件稳定命名，标签与控件通过id关联",
       "avoidWhen": "不要仅以placeholder命名；装饰文字不应伪装成label",
       "description": "给输入或选择控件稳定命名，标签与控件通过id关联",
-      "demoPath": "src/business/demos/business-label.tsx",
+      "demoPath": "src/business/demos/form/business-label.tsx",
       "guidePath": "docs/business/components/business-label.md",
-      "sourcePath": "src/business/demos/business-label.tsx",
+      "sourcePath": "src/business/demos/form/business-label.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -641,13 +847,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "点击标签聚焦关联字段"
+      "subtitle": "点击标签聚焦关联字段",
+      "sourceName": "Label",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-listbox",
       "name": "Listbox",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "Listbox",
         "列表选择",
@@ -657,12 +873,14 @@
       "useWhen": "候选项需要持续可见，用户反复比较和选择",
       "avoidWhen": "候选项很多时用AutoComplete；表格数据用DataTable",
       "description": "候选项需要持续可见，用户反复比较和选择",
-      "demoPath": "src/business/demos/business-listbox.tsx",
+      "demoPath": "src/business/demos/form/business-listbox.tsx",
       "guidePath": "docs/business/components/business-listbox.md",
-      "sourcePath": "src/business/demos/business-listbox.tsx",
+      "sourcePath": "src/business/demos/form/business-listbox.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -676,13 +894,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "持续可见的候选列表"
+      "subtitle": "持续可见的候选列表",
+      "sourceName": "Listbox",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-radiobutton",
       "name": "RadioButton",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "RadioButton",
         "单选组",
@@ -692,12 +920,14 @@
       "useWhen": "少量互斥选项需要同时展示，保留原生组键盘操作",
       "avoidWhen": "多项可并存用CheckboxGroup；大量选项用Select",
       "description": "少量互斥选项需要同时展示，保留原生组键盘操作",
-      "demoPath": "src/business/demos/business-radiobutton.tsx",
+      "demoPath": "src/business/demos/form/business-radiobutton.tsx",
       "guidePath": "docs/business/components/business-radiobutton.md",
-      "sourcePath": "src/business/demos/business-radiobutton.tsx",
+      "sourcePath": "src/business/demos/form/business-radiobutton.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -713,13 +943,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "少量互斥选项选择"
+      "subtitle": "少量互斥选项选择",
+      "sourceName": "RadioButton",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-rating",
       "name": "Rating",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "Rating",
         "评分",
@@ -729,12 +969,14 @@
       "useWhen": "用户明确对体验或对象打分，并显示或清除当前评分",
       "avoidWhen": "不能把评分当状态标签；纯展示状态用Tag",
       "description": "用户明确对体验或对象打分，并显示或清除当前评分",
-      "demoPath": "src/business/demos/business-rating.tsx",
+      "demoPath": "src/business/demos/form/business-rating.tsx",
       "guidePath": "docs/business/components/business-rating.md",
-      "sourcePath": "src/business/demos/business-rating.tsx",
+      "sourcePath": "src/business/demos/form/business-rating.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -750,13 +992,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "可调整与清除的星级"
+      "subtitle": "可调整与清除的星级",
+      "sourceName": "Rating",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-select",
       "name": "Select",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "Select",
         "下拉选择",
@@ -766,12 +1018,14 @@
       "useWhen": "从固定候选项中单选或多选，保存明确的对象值",
       "avoidWhen": "自由输入用InputText；大量模糊查找用AutoComplete",
       "description": "从固定候选项中单选或多选，保存明确的对象值",
-      "demoPath": "src/business/demos/business-select.tsx",
+      "demoPath": "src/business/demos/form/business-select.tsx",
       "guidePath": "docs/business/components/business-select.md",
-      "sourcePath": "src/business/demos/business-select.tsx",
+      "sourcePath": "src/business/demos/form/business-select.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -785,13 +1039,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "固定候选单选与多选"
+      "subtitle": "固定候选单选与多选",
+      "sourceName": "Select",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-slider",
       "name": "Slider",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "Slider",
         "范围滑块",
@@ -801,12 +1065,14 @@
       "useWhen": "调整有界连续值或上下限区间，数字值始终可见",
       "avoidWhen": "精确数量与金额用InputNumber；不要省略键盘入口",
       "description": "调整有界连续值或上下限区间，数字值始终可见",
-      "demoPath": "src/business/demos/business-slider.tsx",
+      "demoPath": "src/business/demos/form/business-slider.tsx",
       "guidePath": "docs/business/components/business-slider.md",
-      "sourcePath": "src/business/demos/business-slider.tsx",
+      "sourcePath": "src/business/demos/form/business-slider.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -823,13 +1089,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "连续数值与区间调整"
+      "subtitle": "连续数值与区间调整",
+      "sourceName": "Slider",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-textarea",
       "name": "Textarea",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "Textarea",
         "多行文本",
@@ -839,12 +1115,14 @@
       "useWhen": "录入多行说明、反馈或备注，提供长度与错误反馈",
       "avoidWhen": "短名称用InputText；富文本编辑不属于本例",
       "description": "录入多行说明、反馈或备注，提供长度与错误反馈",
-      "demoPath": "src/business/demos/business-textarea.tsx",
+      "demoPath": "src/business/demos/form/business-textarea.tsx",
       "guidePath": "docs/business/components/business-textarea.md",
-      "sourcePath": "src/business/demos/business-textarea.tsx",
+      "sourcePath": "src/business/demos/form/business-textarea.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -858,13 +1136,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "多行说明与字数提示"
+      "subtitle": "多行说明与字数提示",
+      "sourceName": "Textarea",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-togglebutton",
       "name": "ToggleButton",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "ToggleButton",
         "切换按钮",
@@ -874,12 +1162,14 @@
       "useWhen": "单个按钮切换本地布尔状态，aria-pressed与显示一致",
       "avoidWhen": "不可逆动作应使用普通Button加确认",
       "description": "单个按钮切换本地布尔状态，aria-pressed与显示一致",
-      "demoPath": "src/business/demos/business-togglebutton.tsx",
+      "demoPath": "src/business/demos/form/business-togglebutton.tsx",
       "guidePath": "docs/business/components/business-togglebutton.md",
-      "sourcePath": "src/business/demos/business-togglebutton.tsx",
+      "sourcePath": "src/business/demos/form/business-togglebutton.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -895,13 +1185,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "单项关注状态切换"
+      "subtitle": "单项关注状态切换",
+      "sourceName": "ToggleButton",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-togglebuttongroup",
       "name": "ToggleButtonGroup",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "ToggleButtonGroup",
         "切换组",
@@ -911,12 +1211,14 @@
       "useWhen": "多个快捷筛选条件可以同时开启或取消",
       "avoidWhen": "互斥选择用RadioButton或Tabs",
       "description": "多个快捷筛选条件可以同时开启或取消",
-      "demoPath": "src/business/demos/business-togglebuttongroup.tsx",
+      "demoPath": "src/business/demos/form/business-togglebuttongroup.tsx",
       "guidePath": "docs/business/components/business-togglebuttongroup.md",
-      "sourcePath": "src/business/demos/business-togglebuttongroup.tsx",
+      "sourcePath": "src/business/demos/form/business-togglebuttongroup.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -930,13 +1232,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "可叠加的快捷筛选"
+      "subtitle": "可叠加的快捷筛选",
+      "sourceName": "ToggleButtonGroup",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-toggleswitch",
       "name": "ToggleSwitch",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "ToggleSwitch",
         "设置开关",
@@ -946,12 +1258,14 @@
       "useWhen": "本地二元设置切换立即反映当前状态",
       "avoidWhen": "外部写入或危险配置仍需要业务授权与失败恢复",
       "description": "本地二元设置切换立即反映当前状态",
-      "demoPath": "src/business/demos/business-toggleswitch.tsx",
+      "demoPath": "src/business/demos/form/business-toggleswitch.tsx",
       "guidePath": "docs/business/components/business-toggleswitch.md",
-      "sourcePath": "src/business/demos/business-toggleswitch.tsx",
+      "sourcePath": "src/business/demos/form/business-toggleswitch.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -967,13 +1281,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "立即生效的二元设置"
+      "subtitle": "立即生效的二元设置",
+      "sourceName": "ToggleSwitch",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-button",
       "name": "Button",
       "family": "action",
-      "category": "business-action",
+      "category": "actions",
       "aliases": [
         "Button",
         "动作按钮",
@@ -983,12 +1307,14 @@
       "useWhen": "执行明确动作，提供主次、危险、禁用和反馈状态",
       "avoidWhen": "导航目标用链接；状态选择用ToggleButton",
       "description": "执行明确动作，提供主次、危险、禁用和反馈状态",
-      "demoPath": "src/business/demos/business-button.tsx",
+      "demoPath": "src/business/demos/actions/business-button.tsx",
       "guidePath": "docs/business/components/business-button.md",
-      "sourcePath": "src/business/demos/business-button.tsx",
+      "sourcePath": "src/business/demos/actions/business-button.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1006,13 +1332,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "主次动作与禁用反馈"
+      "subtitle": "主次动作与禁用反馈",
+      "sourceName": "Button",
+      "sourceCategory": "business-action",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-action",
+        "业务动作",
+        "原生 React"
+      ]
     },
     {
       "id": "business-buttongroup",
       "name": "ButtonGroup",
       "family": "action",
-      "category": "business-action",
+      "category": "actions",
       "aliases": [
         "ButtonGroup",
         "按钮组",
@@ -1022,12 +1358,14 @@
       "useWhen": "相邻展示关系明确的动作，并独立表达每项语义",
       "avoidWhen": "页面主导航用NavigationMenu；不堆无关动作",
       "description": "相邻展示关系明确的动作，并独立表达每项语义",
-      "demoPath": "src/business/demos/business-buttongroup.tsx",
+      "demoPath": "src/business/demos/actions/business-buttongroup.tsx",
       "guidePath": "docs/business/components/business-buttongroup.md",
-      "sourcePath": "src/business/demos/business-buttongroup.tsx",
+      "sourcePath": "src/business/demos/actions/business-buttongroup.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1041,13 +1379,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "相关动作并列选择"
+      "subtitle": "相关动作并列选择",
+      "sourceName": "ButtonGroup",
+      "sourceCategory": "business-action",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-action",
+        "业务动作",
+        "原生 React"
+      ]
     },
     {
       "id": "business-speeddial",
       "name": "SpeedDial",
       "family": "action",
-      "category": "business-action",
+      "category": "actions",
       "aliases": [
         "SpeedDial",
         "快捷动作",
@@ -1057,12 +1405,14 @@
       "useWhen": "主入口展开少量相关快捷动作，触屏与键盘都可选",
       "avoidWhen": "大量命令用CommandMenu；关键动作应直接可见",
       "description": "主入口展开少量相关快捷动作，触屏与键盘都可选",
-      "demoPath": "src/business/demos/business-speeddial.tsx",
+      "demoPath": "src/business/demos/actions/business-speeddial.tsx",
       "guidePath": "docs/business/components/business-speeddial.md",
-      "sourcePath": "src/business/demos/business-speeddial.tsx",
+      "sourcePath": "src/business/demos/actions/business-speeddial.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1076,13 +1426,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "主入口展开快捷动作"
+      "subtitle": "主入口展开快捷动作",
+      "sourceName": "SpeedDial",
+      "sourceCategory": "business-action",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-action",
+        "业务动作",
+        "原生 React"
+      ]
     },
     {
       "id": "business-datatable",
       "name": "DataTable",
       "family": "data",
-      "category": "business-data",
+      "category": "data",
       "aliases": [
         "DataTable",
         "数据表格",
@@ -1092,12 +1452,14 @@
       "useWhen": "结构化记录需要列比较、搜索、排序和分页",
       "avoidWhen": "卡片内容浏览用DataView；大数据需服务端分页",
       "description": "结构化记录需要列比较、搜索、排序和分页",
-      "demoPath": "src/business/demos/business-datatable.tsx",
+      "demoPath": "src/business/demos/data/business-datatable.tsx",
       "guidePath": "docs/business/components/business-datatable.md",
-      "sourcePath": "src/business/demos/business-datatable.tsx",
+      "sourcePath": "src/business/demos/data/business-datatable.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1113,13 +1475,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "记录搜索、排序与分页"
+      "subtitle": "记录搜索、排序与分页",
+      "sourceName": "DataTable",
+      "sourceCategory": "business-data",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-data",
+        "数据与文件",
+        "原生 React"
+      ]
     },
     {
       "id": "business-dataview",
       "name": "DataView",
       "family": "data",
-      "category": "business-data",
+      "category": "data",
       "aliases": [
         "DataView",
         "数据视图",
@@ -1129,12 +1501,14 @@
       "useWhen": "同一批记录在列表和网格中浏览，保持选择与筛选",
       "avoidWhen": "跨列精确比较用DataTable",
       "description": "同一批记录在列表和网格中浏览，保持选择与筛选",
-      "demoPath": "src/business/demos/business-dataview.tsx",
+      "demoPath": "src/business/demos/data/business-dataview.tsx",
       "guidePath": "docs/business/components/business-dataview.md",
-      "sourcePath": "src/business/demos/business-dataview.tsx",
+      "sourcePath": "src/business/demos/data/business-dataview.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1150,13 +1524,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "同批数据的列表网格切换"
+      "subtitle": "同批数据的列表网格切换",
+      "sourceName": "DataView",
+      "sourceCategory": "business-data",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-data",
+        "数据与文件",
+        "原生 React"
+      ]
     },
     {
       "id": "business-orderlist",
       "name": "OrderList",
       "family": "data",
-      "category": "business-data",
+      "category": "data",
       "aliases": [
         "OrderList",
         "顺序列表",
@@ -1166,12 +1550,14 @@
       "useWhen": "单个列表中的顺序本身有意义，用户调整优先级",
       "avoidWhen": "两个集合间分配用PickList；不可只提供鼠标拖拽",
       "description": "单个列表中的顺序本身有意义，用户调整优先级",
-      "demoPath": "src/business/demos/business-orderlist.tsx",
+      "demoPath": "src/business/demos/data/business-orderlist.tsx",
       "guidePath": "docs/business/components/business-orderlist.md",
-      "sourcePath": "src/business/demos/business-orderlist.tsx",
+      "sourcePath": "src/business/demos/data/business-orderlist.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1187,13 +1573,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "单列表优先级调整"
+      "subtitle": "单列表优先级调整",
+      "sourceName": "OrderList",
+      "sourceCategory": "business-data",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-data",
+        "数据与文件",
+        "原生 React"
+      ]
     },
     {
       "id": "business-organizationchart",
       "name": "OrganizationChart",
       "family": "data",
-      "category": "business-data",
+      "category": "data",
       "aliases": [
         "OrganizationChart",
         "组织结构",
@@ -1203,12 +1599,14 @@
       "useWhen": "展示可展开的上下级组织或责任关系并选择节点",
       "avoidWhen": "通用文件目录用Tree；大量树形记录用TreeTable",
       "description": "展示可展开的上下级组织或责任关系并选择节点",
-      "demoPath": "src/business/demos/business-organizationchart.tsx",
+      "demoPath": "src/business/demos/data/business-organizationchart.tsx",
       "guidePath": "docs/business/components/business-organizationchart.md",
-      "sourcePath": "src/business/demos/business-organizationchart.tsx",
+      "sourcePath": "src/business/demos/data/business-organizationchart.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1224,13 +1622,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "组织分支展开与选择"
+      "subtitle": "组织分支展开与选择",
+      "sourceName": "OrganizationChart",
+      "sourceCategory": "business-data",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-data",
+        "数据与文件",
+        "原生 React"
+      ]
     },
     {
       "id": "business-paginator",
       "name": "Paginator",
       "family": "data",
-      "category": "business-data",
+      "category": "data",
       "aliases": [
         "Paginator",
         "分页控件",
@@ -1240,12 +1648,14 @@
       "useWhen": "有界结果集需要前后页和每页数量选择",
       "avoidWhen": "无限加载与服务端游标要按目标API设计",
       "description": "有界结果集需要前后页和每页数量选择",
-      "demoPath": "src/business/demos/business-paginator.tsx",
+      "demoPath": "src/business/demos/data/business-paginator.tsx",
       "guidePath": "docs/business/components/business-paginator.md",
-      "sourcePath": "src/business/demos/business-paginator.tsx",
+      "sourcePath": "src/business/demos/data/business-paginator.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1261,13 +1671,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "页码与每页数量切换"
+      "subtitle": "页码与每页数量切换",
+      "sourceName": "Paginator",
+      "sourceCategory": "business-data",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-data",
+        "数据与文件",
+        "原生 React"
+      ]
     },
     {
       "id": "business-picklist",
       "name": "PickList",
       "family": "data",
-      "category": "business-data",
+      "category": "data",
       "aliases": [
         "PickList",
         "穿梭选择",
@@ -1277,12 +1697,14 @@
       "useWhen": "用户在可选与已选集合之间移动对象，支持移除与全选",
       "avoidWhen": "单一字段多选可用CheckboxGroup，不必引入双列表",
       "description": "用户在可选与已选集合之间移动对象，支持移除与全选",
-      "demoPath": "src/business/demos/business-picklist.tsx",
+      "demoPath": "src/business/demos/data/business-picklist.tsx",
       "guidePath": "docs/business/components/business-picklist.md",
-      "sourcePath": "src/business/demos/business-picklist.tsx",
+      "sourcePath": "src/business/demos/data/business-picklist.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1298,13 +1720,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "可选与已选集合穿梭"
+      "subtitle": "可选与已选集合穿梭",
+      "sourceName": "PickList",
+      "sourceCategory": "business-data",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-data",
+        "数据与文件",
+        "原生 React"
+      ]
     },
     {
       "id": "business-timeline",
       "name": "Timeline",
       "family": "data",
-      "category": "business-data",
+      "category": "data",
       "aliases": [
         "Timeline",
         "时间线",
@@ -1314,12 +1746,14 @@
       "useWhen": "按时间顺序呈现已经发生的事件或流程进展",
       "avoidWhen": "未发生步骤用Stepper；复杂排程不属于本例",
       "description": "按时间顺序呈现已经发生的事件或流程进展",
-      "demoPath": "src/business/demos/business-timeline.tsx",
+      "demoPath": "src/business/demos/data/business-timeline.tsx",
       "guidePath": "docs/business/components/business-timeline.md",
-      "sourcePath": "src/business/demos/business-timeline.tsx",
+      "sourcePath": "src/business/demos/data/business-timeline.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1335,13 +1769,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "已发生事件的时间顺序"
+      "subtitle": "已发生事件的时间顺序",
+      "sourceName": "Timeline",
+      "sourceCategory": "business-data",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-data",
+        "数据与文件",
+        "原生 React"
+      ]
     },
     {
       "id": "business-tree",
       "name": "Tree",
       "family": "data",
-      "category": "business-data",
+      "category": "data",
       "aliases": [
         "Tree",
         "树目录",
@@ -1351,12 +1795,14 @@
       "useWhen": "浏览可展开层级并选择节点，保持键盘与选中状态",
       "avoidWhen": "多列树数据用TreeTable；对象选择表单用TreeSelect",
       "description": "浏览可展开层级并选择节点，保持键盘与选中状态",
-      "demoPath": "src/business/demos/business-tree.tsx",
+      "demoPath": "src/business/demos/data/business-tree.tsx",
       "guidePath": "docs/business/components/business-tree.md",
-      "sourcePath": "src/business/demos/business-tree.tsx",
+      "sourcePath": "src/business/demos/data/business-tree.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1372,13 +1818,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "目录层级展开与选择"
+      "subtitle": "目录层级展开与选择",
+      "sourceName": "Tree",
+      "sourceCategory": "business-data",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-data",
+        "数据与文件",
+        "原生 React"
+      ]
     },
     {
       "id": "business-treetable",
       "name": "TreeTable",
       "family": "data",
-      "category": "business-data",
+      "category": "data",
       "aliases": [
         "TreeTable",
         "树形表格",
@@ -1388,12 +1844,14 @@
       "useWhen": "层级记录需要同时比较多列数据并展开子记录",
       "avoidWhen": "纯层级导航用Tree，不加入无用列",
       "description": "层级记录需要同时比较多列数据并展开子记录",
-      "demoPath": "src/business/demos/business-treetable.tsx",
+      "demoPath": "src/business/demos/data/business-treetable.tsx",
       "guidePath": "docs/business/components/business-treetable.md",
-      "sourcePath": "src/business/demos/business-treetable.tsx",
+      "sourcePath": "src/business/demos/data/business-treetable.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1409,13 +1867,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "父子记录的多列比较"
+      "subtitle": "父子记录的多列比较",
+      "sourceName": "TreeTable",
+      "sourceCategory": "business-data",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-data",
+        "数据与文件",
+        "原生 React"
+      ]
     },
     {
       "id": "business-accordion",
       "name": "Accordion",
       "family": "panel",
-      "category": "business-panel",
+      "category": "cards",
       "aliases": [
         "Accordion",
         "折叠面板",
@@ -1425,12 +1893,14 @@
       "useWhen": "独立内容段按需展开，触发按钮关联可见区域",
       "avoidWhen": "互斥页面视图用Tabs；关键内容不应默认隐藏",
       "description": "独立内容段按需展开，触发按钮关联可见区域",
-      "demoPath": "src/business/demos/business-accordion.tsx",
+      "demoPath": "src/business/demos/cards/business-accordion.tsx",
       "guidePath": "docs/business/components/business-accordion.md",
-      "sourcePath": "src/business/demos/business-accordion.tsx",
+      "sourcePath": "src/business/demos/cards/business-accordion.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1445,13 +1915,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "多个内容块按需展开"
+      "subtitle": "多个内容块按需展开",
+      "sourceName": "Accordion",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-card",
       "name": "Card",
       "family": "panel",
-      "category": "business-panel",
+      "category": "cards",
       "aliases": [
         "Card",
         "信息卡片",
@@ -1461,12 +1941,14 @@
       "useWhen": "将一个对象的标题、摘要与相关动作组合在阅读面",
       "avoidWhen": "密集结构化比较用DataTable；装饰特效卡按需选择对应效果组件",
       "description": "将一个对象的标题、摘要与相关动作组合在阅读面",
-      "demoPath": "src/business/demos/business-card.tsx",
+      "demoPath": "src/business/demos/cards/business-card.tsx",
       "guidePath": "docs/business/components/business-card.md",
-      "sourcePath": "src/business/demos/business-card.tsx",
+      "sourcePath": "src/business/demos/cards/business-card.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1481,13 +1963,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "对象摘要与相关动作"
+      "subtitle": "对象摘要与相关动作",
+      "sourceName": "Card",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-divider",
       "name": "Divider",
       "family": "panel",
-      "category": "business-panel",
+      "category": "layout",
       "aliases": [
         "Divider",
         "分隔线",
@@ -1497,12 +1989,14 @@
       "useWhen": "视觉和语义分隔不同内容组，保持分隔方向与标签",
       "avoidWhen": "有状态的内容切换用Tabs而非分隔线",
       "description": "视觉和语义分隔不同内容组，保持分隔方向与标签",
-      "demoPath": "src/business/demos/business-divider.tsx",
+      "demoPath": "src/business/demos/layout/business-divider.tsx",
       "guidePath": "docs/business/components/business-divider.md",
-      "sourcePath": "src/business/demos/business-divider.tsx",
+      "sourcePath": "src/business/demos/layout/business-divider.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1517,13 +2011,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "内容分区与标题分隔"
+      "subtitle": "内容分区与标题分隔",
+      "sourceName": "Divider",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-fieldset",
       "name": "Fieldset",
       "family": "panel",
-      "category": "business-panel",
+      "category": "form",
       "aliases": [
         "Fieldset",
         "字段分组",
@@ -1533,12 +2037,14 @@
       "useWhen": "相关表单字段共享组含义，使用legend命名",
       "avoidWhen": "不相关字段不应只为加边框而放入同一组",
       "description": "相关表单字段共享组含义，使用legend命名",
-      "demoPath": "src/business/demos/business-fieldset.tsx",
+      "demoPath": "src/business/demos/form/business-fieldset.tsx",
       "guidePath": "docs/business/components/business-fieldset.md",
-      "sourcePath": "src/business/demos/business-fieldset.tsx",
+      "sourcePath": "src/business/demos/form/business-fieldset.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1553,13 +2059,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "相关字段的语义分组"
+      "subtitle": "相关字段的语义分组",
+      "sourceName": "Fieldset",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-panel",
       "name": "Panel",
       "family": "panel",
-      "category": "business-panel",
+      "category": "cards",
       "aliases": [
         "Panel",
         "内容面板",
@@ -1569,12 +2085,14 @@
       "useWhen": "一个有标题的内容区需要可选展开收起与局部动作",
       "avoidWhen": "多独立面板用Accordion；不同视图用Tabs",
       "description": "一个有标题的内容区需要可选展开收起与局部动作",
-      "demoPath": "src/business/demos/business-panel.tsx",
+      "demoPath": "src/business/demos/cards/business-panel.tsx",
       "guidePath": "docs/business/components/business-panel.md",
-      "sourcePath": "src/business/demos/business-panel.tsx",
+      "sourcePath": "src/business/demos/cards/business-panel.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1589,13 +2107,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "有标题的可收起内容区"
+      "subtitle": "有标题的可收起内容区",
+      "sourceName": "Panel",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-scrollarea",
       "name": "ScrollArea",
       "family": "panel",
-      "category": "business-panel",
+      "category": "layout",
       "aliases": [
         "ScrollArea",
         "局部滚动",
@@ -1605,12 +2133,14 @@
       "useWhen": "长内容在固定区域内滚动，保留键盘与可见滚动条",
       "avoidWhen": "页面主体不要强行锁进滚动陷阱",
       "description": "长内容在固定区域内滚动，保留键盘与可见滚动条",
-      "demoPath": "src/business/demos/business-scrollarea.tsx",
+      "demoPath": "src/business/demos/layout/business-scrollarea.tsx",
       "guidePath": "docs/business/components/business-scrollarea.md",
-      "sourcePath": "src/business/demos/business-scrollarea.tsx",
+      "sourcePath": "src/business/demos/layout/business-scrollarea.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1625,13 +2155,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "固定区域内的长内容滚动"
+      "subtitle": "固定区域内的长内容滚动",
+      "sourceName": "ScrollArea",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-splitter",
       "name": "Splitter",
       "family": "panel",
-      "category": "business-panel",
+      "category": "layout",
       "aliases": [
         "Splitter",
         "分栏调整",
@@ -1641,12 +2181,14 @@
       "useWhen": "两个工作区需要用户调整比例，保留最小尺寸和键盘",
       "avoidWhen": "普通静态两栏用CSS Grid即可",
       "description": "两个工作区需要用户调整比例，保留最小尺寸和键盘",
-      "demoPath": "src/business/demos/business-splitter.tsx",
+      "demoPath": "src/business/demos/layout/business-splitter.tsx",
       "guidePath": "docs/business/components/business-splitter.md",
-      "sourcePath": "src/business/demos/business-splitter.tsx",
+      "sourcePath": "src/business/demos/layout/business-splitter.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1661,13 +2203,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "指针或键盘调整分栏"
+      "subtitle": "指针或键盘调整分栏",
+      "sourceName": "Splitter",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-stepper",
       "name": "Stepper",
       "family": "panel",
-      "category": "business-panel",
+      "category": "layout",
       "aliases": [
         "Stepper",
         "步骤流程",
@@ -1677,12 +2229,14 @@
       "useWhen": "任务有明确顺序与当前步骤，前进回退由实际状态驱动",
       "avoidWhen": "已发生事件用Timeline；无顺序视图用Tabs",
       "description": "任务有明确顺序与当前步骤，前进回退由实际状态驱动",
-      "demoPath": "src/business/demos/business-stepper.tsx",
+      "demoPath": "src/business/demos/layout/business-stepper.tsx",
       "guidePath": "docs/business/components/business-stepper.md",
-      "sourcePath": "src/business/demos/business-stepper.tsx",
+      "sourcePath": "src/business/demos/layout/business-stepper.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1699,13 +2253,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "校验后前进的顺序步骤"
+      "subtitle": "校验后前进的顺序步骤",
+      "sourceName": "Stepper",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-tabs",
       "name": "Tabs",
       "family": "panel",
-      "category": "business-panel",
+      "category": "navigation",
       "aliases": [
         "Tabs",
         "标签页",
@@ -1715,12 +2279,14 @@
       "useWhen": "同一位置展示互斥内容视图，支持方向键与选中面板关联",
       "avoidWhen": "独立内容按需展开用Accordion",
       "description": "同一位置展示互斥内容视图，支持方向键与选中面板关联",
-      "demoPath": "src/business/demos/business-tabs.tsx",
+      "demoPath": "src/business/demos/navigation/business-tabs.tsx",
       "guidePath": "docs/business/components/business-tabs.md",
-      "sourcePath": "src/business/demos/business-tabs.tsx",
+      "sourcePath": "src/business/demos/navigation/business-tabs.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1734,13 +2300,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "同位内容的标签切换"
+      "subtitle": "同位内容的标签切换",
+      "sourceName": "Tabs",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-toolbar",
       "name": "Toolbar",
       "family": "panel",
-      "category": "business-panel",
+      "category": "actions",
       "aliases": [
         "Toolbar",
         "工具栏",
@@ -1750,12 +2326,14 @@
       "useWhen": "围绕当前内容组织少量相关动作和筛选",
       "avoidWhen": "页面导航用NavigationMenu，避免无关按钮拼盘",
       "description": "围绕当前内容组织少量相关动作和筛选",
-      "demoPath": "src/business/demos/business-toolbar.tsx",
+      "demoPath": "src/business/demos/actions/business-toolbar.tsx",
       "guidePath": "docs/business/components/business-toolbar.md",
-      "sourcePath": "src/business/demos/business-toolbar.tsx",
+      "sourcePath": "src/business/demos/actions/business-toolbar.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1770,13 +2348,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "当前内容的工具与筛选"
+      "subtitle": "当前内容的工具与筛选",
+      "sourceName": "Toolbar",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-dialog",
       "name": "Dialog",
       "family": "overlay",
-      "category": "business-overlay",
+      "category": "overlay",
       "aliases": [
         "Dialog",
         "模态弹窗",
@@ -1786,12 +2374,14 @@
       "useWhen": "任务需要临时阻断背景并收集确认或有限输入",
       "avoidWhen": "补充信息用Popover；长编辑任务用Drawer或页面",
       "description": "任务需要临时阻断背景并收集确认或有限输入",
-      "demoPath": "src/business/demos/business-dialog.tsx",
+      "demoPath": "src/business/demos/overlay/business-dialog.tsx",
       "guidePath": "docs/business/components/business-dialog.md",
-      "sourcePath": "src/business/demos/business-dialog.tsx",
+      "sourcePath": "src/business/demos/overlay/business-dialog.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1806,13 +2396,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "阻断背景的确认与输入"
+      "subtitle": "阻断背景的确认与输入",
+      "sourceName": "Dialog",
+      "sourceCategory": "business-overlay",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-overlay",
+        "弹层与焦点",
+        "原生 React"
+      ]
     },
     {
       "id": "business-drawer",
       "name": "Drawer",
       "family": "overlay",
-      "category": "business-overlay",
+      "category": "overlay",
       "aliases": [
         "Drawer",
         "侧边抽屉",
@@ -1827,12 +2427,14 @@
       "useWhen": "需要保留当前页面上下文，临时阅读详情、编辑属性或打开选项；左右侧适合详情与导航，上下侧适合短操作面板",
       "avoidWhen": "简短确认用Dialog；永久导航用Sidebar",
       "description": "不离开当前列表即可查看或编辑较多详情",
-      "demoPath": "src/business/demos/business-drawer.tsx",
+      "demoPath": "src/business/demos/overlay/business-drawer.tsx",
       "guidePath": "docs/business/components/business-drawer.md",
-      "sourcePath": "src/business/demos/business-drawer.tsx",
+      "sourcePath": "src/business/demos/overlay/business-drawer.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1847,13 +2449,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "保留列表的侧向详情"
+      "subtitle": "保留列表的侧向详情",
+      "sourceName": "Drawer",
+      "sourceCategory": "business-overlay",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-overlay",
+        "弹层与焦点",
+        "原生 React"
+      ]
     },
     {
       "id": "business-overlaymanager",
       "name": "OverlayManager",
       "family": "overlay",
-      "category": "business-overlay",
+      "category": "overlay",
       "aliases": [
         "OverlayManager",
         "浮层管理",
@@ -1863,12 +2475,14 @@
       "useWhen": "多个临时浮层需要明确堆叠、最后打开先关闭和焦点恢复",
       "avoidWhen": "单个浮层直接Dialog或Popover，不建立额外管理层",
       "description": "多个临时浮层需要明确堆叠、最后打开先关闭和焦点恢复",
-      "demoPath": "src/business/demos/business-overlaymanager.tsx",
+      "demoPath": "src/business/demos/overlay/business-overlaymanager.tsx",
       "guidePath": "docs/business/components/business-overlaymanager.md",
-      "sourcePath": "src/business/demos/business-overlaymanager.tsx",
+      "sourcePath": "src/business/demos/overlay/business-overlaymanager.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1883,13 +2497,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "嵌套浮层与关闭顺序"
+      "subtitle": "嵌套浮层与关闭顺序",
+      "sourceName": "OverlayManager",
+      "sourceCategory": "business-overlay",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-overlay",
+        "弹层与焦点",
+        "原生 React"
+      ]
     },
     {
       "id": "business-popover",
       "name": "Popover",
       "family": "overlay",
-      "category": "business-overlay",
+      "category": "overlay",
       "aliases": [
         "Popover",
         "轻量浮层",
@@ -1899,12 +2523,14 @@
       "useWhen": "锚点旁呈现少量可操作内容，Escape与外部点击可关闭",
       "avoidWhen": "重要确认用Dialog；单句说明用Tooltip",
       "description": "锚点旁呈现少量可操作内容，Escape与外部点击可关闭",
-      "demoPath": "src/business/demos/business-popover.tsx",
+      "demoPath": "src/business/demos/overlay/business-popover.tsx",
       "guidePath": "docs/business/components/business-popover.md",
-      "sourcePath": "src/business/demos/business-popover.tsx",
+      "sourcePath": "src/business/demos/overlay/business-popover.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1918,13 +2544,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "锚点旁的可操作内容"
+      "subtitle": "锚点旁的可操作内容",
+      "sourceName": "Popover",
+      "sourceCategory": "business-overlay",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-overlay",
+        "弹层与焦点",
+        "原生 React"
+      ]
     },
     {
       "id": "business-tooltip",
       "name": "Tooltip",
       "family": "overlay",
-      "category": "business-overlay",
+      "category": "overlay",
       "aliases": [
         "Tooltip",
         "工具提示",
@@ -1934,12 +2570,14 @@
       "useWhen": "简短说明在hover或focus出现，不承载必须完成的操作",
       "avoidWhen": "可交互内容用Popover；关键规则保持常显",
       "description": "简短说明在hover或focus出现，不承载必须完成的操作",
-      "demoPath": "src/business/demos/business-tooltip.tsx",
+      "demoPath": "src/business/demos/overlay/business-tooltip.tsx",
       "guidePath": "docs/business/components/business-tooltip.md",
-      "sourcePath": "src/business/demos/business-tooltip.tsx",
+      "sourcePath": "src/business/demos/overlay/business-tooltip.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1955,13 +2593,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "悬停或聚焦的短说明"
+      "subtitle": "悬停或聚焦的短说明",
+      "sourceName": "Tooltip",
+      "sourceCategory": "business-overlay",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-overlay",
+        "弹层与焦点",
+        "原生 React"
+      ]
     },
     {
       "id": "business-fileupload",
       "name": "FileUpload",
       "family": "data",
-      "category": "business-data",
+      "category": "data",
       "aliases": [
         "FileUpload",
         "文件选择",
@@ -1971,12 +2619,14 @@
       "useWhen": "用户选择本地文件，验证类型大小数量并能逐项移除",
       "avoidWhen": "真实上传需明确后端与授权，不能模拟外部写入成功",
       "description": "用户选择本地文件，验证类型大小数量并能逐项移除",
-      "demoPath": "src/business/demos/business-fileupload.tsx",
+      "demoPath": "src/business/demos/data/business-fileupload.tsx",
       "guidePath": "docs/business/components/business-fileupload.md",
-      "sourcePath": "src/business/demos/business-fileupload.tsx",
+      "sourcePath": "src/business/demos/data/business-fileupload.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -1990,13 +2640,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "本地文件验证与移除"
+      "subtitle": "本地文件验证与移除",
+      "sourceName": "FileUpload",
+      "sourceCategory": "business-data",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-data",
+        "数据与文件",
+        "原生 React"
+      ]
     },
     {
       "id": "business-breadcrumb",
       "name": "Breadcrumb",
       "family": "navigation",
-      "category": "business-navigation",
+      "category": "navigation",
       "aliases": [
         "Breadcrumb",
         "面包屑",
@@ -2006,12 +2666,14 @@
       "useWhen": "展示当前层级位置并提供上级导航目标",
       "avoidWhen": "平级主导航用NavigationMenu",
       "description": "展示当前层级位置并提供上级导航目标",
-      "demoPath": "src/business/demos/business-breadcrumb.tsx",
+      "demoPath": "src/business/demos/navigation/business-breadcrumb.tsx",
       "guidePath": "docs/business/components/business-breadcrumb.md",
-      "sourcePath": "src/business/demos/business-breadcrumb.tsx",
+      "sourcePath": "src/business/demos/navigation/business-breadcrumb.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2027,13 +2689,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "当前层级与上级入口"
+      "subtitle": "当前层级与上级入口",
+      "sourceName": "Breadcrumb",
+      "sourceCategory": "business-navigation",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-navigation",
+        "业务导航",
+        "原生 React"
+      ]
     },
     {
       "id": "business-contextmenu",
       "name": "ContextMenu",
       "family": "navigation",
-      "category": "business-navigation",
+      "category": "navigation",
       "aliases": [
         "ContextMenu",
         "右键菜单",
@@ -2043,12 +2715,14 @@
       "useWhen": "操作依赖当前对象，通过右键和可见按钮都能打开",
       "avoidWhen": "关键操作不能仅隐藏在右键菜单",
       "description": "操作依赖当前对象，通过右键和可见按钮都能打开",
-      "demoPath": "src/business/demos/business-contextmenu.tsx",
+      "demoPath": "src/business/demos/navigation/business-contextmenu.tsx",
       "guidePath": "docs/business/components/business-contextmenu.md",
-      "sourcePath": "src/business/demos/business-contextmenu.tsx",
+      "sourcePath": "src/business/demos/navigation/business-contextmenu.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2064,13 +2738,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "对象右键与键盘动作"
+      "subtitle": "对象右键与键盘动作",
+      "sourceName": "ContextMenu",
+      "sourceCategory": "business-navigation",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-navigation",
+        "业务导航",
+        "原生 React"
+      ]
     },
     {
       "id": "business-menu",
       "name": "Menu",
       "family": "navigation",
-      "category": "business-navigation",
+      "category": "navigation",
       "aliases": [
         "Menu",
         "动作菜单",
@@ -2080,12 +2764,14 @@
       "useWhen": "一组相关动作通过菜单选择，保留禁用与键盘状态",
       "avoidWhen": "内容导航用NavigationMenu；复杂检索用CommandMenu",
       "description": "一组相关动作通过菜单选择，保留禁用与键盘状态",
-      "demoPath": "src/business/demos/business-menu.tsx",
+      "demoPath": "src/business/demos/navigation/business-menu.tsx",
       "guidePath": "docs/business/components/business-menu.md",
-      "sourcePath": "src/business/demos/business-menu.tsx",
+      "sourcePath": "src/business/demos/navigation/business-menu.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2105,13 +2791,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "展开后选择相关动作"
+      "subtitle": "展开后选择相关动作",
+      "sourceName": "Menu",
+      "sourceCategory": "business-navigation",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-navigation",
+        "业务导航",
+        "原生 React"
+      ]
     },
     {
       "id": "business-navigationmenu",
       "name": "NavigationMenu",
       "family": "navigation",
-      "category": "business-navigation",
+      "category": "navigation",
       "aliases": [
         "NavigationMenu",
         "导航菜单",
@@ -2121,12 +2817,14 @@
       "useWhen": "页面或模块之间导航，有清晰的当前项和目标",
       "avoidWhen": "一次性动作使用Menu；层级位置用Breadcrumb",
       "description": "页面或模块之间导航，有清晰的当前项和目标",
-      "demoPath": "src/business/demos/business-navigationmenu.tsx",
+      "demoPath": "src/business/demos/navigation/business-navigationmenu.tsx",
       "guidePath": "docs/business/components/business-navigationmenu.md",
-      "sourcePath": "src/business/demos/business-navigationmenu.tsx",
+      "sourcePath": "src/business/demos/navigation/business-navigationmenu.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2145,13 +2843,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "模块入口与当前项"
+      "subtitle": "模块入口与当前项",
+      "sourceName": "NavigationMenu",
+      "sourceCategory": "business-navigation",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-navigation",
+        "业务导航",
+        "原生 React"
+      ]
     },
     {
       "id": "business-sidebar",
       "name": "Sidebar",
       "family": "navigation",
-      "category": "business-navigation",
+      "category": "navigation",
       "aliases": [
         "Sidebar",
         "应用侧栏",
@@ -2161,12 +2869,14 @@
       "useWhen": "工作区需要持续的模块导航与可收起侧栏",
       "avoidWhen": "临时详情用Drawer；不复制已有AppShell的第二套状态",
       "description": "工作区需要持续的模块导航与可收起侧栏",
-      "demoPath": "src/business/demos/business-sidebar.tsx",
+      "demoPath": "src/business/demos/navigation/business-sidebar.tsx",
       "guidePath": "docs/business/components/business-sidebar.md",
-      "sourcePath": "src/business/demos/business-sidebar.tsx",
+      "sourcePath": "src/business/demos/navigation/business-sidebar.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2182,13 +2892,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "持续模块导航与收起"
+      "subtitle": "持续模块导航与收起",
+      "sourceName": "Sidebar",
+      "sourceCategory": "business-navigation",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-navigation",
+        "业务导航",
+        "原生 React"
+      ]
     },
     {
       "id": "business-message",
       "name": "Message",
       "family": "feedback",
-      "category": "business-feedback",
+      "category": "feedback",
       "aliases": [
         "Message",
         "行内消息",
@@ -2198,12 +2918,14 @@
       "useWhen": "反馈与具体字段或区域相关，需要常显或可关闭",
       "avoidWhen": "短暂非阻断反馈用Toast",
       "description": "反馈与具体字段或区域相关，需要常显或可关闭",
-      "demoPath": "src/business/demos/business-message.tsx",
+      "demoPath": "src/business/demos/feedback/business-message.tsx",
       "guidePath": "docs/business/components/business-message.md",
-      "sourcePath": "src/business/demos/business-message.tsx",
+      "sourcePath": "src/business/demos/feedback/business-message.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2217,13 +2939,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "常显反馈与校验消息"
+      "subtitle": "常显反馈与校验消息",
+      "sourceName": "Message",
+      "sourceCategory": "business-feedback",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-feedback",
+        "状态反馈",
+        "原生 React"
+      ]
     },
     {
       "id": "business-toast",
       "name": "Toast",
       "family": "feedback",
-      "category": "business-feedback",
+      "category": "feedback",
       "aliases": [
         "Toast",
         "短暂通知",
@@ -2233,12 +2965,14 @@
       "useWhen": "操作完成后给出非阻断反馈，可关闭且不会抢焦点",
       "avoidWhen": "必须用户处理的错误应常显在Message或Dialog",
       "description": "操作完成后给出非阻断反馈，可关闭且不会抢焦点",
-      "demoPath": "src/business/demos/business-toast.tsx",
+      "demoPath": "src/business/demos/feedback/business-toast.tsx",
       "guidePath": "docs/business/components/business-toast.md",
-      "sourcePath": "src/business/demos/business-toast.tsx",
+      "sourcePath": "src/business/demos/feedback/business-toast.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2252,13 +2986,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "短暂操作通知"
+      "subtitle": "短暂操作通知",
+      "sourceName": "Toast",
+      "sourceCategory": "business-feedback",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-feedback",
+        "状态反馈",
+        "原生 React"
+      ]
     },
     {
       "id": "business-carousel",
-      "name": "Carousel",
+      "name": "Carousel · 基础轮播",
       "family": "media",
-      "category": "business-media",
+      "category": "media",
       "aliases": [
         "Carousel",
         "内容轮播",
@@ -2267,13 +3011,15 @@
       ],
       "useWhen": "少量内容按顺序浏览，有前后按钮和当前项提示",
       "avoidWhen": "大量图片浏览用Gallery；复杂动效按需选择现有Carousel",
-      "description": "少量内容按顺序浏览，有前后按钮和当前项提示",
-      "demoPath": "src/business/demos/business-carousel.tsx",
+      "description": "以形状揭示转场浏览本地图片",
+      "demoPath": "src/business/demos/media/business-carousel.tsx",
       "guidePath": "docs/business/components/business-carousel.md",
-      "sourcePath": "src/business/demos/business-carousel.tsx",
+      "sourcePath": "src/business/demos/media/business-carousel.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2289,13 +3035,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "顺序内容的前后切换"
+      "subtitle": "顺序内容的前后切换",
+      "sourceName": "Carousel",
+      "sourceCategory": "business-media",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-media",
+        "媒体浏览",
+        "原生 React"
+      ]
     },
     {
       "id": "business-compare",
       "name": "Compare",
       "family": "media",
-      "category": "business-media",
+      "category": "media",
       "aliases": [
         "Compare",
         "图片对比",
@@ -2305,12 +3061,14 @@
       "useWhen": "同一对象的前后图需要可调整分界并支持键盘",
       "avoidWhen": "不相关图片用Gallery，不强行叠加比较",
       "description": "同一对象的前后图需要可调整分界并支持键盘",
-      "demoPath": "src/business/demos/business-compare.tsx",
+      "demoPath": "src/business/demos/media/business-compare.tsx",
       "guidePath": "docs/business/components/business-compare.md",
-      "sourcePath": "src/business/demos/business-compare.tsx",
+      "sourcePath": "src/business/demos/media/business-compare.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2324,13 +3082,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "图片前后滑动对比"
+      "subtitle": "图片前后滑动对比",
+      "sourceName": "Compare",
+      "sourceCategory": "business-media",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-media",
+        "媒体浏览",
+        "原生 React"
+      ]
     },
     {
       "id": "business-gallery",
       "name": "Gallery",
       "family": "media",
-      "category": "business-media",
+      "category": "media",
       "aliases": [
         "Gallery",
         "图片图库",
@@ -2339,13 +3107,15 @@
       ],
       "useWhen": "多张图片需要缩略图选择与前后查看，保持图片描述",
       "avoidWhen": "连续自动展示用Carousel；单张图可直接Image",
-      "description": "多张图片需要缩略图选择与前后查看，保持图片描述",
-      "demoPath": "src/business/demos/business-gallery.tsx",
+      "description": "弹性缩略图与大图转场，支持放大浏览",
+      "demoPath": "src/business/demos/media/business-gallery.tsx",
       "guidePath": "docs/business/components/business-gallery.md",
-      "sourcePath": "src/business/demos/business-gallery.tsx",
+      "sourcePath": "src/business/demos/media/business-gallery.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2362,13 +3132,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "缩略图选择与大图浏览"
+      "subtitle": "缩略图选择与大图浏览",
+      "sourceName": "Gallery",
+      "sourceCategory": "business-media",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-media",
+        "媒体浏览",
+        "原生 React"
+      ]
     },
     {
       "id": "business-animateonscroll",
       "name": "AnimateOnScroll",
       "family": "utility",
-      "category": "business-utility",
+      "category": "scroll",
       "aliases": [
         "AnimateOnScroll",
         "滚动入场",
@@ -2378,12 +3158,14 @@
       "useWhen": "非关键内容进入视口时轻量揭示，减少运动时直接可读",
       "avoidWhen": "核心业务不能依赖动画出现；已有Animated Content可复用",
       "description": "非关键内容进入视口时轻量揭示，减少运动时直接可读",
-      "demoPath": "src/business/demos/business-animateonscroll.tsx",
+      "demoPath": "src/business/demos/scroll/business-animateonscroll.tsx",
       "guidePath": "docs/business/components/business-animateonscroll.md",
-      "sourcePath": "src/business/demos/business-animateonscroll.tsx",
+      "sourcePath": "src/business/demos/scroll/business-animateonscroll.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2401,13 +3183,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "进入视口的局部揭示"
+      "subtitle": "进入视口的局部揭示",
+      "sourceName": "AnimateOnScroll",
+      "sourceCategory": "business-utility",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-utility",
+        "基础辅助",
+        "原生 React"
+      ]
     },
     {
       "id": "business-avatar",
       "name": "Avatar",
       "family": "feedback",
-      "category": "business-feedback",
+      "category": "feedback",
       "aliases": [
         "Avatar",
         "头像",
@@ -2417,12 +3209,14 @@
       "useWhen": "显示人物或团队识别信息，并提供无图片的姓名缩写",
       "avoidWhen": "不把头像当权限或身份验证依据",
       "description": "显示人物或团队识别信息，并提供无图片的姓名缩写",
-      "demoPath": "src/business/demos/business-avatar.tsx",
+      "demoPath": "src/business/demos/feedback/business-avatar.tsx",
       "guidePath": "docs/business/components/business-avatar.md",
-      "sourcePath": "src/business/demos/business-avatar.tsx",
+      "sourcePath": "src/business/demos/feedback/business-avatar.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2436,13 +3230,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "头像与姓名缩写"
+      "subtitle": "头像与姓名缩写",
+      "sourceName": "Avatar",
+      "sourceCategory": "business-feedback",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-feedback",
+        "状态反馈",
+        "原生 React"
+      ]
     },
     {
       "id": "business-badge",
       "name": "Badge",
       "family": "feedback",
-      "category": "business-feedback",
+      "category": "feedback",
       "aliases": [
         "Badge",
         "数量徽标",
@@ -2452,12 +3256,14 @@
       "useWhen": "给对象补充短数量或新状态，文本含义仍可读",
       "avoidWhen": "长状态或分类用Tag；不能只靠颜色说明",
       "description": "给对象补充短数量或新状态，文本含义仍可读",
-      "demoPath": "src/business/demos/business-badge.tsx",
+      "demoPath": "src/business/demos/feedback/business-badge.tsx",
       "guidePath": "docs/business/components/business-badge.md",
-      "sourcePath": "src/business/demos/business-badge.tsx",
+      "sourcePath": "src/business/demos/feedback/business-badge.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2471,13 +3277,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "数量与未读角标"
+      "subtitle": "数量与未读角标",
+      "sourceName": "Badge",
+      "sourceCategory": "business-feedback",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-feedback",
+        "状态反馈",
+        "原生 React"
+      ]
     },
     {
       "id": "business-chip",
       "name": "Chip",
       "family": "feedback",
-      "category": "business-feedback",
+      "category": "feedback",
       "aliases": [
         "Chip",
         "信息片",
@@ -2487,12 +3303,14 @@
       "useWhen": "紧凑展示一个可选或可移除的对象，移除有可访问名称",
       "avoidWhen": "自由录入多个词用InputTags",
       "description": "紧凑展示一个可选或可移除的对象，移除有可访问名称",
-      "demoPath": "src/business/demos/business-chip.tsx",
+      "demoPath": "src/business/demos/feedback/business-chip.tsx",
       "guidePath": "docs/business/components/business-chip.md",
-      "sourcePath": "src/business/demos/business-chip.tsx",
+      "sourcePath": "src/business/demos/feedback/business-chip.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2508,13 +3326,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "可移除的信息片"
+      "subtitle": "可移除的信息片",
+      "sourceName": "Chip",
+      "sourceCategory": "business-feedback",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-feedback",
+        "状态反馈",
+        "原生 React"
+      ]
     },
     {
       "id": "business-fluid",
       "name": "Fluid",
       "family": "utility",
-      "category": "business-utility",
+      "category": "layout",
       "aliases": [
         "Fluid",
         "流式布局",
@@ -2524,12 +3352,14 @@
       "useWhen": "容器中的控件随可用宽度伸缩，保留合理最小尺寸",
       "avoidWhen": "固定尺寸的图形效果不应全局改为100%宽",
       "description": "容器中的控件随可用宽度伸缩，保留合理最小尺寸",
-      "demoPath": "src/business/demos/business-fluid.tsx",
+      "demoPath": "src/business/demos/layout/business-fluid.tsx",
       "guidePath": "docs/business/components/business-fluid.md",
-      "sourcePath": "src/business/demos/business-fluid.tsx",
+      "sourcePath": "src/business/demos/layout/business-fluid.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2544,13 +3374,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "控件随容器满宽伸缩"
+      "subtitle": "控件随容器满宽伸缩",
+      "sourceName": "Fluid",
+      "sourceCategory": "business-utility",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-utility",
+        "基础辅助",
+        "原生 React"
+      ]
     },
     {
       "id": "business-focustrap",
       "name": "FocusTrap",
       "family": "utility",
-      "category": "business-utility",
+      "category": "overlay",
       "aliases": [
         "FocusTrap",
         "焦点边界",
@@ -2560,12 +3400,14 @@
       "useWhen": "临时任务区需要焦点限制，并能退出和恢复触发点",
       "avoidWhen": "普通内容不能永久困住焦点；Dialog已有原生模态行为",
       "description": "临时任务区需要焦点限制，并能退出和恢复触发点",
-      "demoPath": "src/business/demos/business-focustrap.tsx",
+      "demoPath": "src/business/demos/overlay/business-focustrap.tsx",
       "guidePath": "docs/business/components/business-focustrap.md",
-      "sourcePath": "src/business/demos/business-focustrap.tsx",
+      "sourcePath": "src/business/demos/overlay/business-focustrap.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2580,13 +3422,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "可退出的键盘焦点边界"
+      "subtitle": "可退出的键盘焦点边界",
+      "sourceName": "FocusTrap",
+      "sourceCategory": "business-utility",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-utility",
+        "基础辅助",
+        "原生 React"
+      ]
     },
     {
       "id": "business-inplace",
       "name": "Inplace",
       "family": "panel",
-      "category": "business-panel",
+      "category": "form",
       "aliases": [
         "Inplace",
         "就地编辑",
@@ -2596,12 +3448,14 @@
       "useWhen": "短内容默认只读，用户明确进入编辑再保存或取消",
       "avoidWhen": "复杂表单用Drawer或独立页面",
       "description": "短内容默认只读，用户明确进入编辑再保存或取消",
-      "demoPath": "src/business/demos/business-inplace.tsx",
+      "demoPath": "src/business/demos/form/business-inplace.tsx",
       "guidePath": "docs/business/components/business-inplace.md",
-      "sourcePath": "src/business/demos/business-inplace.tsx",
+      "sourcePath": "src/business/demos/form/business-inplace.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2616,13 +3470,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "短内容的查看编辑切换"
+      "subtitle": "短内容的查看编辑切换",
+      "sourceName": "Inplace",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-metergroup",
       "name": "MeterGroup",
       "family": "feedback",
-      "category": "business-feedback",
+      "category": "feedback",
       "aliases": [
         "MeterGroup",
         "配额组成",
@@ -2632,12 +3496,14 @@
       "useWhen": "多个部分组成总量，需要同时显示数值、标签与比例",
       "avoidWhen": "单一完成进度用ProgressBar；不要只画无标签颜色段",
       "description": "多个部分组成总量，需要同时显示数值、标签与比例",
-      "demoPath": "src/business/demos/business-metergroup.tsx",
+      "demoPath": "src/business/demos/feedback/business-metergroup.tsx",
       "guidePath": "docs/business/components/business-metergroup.md",
-      "sourcePath": "src/business/demos/business-metergroup.tsx",
+      "sourcePath": "src/business/demos/feedback/business-metergroup.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2651,13 +3517,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "多段配额与容量占比"
+      "subtitle": "多段配额与容量占比",
+      "sourceName": "MeterGroup",
+      "sourceCategory": "business-feedback",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-feedback",
+        "状态反馈",
+        "原生 React"
+      ]
     },
     {
       "id": "business-progressbar",
       "name": "ProgressBar",
       "family": "feedback",
-      "category": "business-feedback",
+      "category": "feedback",
       "aliases": [
         "ProgressBar",
         "进度条",
@@ -2667,12 +3543,14 @@
       "useWhen": "已有可信完成比例时显示有界进度与状态",
       "avoidWhen": "没有真实进度时用ProgressSpinner，不编造百分比",
       "description": "已有可信完成比例时显示有界进度与状态",
-      "demoPath": "src/business/demos/business-progressbar.tsx",
+      "demoPath": "src/business/demos/feedback/business-progressbar.tsx",
       "guidePath": "docs/business/components/business-progressbar.md",
-      "sourcePath": "src/business/demos/business-progressbar.tsx",
+      "sourcePath": "src/business/demos/feedback/business-progressbar.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2686,13 +3564,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "有界完成进度"
+      "subtitle": "有界完成进度",
+      "sourceName": "ProgressBar",
+      "sourceCategory": "business-feedback",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-feedback",
+        "状态反馈",
+        "原生 React"
+      ]
     },
     {
       "id": "business-progressspinner",
       "name": "ProgressSpinner",
       "family": "feedback",
-      "category": "business-feedback",
+      "category": "feedback",
       "aliases": [
         "ProgressSpinner",
         "等待指示",
@@ -2702,12 +3590,14 @@
       "useWhen": "操作正在等待且没有可信百分比，提供文字与完成/取消路径",
       "avoidWhen": "有明确百分比时用ProgressBar",
       "description": "操作正在等待且没有可信百分比，提供文字与完成/取消路径",
-      "demoPath": "src/business/demos/business-progressspinner.tsx",
+      "demoPath": "src/business/demos/feedback/business-progressspinner.tsx",
       "guidePath": "docs/business/components/business-progressspinner.md",
-      "sourcePath": "src/business/demos/business-progressspinner.tsx",
+      "sourcePath": "src/business/demos/feedback/business-progressspinner.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2723,13 +3613,23 @@
         "meaning": "已有相邻动效示例，通用业务状态与语义需补齐"
       },
       "implementation": "project-native-react",
-      "subtitle": "无确定比例的等待"
+      "subtitle": "无确定比例的等待",
+      "sourceName": "ProgressSpinner",
+      "sourceCategory": "business-feedback",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-feedback",
+        "状态反馈",
+        "原生 React"
+      ]
     },
     {
       "id": "business-skeleton",
       "name": "Skeleton",
       "family": "feedback",
-      "category": "business-feedback",
+      "category": "feedback",
       "aliases": [
         "Skeleton",
         "内容骨架",
@@ -2739,12 +3639,14 @@
       "useWhen": "已知内容布局但数据尚未到达，预留稳定尺寸",
       "avoidWhen": "未知布局只需简短加载状态；占位不能冒充真实内容",
       "description": "已知内容布局但数据尚未到达，预留稳定尺寸",
-      "demoPath": "src/business/demos/business-skeleton.tsx",
+      "demoPath": "src/business/demos/feedback/business-skeleton.tsx",
       "guidePath": "docs/business/components/business-skeleton.md",
-      "sourcePath": "src/business/demos/business-skeleton.tsx",
+      "sourcePath": "src/business/demos/feedback/business-skeleton.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2758,13 +3660,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "预留布局的加载占位"
+      "subtitle": "预留布局的加载占位",
+      "sourceName": "Skeleton",
+      "sourceCategory": "business-feedback",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-feedback",
+        "状态反馈",
+        "原生 React"
+      ]
     },
     {
       "id": "business-tag",
       "name": "Tag",
       "family": "feedback",
-      "category": "business-feedback",
+      "category": "feedback",
       "aliases": [
         "Tag",
         "状态标签",
@@ -2774,12 +3686,14 @@
       "useWhen": "用文字和受控颜色表达短状态或分类",
       "avoidWhen": "数字计数用Badge；可移除对象用Chip",
       "description": "用文字和受控颜色表达短状态或分类",
-      "demoPath": "src/business/demos/business-tag.tsx",
+      "demoPath": "src/business/demos/feedback/business-tag.tsx",
       "guidePath": "docs/business/components/business-tag.md",
-      "sourcePath": "src/business/demos/business-tag.tsx",
+      "sourcePath": "src/business/demos/feedback/business-tag.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2793,13 +3707,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "语义状态与分类标签"
+      "subtitle": "语义状态与分类标签",
+      "sourceName": "Tag",
+      "sourceCategory": "business-feedback",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-feedback",
+        "状态反馈",
+        "原生 React"
+      ]
     },
     {
       "id": "business-terminal",
       "name": "Terminal",
       "family": "utility",
-      "category": "business-utility",
+      "category": "data",
       "aliases": [
         "Terminal",
         "命令输入",
@@ -2809,12 +3733,14 @@
       "useWhen": "产品确有受限文本命令入口时保留输入、历史和结果",
       "avoidWhen": "示例只处理白名单本地命令，不运行shell或越权调用",
       "description": "产品确有受限文本命令入口时保留输入、历史和结果",
-      "demoPath": "src/business/demos/business-terminal.tsx",
+      "demoPath": "src/business/demos/data/business-terminal.tsx",
       "guidePath": "docs/business/components/business-terminal.md",
-      "sourcePath": "src/business/demos/business-terminal.tsx",
+      "sourcePath": "src/business/demos/data/business-terminal.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2829,13 +3755,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "有限本地命令与历史"
+      "subtitle": "有限本地命令与历史",
+      "sourceName": "Terminal",
+      "sourceCategory": "business-utility",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-utility",
+        "基础辅助",
+        "原生 React"
+      ]
     },
     {
       "id": "business-cascadeselect",
       "name": "CascadeSelect",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "CascadeSelect",
         "级联选择",
@@ -2845,12 +3781,14 @@
       "useWhen": "选择必须沿父子依赖逐层展开，父项变化清除子项",
       "avoidWhen": "完整树可见时用TreeSelect；无层级关系用Select",
       "description": "选择必须沿父子依赖逐层展开，父项变化清除子项",
-      "demoPath": "src/business/demos/business-cascadeselect.tsx",
+      "demoPath": "src/business/demos/form/business-cascadeselect.tsx",
       "guidePath": "docs/business/components/business-cascadeselect.md",
-      "sourcePath": "src/business/demos/business-cascadeselect.tsx",
+      "sourcePath": "src/business/demos/form/business-cascadeselect.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2864,13 +3802,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "父子依赖的逐层选择"
+      "subtitle": "父子依赖的逐层选择",
+      "sourceName": "CascadeSelect",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-commandmenu",
       "name": "CommandMenu",
       "family": "navigation",
-      "category": "business-navigation",
+      "category": "navigation",
       "aliases": [
         "CommandMenu",
         "命令面板",
@@ -2880,12 +3828,14 @@
       "useWhen": "很多动作需要统一搜索、方向键选择和Enter触发",
       "avoidWhen": "少量固定动作使用Menu或可见Button",
       "description": "很多动作需要统一搜索、方向键选择和Enter触发",
-      "demoPath": "src/business/demos/business-commandmenu.tsx",
+      "demoPath": "src/business/demos/navigation/business-commandmenu.tsx",
       "guidePath": "docs/business/components/business-commandmenu.md",
-      "sourcePath": "src/business/demos/business-commandmenu.tsx",
+      "sourcePath": "src/business/demos/navigation/business-commandmenu.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2901,13 +3851,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "搜索后选择页面命令"
+      "subtitle": "搜索后选择页面命令",
+      "sourceName": "CommandMenu",
+      "sourceCategory": "business-navigation",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-navigation",
+        "业务导航",
+        "原生 React"
+      ]
     },
     {
       "id": "business-splitbutton",
       "name": "SplitButton",
       "family": "action",
-      "category": "business-action",
+      "category": "actions",
       "aliases": [
         "SplitButton",
         "分裂按钮",
@@ -2917,12 +3877,14 @@
       "useWhen": "一个常用主动作与少量替代动作并存",
       "avoidWhen": "无默认动作的全部候选使用Menu",
       "description": "一个常用主动作与少量替代动作并存",
-      "demoPath": "src/business/demos/business-splitbutton.tsx",
+      "demoPath": "src/business/demos/actions/business-splitbutton.tsx",
       "guidePath": "docs/business/components/business-splitbutton.md",
-      "sourcePath": "src/business/demos/business-splitbutton.tsx",
+      "sourcePath": "src/business/demos/actions/business-splitbutton.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2936,13 +3898,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "默认动作与替代操作"
+      "subtitle": "默认动作与替代操作",
+      "sourceName": "SplitButton",
+      "sourceCategory": "business-action",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-action",
+        "业务动作",
+        "原生 React"
+      ]
     },
     {
       "id": "business-treeselect",
       "name": "TreeSelect",
       "family": "form",
-      "category": "business-form",
+      "category": "form",
       "aliases": [
         "TreeSelect",
         "树选择",
@@ -2952,12 +3924,14 @@
       "useWhen": "表单字段从层级目录中选择明确节点，支持搜索或展开",
       "avoidWhen": "浏览层级而不填字段时用Tree",
       "description": "表单字段从层级目录中选择明确节点，支持搜索或展开",
-      "demoPath": "src/business/demos/business-treeselect.tsx",
+      "demoPath": "src/business/demos/form/business-treeselect.tsx",
       "guidePath": "docs/business/components/business-treeselect.md",
-      "sourcePath": "src/business/demos/business-treeselect.tsx",
+      "sourcePath": "src/business/demos/form/business-treeselect.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -2972,13 +3946,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "表单中的层级节点选择"
+      "subtitle": "表单中的层级节点选择",
+      "sourceName": "TreeSelect",
+      "sourceCategory": "business-form",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-form",
+        "业务表单",
+        "原生 React"
+      ]
     },
     {
       "id": "business-styleclass",
       "name": "StyleClass",
       "family": "utility",
-      "category": "business-utility",
+      "category": "layout",
       "aliases": [
         "StyleClass",
         "样式状态",
@@ -2988,12 +3972,14 @@
       "useWhen": "一个局部状态需要控制类名或可见性，由React状态驱动",
       "avoidWhen": "不要改变全局样式或用隐藏CSS替代资源卸载",
       "description": "一个局部状态需要控制类名或可见性，由React状态驱动",
-      "demoPath": "src/business/demos/business-styleclass.tsx",
+      "demoPath": "src/business/demos/layout/business-styleclass.tsx",
       "guidePath": "docs/business/components/business-styleclass.md",
-      "sourcePath": "src/business/demos/business-styleclass.tsx",
+      "sourcePath": "src/business/demos/layout/business-styleclass.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -3008,13 +3994,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "局部类名与可见状态"
+      "subtitle": "局部类名与可见状态",
+      "sourceName": "StyleClass",
+      "sourceCategory": "business-utility",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-utility",
+        "基础辅助",
+        "原生 React"
+      ]
     },
     {
       "id": "business-backdrop",
       "name": "Backdrop",
       "family": "overlay",
-      "category": "business-overlay",
+      "category": "overlay",
       "aliases": [
         "Backdrop",
         "遮罩",
@@ -3024,12 +4020,14 @@
       "useWhen": "临时浮层需要表达背景不可操作，并提供关闭入口",
       "avoidWhen": "普通装饰背景不应阻断点击；模态优先Dialog",
       "description": "临时浮层需要表达背景不可操作，并提供关闭入口",
-      "demoPath": "src/business/demos/business-backdrop.tsx",
+      "demoPath": "src/business/demos/overlay/business-backdrop.tsx",
       "guidePath": "docs/business/components/business-backdrop.md",
-      "sourcePath": "src/business/demos/business-backdrop.tsx",
+      "sourcePath": "src/business/demos/overlay/business-backdrop.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -3044,13 +4042,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "临时浮层的背景阻断"
+      "subtitle": "临时浮层的背景阻断",
+      "sourceName": "Backdrop",
+      "sourceCategory": "business-overlay",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-overlay",
+        "弹层与焦点",
+        "原生 React"
+      ]
     },
     {
       "id": "business-collapsible",
       "name": "Collapsible",
       "family": "panel",
-      "category": "business-panel",
+      "category": "cards",
       "aliases": [
         "Collapsible",
         "内容收起",
@@ -3060,12 +4068,14 @@
       "useWhen": "一个内容块独立展开收起，按钮关联受控区域",
       "avoidWhen": "多个并列块用Accordion；关键错误不应默认收起",
       "description": "一个内容块独立展开收起，按钮关联受控区域",
-      "demoPath": "src/business/demos/business-collapsible.tsx",
+      "demoPath": "src/business/demos/cards/business-collapsible.tsx",
       "guidePath": "docs/business/components/business-collapsible.md",
-      "sourcePath": "src/business/demos/business-collapsible.tsx",
+      "sourcePath": "src/business/demos/cards/business-collapsible.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -3080,13 +4090,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "单个内容块展开收起"
+      "subtitle": "单个内容块展开收起",
+      "sourceName": "Collapsible",
+      "sourceCategory": "business-panel",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-panel",
+        "布局与流程",
+        "原生 React"
+      ]
     },
     {
       "id": "business-motion",
       "name": "Motion",
       "family": "utility",
-      "category": "business-utility",
+      "category": "scroll",
       "aliases": [
         "Motion",
         "局部过渡",
@@ -3096,12 +4116,14 @@
       "useWhen": "状态切换需要短促过渡，减少运动时仍能完成操作",
       "avoidWhen": "持续装饰效果选择现有动效目录，不在通用业务页默认开启",
       "description": "状态切换需要短促过渡，减少运动时仍能完成操作",
-      "demoPath": "src/business/demos/business-motion.tsx",
+      "demoPath": "src/business/demos/scroll/business-motion.tsx",
       "guidePath": "docs/business/components/business-motion.md",
-      "sourcePath": "src/business/demos/business-motion.tsx",
+      "sourcePath": "src/business/demos/scroll/business-motion.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -3116,13 +4138,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "状态切换的短促过渡"
+      "subtitle": "状态切换的短促过渡",
+      "sourceName": "Motion",
+      "sourceCategory": "business-utility",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-utility",
+        "基础辅助",
+        "原生 React"
+      ]
     },
     {
       "id": "business-portal",
       "name": "Portal",
       "family": "utility",
-      "category": "business-utility",
+      "category": "overlay",
       "aliases": [
         "Portal",
         "浮层挂载",
@@ -3132,12 +4164,14 @@
       "useWhen": "浮层需要挂到当前文档指定位置，保留主题与生命周期",
       "avoidWhen": "普通内容不需要Portal；不能跨源或跨租户挂载",
       "description": "浮层需要挂到当前文档指定位置，保留主题与生命周期",
-      "demoPath": "src/business/demos/business-portal.tsx",
+      "demoPath": "src/business/demos/overlay/business-portal.tsx",
       "guidePath": "docs/business/components/business-portal.md",
-      "sourcePath": "src/business/demos/business-portal.tsx",
+      "sourcePath": "src/business/demos/overlay/business-portal.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -3152,13 +4186,23 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "浮层的指定挂载位置"
+      "subtitle": "浮层的指定挂载位置",
+      "sourceName": "Portal",
+      "sourceCategory": "business-utility",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-utility",
+        "基础辅助",
+        "原生 React"
+      ]
     },
     {
       "id": "business-visuallyhidden",
       "name": "VisuallyHidden",
       "family": "utility",
-      "category": "business-utility",
+      "category": "overlay",
       "aliases": [
         "VisuallyHidden",
         "辅助技术文本",
@@ -3168,12 +4212,14 @@
       "useWhen": "补充给辅助技术的名称或说明，视觉布局不显示它",
       "avoidWhen": "重要业务信息必须同时可见；不要用它隐藏错误",
       "description": "补充给辅助技术的名称或说明，视觉布局不显示它",
-      "demoPath": "src/business/demos/business-visuallyhidden.tsx",
+      "demoPath": "src/business/demos/overlay/business-visuallyhidden.tsx",
       "guidePath": "docs/business/components/business-visuallyhidden.md",
-      "sourcePath": "src/business/demos/business-visuallyhidden.tsx",
+      "sourcePath": "src/business/demos/overlay/business-visuallyhidden.tsx",
       "dependencies": [
         "react",
-        "react-dom"
+        "react-dom",
+        "motion",
+        "lucide-react"
       ],
       "motion": "none",
       "webgl": "none",
@@ -3188,7 +4234,17 @@
         "meaning": "无独立可运行业务示例，规范与CSS不计入运行覆盖"
       },
       "implementation": "project-native-react",
-      "subtitle": "保留辅助技术说明"
+      "subtitle": "保留辅助技术说明",
+      "sourceName": "VisuallyHidden",
+      "sourceCategory": "business-utility",
+      "provider": "business",
+      "tags": [
+        "business",
+        "业务基础",
+        "business-utility",
+        "基础辅助",
+        "原生 React"
+      ]
     }
   ]
 }

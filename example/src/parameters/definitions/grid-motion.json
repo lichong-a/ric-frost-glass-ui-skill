@@ -1,0 +1,1621 @@
+{
+  "version": 1,
+  "id": "grid-motion",
+  "name": "Grid Motion",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+  "demoPath": "src/demos/media/grid-motion.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "GridMotionItem[]",
+      "defaultValue": [
+        {
+          "src": "@media/scene-1.svg",
+          "alt": "自然色场景 1"
+        },
+        {
+          "src": "@media/scene-2.svg",
+          "alt": "自然色场景 2"
+        },
+        {
+          "src": "@media/scene-3.svg",
+          "alt": "自然色场景 3"
+        },
+        {
+          "src": "@media/scene-4.svg",
+          "alt": "自然色场景 4"
+        },
+        {
+          "src": "@media/scene-5.svg",
+          "alt": "自然色场景 5"
+        },
+        {
+          "src": "@media/scene-6.svg",
+          "alt": "自然色场景 6"
+        },
+        "AGENT WAN",
+        "技能编排",
+        "知识检索",
+        "工作空间"
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array"
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rows",
+      "name": "rows",
+      "label": "行数 · t0",
+      "description": "行数，控制 grid motion 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rows"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "4",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 128,
+      "step": 1
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 16,
+      "upstreamDefault": "24",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "14",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.angle",
+      "name": "angle",
+      "label": "angle · t0",
+      "description": "角度，控制 grid motion 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "angle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": -8,
+      "upstreamDefault": "-12",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 16,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dim",
+      "name": "dim",
+      "label": "dim · t0",
+      "description": "暗化，控制 grid motion 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dim"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.35",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spotlight",
+      "name": "spotlight",
+      "label": "spotlight · t0",
+      "description": "聚光，控制 grid motion 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spotlight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 grid motion 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tileColor",
+      "name": "tileColor",
+      "label": "tileColor · t0",
+      "description": "字符格颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tileColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "palette.tile",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "palette.text",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 grid motion 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "dark",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.aspectRatio",
+      "name": "aspectRatio",
+      "label": "aspectRatio · t0",
+      "description": "宽高比例，控制 grid motion 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aspectRatio"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.33,
+      "upstreamDefault": "1.33",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tilt",
+      "name": "tilt",
+      "label": "tilt · t0",
+      "description": "倾斜，控制 grid motion 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 grid motion 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "GridMotionDirection",
+      "defaultValue": "alternate",
+      "upstreamDefault": "'alternate'",
+      "control": "select",
+      "options": [
+        {
+          "label": "alternate",
+          "value": "alternate"
+        },
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.parallax",
+      "name": "parallax",
+      "label": "parallax · t0",
+      "description": "视差，控制 grid motion 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "parallax"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grayscale",
+      "name": "grayscale",
+      "label": "grayscale · t0",
+      "description": "是否灰度，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grayscale"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "GridMotionItem[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 107,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 12
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "GridMotionItem",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "bigint"
+              },
+              {
+                "type": "false",
+                "kind": "enum",
+                "options": [
+                  false
+                ]
+              },
+              {
+                "type": "true",
+                "kind": "enum",
+                "options": [
+                  true
+                ]
+              },
+              {
+                "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>>"
+              },
+              {
+                "type": "Iterable<React.ReactNode>"
+              },
+              {
+                "type": "React.ReactPortal"
+              },
+              {
+                "type": "Promise<AwaitedReactNode>"
+              },
+              {
+                "type": "{ src: string; alt?: string; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "src",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={items}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={items}"
+      ]
+    },
+    {
+      "name": "rows",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 108,
+        "kind": "parameter"
+      },
+      "defaultValue": 4,
+      "description": "行数，控制 grid motion 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 13
+      },
+      "codeExample": "rows={4}",
+      "usageExamples": [
+        "rows={4}"
+      ]
+    },
+    {
+      "name": "aspectRatio",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.33",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 109,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.33,
+      "description": "宽高比例，控制 grid motion 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 14
+      },
+      "codeExample": "aspectRatio={1.33}"
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 110,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 15
+      },
+      "codeExample": "gap={16}",
+      "usageExamples": [
+        "gap={16}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "14",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 111,
+        "kind": "parameter"
+      },
+      "defaultValue": 14,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 16
+      },
+      "codeExample": "radius={20}",
+      "usageExamples": [
+        "radius={20}"
+      ]
+    },
+    {
+      "name": "angle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "-12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 112,
+        "kind": "parameter"
+      },
+      "defaultValue": -12,
+      "description": "角度，控制 grid motion 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 17
+      },
+      "codeExample": "angle={-8}",
+      "usageExamples": [
+        "angle={-8}"
+      ]
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 113,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "倾斜，控制 grid motion 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 18
+      },
+      "codeExample": "tilt={0}"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "24",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 114,
+        "kind": "parameter"
+      },
+      "defaultValue": 24,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 19
+      },
+      "codeExample": "speed={16}",
+      "usageExamples": [
+        "speed={16}"
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "GridMotionDirection",
+      "required": false,
+      "defaultExpression": "'alternate'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 115,
+        "kind": "parameter"
+      },
+      "defaultValue": "alternate",
+      "description": "方向，控制 grid motion 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "alternate",
+        "left",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "alternate",
+          "left",
+          "right"
+        ]
+      },
+      "codeExample": "direction={\"alternate\"}"
+    },
+    {
+      "name": "parallax",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 116,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "视差，控制 grid motion 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 21
+      },
+      "codeExample": "parallax={0.5}"
+    },
+    {
+      "name": "spotlight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 117,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "聚光，控制 grid motion 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 22
+      },
+      "codeExample": "spotlight={0.25}",
+      "usageExamples": [
+        "spotlight={0.25}"
+      ]
+    },
+    {
+      "name": "dim",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.35",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 118,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.35,
+      "description": "暗化，控制 grid motion 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 23
+      },
+      "codeExample": "dim={0.2}",
+      "usageExamples": [
+        "dim={0.2}"
+      ]
+    },
+    {
+      "name": "grayscale",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 119,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否灰度，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "grayscale={false}"
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 120,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "淡出，控制 grid motion 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 25
+      },
+      "codeExample": "fade={0.5}",
+      "usageExamples": [
+        "fade={0.5}"
+      ]
+    },
+    {
+      "name": "tileColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "palette.tile",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 334,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "字符格颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 26
+      },
+      "codeExample": "tileColor={palette.primary}",
+      "usageExamples": [
+        "tileColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "palette.text",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 335,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 27
+      },
+      "codeExample": "textColor={palette.ivory}",
+      "usageExamples": [
+        "textColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 123,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 grid motion 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"dark\"",
+      "usageExamples": [
+        "theme=\"dark\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 124,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 29
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+        "line": 30
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/GridMotion/GridMotion';\n\n\n\n\n/** Agent Wan natural-tone preset for the real Grid Motion component. */\nexport default function GridMotionDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "GridMotion",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "GridMotionItem[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 107,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 12
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "GridMotionItem",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "bigint"
+                  },
+                  {
+                    "type": "false",
+                    "kind": "enum",
+                    "options": [
+                      false
+                    ]
+                  },
+                  {
+                    "type": "true",
+                    "kind": "enum",
+                    "options": [
+                      true
+                    ]
+                  },
+                  {
+                    "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>>"
+                  },
+                  {
+                    "type": "Iterable<React.ReactNode>"
+                  },
+                  {
+                    "type": "React.ReactPortal"
+                  },
+                  {
+                    "type": "Promise<AwaitedReactNode>"
+                  },
+                  {
+                    "type": "{ src: string; alt?: string; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "src",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "alt",
+                        "type": "string",
+                        "required": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={items}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={items}"
+          ]
+        },
+        {
+          "name": "rows",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 108,
+            "kind": "parameter"
+          },
+          "defaultValue": 4,
+          "description": "行数，控制 grid motion 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 13
+          },
+          "codeExample": "rows={4}",
+          "usageExamples": [
+            "rows={4}"
+          ]
+        },
+        {
+          "name": "aspectRatio",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.33",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 109,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.33,
+          "description": "宽高比例，控制 grid motion 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 14
+          },
+          "codeExample": "aspectRatio={1.33}"
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 110,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 15
+          },
+          "codeExample": "gap={16}",
+          "usageExamples": [
+            "gap={16}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "14",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 111,
+            "kind": "parameter"
+          },
+          "defaultValue": 14,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 16
+          },
+          "codeExample": "radius={20}",
+          "usageExamples": [
+            "radius={20}"
+          ]
+        },
+        {
+          "name": "angle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "-12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 112,
+            "kind": "parameter"
+          },
+          "defaultValue": -12,
+          "description": "角度，控制 grid motion 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 17
+          },
+          "codeExample": "angle={-8}",
+          "usageExamples": [
+            "angle={-8}"
+          ]
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 113,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "倾斜，控制 grid motion 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 18
+          },
+          "codeExample": "tilt={0}"
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "24",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 114,
+            "kind": "parameter"
+          },
+          "defaultValue": 24,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 19
+          },
+          "codeExample": "speed={16}",
+          "usageExamples": [
+            "speed={16}"
+          ]
+        },
+        {
+          "name": "direction",
+          "type": "GridMotionDirection",
+          "required": false,
+          "defaultExpression": "'alternate'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 115,
+            "kind": "parameter"
+          },
+          "defaultValue": "alternate",
+          "description": "方向，控制 grid motion 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "alternate",
+            "left",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "alternate",
+              "left",
+              "right"
+            ]
+          },
+          "codeExample": "direction={\"alternate\"}"
+        },
+        {
+          "name": "parallax",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 116,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "视差，控制 grid motion 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 21
+          },
+          "codeExample": "parallax={0.5}"
+        },
+        {
+          "name": "spotlight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 117,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "聚光，控制 grid motion 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 22
+          },
+          "codeExample": "spotlight={0.25}",
+          "usageExamples": [
+            "spotlight={0.25}"
+          ]
+        },
+        {
+          "name": "dim",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.35",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 118,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.35,
+          "description": "暗化，控制 grid motion 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 23
+          },
+          "codeExample": "dim={0.2}",
+          "usageExamples": [
+            "dim={0.2}"
+          ]
+        },
+        {
+          "name": "grayscale",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 119,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否灰度，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "grayscale={false}"
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 120,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "淡出，控制 grid motion 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 25
+          },
+          "codeExample": "fade={0.5}",
+          "usageExamples": [
+            "fade={0.5}"
+          ]
+        },
+        {
+          "name": "tileColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "palette.tile",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 334,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "字符格颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 26
+          },
+          "codeExample": "tileColor={palette.primary}",
+          "usageExamples": [
+            "tileColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "palette.text",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 335,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 27
+          },
+          "codeExample": "textColor={palette.ivory}",
+          "usageExamples": [
+            "textColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 123,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 grid motion 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"dark\"",
+          "usageExamples": [
+            "theme=\"dark\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 124,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 29
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx",
+            "line": 30
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

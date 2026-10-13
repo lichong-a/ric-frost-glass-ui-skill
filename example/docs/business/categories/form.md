@@ -5,7 +5,7 @@
 | 组件 | 什么时候使用 | 什么时候换用其它能力 |
 |---|---|---|
 | [AutoComplete](../components/business-autocomplete.md) | 候选项较多且用户知道部分名称，需要边输入边筛选并选择明确对象 | 只有少量固定候选项时优先Select；自由文本不能强制选项 |
-| [Checkbox](../components/business-checkbox.md) | 表单里的独立布尔选项，允许选中或取消 | 互斥选择用RadioButton；任务完成动效用Spring Check |
+| [Checkbox](../components/business-checkbox.md) | 表单里的独立布尔选项，允许选中或取消 | 互斥选择用RadioButton；完成任务并划线的列表项用Spring Check |
 | [CheckboxGroup](../components/business-checkboxgroup.md) | 同一字段可同时选择多个候选，如通知渠道或权限组合 | 互斥项用RadioButton；大量候选用可搜索选择 |
 | [DatePicker](../components/business-datepicker.md) | 用户选择单日或起止日，日期值与时区语义明确 | 纯时长用InputNumber；排班拖拽不属于本例 |
 | [FloatLabel](../components/business-floatlabel.md) | 紧凑表单中需要输入前后始终可见的字段名称 | 说明较长或容易误解的字段用普通Label与帮助文字 |

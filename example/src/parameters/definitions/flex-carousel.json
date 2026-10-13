@@ -1,0 +1,1888 @@
+{
+  "version": 1,
+  "id": "flex-carousel",
+  "name": "Flex Carousel",
+  "sourcePath": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+  "demoPath": "src/demos/media/flex-carousel.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "FlexCarouselItem[]",
+      "defaultValue": [
+        {
+          "src": "@media/scene-1.svg",
+          "alt": "山雾",
+          "title": "山雾"
+        },
+        {
+          "src": "@media/scene-2.svg",
+          "alt": "茶庭",
+          "title": "茶庭"
+        },
+        {
+          "src": "@media/scene-3.svg",
+          "alt": "沙洲",
+          "title": "沙洲"
+        },
+        {
+          "src": "@media/scene-4.svg",
+          "alt": "静水",
+          "title": "静水"
+        },
+        {
+          "src": "@media/scene-5.svg",
+          "alt": "林间",
+          "title": "林间"
+        },
+        {
+          "src": "@media/scene-6.svg",
+          "alt": "岩纹",
+          "title": "岩纹"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "src": {
+              "kind": "string"
+            },
+            "alt": {
+              "kind": "string"
+            },
+            "title": {
+              "kind": "string"
+            },
+            "subtitle": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "src"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.preset",
+      "name": "preset",
+      "label": "preset · t0",
+      "description": "预设，控制 flex carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "preset"
+        }
+      ],
+      "type": "BendPreset",
+      "defaultValue": "liquid",
+      "upstreamDefault": "'liquid'",
+      "control": "select",
+      "options": [
+        {
+          "label": "liquid",
+          "value": "liquid"
+        },
+        {
+          "label": "ribbon",
+          "value": "ribbon"
+        },
+        {
+          "label": "vortex",
+          "value": "vortex"
+        },
+        {
+          "label": "arch",
+          "value": "arch"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "入场，控制 flex carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "CarouselIntro",
+      "defaultValue": "rise",
+      "upstreamDefault": "'rise'",
+      "control": "select",
+      "options": [
+        {
+          "label": "rise",
+          "value": "rise"
+        },
+        {
+          "label": "bloom",
+          "value": "bloom"
+        },
+        {
+          "label": "spin",
+          "value": "spin"
+        },
+        {
+          "label": "deal",
+          "value": "deal"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cardHeight",
+      "name": "cardHeight",
+      "label": "cardHeight · t0",
+      "description": "卡片高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cardHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.62,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 16,
+      "upstreamDefault": "12",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 18,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.squeeze",
+      "name": "squeeze",
+      "label": "squeeze · t0",
+      "description": "压缩，控制 flex carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "squeeze"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0.2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dispersion",
+      "name": "dispersion",
+      "label": "dispersion · t0",
+      "description": "色散，控制 flex carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dispersion"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.03,
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.liquid",
+      "name": "liquid",
+      "label": "liquid · t0",
+      "description": "液体，控制 flex carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "liquid"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.focusOnClick",
+      "name": "focusOnClick",
+      "label": "focusOnClick · t0",
+      "description": "是否焦点点击，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "focusOnClick"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.captions",
+      "name": "captions",
+      "label": "captions · t0",
+      "description": "是否图注，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "captions"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoplay",
+      "name": "autoplay",
+      "label": "自动播放 · t0",
+      "description": "是否自动播放，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoplay"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.captureWheel",
+      "name": "captureWheel",
+      "label": "captureWheel · t0",
+      "description": "是否采样滚轮，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "captureWheel"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fit",
+      "name": "fit",
+      "label": "fit · t0",
+      "description": "适配，控制 flex carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fit"
+        }
+      ],
+      "type": "CardFit",
+      "defaultValue": "natural",
+      "upstreamDefault": "'natural'",
+      "control": "select",
+      "options": [
+        {
+          "label": "natural",
+          "value": "natural"
+        },
+        {
+          "label": "portrait",
+          "value": "portrait"
+        },
+        {
+          "label": "square",
+          "value": "square"
+        },
+        {
+          "label": "landscape",
+          "value": "landscape"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interval",
+      "name": "interval",
+      "label": "interval · t0",
+      "description": "间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interval"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "FlexCarouselItem[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 381,
+        "kind": "parameter"
+      },
+      "defaultResolvedExpression": "[\n  {\n    src: photo('photo-1737071371043-761e02b1ef95'),\n    alt: 'An iridescent chrome sculpture of a head',\n    title: 'Iridescence'\n  },\n  {\n    src: photo('photo-1693645325828-62cd35c8da8f'),\n    alt: 'A person in dark clothes standing in front of a white backdrop',\n    title: 'White Room'\n  },\n  { src: photo('photo-1739056238917-d89cd05c48d5'), alt: 'A twisted chrome form on black', title: 'Liquid Metal' },\n  { src: photo('photo-1747191092806-c7da11881986'), alt: 'A clay bust shown in profile', title: 'Clay Study' },\n  { src: photo('photo-1605034313761-73ea4a0cfbf3'), alt: 'Black and white low top sneakers', title: 'Low Tops' },\n  { src: photo('photo-1495462911434-be47104d70fa'), alt: 'A woman in a wide black hat', title: 'Brim' },\n  {\n    src: photo('photo-1786835568925-20cd20007ed0'),\n    alt: 'Three swirling shapes in white, gold and silver on grey',\n    title: 'Three Forms'\n  },\n  { src: photo('photo-1770249196550-ff6c641165cb'), alt: 'A chrome humanoid sculpture', title: 'Automaton' },\n  {\n    src: photo('photo-1787181875088-087d612262a7'),\n    alt: 'A black textured sculpture with an opening at its center',\n    title: 'Obsidian'\n  },\n  {\n    src: photo('photo-1770062422885-2dfcbe8fb65b'),\n    alt: 'A woman in a white shirt crouching on a dark set',\n    title: 'Poise'\n  },\n  { src: photo('photo-1726910133626-9b573eca70ff'), alt: 'Black curved shapes stacked like a fan', title: 'Fins' },\n  { src: photo('photo-1604854574958-59047362c165'), alt: 'A white plaster bust on a black table', title: 'Plaster' }\n]",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "FlexCarouselItem",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "src",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "alt",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "subtitle",
+                "type": "string",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], title: LABELS[index] }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], title: LABELS[index] }))}"
+      ]
+    },
+    {
+      "name": "preset",
+      "type": "BendPreset",
+      "required": false,
+      "defaultExpression": "'liquid'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 382,
+        "kind": "parameter"
+      },
+      "defaultValue": "liquid",
+      "description": "预设，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "liquid",
+        "ribbon",
+        "vortex",
+        "arch"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "liquid",
+          "ribbon",
+          "vortex",
+          "arch"
+        ]
+      },
+      "codeExample": "preset=\"liquid\"",
+      "usageExamples": [
+        "preset=\"liquid\""
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "CarouselIntro",
+      "required": false,
+      "defaultExpression": "'rise'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 383,
+        "kind": "parameter"
+      },
+      "defaultValue": "rise",
+      "description": "入场，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "rise",
+        "bloom",
+        "spin",
+        "deal",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 37
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "rise",
+          "bloom",
+          "spin",
+          "deal",
+          "none"
+        ]
+      },
+      "codeExample": "intro=\"rise\"",
+      "usageExamples": [
+        "intro=\"rise\""
+      ]
+    },
+    {
+      "name": "cardHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 384,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "卡片高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 38
+      },
+      "codeExample": "cardHeight={0.62}",
+      "usageExamples": [
+        "cardHeight={0.62}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 385,
+        "kind": "parameter"
+      },
+      "defaultValue": 12,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 39
+      },
+      "codeExample": "gap={16}",
+      "usageExamples": [
+        "gap={16}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 386,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 40
+      },
+      "codeExample": "radius={18}",
+      "usageExamples": [
+        "radius={18}"
+      ]
+    },
+    {
+      "name": "fit",
+      "type": "CardFit",
+      "required": false,
+      "defaultExpression": "'natural'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 387,
+        "kind": "parameter"
+      },
+      "defaultValue": "natural",
+      "description": "适配，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "natural",
+        "portrait",
+        "square",
+        "landscape"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 41
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "natural",
+          "portrait",
+          "square",
+          "landscape"
+        ]
+      },
+      "codeExample": "fit={\"natural\"}"
+    },
+    {
+      "name": "squeeze",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 398,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "压缩，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 42
+      },
+      "codeExample": "squeeze={0.12}",
+      "usageExamples": [
+        "squeeze={0.12}"
+      ]
+    },
+    {
+      "name": "focusOnClick",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 399,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否焦点点击，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "focusOnClick",
+      "usageExamples": [
+        "focusOnClick"
+      ]
+    },
+    {
+      "name": "autoplay",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 400,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否自动播放，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 44
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "autoplay={false}",
+      "usageExamples": [
+        "autoplay={false}"
+      ]
+    },
+    {
+      "name": "interval",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 401,
+        "kind": "parameter"
+      },
+      "defaultValue": 4,
+      "description": "间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 45
+      },
+      "codeExample": "interval={4}"
+    },
+    {
+      "name": "captions",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 402,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否图注，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 46
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "captions",
+      "usageExamples": [
+        "captions"
+      ]
+    },
+    {
+      "name": "captureWheel",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 403,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否采样滚轮，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 47
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "captureWheel={false}",
+      "usageExamples": [
+        "captureWheel={false}"
+      ]
+    },
+    {
+      "name": "onChange",
+      "type": "(index: number, item: FlexCarouselItem) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 48
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((index: number, item: FlexCarouselItem) => void) | undefined"
+      },
+      "codeExample": "onChange={index => setStatus('当前图片：' + LABELS[index % LABELS.length])}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={index => setStatus('当前图片：' + LABELS[index % LABELS.length])}"
+      ]
+    },
+    {
+      "name": "onSelect",
+      "type": "(index: number, item: FlexCarouselItem) => void",
+      "required": false,
+      "description": "用户选择条目时通知调用方，参数为选中项的标识或数据。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 49
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((index: number, item: FlexCarouselItem) => void) | undefined"
+      },
+      "codeExample": "onSelect={index => setStatus('已选择：' + LABELS[index % LABELS.length])}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onSelect={index => setStatus('已选择：' + LABELS[index % LABELS.length])}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 406,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 50
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 51
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "lensWidth",
+      "type": "number",
+      "required": false,
+      "description": "透镜宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 22
+      },
+      "codeExample": "lensWidth={1}"
+    },
+    {
+      "name": "lensHeight",
+      "type": "number",
+      "required": false,
+      "description": "透镜高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 23
+      },
+      "codeExample": "lensHeight={1}"
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "description": "倾斜，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 24
+      },
+      "codeExample": "tilt={1}"
+    },
+    {
+      "name": "roundness",
+      "type": "number",
+      "required": false,
+      "description": "圆润程度，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 25
+      },
+      "codeExample": "roundness={1}"
+    },
+    {
+      "name": "bend",
+      "type": "number",
+      "required": false,
+      "description": "弯曲，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 26
+      },
+      "codeExample": "bend={1}"
+    },
+    {
+      "name": "reach",
+      "type": "number",
+      "required": false,
+      "description": "作用距离，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 27
+      },
+      "codeExample": "reach={1}"
+    },
+    {
+      "name": "curl",
+      "type": "CurlMode",
+      "required": false,
+      "description": "旋度，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "twist",
+        "rise",
+        "fall"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "twist",
+          "rise",
+          "fall"
+        ]
+      },
+      "codeExample": "curl={\"rise\"}"
+    },
+    {
+      "name": "dispersion",
+      "type": "number",
+      "required": false,
+      "description": "色散，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 29
+      },
+      "codeExample": "dispersion={0.03}",
+      "usageExamples": [
+        "dispersion={0.03}"
+      ]
+    },
+    {
+      "name": "liquid",
+      "type": "number",
+      "required": false,
+      "description": "液体，控制 flex carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 30
+      },
+      "codeExample": "liquid={0.3}",
+      "usageExamples": [
+        "liquid={0.3}"
+      ]
+    },
+    {
+      "name": "followCursor",
+      "type": "boolean",
+      "required": false,
+      "description": "是否跟随指针，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "followCursor={false}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/FlexCarousel/FlexCarousel';\nimport { LABELS, palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 保留真实图片弯曲与折射；不抢占页面滚轮。\n// 此演示需要可用WebGL上下文；不支持时应显示能力提示，不声称效果已运行。\n\nexport default function FlexCarouselDemo() {\n  const [status, setStatus] = useState(\"拖动图片，观察边缘液态玻璃折弯\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ position: 'relative', height: 330, minHeight: 0, width: '100%' }}><Component\n\n\n\nonChange={index => setStatus('当前图片：' + LABELS[index % LABELS.length])}\nonSelect={index => setStatus('已选择：' + LABELS[index % LABELS.length])} /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "FlexCarousel",
+      "sourcePath": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "FlexCarouselItem[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 381,
+            "kind": "parameter"
+          },
+          "defaultResolvedExpression": "[\n  {\n    src: photo('photo-1737071371043-761e02b1ef95'),\n    alt: 'An iridescent chrome sculpture of a head',\n    title: 'Iridescence'\n  },\n  {\n    src: photo('photo-1693645325828-62cd35c8da8f'),\n    alt: 'A person in dark clothes standing in front of a white backdrop',\n    title: 'White Room'\n  },\n  { src: photo('photo-1739056238917-d89cd05c48d5'), alt: 'A twisted chrome form on black', title: 'Liquid Metal' },\n  { src: photo('photo-1747191092806-c7da11881986'), alt: 'A clay bust shown in profile', title: 'Clay Study' },\n  { src: photo('photo-1605034313761-73ea4a0cfbf3'), alt: 'Black and white low top sneakers', title: 'Low Tops' },\n  { src: photo('photo-1495462911434-be47104d70fa'), alt: 'A woman in a wide black hat', title: 'Brim' },\n  {\n    src: photo('photo-1786835568925-20cd20007ed0'),\n    alt: 'Three swirling shapes in white, gold and silver on grey',\n    title: 'Three Forms'\n  },\n  { src: photo('photo-1770249196550-ff6c641165cb'), alt: 'A chrome humanoid sculpture', title: 'Automaton' },\n  {\n    src: photo('photo-1787181875088-087d612262a7'),\n    alt: 'A black textured sculpture with an opening at its center',\n    title: 'Obsidian'\n  },\n  {\n    src: photo('photo-1770062422885-2dfcbe8fb65b'),\n    alt: 'A woman in a white shirt crouching on a dark set',\n    title: 'Poise'\n  },\n  { src: photo('photo-1726910133626-9b573eca70ff'), alt: 'Black curved shapes stacked like a fan', title: 'Fins' },\n  { src: photo('photo-1604854574958-59047362c165'), alt: 'A white plaster bust on a black table', title: 'Plaster' }\n]",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "FlexCarouselItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "src",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "title",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "subtitle",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], title: LABELS[index] }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], title: LABELS[index] }))}"
+          ]
+        },
+        {
+          "name": "preset",
+          "type": "BendPreset",
+          "required": false,
+          "defaultExpression": "'liquid'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 382,
+            "kind": "parameter"
+          },
+          "defaultValue": "liquid",
+          "description": "预设，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "liquid",
+            "ribbon",
+            "vortex",
+            "arch"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "liquid",
+              "ribbon",
+              "vortex",
+              "arch"
+            ]
+          },
+          "codeExample": "preset=\"liquid\"",
+          "usageExamples": [
+            "preset=\"liquid\""
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "CarouselIntro",
+          "required": false,
+          "defaultExpression": "'rise'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 383,
+            "kind": "parameter"
+          },
+          "defaultValue": "rise",
+          "description": "入场，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "rise",
+            "bloom",
+            "spin",
+            "deal",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 37
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "rise",
+              "bloom",
+              "spin",
+              "deal",
+              "none"
+            ]
+          },
+          "codeExample": "intro=\"rise\"",
+          "usageExamples": [
+            "intro=\"rise\""
+          ]
+        },
+        {
+          "name": "cardHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 384,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "卡片高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 38
+          },
+          "codeExample": "cardHeight={0.62}",
+          "usageExamples": [
+            "cardHeight={0.62}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 385,
+            "kind": "parameter"
+          },
+          "defaultValue": 12,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 39
+          },
+          "codeExample": "gap={16}",
+          "usageExamples": [
+            "gap={16}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 386,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 40
+          },
+          "codeExample": "radius={18}",
+          "usageExamples": [
+            "radius={18}"
+          ]
+        },
+        {
+          "name": "fit",
+          "type": "CardFit",
+          "required": false,
+          "defaultExpression": "'natural'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 387,
+            "kind": "parameter"
+          },
+          "defaultValue": "natural",
+          "description": "适配，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "natural",
+            "portrait",
+            "square",
+            "landscape"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 41
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "natural",
+              "portrait",
+              "square",
+              "landscape"
+            ]
+          },
+          "codeExample": "fit={\"natural\"}"
+        },
+        {
+          "name": "squeeze",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 398,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "压缩，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 42
+          },
+          "codeExample": "squeeze={0.12}",
+          "usageExamples": [
+            "squeeze={0.12}"
+          ]
+        },
+        {
+          "name": "focusOnClick",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 399,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否焦点点击，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "focusOnClick",
+          "usageExamples": [
+            "focusOnClick"
+          ]
+        },
+        {
+          "name": "autoplay",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 400,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否自动播放，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 44
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "autoplay={false}",
+          "usageExamples": [
+            "autoplay={false}"
+          ]
+        },
+        {
+          "name": "interval",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 401,
+            "kind": "parameter"
+          },
+          "defaultValue": 4,
+          "description": "间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 45
+          },
+          "codeExample": "interval={4}"
+        },
+        {
+          "name": "captions",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 402,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否图注，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 46
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "captions",
+          "usageExamples": [
+            "captions"
+          ]
+        },
+        {
+          "name": "captureWheel",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 403,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否采样滚轮，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 47
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "captureWheel={false}",
+          "usageExamples": [
+            "captureWheel={false}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(index: number, item: FlexCarouselItem) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 48
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((index: number, item: FlexCarouselItem) => void) | undefined"
+          },
+          "codeExample": "onChange={index => setStatus('当前图片：' + LABELS[index % LABELS.length])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={index => setStatus('当前图片：' + LABELS[index % LABELS.length])}"
+          ]
+        },
+        {
+          "name": "onSelect",
+          "type": "(index: number, item: FlexCarouselItem) => void",
+          "required": false,
+          "description": "用户选择条目时通知调用方，参数为选中项的标识或数据。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 49
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((index: number, item: FlexCarouselItem) => void) | undefined"
+          },
+          "codeExample": "onSelect={index => setStatus('已选择：' + LABELS[index % LABELS.length])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onSelect={index => setStatus('已选择：' + LABELS[index % LABELS.length])}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 406,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 50
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 51
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "lensWidth",
+          "type": "number",
+          "required": false,
+          "description": "透镜宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 22
+          },
+          "codeExample": "lensWidth={1}"
+        },
+        {
+          "name": "lensHeight",
+          "type": "number",
+          "required": false,
+          "description": "透镜高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 23
+          },
+          "codeExample": "lensHeight={1}"
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "description": "倾斜，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 24
+          },
+          "codeExample": "tilt={1}"
+        },
+        {
+          "name": "roundness",
+          "type": "number",
+          "required": false,
+          "description": "圆润程度，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 25
+          },
+          "codeExample": "roundness={1}"
+        },
+        {
+          "name": "bend",
+          "type": "number",
+          "required": false,
+          "description": "弯曲，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 26
+          },
+          "codeExample": "bend={1}"
+        },
+        {
+          "name": "reach",
+          "type": "number",
+          "required": false,
+          "description": "作用距离，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 27
+          },
+          "codeExample": "reach={1}"
+        },
+        {
+          "name": "curl",
+          "type": "CurlMode",
+          "required": false,
+          "description": "旋度，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "twist",
+            "rise",
+            "fall"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "twist",
+              "rise",
+              "fall"
+            ]
+          },
+          "codeExample": "curl={\"rise\"}"
+        },
+        {
+          "name": "dispersion",
+          "type": "number",
+          "required": false,
+          "description": "色散，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 29
+          },
+          "codeExample": "dispersion={0.03}",
+          "usageExamples": [
+            "dispersion={0.03}"
+          ]
+        },
+        {
+          "name": "liquid",
+          "type": "number",
+          "required": false,
+          "description": "液体，控制 flex carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 30
+          },
+          "codeExample": "liquid={0.3}",
+          "usageExamples": [
+            "liquid={0.3}"
+          ]
+        },
+        {
+          "name": "followCursor",
+          "type": "boolean",
+          "required": false,
+          "description": "是否跟随指针，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlexCarousel/FlexCarousel.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "followCursor={false}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

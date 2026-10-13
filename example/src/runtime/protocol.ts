@@ -1,4 +1,5 @@
 import type { MotionMode, PreviewStatus } from './types';
+import type { DemoValues } from '../parameters/types';
 
 export const PREVIEW_PROTOCOL = 'agent-wan-reactbits/v1' as const;
 
@@ -9,16 +10,17 @@ export type FrameMessage = {
 } & (
   | { type: 'frame-ready' }
   | { type: 'status'; status: PreviewStatus; detail?: string }
+  | { type: 'values-change'; revision: number; changes: DemoValues }
 );
 
 export type HostMessage = {
   protocol: typeof PREVIEW_PROTOCOL;
   channel: string;
   componentId: string;
-  type: 'preferences';
-  active: boolean;
-  motion: MotionMode;
-};
+} & (
+  | { type: 'preferences'; active: boolean; motion: MotionMode }
+  | { type: 'configuration'; revision: number; values: DemoValues }
+);
 
 const statuses = new Set<PreviewStatus>([
   'booting', 'loading', 'ready', 'paused', 'reduced-motion', 'unsupported', 'error',
@@ -35,9 +37,25 @@ function hasEnvelope(value: unknown): value is Record<string, unknown> {
     && typeof value.componentId === 'string' && value.componentId.length > 0;
 }
 
+// Keep envelope validation independent of React and the parameter loader.
+function safeJson(value: unknown, depth = 0): boolean {
+  if (depth > 12) return false;
+  if (value === null || typeof value === 'boolean') return true;
+  if (typeof value === 'number') return Number.isFinite(value);
+  if (typeof value === 'string') return value.length <= 20000;
+  if (Array.isArray(value)) return value.length <= 512 && value.every(item => safeJson(item, depth + 1));
+  if (!isRecord(value) || Object.getPrototypeOf(value) !== Object.prototype) return false;
+  const pairs = Object.entries(value);
+  return pairs.length <= 256 && pairs.every(([key, item]) => !['__proto__', 'prototype', 'constructor'].includes(key) && safeJson(item, depth + 1));
+}
+function hasRevision(value: Record<string, unknown>) {
+  return Number.isSafeInteger(value.revision) && Number(value.revision) >= 0;
+}
+
 export function isFrameMessage(value: unknown): value is FrameMessage {
   if (!hasEnvelope(value)) return false;
   if (value.type === 'frame-ready') return true;
+  if (value.type === 'values-change') return hasRevision(value) && isRecord(value.changes) && safeJson(value.changes);
   return value.type === 'status'
     && typeof value.status === 'string'
     && statuses.has(value.status as PreviewStatus)
@@ -45,8 +63,9 @@ export function isFrameMessage(value: unknown): value is FrameMessage {
 }
 
 export function isHostMessage(value: unknown): value is HostMessage {
-  return hasEnvelope(value)
-    && value.type === 'preferences'
+  if (!hasEnvelope(value)) return false;
+  if (value.type === 'configuration') return hasRevision(value) && isRecord(value.values) && safeJson(value.values);
+  return value.type === 'preferences'
     && typeof value.active === 'boolean'
     && (value.motion === 'system' || value.motion === 'allow' || value.motion === 'reduce');
 }

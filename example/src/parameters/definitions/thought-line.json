@@ -1,0 +1,1807 @@
+{
+  "version": 1,
+  "id": "thought-line",
+  "name": "Thought Line",
+  "sourcePath": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+  "demoPath": "src/demos/feedback/thought-line.tsx",
+  "fields": [
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "正在整理示例资料",
+      "upstreamDefault": "'Thinking…'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.doneLabel",
+      "name": "doneLabel",
+      "label": "doneLabel · t0",
+      "description": "完成标签，控制 thought line 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "doneLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "整理完成",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.steps",
+      "name": "steps",
+      "label": "steps · t0",
+      "description": "步骤的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "steps"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "读取示例设计规范",
+        "整理组件与页面依赖",
+        "准备验收检查项"
+      ],
+      "upstreamDefault": "EMPTY_STEPS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'currentColor'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glyphColor",
+      "name": "glyphColor",
+      "label": "glyphColor · t0",
+      "description": "字形颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glyphColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "''",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 15,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shimmer",
+      "name": "shimmer",
+      "label": "shimmer · t0",
+      "description": "是否闪光，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shimmer"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.collapsible",
+      "name": "collapsible",
+      "label": "collapsible · t0",
+      "description": "是否可收起，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "collapsible"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.collapseOnSettle",
+      "name": "collapseOnSettle",
+      "label": "collapseOnSettle · t0",
+      "description": "是否收起稳定，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "collapseOnSettle"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glyph",
+      "name": "glyph",
+      "label": "glyph · t0",
+      "description": "字形，控制 thought line 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glyph"
+        }
+      ],
+      "type": "ThoughtLineGlyph",
+      "defaultValue": "sparkle",
+      "upstreamDefault": "'sparkle'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.breathPeriod",
+      "name": "breathPeriod",
+      "label": "breathPeriod · t0",
+      "description": "呼吸周期，控制 thought line 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "breathPeriod"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.6,
+      "upstreamDefault": "1.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.breathDepth",
+      "name": "breathDepth",
+      "label": "breathDepth · t0",
+      "description": "呼吸深度，控制 thought line 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "breathDepth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "upstreamDefault": "0.45",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shimmerDuration",
+      "name": "shimmerDuration",
+      "label": "shimmerDuration · t0",
+      "description": "闪光时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shimmerDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.8,
+      "upstreamDefault": "1.8",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.settleDuration",
+      "name": "settleDuration",
+      "label": "settleDuration · t0",
+      "description": "稳定时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "settleDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 350,
+      "upstreamDefault": "350",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.settleBlur",
+      "name": "settleBlur",
+      "label": "settleBlur · t0",
+      "description": "稳定模糊，控制 thought line 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "settleBlur"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.settleAfter",
+      "name": "settleAfter",
+      "label": "settleAfter · t0",
+      "description": "稳定之后，控制 thought line 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "settleAfter"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showTimer",
+      "name": "showTimer",
+      "label": "showTimer · t0",
+      "description": "是否显示计时器，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showTimer"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Thinking…'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 50,
+        "kind": "parameter"
+      },
+      "defaultValue": "Thinking…",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 12
+      },
+      "codeExample": "label=\"正在整理示例资料\"",
+      "usageExamples": [
+        "label=\"正在整理示例资料\""
+      ]
+    },
+    {
+      "name": "doneLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 51,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "完成标签，控制 thought line 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 13
+      },
+      "codeExample": "doneLabel=\"整理完成\"",
+      "usageExamples": [
+        "doneLabel=\"整理完成\""
+      ]
+    },
+    {
+      "name": "renderLabel",
+      "type": "(text: string, working: boolean) => ReactNode",
+      "required": false,
+      "description": "自定义标签内容的渲染函数，接收文本及工作状态并返回 ReactNode。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((text: string, working: boolean) => ReactNode) | undefined"
+      },
+      "codeExample": "renderLabel={(text, working) => (\"示例\")}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "glyph",
+      "type": "ThoughtLineGlyph",
+      "required": false,
+      "defaultExpression": "'sparkle'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 53,
+        "kind": "parameter"
+      },
+      "defaultValue": "sparkle",
+      "description": "字形，控制 thought line 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "union",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "bigint"
+          },
+          {
+            "type": "false",
+            "kind": "enum",
+            "options": [
+              false
+            ]
+          },
+          {
+            "type": "true",
+            "kind": "enum",
+            "options": [
+              true
+            ]
+          },
+          {
+            "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>>"
+          },
+          {
+            "type": "Iterable<React.ReactNode>"
+          },
+          {
+            "type": "React.ReactPortal"
+          },
+          {
+            "type": "Promise<AwaitedReactNode>"
+          }
+        ]
+      },
+      "codeExample": "glyph={\"sparkle\"}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "steps",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "EMPTY_STEPS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 54,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "defaultResolvedExpression": "[]",
+      "description": "步骤的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "steps={steps}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "steps={steps}"
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 55,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否可收起，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "collapsible",
+      "usageExamples": [
+        "collapsible"
+      ]
+    },
+    {
+      "name": "collapseOnSettle",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 56,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否收起稳定，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "collapseOnSettle",
+      "usageExamples": [
+        "collapseOnSettle"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'currentColor'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 57,
+        "kind": "parameter"
+      },
+      "defaultValue": "currentColor",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 19
+      },
+      "codeExample": "color={palette.ink}",
+      "usageExamples": [
+        "color={palette.ink}"
+      ]
+    },
+    {
+      "name": "glyphColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 58,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "字形颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 20
+      },
+      "codeExample": "glyphColor={palette.primary}",
+      "usageExamples": [
+        "glyphColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "fontSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 59,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 21
+      },
+      "codeExample": "fontSize={15}",
+      "usageExamples": [
+        "fontSize={15}"
+      ]
+    },
+    {
+      "name": "breathPeriod",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 60,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.6,
+      "description": "呼吸周期，控制 thought line 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 22
+      },
+      "codeExample": "breathPeriod={1.6}"
+    },
+    {
+      "name": "breathDepth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.45",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 61,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.45,
+      "description": "呼吸深度，控制 thought line 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 23
+      },
+      "codeExample": "breathDepth={0.45}"
+    },
+    {
+      "name": "shimmer",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 62,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否闪光，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "shimmer={false}",
+      "usageExamples": [
+        "shimmer={false}"
+      ]
+    },
+    {
+      "name": "shimmerDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.8,
+      "description": "闪光时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 25
+      },
+      "codeExample": "shimmerDuration={1.8}"
+    },
+    {
+      "name": "settleDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "350",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": 350,
+      "description": "稳定时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 26
+      },
+      "codeExample": "settleDuration={350}"
+    },
+    {
+      "name": "settleBlur",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "稳定模糊，控制 thought line 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 27
+      },
+      "codeExample": "settleBlur={2}"
+    },
+    {
+      "name": "working",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否工作中，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "working={working}",
+      "usageExamples": [
+        "working={working}"
+      ]
+    },
+    {
+      "name": "settleAfter",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "稳定之后，控制 thought line 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 29
+      },
+      "codeExample": "settleAfter={0}"
+    },
+    {
+      "name": "elapsed",
+      "type": "number",
+      "required": false,
+      "description": "已过时间，控制 thought line 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 30
+      },
+      "codeExample": "elapsed={1}"
+    },
+    {
+      "name": "showTimer",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示计时器，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showTimer={true}"
+    },
+    {
+      "name": "onSettle",
+      "type": "(seconds: number) => void",
+      "required": false,
+      "description": "运动完成并进入稳定状态时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((seconds: number) => void) | undefined"
+      },
+      "codeExample": "onSettle={seconds => setMessage(`本地演示任务结束，用时约 ${seconds.toFixed(1)} 秒。`)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onSettle={seconds => setMessage(`本地演示任务结束，用时约 ${seconds.toFixed(1)} 秒。`)}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 33
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+        "line": 34
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport ThoughtLine from '../../../.upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\n\nexport default function ThoughtLineDemo() {\n  const [working, setWorking] = useState(true);\n  const [message, setMessage] = useState('本地演示任务进行中。');\n  const [revision, setRevision] = useState(0);\n  return <DemoPanel title=\"Thought Line · 任务过程提示\"><div className={cn(\"aw-micro-stack\")}>\n    <ThoughtLine key={revision}    working={working}       onSettle={seconds => setMessage(`本地演示任务结束，用时约 ${seconds.toFixed(1)} 秒。`)} /*__AW_PROPS_t0__*/  />\n    <div className={cn(\"aw-micro-controls\")}><button className={styles['aw-micro-action']}  onClick={() => { if (working) setWorking(false); else { setRevision(value => value + 1); setWorking(true); setMessage('本地演示任务重新开始。'); } }} /*__AW_PROPS_t1__*/ >{working ? '完成模拟任务' : '重新演示'}</button></div>\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">{message}</p>\n    <p className={cn(\"aw-micro-hint\")}>展示用户可见的任务步骤，不代表模型内部推理内容。</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ThoughtLine",
+      "sourcePath": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Thinking…'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 50,
+            "kind": "parameter"
+          },
+          "defaultValue": "Thinking…",
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 12
+          },
+          "codeExample": "label=\"正在整理示例资料\"",
+          "usageExamples": [
+            "label=\"正在整理示例资料\""
+          ]
+        },
+        {
+          "name": "doneLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 51,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "完成标签，控制 thought line 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 13
+          },
+          "codeExample": "doneLabel=\"整理完成\"",
+          "usageExamples": [
+            "doneLabel=\"整理完成\""
+          ]
+        },
+        {
+          "name": "renderLabel",
+          "type": "(text: string, working: boolean) => ReactNode",
+          "required": false,
+          "description": "自定义标签内容的渲染函数，接收文本及工作状态并返回 ReactNode。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((text: string, working: boolean) => ReactNode) | undefined"
+          },
+          "codeExample": "renderLabel={(text, working) => (\"示例\")}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "glyph",
+          "type": "ThoughtLineGlyph",
+          "required": false,
+          "defaultExpression": "'sparkle'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 53,
+            "kind": "parameter"
+          },
+          "defaultValue": "sparkle",
+          "description": "字形，控制 thought line 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "union",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "bigint"
+              },
+              {
+                "type": "false",
+                "kind": "enum",
+                "options": [
+                  false
+                ]
+              },
+              {
+                "type": "true",
+                "kind": "enum",
+                "options": [
+                  true
+                ]
+              },
+              {
+                "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>>"
+              },
+              {
+                "type": "Iterable<React.ReactNode>"
+              },
+              {
+                "type": "React.ReactPortal"
+              },
+              {
+                "type": "Promise<AwaitedReactNode>"
+              }
+            ]
+          },
+          "codeExample": "glyph={\"sparkle\"}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "steps",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "EMPTY_STEPS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 54,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "defaultResolvedExpression": "[]",
+          "description": "步骤的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "steps={steps}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "steps={steps}"
+          ]
+        },
+        {
+          "name": "collapsible",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 55,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否可收起，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "collapsible",
+          "usageExamples": [
+            "collapsible"
+          ]
+        },
+        {
+          "name": "collapseOnSettle",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 56,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否收起稳定，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "collapseOnSettle",
+          "usageExamples": [
+            "collapseOnSettle"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'currentColor'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 57,
+            "kind": "parameter"
+          },
+          "defaultValue": "currentColor",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 19
+          },
+          "codeExample": "color={palette.ink}",
+          "usageExamples": [
+            "color={palette.ink}"
+          ]
+        },
+        {
+          "name": "glyphColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 58,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "字形颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 20
+          },
+          "codeExample": "glyphColor={palette.primary}",
+          "usageExamples": [
+            "glyphColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 59,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 21
+          },
+          "codeExample": "fontSize={15}",
+          "usageExamples": [
+            "fontSize={15}"
+          ]
+        },
+        {
+          "name": "breathPeriod",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 60,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.6,
+          "description": "呼吸周期，控制 thought line 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 22
+          },
+          "codeExample": "breathPeriod={1.6}"
+        },
+        {
+          "name": "breathDepth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.45",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 61,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.45,
+          "description": "呼吸深度，控制 thought line 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 23
+          },
+          "codeExample": "breathDepth={0.45}"
+        },
+        {
+          "name": "shimmer",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 62,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否闪光，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "shimmer={false}",
+          "usageExamples": [
+            "shimmer={false}"
+          ]
+        },
+        {
+          "name": "shimmerDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.8,
+          "description": "闪光时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 25
+          },
+          "codeExample": "shimmerDuration={1.8}"
+        },
+        {
+          "name": "settleDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "350",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": 350,
+          "description": "稳定时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 26
+          },
+          "codeExample": "settleDuration={350}"
+        },
+        {
+          "name": "settleBlur",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "稳定模糊，控制 thought line 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 27
+          },
+          "codeExample": "settleBlur={2}"
+        },
+        {
+          "name": "working",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否工作中，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "working={working}",
+          "usageExamples": [
+            "working={working}"
+          ]
+        },
+        {
+          "name": "settleAfter",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "稳定之后，控制 thought line 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 29
+          },
+          "codeExample": "settleAfter={0}"
+        },
+        {
+          "name": "elapsed",
+          "type": "number",
+          "required": false,
+          "description": "已过时间，控制 thought line 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 30
+          },
+          "codeExample": "elapsed={1}"
+        },
+        {
+          "name": "showTimer",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示计时器，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showTimer={true}"
+        },
+        {
+          "name": "onSettle",
+          "type": "(seconds: number) => void",
+          "required": false,
+          "description": "运动完成并进入稳定状态时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((seconds: number) => void) | undefined"
+          },
+          "codeExample": "onSettle={seconds => setMessage(`本地演示任务结束，用时约 ${seconds.toFixed(1)} 秒。`)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onSettle={seconds => setMessage(`本地演示任务结束，用时约 ${seconds.toFixed(1)} 秒。`)}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 33
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/ThoughtLine/ThoughtLine.tsx",
+            "line": 34
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles['aw-micro-action']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => { if (working) setWorking(false); else { setRevision(value => value + 1); setWorking(true); setMessage('本地演示任务重新开始。'); } }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>{working ? '完成模拟任务' : '重新演示'}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,13 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-comparison, .aw-business-comparison-images, .aw-business-comparison-line, .aw-business-comparison-handle { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-comparison { display:grid; gap:12px }
+.aw-business-comparison-images { position:relative; height:260px; overflow:hidden; border-radius:12px }
+.aw-business-comparison-images img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover }
+.aw-business-comparison-line { position:absolute; top:0; bottom:0; border-left:3px solid var(--aw-palette-ivory) }
+.aw-business-comparison input { display:block; width:100%; accent-color:var(--aw-color-action-primary) }
+.aw-business-comparison-handle { position:absolute; top:calc(50% - 22px); left:-22px; width:44px; height:44px; display:grid; place-items:center; border:3px solid var(--aw-palette-ivory); border-radius:50%; background:var(--aw-color-action-primary); color:var(--aw-palette-ivory); box-shadow:var(--aw-shadow-popover); cursor:ew-resize!important; touch-action:none }
+.aw-business-comparison-line { width:0; cursor:ew-resize; touch-action:none }
+.aw-business-comparison-line .aw-business-comparison-handle:hover { translate:0 0 }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-comparison, .aw-business-comparison::before, .aw-business-comparison::after, .aw-business-comparison-images, .aw-business-comparison-images::before, .aw-business-comparison-images::after, .aw-business-comparison-line, .aw-business-comparison-line::before, .aw-business-comparison-line::after, .aw-business-comparison-handle, .aw-business-comparison-handle::before, .aw-business-comparison-handle::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-comparison, [data-motion=reduce] .aw-business-comparison::before, [data-motion=reduce] .aw-business-comparison::after, [data-motion=reduce] .aw-business-comparison-images, [data-motion=reduce] .aw-business-comparison-images::before, [data-motion=reduce] .aw-business-comparison-images::after, [data-motion=reduce] .aw-business-comparison-line, [data-motion=reduce] .aw-business-comparison-line::before, [data-motion=reduce] .aw-business-comparison-line::after, [data-motion=reduce] .aw-business-comparison-handle, [data-motion=reduce] .aw-business-comparison-handle::before, [data-motion=reduce] .aw-business-comparison-handle::after { transition:none; animation:none; scroll-behavior:auto; }

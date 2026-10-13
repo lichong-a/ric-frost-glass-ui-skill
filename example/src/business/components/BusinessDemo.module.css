@@ -1,0 +1,15 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business, .aw-business-heading, .aw-business-content { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business { width:100%; min-height:560px; padding:28px; color:var(--aw-color-text-primary) }
+.aw-business-heading { max-width:760px; margin:0 auto 24px }
+.aw-business-heading > span { font-size:11px; letter-spacing:.08em; color:var(--aw-color-text-secondary) }
+.aw-business-heading h2 { font:600 26px/1.4 var(--aw-font-family-sans); margin:8px 0 10px }
+.aw-business-heading p { font-size:14px; line-height:1.7; color:var(--aw-color-text-secondary) }
+.aw-business-content { width:100%; max-width:760px; margin:auto; display:grid; gap:20px; padding:24px; background:var(--aw-surface-panel); border:1px solid var(--aw-color-border-decorative); border-radius:var(--aw-radius-panel); box-shadow:var(--aw-shadow-panel) }
+@media (width < 600px) { .aw-business { padding:16px } }
+@media (width < 600px) { .aw-business-content { padding:18px } }
+@media (width < 600px) { .aw-business-heading h2 { font-size:23px } }
+.aw-business, .aw-business-overlay { --aw-business-spring: cubic-bezier(.22,1.35,.38,1); --aw-business-ease: cubic-bezier(.22,1,.36,1); font-family:var(--aw-font-family-sans) }
+
+@media (prefers-reduced-motion:reduce) { .aw-business, .aw-business::before, .aw-business::after, .aw-business-heading, .aw-business-heading::before, .aw-business-heading::after, .aw-business-content, .aw-business-content::before, .aw-business-content::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business, [data-motion=reduce] .aw-business::before, [data-motion=reduce] .aw-business::after, [data-motion=reduce] .aw-business-heading, [data-motion=reduce] .aw-business-heading::before, [data-motion=reduce] .aw-business-heading::after, [data-motion=reduce] .aw-business-content, [data-motion=reduce] .aw-business-content::before, [data-motion=reduce] .aw-business-content::after { transition:none; animation:none; scroll-behavior:auto; }

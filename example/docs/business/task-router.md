@@ -22,4 +22,4 @@
 
 典型判断：输入后查找很多候选 → AutoComplete；少量固定选项 → Select 或 RadioButton；结构化记录比较 → DataTable；自由说明 → Textarea；临时阻断确认 → Dialog；较多详情编辑 → Drawer；轻量锚点内容 → Popover；非阻断结果 → Toast；已经发生的事件 → Timeline；未完成的顺序步骤 → Stepper。
 
-所有业务能力使用 React 与原生 HTML 实现，当前交互与资源边界以本包源码为准。
+所有业务能力使用 React、原生语义控件与已有 Motion 实现，当前交互与资源边界以本包源码为准。

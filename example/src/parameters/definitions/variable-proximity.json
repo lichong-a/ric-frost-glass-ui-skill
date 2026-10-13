@@ -1,0 +1,721 @@
+{
+  "version": 1,
+  "id": "variable-proximity",
+  "name": "Variable Proximity",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+  "demoPath": "src/demos/text/variable-proximity.tsx",
+  "fields": [
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "Move closer. Find clarity.",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fromFontVariationSettings",
+      "name": "fromFontVariationSettings",
+      "label": "fromFontVariationSettings · t0",
+      "description": "靠近指针前的可变字体轴配置字符串，如 wght、opsz 的取值。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fromFontVariationSettings"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "'wght' 300, 'wdth' 80",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.toFontVariationSettings",
+      "name": "toFontVariationSettings",
+      "label": "toFontVariationSettings · t0",
+      "description": "靠近指针后的可变字体轴配置字符串，轴名需由所选字体支持。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "toFontVariationSettings"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "'wght' 900, 'wdth' 120",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 150,
+      "upstreamDefault": "50",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.falloff",
+      "name": "falloff",
+      "label": "falloff · t0",
+      "description": "衰减，控制 variable proximity 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "falloff"
+        }
+      ],
+      "type": "'linear' | 'exponential' | 'gaussian'",
+      "defaultValue": "gaussian",
+      "upstreamDefault": "'linear'",
+      "control": "select",
+      "options": [
+        {
+          "label": "linear",
+          "value": "linear"
+        },
+        {
+          "label": "exponential",
+          "value": "exponential"
+        },
+        {
+          "label": "gaussian",
+          "value": "gaussian"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "React.CSSProperties",
+      "defaultValue": {
+        "fontFamily": "Roboto Flex",
+        "fontSize": 50,
+        "color": "#1f2d26"
+      },
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "fontFamily": {
+            "kind": "string"
+          },
+          "fontSize": {
+            "kind": "number"
+          },
+          "color": {
+            "kind": "string"
+          }
+        },
+        "required": [
+          "fontFamily",
+          "fontSize",
+          "color"
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 60
+      },
+      "codeExample": "label=\"Move closer. Find clarity.\"",
+      "usageExamples": [
+        "label=\"Move closer. Find clarity.\""
+      ]
+    },
+    {
+      "name": "fromFontVariationSettings",
+      "type": "string",
+      "required": true,
+      "description": "靠近指针前的可变字体轴配置字符串，如 wght、opsz 的取值。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 61
+      },
+      "codeExample": "fromFontVariationSettings=\"'wght' 300, 'wdth' 80\"",
+      "usageExamples": [
+        "fromFontVariationSettings=\"'wght' 300, 'wdth' 80\""
+      ]
+    },
+    {
+      "name": "toFontVariationSettings",
+      "type": "string",
+      "required": true,
+      "description": "靠近指针后的可变字体轴配置字符串，轴名需由所选字体支持。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 62
+      },
+      "codeExample": "toFontVariationSettings=\"'wght' 900, 'wdth' 120\"",
+      "usageExamples": [
+        "toFontVariationSettings=\"'wght' 900, 'wdth' 120\""
+      ]
+    },
+    {
+      "name": "containerRef",
+      "type": "RefObject<HTMLElement>",
+      "required": true,
+      "description": "容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 63
+      },
+      "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: containerRef={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+      "usageExamples": [
+        "containerRef={containerRef}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "50",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": 50,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 64
+      },
+      "codeExample": "radius={150}",
+      "usageExamples": [
+        "radius={150}"
+      ]
+    },
+    {
+      "name": "falloff",
+      "type": "'linear' | 'exponential' | 'gaussian'",
+      "required": false,
+      "defaultExpression": "'linear'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultValue": "linear",
+      "description": "衰减，控制 variable proximity 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "linear",
+        "exponential",
+        "gaussian"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 65
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "linear",
+          "exponential",
+          "gaussian"
+        ]
+      },
+      "codeExample": "falloff=\"gaussian\"",
+      "usageExamples": [
+        "falloff=\"gaussian\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 66
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "onClick",
+      "type": "() => void",
+      "required": false,
+      "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 67
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onClick={() => {}}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+        "line": 68
+      },
+      "codeExample": "style={{ fontFamily: 'Roboto Flex', fontSize: 50, color: palette.ink }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "style={{ fontFamily: 'Roboto Flex', fontSize: 50, color: palette.ink }}"
+      ]
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "HTMLSpanElement",
+      "codeExample": "children={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    },
+    {
+      "name": "ref",
+      "type": "Ref<HTMLSpanElement> | undefined",
+      "required": false,
+      "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 292
+      },
+      "sourceDescription": "Allows getting a ref to the component instance.\nOnce the component unmounts, React will set `ref.current` to `null`\n(or call the ref with `null` if you passed a callback ref).",
+      "inheritedFrom": "HTMLSpanElement",
+      "codeExample": "const elementRef = useRef<HTMLSpanElement | null>(null);\n// JSX: ref={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "HTMLSpanElement",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "HTMLAttributes<HTMLSpanElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "Ref<HTMLSpanElement> | undefined",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "组件由 forwardRef 暴露的 ref；句柄类型按签名传递，React 特殊属性不作为普通文本配置。"
+    }
+  ],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity';\nimport { palette } from '../../shared/demo-support';\nimport { useRef } from \"react\";\n// 真实字重和字宽插值依赖本地Roboto Flex可变字体；距离变化由容器ref计算。\n\nexport default function VariableProximityDemo() {\n  const containerRef = useRef<HTMLDivElement>(null!);\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div ref={containerRef} style={{ position: 'relative', display: 'grid', placeItems: 'center', minHeight: 320, padding: 24 }}><Component    containerRef={containerRef}    /*__AW_PROPS_t0__*/  /></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "VariableProximity",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 60
+          },
+          "codeExample": "label=\"Move closer. Find clarity.\"",
+          "usageExamples": [
+            "label=\"Move closer. Find clarity.\""
+          ]
+        },
+        {
+          "name": "fromFontVariationSettings",
+          "type": "string",
+          "required": true,
+          "description": "靠近指针前的可变字体轴配置字符串，如 wght、opsz 的取值。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 61
+          },
+          "codeExample": "fromFontVariationSettings=\"'wght' 300, 'wdth' 80\"",
+          "usageExamples": [
+            "fromFontVariationSettings=\"'wght' 300, 'wdth' 80\""
+          ]
+        },
+        {
+          "name": "toFontVariationSettings",
+          "type": "string",
+          "required": true,
+          "description": "靠近指针后的可变字体轴配置字符串，轴名需由所选字体支持。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 62
+          },
+          "codeExample": "toFontVariationSettings=\"'wght' 900, 'wdth' 120\"",
+          "usageExamples": [
+            "toFontVariationSettings=\"'wght' 900, 'wdth' 120\""
+          ]
+        },
+        {
+          "name": "containerRef",
+          "type": "RefObject<HTMLElement>",
+          "required": true,
+          "description": "容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 63
+          },
+          "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: containerRef={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "containerRef={containerRef}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "50",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": 50,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 64
+          },
+          "codeExample": "radius={150}",
+          "usageExamples": [
+            "radius={150}"
+          ]
+        },
+        {
+          "name": "falloff",
+          "type": "'linear' | 'exponential' | 'gaussian'",
+          "required": false,
+          "defaultExpression": "'linear'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultValue": "linear",
+          "description": "衰减，控制 variable proximity 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "linear",
+            "exponential",
+            "gaussian"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 65
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "linear",
+              "exponential",
+              "gaussian"
+            ]
+          },
+          "codeExample": "falloff=\"gaussian\"",
+          "usageExamples": [
+            "falloff=\"gaussian\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 66
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 67
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onClick={() => {}}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/VariableProximity/VariableProximity.tsx",
+            "line": 68
+          },
+          "codeExample": "style={{ fontFamily: 'Roboto Flex', fontSize: 50, color: palette.ink }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "style={{ fontFamily: 'Roboto Flex', fontSize: 50, color: palette.ink }}"
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "HTMLSpanElement",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLSpanElement> | undefined",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 292
+          },
+          "sourceDescription": "Allows getting a ref to the component instance.\nOnce the component unmounts, React will set `ref.current` to `null`\n(or call the ref with `null` if you passed a callback ref).",
+          "inheritedFrom": "HTMLSpanElement",
+          "codeExample": "const elementRef = useRef<HTMLSpanElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "HTMLSpanElement",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        },
+        {
+          "type": "HTMLAttributes<HTMLSpanElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        },
+        {
+          "type": "Ref<HTMLSpanElement> | undefined",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "组件由 forwardRef 暴露的 ref；句柄类型按签名传递，React 特殊属性不作为普通文本配置。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

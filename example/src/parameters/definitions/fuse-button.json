@@ -1,0 +1,1758 @@
+{
+  "version": 1,
+  "id": "fuse-button",
+  "name": "Fuse Button",
+  "sourcePath": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+  "demoPath": "src/demos/actions/fuse-button.tsx",
+  "fields": [
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "归档演示项",
+      "upstreamDefault": "'Archive'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.undoLabel",
+      "name": "undoLabel",
+      "label": "undoLabel · t0",
+      "description": "撤销标签，控制 fuse button 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "undoLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "撤销归档",
+      "upstreamDefault": "'Undo'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.doneLabel",
+      "name": "doneLabel",
+      "label": "doneLabel · t0",
+      "description": "完成标签，控制 fuse button 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "doneLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "已归档",
+      "upstreamDefault": "'Archived'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.commitOn",
+      "name": "commitOn",
+      "label": "commitOn · t0",
+      "description": "提交，控制 fuse button 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "commitOn"
+        }
+      ],
+      "type": "FuseCommitOn",
+      "defaultValue": "fuseEnd",
+      "upstreamDefault": "'press'",
+      "control": "select",
+      "options": [
+        {
+          "label": "press",
+          "value": "press"
+        },
+        {
+          "label": "fuseEnd",
+          "value": "fuseEnd"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.undoWindow",
+      "name": "undoWindow",
+      "label": "undoWindow · t0",
+      "description": "撤销窗口，控制 fuse button 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "undoWindow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3500,
+      "upstreamDefault": "4000",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.settle",
+      "name": "settle",
+      "label": "settle · t0",
+      "description": "稳定，控制 fuse button 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "settle"
+        }
+      ],
+      "type": "FuseSettle",
+      "defaultValue": "reset",
+      "upstreamDefault": "'reset'",
+      "control": "select",
+      "options": [
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "stay",
+          "value": "stay"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.background",
+      "name": "background",
+      "label": "background · t0",
+      "description": "背景，控制 fuse button 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "background"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#27272a'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fuseColor",
+      "name": "fuseColor",
+      "label": "fuseColor · t0",
+      "description": "导火线颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fuseColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#c3ae88",
+      "upstreamDefault": "'#f5a524'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "22",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "FuseSize",
+      "defaultValue": "md",
+      "upstreamDefault": "'md'",
+      "control": "select",
+      "options": [
+        {
+          "label": "sm",
+          "value": "sm"
+        },
+        {
+          "label": "md",
+          "value": "md"
+        },
+        {
+          "label": "lg",
+          "value": "lg"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fuse",
+      "name": "fuse",
+      "label": "fuse · t0",
+      "description": "导火线，控制 fuse button 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fuse"
+        }
+      ],
+      "type": "FusePosition",
+      "defaultValue": "outline",
+      "upstreamDefault": "'outline'",
+      "control": "select",
+      "options": [
+        {
+          "label": "outline",
+          "value": "outline"
+        },
+        {
+          "label": "bottom",
+          "value": "bottom"
+        },
+        {
+          "label": "top",
+          "value": "top"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fuseThickness",
+      "name": "fuseThickness",
+      "label": "fuseThickness · t0",
+      "description": "导火线厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fuseThickness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.crossfadeMs",
+      "name": "crossfadeMs",
+      "label": "crossfadeMs · t0",
+      "description": "交叉淡变毫秒，控制 fuse button 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "crossfadeMs"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 200,
+      "upstreamDefault": "200",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pauseOnHover",
+      "name": "pauseOnHover",
+      "label": "pauseOnHover · t0",
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pauseOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.type",
+      "name": "type",
+      "label": "类型 · t0",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "type"
+        }
+      ],
+      "type": "'button' | 'submit' | 'reset'",
+      "defaultValue": "button",
+      "upstreamDefault": "'button'",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Archive'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 59,
+        "kind": "parameter"
+      },
+      "defaultValue": "Archive",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 16
+      },
+      "codeExample": "label=\"归档演示项\"",
+      "usageExamples": [
+        "label=\"归档演示项\""
+      ]
+    },
+    {
+      "name": "undoLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Undo'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 60,
+        "kind": "parameter"
+      },
+      "defaultValue": "Undo",
+      "description": "撤销标签，控制 fuse button 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 17
+      },
+      "codeExample": "undoLabel=\"撤销归档\"",
+      "usageExamples": [
+        "undoLabel=\"撤销归档\""
+      ]
+    },
+    {
+      "name": "doneLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Archived'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 61,
+        "kind": "parameter"
+      },
+      "defaultValue": "Archived",
+      "description": "完成标签，控制 fuse button 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 18
+      },
+      "codeExample": "doneLabel=\"已归档\"",
+      "usageExamples": [
+        "doneLabel=\"已归档\""
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false,
+      "defaultExpression": "<HugeiconsIcon icon={Archive02Icon} size={preset.icon} strokeWidth={1.8} />",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 221,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "图标，控制 fuse button 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 19
+      },
+      "codeExample": "icon={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 20
+      },
+      "codeExample": "color={palette.ivory}",
+      "usageExamples": [
+        "color={palette.ivory}"
+      ]
+    },
+    {
+      "name": "background",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#27272a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": "#27272a",
+      "description": "背景，控制 fuse button 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 21
+      },
+      "codeExample": "background={palette.primary}",
+      "usageExamples": [
+        "background={palette.primary}"
+      ]
+    },
+    {
+      "name": "fuseColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5a524'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5a524",
+      "description": "导火线颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 22
+      },
+      "codeExample": "fuseColor={palette.sand}",
+      "usageExamples": [
+        "fuseColor={palette.sand}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "FuseSize",
+      "required": false,
+      "defaultExpression": "'md'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": "md",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "codeExample": "size={\"md\"}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "22",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 22,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 24
+      },
+      "codeExample": "radius={10}",
+      "usageExamples": [
+        "radius={10}"
+      ]
+    },
+    {
+      "name": "undoWindow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4000",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": 4000,
+      "description": "撤销窗口，控制 fuse button 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 25
+      },
+      "codeExample": "undoWindow={3500}",
+      "usageExamples": [
+        "undoWindow={3500}"
+      ]
+    },
+    {
+      "name": "fuse",
+      "type": "FusePosition",
+      "required": false,
+      "defaultExpression": "'outline'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": "outline",
+      "description": "导火线，控制 fuse button 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "outline",
+        "bottom",
+        "top"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "outline",
+          "bottom",
+          "top"
+        ]
+      },
+      "codeExample": "fuse={\"outline\"}"
+    },
+    {
+      "name": "fuseThickness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "导火线厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 27
+      },
+      "codeExample": "fuseThickness={1.5}"
+    },
+    {
+      "name": "crossfadeMs",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "交叉淡变毫秒，控制 fuse button 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 28
+      },
+      "codeExample": "crossfadeMs={200}"
+    },
+    {
+      "name": "commitOn",
+      "type": "FuseCommitOn",
+      "required": false,
+      "defaultExpression": "'press'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": "press",
+      "description": "提交，控制 fuse button 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "press",
+        "fuseEnd"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "press",
+          "fuseEnd"
+        ]
+      },
+      "codeExample": "commitOn=\"fuseEnd\"",
+      "usageExamples": [
+        "commitOn=\"fuseEnd\""
+      ]
+    },
+    {
+      "name": "pauseOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "pauseOnHover={true}"
+    },
+    {
+      "name": "settle",
+      "type": "FuseSettle",
+      "required": false,
+      "defaultExpression": "'reset'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": "reset",
+      "description": "稳定，控制 fuse button 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "reset",
+        "stay"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "reset",
+          "stay"
+        ]
+      },
+      "codeExample": "settle=\"reset\"",
+      "usageExamples": [
+        "settle=\"reset\""
+      ]
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "onCommit",
+      "type": "(reason: FuseCommitOn) => void",
+      "required": false,
+      "description": "交互达到提交阈值并确认时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((reason: FuseCommitOn) => void) | undefined"
+      },
+      "codeExample": "onCommit={() => setMessage('演示项已归档。')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onCommit={() => setMessage('演示项已归档。')}"
+      ]
+    },
+    {
+      "name": "onUndo",
+      "type": "() => void",
+      "required": false,
+      "description": "用户在允许的时间窗口内请求撤销时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onUndo={() => setMessage('已撤销，本地演示项保留。')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onUndo={() => setMessage('已撤销，本地演示项保留。')}"
+      ]
+    },
+    {
+      "name": "onFuseEnd",
+      "type": "() => void",
+      "required": false,
+      "description": "导火线结束时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onFuseEnd={() => {}}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "onPhaseChange",
+      "type": "(phase: FusePhase) => void",
+      "required": false,
+      "description": "交互或动画进入新的阶段时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((phase: FusePhase) => void) | undefined"
+      },
+      "codeExample": "onPhaseChange={setPhase}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onPhaseChange={setPhase}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 37
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "type",
+      "type": "'button' | 'submit' | 'reset'",
+      "required": false,
+      "defaultExpression": "'button'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 81,
+        "kind": "parameter"
+      },
+      "defaultValue": "button",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "button",
+        "submit",
+        "reset"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+        "line": 38
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "button",
+          "submit",
+          "reset"
+        ]
+      },
+      "codeExample": "type={\"button\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport FuseButton, { type FusePhase } from '../../../.upstream/src/ts-default/Micro/FuseButton/FuseButton';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nexport default function FuseButtonDemo() {\n  const [message, setMessage] = useState('尚未提交。');\n  const [phase, setPhase] = useState<FusePhase>('idle');\n  return <DemoPanel title=\"Fuse Button · 延迟确认\"><div className={cn(\"aw-micro-stack\")}>\n    <FuseButton           onPhaseChange={setPhase} onCommit={() => setMessage('演示项已归档。')} onUndo={() => setMessage('已撤销，本地演示项保留。')} /*__AW_PROPS_t0__*/  />\n    <p className={cn(\"aw-micro-hint\")}>点击后有 3.5 秒撤销窗口；倒计时结束才提交本地模拟动作。</p>\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">阶段：{phase}。{message}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "FuseButton",
+      "sourcePath": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Archive'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 59,
+            "kind": "parameter"
+          },
+          "defaultValue": "Archive",
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 16
+          },
+          "codeExample": "label=\"归档演示项\"",
+          "usageExamples": [
+            "label=\"归档演示项\""
+          ]
+        },
+        {
+          "name": "undoLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Undo'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 60,
+            "kind": "parameter"
+          },
+          "defaultValue": "Undo",
+          "description": "撤销标签，控制 fuse button 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 17
+          },
+          "codeExample": "undoLabel=\"撤销归档\"",
+          "usageExamples": [
+            "undoLabel=\"撤销归档\""
+          ]
+        },
+        {
+          "name": "doneLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Archived'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 61,
+            "kind": "parameter"
+          },
+          "defaultValue": "Archived",
+          "description": "完成标签，控制 fuse button 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 18
+          },
+          "codeExample": "doneLabel=\"已归档\"",
+          "usageExamples": [
+            "doneLabel=\"已归档\""
+          ]
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "required": false,
+          "defaultExpression": "<HugeiconsIcon icon={Archive02Icon} size={preset.icon} strokeWidth={1.8} />",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 221,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "图标，控制 fuse button 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 19
+          },
+          "codeExample": "icon={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 20
+          },
+          "codeExample": "color={palette.ivory}",
+          "usageExamples": [
+            "color={palette.ivory}"
+          ]
+        },
+        {
+          "name": "background",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#27272a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": "#27272a",
+          "description": "背景，控制 fuse button 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 21
+          },
+          "codeExample": "background={palette.primary}",
+          "usageExamples": [
+            "background={palette.primary}"
+          ]
+        },
+        {
+          "name": "fuseColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5a524'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5a524",
+          "description": "导火线颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 22
+          },
+          "codeExample": "fuseColor={palette.sand}",
+          "usageExamples": [
+            "fuseColor={palette.sand}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "FuseSize",
+          "required": false,
+          "defaultExpression": "'md'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": "md",
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "codeExample": "size={\"md\"}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "22",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 22,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 24
+          },
+          "codeExample": "radius={10}",
+          "usageExamples": [
+            "radius={10}"
+          ]
+        },
+        {
+          "name": "undoWindow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4000",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": 4000,
+          "description": "撤销窗口，控制 fuse button 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 25
+          },
+          "codeExample": "undoWindow={3500}",
+          "usageExamples": [
+            "undoWindow={3500}"
+          ]
+        },
+        {
+          "name": "fuse",
+          "type": "FusePosition",
+          "required": false,
+          "defaultExpression": "'outline'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": "outline",
+          "description": "导火线，控制 fuse button 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "outline",
+            "bottom",
+            "top"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "outline",
+              "bottom",
+              "top"
+            ]
+          },
+          "codeExample": "fuse={\"outline\"}"
+        },
+        {
+          "name": "fuseThickness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "导火线厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 27
+          },
+          "codeExample": "fuseThickness={1.5}"
+        },
+        {
+          "name": "crossfadeMs",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "交叉淡变毫秒，控制 fuse button 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 28
+          },
+          "codeExample": "crossfadeMs={200}"
+        },
+        {
+          "name": "commitOn",
+          "type": "FuseCommitOn",
+          "required": false,
+          "defaultExpression": "'press'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": "press",
+          "description": "提交，控制 fuse button 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "press",
+            "fuseEnd"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "press",
+              "fuseEnd"
+            ]
+          },
+          "codeExample": "commitOn=\"fuseEnd\"",
+          "usageExamples": [
+            "commitOn=\"fuseEnd\""
+          ]
+        },
+        {
+          "name": "pauseOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pauseOnHover={true}"
+        },
+        {
+          "name": "settle",
+          "type": "FuseSettle",
+          "required": false,
+          "defaultExpression": "'reset'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": "reset",
+          "description": "稳定，控制 fuse button 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "reset",
+            "stay"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "reset",
+              "stay"
+            ]
+          },
+          "codeExample": "settle=\"reset\"",
+          "usageExamples": [
+            "settle=\"reset\""
+          ]
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "onCommit",
+          "type": "(reason: FuseCommitOn) => void",
+          "required": false,
+          "description": "交互达到提交阈值并确认时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((reason: FuseCommitOn) => void) | undefined"
+          },
+          "codeExample": "onCommit={() => setMessage('演示项已归档。')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onCommit={() => setMessage('演示项已归档。')}"
+          ]
+        },
+        {
+          "name": "onUndo",
+          "type": "() => void",
+          "required": false,
+          "description": "用户在允许的时间窗口内请求撤销时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onUndo={() => setMessage('已撤销，本地演示项保留。')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onUndo={() => setMessage('已撤销，本地演示项保留。')}"
+          ]
+        },
+        {
+          "name": "onFuseEnd",
+          "type": "() => void",
+          "required": false,
+          "description": "导火线结束时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onFuseEnd={() => {}}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "onPhaseChange",
+          "type": "(phase: FusePhase) => void",
+          "required": false,
+          "description": "交互或动画进入新的阶段时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((phase: FusePhase) => void) | undefined"
+          },
+          "codeExample": "onPhaseChange={setPhase}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onPhaseChange={setPhase}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 37
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "type",
+          "type": "'button' | 'submit' | 'reset'",
+          "required": false,
+          "defaultExpression": "'button'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 81,
+            "kind": "parameter"
+          },
+          "defaultValue": "button",
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "button",
+            "submit",
+            "reset"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FuseButton/FuseButton.tsx",
+            "line": 38
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "button",
+              "submit",
+              "reset"
+            ]
+          },
+          "codeExample": "type={\"button\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

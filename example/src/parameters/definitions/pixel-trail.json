@@ -1,0 +1,1651 @@
+{
+  "version": 1,
+  "id": "pixel-trail",
+  "name": "Pixel Trail",
+  "sourcePath": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+  "demoPath": "src/demos/pointer/pixel-trail.tsx",
+  "fields": [
+    {
+      "key": "t0.gridSize",
+      "name": "gridSize",
+      "label": "像素网格",
+      "description": "网格每边的单元数量或单元尺寸，按该组件的数值契约设置。 以下范围仅限制此演示面板，不改变上游 API。网格每边的单元数量；渲染时取整。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gridSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 40,
+      "upstreamDefault": "40",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 4,
+      "max": 120,
+      "step": 1,
+      "unit": "个/边"
+    },
+    {
+      "key": "t0.trailSize",
+      "name": "trailSize",
+      "label": "trailSize · t0",
+      "description": "轨迹尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。相对画布的轨迹笔刷尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trailSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.16,
+      "upstreamDefault": "0.1",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.01,
+      "max": 0.6,
+      "step": 0.01,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.maxAge",
+      "name": "maxAge",
+      "label": "轨迹存活时间",
+      "description": "最大存活时间，决定动画或交互阶段的时间安排；单位以该组件源码为准。 以下范围仅限制此演示面板，不改变上游 API。轨迹点按毫秒年龄衰减；停止移动后会消失。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "maxAge"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 900,
+      "upstreamDefault": "250",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 50,
+      "max": 3000,
+      "step": 50,
+      "unit": "ms"
+    },
+    {
+      "key": "t0.interpolate",
+      "name": "interpolate",
+      "label": "interpolate · t0",
+      "description": "插值，控制 pixel trail 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interpolate"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 5,
+      "upstreamDefault": "5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#b6f2cf",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trailColor",
+      "name": "trailColor",
+      "label": "trailColor · t0",
+      "description": "轨迹颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trailColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#46bfc0",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shape",
+      "name": "shape",
+      "label": "shape · t0",
+      "description": "形状，控制 pixel trail 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shape"
+        }
+      ],
+      "type": "'square' | 'circle' | 'diamond'",
+      "defaultValue": "square",
+      "upstreamDefault": "'square'",
+      "control": "select",
+      "options": [
+        {
+          "label": "square",
+          "value": "square"
+        },
+        {
+          "label": "circle",
+          "value": "circle"
+        },
+        {
+          "label": "diamond",
+          "value": "diamond"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。 以下范围仅限制此演示面板，不改变上游 API。像素格中的空隙比例，源码限制在 0–0.9。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.08,
+      "upstreamDefault": "0.08",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 0.9,
+      "step": 0.01,
+      "unit": "单元比例"
+    },
+    {
+      "key": "t0.decay",
+      "name": "decay",
+      "label": "decay · t0",
+      "description": "衰减，控制 pixel trail 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "decay"
+        }
+      ],
+      "type": "'fade' | 'shrink' | 'dither'",
+      "defaultValue": "shrink",
+      "upstreamDefault": "'fade'",
+      "control": "select",
+      "options": [
+        {
+          "label": "fade",
+          "value": "fade"
+        },
+        {
+          "label": "shrink",
+          "value": "shrink"
+        },
+        {
+          "label": "dither",
+          "value": "dither"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.flow",
+      "name": "flow",
+      "label": "flow · t0",
+      "description": "流动，控制 pixel trail 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。轨迹流动系数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "flow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "0",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": -2,
+      "max": 2,
+      "step": 0.05
+    },
+    {
+      "key": "t0.gravity",
+      "name": "gravity",
+      "label": "gravity · t0",
+      "description": "重力，控制 pixel trail 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。轨迹纵向运动系数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gravity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": -2,
+      "max": 2,
+      "step": 0.05
+    },
+    {
+      "key": "t0.sparkle",
+      "name": "sparkle",
+      "label": "sparkle · t0",
+      "description": "星屑闪烁，控制 pixel trail 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sparkle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 pixel trail 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shine",
+      "name": "shine",
+      "label": "shine · t0",
+      "description": "扫光，控制 pixel trail 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shine"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clickBurst",
+      "name": "clickBurst",
+      "label": "clickBurst · t0",
+      "description": "是否点击爆发，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clickBurst"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dpr",
+      "name": "dpr",
+      "label": "像素比 · t0",
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dpr"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gooeyFilter",
+      "name": "gooeyFilter",
+      "label": "gooeyFilter · t0",
+      "description": "粘连滤镜的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gooeyFilter"
+        }
+      ],
+      "type": "{ id?: string; strength?: number } | false | null",
+      "defaultValue": {
+        "strength": 2
+      },
+      "upstreamDefault": "{ strength: 2 }",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "object",
+            "properties": {
+              "id": {
+                "kind": "string"
+              },
+              "strength": {
+                "kind": "number"
+              }
+            },
+            "required": []
+          },
+          {
+            "kind": "boolean"
+          },
+          {
+            "kind": "null"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "gridSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "40",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 299,
+        "kind": "parameter"
+      },
+      "defaultValue": 40,
+      "description": "网格每边的单元数量或单元尺寸，按该组件的数值契约设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 10
+      },
+      "codeExample": "gridSize={40}",
+      "usageExamples": [
+        "gridSize={40}"
+      ]
+    },
+    {
+      "name": "trailSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 300,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "轨迹尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 11
+      },
+      "codeExample": "trailSize={0.16}",
+      "usageExamples": [
+        "trailSize={0.16}"
+      ]
+    },
+    {
+      "name": "maxAge",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "250",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 301,
+        "kind": "parameter"
+      },
+      "defaultValue": 250,
+      "description": "最大存活时间，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 12
+      },
+      "codeExample": "maxAge={900}",
+      "usageExamples": [
+        "maxAge={900}"
+      ]
+    },
+    {
+      "name": "interpolate",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 302,
+        "kind": "parameter"
+      },
+      "defaultValue": 5,
+      "description": "插值，控制 pixel trail 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 13
+      },
+      "codeExample": "interpolate={5}",
+      "usageExamples": [
+        "interpolate={5}"
+      ]
+    },
+    {
+      "name": "easingFunction",
+      "type": "(x: number) => number",
+      "required": false,
+      "defaultExpression": "identityEase",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 303,
+        "kind": "parameter"
+      },
+      "defaultResolvedExpression": "(x: number) => x",
+      "description": "输入动画进度并返回映射后进度的缓动函数。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((x: number) => number) | undefined"
+      },
+      "codeExample": "easingFunction={(x) => (1)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "gooeyFilter",
+      "type": "{ id?: string; strength?: number } | false | null",
+      "required": false,
+      "defaultExpression": "{ strength: 2 }",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 304,
+        "kind": "parameter"
+      },
+      "defaultValue": {
+        "strength": 2
+      },
+      "description": "粘连滤镜的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "union",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "false",
+            "kind": "enum",
+            "options": [
+              false
+            ]
+          },
+          {
+            "type": "{ id?: string; strength?: number; }",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "strength",
+                "type": "number",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "gooeyFilter={{\"strength\":2}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 305,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 16
+      },
+      "codeExample": "color=\"#b6f2cf\"",
+      "usageExamples": [
+        "color=\"#b6f2cf\""
+      ]
+    },
+    {
+      "name": "trailColor",
+      "type": "string",
+      "required": false,
+      "description": "轨迹颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 17
+      },
+      "codeExample": "trailColor=\"#46bfc0\"",
+      "usageExamples": [
+        "trailColor=\"#46bfc0\""
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "'square' | 'circle' | 'diamond'",
+      "required": false,
+      "defaultExpression": "'square'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 307,
+        "kind": "parameter"
+      },
+      "defaultValue": "square",
+      "description": "形状，控制 pixel trail 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "square",
+        "circle",
+        "diamond"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "square",
+          "circle",
+          "diamond"
+        ]
+      },
+      "codeExample": "shape=\"square\"",
+      "usageExamples": [
+        "shape=\"square\""
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.08",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 308,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.08,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 19
+      },
+      "codeExample": "gap={0.08}",
+      "usageExamples": [
+        "gap={0.08}"
+      ]
+    },
+    {
+      "name": "decay",
+      "type": "'fade' | 'shrink' | 'dither'",
+      "required": false,
+      "defaultExpression": "'fade'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 309,
+        "kind": "parameter"
+      },
+      "defaultValue": "fade",
+      "description": "衰减，控制 pixel trail 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "fade",
+        "shrink",
+        "dither"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "fade",
+          "shrink",
+          "dither"
+        ]
+      },
+      "codeExample": "decay=\"shrink\"",
+      "usageExamples": [
+        "decay=\"shrink\""
+      ]
+    },
+    {
+      "name": "flow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 310,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "流动，控制 pixel trail 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 21
+      },
+      "codeExample": "flow={0.65}",
+      "usageExamples": [
+        "flow={0.65}"
+      ]
+    },
+    {
+      "name": "gravity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 311,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "重力，控制 pixel trail 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 22
+      },
+      "codeExample": "gravity={0.25}",
+      "usageExamples": [
+        "gravity={0.25}"
+      ]
+    },
+    {
+      "name": "sparkle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 312,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "星屑闪烁，控制 pixel trail 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 23
+      },
+      "codeExample": "sparkle={0.12}",
+      "usageExamples": [
+        "sparkle={0.12}"
+      ]
+    },
+    {
+      "name": "clickBurst",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 313,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否点击爆发，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickBurst",
+      "usageExamples": [
+        "clickBurst"
+      ]
+    },
+    {
+      "name": "shine",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 314,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "扫光，控制 pixel trail 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 25
+      },
+      "codeExample": "shine={0.65}",
+      "usageExamples": [
+        "shine={0.65}"
+      ]
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 315,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.4,
+      "description": "辉光，控制 pixel trail 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 26
+      },
+      "codeExample": "glow={0.5}",
+      "usageExamples": [
+        "glow={0.5}"
+      ]
+    },
+    {
+      "name": "imageSrc",
+      "type": "string",
+      "required": false,
+      "description": "用作主图或纹理的图像资源地址。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 27
+      },
+      "codeExample": "imageSrc={\"示例\"}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 28
+      },
+      "codeExample": "dpr={1.5}",
+      "usageExamples": [
+        "dpr={1.5}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 318,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 29
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+        "line": 30
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Animations/PixelTrail/PixelTrail';\nimport styles from './pixel-trail.module.css';\n\nexport default function PixelTrailDemo() {\n  return (\n    <div className={styles.stage} data-visual-demo=\"pixel-trail\">\n      <Component\n\n\n           /*__AW_PROPS_t0__*/  />\n      <div className={styles.caption}><span className={styles.eyebrow}>PIXEL TRAIL</span><h2 className={styles.title}>留下流动的像素</h2><p className={styles.hint}>移动指针绘制拖尾，点击释放像素。</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "PixelTrail",
+      "sourcePath": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+      "props": [
+        {
+          "name": "gridSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "40",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 299,
+            "kind": "parameter"
+          },
+          "defaultValue": 40,
+          "description": "网格每边的单元数量或单元尺寸，按该组件的数值契约设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 10
+          },
+          "codeExample": "gridSize={40}",
+          "usageExamples": [
+            "gridSize={40}"
+          ]
+        },
+        {
+          "name": "trailSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 300,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "轨迹尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 11
+          },
+          "codeExample": "trailSize={0.16}",
+          "usageExamples": [
+            "trailSize={0.16}"
+          ]
+        },
+        {
+          "name": "maxAge",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "250",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 301,
+            "kind": "parameter"
+          },
+          "defaultValue": 250,
+          "description": "最大存活时间，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 12
+          },
+          "codeExample": "maxAge={900}",
+          "usageExamples": [
+            "maxAge={900}"
+          ]
+        },
+        {
+          "name": "interpolate",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 302,
+            "kind": "parameter"
+          },
+          "defaultValue": 5,
+          "description": "插值，控制 pixel trail 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 13
+          },
+          "codeExample": "interpolate={5}",
+          "usageExamples": [
+            "interpolate={5}"
+          ]
+        },
+        {
+          "name": "easingFunction",
+          "type": "(x: number) => number",
+          "required": false,
+          "defaultExpression": "identityEase",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 303,
+            "kind": "parameter"
+          },
+          "defaultResolvedExpression": "(x: number) => x",
+          "description": "输入动画进度并返回映射后进度的缓动函数。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((x: number) => number) | undefined"
+          },
+          "codeExample": "easingFunction={(x) => (1)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "gooeyFilter",
+          "type": "{ id?: string; strength?: number } | false | null",
+          "required": false,
+          "defaultExpression": "{ strength: 2 }",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 304,
+            "kind": "parameter"
+          },
+          "defaultValue": {
+            "strength": 2
+          },
+          "description": "粘连滤镜的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "union",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "false",
+                "kind": "enum",
+                "options": [
+                  false
+                ]
+              },
+              {
+                "type": "{ id?: string; strength?: number; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "id",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "strength",
+                    "type": "number",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "gooeyFilter={{\"strength\":2}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 305,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 16
+          },
+          "codeExample": "color=\"#b6f2cf\"",
+          "usageExamples": [
+            "color=\"#b6f2cf\""
+          ]
+        },
+        {
+          "name": "trailColor",
+          "type": "string",
+          "required": false,
+          "description": "轨迹颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 17
+          },
+          "codeExample": "trailColor=\"#46bfc0\"",
+          "usageExamples": [
+            "trailColor=\"#46bfc0\""
+          ]
+        },
+        {
+          "name": "shape",
+          "type": "'square' | 'circle' | 'diamond'",
+          "required": false,
+          "defaultExpression": "'square'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 307,
+            "kind": "parameter"
+          },
+          "defaultValue": "square",
+          "description": "形状，控制 pixel trail 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "square",
+            "circle",
+            "diamond"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "square",
+              "circle",
+              "diamond"
+            ]
+          },
+          "codeExample": "shape=\"square\"",
+          "usageExamples": [
+            "shape=\"square\""
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.08",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 308,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.08,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 19
+          },
+          "codeExample": "gap={0.08}",
+          "usageExamples": [
+            "gap={0.08}"
+          ]
+        },
+        {
+          "name": "decay",
+          "type": "'fade' | 'shrink' | 'dither'",
+          "required": false,
+          "defaultExpression": "'fade'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 309,
+            "kind": "parameter"
+          },
+          "defaultValue": "fade",
+          "description": "衰减，控制 pixel trail 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "fade",
+            "shrink",
+            "dither"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "fade",
+              "shrink",
+              "dither"
+            ]
+          },
+          "codeExample": "decay=\"shrink\"",
+          "usageExamples": [
+            "decay=\"shrink\""
+          ]
+        },
+        {
+          "name": "flow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 310,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "流动，控制 pixel trail 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 21
+          },
+          "codeExample": "flow={0.65}",
+          "usageExamples": [
+            "flow={0.65}"
+          ]
+        },
+        {
+          "name": "gravity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 311,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "重力，控制 pixel trail 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 22
+          },
+          "codeExample": "gravity={0.25}",
+          "usageExamples": [
+            "gravity={0.25}"
+          ]
+        },
+        {
+          "name": "sparkle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 312,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "星屑闪烁，控制 pixel trail 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 23
+          },
+          "codeExample": "sparkle={0.12}",
+          "usageExamples": [
+            "sparkle={0.12}"
+          ]
+        },
+        {
+          "name": "clickBurst",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 313,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否点击爆发，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickBurst",
+          "usageExamples": [
+            "clickBurst"
+          ]
+        },
+        {
+          "name": "shine",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 314,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "扫光，控制 pixel trail 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 25
+          },
+          "codeExample": "shine={0.65}",
+          "usageExamples": [
+            "shine={0.65}"
+          ]
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 315,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.4,
+          "description": "辉光，控制 pixel trail 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 26
+          },
+          "codeExample": "glow={0.5}",
+          "usageExamples": [
+            "glow={0.5}"
+          ]
+        },
+        {
+          "name": "imageSrc",
+          "type": "string",
+          "required": false,
+          "description": "用作主图或纹理的图像资源地址。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 27
+          },
+          "codeExample": "imageSrc={\"示例\"}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 28
+          },
+          "codeExample": "dpr={1.5}",
+          "usageExamples": [
+            "dpr={1.5}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 318,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 29
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTrail/PixelTrail.tsx",
+            "line": 30
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

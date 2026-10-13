@@ -1,0 +1,1741 @@
+{
+  "version": 1,
+  "id": "ascii-text",
+  "name": "ASCII Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+  "demoPath": "src/demos/text/ascii-text.tsx",
+  "fields": [
+    {
+      "key": "t0.text",
+      "name": "text",
+      "label": "文字内容 · t0",
+      "description": "显示或生成效果的文字内容。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "text"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "WAN",
+      "upstreamDefault": "'Hey!'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.asciiFontSize",
+      "name": "asciiFontSize",
+      "label": "asciiFontSize · t0",
+      "description": "字符画字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "asciiFontSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "8",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.colors",
+      "name": "colors",
+      "label": "颜色列表 · t0",
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colors"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#52604e",
+        "#64695f",
+        "#1f2d26"
+      ],
+      "upstreamDefault": "['#ff6188', '#fc9867', '#ffd866']",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#fdf9f3'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textScale",
+      "name": "textScale",
+      "label": "textScale · t0",
+      "description": "文字缩放，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.9,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.blocks",
+      "name": "blocks",
+      "label": "blocks · t0",
+      "description": "块，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "blocks"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.9",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.waves",
+      "name": "waves",
+      "label": "waves · t0",
+      "description": "波组，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "waves"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.waveSpeed",
+      "name": "waveSpeed",
+      "label": "waveSpeed · t0",
+      "description": "波形速度，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "waveSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.chroma",
+      "name": "chroma",
+      "label": "chroma · t0",
+      "description": "色彩，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "chroma"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tilt",
+      "name": "tilt",
+      "label": "tilt · t0",
+      "description": "倾斜，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hueShift",
+      "name": "hueShift",
+      "label": "hueShift · t0",
+      "description": "色相偏移，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hueShift"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scramble",
+      "name": "scramble",
+      "label": "scramble · t0",
+      "description": "打乱，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scramble"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clickRipple",
+      "name": "clickRipple",
+      "label": "clickRipple · t0",
+      "description": "是否点击波纹，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clickRipple"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interactive",
+      "name": "interactive",
+      "label": "interactive · t0",
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interactive"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "light",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.charset",
+      "name": "charset",
+      "label": "charset · t0",
+      "description": "字符集，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "charset"
+        }
+      ],
+      "type": "string",
+      "defaultValue": " .'`^\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
+      "upstreamDefault": "CHARSET",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontFamily",
+      "name": "fontFamily",
+      "label": "字体 · t0",
+      "description": "字体字族，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontFamily"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+      "upstreamDefault": "FONT",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontWeight",
+      "name": "fontWeight",
+      "label": "字重 · t0",
+      "description": "字体字重，控制 ascii text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontWeight"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 600,
+      "upstreamDefault": "600",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Hey!'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 224,
+        "kind": "parameter"
+      },
+      "defaultValue": "Hey!",
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 6
+      },
+      "codeExample": "text=\"WAN\"",
+      "usageExamples": [
+        "text=\"WAN\""
+      ]
+    },
+    {
+      "name": "asciiFontSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 225,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "字符画字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 7
+      },
+      "codeExample": "asciiFontSize={8}",
+      "usageExamples": [
+        "asciiFontSize={8}"
+      ]
+    },
+    {
+      "name": "charset",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "CHARSET",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 226,
+        "kind": "parameter"
+      },
+      "defaultValue": " .'`^\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
+      "defaultResolvedExpression": "' .\\'`^\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$'",
+      "description": "字符集，控制 ascii text 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 8
+      },
+      "codeExample": "charset={\" .'`^\\\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$\"}"
+    },
+    {
+      "name": "fontFamily",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "FONT",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 227,
+        "kind": "parameter"
+      },
+      "defaultValue": "'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+      "defaultResolvedExpression": "\"'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace\"",
+      "description": "字体字族，控制 ascii text 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 9
+      },
+      "codeExample": "fontFamily={\"'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace\"}"
+    },
+    {
+      "name": "fontWeight",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "600",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 228,
+        "kind": "parameter"
+      },
+      "defaultValue": 600,
+      "description": "字体字重，控制 ascii text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "fontWeight={600}"
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#fdf9f3'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 229,
+        "kind": "parameter"
+      },
+      "defaultValue": "#fdf9f3",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 11
+      },
+      "codeExample": "textColor={palette.ink}",
+      "usageExamples": [
+        "textColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "colors",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "['#ff6188', '#fc9867', '#ffd866']",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 230,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "#ff6188",
+        "#fc9867",
+        "#ffd866"
+      ],
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 12
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "colors={[palette.primary, palette.muted, palette.ink]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "colors={[palette.primary, palette.muted, palette.ink]}"
+      ]
+    },
+    {
+      "name": "textScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 231,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "文字缩放，控制 ascii text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 13
+      },
+      "codeExample": "textScale={0.9}",
+      "usageExamples": [
+        "textScale={0.9}"
+      ]
+    },
+    {
+      "name": "blocks",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.9",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 232,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.9,
+      "description": "块，控制 ascii text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 14
+      },
+      "codeExample": "blocks={0.5}",
+      "usageExamples": [
+        "blocks={0.5}"
+      ]
+    },
+    {
+      "name": "waves",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 233,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "波组，控制 ascii text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 15
+      },
+      "codeExample": "waves={0.65}",
+      "usageExamples": [
+        "waves={0.65}"
+      ]
+    },
+    {
+      "name": "waveSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 234,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "波形速度，控制 ascii text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 16
+      },
+      "codeExample": "waveSpeed={0.5}",
+      "usageExamples": [
+        "waveSpeed={0.5}"
+      ]
+    },
+    {
+      "name": "chroma",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 235,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "色彩，控制 ascii text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 17
+      },
+      "codeExample": "chroma={0}",
+      "usageExamples": [
+        "chroma={0}"
+      ]
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 236,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "倾斜，控制 ascii text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 18
+      },
+      "codeExample": "tilt={0.45}",
+      "usageExamples": [
+        "tilt={0.45}"
+      ]
+    },
+    {
+      "name": "hueShift",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 237,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "色相偏移，控制 ascii text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 19
+      },
+      "codeExample": "hueShift={0}",
+      "usageExamples": [
+        "hueShift={0}"
+      ]
+    },
+    {
+      "name": "scramble",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 238,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "打乱，控制 ascii text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 20
+      },
+      "codeExample": "scramble={0.25}",
+      "usageExamples": [
+        "scramble={0.25}"
+      ]
+    },
+    {
+      "name": "clickRipple",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 239,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否点击波纹，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickRipple",
+      "usageExamples": [
+        "clickRipple"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 240,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 22
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "idle",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 241,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否静止，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "idle",
+      "usageExamples": [
+        "idle"
+      ]
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 242,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "interactive",
+      "usageExamples": [
+        "interactive"
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 243,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 ascii text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"light\"",
+      "usageExamples": [
+        "theme=\"light\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 244,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 26
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+        "line": 27
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText';\nimport { palette } from '../../shared/demo-support';\n\n// 保留ASCII栅格、波动和点击涟漪，关闭额外色相旋转。\n// 此演示需要可用的WebGL上下文；上下文创建失败时应显示能力提示，不能声称效果已经运行。\n\nexport default function ASCIITextDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n     idle   /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ASCIIText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Hey!'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 224,
+            "kind": "parameter"
+          },
+          "defaultValue": "Hey!",
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 6
+          },
+          "codeExample": "text=\"WAN\"",
+          "usageExamples": [
+            "text=\"WAN\""
+          ]
+        },
+        {
+          "name": "asciiFontSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 225,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "字符画字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 7
+          },
+          "codeExample": "asciiFontSize={8}",
+          "usageExamples": [
+            "asciiFontSize={8}"
+          ]
+        },
+        {
+          "name": "charset",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "CHARSET",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 226,
+            "kind": "parameter"
+          },
+          "defaultValue": " .'`^\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
+          "defaultResolvedExpression": "' .\\'`^\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$'",
+          "description": "字符集，控制 ascii text 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 8
+          },
+          "codeExample": "charset={\" .'`^\\\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$\"}"
+        },
+        {
+          "name": "fontFamily",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "FONT",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 227,
+            "kind": "parameter"
+          },
+          "defaultValue": "'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+          "defaultResolvedExpression": "\"'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace\"",
+          "description": "字体字族，控制 ascii text 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 9
+          },
+          "codeExample": "fontFamily={\"'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace\"}"
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "600",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 228,
+            "kind": "parameter"
+          },
+          "defaultValue": 600,
+          "description": "字体字重，控制 ascii text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "fontWeight={600}"
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#fdf9f3'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 229,
+            "kind": "parameter"
+          },
+          "defaultValue": "#fdf9f3",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 11
+          },
+          "codeExample": "textColor={palette.ink}",
+          "usageExamples": [
+            "textColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "colors",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "['#ff6188', '#fc9867', '#ffd866']",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 230,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "#ff6188",
+            "#fc9867",
+            "#ffd866"
+          ],
+          "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 12
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "colors={[palette.primary, palette.muted, palette.ink]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "colors={[palette.primary, palette.muted, palette.ink]}"
+          ]
+        },
+        {
+          "name": "textScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 231,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "文字缩放，控制 ascii text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 13
+          },
+          "codeExample": "textScale={0.9}",
+          "usageExamples": [
+            "textScale={0.9}"
+          ]
+        },
+        {
+          "name": "blocks",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.9",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 232,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.9,
+          "description": "块，控制 ascii text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 14
+          },
+          "codeExample": "blocks={0.5}",
+          "usageExamples": [
+            "blocks={0.5}"
+          ]
+        },
+        {
+          "name": "waves",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 233,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "波组，控制 ascii text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 15
+          },
+          "codeExample": "waves={0.65}",
+          "usageExamples": [
+            "waves={0.65}"
+          ]
+        },
+        {
+          "name": "waveSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 234,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "波形速度，控制 ascii text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 16
+          },
+          "codeExample": "waveSpeed={0.5}",
+          "usageExamples": [
+            "waveSpeed={0.5}"
+          ]
+        },
+        {
+          "name": "chroma",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 235,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "色彩，控制 ascii text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 17
+          },
+          "codeExample": "chroma={0}",
+          "usageExamples": [
+            "chroma={0}"
+          ]
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 236,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "倾斜，控制 ascii text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 18
+          },
+          "codeExample": "tilt={0.45}",
+          "usageExamples": [
+            "tilt={0.45}"
+          ]
+        },
+        {
+          "name": "hueShift",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 237,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "色相偏移，控制 ascii text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 19
+          },
+          "codeExample": "hueShift={0}",
+          "usageExamples": [
+            "hueShift={0}"
+          ]
+        },
+        {
+          "name": "scramble",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 238,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "打乱，控制 ascii text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 20
+          },
+          "codeExample": "scramble={0.25}",
+          "usageExamples": [
+            "scramble={0.25}"
+          ]
+        },
+        {
+          "name": "clickRipple",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 239,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否点击波纹，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickRipple",
+          "usageExamples": [
+            "clickRipple"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 240,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 22
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "idle",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 241,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否静止，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "idle",
+          "usageExamples": [
+            "idle"
+          ]
+        },
+        {
+          "name": "interactive",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 242,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "interactive",
+          "usageExamples": [
+            "interactive"
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 243,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 ascii text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"light\"",
+          "usageExamples": [
+            "theme=\"light\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 244,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 26
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ASCIIText/ASCIIText.tsx",
+            "line": 27
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

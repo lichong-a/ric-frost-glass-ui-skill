@@ -1,0 +1,2304 @@
+{
+  "version": 1,
+  "id": "galaxy",
+  "name": "Galaxy",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+  "demoPath": "src/demos/background/galaxy.tsx",
+  "fields": [
+    {
+      "key": "t0.starColors",
+      "name": "starColors",
+      "label": "starColors · t0",
+      "description": "星点颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "starColors"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#a6b39a",
+        "#faf7f0",
+        "#c3ae88"
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.transparent",
+      "name": "transparent",
+      "label": "transparent · t0",
+      "description": "是否透明背景，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "transparent"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hueShift",
+      "name": "hueShift",
+      "label": "hueShift · t0",
+      "description": "色相偏移，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hueShift"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "140",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.saturation",
+      "name": "saturation",
+      "label": "saturation · t0",
+      "description": "饱和度，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "saturation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glowIntensity",
+      "name": "glowIntensity",
+      "label": "glowIntensity · t0",
+      "description": "辉光强度，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glowIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.flareIntensity",
+      "name": "flareIntensity",
+      "label": "flareIntensity · t0",
+      "description": "耀斑强度，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "flareIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.density",
+      "name": "density",
+      "label": "density · t0",
+      "description": "密度，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "density"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.starSpeed",
+      "name": "starSpeed",
+      "label": "starSpeed · t0",
+      "description": "星点速度，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "starSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "1.0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.twinkleIntensity",
+      "name": "twinkleIntensity",
+      "label": "twinkleIntensity · t0",
+      "description": "闪烁强度，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "twinkleIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rotationSpeed",
+      "name": "rotationSpeed",
+      "label": "旋转速度 · t0",
+      "description": "旋转角度速度，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rotationSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.04,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseInteraction",
+      "name": "mouseInteraction",
+      "label": "指针响应 · t0",
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseInteraction"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clickWarp",
+      "name": "clickWarp",
+      "label": "clickWarp · t0",
+      "description": "是否点击形变，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clickWarp"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.focal",
+      "name": "focal",
+      "label": "focal · t0",
+      "description": "星系效果的二维焦点位置，以组件坐标比例传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "focal"
+        }
+      ],
+      "type": "[number, number]",
+      "defaultValue": [
+        0.5,
+        0.5
+      ],
+      "upstreamDefault": "[0.5, 0.5]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "number"
+        }
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rotation",
+      "name": "rotation",
+      "label": "旋转 · t0",
+      "description": "旋转角度的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rotation"
+        }
+      ],
+      "type": "[number, number]",
+      "defaultValue": [
+        1,
+        0
+      ],
+      "upstreamDefault": "[1.0, 0.0]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "number"
+        }
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disableAnimation",
+      "name": "disableAnimation",
+      "label": "disableAnimation · t0",
+      "description": "是否禁用动画，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disableAnimation"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseRepulsion",
+      "name": "mouseRepulsion",
+      "label": "mouseRepulsion · t0",
+      "description": "是否鼠标排斥，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseRepulsion"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.repulsionStrength",
+      "name": "repulsionStrength",
+      "label": "repulsionStrength · t0",
+      "description": "排斥强度，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "repulsionStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoCenterRepulsion",
+      "name": "autoCenterRepulsion",
+      "label": "autoCenterRepulsion · t0",
+      "description": "是否自动中心排斥，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoCenterRepulsion"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.starSize",
+      "name": "starSize",
+      "label": "starSize · t0",
+      "description": "星点尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "starSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.layers",
+      "name": "layers",
+      "label": "层数 · t0",
+      "description": "图层，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "layers"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 galaxy 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "GalaxyDirection",
+      "defaultValue": "forward",
+      "upstreamDefault": "'forward'",
+      "control": "select",
+      "options": [
+        {
+          "label": "forward",
+          "value": "forward"
+        },
+        {
+          "label": "backward",
+          "value": "backward"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 galaxy 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "focal",
+      "type": "[number, number]",
+      "required": false,
+      "defaultExpression": "[0.5, 0.5]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 306,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        0.5,
+        0.5
+      ],
+      "description": "星系效果的二维焦点位置，以组件坐标比例传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 9
+      },
+      "details": {
+        "kind": "tuple",
+        "items": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "focal={[0.5,0.5]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "rotation",
+      "type": "[number, number]",
+      "required": false,
+      "defaultExpression": "[1.0, 0.0]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 307,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        1,
+        0
+      ],
+      "description": "旋转角度的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "tuple",
+        "items": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "rotation={[1,0]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "starSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 308,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "星点速度，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 11
+      },
+      "codeExample": "starSpeed={0.2}",
+      "usageExamples": [
+        "starSpeed={0.2}"
+      ]
+    },
+    {
+      "name": "density",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 309,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "密度，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 12
+      },
+      "codeExample": "density={0.65}",
+      "usageExamples": [
+        "density={0.65}"
+      ]
+    },
+    {
+      "name": "hueShift",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "140",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 310,
+        "kind": "parameter"
+      },
+      "defaultValue": 140,
+      "description": "色相偏移，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 13
+      },
+      "codeExample": "hueShift={0}",
+      "usageExamples": [
+        "hueShift={0}"
+      ]
+    },
+    {
+      "name": "disableAnimation",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 311,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用动画，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disableAnimation={false}"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 312,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 15
+      },
+      "codeExample": "speed={0.5}",
+      "usageExamples": [
+        "speed={0.5}"
+      ]
+    },
+    {
+      "name": "mouseInteraction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 313,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "mouseInteraction",
+      "usageExamples": [
+        "mouseInteraction"
+      ]
+    },
+    {
+      "name": "glowIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 314,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "辉光强度，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 17
+      },
+      "codeExample": "glowIntensity={0.2}",
+      "usageExamples": [
+        "glowIntensity={0.2}"
+      ]
+    },
+    {
+      "name": "saturation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 315,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "饱和度，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 18
+      },
+      "codeExample": "saturation={0.4}",
+      "usageExamples": [
+        "saturation={0.4}"
+      ]
+    },
+    {
+      "name": "mouseRepulsion",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 316,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否鼠标排斥，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "mouseRepulsion={true}"
+    },
+    {
+      "name": "repulsionStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 317,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "排斥强度，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 20
+      },
+      "codeExample": "repulsionStrength={2}"
+    },
+    {
+      "name": "twinkleIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 318,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "闪烁强度，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 21
+      },
+      "codeExample": "twinkleIntensity={0.12}",
+      "usageExamples": [
+        "twinkleIntensity={0.12}"
+      ]
+    },
+    {
+      "name": "rotationSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 319,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "旋转角度速度，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 22
+      },
+      "codeExample": "rotationSpeed={0.04}",
+      "usageExamples": [
+        "rotationSpeed={0.04}"
+      ]
+    },
+    {
+      "name": "autoCenterRepulsion",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 320,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "是否自动中心排斥，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 23
+      },
+      "codeExample": "autoCenterRepulsion={0}"
+    },
+    {
+      "name": "transparent",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 321,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否透明背景，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "transparent={false}",
+      "usageExamples": [
+        "transparent={false}"
+      ]
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 322,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode={false}"
+    },
+    {
+      "name": "starColors",
+      "type": "string[]",
+      "required": false,
+      "description": "星点颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "starColors={[palette.sage, palette.ivory, palette.sand]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "starColors={[palette.sage, palette.ivory, palette.sand]}"
+      ]
+    },
+    {
+      "name": "starSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 324,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "星点尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 27
+      },
+      "codeExample": "starSize={1}"
+    },
+    {
+      "name": "flareIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 325,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "耀斑强度，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 28
+      },
+      "codeExample": "flareIntensity={0.25}",
+      "usageExamples": [
+        "flareIntensity={0.25}"
+      ]
+    },
+    {
+      "name": "layers",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 326,
+        "kind": "parameter"
+      },
+      "defaultValue": 4,
+      "description": "图层，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 29
+      },
+      "codeExample": "layers={4}"
+    },
+    {
+      "name": "direction",
+      "type": "GalaxyDirection",
+      "required": false,
+      "defaultExpression": "'forward'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 327,
+        "kind": "parameter"
+      },
+      "defaultValue": "forward",
+      "description": "方向，控制 galaxy 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "forward",
+        "backward"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "forward",
+          "backward"
+        ]
+      },
+      "codeExample": "direction={\"forward\"}"
+    },
+    {
+      "name": "clickWarp",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 328,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否点击形变，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickWarp",
+      "usageExamples": [
+        "clickWarp"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 329,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 33
+      },
+      "codeExample": "backgroundColor={palette.ink}",
+      "usageExamples": [
+        "backgroundColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 331,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 galaxy 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 34
+      },
+      "codeExample": "opacity={1}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 35
+      },
+      "codeExample": "dpr={1}"
+    },
+    {
+      "name": "className",
+      "type": "string | undefined",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+        "line": 333,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2700
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties | undefined",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2712
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "children={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "HTMLAttributes<HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/Galaxy/Galaxy';\n\n\n/** Agent Wan natural-tone preset for the real Galaxy component. */\nexport default function GalaxyDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Galaxy",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+      "props": [
+        {
+          "name": "focal",
+          "type": "[number, number]",
+          "required": false,
+          "defaultExpression": "[0.5, 0.5]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 306,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            0.5,
+            0.5
+          ],
+          "description": "星系效果的二维焦点位置，以组件坐标比例传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 9
+          },
+          "details": {
+            "kind": "tuple",
+            "items": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "focal={[0.5,0.5]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "rotation",
+          "type": "[number, number]",
+          "required": false,
+          "defaultExpression": "[1.0, 0.0]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 307,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            1,
+            0
+          ],
+          "description": "旋转角度的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "tuple",
+            "items": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "rotation={[1,0]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "starSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 308,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "星点速度，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 11
+          },
+          "codeExample": "starSpeed={0.2}",
+          "usageExamples": [
+            "starSpeed={0.2}"
+          ]
+        },
+        {
+          "name": "density",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 309,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "密度，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 12
+          },
+          "codeExample": "density={0.65}",
+          "usageExamples": [
+            "density={0.65}"
+          ]
+        },
+        {
+          "name": "hueShift",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "140",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 310,
+            "kind": "parameter"
+          },
+          "defaultValue": 140,
+          "description": "色相偏移，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 13
+          },
+          "codeExample": "hueShift={0}",
+          "usageExamples": [
+            "hueShift={0}"
+          ]
+        },
+        {
+          "name": "disableAnimation",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 311,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用动画，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disableAnimation={false}"
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 312,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 15
+          },
+          "codeExample": "speed={0.5}",
+          "usageExamples": [
+            "speed={0.5}"
+          ]
+        },
+        {
+          "name": "mouseInteraction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 313,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "mouseInteraction",
+          "usageExamples": [
+            "mouseInteraction"
+          ]
+        },
+        {
+          "name": "glowIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 314,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "辉光强度，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 17
+          },
+          "codeExample": "glowIntensity={0.2}",
+          "usageExamples": [
+            "glowIntensity={0.2}"
+          ]
+        },
+        {
+          "name": "saturation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 315,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "饱和度，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 18
+          },
+          "codeExample": "saturation={0.4}",
+          "usageExamples": [
+            "saturation={0.4}"
+          ]
+        },
+        {
+          "name": "mouseRepulsion",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 316,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否鼠标排斥，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "mouseRepulsion={true}"
+        },
+        {
+          "name": "repulsionStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 317,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "排斥强度，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 20
+          },
+          "codeExample": "repulsionStrength={2}"
+        },
+        {
+          "name": "twinkleIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 318,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "闪烁强度，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 21
+          },
+          "codeExample": "twinkleIntensity={0.12}",
+          "usageExamples": [
+            "twinkleIntensity={0.12}"
+          ]
+        },
+        {
+          "name": "rotationSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 319,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "旋转角度速度，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 22
+          },
+          "codeExample": "rotationSpeed={0.04}",
+          "usageExamples": [
+            "rotationSpeed={0.04}"
+          ]
+        },
+        {
+          "name": "autoCenterRepulsion",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 320,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "是否自动中心排斥，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 23
+          },
+          "codeExample": "autoCenterRepulsion={0}"
+        },
+        {
+          "name": "transparent",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 321,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否透明背景，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "transparent={false}",
+          "usageExamples": [
+            "transparent={false}"
+          ]
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 322,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode={false}"
+        },
+        {
+          "name": "starColors",
+          "type": "string[]",
+          "required": false,
+          "description": "星点颜色组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "starColors={[palette.sage, palette.ivory, palette.sand]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "starColors={[palette.sage, palette.ivory, palette.sand]}"
+          ]
+        },
+        {
+          "name": "starSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 324,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "星点尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 27
+          },
+          "codeExample": "starSize={1}"
+        },
+        {
+          "name": "flareIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 325,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "耀斑强度，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 28
+          },
+          "codeExample": "flareIntensity={0.25}",
+          "usageExamples": [
+            "flareIntensity={0.25}"
+          ]
+        },
+        {
+          "name": "layers",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 326,
+            "kind": "parameter"
+          },
+          "defaultValue": 4,
+          "description": "图层，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 29
+          },
+          "codeExample": "layers={4}"
+        },
+        {
+          "name": "direction",
+          "type": "GalaxyDirection",
+          "required": false,
+          "defaultExpression": "'forward'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 327,
+            "kind": "parameter"
+          },
+          "defaultValue": "forward",
+          "description": "方向，控制 galaxy 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "forward",
+            "backward"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "forward",
+              "backward"
+            ]
+          },
+          "codeExample": "direction={\"forward\"}"
+        },
+        {
+          "name": "clickWarp",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 328,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否点击形变，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickWarp",
+          "usageExamples": [
+            "clickWarp"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 329,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 33
+          },
+          "codeExample": "backgroundColor={palette.ink}",
+          "usageExamples": [
+            "backgroundColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 331,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 galaxy 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 34
+          },
+          "codeExample": "opacity={1}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 35
+          },
+          "codeExample": "dpr={1}"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Galaxy/Galaxy.tsx",
+            "line": 333,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties | undefined",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2712
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "HTMLAttributes<HTMLDivElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,381 @@
+{
+  "version": 1,
+  "id": "business-carousel",
+  "name": "Carousel · 基础轮播",
+  "sourcePath": "src/business/components/MediaViewer.tsx",
+  "demoPath": "src/business/demos/media/business-carousel.tsx",
+  "fields": [
+    {
+      "key": "t0.sources",
+      "name": "sources",
+      "label": "sources · t0",
+      "description": "按顺序展示的媒体资源地址列表。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sources"
+        }
+      ],
+      "type": "readonly string[]",
+      "defaultValue": [
+        "@media/scene-1.svg",
+        "@media/scene-2.svg",
+        "@media/scene-3.svg",
+        "@media/scene-4.svg",
+        "@media/scene-5.svg",
+        "@media/scene-6.svg"
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "本地自然色图片轮播",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.thumbnails",
+      "name": "thumbnails",
+      "label": "thumbnails · t0",
+      "description": "是否显示可点击切换的缩略图列表。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "thumbnails"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.index",
+      "name": "index",
+      "label": "当前索引",
+      "description": "示例的受控状态 index；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "number",
+      "defaultValue": 0,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "index"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "sources",
+      "type": "readonly string[]",
+      "required": true,
+      "description": "按顺序展示的媒体资源地址列表。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/MediaViewer.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "sources={MEDIA}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "sources={MEDIA}"
+      ]
+    },
+    {
+      "name": "index",
+      "type": "number",
+      "required": true,
+      "description": "当前展示条目的索引。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/MediaViewer.tsx",
+        "line": 16
+      },
+      "codeExample": "index={index}",
+      "usageExamples": [
+        "index={index}"
+      ]
+    },
+    {
+      "name": "onChange",
+      "type": "(index: number) => void",
+      "required": true,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/MediaViewer.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(index: number) => void"
+      },
+      "codeExample": "onChange={setIndex}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={setIndex}"
+      ]
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/MediaViewer.tsx",
+        "line": 16
+      },
+      "codeExample": "label=\"本地自然色图片轮播\"",
+      "usageExamples": [
+        "label=\"本地自然色图片轮播\""
+      ]
+    },
+    {
+      "name": "thumbnails",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": "src/business/components/MediaViewer.tsx",
+        "line": 16,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否显示可点击切换的缩略图列表。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/MediaViewer.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "thumbnails={false}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { MediaViewer } from '../../components/MediaViewer';\n\n\nconst ownedStyles={};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessCarouselDemo() {\n  const [index, setIndex] = useState(/*__AW_STATE_state.index__*/);\n  return <BusinessDemo title=\"Carousel\" description=\"参考 Morph Slider 的形状揭示与位移转场，按钮、位置指示和键盘浏览保持同步。\">\n    <MediaViewer  index={index} onChange={setIndex}  /*__AW_PROPS_t0__*/  />\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "MediaViewer",
+      "sourcePath": "src/business/components/MediaViewer.tsx",
+      "props": [
+        {
+          "name": "sources",
+          "type": "readonly string[]",
+          "required": true,
+          "description": "按顺序展示的媒体资源地址列表。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/MediaViewer.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "sources={MEDIA}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "sources={MEDIA}"
+          ]
+        },
+        {
+          "name": "index",
+          "type": "number",
+          "required": true,
+          "description": "当前展示条目的索引。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/MediaViewer.tsx",
+            "line": 16
+          },
+          "codeExample": "index={index}",
+          "usageExamples": [
+            "index={index}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(index: number) => void",
+          "required": true,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/MediaViewer.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(index: number) => void"
+          },
+          "codeExample": "onChange={setIndex}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={setIndex}"
+          ]
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/MediaViewer.tsx",
+            "line": 16
+          },
+          "codeExample": "label=\"本地自然色图片轮播\"",
+          "usageExamples": [
+            "label=\"本地自然色图片轮播\""
+          ]
+        },
+        {
+          "name": "thumbnails",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/MediaViewer.tsx",
+            "line": 16,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否显示可点击切换的缩略图列表。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/MediaViewer.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "thumbnails={false}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

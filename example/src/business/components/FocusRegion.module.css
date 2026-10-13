@@ -1,0 +1,11 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-focus-region { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-focus-region { display:grid; gap:22px; padding:24px; border-style:solid; background:var(--aw-surface-control); transition:border-color 220ms ease,box-shadow 220ms ease }
+.aw-business-focus-region[data-active=true] { border-color:var(--aw-color-action-primary); box-shadow:0 0 0 4px color-mix(in srgb,var(--aw-color-action-primary) 8%,transparent) }
+.aw-business-focus-region > p { margin:0 }
+.aw-business-focus-region .aw-business-row { gap:14px; padding-top:4px }
+@media (width < 600px) { .aw-business-focus-region { padding:18px; gap:18px } }
+.aw-business-focus-region { display:grid; gap:22px; padding:24px; border:1px solid var(--aw-color-border-control); border-radius:var(--aw-radius-panel); background:var(--aw-surface-control) }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-focus-region, .aw-business-focus-region::before, .aw-business-focus-region::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-focus-region, [data-motion=reduce] .aw-business-focus-region::before, [data-motion=reduce] .aw-business-focus-region::after { transition:none; animation:none; scroll-behavior:auto; }

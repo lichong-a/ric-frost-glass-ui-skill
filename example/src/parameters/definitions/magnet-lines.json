@@ -1,0 +1,721 @@
+{
+  "version": 1,
+  "id": "magnet-lines",
+  "name": "Magnet Lines",
+  "sourcePath": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+  "demoPath": "src/demos/pointer/magnet-lines.tsx",
+  "fields": [
+    {
+      "key": "t0.rows",
+      "name": "rows",
+      "label": "行数 · t0",
+      "description": "行数，控制 magnet lines 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rows"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "9",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 128,
+      "step": 1
+    },
+    {
+      "key": "t0.columns",
+      "name": "columns",
+      "label": "columns · t0",
+      "description": "列数，控制 magnet lines 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "columns"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 12,
+      "upstreamDefault": "9",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 128,
+      "step": 1
+    },
+    {
+      "key": "t0.containerSize",
+      "name": "containerSize",
+      "label": "containerSize · t0",
+      "description": "容器尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "containerSize"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "100%",
+      "upstreamDefault": "'80vmin'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineColor",
+      "name": "lineColor",
+      "label": "lineColor · t0",
+      "description": "线条颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#efefef'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineWidth",
+      "name": "lineWidth",
+      "label": "lineWidth · t0",
+      "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineWidth"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "2px",
+      "upstreamDefault": "'1vmin'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineHeight",
+      "name": "lineHeight",
+      "label": "lineHeight · t0",
+      "description": "线条高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineHeight"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "20px",
+      "upstreamDefault": "'6vmin'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.baseAngle",
+      "name": "baseAngle",
+      "label": "baseAngle · t0",
+      "description": "基础角度，控制 magnet lines 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "baseAngle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "-10",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "CSSProperties",
+      "defaultValue": {
+        "width": "100%",
+        "height": 320,
+        "margin": "0 auto"
+      },
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "width": {
+            "kind": "string"
+          },
+          "height": {
+            "kind": "number"
+          },
+          "margin": {
+            "kind": "string"
+          }
+        },
+        "required": [
+          "width",
+          "height",
+          "margin"
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "rows",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "9",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 19,
+        "kind": "parameter"
+      },
+      "defaultValue": 9,
+      "description": "行数，控制 magnet lines 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 7
+      },
+      "codeExample": "rows={8}",
+      "usageExamples": [
+        "rows={8}"
+      ]
+    },
+    {
+      "name": "columns",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "9",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 20,
+        "kind": "parameter"
+      },
+      "defaultValue": 9,
+      "description": "列数，控制 magnet lines 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 8
+      },
+      "codeExample": "columns={12}",
+      "usageExamples": [
+        "columns={12}"
+      ]
+    },
+    {
+      "name": "containerSize",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'80vmin'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 21,
+        "kind": "parameter"
+      },
+      "defaultValue": "80vmin",
+      "description": "容器尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 9
+      },
+      "codeExample": "containerSize=\"100%\"",
+      "usageExamples": [
+        "containerSize=\"100%\""
+      ]
+    },
+    {
+      "name": "lineColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#efefef'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 22,
+        "kind": "parameter"
+      },
+      "defaultValue": "#efefef",
+      "description": "线条颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 10
+      },
+      "codeExample": "lineColor={palette.primary}",
+      "usageExamples": [
+        "lineColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "lineWidth",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'1vmin'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 23,
+        "kind": "parameter"
+      },
+      "defaultValue": "1vmin",
+      "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 11
+      },
+      "codeExample": "lineWidth=\"2px\"",
+      "usageExamples": [
+        "lineWidth=\"2px\""
+      ]
+    },
+    {
+      "name": "lineHeight",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'6vmin'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 24,
+        "kind": "parameter"
+      },
+      "defaultValue": "6vmin",
+      "description": "线条高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 12
+      },
+      "codeExample": "lineHeight=\"20px\"",
+      "usageExamples": [
+        "lineHeight=\"20px\""
+      ]
+    },
+    {
+      "name": "baseAngle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "-10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 25,
+        "kind": "parameter"
+      },
+      "defaultValue": -10,
+      "description": "基础角度，控制 magnet lines 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 13
+      },
+      "codeExample": "baseAngle={0}",
+      "usageExamples": [
+        "baseAngle={0}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 26,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 14
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 27,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+        "line": 15
+      },
+      "codeExample": "style={{ width: '100%', height: 320, margin: '0 auto' }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "style={{ width: '100%', height: 320, margin: '0 auto' }}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/MagnetLines/MagnetLines';\nimport { palette } from '../../shared/demo-support';\n\n// 线段朝向由指针距离计算，保持低密度细线。\n\nexport default function MagnetLinesDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "MagnetLines",
+      "sourcePath": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+      "props": [
+        {
+          "name": "rows",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "9",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 19,
+            "kind": "parameter"
+          },
+          "defaultValue": 9,
+          "description": "行数，控制 magnet lines 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 7
+          },
+          "codeExample": "rows={8}",
+          "usageExamples": [
+            "rows={8}"
+          ]
+        },
+        {
+          "name": "columns",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "9",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 20,
+            "kind": "parameter"
+          },
+          "defaultValue": 9,
+          "description": "列数，控制 magnet lines 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 8
+          },
+          "codeExample": "columns={12}",
+          "usageExamples": [
+            "columns={12}"
+          ]
+        },
+        {
+          "name": "containerSize",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'80vmin'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 21,
+            "kind": "parameter"
+          },
+          "defaultValue": "80vmin",
+          "description": "容器尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 9
+          },
+          "codeExample": "containerSize=\"100%\"",
+          "usageExamples": [
+            "containerSize=\"100%\""
+          ]
+        },
+        {
+          "name": "lineColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#efefef'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 22,
+            "kind": "parameter"
+          },
+          "defaultValue": "#efefef",
+          "description": "线条颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 10
+          },
+          "codeExample": "lineColor={palette.primary}",
+          "usageExamples": [
+            "lineColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "lineWidth",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'1vmin'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 23,
+            "kind": "parameter"
+          },
+          "defaultValue": "1vmin",
+          "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 11
+          },
+          "codeExample": "lineWidth=\"2px\"",
+          "usageExamples": [
+            "lineWidth=\"2px\""
+          ]
+        },
+        {
+          "name": "lineHeight",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'6vmin'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 24,
+            "kind": "parameter"
+          },
+          "defaultValue": "6vmin",
+          "description": "线条高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 12
+          },
+          "codeExample": "lineHeight=\"20px\"",
+          "usageExamples": [
+            "lineHeight=\"20px\""
+          ]
+        },
+        {
+          "name": "baseAngle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "-10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 25,
+            "kind": "parameter"
+          },
+          "defaultValue": -10,
+          "description": "基础角度，控制 magnet lines 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 13
+          },
+          "codeExample": "baseAngle={0}",
+          "usageExamples": [
+            "baseAngle={0}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 26,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 14
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 27,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagnetLines/MagnetLines.tsx",
+            "line": 15
+          },
+          "codeExample": "style={{ width: '100%', height: 320, margin: '0 auto' }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "style={{ width: '100%', height: 320, margin: '0 auto' }}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

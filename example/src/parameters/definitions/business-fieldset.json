@@ -1,0 +1,486 @@
+{
+  "version": 1,
+  "id": "business-fieldset",
+  "name": "Fieldset",
+  "sourcePath": "src/business/demos/form/business-fieldset.tsx",
+  "demoPath": "src/business/demos/form/business-fieldset.tsx",
+  "fields": [
+    {
+      "key": "t1.label",
+      "name": "label",
+      "label": "标签 · t1",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "显示名称",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.control",
+      "name": "control",
+      "label": "control · t1",
+      "description": "是否控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "control"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.enabled",
+      "name": "enabled",
+      "label": "enabled",
+      "description": "示例的受控状态 enabled；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "boolean",
+      "defaultValue": true,
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "checked"
+        }
+      ]
+    },
+    {
+      "key": "state.name",
+      "name": "name",
+      "label": "name",
+      "description": "示例的受控状态 name；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "资料助理",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [],
+  "inherited": [
+    {
+      "type": "DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "label",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<FieldsetHTMLAttributes<HTMLFieldSetElement>, HTMLFieldSetElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "fieldset",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLLegendElement>, HTMLLegendElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "legend",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "input",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "p",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport ownedStyles1 from '../../components/Input.module.css';\nimport { componentClasses } from '../../class-names';\nimport { SpringCheckbox } from '../../components/SpringCheckbox';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Field } from '../../components/Field';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessFieldsetDemo() {\n  const [enabled,setEnabled]=useState(/*__AW_STATE_state.enabled__*/); const [name,setName]=useState(/*__AW_STATE_state.name__*/);\n  return <BusinessDemo title=\"Fieldset\" description=\"用原生字段组组织联系信息；启用开关控制组内输入。\">\n    <label data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}><SpringCheckbox checked={enabled} onChange={event=>setEnabled(event.target.checked)} />允许编辑</label><fieldset data-ui=\"aw-business-item\" disabled={!enabled} className={cn(\"aw-business-item aw-business-animated-fieldset\")}><legend>联系资料</legend><Field  /*__AW_PROPS_t1__*/ ><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} value={name} onChange={event=>setName(event.target.value)} /></Field></fieldset><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">当前名称：{name||'未填写'}；{enabled?'可编辑':'已禁用'}。</p>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "SpringCheckbox",
+      "sourcePath": "src/business/components/SpringCheckbox.tsx",
+      "props": [
+        {
+          "name": "checked",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultExpression": "inner",
+          "defaultSource": {
+            "path": "src/business/components/SpringCheckbox.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "当前受控勾选状态，调用方在变更回调中写回。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3185
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "checked={enabled}",
+          "usageExamples": [
+            "checked={enabled}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "ChangeEventHandler<HTMLInputElement> | undefined",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3218
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "details": {
+            "kind": "callback",
+            "signature": "ChangeEventHandler<HTMLInputElement> | undefined"
+          },
+          "codeExample": "onChange={event=>setEnabled(event.target.checked)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={event=>setEnabled(event.target.checked)}"
+          ]
+        },
+        {
+          "name": "defaultChecked",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/SpringCheckbox.tsx",
+            "line": 9,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "非受控模式首次挂载时的勾选状态。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2691
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "defaultChecked={false}"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/SpringCheckbox.tsx",
+            "line": 9,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "InputHTMLAttributes<HTMLInputElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "Field",
+      "sourcePath": "src/business/components/Field.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "label=\"显示名称\"",
+          "usageExamples": [
+            "label=\"显示名称\""
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} value={name} onChange={event=>setName(event.target.value)} /></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} value={name} onChange={event=>setName(event.target.value)} /></>}"
+          ]
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "required": false,
+          "description": "与字段一起显示的帮助文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "hint={\"示例\"}"
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "(isControl ? children.props.id : undefined)",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "htmlFor={\"示例\"}"
+        },
+        {
+          "name": "control",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "control={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t2",
+      "name": "input",
+      "props": [
+        {
+          "name": "data-ui",
+          "type": "any",
+          "required": false,
+          "description": "示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。",
+          "usageExamples": [
+            "data-ui=\"aw-business-input\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn(\"aw-business-input\")}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value={name}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3215
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "ChangeEventHandler<HTMLInputElement> | undefined",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "usageExamples": [
+            "onChange={event=>setName(event.target.value)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3218
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "native-composition",
+  "notes": [
+    "该业务能力由示例函数组合原生元素与下面的叶组件；示例函数没有接收公开 Props。原生属性按元素列出，演示内部 useState 配置不作为公开 Props 或组件默认值。"
+  ]
+}

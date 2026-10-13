@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "id": "image-trail",
+  "name": "Image Trail",
+  "sourcePath": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
+  "demoPath": "src/demos/pointer/image-trail.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "@media/scene-1.svg",
+        "@media/scene-2.svg",
+        "@media/scene-3.svg",
+        "@media/scene-4.svg",
+        "@media/scene-5.svg",
+        "@media/scene-6.svg"
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.variant",
+      "name": "variant",
+      "label": "外观 · t0",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "variant"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
+        "line": 1390,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
+        "line": 1386
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "items={MEDIA}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={MEDIA}"
+      ]
+    },
+    {
+      "name": "variant",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
+        "line": 1390,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "选择组件内置的外观或效果变体。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
+        "line": 1387
+      },
+      "codeExample": "variant={1}",
+      "usageExamples": [
+        "variant={1}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/ImageTrail/ImageTrail';\nimport { palette } from '../../shared/demo-support';\n\n// 快速移动指针生成不同位置的图片轨迹；六张本地图片无外链请求。\n\nexport default function ImageTrailDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component   /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ImageTrail",
+      "sourcePath": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
+            "line": 1390,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
+            "line": 1386
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "items={MEDIA}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={MEDIA}"
+          ]
+        },
+        {
+          "name": "variant",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
+            "line": 1390,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ImageTrail/ImageTrail.tsx",
+            "line": 1387
+          },
+          "codeExample": "variant={1}",
+          "usageExamples": [
+            "variant={1}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

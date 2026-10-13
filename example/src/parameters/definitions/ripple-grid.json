@@ -1,0 +1,1702 @@
+{
+  "version": 1,
+  "id": "ripple-grid",
+  "name": "Ripple Grid",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+  "demoPath": "src/demos/background/ripple-grid.tsx",
+  "fields": [
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.variant",
+      "name": "variant",
+      "label": "外观 · t0",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "variant"
+        }
+      ],
+      "type": "RippleGridVariant",
+      "defaultValue": "lines",
+      "upstreamDefault": "'lines'",
+      "control": "select",
+      "options": [
+        {
+          "label": "lines",
+          "value": "lines"
+        },
+        {
+          "label": "dots",
+          "value": "dots"
+        },
+        {
+          "label": "cross",
+          "value": "cross"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cellSize",
+      "name": "cellSize",
+      "label": "cellSize · t0",
+      "description": "单元尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cellSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 48,
+      "upstreamDefault": "48",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineWidth",
+      "name": "lineWidth",
+      "label": "lineWidth · t0",
+      "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 ripple grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleStrength",
+      "name": "rippleStrength",
+      "label": "rippleStrength · t0",
+      "description": "波纹强度，控制 ripple grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoRipple",
+      "name": "autoRipple",
+      "label": "autoRipple · t0",
+      "description": "是否自动波纹，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoRipple"
+        }
+      ],
+      "type": "RippleGridAutoRipple",
+      "defaultValue": "center",
+      "upstreamDefault": "'center'",
+      "control": "select",
+      "options": [
+        {
+          "label": "center",
+          "value": "center"
+        },
+        {
+          "label": "random",
+          "value": "random"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleInterval",
+      "name": "rippleInterval",
+      "label": "rippleInterval · t0",
+      "description": "波纹间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleInterval"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "2.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseInteraction",
+      "name": "mouseInteraction",
+      "label": "指针响应 · t0",
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseInteraction"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clickRipple",
+      "name": "clickRipple",
+      "label": "clickRipple · t0",
+      "description": "是否点击波纹，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clickRipple"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleSpeed",
+      "name": "rippleSpeed",
+      "label": "rippleSpeed · t0",
+      "description": "波纹速度，控制 ripple grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleSize",
+      "name": "rippleSize",
+      "label": "rippleSize · t0",
+      "description": "波纹尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tilt",
+      "name": "tilt",
+      "label": "tilt · t0",
+      "description": "倾斜，控制 ripple grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rotation",
+      "name": "rotation",
+      "label": "旋转 · t0",
+      "description": "旋转角度，控制 ripple grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rotation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 ripple grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 ripple grid 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 220,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 10
+      },
+      "codeExample": "color={palette.sage}",
+      "usageExamples": [
+        "color={palette.sage}"
+      ]
+    },
+    {
+      "name": "variant",
+      "type": "RippleGridVariant",
+      "required": false,
+      "defaultExpression": "'lines'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 221,
+        "kind": "parameter"
+      },
+      "defaultValue": "lines",
+      "description": "选择组件内置的外观或效果变体。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "lines",
+        "dots",
+        "cross"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "lines",
+          "dots",
+          "cross"
+        ]
+      },
+      "codeExample": "variant=\"lines\"",
+      "usageExamples": [
+        "variant=\"lines\""
+      ]
+    },
+    {
+      "name": "cellSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "48",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 222,
+        "kind": "parameter"
+      },
+      "defaultValue": 48,
+      "description": "单元尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 12
+      },
+      "codeExample": "cellSize={48}",
+      "usageExamples": [
+        "cellSize={48}"
+      ]
+    },
+    {
+      "name": "lineWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 223,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 13
+      },
+      "codeExample": "lineWidth={0.8}",
+      "usageExamples": [
+        "lineWidth={0.8}"
+      ]
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 224,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "辉光，控制 ripple grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 14
+      },
+      "codeExample": "glow={0.3}",
+      "usageExamples": [
+        "glow={0.3}"
+      ]
+    },
+    {
+      "name": "rippleStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 225,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "波纹强度，控制 ripple grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 15
+      },
+      "codeExample": "rippleStrength={0.65}",
+      "usageExamples": [
+        "rippleStrength={0.65}"
+      ]
+    },
+    {
+      "name": "rippleSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 226,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "波纹速度，控制 ripple grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 16
+      },
+      "codeExample": "rippleSpeed={1}"
+    },
+    {
+      "name": "rippleSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 227,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "波纹尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 17
+      },
+      "codeExample": "rippleSize={1}"
+    },
+    {
+      "name": "autoRipple",
+      "type": "RippleGridAutoRipple",
+      "required": false,
+      "defaultExpression": "'center'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 228,
+        "kind": "parameter"
+      },
+      "defaultValue": "center",
+      "description": "是否自动波纹，决定该分支的展示或交互行为。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "center",
+        "random",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "center",
+          "random",
+          "none"
+        ]
+      },
+      "codeExample": "autoRipple=\"center\"",
+      "usageExamples": [
+        "autoRipple=\"center\""
+      ]
+    },
+    {
+      "name": "rippleInterval",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 229,
+        "kind": "parameter"
+      },
+      "defaultValue": 2.6,
+      "description": "波纹间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 19
+      },
+      "codeExample": "rippleInterval={3}",
+      "usageExamples": [
+        "rippleInterval={3}"
+      ]
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 230,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "倾斜，控制 ripple grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 20
+      },
+      "codeExample": "tilt={0}"
+    },
+    {
+      "name": "rotation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 231,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "旋转角度，控制 ripple grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 21
+      },
+      "codeExample": "rotation={0}"
+    },
+    {
+      "name": "mouseInteraction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 232,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 22
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "mouseInteraction",
+      "usageExamples": [
+        "mouseInteraction"
+      ]
+    },
+    {
+      "name": "clickRipple",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 233,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否点击波纹，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickRipple",
+      "usageExamples": [
+        "clickRipple"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 234,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 235,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "淡出，控制 ripple grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 25
+      },
+      "codeExample": "fade={0.5}"
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 236,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 ripple grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 26
+      },
+      "codeExample": "opacity={1}"
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 237,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 27
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode={false}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 238,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 29
+      },
+      "codeExample": "dpr={1}"
+    },
+    {
+      "name": "className",
+      "type": "string | undefined",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+        "line": 240,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2700
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "children={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "HTMLAttributes<HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid';\n\n\n/** Agent Wan natural-tone preset for the real Ripple Grid component. */\nexport default function RippleGridDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "RippleGrid",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+      "props": [
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 220,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 10
+          },
+          "codeExample": "color={palette.sage}",
+          "usageExamples": [
+            "color={palette.sage}"
+          ]
+        },
+        {
+          "name": "variant",
+          "type": "RippleGridVariant",
+          "required": false,
+          "defaultExpression": "'lines'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 221,
+            "kind": "parameter"
+          },
+          "defaultValue": "lines",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "lines",
+            "dots",
+            "cross"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "lines",
+              "dots",
+              "cross"
+            ]
+          },
+          "codeExample": "variant=\"lines\"",
+          "usageExamples": [
+            "variant=\"lines\""
+          ]
+        },
+        {
+          "name": "cellSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "48",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 222,
+            "kind": "parameter"
+          },
+          "defaultValue": 48,
+          "description": "单元尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 12
+          },
+          "codeExample": "cellSize={48}",
+          "usageExamples": [
+            "cellSize={48}"
+          ]
+        },
+        {
+          "name": "lineWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 223,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 13
+          },
+          "codeExample": "lineWidth={0.8}",
+          "usageExamples": [
+            "lineWidth={0.8}"
+          ]
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 224,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "辉光，控制 ripple grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 14
+          },
+          "codeExample": "glow={0.3}",
+          "usageExamples": [
+            "glow={0.3}"
+          ]
+        },
+        {
+          "name": "rippleStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 225,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "波纹强度，控制 ripple grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 15
+          },
+          "codeExample": "rippleStrength={0.65}",
+          "usageExamples": [
+            "rippleStrength={0.65}"
+          ]
+        },
+        {
+          "name": "rippleSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 226,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "波纹速度，控制 ripple grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 16
+          },
+          "codeExample": "rippleSpeed={1}"
+        },
+        {
+          "name": "rippleSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 227,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "波纹尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 17
+          },
+          "codeExample": "rippleSize={1}"
+        },
+        {
+          "name": "autoRipple",
+          "type": "RippleGridAutoRipple",
+          "required": false,
+          "defaultExpression": "'center'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 228,
+            "kind": "parameter"
+          },
+          "defaultValue": "center",
+          "description": "是否自动波纹，决定该分支的展示或交互行为。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "center",
+            "random",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "center",
+              "random",
+              "none"
+            ]
+          },
+          "codeExample": "autoRipple=\"center\"",
+          "usageExamples": [
+            "autoRipple=\"center\""
+          ]
+        },
+        {
+          "name": "rippleInterval",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 229,
+            "kind": "parameter"
+          },
+          "defaultValue": 2.6,
+          "description": "波纹间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 19
+          },
+          "codeExample": "rippleInterval={3}",
+          "usageExamples": [
+            "rippleInterval={3}"
+          ]
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 230,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "倾斜，控制 ripple grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 20
+          },
+          "codeExample": "tilt={0}"
+        },
+        {
+          "name": "rotation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 231,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "旋转角度，控制 ripple grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 21
+          },
+          "codeExample": "rotation={0}"
+        },
+        {
+          "name": "mouseInteraction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 232,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 22
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "mouseInteraction",
+          "usageExamples": [
+            "mouseInteraction"
+          ]
+        },
+        {
+          "name": "clickRipple",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 233,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否点击波纹，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickRipple",
+          "usageExamples": [
+            "clickRipple"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 234,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 235,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "淡出，控制 ripple grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 25
+          },
+          "codeExample": "fade={0.5}"
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 236,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 ripple grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 26
+          },
+          "codeExample": "opacity={1}"
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 237,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 27
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode={false}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 238,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 29
+          },
+          "codeExample": "dpr={1}"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/RippleGrid/RippleGrid.tsx",
+            "line": 240,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "HTMLAttributes<HTMLDivElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

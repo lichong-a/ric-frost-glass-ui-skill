@@ -1,0 +1,382 @@
+{
+  "version": 1,
+  "id": "glitch-text",
+  "name": "Glitch Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+  "demoPath": "src/demos/text/glitch-text.tsx",
+  "fields": [
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "切片周期系数",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。 以下范围仅限制此演示面板，不改变上游 API。两层 CSS 动画周期分别是 speed×3 秒和 speed×2 秒；值越大，循环越慢。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "0.5",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.1,
+      "max": 2,
+      "step": 0.05,
+      "unit": "s"
+    },
+    {
+      "key": "t0.enableShadows",
+      "name": "enableShadows",
+      "label": "enableShadows · t0",
+      "description": "是否绘制 Glitch Text 两侧红色与青色错位阴影。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "enableShadows"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.enableOnHover",
+      "name": "enableOnHover",
+      "label": "enableOnHover · t0",
+      "description": "是否只在指针悬停时显示故障错位动画。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "enableOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "string",
+      "required": true,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+        "line": 7
+      },
+      "codeExample": "children={<>AGENT WAN</>}",
+      "usageExamples": [
+        "children={<>AGENT WAN</>}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+        "line": 23,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+        "line": 8
+      },
+      "codeExample": "speed={1}",
+      "usageExamples": [
+        "speed={1}"
+      ]
+    },
+    {
+      "name": "enableShadows",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+        "line": 24,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否绘制 Glitch Text 两侧红色与青色错位阴影。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+        "line": 9
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "enableShadows={true}",
+      "usageExamples": [
+        "enableShadows={true}"
+      ]
+    },
+    {
+      "name": "enableOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+        "line": 25,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否只在指针悬停时显示故障错位动画。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "enableOnHover={false}",
+      "usageExamples": [
+        "enableOnHover={false}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+        "line": 26,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+        "line": 11
+      },
+      "codeExample": "className={styles.text}",
+      "usageExamples": [
+        "className={styles.text}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/GlitchText/GlitchText';\nimport styles from './glitch-text.module.css';\n\nexport default function GlitchTextDemo() {\n  return (\n    <div className={styles.stage}>\n      <Component    className={styles.text} /*__AW_PROPS_t0__*/ >AGENT WAN</Component>\n      <p className={styles.guide}>观察红蓝重影与文字切片的循环错位。</p>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "GlitchText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "string",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<>AGENT WAN</>}",
+          "usageExamples": [
+            "children={<>AGENT WAN</>}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+            "line": 23,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+            "line": 8
+          },
+          "codeExample": "speed={1}",
+          "usageExamples": [
+            "speed={1}"
+          ]
+        },
+        {
+          "name": "enableShadows",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+            "line": 24,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否绘制 Glitch Text 两侧红色与青色错位阴影。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+            "line": 9
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "enableShadows={true}",
+          "usageExamples": [
+            "enableShadows={true}"
+          ]
+        },
+        {
+          "name": "enableOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+            "line": 25,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否只在指针悬停时显示故障错位动画。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "enableOnHover={false}",
+          "usageExamples": [
+            "enableOnHover={false}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+            "line": 26,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+            "line": 11
+          },
+          "codeExample": "className={styles.text}",
+          "usageExamples": [
+            "className={styles.text}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

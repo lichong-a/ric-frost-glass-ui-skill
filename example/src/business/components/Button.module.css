@@ -1,0 +1,45 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-button-feedback, .aw-button { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-button-feedback { cursor:pointer; transition:background-color 180ms ease,color 180ms ease,border-color 180ms ease,box-shadow 220ms ease,translate 240ms var(--aw-business-spring),scale 240ms var(--aw-business-spring) }
+.aw-business-button-feedback:not(:disabled):hover { translate:0 -2px }
+.aw-business-button-feedback:not(:disabled):active { translate:0 0; scale:.96 }
+.aw-business-button-feedback:disabled { cursor:not-allowed; opacity:.48 }
+.aw-button { position:relative; overflow:hidden; isolation:isolate }
+.aw-button::after { content:''; position:absolute; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(115deg,transparent 15%,var(--aw-palette-ivory) 48%,transparent 75%); opacity:0; transform:translateX(-110%); transition:transform 600ms var(--aw-business-ease),opacity 240ms ease }
+.aw-button:not(:disabled):hover::after { opacity:.12; transform:translateX(110%) }
+.aw-button { display: inline-flex; align-items: center; justify-content: center; gap: var(--aw-control-gap); min-block-size: var(--aw-control-height); padding: var(--aw-space-2) var(--aw-control-padding-inline); color: var(--aw-button-fg); background: var(--aw-button-bg); border: var(--aw-control-border); border-radius: var(--aw-button-radius); box-shadow: var(--aw-shadow-control); font-size: var(--aw-font-size-label); font-weight: var(--aw-font-weight-medium); line-height: var(--aw-font-line-height-body); text-align: center; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color var(--aw-duration-control) var(--aw-easing-standard), border-color var(--aw-duration-control) var(--aw-easing-standard), box-shadow var(--aw-duration-control) var(--aw-easing-standard) }
+.aw-button[data-size='sm'] { min-block-size: var(--aw-control-height-sm); padding: var(--aw-space-1) var(--aw-space-3) }
+.aw-button[data-size='lg'] { min-block-size: var(--aw-control-height-lg) }
+.aw-button[data-icon-only='true'] { inline-size: var(--aw-control-height); min-inline-size: var(--aw-control-height); padding-inline: var(--aw-space-2) }
+.aw-button[data-icon-only='true'][data-size='sm'] { inline-size: var(--aw-control-height-sm); min-inline-size: var(--aw-control-height-sm) }
+.aw-button[data-icon-only='true'][data-size='lg'] { inline-size: var(--aw-control-height-lg); min-inline-size: var(--aw-control-height-lg) }
+.aw-button:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-surface-fallback); box-shadow: var(--aw-shadow-control-hover) }
+.aw-button:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):active { background: var(--aw-surface-selected); box-shadow: var(--aw-shadow-control) }
+.aw-button[data-variant='primary'], .aw-button[aria-pressed='true'], .aw-button[aria-selected='true'] { color: var(--aw-button-primary-fg); background: var(--aw-button-primary-bg); border-color: var(--aw-color-action-primary); box-shadow: var(--aw-shadow-primary) }
+.aw-button[data-variant='primary']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover, .aw-button[aria-pressed='true']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover, .aw-button[aria-selected='true']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-color-action-hover); border-color: var(--aw-color-action-hover) }
+.aw-button[data-variant='primary']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):active, .aw-button[aria-pressed='true']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):active, .aw-button[aria-selected='true']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):active { background: var(--aw-color-action-active); border-color: var(--aw-color-action-active) }
+.aw-button[data-variant='ghost'] { background: transparent; border-color: transparent; box-shadow: none }
+.aw-button[data-variant='ghost']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-surface-hover) }
+.aw-button[data-variant='danger-outline'] { color: var(--aw-color-action-danger); border-color: var(--aw-color-action-danger) }
+.aw-button[data-variant='danger-outline']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-color-state-danger-bg) }
+.aw-button[data-variant='danger'] { color: var(--aw-color-text-on-primary); background: var(--aw-color-action-danger); border-color: var(--aw-color-action-danger) }
+.aw-button[data-variant='danger']:where(:not(:disabled, [aria-disabled='true'], [aria-busy='true'], [data-state='loading'])):hover { background: var(--aw-color-action-danger-hover); border-color: var(--aw-color-action-danger-hover) }
+.aw-button[data-variant='warning'] { color: var(--aw-color-state-warning-fg); background: var(--aw-color-state-warning-bg); border-color: var(--aw-color-state-warning-fg) }
+.aw-button:is([aria-busy='true'], [data-state='loading']) { cursor: progress }
+.aw-button:is(:disabled, [aria-disabled='true']) { color: var(--aw-color-text-disabled); background: var(--aw-surface-disabled); border-color: var(--aw-color-border-disabled); box-shadow: none; cursor: not-allowed }
+:is(.aw-button, .aw-input, .aw-select, .aw-switch, .aw-check, .aw-radio, .aw-menu-item, .aw-nav-item, .aw-tab, .aw-upload-zone, .aw-logo):focus-visible { outline: var(--aw-stroke-focus) solid transparent; outline-offset: var(--aw-space-half); box-shadow: var(--aw-shadow-focus) }
+@media (pointer: coarse) { :is(.aw-button, .aw-menu-item, .aw-nav-item, .aw-tab, .aw-input, .aw-select), .aw-button[data-size='sm'], .aw-pagination .aw-button { min-inline-size: var(--aw-control-touch-target); min-block-size: var(--aw-control-touch-target) } }
+@media (pointer: coarse) { .aw-button[data-icon-only='true']:not([data-size='lg']) { inline-size: var(--aw-control-touch-target); min-inline-size: var(--aw-control-touch-target); min-block-size: var(--aw-control-touch-target) } }
+@media (forced-colors: active) { :is(.aw-button, .aw-input, .aw-select, .aw-switch, .aw-tag, .aw-upload-zone) { color: ButtonText; background: ButtonFace; border-color: ButtonText; box-shadow: none } }
+@media (forced-colors: active) { :is(.aw-button, .aw-menu-item, .aw-nav-item, .aw-tab):is([aria-selected='true'], [aria-pressed='true'], [aria-checked='true'], [aria-current='page']) { color: HighlightText; background: Highlight; border-color: Highlight } }
+@media (forced-colors: active) { :is(.aw-button, .aw-input, .aw-select, .aw-switch, .aw-check, .aw-radio, .aw-menu-item, .aw-nav-item, .aw-tab, .aw-upload-zone, .aw-logo):focus-visible { outline: var(--aw-stroke-focus) solid Highlight; outline-offset: var(--aw-space-half); box-shadow: none } }
+@media (forced-colors: active) { :is(.aw-button, .aw-input, .aw-select, .aw-menu-item, .aw-tab):is(:disabled, [aria-disabled='true']) { color: GrayText; border-color: GrayText } }
+.aw-button { font:inherit; position:relative; overflow:hidden; isolation:isolate; transition:background-color 180ms ease,color 180ms ease,border-color 180ms ease,box-shadow 220ms ease,translate 240ms var(--aw-business-spring),scale 240ms var(--aw-business-spring); }
+.aw-button:not(:disabled):hover { translate:0 -2px; }
+.aw-button:not(:disabled):active { translate:0 0; scale:.96; }
+.aw-button:focus-visible { outline:2px solid var(--aw-color-action-primary); outline-offset:3px; }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-button-feedback, .aw-business-button-feedback::before, .aw-business-button-feedback::after, .aw-button, .aw-button::before, .aw-button::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-button-feedback, [data-motion=reduce] .aw-business-button-feedback::before, [data-motion=reduce] .aw-business-button-feedback::after, [data-motion=reduce] .aw-button, [data-motion=reduce] .aw-button::before, [data-motion=reduce] .aw-button::after { transition:none; animation:none; scroll-behavior:auto; }
+
+.aw-button[data-motion=reduce] { transition:none; animation:none; translate:none; scale:1; }

@@ -1,0 +1,639 @@
+{
+  "version": 1,
+  "id": "business-metergroup",
+  "name": "MeterGroup",
+  "sourcePath": "src/business/demos/feedback/business-metergroup.tsx",
+  "demoPath": "src/business/demos/feedback/business-metergroup.tsx",
+  "fields": [
+    {
+      "key": "t0.control",
+      "name": "control",
+      "label": "control · t0",
+      "description": "是否控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "control"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.min",
+      "name": "min",
+      "label": "最小值 · t1",
+      "description": "允许输入、拖动或选择的下限。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "min"
+        }
+      ],
+      "type": "string | number | undefined",
+      "defaultValue": "0",
+      "upstreamDefault": "0",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.max",
+      "name": "max",
+      "label": "最大值 · t1",
+      "description": "允许输入、拖动或选择的上限。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "max"
+        }
+      ],
+      "type": "string | number | undefined",
+      "defaultValue": "100",
+      "upstreamDefault": "100",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.min",
+      "name": "min",
+      "label": "最小值 · t2",
+      "description": "允许输入、拖动或选择的下限。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "min"
+        }
+      ],
+      "type": "string | number | undefined",
+      "defaultValue": "0",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.max",
+      "name": "max",
+      "label": "最大值 · t2",
+      "description": "允许输入、拖动或选择的上限。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "max"
+        }
+      ],
+      "type": "string | number | undefined",
+      "defaultValue": "100",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.knowledge",
+      "name": "knowledge",
+      "label": "knowledge",
+      "description": "示例的受控状态 knowledge；面板与组件的原有回调同步更新。 数值边界与示例中原生控件的 min/max 属性一致。",
+      "scope": "state",
+      "type": "number",
+      "defaultValue": 45,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "value"
+        }
+      ],
+      "min": 0,
+      "max": 100
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [],
+  "inherited": [
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "div",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "ul",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "li",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "meter",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import { componentClasses } from '../../class-names';\nimport { RangeSlider } from '../../components/RangeSlider';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Field } from '../../components/Field';\n\nconst ownedStyles={};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessMeterGroupDemo() {\n  const [knowledge,setKnowledge]=useState(/*__AW_STATE_state.knowledge__*/); const groups=[{label:'知识',value:knowledge,color:'var(--aw-palette-primary)'},{label:'文档',value:Math.round((100-knowledge)*0.6),color:'var(--aw-palette-sand)'},{label:'服务',value:100-knowledge-Math.round((100-knowledge)*0.6),color:'var(--aw-palette-terra)'}];\n  return <BusinessDemo title=\"MeterGroup\" description=\"分组展示资料容量分配，调整知识占比后其他类别自动保持总和100%。\">\n    <Field  label={`知识占比：${knowledge}%`} /*__AW_PROPS_t0__*/ ><RangeSlider   value={knowledge} onChange={event=>setKnowledge(Number(event.target.value))} /*__AW_PROPS_t1__*/  /></Field><div style={{display:'flex',height:24,borderRadius:12,overflow:'hidden'}} aria-hidden=\"true\">{groups.map(group=><div key={group.label} style={{width:`${group.value}%`,background:group.color}} />)}</div><ul>{groups.map(group=><li key={group.label}>{group.label}：<meter   value={group.value} aria-label={group.label+'占比'} /*__AW_PROPS_t2__*/  /> {group.value}%</li>)}</ul>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Field",
+      "sourcePath": "src/business/components/Field.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "label={`知识占比：${knowledge}%`}",
+          "usageExamples": [
+            "label={`知识占比：${knowledge}%`}"
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><RangeSlider min=\"0\" max=\"100\" value={knowledge} onChange={event=>setKnowledge(Number(event.target.value))} /></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><RangeSlider min=\"0\" max=\"100\" value={knowledge} onChange={event=>setKnowledge(Number(event.target.value))} /></>}"
+          ]
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "required": false,
+          "description": "与字段一起显示的帮助文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "hint={\"示例\"}"
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "(isControl ? children.props.id : undefined)",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "htmlFor={\"示例\"}"
+        },
+        {
+          "name": "control",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "control",
+          "usageExamples": [
+            "control"
+          ]
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "RangeSlider",
+      "sourcePath": "src/business/components/RangeSlider.tsx",
+      "props": [
+        {
+          "name": "max",
+          "type": "string | number | undefined",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": "src/business/components/RangeSlider.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "允许输入、拖动或选择的上限。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3201
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "max=\"100\"",
+          "usageExamples": [
+            "max=\"100\""
+          ]
+        },
+        {
+          "name": "min",
+          "type": "string | number | undefined",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": "src/business/components/RangeSlider.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "允许输入、拖动或选择的下限。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3203
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "min=\"0\"",
+          "usageExamples": [
+            "min=\"0\""
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": "src/business/components/RangeSlider.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "code",
+          "valueKind": "union",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3215
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "readonly string[]",
+                "kind": "array",
+                "items": [
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "value={knowledge}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "value={knowledge}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/RangeSlider.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties | undefined",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2712
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "InputHTMLAttributes<HTMLInputElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "meter",
+      "props": [
+        {
+          "name": "min",
+          "type": "string | number | undefined",
+          "required": false,
+          "description": "允许输入、拖动或选择的下限。",
+          "usageExamples": [
+            "min=\"0\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3300
+          }
+        },
+        {
+          "name": "max",
+          "type": "string | number | undefined",
+          "required": false,
+          "description": "允许输入、拖动或选择的上限。",
+          "usageExamples": [
+            "max=\"100\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3299
+          }
+        },
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value={group.value}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3302
+          }
+        },
+        {
+          "name": "aria-label",
+          "type": "string | undefined",
+          "required": false,
+          "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-label={group.label+'占比'}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2507
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "native-composition",
+  "notes": [
+    "该业务能力由示例函数组合原生元素与下面的叶组件；示例函数没有接收公开 Props。原生属性按元素列出，演示内部 useState 配置不作为公开 Props 或组件默认值。"
+  ]
+}

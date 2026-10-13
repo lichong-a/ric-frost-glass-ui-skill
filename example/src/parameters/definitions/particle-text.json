@@ -1,0 +1,1414 @@
+{
+  "version": 1,
+  "id": "particle-text",
+  "name": "Particle Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+  "demoPath": "src/demos/text/particle-text.tsx",
+  "fields": [
+    {
+      "key": "t0.text",
+      "name": "text",
+      "label": "文字内容 · t0",
+      "description": "显示或生成效果的文字内容。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "text"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "AGENT WAN",
+      "upstreamDefault": "'React Bits'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.highlightColor",
+      "name": "highlightColor",
+      "label": "highlightColor · t0",
+      "description": "高亮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "highlightColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#8b5cf6'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.particleSize",
+      "name": "particleSize",
+      "label": "particleSize · t0",
+      "description": "粒子尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "particleSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.density",
+      "name": "density",
+      "label": "density · t0",
+      "description": "密度，控制 particle text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "density"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 5,
+      "upstreamDefault": "4",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scatter",
+      "name": "scatter",
+      "label": "scatter · t0",
+      "description": "散开，控制 particle text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scatter"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 100,
+      "upstreamDefault": "180",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gatherDuration",
+      "name": "gatherDuration",
+      "label": "gatherDuration · t0",
+      "description": "聚合时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gatherDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1100,
+      "upstreamDefault": "1600",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stagger",
+      "name": "stagger",
+      "label": "错峰间隔 · t0",
+      "description": "错开，控制 particle text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stagger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 180,
+      "upstreamDefault": "420",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pointerRepel",
+      "name": "pointerRepel",
+      "label": "pointerRepel · t0",
+      "description": "指针排斥，控制 particle text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pointerRepel"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 28,
+      "upstreamDefault": "40",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.repelRadius",
+      "name": "repelRadius",
+      "label": "repelRadius · t0",
+      "description": "排斥半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "repelRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 95,
+      "upstreamDefault": "120",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trigger",
+      "name": "trigger",
+      "label": "trigger · t0",
+      "description": "触发方式，控制 particle text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trigger"
+        }
+      ],
+      "type": "'mount' | 'hover' | 'click'",
+      "defaultValue": "click",
+      "upstreamDefault": "'mount'",
+      "control": "select",
+      "options": [
+        {
+          "label": "mount",
+          "value": "mount"
+        },
+        {
+          "label": "hover",
+          "value": "hover"
+        },
+        {
+          "label": "click",
+          "value": "click"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": "clamp(44px, 8vw, 86px)",
+      "upstreamDefault": "'clamp(3rem, 12vw, 8rem)'",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontWeight",
+      "name": "fontWeight",
+      "label": "字重 · t0",
+      "description": "字体字重，控制 particle text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontWeight"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 700,
+      "upstreamDefault": "800",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "是否辉光，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontFamily",
+      "name": "fontFamily",
+      "label": "字体 · t0",
+      "description": "字体字族，控制 particle text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontFamily"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "inherit",
+      "upstreamDefault": "'inherit'",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'React Bits'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 97,
+        "kind": "parameter"
+      },
+      "defaultValue": "React Bits",
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 7
+      },
+      "codeExample": "text=\"AGENT WAN\"",
+      "usageExamples": [
+        "text=\"AGENT WAN\""
+      ]
+    },
+    {
+      "name": "particleSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 98,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "粒子尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 8
+      },
+      "codeExample": "particleSize={2}",
+      "usageExamples": [
+        "particleSize={2}"
+      ]
+    },
+    {
+      "name": "density",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 99,
+        "kind": "parameter"
+      },
+      "defaultValue": 4,
+      "description": "密度，控制 particle text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 9
+      },
+      "codeExample": "density={5}",
+      "usageExamples": [
+        "density={5}"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 100,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 10
+      },
+      "codeExample": "color={palette.primary}",
+      "usageExamples": [
+        "color={palette.primary}"
+      ]
+    },
+    {
+      "name": "highlightColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#8b5cf6'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 101,
+        "kind": "parameter"
+      },
+      "defaultValue": "#8b5cf6",
+      "description": "高亮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 11
+      },
+      "codeExample": "highlightColor={palette.ink}",
+      "usageExamples": [
+        "highlightColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "scatter",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "180",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 102,
+        "kind": "parameter"
+      },
+      "defaultValue": 180,
+      "description": "散开，控制 particle text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 12
+      },
+      "codeExample": "scatter={100}",
+      "usageExamples": [
+        "scatter={100}"
+      ]
+    },
+    {
+      "name": "gatherDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1600",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 103,
+        "kind": "parameter"
+      },
+      "defaultValue": 1600,
+      "description": "聚合时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 13
+      },
+      "codeExample": "gatherDuration={1100}",
+      "usageExamples": [
+        "gatherDuration={1100}"
+      ]
+    },
+    {
+      "name": "stagger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "420",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 104,
+        "kind": "parameter"
+      },
+      "defaultValue": 420,
+      "description": "错开，控制 particle text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 14
+      },
+      "codeExample": "stagger={180}",
+      "usageExamples": [
+        "stagger={180}"
+      ]
+    },
+    {
+      "name": "pointerRepel",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "40",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 105,
+        "kind": "parameter"
+      },
+      "defaultValue": 40,
+      "description": "指针排斥，控制 particle text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 15
+      },
+      "codeExample": "pointerRepel={28}",
+      "usageExamples": [
+        "pointerRepel={28}"
+      ]
+    },
+    {
+      "name": "repelRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "120",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 106,
+        "kind": "parameter"
+      },
+      "defaultValue": 120,
+      "description": "排斥半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 16
+      },
+      "codeExample": "repelRadius={95}",
+      "usageExamples": [
+        "repelRadius={95}"
+      ]
+    },
+    {
+      "name": "idleDrift",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 107,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.7,
+      "description": "静止漂移，控制 particle text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 17
+      },
+      "codeExample": "idleDrift={0.25}",
+      "usageExamples": [
+        "idleDrift={0.25}"
+      ]
+    },
+    {
+      "name": "trigger",
+      "type": "'mount' | 'hover' | 'click'",
+      "required": false,
+      "defaultExpression": "'mount'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 108,
+        "kind": "parameter"
+      },
+      "defaultValue": "mount",
+      "description": "触发方式，控制 particle text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "mount",
+        "hover",
+        "click"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "mount",
+          "hover",
+          "click"
+        ]
+      },
+      "codeExample": "trigger=\"click\"",
+      "usageExamples": [
+        "trigger=\"click\""
+      ]
+    },
+    {
+      "name": "fontSize",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "'clamp(3rem, 12vw, 8rem)'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 109,
+        "kind": "parameter"
+      },
+      "defaultValue": "clamp(3rem, 12vw, 8rem)",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "text",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "fontSize=\"clamp(44px, 8vw, 86px)\"",
+      "usageExamples": [
+        "fontSize=\"clamp(44px, 8vw, 86px)\""
+      ]
+    },
+    {
+      "name": "fontWeight",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "800",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 110,
+        "kind": "parameter"
+      },
+      "defaultValue": 800,
+      "description": "字体字重，控制 particle text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "fontWeight={700}",
+      "usageExamples": [
+        "fontWeight={700}"
+      ]
+    },
+    {
+      "name": "fontFamily",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'inherit'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 111,
+        "kind": "parameter"
+      },
+      "defaultValue": "inherit",
+      "description": "字体字族，控制 particle text 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 21
+      },
+      "codeExample": "fontFamily={\"inherit\"}"
+    },
+    {
+      "name": "glow",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 112,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否辉光，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 22
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "glow={false}",
+      "usageExamples": [
+        "glow={false}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 113,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 23
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+        "line": 24
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/ParticleText/ParticleText';\nimport { palette } from '../../shared/demo-support';\n\n// 点击粒子文字触发分散与聚合，移动指针产生局部排斥。\n// 此演示使用Canvas；确保容器拥有非零宽高。\n\nexport default function ParticleTextDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n  idleDrift={0.25}\n   /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ParticleText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'React Bits'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 97,
+            "kind": "parameter"
+          },
+          "defaultValue": "React Bits",
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 7
+          },
+          "codeExample": "text=\"AGENT WAN\"",
+          "usageExamples": [
+            "text=\"AGENT WAN\""
+          ]
+        },
+        {
+          "name": "particleSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 98,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "粒子尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 8
+          },
+          "codeExample": "particleSize={2}",
+          "usageExamples": [
+            "particleSize={2}"
+          ]
+        },
+        {
+          "name": "density",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 99,
+            "kind": "parameter"
+          },
+          "defaultValue": 4,
+          "description": "密度，控制 particle text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 9
+          },
+          "codeExample": "density={5}",
+          "usageExamples": [
+            "density={5}"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 100,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 10
+          },
+          "codeExample": "color={palette.primary}",
+          "usageExamples": [
+            "color={palette.primary}"
+          ]
+        },
+        {
+          "name": "highlightColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#8b5cf6'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 101,
+            "kind": "parameter"
+          },
+          "defaultValue": "#8b5cf6",
+          "description": "高亮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 11
+          },
+          "codeExample": "highlightColor={palette.ink}",
+          "usageExamples": [
+            "highlightColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "scatter",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "180",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 102,
+            "kind": "parameter"
+          },
+          "defaultValue": 180,
+          "description": "散开，控制 particle text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 12
+          },
+          "codeExample": "scatter={100}",
+          "usageExamples": [
+            "scatter={100}"
+          ]
+        },
+        {
+          "name": "gatherDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1600",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 103,
+            "kind": "parameter"
+          },
+          "defaultValue": 1600,
+          "description": "聚合时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 13
+          },
+          "codeExample": "gatherDuration={1100}",
+          "usageExamples": [
+            "gatherDuration={1100}"
+          ]
+        },
+        {
+          "name": "stagger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "420",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 104,
+            "kind": "parameter"
+          },
+          "defaultValue": 420,
+          "description": "错开，控制 particle text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 14
+          },
+          "codeExample": "stagger={180}",
+          "usageExamples": [
+            "stagger={180}"
+          ]
+        },
+        {
+          "name": "pointerRepel",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "40",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 105,
+            "kind": "parameter"
+          },
+          "defaultValue": 40,
+          "description": "指针排斥，控制 particle text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 15
+          },
+          "codeExample": "pointerRepel={28}",
+          "usageExamples": [
+            "pointerRepel={28}"
+          ]
+        },
+        {
+          "name": "repelRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "120",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 106,
+            "kind": "parameter"
+          },
+          "defaultValue": 120,
+          "description": "排斥半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 16
+          },
+          "codeExample": "repelRadius={95}",
+          "usageExamples": [
+            "repelRadius={95}"
+          ]
+        },
+        {
+          "name": "idleDrift",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 107,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.7,
+          "description": "静止漂移，控制 particle text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 17
+          },
+          "codeExample": "idleDrift={0.25}",
+          "usageExamples": [
+            "idleDrift={0.25}"
+          ]
+        },
+        {
+          "name": "trigger",
+          "type": "'mount' | 'hover' | 'click'",
+          "required": false,
+          "defaultExpression": "'mount'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 108,
+            "kind": "parameter"
+          },
+          "defaultValue": "mount",
+          "description": "触发方式，控制 particle text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "mount",
+            "hover",
+            "click"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "mount",
+              "hover",
+              "click"
+            ]
+          },
+          "codeExample": "trigger=\"click\"",
+          "usageExamples": [
+            "trigger=\"click\""
+          ]
+        },
+        {
+          "name": "fontSize",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "'clamp(3rem, 12vw, 8rem)'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 109,
+            "kind": "parameter"
+          },
+          "defaultValue": "clamp(3rem, 12vw, 8rem)",
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "text",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "fontSize=\"clamp(44px, 8vw, 86px)\"",
+          "usageExamples": [
+            "fontSize=\"clamp(44px, 8vw, 86px)\""
+          ]
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "800",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 110,
+            "kind": "parameter"
+          },
+          "defaultValue": 800,
+          "description": "字体字重，控制 particle text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "fontWeight={700}",
+          "usageExamples": [
+            "fontWeight={700}"
+          ]
+        },
+        {
+          "name": "fontFamily",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'inherit'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 111,
+            "kind": "parameter"
+          },
+          "defaultValue": "inherit",
+          "description": "字体字族，控制 particle text 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 21
+          },
+          "codeExample": "fontFamily={\"inherit\"}"
+        },
+        {
+          "name": "glow",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 112,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否辉光，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 22
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "glow={false}",
+          "usageExamples": [
+            "glow={false}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 113,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 23
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ParticleText/ParticleText.tsx",
+            "line": 24
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

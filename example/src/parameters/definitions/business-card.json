@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "id": "business-card",
+  "name": "Card",
+  "sourcePath": "src/business/demos/cards/business-card.tsx",
+  "demoPath": "src/business/demos/cards/business-card.tsx",
+  "fields": [
+    {
+      "key": "state.saved",
+      "name": "saved",
+      "label": "saved",
+      "description": "示例的受控状态 saved；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "boolean",
+      "defaultValue": false,
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pressed"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [],
+  "inherited": [
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "h3",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "p",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "div",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { motion } from 'motion/react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { ToggleButton } from '../../components/ToggleButton';\nimport { controlSpring } from '../../motion-preference';\nimport { useBusinessReducedMotion } from '../../motion-preference';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessCardDemo() {\n  const [saved, setSaved] = useState(/*__AW_STATE_state.saved__*/);\n  const reduced = useBusinessReducedMotion();\n  return <BusinessDemo title=\"Card\" description=\"卡片悬停轻盈抬升，收藏按钮以弹性图标和状态过渡回应。\">\n    <motion.article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")} whileHover={reduced ? undefined : { y: -4 }} transition={reduced ? { duration: 0 } : controlSpring} style={{ display: 'grid', gap: 15 }}><h3>资料整理助手</h3><p>将零散记录整理为有序的工作清单。</p><div><ToggleButton pressed={saved} onPressedChange={setSaved}>{saved ? '撤销收藏' : '收藏卡片'}</ToggleButton></div></motion.article>\n    <p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">{saved ? '已在当前示例收藏。' : '尚未收藏。'}</p>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ToggleButton",
+      "sourcePath": "src/business/components/ToggleButton.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>",
+          "codeExample": "children={<>{saved ? '撤销收藏' : '收藏卡片'}</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>{saved ? '撤销收藏' : '收藏卡片'}</>}"
+          ]
+        },
+        {
+          "name": "pressed",
+          "type": "boolean",
+          "required": true,
+          "description": "按钮的当前切换选中状态。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pressed={saved}",
+          "usageExamples": [
+            "pressed={saved}"
+          ]
+        },
+        {
+          "name": "onPressedChange",
+          "type": "(pressed: boolean) => void",
+          "required": true,
+          "description": "切换按钮改变选中状态时回调，参数为新的布尔状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(pressed: boolean) => void"
+          },
+          "codeExample": "onPressedChange={setSaved}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onPressedChange={setSaved}"
+          ]
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "native-composition",
+  "notes": [
+    "该业务能力由示例函数组合原生元素与下面的叶组件；示例函数没有接收公开 Props。原生属性按元素列出，演示内部 useState 配置不作为公开 Props 或组件默认值。"
+  ]
+}

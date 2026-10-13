@@ -1,6 +1,6 @@
 # Grid Motion
 
-背景效果 · `grid-motion` · 中文意图：漂移网格 / 倾斜图墙
+媒体与轮播 · `grid-motion` · 中文意图：漂移网格 / 倾斜图墙
 
 目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
@@ -14,9 +14,10 @@
 
 | 资源 | 位置与用途 |
 |---|---|
-| 自有示例（随包） | [example/src/demos/grid-motion.tsx](../../src/demos/grid-motion.tsx) |
+| 自有示例（随包） | [example/src/demos/media/grid-motion.tsx](../../src/demos/media/grid-motion.tsx) |
 | 组件实现（准备后存在） | [example/.upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx](../../.upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.tsx) |
 | 组件 CSS（准备后存在） | [example/.upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.css](../../.upstream/src/ts-default/Backgrounds/GridMotion/GridMotion.css) |
+| 单独 Props 记录 | [example/src/parameters/definitions/grid-motion.json](../../src/parameters/definitions/grid-motion.json) |
 | 固定版本 | `2139cb3098d4fedc6264f13e50dcb4694224ba7c` |
 
 先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在包根运行：
@@ -32,10 +33,12 @@ node scripts/example.mjs setup --component grid-motion
 以下来自本包自有示例的实际用法；它只表示本例参数，不代表上游所有 Props。
 
 ```tsx
-import Component from '../../.upstream/src/ts-default/Backgrounds/GridMotion/GridMotion';
-import { palette, MEDIA } from '../shared/demo-support';
+// 当前 Grid Motion 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
+import Component from '../../../.upstream/src/ts-default/Backgrounds/GridMotion/GridMotion';
 
-const items = [...MEDIA.map((src, index) => ({ src, alt: `自然色场景 ${index + 1}` })), 'AGENT WAN', '技能编排', '知识检索', '工作空间'];
+
+
 
 /** Agent Wan natural-tone preset for the real Grid Motion component. */
 export default function GridMotionDemo() {
@@ -43,31 +46,96 @@ export default function GridMotionDemo() {
     <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
       <div style={{ width: '100%', height: 560, position: 'relative' }}>
         <Component
-          items={items}
-          rows={4}
-          speed={16}
-          radius={20}
-          angle={-8}
-          gap={16}
-          dim={0.2}
-          spotlight={0.25}
-          fade={0.5}
-          tileColor={palette.primary}
-          textColor={palette.ivory}
-          theme="dark"
+
+
+
+
+
+
+
+
+
+
+
+           items={[{ "src": import.meta.env.BASE_URL + "media/scene-1.svg", "alt": "自然色场景 1" }, { "src": import.meta.env.BASE_URL + "media/scene-2.svg", "alt": "自然色场景 2" }, { "src": import.meta.env.BASE_URL + "media/scene-3.svg", "alt": "自然色场景 3" }, { "src": import.meta.env.BASE_URL + "media/scene-4.svg", "alt": "自然色场景 4" }, { "src": import.meta.env.BASE_URL + "media/scene-5.svg", "alt": "自然色场景 5" }, { "src": import.meta.env.BASE_URL + "media/scene-6.svg", "alt": "自然色场景 6" }, "AGENT WAN", "技能编排", "知识检索", "工作空间"]} rows={4} speed={16} radius={20} angle={-8} gap={16} dim={0.2} spotlight={0.25} fade={0.5} tileColor={"#52604e"} textColor={"#faf7f0"} theme={"dark"} aspectRatio={1.33} tilt={0} direction={"alternate"} parallax={0.5} grayscale={false}
         />
       </div>
     </div>
   );
 }
+
 ```
 
-完整 Props、类型、回调和默认值以安装后的对应 TSX 源码为准。先读取本例使用的参数，再沿类型定义补充当前任务需要的选项；不要根据通用模板假定所有组件都有 color / speed / children。
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `items` | `GridMotionItem[]` | 否 | `[]` | 参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。 |
+| `rows` | `number` | 否 | `4` | 行数，控制 grid motion 的对应渲染或交互参数。 |
+| `aspectRatio` | `number` | 否 | `1.33` | 宽高比例，控制 grid motion 的对应渲染或交互参数。 |
+| `gap` | `number` | 否 | `16` | 相邻单元、卡片或字符之间的间距；单位由组件实现定义。 |
+| `radius` | `number` | 否 | `14` | 半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `angle` | `number` | 否 | `-12` | 角度，控制 grid motion 的对应渲染或交互参数。 |
+| `tilt` | `number` | 否 | `0` | 倾斜，控制 grid motion 的对应渲染或交互参数。 |
+| `speed` | `number` | 否 | `24` | 动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。 |
+| `direction` | `GridMotionDirection` | 否 | `'alternate'` | 方向，控制 grid motion 的对应渲染或交互参数。 |
+| `parallax` | `number` | 否 | `0.5` | 视差，控制 grid motion 的对应渲染或交互参数。 |
+| `spotlight` | `number` | 否 | `0.6` | 聚光，控制 grid motion 的对应渲染或交互参数。 |
+| `dim` | `number` | 否 | `0.35` | 暗化，控制 grid motion 的对应渲染或交互参数。 |
+| `grayscale` | `boolean` | 否 | `false` | 是否灰度，决定该分支的展示或交互行为。 |
+| `fade` | `number` | 否 | `0.5` | 淡出，控制 grid motion 的对应渲染或交互参数。 |
+| `tileColor` | `string` | 否 | `palette.tile` | 字符格颜色，传入组件支持的 CSS 或着色器颜色格式。 |
+| `textColor` | `string` | 否 | `palette.text` | 文字颜色，传入组件支持的 CSS 或着色器颜色格式。 |
+| `theme` | `'dark' \| 'light'` | 否 | `'dark'` | 主题，控制 grid motion 的对应渲染或交互参数。 |
+| `className` | `string` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `style` | `React.CSSProperties` | 否 | `未指定` | 容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。 |
+
+**items 的真实接入：**
+
+```tsx
+items={items}
+```
+
+**style 的真实接入：**
+
+```tsx
+style={{ width: "100%", minHeight: 240 }}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.items` | `[{"src":"@media/scene-1.svg","alt":"自然色场景 1"},{"src":"@media/scene-2.svg","alt":"自然色场景 2"},{"src":"@media/scene-3.svg","alt":"自然色场景 3"},{"src":"@media/scene-4.svg","alt":"自然色场景 4"},{"src":"@media/scene-5.svg","alt":"自然色场景 5"},{"src":"@media/scene-6.svg","alt":"自然色场景 6"},"AGENT WAN","技能编排","知识检索","工作空间"]` | json | 不限 ~ 不限 | 即时应用 |
+| `t0.rows` | `4` | range | 1 ~ 128 | 即时应用 |
+| `t0.speed` | `16` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.radius` | `20` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.angle` | `-8` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.gap` | `16` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.dim` | `0.2` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.spotlight` | `0.25` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.fade` | `0.5` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.tileColor` | `"#52604e"` | color | 不限 ~ 不限 | 即时应用 |
+| `t0.textColor` | `"#faf7f0"` | color | 不限 ~ 不限 | 即时应用 |
+| `t0.theme` | `"dark"` | select | "dark" / "light" | 即时应用 |
+| `t0.aspectRatio` | `1.33` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.tilt` | `0` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.direction` | `"alternate"` | select | "alternate" / "left" / "right" | 即时应用 |
+| `t0.parallax` | `0.5` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.grayscale` | `false` | switch | 不限 ~ 不限 | 即时应用 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. Agent Wan 皮肤
 
-- 背景降低饱和度和亮度跨度，舞台单独限界；业务正文仍放在稳定阅读面上。
-- 优先通过组件真实 Props 设置颜色和强度；使用主题提供的茶绿、沙米、象牙白及墨色映射。
+- 画布优先保留 React Bits 的原版配色与可观察强度，背景有独立边界并为光晕预留空间；业务正文使用稳定阅读面。
+- 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 
 ## 5. 加载、动效与降级
@@ -78,7 +146,7 @@ export default function GridMotionDemo() {
 - 运行类型：本例预览入口不要求预先通过图形接口检查；实际组件内部的可选渲染分支由源码和本例 Props 决定。此说明不等于浏览器运行证明。
 - 动效策略：按需启用的持续 / 高运动效果。
 - 示例库降级：动态偏好或能力检查不满足时先不挂载本项，显示原因；减少运动时可明确选择仅播放本次。
-- 业务接入的静态降级要求：使用 Agent Wan 静态茶绿 / 沙米环境渐变，主体内容和交互不变。
+- 业务接入的静态降级要求：保留可读内容与原生交互，并提供当前组件的静态状态
 - 卸载时释放本例监听、计时、动画帧及拥有的渲染资源；不以隐藏 CSS 代替停止循环。
 
 仅当前需求涉及高级运行、资源或设备权限时再读 [效果与降级策略](../effects-policy.md)。
@@ -88,8 +156,8 @@ export default function GridMotionDemo() {
 1. 参数与对应源码真实 API 一致，构建可导入，安装失败可恢复。
 2. 能观察到第 1 节的核心机制，而不只是相同名称的占位卡片。
 3. 真实状态 / 事件 / 键盘与必要的触屏等价操作可用。
-4. 低饱和配色、文字对比、阅读面、稳定命中范围与基础规范一致。
+4. 画布保留本例的效果对比度和原版配色；外壳、阅读面与基础规范一致。
 5. 只激活本项；切换或卸载后停止其持续工作。
 6. 减少运动与不可用情形保留本节所述等价内容或功能。
 
-只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [背景效果](../categories/backgrounds.md)；否则直接完成当前组件。
+只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [媒体与轮播](../categories/media.md)；否则直接完成当前组件。

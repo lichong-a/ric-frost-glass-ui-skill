@@ -1,0 +1,1601 @@
+{
+  "version": 1,
+  "id": "option-wheel",
+  "name": "Option Wheel",
+  "sourcePath": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+  "demoPath": "src/demos/form/option-wheel.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "山雾",
+        "茶庭",
+        "沙洲",
+        "静水",
+        "林间",
+        "岩纹"
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.defaultSelected",
+      "name": "defaultSelected",
+      "label": "defaultSelected · t0",
+      "description": "非受控初始选中，控制 option wheel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "defaultSelected"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#64695f",
+      "upstreamDefault": "'#a6a6a6'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.activeColor",
+      "name": "activeColor",
+      "label": "activeColor · t0",
+      "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "activeColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.side",
+      "name": "side",
+      "label": "side · t0",
+      "description": "抽屉或浮层从哪个边缘出现。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "side"
+        }
+      ],
+      "type": "Side",
+      "defaultValue": "left",
+      "upstreamDefault": "'left'",
+      "control": "select",
+      "options": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spacing",
+      "name": "spacing",
+      "label": "spacing · t0",
+      "description": "间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spacing"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.4",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.curve",
+      "name": "curve",
+      "label": "curve · t0",
+      "description": "曲线，控制 option wheel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "curve"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tilt",
+      "name": "tilt",
+      "label": "tilt · t0",
+      "description": "倾斜，控制 option wheel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.blur",
+      "name": "blur",
+      "label": "blur · t0",
+      "description": "模糊，控制 option wheel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "blur"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.3,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 option wheel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.25",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.smoothing",
+      "name": "smoothing",
+      "label": "smoothing · t0",
+      "description": "平滑，控制 option wheel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "smoothing"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 180,
+      "upstreamDefault": "200",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.inset",
+      "name": "inset",
+      "label": "inset · t0",
+      "description": "内缩，控制 option wheel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "inset"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 40,
+      "upstreamDefault": "80",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.loop",
+      "name": "loop",
+      "label": "循环 · t0",
+      "description": "是否循环，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "loop"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.draggable",
+      "name": "draggable",
+      "label": "draggable · t0",
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "draggable"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.soundUrl",
+      "name": "soundUrl",
+      "label": "soundUrl · t0",
+      "description": "声音地址，控制 option wheel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "soundUrl"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.minOpacity",
+      "name": "minOpacity",
+      "label": "minOpacity · t0",
+      "description": "最小不透明度，控制 option wheel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "minOpacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.05,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.soundVolume",
+      "name": "soundVolume",
+      "label": "soundVolume · t0",
+      "description": "声音音量，控制 option wheel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "soundVolume"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "Ambient",
+        "House",
+        "Techno",
+        "Jazz",
+        "Lo-Fi",
+        "Synthwave",
+        "Trance",
+        "Funk",
+        "Disco",
+        "Hip-Hop",
+        "Chillwave",
+        "Drum & Bass"
+      ],
+      "defaultResolvedExpression": "[\n  'Ambient',\n  'House',\n  'Techno',\n  'Jazz',\n  'Lo-Fi',\n  'Synthwave',\n  'Trance',\n  'Funk',\n  'Disco',\n  'Hip-Hop',\n  'Chillwave',\n  'Drum & Bass'\n]",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 9
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "items={['山雾', '茶庭', '沙洲', '静水', '林间', '岩纹']}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={['山雾', '茶庭', '沙洲', '静水', '林间', '岩纹']}"
+      ]
+    },
+    {
+      "name": "defaultSelected",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "非受控初始选中，控制 option wheel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 10
+      },
+      "codeExample": "defaultSelected={1}",
+      "usageExamples": [
+        "defaultSelected={1}"
+      ]
+    },
+    {
+      "name": "onChange",
+      "type": "(index: number, item: string) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((index: number, item: string) => void) | undefined"
+      },
+      "codeExample": "onChange={(_index, item) => setStatus('已选择：' + item)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={(_index, item) => setStatus('已选择：' + item)}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#a6a6a6'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": "#a6a6a6",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 12
+      },
+      "codeExample": "textColor={palette.muted}",
+      "usageExamples": [
+        "textColor={palette.muted}"
+      ]
+    },
+    {
+      "name": "activeColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 13
+      },
+      "codeExample": "activeColor={palette.ink}",
+      "usageExamples": [
+        "activeColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "side",
+      "type": "Side",
+      "required": false,
+      "defaultExpression": "'left'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": "left",
+      "description": "抽屉或浮层从哪个边缘出现。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "left",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "left",
+          "right"
+        ]
+      },
+      "codeExample": "side=\"left\"",
+      "usageExamples": [
+        "side=\"left\""
+      ]
+    },
+    {
+      "name": "fontSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 15
+      },
+      "codeExample": "fontSize={2}",
+      "usageExamples": [
+        "fontSize={2}"
+      ]
+    },
+    {
+      "name": "spacing",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.4,
+      "description": "间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 16
+      },
+      "codeExample": "spacing={1.5}",
+      "usageExamples": [
+        "spacing={1.5}"
+      ]
+    },
+    {
+      "name": "curve",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "曲线，控制 option wheel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 17
+      },
+      "codeExample": "curve={0.6}",
+      "usageExamples": [
+        "curve={0.6}"
+      ]
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": 6,
+      "description": "倾斜，控制 option wheel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 18
+      },
+      "codeExample": "tilt={4}",
+      "usageExamples": [
+        "tilt={4}"
+      ]
+    },
+    {
+      "name": "blur",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "模糊，控制 option wheel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 19
+      },
+      "codeExample": "blur={1.3}",
+      "usageExamples": [
+        "blur={1.3}"
+      ]
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.25,
+      "description": "淡出，控制 option wheel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 20
+      },
+      "codeExample": "fade={0.2}",
+      "usageExamples": [
+        "fade={0.2}"
+      ]
+    },
+    {
+      "name": "minOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "最小不透明度，控制 option wheel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 21
+      },
+      "codeExample": "minOpacity={0.05}"
+    },
+    {
+      "name": "smoothing",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "平滑，控制 option wheel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 22
+      },
+      "codeExample": "smoothing={180}",
+      "usageExamples": [
+        "smoothing={180}"
+      ]
+    },
+    {
+      "name": "inset",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "80",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultValue": 80,
+      "description": "内缩，控制 option wheel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 23
+      },
+      "codeExample": "inset={40}",
+      "usageExamples": [
+        "inset={40}"
+      ]
+    },
+    {
+      "name": "loop",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否循环，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "loop={false}",
+      "usageExamples": [
+        "loop={false}"
+      ]
+    },
+    {
+      "name": "draggable",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "draggable",
+      "usageExamples": [
+        "draggable"
+      ]
+    },
+    {
+      "name": "soundUrl",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 81,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "声音地址，控制 option wheel 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 26
+      },
+      "codeExample": "soundUrl=\"\"",
+      "usageExamples": [
+        "soundUrl=\"\""
+      ]
+    },
+    {
+      "name": "soundVolume",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 82,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "声音音量，控制 option wheel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 27
+      },
+      "codeExample": "soundVolume={0.5}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 83,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+        "line": 28
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/OptionWheel/OptionWheel';\nimport { palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 使用真实曲面选项轮盘与选中状态。\n\nexport default function OptionWheelDemo() {\n  const [status, setStatus] = useState(\"滚轮、拖动或方向键选择；声音默认关闭\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ position: 'relative', height: 330, minHeight: 0, width: '100%' }}><Component\n\n\n\nonChange={(_index, item) => setStatus('已选择：' + item)} /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "OptionWheel",
+      "sourcePath": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "Ambient",
+            "House",
+            "Techno",
+            "Jazz",
+            "Lo-Fi",
+            "Synthwave",
+            "Trance",
+            "Funk",
+            "Disco",
+            "Hip-Hop",
+            "Chillwave",
+            "Drum & Bass"
+          ],
+          "defaultResolvedExpression": "[\n  'Ambient',\n  'House',\n  'Techno',\n  'Jazz',\n  'Lo-Fi',\n  'Synthwave',\n  'Trance',\n  'Funk',\n  'Disco',\n  'Hip-Hop',\n  'Chillwave',\n  'Drum & Bass'\n]",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 9
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "items={['山雾', '茶庭', '沙洲', '静水', '林间', '岩纹']}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={['山雾', '茶庭', '沙洲', '静水', '林间', '岩纹']}"
+          ]
+        },
+        {
+          "name": "defaultSelected",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "非受控初始选中，控制 option wheel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 10
+          },
+          "codeExample": "defaultSelected={1}",
+          "usageExamples": [
+            "defaultSelected={1}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(index: number, item: string) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((index: number, item: string) => void) | undefined"
+          },
+          "codeExample": "onChange={(_index, item) => setStatus('已选择：' + item)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={(_index, item) => setStatus('已选择：' + item)}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#a6a6a6'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": "#a6a6a6",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 12
+          },
+          "codeExample": "textColor={palette.muted}",
+          "usageExamples": [
+            "textColor={palette.muted}"
+          ]
+        },
+        {
+          "name": "activeColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 13
+          },
+          "codeExample": "activeColor={palette.ink}",
+          "usageExamples": [
+            "activeColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "side",
+          "type": "Side",
+          "required": false,
+          "defaultExpression": "'left'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": "left",
+          "description": "抽屉或浮层从哪个边缘出现。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "left",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "left",
+              "right"
+            ]
+          },
+          "codeExample": "side=\"left\"",
+          "usageExamples": [
+            "side=\"left\""
+          ]
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 15
+          },
+          "codeExample": "fontSize={2}",
+          "usageExamples": [
+            "fontSize={2}"
+          ]
+        },
+        {
+          "name": "spacing",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.4,
+          "description": "间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 16
+          },
+          "codeExample": "spacing={1.5}",
+          "usageExamples": [
+            "spacing={1.5}"
+          ]
+        },
+        {
+          "name": "curve",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "曲线，控制 option wheel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 17
+          },
+          "codeExample": "curve={0.6}",
+          "usageExamples": [
+            "curve={0.6}"
+          ]
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": 6,
+          "description": "倾斜，控制 option wheel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 18
+          },
+          "codeExample": "tilt={4}",
+          "usageExamples": [
+            "tilt={4}"
+          ]
+        },
+        {
+          "name": "blur",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "模糊，控制 option wheel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 19
+          },
+          "codeExample": "blur={1.3}",
+          "usageExamples": [
+            "blur={1.3}"
+          ]
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.25,
+          "description": "淡出，控制 option wheel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 20
+          },
+          "codeExample": "fade={0.2}",
+          "usageExamples": [
+            "fade={0.2}"
+          ]
+        },
+        {
+          "name": "minOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "最小不透明度，控制 option wheel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 21
+          },
+          "codeExample": "minOpacity={0.05}"
+        },
+        {
+          "name": "smoothing",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "平滑，控制 option wheel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 22
+          },
+          "codeExample": "smoothing={180}",
+          "usageExamples": [
+            "smoothing={180}"
+          ]
+        },
+        {
+          "name": "inset",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "80",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultValue": 80,
+          "description": "内缩，控制 option wheel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 23
+          },
+          "codeExample": "inset={40}",
+          "usageExamples": [
+            "inset={40}"
+          ]
+        },
+        {
+          "name": "loop",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否循环，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "loop={false}",
+          "usageExamples": [
+            "loop={false}"
+          ]
+        },
+        {
+          "name": "draggable",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否可拖动，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "draggable",
+          "usageExamples": [
+            "draggable"
+          ]
+        },
+        {
+          "name": "soundUrl",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 81,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "声音地址，控制 option wheel 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 26
+          },
+          "codeExample": "soundUrl=\"\"",
+          "usageExamples": [
+            "soundUrl=\"\""
+          ]
+        },
+        {
+          "name": "soundVolume",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 82,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "声音音量，控制 option wheel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 27
+          },
+          "codeExample": "soundVolume={0.5}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 83,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/OptionWheel/OptionWheel.tsx",
+            "line": 28
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

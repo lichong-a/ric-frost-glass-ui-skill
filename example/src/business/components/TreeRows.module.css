@@ -1,0 +1,11 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-tree, .aw-business-tree-row, .aw-business-tree-label { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-tree { list-style:none; margin:0; padding:0 }
+.aw-business-tree .aw-business-tree { padding-left:24px }
+.aw-business-tree-row { display:flex; align-items:center; gap:8px; padding:4px 0 }
+.aw-business-tree-row > button { min-width:32px; min-height:32px; border:1px solid var(--aw-color-border-control); border-radius:8px; color:var(--aw-color-text-primary); background:var(--aw-surface-control); cursor:pointer }
+.aw-business-tree-label { text-align:left; padding:6px 12px }
+.aw-business-tree-label[aria-pressed='true'] { color:var(--aw-palette-ivory); background:var(--aw-color-action-primary) }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-tree, .aw-business-tree::before, .aw-business-tree::after, .aw-business-tree-row, .aw-business-tree-row::before, .aw-business-tree-row::after, .aw-business-tree-label, .aw-business-tree-label::before, .aw-business-tree-label::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-tree, [data-motion=reduce] .aw-business-tree::before, [data-motion=reduce] .aw-business-tree::after, [data-motion=reduce] .aw-business-tree-row, [data-motion=reduce] .aw-business-tree-row::before, [data-motion=reduce] .aw-business-tree-row::after, [data-motion=reduce] .aw-business-tree-label, [data-motion=reduce] .aw-business-tree-label::before, [data-motion=reduce] .aw-business-tree-label::after { transition:none; animation:none; scroll-behavior:auto; }

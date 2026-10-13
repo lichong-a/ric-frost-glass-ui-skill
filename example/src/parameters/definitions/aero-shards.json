@@ -1,0 +1,2516 @@
+{
+  "version": 1,
+  "id": "aero-shards",
+  "name": "Aero Shards",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+  "demoPath": "src/demos/background/aero-shards.tsx",
+  "fields": [
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#120F17'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shardColor",
+      "name": "shardColor",
+      "label": "shardColor · t0",
+      "description": "碎片颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shardColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#896ABD'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#c3ae88",
+      "upstreamDefault": "'#A855F7'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.material",
+      "name": "material",
+      "label": "material · t0",
+      "description": "材质，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "material"
+        }
+      ],
+      "type": "Material",
+      "defaultValue": "pearl",
+      "upstreamDefault": "'pearl'",
+      "control": "select",
+      "options": [
+        {
+          "label": "chrome",
+          "value": "chrome"
+        },
+        {
+          "label": "pearl",
+          "value": "pearl"
+        },
+        {
+          "label": "satin",
+          "value": "satin"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.detail",
+      "name": "detail",
+      "label": "detail · t0",
+      "description": "细节，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "detail"
+        }
+      ],
+      "type": "Detail",
+      "defaultValue": "balanced",
+      "upstreamDefault": "'balanced'",
+      "control": "select",
+      "options": [
+        {
+          "label": "bold",
+          "value": "bold"
+        },
+        {
+          "label": "balanced",
+          "value": "balanced"
+        },
+        {
+          "label": "fine",
+          "value": "fine"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.flow",
+      "name": "flow",
+      "label": "flow · t0",
+      "description": "流动，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "flow"
+        }
+      ],
+      "type": "keyof typeof FLOWS",
+      "defaultValue": "stream",
+      "upstreamDefault": "'stream'",
+      "control": "select",
+      "options": [
+        {
+          "label": "ribbon",
+          "value": "ribbon"
+        },
+        {
+          "label": "vortex",
+          "value": "vortex"
+        },
+        {
+          "label": "stream",
+          "value": "stream"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.density",
+      "name": "density",
+      "label": "density · t0",
+      "description": "密度，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "density"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.1,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spin",
+      "name": "spin",
+      "label": "spin · t0",
+      "description": "自转，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spin"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bloom",
+      "name": "bloom",
+      "label": "bloom · t0",
+      "description": "泛光，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bloom"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grain",
+      "name": "grain",
+      "label": "grain · t0",
+      "description": "颗粒，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grain"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.025,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.chromaticAberration",
+      "name": "chromaticAberration",
+      "label": "chromaticAberration · t0",
+      "description": "色散色散，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "chromaticAberration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0.0075",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interaction",
+      "name": "interaction",
+      "label": "interaction · t0",
+      "description": "交互，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interaction"
+        }
+      ],
+      "type": "Interaction",
+      "defaultValue": "repel",
+      "upstreamDefault": "'repel'",
+      "control": "select",
+      "options": [
+        {
+          "label": "none",
+          "value": "none"
+        },
+        {
+          "label": "repel",
+          "value": "repel"
+        },
+        {
+          "label": "attract",
+          "value": "attract"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.placement",
+      "name": "placement",
+      "label": "placement · t0",
+      "description": "布局位置，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "placement"
+        }
+      ],
+      "type": "Placement",
+      "defaultValue": "full",
+      "upstreamDefault": "'full'",
+      "control": "select",
+      "options": [
+        {
+          "label": "center",
+          "value": "center"
+        },
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        },
+        {
+          "label": "full",
+          "value": "full"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleIntensity",
+      "name": "rippleIntensity",
+      "label": "rippleIntensity · t0",
+      "description": "波纹强度，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.holdToGather",
+      "name": "holdToGather",
+      "label": "holdToGather · t0",
+      "description": "是否按住目标聚合，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "holdToGather"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.effect",
+      "name": "effect",
+      "label": "effect · t0",
+      "description": "效果，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "effect"
+        }
+      ],
+      "type": "keyof typeof EFFECTS",
+      "defaultValue": "none",
+      "upstreamDefault": "'none'",
+      "control": "select",
+      "options": [
+        {
+          "label": "none",
+          "value": "none"
+        },
+        {
+          "label": "dither",
+          "value": "dither"
+        },
+        {
+          "label": "ascii",
+          "value": "ascii"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scale",
+      "name": "scale",
+      "label": "缩放 · t0",
+      "description": "缩放，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spread",
+      "name": "spread",
+      "label": "展开距离 · t0",
+      "description": "展开间距，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.depth",
+      "name": "depth",
+      "label": "depth · t0",
+      "description": "深度，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "depth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shardSize",
+      "name": "shardSize",
+      "label": "shardSize · t0",
+      "description": "碎片尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shardSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.1,
+      "upstreamDefault": "1.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stretch",
+      "name": "stretch",
+      "label": "stretch · t0",
+      "description": "拉伸，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stretch"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.turbulence",
+      "name": "turbulence",
+      "label": "turbulence · t0",
+      "description": "湍流，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "turbulence"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edgeSoftness",
+      "name": "edgeSoftness",
+      "label": "edgeSoftness · t0",
+      "description": "边缘柔和度，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeSoftness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.transitionDuration",
+      "name": "transitionDuration",
+      "label": "transitionDuration · t0",
+      "description": "过渡时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "transitionDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interactionRadius",
+      "name": "interactionRadius",
+      "label": "interactionRadius · t0",
+      "description": "交互半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interactionRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interactionStrength",
+      "name": "interactionStrength",
+      "label": "interactionStrength · t0",
+      "description": "交互强度，控制 aero shards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interactionStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#120F17'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1359,
+        "kind": "parameter"
+      },
+      "defaultValue": "#120F17",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 59
+      },
+      "codeExample": "backgroundColor={palette.ink}",
+      "usageExamples": [
+        "backgroundColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "shardColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#896ABD'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1360,
+        "kind": "parameter"
+      },
+      "defaultValue": "#896ABD",
+      "description": "碎片颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 60
+      },
+      "codeExample": "shardColor={palette.sage}",
+      "usageExamples": [
+        "shardColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#A855F7'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1361,
+        "kind": "parameter"
+      },
+      "defaultValue": "#A855F7",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 61
+      },
+      "codeExample": "accentColor={palette.sand}",
+      "usageExamples": [
+        "accentColor={palette.sand}"
+      ]
+    },
+    {
+      "name": "placement",
+      "type": "Placement",
+      "required": false,
+      "defaultExpression": "'full'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1362,
+        "kind": "parameter"
+      },
+      "defaultValue": "full",
+      "description": "布局位置，控制 aero shards 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "center",
+        "left",
+        "right",
+        "full"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 62
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "center",
+          "left",
+          "right",
+          "full"
+        ]
+      },
+      "codeExample": "placement={\"full\"}"
+    },
+    {
+      "name": "flow",
+      "type": "keyof typeof FLOWS",
+      "required": false,
+      "defaultExpression": "'stream'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1363,
+        "kind": "parameter"
+      },
+      "defaultValue": "stream",
+      "description": "流动，控制 aero shards 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "ribbon",
+        "vortex",
+        "stream"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 63
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "ribbon",
+          "vortex",
+          "stream"
+        ]
+      },
+      "codeExample": "flow=\"stream\"",
+      "usageExamples": [
+        "flow=\"stream\""
+      ]
+    },
+    {
+      "name": "rippleIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1385,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "波纹强度，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 64
+      },
+      "codeExample": "rippleIntensity={1}"
+    },
+    {
+      "name": "holdToGather",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1386,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否按住目标聚合，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 65
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "holdToGather={true}"
+    },
+    {
+      "name": "material",
+      "type": "Material",
+      "required": false,
+      "defaultExpression": "'pearl'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1364,
+        "kind": "parameter"
+      },
+      "defaultValue": "pearl",
+      "description": "材质，控制 aero shards 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "chrome",
+        "pearl",
+        "satin"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 66
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "chrome",
+          "pearl",
+          "satin"
+        ]
+      },
+      "codeExample": "material=\"pearl\"",
+      "usageExamples": [
+        "material=\"pearl\""
+      ]
+    },
+    {
+      "name": "detail",
+      "type": "Detail",
+      "required": false,
+      "defaultExpression": "'balanced'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1365,
+        "kind": "parameter"
+      },
+      "defaultValue": "balanced",
+      "description": "细节，控制 aero shards 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "bold",
+        "balanced",
+        "fine"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 67
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "bold",
+          "balanced",
+          "fine"
+        ]
+      },
+      "codeExample": "detail=\"balanced\"",
+      "usageExamples": [
+        "detail=\"balanced\""
+      ]
+    },
+    {
+      "name": "effect",
+      "type": "keyof typeof EFFECTS",
+      "required": false,
+      "defaultExpression": "'none'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1366,
+        "kind": "parameter"
+      },
+      "defaultValue": "none",
+      "description": "效果，控制 aero shards 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "none",
+        "dither",
+        "ascii"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 68
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "none",
+          "dither",
+          "ascii"
+        ]
+      },
+      "codeExample": "effect={\"none\"}"
+    },
+    {
+      "name": "scale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1367,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "缩放，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 69
+      },
+      "codeExample": "scale={1}"
+    },
+    {
+      "name": "spread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1368,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "展开间距，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 70
+      },
+      "codeExample": "spread={1}"
+    },
+    {
+      "name": "depth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1369,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "深度，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 71
+      },
+      "codeExample": "depth={1}"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1370,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 72
+      },
+      "codeExample": "speed={0.5}",
+      "usageExamples": [
+        "speed={0.5}"
+      ]
+    },
+    {
+      "name": "spin",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1371,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "自转，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 73
+      },
+      "codeExample": "spin={0.6}",
+      "usageExamples": [
+        "spin={0.6}"
+      ]
+    },
+    {
+      "name": "interaction",
+      "type": "Interaction",
+      "required": false,
+      "defaultExpression": "'repel'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1372,
+        "kind": "parameter"
+      },
+      "defaultValue": "repel",
+      "description": "交互，控制 aero shards 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "none",
+        "repel",
+        "attract"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 74
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "none",
+          "repel",
+          "attract"
+        ]
+      },
+      "codeExample": "interaction=\"repel\"",
+      "usageExamples": [
+        "interaction=\"repel\""
+      ]
+    },
+    {
+      "name": "density",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1373,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "密度，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 75
+      },
+      "codeExample": "density={1.1}",
+      "usageExamples": [
+        "density={1.1}"
+      ]
+    },
+    {
+      "name": "shardSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1374,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.1,
+      "description": "碎片尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 76
+      },
+      "codeExample": "shardSize={1.1}"
+    },
+    {
+      "name": "stretch",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1375,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "拉伸，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 77
+      },
+      "codeExample": "stretch={1}"
+    },
+    {
+      "name": "turbulence",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1376,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "湍流，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 78
+      },
+      "codeExample": "turbulence={1}"
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1377,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "辉光，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 79
+      },
+      "codeExample": "glow={0.4}",
+      "usageExamples": [
+        "glow={0.4}"
+      ]
+    },
+    {
+      "name": "edgeSoftness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1378,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "边缘柔和度，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 80
+      },
+      "codeExample": "edgeSoftness={2}"
+    },
+    {
+      "name": "bloom",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1379,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "泛光，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 81
+      },
+      "codeExample": "bloom={0.12}",
+      "usageExamples": [
+        "bloom={0.12}"
+      ]
+    },
+    {
+      "name": "grain",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1380,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "颗粒，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 82
+      },
+      "codeExample": "grain={0.025}",
+      "usageExamples": [
+        "grain={0.025}"
+      ]
+    },
+    {
+      "name": "chromaticAberration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.0075",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1381,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.0075,
+      "description": "色散色散，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 83
+      },
+      "codeExample": "chromaticAberration={0}",
+      "usageExamples": [
+        "chromaticAberration={0}"
+      ]
+    },
+    {
+      "name": "transitionDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1382,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "过渡时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 84
+      },
+      "codeExample": "transitionDuration={1}"
+    },
+    {
+      "name": "interactionRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1383,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "交互半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 85
+      },
+      "codeExample": "interactionRadius={1.5}"
+    },
+    {
+      "name": "interactionStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1384,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "交互强度，控制 aero shards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 86
+      },
+      "codeExample": "interactionStrength={0.5}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1387,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 87
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 1388,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 88
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "onError",
+      "type": "(error: Error) => void",
+      "required": false,
+      "description": "错误时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+        "line": 89
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((error: Error) => void) | undefined"
+      },
+      "codeExample": "onError={setError}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onError={setError}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/Backgrounds/AeroShards/AeroShards';\n\n\n/** Agent Wan natural-tone preset for the real Aero Shards component. */\nexport default function AeroShardsDemo() {\n  const [error, setError] = useState<Error | null>(null);\n  if (error) throw error; // The preview ErrorBoundary shows GPU runtime failures.\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n          onError={setError} /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "AeroShards",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+      "props": [
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#120F17'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1359,
+            "kind": "parameter"
+          },
+          "defaultValue": "#120F17",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 59
+          },
+          "codeExample": "backgroundColor={palette.ink}",
+          "usageExamples": [
+            "backgroundColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "shardColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#896ABD'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1360,
+            "kind": "parameter"
+          },
+          "defaultValue": "#896ABD",
+          "description": "碎片颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 60
+          },
+          "codeExample": "shardColor={palette.sage}",
+          "usageExamples": [
+            "shardColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#A855F7'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1361,
+            "kind": "parameter"
+          },
+          "defaultValue": "#A855F7",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 61
+          },
+          "codeExample": "accentColor={palette.sand}",
+          "usageExamples": [
+            "accentColor={palette.sand}"
+          ]
+        },
+        {
+          "name": "placement",
+          "type": "Placement",
+          "required": false,
+          "defaultExpression": "'full'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1362,
+            "kind": "parameter"
+          },
+          "defaultValue": "full",
+          "description": "布局位置，控制 aero shards 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "center",
+            "left",
+            "right",
+            "full"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 62
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "center",
+              "left",
+              "right",
+              "full"
+            ]
+          },
+          "codeExample": "placement={\"full\"}"
+        },
+        {
+          "name": "flow",
+          "type": "keyof typeof FLOWS",
+          "required": false,
+          "defaultExpression": "'stream'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1363,
+            "kind": "parameter"
+          },
+          "defaultValue": "stream",
+          "description": "流动，控制 aero shards 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "ribbon",
+            "vortex",
+            "stream"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 63
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "ribbon",
+              "vortex",
+              "stream"
+            ]
+          },
+          "codeExample": "flow=\"stream\"",
+          "usageExamples": [
+            "flow=\"stream\""
+          ]
+        },
+        {
+          "name": "rippleIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1385,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "波纹强度，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 64
+          },
+          "codeExample": "rippleIntensity={1}"
+        },
+        {
+          "name": "holdToGather",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1386,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否按住目标聚合，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 65
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "holdToGather={true}"
+        },
+        {
+          "name": "material",
+          "type": "Material",
+          "required": false,
+          "defaultExpression": "'pearl'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1364,
+            "kind": "parameter"
+          },
+          "defaultValue": "pearl",
+          "description": "材质，控制 aero shards 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "chrome",
+            "pearl",
+            "satin"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 66
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "chrome",
+              "pearl",
+              "satin"
+            ]
+          },
+          "codeExample": "material=\"pearl\"",
+          "usageExamples": [
+            "material=\"pearl\""
+          ]
+        },
+        {
+          "name": "detail",
+          "type": "Detail",
+          "required": false,
+          "defaultExpression": "'balanced'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1365,
+            "kind": "parameter"
+          },
+          "defaultValue": "balanced",
+          "description": "细节，控制 aero shards 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "bold",
+            "balanced",
+            "fine"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 67
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "bold",
+              "balanced",
+              "fine"
+            ]
+          },
+          "codeExample": "detail=\"balanced\"",
+          "usageExamples": [
+            "detail=\"balanced\""
+          ]
+        },
+        {
+          "name": "effect",
+          "type": "keyof typeof EFFECTS",
+          "required": false,
+          "defaultExpression": "'none'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1366,
+            "kind": "parameter"
+          },
+          "defaultValue": "none",
+          "description": "效果，控制 aero shards 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "none",
+            "dither",
+            "ascii"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 68
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "none",
+              "dither",
+              "ascii"
+            ]
+          },
+          "codeExample": "effect={\"none\"}"
+        },
+        {
+          "name": "scale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1367,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "缩放，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 69
+          },
+          "codeExample": "scale={1}"
+        },
+        {
+          "name": "spread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1368,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "展开间距，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 70
+          },
+          "codeExample": "spread={1}"
+        },
+        {
+          "name": "depth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1369,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "深度，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 71
+          },
+          "codeExample": "depth={1}"
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1370,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 72
+          },
+          "codeExample": "speed={0.5}",
+          "usageExamples": [
+            "speed={0.5}"
+          ]
+        },
+        {
+          "name": "spin",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1371,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "自转，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 73
+          },
+          "codeExample": "spin={0.6}",
+          "usageExamples": [
+            "spin={0.6}"
+          ]
+        },
+        {
+          "name": "interaction",
+          "type": "Interaction",
+          "required": false,
+          "defaultExpression": "'repel'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1372,
+            "kind": "parameter"
+          },
+          "defaultValue": "repel",
+          "description": "交互，控制 aero shards 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "none",
+            "repel",
+            "attract"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 74
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "none",
+              "repel",
+              "attract"
+            ]
+          },
+          "codeExample": "interaction=\"repel\"",
+          "usageExamples": [
+            "interaction=\"repel\""
+          ]
+        },
+        {
+          "name": "density",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1373,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "密度，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 75
+          },
+          "codeExample": "density={1.1}",
+          "usageExamples": [
+            "density={1.1}"
+          ]
+        },
+        {
+          "name": "shardSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1374,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.1,
+          "description": "碎片尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 76
+          },
+          "codeExample": "shardSize={1.1}"
+        },
+        {
+          "name": "stretch",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1375,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "拉伸，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 77
+          },
+          "codeExample": "stretch={1}"
+        },
+        {
+          "name": "turbulence",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1376,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "湍流，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 78
+          },
+          "codeExample": "turbulence={1}"
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1377,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "辉光，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 79
+          },
+          "codeExample": "glow={0.4}",
+          "usageExamples": [
+            "glow={0.4}"
+          ]
+        },
+        {
+          "name": "edgeSoftness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1378,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "边缘柔和度，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 80
+          },
+          "codeExample": "edgeSoftness={2}"
+        },
+        {
+          "name": "bloom",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1379,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "泛光，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 81
+          },
+          "codeExample": "bloom={0.12}",
+          "usageExamples": [
+            "bloom={0.12}"
+          ]
+        },
+        {
+          "name": "grain",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1380,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "颗粒，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 82
+          },
+          "codeExample": "grain={0.025}",
+          "usageExamples": [
+            "grain={0.025}"
+          ]
+        },
+        {
+          "name": "chromaticAberration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.0075",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1381,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.0075,
+          "description": "色散色散，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 83
+          },
+          "codeExample": "chromaticAberration={0}",
+          "usageExamples": [
+            "chromaticAberration={0}"
+          ]
+        },
+        {
+          "name": "transitionDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1382,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "过渡时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 84
+          },
+          "codeExample": "transitionDuration={1}"
+        },
+        {
+          "name": "interactionRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1383,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "交互半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 85
+          },
+          "codeExample": "interactionRadius={1.5}"
+        },
+        {
+          "name": "interactionStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1384,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "交互强度，控制 aero shards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 86
+          },
+          "codeExample": "interactionStrength={0.5}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1387,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 87
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 1388,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 88
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "onError",
+          "type": "(error: Error) => void",
+          "required": false,
+          "description": "错误时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
+            "line": 89
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((error: Error) => void) | undefined"
+          },
+          "codeExample": "onError={setError}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onError={setError}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

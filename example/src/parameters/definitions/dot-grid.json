@@ -1,0 +1,1768 @@
+{
+  "version": 1,
+  "id": "dot-grid",
+  "name": "Dot Grid",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+  "demoPath": "src/demos/background/dot-grid.tsx",
+  "fields": [
+    {
+      "key": "t0.baseColor",
+      "name": "baseColor",
+      "label": "baseColor · t0",
+      "description": "基础颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "baseColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#3a3446'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.activeColor",
+      "name": "activeColor",
+      "label": "activeColor · t0",
+      "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "activeColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dotSize",
+      "name": "dotSize",
+      "label": "dotSize · t0",
+      "description": "圆点尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dotSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 18,
+      "upstreamDefault": "18",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.proximity",
+      "name": "proximity",
+      "label": "proximity · t0",
+      "description": "邻近程度，控制 dot grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "proximity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 140,
+      "upstreamDefault": "140",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.strength",
+      "name": "strength",
+      "label": "strength · t0",
+      "description": "强度，控制 dot grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "strength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shockStrength",
+      "name": "shockStrength",
+      "label": "shockStrength · t0",
+      "description": "冲击强度，控制 dot grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shockStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2.5,
+      "upstreamDefault": "5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 dot grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.returnDuration",
+      "name": "returnDuration",
+      "label": "returnDuration · t0",
+      "description": "返回时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "returnDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "0.8",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseInteraction",
+      "name": "mouseInteraction",
+      "label": "指针响应 · t0",
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseInteraction"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clickShock",
+      "name": "clickShock",
+      "label": "clickShock · t0",
+      "description": "是否点击冲击，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clickShock"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bounce",
+      "name": "bounce",
+      "label": "bounce · t0",
+      "description": "回弹，控制 dot grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bounce"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tension",
+      "name": "tension",
+      "label": "tension · t0",
+      "description": "张力，控制 dot grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tension"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shockRadius",
+      "name": "shockRadius",
+      "label": "shockRadius · t0",
+      "description": "冲击半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shockRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 320,
+      "upstreamDefault": "320",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.swell",
+      "name": "swell",
+      "label": "swell · t0",
+      "description": "膨胀，控制 dot grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "swell"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "0.8",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stretch",
+      "name": "stretch",
+      "label": "stretch · t0",
+      "description": "拉伸，控制 dot grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stretch"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shape",
+      "name": "shape",
+      "label": "shape · t0",
+      "description": "形状，控制 dot grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shape"
+        }
+      ],
+      "type": "Shape",
+      "defaultValue": "circle",
+      "upstreamDefault": "'circle'",
+      "control": "select",
+      "options": [
+        {
+          "label": "circle",
+          "value": "circle"
+        },
+        {
+          "label": "square",
+          "value": "square"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 dot grid 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 dot grid 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "dotSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 157,
+        "kind": "parameter"
+      },
+      "defaultValue": 5,
+      "description": "圆点尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 99
+      },
+      "codeExample": "dotSize={4}",
+      "usageExamples": [
+        "dotSize={4}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "18",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 158,
+        "kind": "parameter"
+      },
+      "defaultValue": 18,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 100
+      },
+      "codeExample": "gap={18}",
+      "usageExamples": [
+        "gap={18}"
+      ]
+    },
+    {
+      "name": "baseColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#3a3446'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 159,
+        "kind": "parameter"
+      },
+      "defaultValue": "#3a3446",
+      "description": "基础颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 101
+      },
+      "codeExample": "baseColor={palette.primary}",
+      "usageExamples": [
+        "baseColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "activeColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 160,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 102
+      },
+      "codeExample": "activeColor={palette.sage}",
+      "usageExamples": [
+        "activeColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "proximity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "140",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 161,
+        "kind": "parameter"
+      },
+      "defaultValue": 140,
+      "description": "邻近程度，控制 dot grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 103
+      },
+      "codeExample": "proximity={140}",
+      "usageExamples": [
+        "proximity={140}"
+      ]
+    },
+    {
+      "name": "strength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 162,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "强度，控制 dot grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 104
+      },
+      "codeExample": "strength={0.6}",
+      "usageExamples": [
+        "strength={0.6}"
+      ]
+    },
+    {
+      "name": "bounce",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 163,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "回弹，控制 dot grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 105
+      },
+      "codeExample": "bounce={0.6}"
+    },
+    {
+      "name": "tension",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 164,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.4,
+      "description": "张力，控制 dot grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 106
+      },
+      "codeExample": "tension={0.4}"
+    },
+    {
+      "name": "returnDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 165,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.8,
+      "description": "返回时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 107
+      },
+      "codeExample": "returnDuration={0.8}",
+      "usageExamples": [
+        "returnDuration={0.8}"
+      ]
+    },
+    {
+      "name": "shockRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "320",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 166,
+        "kind": "parameter"
+      },
+      "defaultValue": 320,
+      "description": "冲击半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 108
+      },
+      "codeExample": "shockRadius={320}"
+    },
+    {
+      "name": "shockStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 167,
+        "kind": "parameter"
+      },
+      "defaultValue": 5,
+      "description": "冲击强度，控制 dot grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 109
+      },
+      "codeExample": "shockStrength={2.5}",
+      "usageExamples": [
+        "shockStrength={2.5}"
+      ]
+    },
+    {
+      "name": "swell",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 168,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.8,
+      "description": "膨胀，控制 dot grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 110
+      },
+      "codeExample": "swell={0.8}"
+    },
+    {
+      "name": "stretch",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 169,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "拉伸，控制 dot grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 111
+      },
+      "codeExample": "stretch={0.5}"
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 170,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "辉光，控制 dot grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 112
+      },
+      "codeExample": "glow={0.2}",
+      "usageExamples": [
+        "glow={0.2}"
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "Shape",
+      "required": false,
+      "defaultExpression": "'circle'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 171,
+        "kind": "parameter"
+      },
+      "defaultValue": "circle",
+      "description": "形状，控制 dot grid 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "circle",
+        "square"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 113
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "circle",
+          "square"
+        ]
+      },
+      "codeExample": "shape={\"circle\"}"
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 172,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "淡出，控制 dot grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 114
+      },
+      "codeExample": "fade={0}"
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 173,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 dot grid 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 115
+      },
+      "codeExample": "opacity={1}"
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 174,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 116
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "mouseInteraction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 175,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 117
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "mouseInteraction",
+      "usageExamples": [
+        "mouseInteraction"
+      ]
+    },
+    {
+      "name": "clickShock",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 176,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否点击冲击，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 118
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickShock",
+      "usageExamples": [
+        "clickShock"
+      ]
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 177,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 119
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 120
+      },
+      "codeExample": "dpr={1}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 179,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 121
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+        "line": 122
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/DotGrid/DotGrid';\n\n\n/** Agent Wan natural-tone preset for the real Dot Grid component. */\nexport default function DotGridDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "DotGrid",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+      "props": [
+        {
+          "name": "dotSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 157,
+            "kind": "parameter"
+          },
+          "defaultValue": 5,
+          "description": "圆点尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 99
+          },
+          "codeExample": "dotSize={4}",
+          "usageExamples": [
+            "dotSize={4}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "18",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 158,
+            "kind": "parameter"
+          },
+          "defaultValue": 18,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 100
+          },
+          "codeExample": "gap={18}",
+          "usageExamples": [
+            "gap={18}"
+          ]
+        },
+        {
+          "name": "baseColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#3a3446'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 159,
+            "kind": "parameter"
+          },
+          "defaultValue": "#3a3446",
+          "description": "基础颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 101
+          },
+          "codeExample": "baseColor={palette.primary}",
+          "usageExamples": [
+            "baseColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "activeColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 160,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 102
+          },
+          "codeExample": "activeColor={palette.sage}",
+          "usageExamples": [
+            "activeColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "proximity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "140",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 161,
+            "kind": "parameter"
+          },
+          "defaultValue": 140,
+          "description": "邻近程度，控制 dot grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 103
+          },
+          "codeExample": "proximity={140}",
+          "usageExamples": [
+            "proximity={140}"
+          ]
+        },
+        {
+          "name": "strength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 162,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "强度，控制 dot grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 104
+          },
+          "codeExample": "strength={0.6}",
+          "usageExamples": [
+            "strength={0.6}"
+          ]
+        },
+        {
+          "name": "bounce",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 163,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "回弹，控制 dot grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 105
+          },
+          "codeExample": "bounce={0.6}"
+        },
+        {
+          "name": "tension",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 164,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.4,
+          "description": "张力，控制 dot grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 106
+          },
+          "codeExample": "tension={0.4}"
+        },
+        {
+          "name": "returnDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 165,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.8,
+          "description": "返回时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 107
+          },
+          "codeExample": "returnDuration={0.8}",
+          "usageExamples": [
+            "returnDuration={0.8}"
+          ]
+        },
+        {
+          "name": "shockRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "320",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 166,
+            "kind": "parameter"
+          },
+          "defaultValue": 320,
+          "description": "冲击半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 108
+          },
+          "codeExample": "shockRadius={320}"
+        },
+        {
+          "name": "shockStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 167,
+            "kind": "parameter"
+          },
+          "defaultValue": 5,
+          "description": "冲击强度，控制 dot grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 109
+          },
+          "codeExample": "shockStrength={2.5}",
+          "usageExamples": [
+            "shockStrength={2.5}"
+          ]
+        },
+        {
+          "name": "swell",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 168,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.8,
+          "description": "膨胀，控制 dot grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 110
+          },
+          "codeExample": "swell={0.8}"
+        },
+        {
+          "name": "stretch",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 169,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "拉伸，控制 dot grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 111
+          },
+          "codeExample": "stretch={0.5}"
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 170,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "辉光，控制 dot grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 112
+          },
+          "codeExample": "glow={0.2}",
+          "usageExamples": [
+            "glow={0.2}"
+          ]
+        },
+        {
+          "name": "shape",
+          "type": "Shape",
+          "required": false,
+          "defaultExpression": "'circle'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 171,
+            "kind": "parameter"
+          },
+          "defaultValue": "circle",
+          "description": "形状，控制 dot grid 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "circle",
+            "square"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 113
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "circle",
+              "square"
+            ]
+          },
+          "codeExample": "shape={\"circle\"}"
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 172,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "淡出，控制 dot grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 114
+          },
+          "codeExample": "fade={0}"
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 173,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 dot grid 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 115
+          },
+          "codeExample": "opacity={1}"
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 174,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 116
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "mouseInteraction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 175,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 117
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "mouseInteraction",
+          "usageExamples": [
+            "mouseInteraction"
+          ]
+        },
+        {
+          "name": "clickShock",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 176,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否点击冲击，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 118
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickShock",
+          "usageExamples": [
+            "clickShock"
+          ]
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 177,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 119
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 120
+          },
+          "codeExample": "dpr={1}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 179,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 121
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/DotGrid/DotGrid.tsx",
+            "line": 122
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

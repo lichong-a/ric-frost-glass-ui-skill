@@ -1,0 +1,1630 @@
+{
+  "version": 1,
+  "id": "infinite-menu",
+  "name": "Infinite Menu",
+  "sourcePath": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+  "demoPath": "src/demos/navigation/infinite-menu.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "InfiniteMenuItem[]",
+      "defaultValue": [
+        {
+          "image": "@media/scene-1.svg",
+          "title": "山雾",
+          "description": "自然色图形 1"
+        },
+        {
+          "image": "@media/scene-2.svg",
+          "title": "茶庭",
+          "description": "自然色图形 2"
+        },
+        {
+          "image": "@media/scene-3.svg",
+          "title": "沙洲",
+          "description": "自然色图形 3"
+        },
+        {
+          "image": "@media/scene-4.svg",
+          "title": "静水",
+          "description": "自然色图形 4"
+        },
+        {
+          "image": "@media/scene-5.svg",
+          "title": "林间",
+          "description": "自然色图形 5"
+        },
+        {
+          "image": "@media/scene-6.svg",
+          "title": "岩纹",
+          "description": "自然色图形 6"
+        }
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "image": {
+              "kind": "string"
+            },
+            "title": {
+              "kind": "string"
+            },
+            "description": {
+              "kind": "string"
+            },
+            "link": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "image"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.count",
+      "name": "count",
+      "label": "count · t0",
+      "description": "数量，控制 infinite menu 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "count"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 60,
+      "upstreamDefault": "160",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 160,
+      "step": 1
+    },
+    {
+      "key": "t0.tileSize",
+      "name": "tileSize",
+      "label": "tileSize · t0",
+      "description": "字符格尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tileSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.55,
+      "upstreamDefault": "0.63",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.roundness",
+      "name": "roundness",
+      "label": "roundness · t0",
+      "description": "圆润程度，控制 infinite menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "roundness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.22,
+      "upstreamDefault": "0.2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.zoom",
+      "name": "zoom",
+      "label": "zoom · t0",
+      "description": "缩放，控制 infinite menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "zoom"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.6,
+      "upstreamDefault": "1.65",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pullBack",
+      "name": "pullBack",
+      "label": "pullBack · t0",
+      "description": "拉动背面，控制 infinite menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pullBack"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stretch",
+      "name": "stretch",
+      "label": "stretch · t0",
+      "description": "拉伸，控制 infinite menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stretch"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.35,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.inertia",
+      "name": "inertia",
+      "label": "inertia · t0",
+      "description": "惯性，控制 infinite menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "inertia"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoplay",
+      "name": "autoplay",
+      "label": "自动播放 · t0",
+      "description": "是否自动播放，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoplay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grayscale",
+      "name": "grayscale",
+      "label": "grayscale · t0",
+      "description": "是否灰度，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grayscale"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dim",
+      "name": "dim",
+      "label": "dim · t0",
+      "description": "暗化，控制 infinite menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dim"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showInfo",
+      "name": "showInfo",
+      "label": "showInfo · t0",
+      "description": "是否显示信息，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showInfo"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 infinite menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "light",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "ink",
+      "control": "color",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#e8e4d7",
+      "control": "color",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "InfiniteMenuItem[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 193,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "InfiniteMenuItem",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "image",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "link",
+                "type": "string",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={MEDIA.map((image, index) => ({ image, title: LABELS[index], description: '自然色图形 ' + (index + 1) }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={MEDIA.map((image, index) => ({ image, title: LABELS[index], description: '自然色图形 ' + (index + 1) }))}"
+      ]
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "160",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 194,
+        "kind": "parameter"
+      },
+      "defaultValue": 160,
+      "description": "数量，控制 infinite menu 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 16
+      },
+      "codeExample": "count={60}",
+      "usageExamples": [
+        "count={60}"
+      ]
+    },
+    {
+      "name": "tileSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.63",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 195,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.63,
+      "description": "字符格尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 17
+      },
+      "codeExample": "tileSize={0.55}",
+      "usageExamples": [
+        "tileSize={0.55}"
+      ]
+    },
+    {
+      "name": "roundness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 196,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "圆润程度，控制 infinite menu 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 18
+      },
+      "codeExample": "roundness={0.22}",
+      "usageExamples": [
+        "roundness={0.22}"
+      ]
+    },
+    {
+      "name": "zoom",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.65",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 197,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.65,
+      "description": "缩放，控制 infinite menu 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 19
+      },
+      "codeExample": "zoom={1.6}",
+      "usageExamples": [
+        "zoom={1.6}"
+      ]
+    },
+    {
+      "name": "pullBack",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 198,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "拉动背面，控制 infinite menu 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 20
+      },
+      "codeExample": "pullBack={0.8}",
+      "usageExamples": [
+        "pullBack={0.8}"
+      ]
+    },
+    {
+      "name": "stretch",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 199,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "拉伸，控制 infinite menu 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 21
+      },
+      "codeExample": "stretch={0.35}",
+      "usageExamples": [
+        "stretch={0.35}"
+      ]
+    },
+    {
+      "name": "inertia",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 200,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "惯性，控制 infinite menu 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 22
+      },
+      "codeExample": "inertia={0.5}",
+      "usageExamples": [
+        "inertia={0.5}"
+      ]
+    },
+    {
+      "name": "autoplay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 201,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "是否自动播放，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 23
+      },
+      "codeExample": "autoplay={0.8}",
+      "usageExamples": [
+        "autoplay={0.8}"
+      ]
+    },
+    {
+      "name": "grayscale",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 202,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否灰度，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "grayscale={false}",
+      "usageExamples": [
+        "grayscale={false}"
+      ]
+    },
+    {
+      "name": "dim",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 203,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "暗化，控制 infinite menu 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 25
+      },
+      "codeExample": "dim={0.2}",
+      "usageExamples": [
+        "dim={0.2}"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 204,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "showInfo",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 205,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示信息，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 27
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showInfo",
+      "usageExamples": [
+        "showInfo"
+      ]
+    },
+    {
+      "name": "renderInfo",
+      "type": "(item: InfiniteMenuItem, index: number, moving: boolean) => React.ReactNode",
+      "required": false,
+      "description": "自定义当前项目说明的渲染函数，接收条目、索引及移动状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((item: InfiniteMenuItem, index: number, moving: boolean) => React.ReactNode) | undefined"
+      },
+      "codeExample": "renderInfo={(item, index, moving) => (\"示例\")}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 207,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 infinite menu 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"light\"",
+      "usageExamples": [
+        "theme=\"light\""
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "ink",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 871,
+        "kind": "implementation-fallback"
+      },
+      "defaultResolvedExpression": "settings.theme === 'light' ? '#120f17' : '#ffffff'",
+      "defaultCondition": "falsy",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 30
+      },
+      "codeExample": "accentColor={palette.primary}",
+      "usageExamples": [
+        "accentColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 31
+      },
+      "codeExample": "backgroundColor={palette.canvas}",
+      "usageExamples": [
+        "backgroundColor={palette.canvas}"
+      ]
+    },
+    {
+      "name": "onActiveChange",
+      "type": "(item: InfiniteMenuItem, index: number) => void",
+      "required": false,
+      "description": "激活改变时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((item: InfiniteMenuItem, index: number) => void) | undefined"
+      },
+      "codeExample": "onActiveChange={(_item, index) => setStatus('当前素材：' + LABELS[index % LABELS.length])}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onActiveChange={(_item, index) => setStatus('当前素材：' + LABELS[index % LABELS.length])}"
+      ]
+    },
+    {
+      "name": "onItemClick",
+      "type": "(item: InfiniteMenuItem, index: number) => void",
+      "required": false,
+      "description": "用户点击列表或菜单项时通知调用方，参数为条目及索引。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((item: InfiniteMenuItem, index: number) => void) | undefined"
+      },
+      "codeExample": "onItemClick={(_item, index) => setStatus('选择素材：' + LABELS[index % LABELS.length])}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onItemClick={(_item, index) => setStatus('选择素材：' + LABELS[index % LABELS.length])}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 212,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 34
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+        "line": 35
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu';\nimport { LABELS, palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 保留真实可旋转球面图片网格，减少贴片数量以控制预览负担。\n// 此演示需要可用WebGL上下文；不支持时应显示能力提示，不声称效果已运行。\n\nexport default function InfiniteMenuDemo() {\n  const [status, setStatus] = useState(\"拖动球面网格，选择正前方素材\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 440, position: 'relative', overflow: 'hidden' }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ height: 380, position: 'relative', overflow: 'hidden' }}><Component\n\n\n\nonActiveChange={(_item, index) => setStatus('当前素材：' + LABELS[index % LABELS.length])}\nonItemClick={(_item, index) => setStatus('选择素材：' + LABELS[index % LABELS.length])} /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "InfiniteMenu",
+      "sourcePath": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "InfiniteMenuItem[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 193,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "InfiniteMenuItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "image",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "title",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "link",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={MEDIA.map((image, index) => ({ image, title: LABELS[index], description: '自然色图形 ' + (index + 1) }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={MEDIA.map((image, index) => ({ image, title: LABELS[index], description: '自然色图形 ' + (index + 1) }))}"
+          ]
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "160",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 194,
+            "kind": "parameter"
+          },
+          "defaultValue": 160,
+          "description": "数量，控制 infinite menu 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 16
+          },
+          "codeExample": "count={60}",
+          "usageExamples": [
+            "count={60}"
+          ]
+        },
+        {
+          "name": "tileSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.63",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 195,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.63,
+          "description": "字符格尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 17
+          },
+          "codeExample": "tileSize={0.55}",
+          "usageExamples": [
+            "tileSize={0.55}"
+          ]
+        },
+        {
+          "name": "roundness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 196,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "圆润程度，控制 infinite menu 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 18
+          },
+          "codeExample": "roundness={0.22}",
+          "usageExamples": [
+            "roundness={0.22}"
+          ]
+        },
+        {
+          "name": "zoom",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.65",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 197,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.65,
+          "description": "缩放，控制 infinite menu 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 19
+          },
+          "codeExample": "zoom={1.6}",
+          "usageExamples": [
+            "zoom={1.6}"
+          ]
+        },
+        {
+          "name": "pullBack",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 198,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "拉动背面，控制 infinite menu 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 20
+          },
+          "codeExample": "pullBack={0.8}",
+          "usageExamples": [
+            "pullBack={0.8}"
+          ]
+        },
+        {
+          "name": "stretch",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 199,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "拉伸，控制 infinite menu 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 21
+          },
+          "codeExample": "stretch={0.35}",
+          "usageExamples": [
+            "stretch={0.35}"
+          ]
+        },
+        {
+          "name": "inertia",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 200,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "惯性，控制 infinite menu 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 22
+          },
+          "codeExample": "inertia={0.5}",
+          "usageExamples": [
+            "inertia={0.5}"
+          ]
+        },
+        {
+          "name": "autoplay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 201,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "是否自动播放，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 23
+          },
+          "codeExample": "autoplay={0.8}",
+          "usageExamples": [
+            "autoplay={0.8}"
+          ]
+        },
+        {
+          "name": "grayscale",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 202,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否灰度，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "grayscale={false}",
+          "usageExamples": [
+            "grayscale={false}"
+          ]
+        },
+        {
+          "name": "dim",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 203,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "暗化，控制 infinite menu 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 25
+          },
+          "codeExample": "dim={0.2}",
+          "usageExamples": [
+            "dim={0.2}"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 204,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "showInfo",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 205,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示信息，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 27
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showInfo",
+          "usageExamples": [
+            "showInfo"
+          ]
+        },
+        {
+          "name": "renderInfo",
+          "type": "(item: InfiniteMenuItem, index: number, moving: boolean) => React.ReactNode",
+          "required": false,
+          "description": "自定义当前项目说明的渲染函数，接收条目、索引及移动状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((item: InfiniteMenuItem, index: number, moving: boolean) => React.ReactNode) | undefined"
+          },
+          "codeExample": "renderInfo={(item, index, moving) => (\"示例\")}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 207,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 infinite menu 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"light\"",
+          "usageExamples": [
+            "theme=\"light\""
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "ink",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 871,
+            "kind": "implementation-fallback"
+          },
+          "defaultResolvedExpression": "settings.theme === 'light' ? '#120f17' : '#ffffff'",
+          "defaultCondition": "falsy",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 30
+          },
+          "codeExample": "accentColor={palette.primary}",
+          "usageExamples": [
+            "accentColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 31
+          },
+          "codeExample": "backgroundColor={palette.canvas}",
+          "usageExamples": [
+            "backgroundColor={palette.canvas}"
+          ]
+        },
+        {
+          "name": "onActiveChange",
+          "type": "(item: InfiniteMenuItem, index: number) => void",
+          "required": false,
+          "description": "激活改变时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((item: InfiniteMenuItem, index: number) => void) | undefined"
+          },
+          "codeExample": "onActiveChange={(_item, index) => setStatus('当前素材：' + LABELS[index % LABELS.length])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onActiveChange={(_item, index) => setStatus('当前素材：' + LABELS[index % LABELS.length])}"
+          ]
+        },
+        {
+          "name": "onItemClick",
+          "type": "(item: InfiniteMenuItem, index: number) => void",
+          "required": false,
+          "description": "用户点击列表或菜单项时通知调用方，参数为条目及索引。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((item: InfiniteMenuItem, index: number) => void) | undefined"
+          },
+          "codeExample": "onItemClick={(_item, index) => setStatus('选择素材：' + LABELS[index % LABELS.length])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onItemClick={(_item, index) => setStatus('选择素材：' + LABELS[index % LABELS.length])}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 212,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 34
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteMenu/InfiniteMenu.tsx",
+            "line": 35
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

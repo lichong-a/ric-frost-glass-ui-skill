@@ -1,0 +1,1361 @@
+{
+  "version": 1,
+  "id": "spotlight-card",
+  "name": "Spotlight Card",
+  "sourcePath": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+  "demoPath": "src/demos/cards/spotlight-card.tsx",
+  "fields": [
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 spotlight card 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "dark",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spotlightColor",
+      "name": "spotlightColor",
+      "label": "spotlightColor · t0",
+      "description": "聚光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spotlightColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a4e6c8",
+      "upstreamDefault": "palette.light",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intensity",
+      "name": "intensity",
+      "label": "intensity · t0",
+      "description": "强度，控制 spotlight card 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.28,
+      "upstreamDefault": "0.15",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spotlightSize",
+      "name": "spotlightSize",
+      "label": "spotlightSize · t0",
+      "description": "聚光尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。CSS 光斑直径。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spotlightSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 280,
+      "upstreamDefault": "240",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 80,
+      "max": 480,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "key": "t0.softness",
+      "name": "softness",
+      "label": "softness · t0",
+      "description": "柔和度，控制 spotlight card 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。光斑边缘柔和度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "softness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.7,
+      "upstreamDefault": "0.7",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.shape",
+      "name": "shape",
+      "label": "shape · t0",
+      "description": "形状，控制 spotlight card 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shape"
+        }
+      ],
+      "type": "SpotlightShape",
+      "defaultValue": "circle",
+      "upstreamDefault": "'circle'",
+      "control": "select",
+      "options": [
+        {
+          "label": "circle",
+          "value": "circle"
+        },
+        {
+          "label": "beam",
+          "value": "beam"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.borderGlow",
+      "name": "borderGlow",
+      "label": "borderGlow · t0",
+      "description": "边框辉光，控制 spotlight card 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "borderGlow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.proximity",
+      "name": "proximity",
+      "label": "proximity · t0",
+      "description": "邻近程度，控制 spotlight card 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。指针接近卡片时开始出现光斑的外延距离。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "proximity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 100,
+      "upstreamDefault": "80",
+      "control": "range",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "key": "t0.smoothing",
+      "name": "smoothing",
+      "label": "smoothing · t0",
+      "description": "平滑，控制 spotlight card 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "smoothing"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grain",
+      "name": "grain",
+      "label": "grain · t0",
+      "description": "颗粒，控制 spotlight card 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grain"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.06,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ambient",
+      "name": "ambient",
+      "label": "ambient · t0",
+      "description": "是否环境光，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ambient"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.flare",
+      "name": "flare",
+      "label": "flare · t0",
+      "description": "是否耀斑，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "flare"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "React.CSSProperties | undefined",
+      "defaultValue": {
+        "width": "min(100%, 380px)",
+        "minHeight": 280,
+        "padding": 32,
+        "borderRadius": 24,
+        "color": "#e7f2ec"
+      },
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "width": {
+            "kind": "string"
+          },
+          "minHeight": {
+            "kind": "number"
+          },
+          "padding": {
+            "kind": "number"
+          },
+          "borderRadius": {
+            "kind": "number"
+          },
+          "color": {
+            "kind": "string"
+          }
+        },
+        "required": [
+          "width",
+          "minHeight",
+          "padding",
+          "borderRadius",
+          "color"
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "className",
+      "type": "string | undefined",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 84,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2700
+      },
+      "inheritedFrom": "React.HTMLAttributes<HTMLDivElement>",
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties | undefined",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2712
+      },
+      "inheritedFrom": "React.HTMLAttributes<HTMLDivElement>",
+      "codeExample": "style={{ width: 'min(100%, 380px)', minHeight: 280, padding: 32, borderRadius: 24, color: '#e7f2ec' }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "style={{ width: 'min(100%, 380px)', minHeight: 280, padding: 32, borderRadius: 24, color: '#e7f2ec' }}"
+      ]
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "React.HTMLAttributes<HTMLDivElement>",
+      "codeExample": "children={<><span className={styles.icon}><Layers size={24} strokeWidth={1.5} /></span><h3 className={styles.title}>知识检索工作流</h3><p className={styles.description}>把分散的资料连接起来，构建可重复执行的知识检索流程。</p><button type=\"button\" className={styles.action} onClick={() => setStatus('工作流运行按钮已点击。')}>\n          运行示例 <ArrowUpRight size={16} aria-hidden=\"true\" />\n        </button></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><span className={styles.icon}><Layers size={24} strokeWidth={1.5} /></span><h3 className={styles.title}>知识检索工作流</h3><p className={styles.description}>把分散的资料连接起来，构建可重复执行的知识检索流程。</p><button type=\"button\" className={styles.action} onClick={() => setStatus('工作流运行按钮已点击。')}>\n          运行示例 <ArrowUpRight size={16} aria-hidden=\"true\" />\n        </button></>}"
+      ]
+    },
+    {
+      "name": "spotlightColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "palette.light",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 106,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "聚光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 10
+      },
+      "codeExample": "spotlightColor=\"#a4e6c8\"",
+      "usageExamples": [
+        "spotlightColor=\"#a4e6c8\""
+      ]
+    },
+    {
+      "name": "intensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 87,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.15,
+      "description": "强度，控制 spotlight card 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 11
+      },
+      "codeExample": "intensity={0.28}",
+      "usageExamples": [
+        "intensity={0.28}"
+      ]
+    },
+    {
+      "name": "spotlightSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "240",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 88,
+        "kind": "parameter"
+      },
+      "defaultValue": 240,
+      "description": "聚光尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 12
+      },
+      "codeExample": "spotlightSize={280}",
+      "usageExamples": [
+        "spotlightSize={280}"
+      ]
+    },
+    {
+      "name": "softness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 89,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.7,
+      "description": "柔和度，控制 spotlight card 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 13
+      },
+      "codeExample": "softness={0.7}",
+      "usageExamples": [
+        "softness={0.7}"
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "SpotlightShape",
+      "required": false,
+      "defaultExpression": "'circle'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 90,
+        "kind": "parameter"
+      },
+      "defaultValue": "circle",
+      "description": "形状，控制 spotlight card 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "circle",
+        "beam"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "circle",
+          "beam"
+        ]
+      },
+      "codeExample": "shape=\"circle\"",
+      "usageExamples": [
+        "shape=\"circle\""
+      ]
+    },
+    {
+      "name": "borderGlow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 91,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "边框辉光，控制 spotlight card 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 15
+      },
+      "codeExample": "borderGlow={0.8}",
+      "usageExamples": [
+        "borderGlow={0.8}"
+      ]
+    },
+    {
+      "name": "proximity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "80",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 92,
+        "kind": "parameter"
+      },
+      "defaultValue": 80,
+      "description": "邻近程度，控制 spotlight card 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 16
+      },
+      "codeExample": "proximity={100}",
+      "usageExamples": [
+        "proximity={100}"
+      ]
+    },
+    {
+      "name": "smoothing",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 93,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "平滑，控制 spotlight card 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 17
+      },
+      "codeExample": "smoothing={0.3}",
+      "usageExamples": [
+        "smoothing={0.3}"
+      ]
+    },
+    {
+      "name": "ambient",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 94,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否环境光，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "ambient={false}",
+      "usageExamples": [
+        "ambient={false}"
+      ]
+    },
+    {
+      "name": "flare",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 95,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否耀斑，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "flare",
+      "usageExamples": [
+        "flare"
+      ]
+    },
+    {
+      "name": "grain",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 96,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "颗粒，控制 spotlight card 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 20
+      },
+      "codeExample": "grain={0.06}",
+      "usageExamples": [
+        "grain={0.06}"
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 97,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 spotlight card 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"dark\"",
+      "usageExamples": [
+        "theme=\"dark\""
+      ]
+    }
+  ],
+  "inherited": [
+    {
+      "type": "React.HTMLAttributes<HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import { useState } from 'react';\nimport { ArrowUpRight, Layers } from 'lucide-react';\nimport Component from '../../../.upstream/src/ts-default/Components/SpotlightCard/SpotlightCard';\nimport styles from './spotlight-card.module.css';\n\nexport default function SpotlightCardDemo() {\n  const [status, setStatus] = useState('移动指针，观察卡片表面与边缘的光。');\n  return (\n    <div className={styles.stage} data-visual-demo=\"spotlight-card\">\n      <Component\n\n\n         /*__AW_PROPS_t0__*/ >\n        <span className={styles.icon}><Layers size={24} strokeWidth={1.5} /></span>\n        <h3 className={styles.title}>知识检索工作流</h3>\n        <p className={styles.description}>把分散的资料连接起来，构建可重复执行的知识检索流程。</p>\n        <button  className={styles.action} onClick={() => setStatus('工作流运行按钮已点击。')} /*__AW_PROPS_t1__*/ >\n          运行示例 <ArrowUpRight size={16} aria-hidden=\"true\" />\n        </button>\n      </Component>\n      <p className={styles.hint} role=\"status\" aria-live=\"polite\">{status}</p>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "SpotlightCard",
+      "sourcePath": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 84,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "React.HTMLAttributes<HTMLDivElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties | undefined",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2712
+          },
+          "inheritedFrom": "React.HTMLAttributes<HTMLDivElement>",
+          "codeExample": "style={{ width: 'min(100%, 380px)', minHeight: 280, padding: 32, borderRadius: 24, color: '#e7f2ec' }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "style={{ width: 'min(100%, 380px)', minHeight: 280, padding: 32, borderRadius: 24, color: '#e7f2ec' }}"
+          ]
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "React.HTMLAttributes<HTMLDivElement>",
+          "codeExample": "children={<><span className={styles.icon}><Layers size={24} strokeWidth={1.5} /></span><h3 className={styles.title}>知识检索工作流</h3><p className={styles.description}>把分散的资料连接起来，构建可重复执行的知识检索流程。</p><button type=\"button\" className={styles.action} onClick={() => setStatus('工作流运行按钮已点击。')}>\n          运行示例 <ArrowUpRight size={16} aria-hidden=\"true\" />\n        </button></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><span className={styles.icon}><Layers size={24} strokeWidth={1.5} /></span><h3 className={styles.title}>知识检索工作流</h3><p className={styles.description}>把分散的资料连接起来，构建可重复执行的知识检索流程。</p><button type=\"button\" className={styles.action} onClick={() => setStatus('工作流运行按钮已点击。')}>\n          运行示例 <ArrowUpRight size={16} aria-hidden=\"true\" />\n        </button></>}"
+          ]
+        },
+        {
+          "name": "spotlightColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "palette.light",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 106,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "聚光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 10
+          },
+          "codeExample": "spotlightColor=\"#a4e6c8\"",
+          "usageExamples": [
+            "spotlightColor=\"#a4e6c8\""
+          ]
+        },
+        {
+          "name": "intensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 87,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.15,
+          "description": "强度，控制 spotlight card 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 11
+          },
+          "codeExample": "intensity={0.28}",
+          "usageExamples": [
+            "intensity={0.28}"
+          ]
+        },
+        {
+          "name": "spotlightSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "240",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 88,
+            "kind": "parameter"
+          },
+          "defaultValue": 240,
+          "description": "聚光尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 12
+          },
+          "codeExample": "spotlightSize={280}",
+          "usageExamples": [
+            "spotlightSize={280}"
+          ]
+        },
+        {
+          "name": "softness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 89,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.7,
+          "description": "柔和度，控制 spotlight card 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 13
+          },
+          "codeExample": "softness={0.7}",
+          "usageExamples": [
+            "softness={0.7}"
+          ]
+        },
+        {
+          "name": "shape",
+          "type": "SpotlightShape",
+          "required": false,
+          "defaultExpression": "'circle'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 90,
+            "kind": "parameter"
+          },
+          "defaultValue": "circle",
+          "description": "形状，控制 spotlight card 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "circle",
+            "beam"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "circle",
+              "beam"
+            ]
+          },
+          "codeExample": "shape=\"circle\"",
+          "usageExamples": [
+            "shape=\"circle\""
+          ]
+        },
+        {
+          "name": "borderGlow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 91,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "边框辉光，控制 spotlight card 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 15
+          },
+          "codeExample": "borderGlow={0.8}",
+          "usageExamples": [
+            "borderGlow={0.8}"
+          ]
+        },
+        {
+          "name": "proximity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "80",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 92,
+            "kind": "parameter"
+          },
+          "defaultValue": 80,
+          "description": "邻近程度，控制 spotlight card 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 16
+          },
+          "codeExample": "proximity={100}",
+          "usageExamples": [
+            "proximity={100}"
+          ]
+        },
+        {
+          "name": "smoothing",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 93,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "平滑，控制 spotlight card 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 17
+          },
+          "codeExample": "smoothing={0.3}",
+          "usageExamples": [
+            "smoothing={0.3}"
+          ]
+        },
+        {
+          "name": "ambient",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 94,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否环境光，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "ambient={false}",
+          "usageExamples": [
+            "ambient={false}"
+          ]
+        },
+        {
+          "name": "flare",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 95,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否耀斑，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "flare",
+          "usageExamples": [
+            "flare"
+          ]
+        },
+        {
+          "name": "grain",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 96,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "颗粒，控制 spotlight card 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 20
+          },
+          "codeExample": "grain={0.06}",
+          "usageExamples": [
+            "grain={0.06}"
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 97,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 spotlight card 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/SpotlightCard/SpotlightCard.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"dark\"",
+          "usageExamples": [
+            "theme=\"dark\""
+          ]
+        }
+      ],
+      "inherited": [
+        {
+          "type": "React.HTMLAttributes<HTMLDivElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "button",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles.action}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setStatus('工作流运行按钮已点击。')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>运行示例 <ArrowUpRight size={16} aria-hidden=\"true\" /></>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

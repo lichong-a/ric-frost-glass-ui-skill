@@ -1,0 +1,2389 @@
+{
+  "version": 1,
+  "id": "particles",
+  "name": "Particles",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+  "demoPath": "src/demos/background/particles.tsx",
+  "fields": [
+    {
+      "key": "t0.particleCount",
+      "name": "particleCount",
+      "label": "particleCount · t0",
+      "description": "粒子数量，控制 particles 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "particleCount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 140,
+      "upstreamDefault": "200",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 200,
+      "step": 1
+    },
+    {
+      "key": "t0.particleColors",
+      "name": "particleColors",
+      "label": "particleColors · t0",
+      "description": "粒子颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "particleColors"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#faf7f0",
+        "#a6b39a",
+        "#c3ae88"
+      ],
+      "upstreamDefault": "['#ffffff']",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.particleSpread",
+      "name": "particleSpread",
+      "label": "particleSpread · t0",
+      "description": "粒子展开间距，控制 particles 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "particleSpread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.07,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.particleBaseSize",
+      "name": "particleBaseSize",
+      "label": "particleBaseSize · t0",
+      "description": "粒子基础尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "particleBaseSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 80,
+      "upstreamDefault": "100",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shape",
+      "name": "shape",
+      "label": "shape · t0",
+      "description": "形状，控制 particles 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shape"
+        }
+      ],
+      "type": "ParticlesShape",
+      "defaultValue": "circle",
+      "upstreamDefault": "'circle'",
+      "control": "select",
+      "options": [
+        {
+          "label": "circle",
+          "value": "circle"
+        },
+        {
+          "label": "square",
+          "value": "square"
+        },
+        {
+          "label": "ring",
+          "value": "ring"
+        },
+        {
+          "label": "sparkle",
+          "value": "sparkle"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 particles 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.twinkle",
+      "name": "twinkle",
+      "label": "twinkle · t0",
+      "description": "闪烁，控制 particles 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "twinkle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.moveParticlesOnHover",
+      "name": "moveParticlesOnHover",
+      "label": "moveParticlesOnHover · t0",
+      "description": "是否移动粒子组悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "moveParticlesOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.particleHoverFactor",
+      "name": "particleHoverFactor",
+      "label": "particleHoverFactor · t0",
+      "description": "粒子悬停系数，控制 particles 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "particleHoverFactor"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clickBurst",
+      "name": "clickBurst",
+      "label": "clickBurst · t0",
+      "description": "是否点击爆发，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clickBurst"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.alphaParticles",
+      "name": "alphaParticles",
+      "label": "alphaParticles · t0",
+      "description": "是否透明度粒子组，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "alphaParticles"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sizeRandomness",
+      "name": "sizeRandomness",
+      "label": "sizeRandomness · t0",
+      "description": "尺寸随机差异，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sizeRandomness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cameraDistance",
+      "name": "cameraDistance",
+      "label": "cameraDistance · t0",
+      "description": "相机距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cameraDistance"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "20",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disableRotation",
+      "name": "disableRotation",
+      "label": "disableRotation · t0",
+      "description": "是否禁用旋转角度，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disableRotation"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.depthOfField",
+      "name": "depthOfField",
+      "label": "depthOfField · t0",
+      "description": "深度的场，控制 particles 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "depthOfField"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.connections",
+      "name": "connections",
+      "label": "connections · t0",
+      "description": "是否连接线，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "connections"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.connectionDistance",
+      "name": "connectionDistance",
+      "label": "connectionDistance · t0",
+      "description": "连接距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "connectionDistance"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 110,
+      "upstreamDefault": "110",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverEffect",
+      "name": "hoverEffect",
+      "label": "hoverEffect · t0",
+      "description": "悬停效果，控制 particles 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverEffect"
+        }
+      ],
+      "type": "ParticlesHoverEffect",
+      "defaultValue": "parallax",
+      "upstreamDefault": "'parallax'",
+      "control": "select",
+      "options": [
+        {
+          "label": "parallax",
+          "value": "parallax"
+        },
+        {
+          "label": "repel",
+          "value": "repel"
+        },
+        {
+          "label": "attract",
+          "value": "attract"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverRadius",
+      "name": "hoverRadius",
+      "label": "hoverRadius · t0",
+      "description": "悬停半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 140,
+      "upstreamDefault": "140",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.drift",
+      "name": "drift",
+      "label": "drift · t0",
+      "description": "漂移，控制 particles 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "drift"
+        }
+      ],
+      "type": "ParticlesDrift",
+      "defaultValue": "none",
+      "upstreamDefault": "'none'",
+      "control": "select",
+      "options": [
+        {
+          "label": "none",
+          "value": "none"
+        },
+        {
+          "label": "up",
+          "value": "up"
+        },
+        {
+          "label": "down",
+          "value": "down"
+        },
+        {
+          "label": "forward",
+          "value": "forward"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.driftSpeed",
+      "name": "driftSpeed",
+      "label": "driftSpeed · t0",
+      "description": "漂移速度，控制 particles 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "driftSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.variation",
+      "name": "variation",
+      "label": "variation · t0",
+      "description": "变体，控制 particles 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "variation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 particles 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "particleCount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 355,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "粒子数量，控制 particles 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 11
+      },
+      "codeExample": "particleCount={140}",
+      "usageExamples": [
+        "particleCount={140}"
+      ]
+    },
+    {
+      "name": "particleSpread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 356,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "粒子展开间距，控制 particles 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 12
+      },
+      "codeExample": "particleSpread={10}",
+      "usageExamples": [
+        "particleSpread={10}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 357,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 13
+      },
+      "codeExample": "speed={0.07}",
+      "usageExamples": [
+        "speed={0.07}"
+      ]
+    },
+    {
+      "name": "particleColors",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "['#ffffff']",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 358,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "#ffffff"
+      ],
+      "description": "粒子颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "particleColors={[palette.ivory, palette.sage, palette.sand]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "particleColors={[palette.ivory, palette.sage, palette.sand]}"
+      ]
+    },
+    {
+      "name": "moveParticlesOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 359,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否移动粒子组悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "moveParticlesOnHover",
+      "usageExamples": [
+        "moveParticlesOnHover"
+      ]
+    },
+    {
+      "name": "particleHoverFactor",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 360,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "粒子悬停系数，控制 particles 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 16
+      },
+      "codeExample": "particleHoverFactor={0.6}",
+      "usageExamples": [
+        "particleHoverFactor={0.6}"
+      ]
+    },
+    {
+      "name": "alphaParticles",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 361,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否透明度粒子组，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "alphaParticles",
+      "usageExamples": [
+        "alphaParticles"
+      ]
+    },
+    {
+      "name": "particleBaseSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 362,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "粒子基础尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 18
+      },
+      "codeExample": "particleBaseSize={80}",
+      "usageExamples": [
+        "particleBaseSize={80}"
+      ]
+    },
+    {
+      "name": "sizeRandomness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 363,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "尺寸随机差异，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 19
+      },
+      "codeExample": "sizeRandomness={1}"
+    },
+    {
+      "name": "cameraDistance",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "20",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 364,
+        "kind": "parameter"
+      },
+      "defaultValue": 20,
+      "description": "相机距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 20
+      },
+      "codeExample": "cameraDistance={20}"
+    },
+    {
+      "name": "disableRotation",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 365,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用旋转角度，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disableRotation={false}"
+    },
+    {
+      "name": "pixelRatio",
+      "type": "number",
+      "required": false,
+      "description": "像素比例，控制 particles 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 22
+      },
+      "codeExample": "pixelRatio={1}"
+    },
+    {
+      "name": "shape",
+      "type": "ParticlesShape",
+      "required": false,
+      "defaultExpression": "'circle'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 367,
+        "kind": "parameter"
+      },
+      "defaultValue": "circle",
+      "description": "形状，控制 particles 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "circle",
+        "square",
+        "ring",
+        "sparkle"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "circle",
+          "square",
+          "ring",
+          "sparkle"
+        ]
+      },
+      "codeExample": "shape=\"circle\"",
+      "usageExamples": [
+        "shape=\"circle\""
+      ]
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 368,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "辉光，控制 particles 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 24
+      },
+      "codeExample": "glow={0.25}",
+      "usageExamples": [
+        "glow={0.25}"
+      ]
+    },
+    {
+      "name": "twinkle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 369,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "闪烁，控制 particles 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 25
+      },
+      "codeExample": "twinkle={0.15}",
+      "usageExamples": [
+        "twinkle={0.15}"
+      ]
+    },
+    {
+      "name": "depthOfField",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 370,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "深度的场，控制 particles 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 26
+      },
+      "codeExample": "depthOfField={0}"
+    },
+    {
+      "name": "connections",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 371,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否连接线，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 27
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "connections={false}"
+    },
+    {
+      "name": "connectionDistance",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "110",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 372,
+        "kind": "parameter"
+      },
+      "defaultValue": 110,
+      "description": "连接距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 28
+      },
+      "codeExample": "connectionDistance={110}"
+    },
+    {
+      "name": "hoverEffect",
+      "type": "ParticlesHoverEffect",
+      "required": false,
+      "defaultExpression": "'parallax'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 373,
+        "kind": "parameter"
+      },
+      "defaultValue": "parallax",
+      "description": "悬停效果，控制 particles 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "parallax",
+        "repel",
+        "attract"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "parallax",
+          "repel",
+          "attract"
+        ]
+      },
+      "codeExample": "hoverEffect={\"parallax\"}"
+    },
+    {
+      "name": "hoverRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "140",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 374,
+        "kind": "parameter"
+      },
+      "defaultValue": 140,
+      "description": "悬停半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 30
+      },
+      "codeExample": "hoverRadius={140}"
+    },
+    {
+      "name": "clickBurst",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 375,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否点击爆发，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickBurst",
+      "usageExamples": [
+        "clickBurst"
+      ]
+    },
+    {
+      "name": "drift",
+      "type": "ParticlesDrift",
+      "required": false,
+      "defaultExpression": "'none'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 376,
+        "kind": "parameter"
+      },
+      "defaultValue": "none",
+      "description": "漂移，控制 particles 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "none",
+        "up",
+        "down",
+        "forward"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "none",
+          "up",
+          "down",
+          "forward"
+        ]
+      },
+      "codeExample": "drift={\"none\"}"
+    },
+    {
+      "name": "driftSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 377,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "漂移速度，控制 particles 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 33
+      },
+      "codeExample": "driftSpeed={1}"
+    },
+    {
+      "name": "variation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 378,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "变体，控制 particles 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 34
+      },
+      "codeExample": "variation={0}"
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 379,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 380,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 particles 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 36
+      },
+      "codeExample": "opacity={1}"
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 381,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 37
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode={false}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 382,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 38
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 383,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 39
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+        "line": 40
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/Particles/Particles';\n\n\n/** Agent Wan natural-tone preset for the real Particles component. */\nexport default function ParticlesDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Particles",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+      "props": [
+        {
+          "name": "particleCount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 355,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "粒子数量，控制 particles 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 11
+          },
+          "codeExample": "particleCount={140}",
+          "usageExamples": [
+            "particleCount={140}"
+          ]
+        },
+        {
+          "name": "particleSpread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 356,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "粒子展开间距，控制 particles 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 12
+          },
+          "codeExample": "particleSpread={10}",
+          "usageExamples": [
+            "particleSpread={10}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 357,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 13
+          },
+          "codeExample": "speed={0.07}",
+          "usageExamples": [
+            "speed={0.07}"
+          ]
+        },
+        {
+          "name": "particleColors",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "['#ffffff']",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 358,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "#ffffff"
+          ],
+          "description": "粒子颜色组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "particleColors={[palette.ivory, palette.sage, palette.sand]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "particleColors={[palette.ivory, palette.sage, palette.sand]}"
+          ]
+        },
+        {
+          "name": "moveParticlesOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 359,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否移动粒子组悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "moveParticlesOnHover",
+          "usageExamples": [
+            "moveParticlesOnHover"
+          ]
+        },
+        {
+          "name": "particleHoverFactor",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 360,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "粒子悬停系数，控制 particles 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 16
+          },
+          "codeExample": "particleHoverFactor={0.6}",
+          "usageExamples": [
+            "particleHoverFactor={0.6}"
+          ]
+        },
+        {
+          "name": "alphaParticles",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 361,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否透明度粒子组，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "alphaParticles",
+          "usageExamples": [
+            "alphaParticles"
+          ]
+        },
+        {
+          "name": "particleBaseSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 362,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "粒子基础尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 18
+          },
+          "codeExample": "particleBaseSize={80}",
+          "usageExamples": [
+            "particleBaseSize={80}"
+          ]
+        },
+        {
+          "name": "sizeRandomness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 363,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "尺寸随机差异，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 19
+          },
+          "codeExample": "sizeRandomness={1}"
+        },
+        {
+          "name": "cameraDistance",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "20",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 364,
+            "kind": "parameter"
+          },
+          "defaultValue": 20,
+          "description": "相机距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 20
+          },
+          "codeExample": "cameraDistance={20}"
+        },
+        {
+          "name": "disableRotation",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 365,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用旋转角度，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disableRotation={false}"
+        },
+        {
+          "name": "pixelRatio",
+          "type": "number",
+          "required": false,
+          "description": "像素比例，控制 particles 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 22
+          },
+          "codeExample": "pixelRatio={1}"
+        },
+        {
+          "name": "shape",
+          "type": "ParticlesShape",
+          "required": false,
+          "defaultExpression": "'circle'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 367,
+            "kind": "parameter"
+          },
+          "defaultValue": "circle",
+          "description": "形状，控制 particles 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "circle",
+            "square",
+            "ring",
+            "sparkle"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "circle",
+              "square",
+              "ring",
+              "sparkle"
+            ]
+          },
+          "codeExample": "shape=\"circle\"",
+          "usageExamples": [
+            "shape=\"circle\""
+          ]
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 368,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "辉光，控制 particles 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 24
+          },
+          "codeExample": "glow={0.25}",
+          "usageExamples": [
+            "glow={0.25}"
+          ]
+        },
+        {
+          "name": "twinkle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 369,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "闪烁，控制 particles 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 25
+          },
+          "codeExample": "twinkle={0.15}",
+          "usageExamples": [
+            "twinkle={0.15}"
+          ]
+        },
+        {
+          "name": "depthOfField",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 370,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "深度的场，控制 particles 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 26
+          },
+          "codeExample": "depthOfField={0}"
+        },
+        {
+          "name": "connections",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 371,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否连接线，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 27
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "connections={false}"
+        },
+        {
+          "name": "connectionDistance",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "110",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 372,
+            "kind": "parameter"
+          },
+          "defaultValue": 110,
+          "description": "连接距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 28
+          },
+          "codeExample": "connectionDistance={110}"
+        },
+        {
+          "name": "hoverEffect",
+          "type": "ParticlesHoverEffect",
+          "required": false,
+          "defaultExpression": "'parallax'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 373,
+            "kind": "parameter"
+          },
+          "defaultValue": "parallax",
+          "description": "悬停效果，控制 particles 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "parallax",
+            "repel",
+            "attract"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "parallax",
+              "repel",
+              "attract"
+            ]
+          },
+          "codeExample": "hoverEffect={\"parallax\"}"
+        },
+        {
+          "name": "hoverRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "140",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 374,
+            "kind": "parameter"
+          },
+          "defaultValue": 140,
+          "description": "悬停半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 30
+          },
+          "codeExample": "hoverRadius={140}"
+        },
+        {
+          "name": "clickBurst",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 375,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否点击爆发，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickBurst",
+          "usageExamples": [
+            "clickBurst"
+          ]
+        },
+        {
+          "name": "drift",
+          "type": "ParticlesDrift",
+          "required": false,
+          "defaultExpression": "'none'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 376,
+            "kind": "parameter"
+          },
+          "defaultValue": "none",
+          "description": "漂移，控制 particles 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "none",
+            "up",
+            "down",
+            "forward"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "none",
+              "up",
+              "down",
+              "forward"
+            ]
+          },
+          "codeExample": "drift={\"none\"}"
+        },
+        {
+          "name": "driftSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 377,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "漂移速度，控制 particles 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 33
+          },
+          "codeExample": "driftSpeed={1}"
+        },
+        {
+          "name": "variation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 378,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "变体，控制 particles 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 34
+          },
+          "codeExample": "variation={0}"
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 379,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 380,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 particles 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 36
+          },
+          "codeExample": "opacity={1}"
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 381,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 37
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode={false}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 382,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 38
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 383,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 39
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Particles/Particles.tsx",
+            "line": 40
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

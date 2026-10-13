@@ -1,0 +1,1335 @@
+{
+  "version": 1,
+  "id": "splash-cursor",
+  "name": "Splash Cursor",
+  "sourcePath": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+  "demoPath": "src/demos/pointer/splash-cursor.tsx",
+  "fields": [
+    {
+      "key": "t0.SIM_RESOLUTION",
+      "name": "SIM_RESOLUTION",
+      "label": "SIM_RESOLUTION · t0",
+      "description": "模拟分辨率，控制 splash cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "SIM_RESOLUTION"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 96,
+      "upstreamDefault": "128",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.DYE_RESOLUTION",
+      "name": "DYE_RESOLUTION",
+      "label": "DYE_RESOLUTION · t0",
+      "description": "染料分辨率，控制 splash cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "DYE_RESOLUTION"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 512,
+      "upstreamDefault": "1440",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.RAINBOW_MODE",
+      "name": "RAINBOW_MODE",
+      "label": "RAINBOW_MODE · t0",
+      "description": "是否彩虹模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "RAINBOW_MODE"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.COLOR",
+      "name": "COLOR",
+      "label": "COLOR · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "COLOR"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#ff0000'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.COLOR_UPDATE_SPEED",
+      "name": "COLOR_UPDATE_SPEED",
+      "label": "COLOR_UPDATE_SPEED · t0",
+      "description": "颜色更新速度，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "COLOR_UPDATE_SPEED"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.TRANSPARENT",
+      "name": "TRANSPARENT",
+      "label": "TRANSPARENT · t0",
+      "description": "是否透明背景，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "TRANSPARENT"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.SPLAT_RADIUS",
+      "name": "SPLAT_RADIUS",
+      "label": "SPLAT_RADIUS · t0",
+      "description": "注入半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "SPLAT_RADIUS"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.SPLAT_FORCE",
+      "name": "SPLAT_FORCE",
+      "label": "SPLAT_FORCE · t0",
+      "description": "注入作用力，控制 splash cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "SPLAT_FORCE"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3000,
+      "upstreamDefault": "6000",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.CURL",
+      "name": "CURL",
+      "label": "CURL · t0",
+      "description": "旋度，控制 splash cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "CURL"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.PRESSURE_ITERATIONS",
+      "name": "PRESSURE_ITERATIONS",
+      "label": "PRESSURE_ITERATIONS · t0",
+      "description": "压力迭代次数，控制 splash cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "PRESSURE_ITERATIONS"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 12,
+      "upstreamDefault": "20",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.CAPTURE_RESOLUTION",
+      "name": "CAPTURE_RESOLUTION",
+      "label": "CAPTURE_RESOLUTION · t0",
+      "description": "采样分辨率，控制 splash cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "CAPTURE_RESOLUTION"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 512,
+      "upstreamDefault": "512",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.DENSITY_DISSIPATION",
+      "name": "DENSITY_DISSIPATION",
+      "label": "DENSITY_DISSIPATION · t0",
+      "description": "密度耗散，控制 splash cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "DENSITY_DISSIPATION"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3.5,
+      "upstreamDefault": "3.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.VELOCITY_DISSIPATION",
+      "name": "VELOCITY_DISSIPATION",
+      "label": "VELOCITY_DISSIPATION · t0",
+      "description": "速度矢量耗散，控制 splash cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "VELOCITY_DISSIPATION"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.PRESSURE",
+      "name": "PRESSURE",
+      "label": "PRESSURE · t0",
+      "description": "压力，控制 splash cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "PRESSURE"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.SHADING",
+      "name": "SHADING",
+      "label": "SHADING · t0",
+      "description": "是否面部明暗，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "SHADING"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.BACK_COLOR",
+      "name": "BACK_COLOR",
+      "label": "BACK_COLOR · t0",
+      "description": "背面颜色的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "BACK_COLOR"
+        }
+      ],
+      "type": "ColorRGB",
+      "defaultValue": {
+        "r": 0.5,
+        "g": 0,
+        "b": 0
+      },
+      "upstreamDefault": "{ r: 0.5, g: 0, b: 0 }",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "r": {
+            "kind": "number"
+          },
+          "g": {
+            "kind": "number"
+          },
+          "b": {
+            "kind": "number"
+          }
+        },
+        "required": [
+          "r",
+          "g",
+          "b"
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "SIM_RESOLUTION",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "128",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": 128,
+      "description": "模拟分辨率，控制 splash cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 11
+      },
+      "codeExample": "SIM_RESOLUTION={96}",
+      "usageExamples": [
+        "SIM_RESOLUTION={96}"
+      ]
+    },
+    {
+      "name": "DYE_RESOLUTION",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1440",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": 1440,
+      "description": "染料分辨率，控制 splash cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 12
+      },
+      "codeExample": "DYE_RESOLUTION={512}",
+      "usageExamples": [
+        "DYE_RESOLUTION={512}"
+      ]
+    },
+    {
+      "name": "CAPTURE_RESOLUTION",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "512",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": 512,
+      "description": "采样分辨率，控制 splash cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 13
+      },
+      "codeExample": "CAPTURE_RESOLUTION={512}"
+    },
+    {
+      "name": "DENSITY_DISSIPATION",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": 3.5,
+      "description": "密度耗散，控制 splash cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 14
+      },
+      "codeExample": "DENSITY_DISSIPATION={3.5}"
+    },
+    {
+      "name": "VELOCITY_DISSIPATION",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "速度矢量耗散，控制 splash cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 15
+      },
+      "codeExample": "VELOCITY_DISSIPATION={2}"
+    },
+    {
+      "name": "PRESSURE",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "压力，控制 splash cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 16
+      },
+      "codeExample": "PRESSURE={0.1}"
+    },
+    {
+      "name": "PRESSURE_ITERATIONS",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "20",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": 20,
+      "description": "压力迭代次数，控制 splash cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 17
+      },
+      "codeExample": "PRESSURE_ITERATIONS={12}",
+      "usageExamples": [
+        "PRESSURE_ITERATIONS={12}"
+      ]
+    },
+    {
+      "name": "CURL",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "旋度，控制 splash cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 18
+      },
+      "codeExample": "CURL={10}",
+      "usageExamples": [
+        "CURL={10}"
+      ]
+    },
+    {
+      "name": "SPLAT_RADIUS",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "注入半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 19
+      },
+      "codeExample": "SPLAT_RADIUS={0.15}",
+      "usageExamples": [
+        "SPLAT_RADIUS={0.15}"
+      ]
+    },
+    {
+      "name": "SPLAT_FORCE",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "6000",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": 6000,
+      "description": "注入作用力，控制 splash cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 20
+      },
+      "codeExample": "SPLAT_FORCE={3000}",
+      "usageExamples": [
+        "SPLAT_FORCE={3000}"
+      ]
+    },
+    {
+      "name": "SHADING",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否面部明暗，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "SHADING={true}"
+    },
+    {
+      "name": "COLOR_UPDATE_SPEED",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "颜色更新速度，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 22
+      },
+      "codeExample": "COLOR_UPDATE_SPEED={0}",
+      "usageExamples": [
+        "COLOR_UPDATE_SPEED={0}"
+      ]
+    },
+    {
+      "name": "BACK_COLOR",
+      "type": "ColorRGB",
+      "required": false,
+      "defaultExpression": "{ r: 0.5, g: 0, b: 0 }",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": {
+        "r": 0.5,
+        "g": 0,
+        "b": 0
+      },
+      "description": "背面颜色的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "object",
+        "fields": [
+          {
+            "name": "r",
+            "type": "number",
+            "required": true
+          },
+          {
+            "name": "g",
+            "type": "number",
+            "required": true
+          },
+          {
+            "name": "b",
+            "type": "number",
+            "required": true
+          }
+        ]
+      },
+      "codeExample": "BACK_COLOR={{\"r\":0.5,\"g\":0,\"b\":0}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "TRANSPARENT",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否透明背景，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "TRANSPARENT",
+      "usageExamples": [
+        "TRANSPARENT"
+      ]
+    },
+    {
+      "name": "RAINBOW_MODE",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否彩虹模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "RAINBOW_MODE={false}",
+      "usageExamples": [
+        "RAINBOW_MODE={false}"
+      ]
+    },
+    {
+      "name": "COLOR",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ff0000'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ff0000",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+        "line": 26
+      },
+      "codeExample": "COLOR={palette.primary}",
+      "usageExamples": [
+        "COLOR={palette.primary}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/SplashCursor/SplashCursor';\nimport { palette } from '../../shared/demo-support';\n\n// 必须在独立iframe预览。上游实现固定整个viewport且没有完整卸载清理；切换时销毁iframe文档可释放该演示。\n// 关闭彩虹模式，流体颜色使用苔绿；光标移动运行真实流体模拟。\n// 此演示需要可用的WebGL上下文；上下文创建失败时应显示能力提示，不能声称效果已经运行。\n\nexport default function SplashCursorDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n    /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "SplashCursor",
+      "sourcePath": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+      "props": [
+        {
+          "name": "SIM_RESOLUTION",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "128",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": 128,
+          "description": "模拟分辨率，控制 splash cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 11
+          },
+          "codeExample": "SIM_RESOLUTION={96}",
+          "usageExamples": [
+            "SIM_RESOLUTION={96}"
+          ]
+        },
+        {
+          "name": "DYE_RESOLUTION",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1440",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": 1440,
+          "description": "染料分辨率，控制 splash cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 12
+          },
+          "codeExample": "DYE_RESOLUTION={512}",
+          "usageExamples": [
+            "DYE_RESOLUTION={512}"
+          ]
+        },
+        {
+          "name": "CAPTURE_RESOLUTION",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "512",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": 512,
+          "description": "采样分辨率，控制 splash cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 13
+          },
+          "codeExample": "CAPTURE_RESOLUTION={512}"
+        },
+        {
+          "name": "DENSITY_DISSIPATION",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": 3.5,
+          "description": "密度耗散，控制 splash cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 14
+          },
+          "codeExample": "DENSITY_DISSIPATION={3.5}"
+        },
+        {
+          "name": "VELOCITY_DISSIPATION",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "速度矢量耗散，控制 splash cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 15
+          },
+          "codeExample": "VELOCITY_DISSIPATION={2}"
+        },
+        {
+          "name": "PRESSURE",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "压力，控制 splash cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 16
+          },
+          "codeExample": "PRESSURE={0.1}"
+        },
+        {
+          "name": "PRESSURE_ITERATIONS",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "20",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": 20,
+          "description": "压力迭代次数，控制 splash cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 17
+          },
+          "codeExample": "PRESSURE_ITERATIONS={12}",
+          "usageExamples": [
+            "PRESSURE_ITERATIONS={12}"
+          ]
+        },
+        {
+          "name": "CURL",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "旋度，控制 splash cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 18
+          },
+          "codeExample": "CURL={10}",
+          "usageExamples": [
+            "CURL={10}"
+          ]
+        },
+        {
+          "name": "SPLAT_RADIUS",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "注入半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 19
+          },
+          "codeExample": "SPLAT_RADIUS={0.15}",
+          "usageExamples": [
+            "SPLAT_RADIUS={0.15}"
+          ]
+        },
+        {
+          "name": "SPLAT_FORCE",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "6000",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": 6000,
+          "description": "注入作用力，控制 splash cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 20
+          },
+          "codeExample": "SPLAT_FORCE={3000}",
+          "usageExamples": [
+            "SPLAT_FORCE={3000}"
+          ]
+        },
+        {
+          "name": "SHADING",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否面部明暗，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "SHADING={true}"
+        },
+        {
+          "name": "COLOR_UPDATE_SPEED",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "颜色更新速度，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 22
+          },
+          "codeExample": "COLOR_UPDATE_SPEED={0}",
+          "usageExamples": [
+            "COLOR_UPDATE_SPEED={0}"
+          ]
+        },
+        {
+          "name": "BACK_COLOR",
+          "type": "ColorRGB",
+          "required": false,
+          "defaultExpression": "{ r: 0.5, g: 0, b: 0 }",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": {
+            "r": 0.5,
+            "g": 0,
+            "b": 0
+          },
+          "description": "背面颜色的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "object",
+            "fields": [
+              {
+                "name": "r",
+                "type": "number",
+                "required": true
+              },
+              {
+                "name": "g",
+                "type": "number",
+                "required": true
+              },
+              {
+                "name": "b",
+                "type": "number",
+                "required": true
+              }
+            ]
+          },
+          "codeExample": "BACK_COLOR={{\"r\":0.5,\"g\":0,\"b\":0}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "TRANSPARENT",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否透明背景，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "TRANSPARENT",
+          "usageExamples": [
+            "TRANSPARENT"
+          ]
+        },
+        {
+          "name": "RAINBOW_MODE",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否彩虹模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "RAINBOW_MODE={false}",
+          "usageExamples": [
+            "RAINBOW_MODE={false}"
+          ]
+        },
+        {
+          "name": "COLOR",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ff0000'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ff0000",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SplashCursor/SplashCursor.tsx",
+            "line": 26
+          },
+          "codeExample": "COLOR={palette.primary}",
+          "usageExamples": [
+            "COLOR={palette.primary}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

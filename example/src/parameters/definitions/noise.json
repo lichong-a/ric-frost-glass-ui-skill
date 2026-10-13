@@ -1,0 +1,1315 @@
+{
+  "version": 1,
+  "id": "noise",
+  "name": "Noise",
+  "sourcePath": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+  "demoPath": "src/demos/background/noise.tsx",
+  "fields": [
+    {
+      "key": "t0.src",
+      "name": "src",
+      "label": "资源地址 · t0",
+      "description": "加载图像、视频或纹理的资源地址。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "src"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "@media/scene-1.svg",
+      "control": "resource",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "options": [
+        {
+          "label": "纹理 · 色彩绽放",
+          "value": "@asset/restoration/chromatic-bloom.svg"
+        },
+        {
+          "label": "纹理 · 矿石潮汐",
+          "value": "@asset/restoration/mineral-tide.svg"
+        },
+        {
+          "label": "纹理 · 夜色轨道",
+          "value": "@asset/restoration/nocturne-orbit.svg"
+        },
+        {
+          "label": "纹理 · 棱彩林冠",
+          "value": "@asset/restoration/prismatic-canopy.svg"
+        },
+        {
+          "label": "纹理 · 日光沙丘",
+          "value": "@asset/restoration/solar-dunes.svg"
+        },
+        {
+          "label": "纹理 · 朱红折页",
+          "value": "@asset/restoration/vermilion-fold.svg"
+        },
+        {
+          "label": "场景 · 山雾",
+          "value": "@media/scene-1.svg"
+        },
+        {
+          "label": "场景 · 茶庭",
+          "value": "@media/scene-2.svg"
+        },
+        {
+          "label": "场景 · 沙洲",
+          "value": "@media/scene-3.svg"
+        },
+        {
+          "label": "场景 · 静水",
+          "value": "@media/scene-4.svg"
+        },
+        {
+          "label": "场景 · 林间",
+          "value": "@media/scene-5.svg"
+        },
+        {
+          "label": "场景 · 岩纹",
+          "value": "@media/scene-6.svg"
+        }
+      ]
+    },
+    {
+      "key": "t0.alt",
+      "name": "alt",
+      "label": "替代文字 · t0",
+      "description": "图像无法显示及辅助技术读取时的替代文字。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "alt"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "颗粒材质示意图",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "CSSProperties | undefined",
+      "defaultValue": {
+        "width": "100%",
+        "height": "100%",
+        "objectFit": "cover"
+      },
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "width": {
+            "kind": "string"
+          },
+          "height": {
+            "kind": "string"
+          },
+          "objectFit": {
+            "kind": "string"
+          }
+        },
+        "required": [
+          "width",
+          "height",
+          "objectFit"
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.opacity",
+      "name": "opacity",
+      "label": "透明度 · t1",
+      "description": "不透明度，控制 noise 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.14,
+      "upstreamDefault": "0.2",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t1.size",
+      "name": "size",
+      "label": "尺寸 · t1",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "size"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.fps",
+      "name": "fps",
+      "label": "fps · t1",
+      "description": "每秒帧数，控制 noise 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "fps"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "24",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.blendMode",
+      "name": "blendMode",
+      "label": "blendMode · t1",
+      "description": "混合模式，控制 noise 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "blendMode"
+        }
+      ],
+      "type": "NoiseBlendMode",
+      "defaultValue": "overlay",
+      "upstreamDefault": "'overlay'",
+      "control": "select",
+      "options": [
+        {
+          "label": "normal",
+          "value": "normal"
+        },
+        {
+          "label": "overlay",
+          "value": "overlay"
+        },
+        {
+          "label": "soft-light",
+          "value": "soft-light"
+        },
+        {
+          "label": "multiply",
+          "value": "multiply"
+        },
+        {
+          "label": "screen",
+          "value": "screen"
+        },
+        {
+          "label": "difference",
+          "value": "difference"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.contrast",
+      "name": "contrast",
+      "label": "contrast · t1",
+      "description": "对比度，控制 noise 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "contrast"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.colored",
+      "name": "colored",
+      "label": "colored · t1",
+      "description": "是否着色，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "colored"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.dust",
+      "name": "dust",
+      "label": "dust · t1",
+      "description": "尘点，控制 noise 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "dust"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.03,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.scratches",
+      "name": "scratches",
+      "label": "scratches · t1",
+      "description": "划痕，控制 noise 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "scratches"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.scanlines",
+      "name": "scanlines",
+      "label": "scanlines · t1",
+      "description": "扫描线组，控制 noise 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "scanlines"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.flicker",
+      "name": "flicker",
+      "label": "flicker · t1",
+      "description": "闪烁，控制 noise 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "flicker"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.fixed",
+      "name": "fixed",
+      "label": "fixed · t1",
+      "description": "是否固定，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "fixed"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.zIndex",
+      "name": "zIndex",
+      "label": "zIndex · t1",
+      "description": "Z轴索引，控制 noise 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "zIndex"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 108,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "不透明度，控制 noise 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 10
+      },
+      "codeExample": "opacity={0.14}",
+      "usageExamples": [
+        "opacity={0.14}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 109,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 11
+      },
+      "codeExample": "size={1}",
+      "usageExamples": [
+        "size={1}"
+      ]
+    },
+    {
+      "name": "fps",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "24",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 110,
+        "kind": "parameter"
+      },
+      "defaultValue": 24,
+      "description": "每秒帧数，控制 noise 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 12
+      },
+      "codeExample": "fps={20}",
+      "usageExamples": [
+        "fps={20}"
+      ]
+    },
+    {
+      "name": "blendMode",
+      "type": "NoiseBlendMode",
+      "required": false,
+      "defaultExpression": "'overlay'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 111,
+        "kind": "parameter"
+      },
+      "defaultValue": "overlay",
+      "description": "混合模式，控制 noise 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "normal",
+        "overlay",
+        "soft-light",
+        "multiply",
+        "screen",
+        "difference"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 13
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "normal",
+          "overlay",
+          "soft-light",
+          "multiply",
+          "screen",
+          "difference"
+        ]
+      },
+      "codeExample": "blendMode=\"overlay\"",
+      "usageExamples": [
+        "blendMode=\"overlay\""
+      ]
+    },
+    {
+      "name": "contrast",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 112,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "对比度，控制 noise 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 14
+      },
+      "codeExample": "contrast={0.4}",
+      "usageExamples": [
+        "contrast={0.4}"
+      ]
+    },
+    {
+      "name": "colored",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 113,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否着色，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "colored={false}",
+      "usageExamples": [
+        "colored={false}"
+      ]
+    },
+    {
+      "name": "dust",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 114,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "尘点，控制 noise 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 16
+      },
+      "codeExample": "dust={0.03}",
+      "usageExamples": [
+        "dust={0.03}"
+      ]
+    },
+    {
+      "name": "scratches",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 115,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "划痕，控制 noise 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 17
+      },
+      "codeExample": "scratches={0}",
+      "usageExamples": [
+        "scratches={0}"
+      ]
+    },
+    {
+      "name": "scanlines",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 116,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "扫描线组，控制 noise 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 18
+      },
+      "codeExample": "scanlines={0}",
+      "usageExamples": [
+        "scanlines={0}"
+      ]
+    },
+    {
+      "name": "flicker",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 117,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "闪烁，控制 noise 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 19
+      },
+      "codeExample": "flicker={0}",
+      "usageExamples": [
+        "flicker={0}"
+      ]
+    },
+    {
+      "name": "fixed",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 118,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否固定，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "fixed={false}",
+      "usageExamples": [
+        "fixed={false}"
+      ]
+    },
+    {
+      "name": "zIndex",
+      "type": "number",
+      "required": false,
+      "description": "Z轴索引，控制 noise 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 21
+      },
+      "codeExample": "zIndex={2}",
+      "usageExamples": [
+        "zIndex={2}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 120,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 22
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+        "line": 23
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/Noise/Noise';\nimport { palette } from '../../shared/demo-support';\n\n// 示例放大颗粒以便观察；用于实际后台环境层时应按UI规范进一步降低强度。\n// 此演示使用Canvas；确保容器拥有非零宽高。\n\nexport default function NoiseDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ position: 'relative', width: '100%', height: 340, overflow: 'hidden', borderRadius: 20 }}><img    /*__AW_PROPS_t0__*/  /><Component             /*__AW_PROPS_t1__*/  /></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "img",
+      "props": [
+        {
+          "name": "src",
+          "type": "string | undefined",
+          "required": false,
+          "description": "加载图像、视频或纹理的资源地址。",
+          "usageExamples": [
+            "src={MEDIA[0]}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3077
+          }
+        },
+        {
+          "name": "alt",
+          "type": "string | undefined",
+          "required": false,
+          "description": "图像无法显示及辅助技术读取时的替代文字。",
+          "usageExamples": [
+            "alt=\"颗粒材质示意图\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3069
+          }
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties | undefined",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "usageExamples": [
+            "style={{ width: '100%', height: '100%', objectFit: 'cover' }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2712
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "Noise",
+      "sourcePath": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+      "props": [
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 108,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "不透明度，控制 noise 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 10
+          },
+          "codeExample": "opacity={0.14}",
+          "usageExamples": [
+            "opacity={0.14}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 109,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 11
+          },
+          "codeExample": "size={1}",
+          "usageExamples": [
+            "size={1}"
+          ]
+        },
+        {
+          "name": "fps",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "24",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 110,
+            "kind": "parameter"
+          },
+          "defaultValue": 24,
+          "description": "每秒帧数，控制 noise 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 12
+          },
+          "codeExample": "fps={20}",
+          "usageExamples": [
+            "fps={20}"
+          ]
+        },
+        {
+          "name": "blendMode",
+          "type": "NoiseBlendMode",
+          "required": false,
+          "defaultExpression": "'overlay'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 111,
+            "kind": "parameter"
+          },
+          "defaultValue": "overlay",
+          "description": "混合模式，控制 noise 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "normal",
+            "overlay",
+            "soft-light",
+            "multiply",
+            "screen",
+            "difference"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 13
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "normal",
+              "overlay",
+              "soft-light",
+              "multiply",
+              "screen",
+              "difference"
+            ]
+          },
+          "codeExample": "blendMode=\"overlay\"",
+          "usageExamples": [
+            "blendMode=\"overlay\""
+          ]
+        },
+        {
+          "name": "contrast",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 112,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "对比度，控制 noise 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 14
+          },
+          "codeExample": "contrast={0.4}",
+          "usageExamples": [
+            "contrast={0.4}"
+          ]
+        },
+        {
+          "name": "colored",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 113,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否着色，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "colored={false}",
+          "usageExamples": [
+            "colored={false}"
+          ]
+        },
+        {
+          "name": "dust",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 114,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "尘点，控制 noise 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 16
+          },
+          "codeExample": "dust={0.03}",
+          "usageExamples": [
+            "dust={0.03}"
+          ]
+        },
+        {
+          "name": "scratches",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 115,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "划痕，控制 noise 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 17
+          },
+          "codeExample": "scratches={0}",
+          "usageExamples": [
+            "scratches={0}"
+          ]
+        },
+        {
+          "name": "scanlines",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 116,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "扫描线组，控制 noise 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 18
+          },
+          "codeExample": "scanlines={0}",
+          "usageExamples": [
+            "scanlines={0}"
+          ]
+        },
+        {
+          "name": "flicker",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 117,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "闪烁，控制 noise 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 19
+          },
+          "codeExample": "flicker={0}",
+          "usageExamples": [
+            "flicker={0}"
+          ]
+        },
+        {
+          "name": "fixed",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 118,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否固定，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "fixed={false}",
+          "usageExamples": [
+            "fixed={false}"
+          ]
+        },
+        {
+          "name": "zIndex",
+          "type": "number",
+          "required": false,
+          "description": "Z轴索引，控制 noise 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 21
+          },
+          "codeExample": "zIndex={2}",
+          "usageExamples": [
+            "zIndex={2}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 120,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 22
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Noise/Noise.tsx",
+            "line": 23
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,1772 @@
+{
+  "version": 1,
+  "id": "glide-select",
+  "name": "Glide Select",
+  "sourcePath": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+  "demoPath": "src/demos/form/glide-select.tsx",
+  "fields": [
+    {
+      "key": "t0.options",
+      "name": "options",
+      "label": "选项 · t0",
+      "description": "可选择的候选项，显示标签与提交值按选项类型定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "options"
+        }
+      ],
+      "type": "(string | GlideSelectOption)[]",
+      "defaultValue": [
+        {
+          "value": "design",
+          "label": "设计工作空间",
+          "tag": "当前"
+        },
+        {
+          "value": "research",
+          "label": "研究工作空间",
+          "tag": "示例"
+        },
+        {
+          "value": "delivery",
+          "label": "交付工作空间",
+          "tag": "示例"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_OPTIONS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "string"
+            },
+            {
+              "kind": "object",
+              "properties": {
+                "value": {
+                  "kind": "string"
+                },
+                "tag": {
+                  "kind": "string"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ]
+            }
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ariaLabel",
+      "name": "ariaLabel",
+      "label": "ariaLabel · t0",
+      "description": "无障碍标签，控制 glide select 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ariaLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "选择演示工作空间",
+      "upstreamDefault": "'Select'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showTags",
+      "name": "showTags",
+      "label": "showTags · t0",
+      "description": "是否显示标签组，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showTags"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.surfaceColor",
+      "name": "surfaceColor",
+      "label": "表面颜色 · t0",
+      "description": "表面颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "surfaceColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#27272a'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.highlightColor",
+      "name": "highlightColor",
+      "label": "highlightColor · t0",
+      "description": "高亮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "highlightColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#3f3f46'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.menuWidth",
+      "name": "menuWidth",
+      "label": "menuWidth · t0",
+      "description": "菜单宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "menuWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 280,
+      "upstreamDefault": "176",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.placeholder",
+      "name": "placeholder",
+      "label": "占位文字 · t0",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "placeholder"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "Select…",
+      "upstreamDefault": "'Select…'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "'sm' | 'md' | 'lg'",
+      "defaultValue": "md",
+      "upstreamDefault": "'md'",
+      "control": "select",
+      "options": [
+        {
+          "label": "sm",
+          "value": "sm"
+        },
+        {
+          "label": "md",
+          "value": "md"
+        },
+        {
+          "label": "lg",
+          "value": "lg"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.placement",
+      "name": "placement",
+      "label": "placement · t0",
+      "description": "布局位置，控制 glide select 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "placement"
+        }
+      ],
+      "type": "'top' | 'bottom'",
+      "defaultValue": "bottom",
+      "upstreamDefault": "'bottom'",
+      "control": "select",
+      "options": [
+        {
+          "label": "top",
+          "value": "top"
+        },
+        {
+          "label": "bottom",
+          "value": "bottom"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.align",
+      "name": "align",
+      "label": "align · t0",
+      "description": "对齐，控制 glide select 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "align"
+        }
+      ],
+      "type": "'left' | 'right'",
+      "defaultValue": "left",
+      "upstreamDefault": "'left'",
+      "control": "select",
+      "options": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.popDuration",
+      "name": "popDuration",
+      "label": "popDuration · t0",
+      "description": "弹出时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "popDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 180,
+      "upstreamDefault": "180",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glideDuration",
+      "name": "glideDuration",
+      "label": "glideDuration · t0",
+      "description": "滑移时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glideDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 220,
+      "upstreamDefault": "220",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rememberPosition",
+      "name": "rememberPosition",
+      "label": "rememberPosition · t0",
+      "description": "是否记住位置，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rememberPosition"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.value",
+      "name": "value",
+      "label": "当前值",
+      "description": "示例的受控状态 value；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "design",
+      "control": "select",
+      "options": [
+        {
+          "label": "设计工作空间",
+          "value": "design"
+        },
+        {
+          "label": "研究工作空间",
+          "value": "research"
+        },
+        {
+          "label": "交付工作空间",
+          "value": "delivery"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 640,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "options",
+      "type": "(string | GlideSelectOption)[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_OPTIONS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "One",
+        "Two",
+        "Three"
+      ],
+      "defaultResolvedExpression": "['One', 'Two', 'Three']",
+      "description": "可选择的候选项，显示标签与提交值按选项类型定义。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string | GlideSelectOption",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "GlideSelectOption",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "label",
+                    "type": "ReactNode",
+                    "required": true
+                  },
+                  {
+                    "name": "tag",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "options={options}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "options={options}"
+      ]
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "inner",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 88,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 17
+      },
+      "codeExample": "value={value}",
+      "usageExamples": [
+        "value={value}"
+      ]
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 87,
+        "kind": "implementation-fallback"
+      },
+      "defaultValue": "",
+      "defaultCondition": "nullish",
+      "description": "非受控模式的初始值；挂载后更新通常通过内部状态或受控 value 完成。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 18
+      },
+      "codeExample": "defaultValue={\"\"}"
+    },
+    {
+      "name": "onChange",
+      "type": "(value: string, option: GlideSelectOption) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((value: string, option: GlideSelectOption) => void) | undefined"
+      },
+      "codeExample": "onChange={setValue}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={setValue}"
+      ]
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Select…'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": "Select…",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 20
+      },
+      "codeExample": "placeholder={\"Select…\"}"
+    },
+    {
+      "name": "showTags",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示标签组，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showTags",
+      "usageExamples": [
+        "showTags"
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 22
+      },
+      "codeExample": "accentColor={palette.primary}",
+      "usageExamples": [
+        "accentColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "surfaceColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#27272a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": "#27272a",
+      "description": "表面颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 23
+      },
+      "codeExample": "surfaceColor={palette.ivory}",
+      "usageExamples": [
+        "surfaceColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "highlightColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#3f3f46'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": "#3f3f46",
+      "description": "高亮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 24
+      },
+      "codeExample": "highlightColor={palette.sage}",
+      "usageExamples": [
+        "highlightColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 25
+      },
+      "codeExample": "textColor={palette.ink}",
+      "usageExamples": [
+        "textColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "required": false,
+      "defaultExpression": "'md'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": "md",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "codeExample": "size={\"md\"}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 27
+      },
+      "codeExample": "radius={10}",
+      "usageExamples": [
+        "radius={10}"
+      ]
+    },
+    {
+      "name": "menuWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "176",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": 176,
+      "description": "菜单宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 28
+      },
+      "codeExample": "menuWidth={280}",
+      "usageExamples": [
+        "menuWidth={280}"
+      ]
+    },
+    {
+      "name": "placement",
+      "type": "'top' | 'bottom'",
+      "required": false,
+      "defaultExpression": "'bottom'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": "bottom",
+      "description": "布局位置，控制 glide select 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "top",
+        "bottom"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "top",
+          "bottom"
+        ]
+      },
+      "codeExample": "placement={\"bottom\"}"
+    },
+    {
+      "name": "align",
+      "type": "'left' | 'right'",
+      "required": false,
+      "defaultExpression": "'left'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultValue": "left",
+      "description": "对齐，控制 glide select 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "left",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "left",
+          "right"
+        ]
+      },
+      "codeExample": "align={\"left\"}"
+    },
+    {
+      "name": "popDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "180",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": 180,
+      "description": "弹出时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 31
+      },
+      "codeExample": "popDuration={180}"
+    },
+    {
+      "name": "glideDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "220",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": 220,
+      "description": "滑移时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 32
+      },
+      "codeExample": "glideDuration={220}"
+    },
+    {
+      "name": "rememberPosition",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 81,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否记住位置，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "rememberPosition={true}"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 82,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Select'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 83,
+        "kind": "parameter"
+      },
+      "defaultValue": "Select",
+      "description": "无障碍标签，控制 glide select 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 35
+      },
+      "codeExample": "ariaLabel=\"选择演示工作空间\"",
+      "usageExamples": [
+        "ariaLabel=\"选择演示工作空间\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 84,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+        "line": 36
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport GlideSelect from '../../../.upstream/src/ts-default/Micro/GlideSelect/GlideSelect';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nconst options = [{ value: 'design', label: '设计工作空间', tag: '当前' }, { value: 'research', label: '研究工作空间', tag: '示例' }, { value: 'delivery', label: '交付工作空间', tag: '示例' }];\nexport default function GlideSelectDemo() {\n  const [value, setValue] = useState(/*__AW_STATE_state.value__*/);\n  return <DemoPanel title=\"Glide Select · 平滑选择\"><div className={cn(\"aw-micro-stack\")} style={{ minHeight: 360, paddingTop: 40 }}>\n    <GlideSelect  value={value} onChange={setValue}         /*__AW_PROPS_t0__*/  />\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">当前：{options.find(item => item.value === value)?.label}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "GlideSelect",
+      "sourcePath": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+      "props": [
+        {
+          "name": "options",
+          "type": "(string | GlideSelectOption)[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_OPTIONS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "One",
+            "Two",
+            "Three"
+          ],
+          "defaultResolvedExpression": "['One', 'Two', 'Three']",
+          "description": "可选择的候选项，显示标签与提交值按选项类型定义。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string | GlideSelectOption",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "GlideSelectOption",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "label",
+                        "type": "ReactNode",
+                        "required": true
+                      },
+                      {
+                        "name": "tag",
+                        "type": "string",
+                        "required": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "options={options}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "options={options}"
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "inner",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 88,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 17
+          },
+          "codeExample": "value={value}",
+          "usageExamples": [
+            "value={value}"
+          ]
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 87,
+            "kind": "implementation-fallback"
+          },
+          "defaultValue": "",
+          "defaultCondition": "nullish",
+          "description": "非受控模式的初始值；挂载后更新通常通过内部状态或受控 value 完成。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 18
+          },
+          "codeExample": "defaultValue={\"\"}"
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string, option: GlideSelectOption) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((value: string, option: GlideSelectOption) => void) | undefined"
+          },
+          "codeExample": "onChange={setValue}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={setValue}"
+          ]
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Select…'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": "Select…",
+          "description": "尚未填写或选择时显示的提示文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 20
+          },
+          "codeExample": "placeholder={\"Select…\"}"
+        },
+        {
+          "name": "showTags",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示标签组，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showTags",
+          "usageExamples": [
+            "showTags"
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 22
+          },
+          "codeExample": "accentColor={palette.primary}",
+          "usageExamples": [
+            "accentColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "surfaceColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#27272a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": "#27272a",
+          "description": "表面颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 23
+          },
+          "codeExample": "surfaceColor={palette.ivory}",
+          "usageExamples": [
+            "surfaceColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "highlightColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#3f3f46'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": "#3f3f46",
+          "description": "高亮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 24
+          },
+          "codeExample": "highlightColor={palette.sage}",
+          "usageExamples": [
+            "highlightColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 25
+          },
+          "codeExample": "textColor={palette.ink}",
+          "usageExamples": [
+            "textColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "required": false,
+          "defaultExpression": "'md'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": "md",
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "codeExample": "size={\"md\"}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 27
+          },
+          "codeExample": "radius={10}",
+          "usageExamples": [
+            "radius={10}"
+          ]
+        },
+        {
+          "name": "menuWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "176",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": 176,
+          "description": "菜单宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 28
+          },
+          "codeExample": "menuWidth={280}",
+          "usageExamples": [
+            "menuWidth={280}"
+          ]
+        },
+        {
+          "name": "placement",
+          "type": "'top' | 'bottom'",
+          "required": false,
+          "defaultExpression": "'bottom'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": "bottom",
+          "description": "布局位置，控制 glide select 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "top",
+            "bottom"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "top",
+              "bottom"
+            ]
+          },
+          "codeExample": "placement={\"bottom\"}"
+        },
+        {
+          "name": "align",
+          "type": "'left' | 'right'",
+          "required": false,
+          "defaultExpression": "'left'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultValue": "left",
+          "description": "对齐，控制 glide select 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "left",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "left",
+              "right"
+            ]
+          },
+          "codeExample": "align={\"left\"}"
+        },
+        {
+          "name": "popDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "180",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": 180,
+          "description": "弹出时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 31
+          },
+          "codeExample": "popDuration={180}"
+        },
+        {
+          "name": "glideDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "220",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": 220,
+          "description": "滑移时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 32
+          },
+          "codeExample": "glideDuration={220}"
+        },
+        {
+          "name": "rememberPosition",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 81,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否记住位置，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "rememberPosition={true}"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 82,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Select'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 83,
+            "kind": "parameter"
+          },
+          "defaultValue": "Select",
+          "description": "无障碍标签，控制 glide select 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 35
+          },
+          "codeExample": "ariaLabel=\"选择演示工作空间\"",
+          "usageExamples": [
+            "ariaLabel=\"选择演示工作空间\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 84,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/GlideSelect/GlideSelect.tsx",
+            "line": 36
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

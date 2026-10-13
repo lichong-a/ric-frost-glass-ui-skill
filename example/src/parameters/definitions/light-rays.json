@@ -1,0 +1,1170 @@
+{
+  "version": 1,
+  "id": "light-rays",
+  "name": "Light Rays",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+  "demoPath": "src/demos/background/light-rays.tsx",
+  "fields": [
+    {
+      "key": "t0.raysColor",
+      "name": "raysColor",
+      "label": "raysColor · t0",
+      "description": "射线颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "raysColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "DEFAULT_COLOR",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.raysOrigin",
+      "name": "raysOrigin",
+      "label": "raysOrigin · t0",
+      "description": "射线起点，控制 light rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "raysOrigin"
+        }
+      ],
+      "type": "RaysOrigin",
+      "defaultValue": "top-center",
+      "upstreamDefault": "'top-center'",
+      "control": "select",
+      "options": [
+        {
+          "label": "top-center",
+          "value": "top-center"
+        },
+        {
+          "label": "top-left",
+          "value": "top-left"
+        },
+        {
+          "label": "top-right",
+          "value": "top-right"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        },
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "bottom-center",
+          "value": "bottom-center"
+        },
+        {
+          "label": "bottom-right",
+          "value": "bottom-right"
+        },
+        {
+          "label": "bottom-left",
+          "value": "bottom-left"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.raysSpeed",
+      "name": "raysSpeed",
+      "label": "raysSpeed · t0",
+      "description": "射线速度，控制 light rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "raysSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lightSpread",
+      "name": "lightSpread",
+      "label": "lightSpread · t0",
+      "description": "光照展开间距，控制 light rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightSpread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.9,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rayLength",
+      "name": "rayLength",
+      "label": "rayLength · t0",
+      "description": "射线长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rayLength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.noiseAmount",
+      "name": "noiseAmount",
+      "label": "noiseAmount · t0",
+      "description": "噪声幅度，控制 light rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "noiseAmount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.02,
+      "upstreamDefault": "0.0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.saturation",
+      "name": "saturation",
+      "label": "saturation · t0",
+      "description": "饱和度，控制 light rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "saturation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "1.0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.followMouse",
+      "name": "followMouse",
+      "label": "followMouse · t0",
+      "description": "是否跟随鼠标，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "followMouse"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseInfluence",
+      "name": "mouseInfluence",
+      "label": "mouseInfluence · t0",
+      "description": "鼠标影响系数，控制 light rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseInfluence"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulsating",
+      "name": "pulsating",
+      "label": "pulsating · t0",
+      "description": "是否脉动，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulsating"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeDistance",
+      "name": "fadeDistance",
+      "label": "fadeDistance · t0",
+      "description": "淡出距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeDistance"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1.0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.distortion",
+      "name": "distortion",
+      "label": "distortion · t0",
+      "description": "扭曲，控制 light rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "distortion"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0.0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "raysOrigin",
+      "type": "RaysOrigin",
+      "required": false,
+      "defaultExpression": "'top-center'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 90,
+        "kind": "parameter"
+      },
+      "defaultValue": "top-center",
+      "description": "射线起点，控制 light rays 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "top-center",
+        "top-left",
+        "top-right",
+        "right",
+        "left",
+        "bottom-center",
+        "bottom-right",
+        "bottom-left"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "top-center",
+          "top-left",
+          "top-right",
+          "right",
+          "left",
+          "bottom-center",
+          "bottom-right",
+          "bottom-left"
+        ]
+      },
+      "codeExample": "raysOrigin=\"top-center\"",
+      "usageExamples": [
+        "raysOrigin=\"top-center\""
+      ]
+    },
+    {
+      "name": "raysColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "DEFAULT_COLOR",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 91,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "defaultResolvedExpression": "'#ffffff'",
+      "description": "射线颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 19
+      },
+      "codeExample": "raysColor={palette.ivory}",
+      "usageExamples": [
+        "raysColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "raysSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 92,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "射线速度，控制 light rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 20
+      },
+      "codeExample": "raysSpeed={0.5}",
+      "usageExamples": [
+        "raysSpeed={0.5}"
+      ]
+    },
+    {
+      "name": "lightSpread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 93,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "光照展开间距，控制 light rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 21
+      },
+      "codeExample": "lightSpread={0.9}",
+      "usageExamples": [
+        "lightSpread={0.9}"
+      ]
+    },
+    {
+      "name": "rayLength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 94,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "射线长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 22
+      },
+      "codeExample": "rayLength={2}",
+      "usageExamples": [
+        "rayLength={2}"
+      ]
+    },
+    {
+      "name": "pulsating",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 95,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否脉动，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "pulsating={false}"
+    },
+    {
+      "name": "fadeDistance",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 96,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "淡出距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 24
+      },
+      "codeExample": "fadeDistance={1}"
+    },
+    {
+      "name": "saturation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 97,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "饱和度，控制 light rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 25
+      },
+      "codeExample": "saturation={0.5}",
+      "usageExamples": [
+        "saturation={0.5}"
+      ]
+    },
+    {
+      "name": "followMouse",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 98,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否跟随鼠标，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "followMouse",
+      "usageExamples": [
+        "followMouse"
+      ]
+    },
+    {
+      "name": "mouseInfluence",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 99,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "鼠标影响系数，控制 light rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 27
+      },
+      "codeExample": "mouseInfluence={0.15}",
+      "usageExamples": [
+        "mouseInfluence={0.15}"
+      ]
+    },
+    {
+      "name": "noiseAmount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 100,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "噪声幅度，控制 light rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 28
+      },
+      "codeExample": "noiseAmount={0.02}",
+      "usageExamples": [
+        "noiseAmount={0.02}"
+      ]
+    },
+    {
+      "name": "distortion",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 101,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "扭曲，控制 light rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 29
+      },
+      "codeExample": "distortion={0}"
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 102,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode={false}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 103,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+        "line": 31
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/LightRays/LightRays';\n\n\n/** Agent Wan natural-tone preset for the real Light Rays component. */\nexport default function LightRaysDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "LightRays",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+      "props": [
+        {
+          "name": "raysOrigin",
+          "type": "RaysOrigin",
+          "required": false,
+          "defaultExpression": "'top-center'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 90,
+            "kind": "parameter"
+          },
+          "defaultValue": "top-center",
+          "description": "射线起点，控制 light rays 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "top-center",
+            "top-left",
+            "top-right",
+            "right",
+            "left",
+            "bottom-center",
+            "bottom-right",
+            "bottom-left"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "top-center",
+              "top-left",
+              "top-right",
+              "right",
+              "left",
+              "bottom-center",
+              "bottom-right",
+              "bottom-left"
+            ]
+          },
+          "codeExample": "raysOrigin=\"top-center\"",
+          "usageExamples": [
+            "raysOrigin=\"top-center\""
+          ]
+        },
+        {
+          "name": "raysColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "DEFAULT_COLOR",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 91,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "defaultResolvedExpression": "'#ffffff'",
+          "description": "射线颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 19
+          },
+          "codeExample": "raysColor={palette.ivory}",
+          "usageExamples": [
+            "raysColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "raysSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 92,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "射线速度，控制 light rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 20
+          },
+          "codeExample": "raysSpeed={0.5}",
+          "usageExamples": [
+            "raysSpeed={0.5}"
+          ]
+        },
+        {
+          "name": "lightSpread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 93,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "光照展开间距，控制 light rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 21
+          },
+          "codeExample": "lightSpread={0.9}",
+          "usageExamples": [
+            "lightSpread={0.9}"
+          ]
+        },
+        {
+          "name": "rayLength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 94,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "射线长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 22
+          },
+          "codeExample": "rayLength={2}",
+          "usageExamples": [
+            "rayLength={2}"
+          ]
+        },
+        {
+          "name": "pulsating",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 95,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否脉动，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pulsating={false}"
+        },
+        {
+          "name": "fadeDistance",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 96,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "淡出距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 24
+          },
+          "codeExample": "fadeDistance={1}"
+        },
+        {
+          "name": "saturation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 97,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "饱和度，控制 light rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 25
+          },
+          "codeExample": "saturation={0.5}",
+          "usageExamples": [
+            "saturation={0.5}"
+          ]
+        },
+        {
+          "name": "followMouse",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 98,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否跟随鼠标，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "followMouse",
+          "usageExamples": [
+            "followMouse"
+          ]
+        },
+        {
+          "name": "mouseInfluence",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 99,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "鼠标影响系数，控制 light rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 27
+          },
+          "codeExample": "mouseInfluence={0.15}",
+          "usageExamples": [
+            "mouseInfluence={0.15}"
+          ]
+        },
+        {
+          "name": "noiseAmount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 100,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "噪声幅度，控制 light rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 28
+          },
+          "codeExample": "noiseAmount={0.02}",
+          "usageExamples": [
+            "noiseAmount={0.02}"
+          ]
+        },
+        {
+          "name": "distortion",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 101,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "扭曲，控制 light rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 29
+          },
+          "codeExample": "distortion={0}"
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 102,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode={false}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 103,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightRays/LightRays.tsx",
+            "line": 31
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

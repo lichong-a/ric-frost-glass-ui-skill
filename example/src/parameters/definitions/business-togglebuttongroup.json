@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "id": "business-togglebuttongroup",
+  "name": "ToggleButtonGroup",
+  "sourcePath": "src/business/components/SegmentedControl.tsx",
+  "demoPath": "src/business/demos/form/business-togglebuttongroup.tsx",
+  "fields": [
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "任务筛选",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.selected",
+      "name": "selected",
+      "label": "selected",
+      "description": "示例的受控状态 selected；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string[]",
+      "defaultValue": [
+        "进行中"
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "values"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "{ value: string; label: ReactNode; disabled?: boolean }[]",
+      "required": true,
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/SegmentedControl.tsx",
+        "line": 13
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "{ value: string; label: ReactNode; disabled?: boolean; }",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "value",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "label",
+                "type": "ReactNode",
+                "required": true
+              },
+              {
+                "name": "disabled",
+                "type": "boolean",
+                "required": false,
+                "kind": "enum",
+                "options": [
+                  false,
+                  true
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={options.map(value => ({ value, label: value }))}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={options.map(value => ({ value, label: value }))}"
+      ]
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false,
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/SegmentedControl.tsx",
+        "line": 14
+      },
+      "codeExample": "value={\"示例\"}"
+    },
+    {
+      "name": "values",
+      "type": "readonly string[]",
+      "required": false,
+      "description": "当前多选值集合，调用方根据回调添加或删除条目。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/SegmentedControl.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "values={selected}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "values={selected}"
+      ]
+    },
+    {
+      "name": "onChange",
+      "type": "(value: string) => void",
+      "required": true,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/SegmentedControl.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(value: string) => void"
+      },
+      "codeExample": "onChange={item => setSelected(current => current.includes(item) ? current.filter(value => value !== item) : [...current, item])}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={item => setSelected(current => current.includes(item) ? current.filter(value => value !== item) : [...current, item])}"
+      ]
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/SegmentedControl.tsx",
+        "line": 14
+      },
+      "codeExample": "label=\"任务筛选\"",
+      "usageExamples": [
+        "label=\"任务筛选\""
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { SegmentedControl } from '../../components/SegmentedControl';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function ToggleButtonGroupDemo() {\n  const options = ['进行中', '已完成', '已收藏'];\n  const [selected, setSelected] = useState<string[]>(/*__AW_STATE_state.selected__*/);\n  return <BusinessDemo title=\"ToggleButtonGroup · 按钮切换组\" description=\"多个筛选条件可组合，每个选中背景和勾选标记以弹性过渡呈现。\">\n    <SegmentedControl  items={options.map(value => ({ value, label: value }))} values={selected}\n      onChange={item => setSelected(current => current.includes(item) ? current.filter(value => value !== item) : [...current, item])} /*__AW_PROPS_t0__*/  />\n    <p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">筛选：{selected.join('、') || '无'}</p>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "SegmentedControl",
+      "sourcePath": "src/business/components/SegmentedControl.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "{ value: string; label: ReactNode; disabled?: boolean }[]",
+          "required": true,
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/SegmentedControl.tsx",
+            "line": 13
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "{ value: string; label: ReactNode; disabled?: boolean; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "label",
+                    "type": "ReactNode",
+                    "required": true
+                  },
+                  {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "required": false,
+                    "kind": "enum",
+                    "options": [
+                      false,
+                      true
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={options.map(value => ({ value, label: value }))}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={options.map(value => ({ value, label: value }))}"
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/SegmentedControl.tsx",
+            "line": 14
+          },
+          "codeExample": "value={\"示例\"}"
+        },
+        {
+          "name": "values",
+          "type": "readonly string[]",
+          "required": false,
+          "description": "当前多选值集合，调用方根据回调添加或删除条目。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/SegmentedControl.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "values={selected}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "values={selected}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "required": true,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/SegmentedControl.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(value: string) => void"
+          },
+          "codeExample": "onChange={item => setSelected(current => current.includes(item) ? current.filter(value => value !== item) : [...current, item])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={item => setSelected(current => current.includes(item) ? current.filter(value => value !== item) : [...current, item])}"
+          ]
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/SegmentedControl.tsx",
+            "line": 14
+          },
+          "codeExample": "label=\"任务筛选\"",
+          "usageExamples": [
+            "label=\"任务筛选\""
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

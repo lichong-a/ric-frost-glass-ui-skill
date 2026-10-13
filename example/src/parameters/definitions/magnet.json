@@ -1,0 +1,739 @@
+{
+  "version": 1,
+  "id": "magnet",
+  "name": "Magnet",
+  "sourcePath": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+  "demoPath": "src/demos/pointer/magnet.tsx",
+  "fields": [
+    {
+      "key": "t0.padding",
+      "name": "padding",
+      "label": "padding · t0",
+      "description": "内边距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "padding"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 70,
+      "upstreamDefault": "100",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.magnetStrength",
+      "name": "magnetStrength",
+      "label": "magnetStrength · t0",
+      "description": "磁吸强度，控制 magnet 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "magnetStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.activeTransition",
+      "name": "activeTransition",
+      "label": "activeTransition · t0",
+      "description": "激活过渡，控制 magnet 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "activeTransition"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "transform 0.18s ease-out",
+      "upstreamDefault": "'transform 0.3s ease-out'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.inactiveTransition",
+      "name": "inactiveTransition",
+      "label": "inactiveTransition · t0",
+      "description": "未激活过渡，控制 magnet 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "inactiveTransition"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "transform 0.35s ease-out",
+      "upstreamDefault": "'transform 0.5s ease-in-out'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.wrapperClassName",
+      "name": "wrapperClassName",
+      "label": "wrapperClassName · t0",
+      "description": "包装层类名名称，控制 magnet 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "wrapperClassName"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.innerClassName",
+      "name": "innerClassName",
+      "label": "innerClassName · t0",
+      "description": "内侧类名名称，控制 magnet 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "innerClassName"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": true,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 6
+      },
+      "codeExample": "children={<><button type=\"button\" className=\"aw-button\" data-variant=\"primary\" onClick={() => setCount(value => value + 1)}>靠近并点击 · {count}</button></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><button type=\"button\" className=\"aw-button\" data-variant=\"primary\" onClick={() => setCount(value => value + 1)}>靠近并点击 · {count}</button></>}"
+      ]
+    },
+    {
+      "name": "padding",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 18,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "内边距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 7
+      },
+      "codeExample": "padding={70}",
+      "usageExamples": [
+        "padding={70}"
+      ]
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 19,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 8
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "magnetStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 20,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "磁吸强度，控制 magnet 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 9
+      },
+      "codeExample": "magnetStrength={8}",
+      "usageExamples": [
+        "magnetStrength={8}"
+      ]
+    },
+    {
+      "name": "activeTransition",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'transform 0.3s ease-out'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 21,
+        "kind": "parameter"
+      },
+      "defaultValue": "transform 0.3s ease-out",
+      "description": "激活过渡，控制 magnet 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 10
+      },
+      "codeExample": "activeTransition=\"transform 0.18s ease-out\"",
+      "usageExamples": [
+        "activeTransition=\"transform 0.18s ease-out\""
+      ]
+    },
+    {
+      "name": "inactiveTransition",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'transform 0.5s ease-in-out'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 22,
+        "kind": "parameter"
+      },
+      "defaultValue": "transform 0.5s ease-in-out",
+      "description": "未激活过渡，控制 magnet 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 11
+      },
+      "codeExample": "inactiveTransition=\"transform 0.35s ease-out\"",
+      "usageExamples": [
+        "inactiveTransition=\"transform 0.35s ease-out\""
+      ]
+    },
+    {
+      "name": "wrapperClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 23,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "包装层类名名称，控制 magnet 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 12
+      },
+      "codeExample": "wrapperClassName={\"\"}"
+    },
+    {
+      "name": "innerClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 24,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "内侧类名名称，控制 magnet 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+        "line": 13
+      },
+      "codeExample": "innerClassName={\"\"}"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "HTMLAttributes<HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/Magnet/Magnet';\nimport { palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 按钮在邻域内向指针偏移，移出后恢复；计数交互可用。\n\nexport default function MagnetDemo() {\n  const [count, setCount] = useState(0);\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>\n      <Component\n /*__AW_PROPS_t0__*/ ><button  className=\"aw-button\" data-variant=\"primary\" onClick={() => setCount(value => value + 1)} /*__AW_PROPS_t1__*/ >靠近并点击 · {count}</button></Component>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Magnet",
+      "sourcePath": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 6
+          },
+          "codeExample": "children={<><button type=\"button\" className=\"aw-button\" data-variant=\"primary\" onClick={() => setCount(value => value + 1)}>靠近并点击 · {count}</button></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><button type=\"button\" className=\"aw-button\" data-variant=\"primary\" onClick={() => setCount(value => value + 1)}>靠近并点击 · {count}</button></>}"
+          ]
+        },
+        {
+          "name": "padding",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 18,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "内边距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 7
+          },
+          "codeExample": "padding={70}",
+          "usageExamples": [
+            "padding={70}"
+          ]
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 19,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "magnetStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 20,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "磁吸强度，控制 magnet 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 9
+          },
+          "codeExample": "magnetStrength={8}",
+          "usageExamples": [
+            "magnetStrength={8}"
+          ]
+        },
+        {
+          "name": "activeTransition",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'transform 0.3s ease-out'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 21,
+            "kind": "parameter"
+          },
+          "defaultValue": "transform 0.3s ease-out",
+          "description": "激活过渡，控制 magnet 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 10
+          },
+          "codeExample": "activeTransition=\"transform 0.18s ease-out\"",
+          "usageExamples": [
+            "activeTransition=\"transform 0.18s ease-out\""
+          ]
+        },
+        {
+          "name": "inactiveTransition",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'transform 0.5s ease-in-out'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 22,
+            "kind": "parameter"
+          },
+          "defaultValue": "transform 0.5s ease-in-out",
+          "description": "未激活过渡，控制 magnet 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 11
+          },
+          "codeExample": "inactiveTransition=\"transform 0.35s ease-out\"",
+          "usageExamples": [
+            "inactiveTransition=\"transform 0.35s ease-out\""
+          ]
+        },
+        {
+          "name": "wrapperClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 23,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "包装层类名名称，控制 magnet 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 12
+          },
+          "codeExample": "wrapperClassName={\"\"}"
+        },
+        {
+          "name": "innerClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 24,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "内侧类名名称，控制 magnet 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Magnet/Magnet.tsx",
+            "line": 13
+          },
+          "codeExample": "innerClassName={\"\"}"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "HTMLAttributes<HTMLDivElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "button",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className=\"aw-button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "data-variant",
+          "type": "any",
+          "required": false,
+          "description": "示例在 DOM 上使用的 variant 数据标记，供局部样式或状态定位读取。",
+          "usageExamples": [
+            "data-variant=\"primary\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>"
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setCount(value => value + 1)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>靠近并点击 · {count}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

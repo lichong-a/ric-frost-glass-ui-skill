@@ -1,0 +1,6 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-motion-surface { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-motion-surface { animation:aw-business-enter 350ms ease-out both }
+@keyframes aw-business-enter { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+@media (prefers-reduced-motion:reduce) { .aw-business-motion-surface, .aw-business-motion-surface::before, .aw-business-motion-surface::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-motion-surface, [data-motion=reduce] .aw-business-motion-surface::before, [data-motion=reduce] .aw-business-motion-surface::after { transition:none; animation:none; scroll-behavior:auto; }

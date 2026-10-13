@@ -10,17 +10,25 @@
 | 中文效果意图 | 运行 `find-component.mjs "中文意图" --limit 5`，先看最相关一项 |
 | 只知道类别或要比较方案 | 只读下方对应类别页，选出 1–3 项再读组件文档 |
 | 只要求普通业务控件 | 读取基础规范/契约分片；不强行选一个装饰效果 |
-| 用户明确要求全部组件 | 按五类分批实现和逐项核对清单；每个任务只加载分配的组件文档 |
+| 用户明确要求全部组件 | 按十三个用途分类分批实现和逐项核对清单；每个任务只加载分配的组件文档 |
 
-## 2. 五类目录
+## 2. 十三个用途分类
 
 | 类别 | 组件数 | 用途 |
 |---|---:|---|
-| [文字效果](categories/text-animations.md) | 33 | 字符、标题、数字、滚动和阅读揭示 |
-| [交互动效](categories/animations.md) | 41 | 入场、悬停、点击、光标、图像过渡和边缘 |
-| [组合组件](categories/components.md) | 48 | 导航、列表、卡片、布局、画廊和选择控制 |
-| [微交互](categories/micro.md) | 34 | Agent状态、消息输入、表单、按钮、选择和反馈 |
-| [背景效果](categories/backgrounds.md) | 59 | 渐变、线场、网格、光束、粒子、流体与空间 |
+| [文字动效](categories/text.md) | 28 | 标题、正文、字符与字形的动态表达 |
+| [背景与光效](categories/background.md) | 66 | 页面背景、纹理、粒子与空间光效 |
+| [指针与轨迹](categories/pointer.md) | 16 | 指针形态、悬停响应与移动轨迹 |
+| [滚动与转场](categories/scroll.md) | 10 | 滚动触发、进入视口与状态转场 |
+| [媒体与轮播](categories/media.md) | 28 | 图片、图集、轮播、模型与媒体比较 |
+| [卡片与面板](categories/cards.md) | 20 | 对象卡片、阅读面与内容面板 |
+| [表单与选择](categories/form.md) | 14 | 文本输入、数值调整、选项与字段语义 |
+| [按钮与操作](categories/actions.md) | 8 | 动作入口、提交、快捷操作与撤销 |
+| [导航与菜单](categories/navigation.md) | 10 | 页面导航、命令查找与菜单选择 |
+| [数据与文件](categories/data.md) | 7 | 记录、层级、列表、文件与结果浏览 |
+| [布局与流程](categories/layout.md) | 1 | 工作区分隔、内容布局与顺序流程 |
+| [状态与反馈](categories/feedback.md) | 6 | 等待、进度、通知与结果状态 |
+| [弹层与辅助](categories/overlay.md) | 1 | 对话框、提示、浮层与焦点辅助 |
 
 ## 3. 页面与基础行为
 

@@ -1,0 +1,2193 @@
+{
+  "version": 1,
+  "id": "lightfall",
+  "name": "Lightfall",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+  "demoPath": "src/demos/background/lightfall.tsx",
+  "fields": [
+    {
+      "key": "t0.colors",
+      "name": "colors",
+      "label": "颜色列表 · t0",
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colors"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#faf7f0",
+        "#c3ae88"
+      ],
+      "upstreamDefault": "['#ffffff']",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#94a3b8'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.streakCount",
+      "name": "streakCount",
+      "label": "streakCount · t0",
+      "description": "拖尾数量，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "streakCount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.density",
+      "name": "density",
+      "label": "density · t0",
+      "description": "密度，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "density"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bloom",
+      "name": "bloom",
+      "label": "bloom · t0",
+      "description": "泛光，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bloom"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.35",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.twinkle",
+      "name": "twinkle",
+      "label": "twinkle · t0",
+      "description": "闪烁，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "twinkle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseInteraction",
+      "name": "mouseInteraction",
+      "label": "指针响应 · t0",
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseInteraction"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseStrength",
+      "name": "mouseStrength",
+      "label": "mouseStrength · t0",
+      "description": "鼠标强度，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.streakWidth",
+      "name": "streakWidth",
+      "label": "streakWidth · t0",
+      "description": "拖尾宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "streakWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "0.8",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.streakLength",
+      "name": "streakLength",
+      "label": "streakLength · t0",
+      "description": "拖尾长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "streakLength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.zoom",
+      "name": "zoom",
+      "label": "zoom · t0",
+      "description": "缩放，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "zoom"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundGlow",
+      "name": "backgroundGlow",
+      "label": "backgroundGlow · t0",
+      "description": "背景辉光，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundGlow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.headGlow",
+      "name": "headGlow",
+      "label": "headGlow · t0",
+      "description": "头部辉光，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "headGlow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.depth",
+      "name": "depth",
+      "label": "depth · t0",
+      "description": "深度，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "depth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 lightfall 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.mouseRadius",
+      "name": "mouseRadius",
+      "label": "mouseRadius · t0",
+      "description": "鼠标半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "upstreamDefault": "0.45",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseDampening",
+      "name": "mouseDampening",
+      "label": "mouseDampening · t0",
+      "description": "鼠标阻尼，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseDampening"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.15",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lens",
+      "name": "lens",
+      "label": "lens · t0",
+      "description": "透镜，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lens"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.holdToWarp",
+      "name": "holdToWarp",
+      "label": "holdToWarp · t0",
+      "description": "是否按住目标形变，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "holdToWarp"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 lightfall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "colors",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "['#ffffff']",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 381,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "#ffffff"
+      ],
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "colors={[palette.ivory, palette.sand]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "colors={[palette.ivory, palette.sand]}"
+      ]
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#94a3b8'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 382,
+        "kind": "parameter"
+      },
+      "defaultValue": "#94a3b8",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 12
+      },
+      "codeExample": "backgroundColor={palette.ink}",
+      "usageExamples": [
+        "backgroundColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 383,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 13
+      },
+      "codeExample": "speed={0.15}",
+      "usageExamples": [
+        "speed={0.15}"
+      ]
+    },
+    {
+      "name": "streakCount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 384,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "拖尾数量，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 14
+      },
+      "codeExample": "streakCount={3}",
+      "usageExamples": [
+        "streakCount={3}"
+      ]
+    },
+    {
+      "name": "streakWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 385,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.8,
+      "description": "拖尾宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 15
+      },
+      "codeExample": "streakWidth={0.8}"
+    },
+    {
+      "name": "streakLength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 386,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "拖尾长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 16
+      },
+      "codeExample": "streakLength={1}"
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 387,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "辉光，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 17
+      },
+      "codeExample": "glow={0.6}",
+      "usageExamples": [
+        "glow={0.6}"
+      ]
+    },
+    {
+      "name": "density",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 388,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "密度，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 18
+      },
+      "codeExample": "density={0.6}",
+      "usageExamples": [
+        "density={0.6}"
+      ]
+    },
+    {
+      "name": "twinkle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 389,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "闪烁，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 19
+      },
+      "codeExample": "twinkle={0.15}",
+      "usageExamples": [
+        "twinkle={0.15}"
+      ]
+    },
+    {
+      "name": "zoom",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 390,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "缩放，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 20
+      },
+      "codeExample": "zoom={3}"
+    },
+    {
+      "name": "backgroundGlow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 391,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "背景辉光，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 21
+      },
+      "codeExample": "backgroundGlow={0.1}"
+    },
+    {
+      "name": "headGlow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 392,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "头部辉光，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 22
+      },
+      "codeExample": "headGlow={0.6}"
+    },
+    {
+      "name": "depth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 393,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "深度，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 23
+      },
+      "codeExample": "depth={0.5}"
+    },
+    {
+      "name": "bloom",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.35",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 394,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.35,
+      "description": "泛光，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 24
+      },
+      "codeExample": "bloom={0.15}",
+      "usageExamples": [
+        "bloom={0.15}"
+      ]
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 395,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 25
+      },
+      "codeExample": "opacity={1}"
+    },
+    {
+      "name": "mouseInteraction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 396,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "mouseInteraction",
+      "usageExamples": [
+        "mouseInteraction"
+      ]
+    },
+    {
+      "name": "mouseStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 397,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.4,
+      "description": "鼠标强度，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 27
+      },
+      "codeExample": "mouseStrength={0.25}",
+      "usageExamples": [
+        "mouseStrength={0.25}"
+      ]
+    },
+    {
+      "name": "mouseRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.45",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 398,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.45,
+      "description": "鼠标半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 28
+      },
+      "codeExample": "mouseRadius={0.45}"
+    },
+    {
+      "name": "mouseDampening",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 399,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.15,
+      "description": "鼠标阻尼，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 29
+      },
+      "codeExample": "mouseDampening={0.15}"
+    },
+    {
+      "name": "lens",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 400,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "透镜，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 30
+      },
+      "codeExample": "lens={0.5}"
+    },
+    {
+      "name": "holdToWarp",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 401,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否按住目标形变，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "holdToWarp={true}"
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 402,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 403,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "淡出，控制 lightfall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 33
+      },
+      "codeExample": "fade={0}"
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 404,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode={false}"
+    },
+    {
+      "name": "mixBlendMode",
+      "type": "CSSProperties['mixBlendMode']",
+      "required": false,
+      "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "color",
+        "-moz-initial",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset",
+        "overlay",
+        "normal",
+        "saturation",
+        "multiply",
+        "color-burn",
+        "color-dodge",
+        "darken",
+        "difference",
+        "exclusion",
+        "hard-light",
+        "hue",
+        "lighten",
+        "luminosity",
+        "screen",
+        "soft-light",
+        "plus-darker",
+        "plus-lighter"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "color",
+          "-moz-initial",
+          "inherit",
+          "initial",
+          "revert",
+          "revert-layer",
+          "unset",
+          "overlay",
+          "normal",
+          "saturation",
+          "multiply",
+          "color-burn",
+          "color-dodge",
+          "darken",
+          "difference",
+          "exclusion",
+          "hard-light",
+          "hue",
+          "lighten",
+          "luminosity",
+          "screen",
+          "soft-light",
+          "plus-darker",
+          "plus-lighter"
+        ]
+      },
+      "codeExample": "mixBlendMode={\"color\"}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 406,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 37
+      },
+      "codeExample": "dpr={1}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 408,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 38
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+        "line": 39
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/Lightfall/Lightfall';\n\n\n/** Agent Wan natural-tone preset for the real Lightfall component. */\nexport default function LightfallDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Lightfall",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+      "props": [
+        {
+          "name": "colors",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "['#ffffff']",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 381,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "#ffffff"
+          ],
+          "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "colors={[palette.ivory, palette.sand]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "colors={[palette.ivory, palette.sand]}"
+          ]
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#94a3b8'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 382,
+            "kind": "parameter"
+          },
+          "defaultValue": "#94a3b8",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 12
+          },
+          "codeExample": "backgroundColor={palette.ink}",
+          "usageExamples": [
+            "backgroundColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 383,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 13
+          },
+          "codeExample": "speed={0.15}",
+          "usageExamples": [
+            "speed={0.15}"
+          ]
+        },
+        {
+          "name": "streakCount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 384,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "拖尾数量，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 14
+          },
+          "codeExample": "streakCount={3}",
+          "usageExamples": [
+            "streakCount={3}"
+          ]
+        },
+        {
+          "name": "streakWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 385,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.8,
+          "description": "拖尾宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 15
+          },
+          "codeExample": "streakWidth={0.8}"
+        },
+        {
+          "name": "streakLength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 386,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "拖尾长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 16
+          },
+          "codeExample": "streakLength={1}"
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 387,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "辉光，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 17
+          },
+          "codeExample": "glow={0.6}",
+          "usageExamples": [
+            "glow={0.6}"
+          ]
+        },
+        {
+          "name": "density",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 388,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "密度，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 18
+          },
+          "codeExample": "density={0.6}",
+          "usageExamples": [
+            "density={0.6}"
+          ]
+        },
+        {
+          "name": "twinkle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 389,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "闪烁，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 19
+          },
+          "codeExample": "twinkle={0.15}",
+          "usageExamples": [
+            "twinkle={0.15}"
+          ]
+        },
+        {
+          "name": "zoom",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 390,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "缩放，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 20
+          },
+          "codeExample": "zoom={3}"
+        },
+        {
+          "name": "backgroundGlow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 391,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "背景辉光，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 21
+          },
+          "codeExample": "backgroundGlow={0.1}"
+        },
+        {
+          "name": "headGlow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 392,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "头部辉光，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 22
+          },
+          "codeExample": "headGlow={0.6}"
+        },
+        {
+          "name": "depth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 393,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "深度，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 23
+          },
+          "codeExample": "depth={0.5}"
+        },
+        {
+          "name": "bloom",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.35",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 394,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.35,
+          "description": "泛光，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 24
+          },
+          "codeExample": "bloom={0.15}",
+          "usageExamples": [
+            "bloom={0.15}"
+          ]
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 395,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 25
+          },
+          "codeExample": "opacity={1}"
+        },
+        {
+          "name": "mouseInteraction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 396,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "mouseInteraction",
+          "usageExamples": [
+            "mouseInteraction"
+          ]
+        },
+        {
+          "name": "mouseStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 397,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.4,
+          "description": "鼠标强度，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 27
+          },
+          "codeExample": "mouseStrength={0.25}",
+          "usageExamples": [
+            "mouseStrength={0.25}"
+          ]
+        },
+        {
+          "name": "mouseRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.45",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 398,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.45,
+          "description": "鼠标半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 28
+          },
+          "codeExample": "mouseRadius={0.45}"
+        },
+        {
+          "name": "mouseDampening",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 399,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.15,
+          "description": "鼠标阻尼，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 29
+          },
+          "codeExample": "mouseDampening={0.15}"
+        },
+        {
+          "name": "lens",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 400,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "透镜，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 30
+          },
+          "codeExample": "lens={0.5}"
+        },
+        {
+          "name": "holdToWarp",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 401,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否按住目标形变，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "holdToWarp={true}"
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 402,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 403,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "淡出，控制 lightfall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 33
+          },
+          "codeExample": "fade={0}"
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 404,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode={false}"
+        },
+        {
+          "name": "mixBlendMode",
+          "type": "CSSProperties['mixBlendMode']",
+          "required": false,
+          "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "color",
+            "-moz-initial",
+            "inherit",
+            "initial",
+            "revert",
+            "revert-layer",
+            "unset",
+            "overlay",
+            "normal",
+            "saturation",
+            "multiply",
+            "color-burn",
+            "color-dodge",
+            "darken",
+            "difference",
+            "exclusion",
+            "hard-light",
+            "hue",
+            "lighten",
+            "luminosity",
+            "screen",
+            "soft-light",
+            "plus-darker",
+            "plus-lighter"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "color",
+              "-moz-initial",
+              "inherit",
+              "initial",
+              "revert",
+              "revert-layer",
+              "unset",
+              "overlay",
+              "normal",
+              "saturation",
+              "multiply",
+              "color-burn",
+              "color-dodge",
+              "darken",
+              "difference",
+              "exclusion",
+              "hard-light",
+              "hue",
+              "lighten",
+              "luminosity",
+              "screen",
+              "soft-light",
+              "plus-darker",
+              "plus-lighter"
+            ]
+          },
+          "codeExample": "mixBlendMode={\"color\"}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 406,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 37
+          },
+          "codeExample": "dpr={1}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 408,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 38
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Lightfall/Lightfall.tsx",
+            "line": 39
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

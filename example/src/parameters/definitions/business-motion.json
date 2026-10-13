@@ -1,0 +1,300 @@
+{
+  "version": 1,
+  "id": "business-motion",
+  "name": "Motion",
+  "sourcePath": "src/business/components/MotionSurface.tsx",
+  "demoPath": "src/business/demos/scroll/business-motion.tsx",
+  "fields": [
+    {
+      "key": "t0.type",
+      "name": "type",
+      "label": "类型 · t0",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "upstreamDefault": "'button'",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.variant",
+      "name": "variant",
+      "label": "外观 · t0",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "variant"
+        }
+      ],
+      "type": "'primary' | 'secondary' | 'danger'",
+      "defaultValue": "primary",
+      "upstreamDefault": "'primary'",
+      "control": "select",
+      "options": [
+        {
+          "label": "primary",
+          "value": "primary"
+        },
+        {
+          "label": "secondary",
+          "value": "secondary"
+        },
+        {
+          "label": "danger",
+          "value": "danger"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": true,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/MotionSurface.tsx",
+        "line": 7
+      },
+      "codeExample": "children={<><article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>内容版本 {revision+1}</h3><p>新的本地内容已经进入阅读区。</p></article></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>内容版本 {revision+1}</h3><p>新的本地内容已经进入阅读区。</p></article></>}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { MotionSurface } from '../../components/MotionSurface';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessMotionDemo() {\n  const [revision,setRevision]=useState(0);\n  return <BusinessDemo title=\"Motion\" description=\"在局部内容切换时播放入场动画，系统减少运动时直接展示终态。\">\n    <Button onClick={()=>setRevision(value=>value+1)} /*__AW_PROPS_t0__*/ >切换内容并播放入场</Button><MotionSurface key={revision}><article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>内容版本 {revision+1}</h3><p>新的本地内容已经进入阅读区。</p></article></MotionSurface>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Button",
+      "sourcePath": "src/business/components/Button.tsx",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "defaultExpression": "'button'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "button",
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "button",
+            "reset",
+            "submit"
+          ],
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              "button",
+              "reset",
+              "submit"
+            ]
+          },
+          "codeExample": "type={\"button\"}"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "children={<>切换内容并播放入场</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>切换内容并播放入场</>}"
+          ]
+        },
+        {
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'danger'",
+          "required": false,
+          "defaultExpression": "'primary'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "primary",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "primary",
+            "secondary",
+            "danger"
+          ],
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "primary",
+              "secondary",
+              "danger"
+            ]
+          },
+          "codeExample": "variant={\"primary\"}"
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "MotionSurface",
+      "sourcePath": "src/business/components/MotionSurface.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/MotionSurface.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>内容版本 {revision+1}</h3><p>新的本地内容已经进入阅读区。</p></article></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>内容版本 {revision+1}</h3><p>新的本地内容已经进入阅读区。</p></article></>}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

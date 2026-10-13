@@ -53,6 +53,20 @@ test('message envelopes require typed protocol fields and matching component ins
   assert.equal(protocol.isMatchingEnvelope(envelope, 'instance-1', 'other-component'), false);
 });
 
+test('configuration envelopes reject malformed revisions, unsafe data and cross-instance state', () => {
+  const envelope = { protocol: protocol.PREVIEW_PROTOCOL, channel: 'instance-1', componentId: 'cubes' };
+  assert.equal(protocol.isHostMessage({ ...envelope, type: 'configuration', revision: 4, values: { 't0.gap': 0.18 } }), true);
+  assert.equal(protocol.isHostMessage({ ...envelope, type: 'configuration', revision: -1, values: {} }), false);
+  assert.equal(protocol.isHostMessage({ ...envelope, type: 'configuration', revision: 0.5, values: {} }), false);
+  assert.equal(protocol.isHostMessage({ ...envelope, type: 'configuration', revision: 4, values: { speed: Infinity } }), false);
+  assert.equal(protocol.isHostMessage({ ...envelope, type: 'configuration', revision: 4, values: { callback: () => {} } }), false);
+  assert.equal(protocol.isHostMessage({ ...envelope, type: 'configuration', revision: 4, values: JSON.parse('{"__proto__":{"polluted":true}}') }), false);
+  const change = { ...envelope, type: 'values-change', revision: 4, changes: { 'state.checked': true } };
+  assert.equal(protocol.isFrameMessage(change), true);
+  assert.equal(protocol.isMatchingEnvelope(change, 'instance-1', 'business-checkbox'), false);
+  assert.equal(protocol.isFrameMessage({ ...change, changes: [] }), false);
+});
+
 test('registry checks both directions of the mapping without executing lazy imports', () => {
   let imported = 0;
   const loader = async () => { imported += 1; return { default: () => null }; };

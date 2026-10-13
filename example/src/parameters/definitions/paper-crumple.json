@@ -1,0 +1,2975 @@
+{
+  "version": 1,
+  "id": "paper-crumple",
+  "name": "Paper Crumple",
+  "sourcePath": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+  "demoPath": "src/demos/media/paper-crumple.tsx",
+  "fields": [
+    {
+      "key": "t0.alt",
+      "name": "alt",
+      "label": "替代文字 · t0",
+      "description": "图像无法显示及辅助技术读取时的替代文字。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "alt"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "自然色示例海报",
+      "upstreamDefault": "'Crumplable image'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.width",
+      "name": "width",
+      "label": "宽度 · t0",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "width"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 260,
+      "upstreamDefault": "320",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.height",
+      "name": "height",
+      "label": "高度 · t0",
+      "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "height"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 325,
+      "upstreamDefault": "400",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sceneHeight",
+      "name": "sceneHeight",
+      "label": "sceneHeight · t0",
+      "description": "场景高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sceneHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 430,
+      "upstreamDefault": "560",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paperColor",
+      "name": "paperColor",
+      "label": "paperColor · t0",
+      "description": "纸张颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paperColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#f4f0e8'",
+      "control": "color",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shadowOpacity",
+      "name": "shadowOpacity",
+      "label": "shadowOpacity · t0",
+      "description": "阴影不透明度，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shadowOpacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.16,
+      "upstreamDefault": "0.08",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.seed",
+      "name": "seed",
+      "label": "seed · t0",
+      "description": "随机种子，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "seed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 12,
+      "upstreamDefault": "7",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backSrc",
+      "name": "backSrc",
+      "label": "backSrc · t0",
+      "description": "背面资源，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backSrc"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.imageFit",
+      "name": "imageFit",
+      "label": "imageFit · t0",
+      "description": "图像适配，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "imageFit"
+        }
+      ],
+      "type": "'cover' | 'contain'",
+      "defaultValue": "cover",
+      "upstreamDefault": "'cover'",
+      "control": "select",
+      "options": [
+        {
+          "label": "cover",
+          "value": "cover"
+        },
+        {
+          "label": "contain",
+          "value": "contain"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.crumpleAmount",
+      "name": "crumpleAmount",
+      "label": "crumpleAmount · t0",
+      "description": "揉皱幅度，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "crumpleAmount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.85,
+      "upstreamDefault": "0.85",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.crumpleDuration",
+      "name": "crumpleDuration",
+      "label": "crumpleDuration · t0",
+      "description": "揉皱时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "crumpleDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.55,
+      "upstreamDefault": "0.55",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.releaseDuration",
+      "name": "releaseDuration",
+      "label": "releaseDuration · t0",
+      "description": "释放时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "releaseDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.foldCount",
+      "name": "foldCount",
+      "label": "foldCount · t0",
+      "description": "折叠数量，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "foldCount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "upstreamDefault": "6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.foldSharpness",
+      "name": "foldSharpness",
+      "label": "foldSharpness · t0",
+      "description": "折叠锐度，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "foldSharpness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.wrinkleDepth",
+      "name": "wrinkleDepth",
+      "label": "wrinkleDepth · t0",
+      "description": "褶皱深度，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "wrinkleDepth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "0.65",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.creaseStrength",
+      "name": "creaseStrength",
+      "label": "creaseStrength · t0",
+      "description": "折痕强度，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "creaseStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.18,
+      "upstreamDefault": "0.18",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.roughness",
+      "name": "roughness",
+      "label": "roughness · t0",
+      "description": "粗糙度，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "roughness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.92,
+      "upstreamDefault": "0.92",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paperTexture",
+      "name": "paperTexture",
+      "label": "paperTexture · t0",
+      "description": "纸张纹理，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paperTexture"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.08,
+      "upstreamDefault": "0.08",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lightIntensity",
+      "name": "lightIntensity",
+      "label": "lightIntensity · t0",
+      "description": "光照强度，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.8,
+      "upstreamDefault": "1.8",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lightAngle",
+      "name": "lightAngle",
+      "label": "lightAngle · t0",
+      "description": "光照角度，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightAngle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": -35,
+      "upstreamDefault": "-35",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shadow",
+      "name": "shadow",
+      "label": "shadow · t0",
+      "description": "是否阴影，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shadow"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.draggable",
+      "name": "draggable",
+      "label": "draggable · t0",
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "draggable"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dragRotation",
+      "name": "dragRotation",
+      "label": "dragRotation · t0",
+      "description": "拖动旋转角度，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dragRotation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dragRadius",
+      "name": "dragRadius",
+      "label": "dragRadius · t0",
+      "description": "拖动半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dragRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 180,
+      "upstreamDefault": "180",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.returnToOrigin",
+      "name": "returnToOrigin",
+      "label": "returnToOrigin · t0",
+      "description": "是否返回目标起点，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "returnToOrigin"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rotation",
+      "name": "rotation",
+      "label": "旋转 · t0",
+      "description": "旋转角度，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rotation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.detail",
+      "name": "detail",
+      "label": "detail · t0",
+      "description": "细节，控制 paper crumple 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "detail"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 64,
+      "upstreamDefault": "64",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.value",
+      "name": "value",
+      "label": "当前值 · t2",
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "value"
+        }
+      ],
+      "type": "string | number | readonly string[] | undefined",
+      "defaultValue": "creased",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "string"
+            }
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.value",
+      "name": "value",
+      "label": "当前值 · t3",
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "value"
+        }
+      ],
+      "type": "string | number | readonly string[] | undefined",
+      "defaultValue": "restore",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "string"
+            }
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t4.value",
+      "name": "value",
+      "label": "当前值 · t4",
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "scope": "prop",
+      "target": "t4",
+      "bindings": [
+        {
+          "target": "t4",
+          "name": "value"
+        }
+      ],
+      "type": "string | number | readonly string[] | undefined",
+      "defaultValue": "stay",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "string"
+            }
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t5.type",
+      "name": "type",
+      "label": "类型 · t5",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t5",
+      "bindings": [
+        {
+          "target": "t5",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.release",
+      "name": "release",
+      "label": "release",
+      "description": "示例的受控状态 release；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "PaperCrumpleRelease",
+      "defaultValue": "creased",
+      "control": "select",
+      "options": [
+        {
+          "label": "保留折痕",
+          "value": "creased"
+        },
+        {
+          "label": "恢复平整",
+          "value": "restore"
+        },
+        {
+          "label": "保持揉皱",
+          "value": "stay"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 720,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "src",
+      "type": "string",
+      "required": true,
+      "defaultExpression": "undefined",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 1169,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "falsy",
+      "defaultAcceptsAsProp": false,
+      "description": "加载图像、视频或纹理的资源地址。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 11
+      },
+      "codeExample": "src={microPaperArtwork}",
+      "usageExamples": [
+        "src={microPaperArtwork}"
+      ]
+    },
+    {
+      "name": "alt",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Crumplable image'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 299,
+        "kind": "parameter"
+      },
+      "defaultValue": "Crumplable image",
+      "description": "图像无法显示及辅助技术读取时的替代文字。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 12
+      },
+      "codeExample": "alt=\"自然色示例海报\"",
+      "usageExamples": [
+        "alt=\"自然色示例海报\""
+      ]
+    },
+    {
+      "name": "backSrc",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 300,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "背面资源，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 13
+      },
+      "codeExample": "backSrc={\"\"}"
+    },
+    {
+      "name": "width",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "320",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 301,
+        "kind": "parameter"
+      },
+      "defaultValue": 320,
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 14
+      },
+      "codeExample": "width={260}",
+      "usageExamples": [
+        "width={260}"
+      ]
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 302,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 15
+      },
+      "codeExample": "height={325}",
+      "usageExamples": [
+        "height={325}"
+      ]
+    },
+    {
+      "name": "sceneHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "560",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 303,
+        "kind": "parameter"
+      },
+      "defaultValue": 560,
+      "description": "场景高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 16
+      },
+      "codeExample": "sceneHeight={430}",
+      "usageExamples": [
+        "sceneHeight={430}"
+      ]
+    },
+    {
+      "name": "imageFit",
+      "type": "'cover' | 'contain'",
+      "required": false,
+      "defaultExpression": "'cover'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 304,
+        "kind": "parameter"
+      },
+      "defaultValue": "cover",
+      "description": "图像适配，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "cover",
+        "contain"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "cover",
+          "contain"
+        ]
+      },
+      "codeExample": "imageFit={\"cover\"}"
+    },
+    {
+      "name": "releaseBehavior",
+      "type": "PaperCrumpleRelease",
+      "required": false,
+      "defaultExpression": "'restore'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 305,
+        "kind": "parameter"
+      },
+      "defaultValue": "restore",
+      "description": "释放行为，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "stay",
+        "restore",
+        "creased"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "stay",
+          "restore",
+          "creased"
+        ]
+      },
+      "codeExample": "releaseBehavior={release}",
+      "usageExamples": [
+        "releaseBehavior={release}"
+      ]
+    },
+    {
+      "name": "crumpleAmount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.85",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 306,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.85,
+      "description": "揉皱幅度，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 19
+      },
+      "codeExample": "crumpleAmount={0.85}"
+    },
+    {
+      "name": "crumpleDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.55",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 307,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.55,
+      "description": "揉皱时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 20
+      },
+      "codeExample": "crumpleDuration={0.55}"
+    },
+    {
+      "name": "releaseDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 308,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.4,
+      "description": "释放时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 21
+      },
+      "codeExample": "releaseDuration={0.4}"
+    },
+    {
+      "name": "foldCount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 309,
+        "kind": "parameter"
+      },
+      "defaultValue": 6,
+      "description": "折叠数量，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 22
+      },
+      "codeExample": "foldCount={6}"
+    },
+    {
+      "name": "foldSharpness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 310,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "折叠锐度，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 23
+      },
+      "codeExample": "foldSharpness={0.6}"
+    },
+    {
+      "name": "wrinkleDepth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.65",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 311,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.65,
+      "description": "褶皱深度，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 24
+      },
+      "codeExample": "wrinkleDepth={0.65}"
+    },
+    {
+      "name": "creaseStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.18",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 312,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.18,
+      "description": "折痕强度，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 25
+      },
+      "codeExample": "creaseStrength={0.18}"
+    },
+    {
+      "name": "paperColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f4f0e8'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 313,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f4f0e8",
+      "description": "纸张颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 26
+      },
+      "codeExample": "paperColor={palette.ivory}",
+      "usageExamples": [
+        "paperColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "roughness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.92",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 314,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.92,
+      "description": "粗糙度，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 27
+      },
+      "codeExample": "roughness={0.92}"
+    },
+    {
+      "name": "paperTexture",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.08",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 315,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.08,
+      "description": "纸张纹理，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 28
+      },
+      "codeExample": "paperTexture={0.08}"
+    },
+    {
+      "name": "lightIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 316,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.8,
+      "description": "光照强度，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 29
+      },
+      "codeExample": "lightIntensity={1.8}"
+    },
+    {
+      "name": "lightAngle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "-35",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 317,
+        "kind": "parameter"
+      },
+      "defaultValue": -35,
+      "description": "光照角度，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 30
+      },
+      "codeExample": "lightAngle={-35}"
+    },
+    {
+      "name": "shadow",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 318,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否阴影，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "shadow={true}"
+    },
+    {
+      "name": "shadowOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.08",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 319,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.08,
+      "description": "阴影不透明度，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 32
+      },
+      "codeExample": "shadowOpacity={0.16}",
+      "usageExamples": [
+        "shadowOpacity={0.16}"
+      ]
+    },
+    {
+      "name": "draggable",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 320,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "draggable={true}"
+    },
+    {
+      "name": "dragRotation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 321,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "拖动旋转角度，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 34
+      },
+      "codeExample": "dragRotation={10}"
+    },
+    {
+      "name": "dragRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "180",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 322,
+        "kind": "parameter"
+      },
+      "defaultValue": 180,
+      "description": "拖动半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 35
+      },
+      "codeExample": "dragRadius={180}"
+    },
+    {
+      "name": "returnToOrigin",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 323,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否返回目标起点，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "returnToOrigin={true}"
+    },
+    {
+      "name": "rotation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 324,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "旋转角度，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 37
+      },
+      "codeExample": "rotation={0}"
+    },
+    {
+      "name": "seed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 325,
+        "kind": "parameter"
+      },
+      "defaultValue": 7,
+      "description": "随机种子，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 38
+      },
+      "codeExample": "seed={12}",
+      "usageExamples": [
+        "seed={12}"
+      ]
+    },
+    {
+      "name": "detail",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "64",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 326,
+        "kind": "parameter"
+      },
+      "defaultValue": 64,
+      "description": "细节，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 39
+      },
+      "codeExample": "detail={64}"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 327,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 40
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "resetKey",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 328,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "重置身份标识，控制 paper crumple 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 41
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "resetKey={revision}",
+      "usageExamples": [
+        "resetKey={revision}"
+      ]
+    },
+    {
+      "name": "onStateChange",
+      "type": "(state: PaperCrumpleState) => void",
+      "required": false,
+      "description": "控件的状态机切换状态时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 42
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((state: PaperCrumpleState) => void) | undefined"
+      },
+      "codeExample": "onStateChange={setState}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onStateChange={setState}"
+      ]
+    },
+    {
+      "name": "onError",
+      "type": "(error: Error) => void",
+      "required": false,
+      "description": "错误时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((error: Error) => void) | undefined"
+      },
+      "codeExample": "onError={reason => setError(reason.message)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onError={reason => setError(reason.message)}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 331,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 44
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+        "line": 45
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport PaperCrumple, { type PaperCrumpleState, type PaperCrumpleRelease } from '../../../.upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple';\nimport { DemoPanel } from '../../shared/demo-support';\nimport { microPaperArtwork } from '../../shared/micro-assets';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nexport default function PaperCrumpleDemo() {\n  const [state, setState] = useState<PaperCrumpleState>('flat');\n  const [release, setRelease] = useState<PaperCrumpleRelease>(/*__AW_STATE_state.release__*/);\n  const [revision, setRevision] = useState(0);\n  const [error, setError] = useState('');\n  return <DemoPanel title=\"Paper Crumple · 纸张揉皱\"><div className={cn(\"aw-micro-stack\")}>\n    <PaperCrumple src={microPaperArtwork}     releaseBehavior={release}   resetKey={revision}  onStateChange={setState} onError={reason => setError(reason.message)} /*__AW_PROPS_t0__*/  />\n    <div className={cn(\"aw-micro-controls\")}><label className={styles['aw-micro-label']}>松开后<select className={styles['aw-micro-select']} value={release} onChange={event => setRelease(event.target.value as PaperCrumpleRelease)}><option  /*__AW_PROPS_t2__*/ >保留折痕</option><option  /*__AW_PROPS_t3__*/ >恢复平整</option><option  /*__AW_PROPS_t4__*/ >保持揉皱</option></select></label><button className={styles['aw-micro-action']}  onClick={() => { setRevision(value => value + 1); setError(''); }} /*__AW_PROPS_t5__*/ >重置纸张</button></div>\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">{error || `纸张状态：${state}。按住揉皱，拖动调整位置。`}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "PaperCrumple",
+      "sourcePath": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+      "props": [
+        {
+          "name": "src",
+          "type": "string",
+          "required": true,
+          "defaultExpression": "undefined",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 1169,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "defaultAcceptsAsProp": false,
+          "description": "加载图像、视频或纹理的资源地址。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 11
+          },
+          "codeExample": "src={microPaperArtwork}",
+          "usageExamples": [
+            "src={microPaperArtwork}"
+          ]
+        },
+        {
+          "name": "alt",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Crumplable image'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 299,
+            "kind": "parameter"
+          },
+          "defaultValue": "Crumplable image",
+          "description": "图像无法显示及辅助技术读取时的替代文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 12
+          },
+          "codeExample": "alt=\"自然色示例海报\"",
+          "usageExamples": [
+            "alt=\"自然色示例海报\""
+          ]
+        },
+        {
+          "name": "backSrc",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 300,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "背面资源，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 13
+          },
+          "codeExample": "backSrc={\"\"}"
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "320",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 301,
+            "kind": "parameter"
+          },
+          "defaultValue": 320,
+          "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 14
+          },
+          "codeExample": "width={260}",
+          "usageExamples": [
+            "width={260}"
+          ]
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 302,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 15
+          },
+          "codeExample": "height={325}",
+          "usageExamples": [
+            "height={325}"
+          ]
+        },
+        {
+          "name": "sceneHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "560",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 303,
+            "kind": "parameter"
+          },
+          "defaultValue": 560,
+          "description": "场景高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 16
+          },
+          "codeExample": "sceneHeight={430}",
+          "usageExamples": [
+            "sceneHeight={430}"
+          ]
+        },
+        {
+          "name": "imageFit",
+          "type": "'cover' | 'contain'",
+          "required": false,
+          "defaultExpression": "'cover'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 304,
+            "kind": "parameter"
+          },
+          "defaultValue": "cover",
+          "description": "图像适配，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "cover",
+            "contain"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "cover",
+              "contain"
+            ]
+          },
+          "codeExample": "imageFit={\"cover\"}"
+        },
+        {
+          "name": "releaseBehavior",
+          "type": "PaperCrumpleRelease",
+          "required": false,
+          "defaultExpression": "'restore'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 305,
+            "kind": "parameter"
+          },
+          "defaultValue": "restore",
+          "description": "释放行为，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "stay",
+            "restore",
+            "creased"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "stay",
+              "restore",
+              "creased"
+            ]
+          },
+          "codeExample": "releaseBehavior={release}",
+          "usageExamples": [
+            "releaseBehavior={release}"
+          ]
+        },
+        {
+          "name": "crumpleAmount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.85",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 306,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.85,
+          "description": "揉皱幅度，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 19
+          },
+          "codeExample": "crumpleAmount={0.85}"
+        },
+        {
+          "name": "crumpleDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.55",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 307,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.55,
+          "description": "揉皱时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 20
+          },
+          "codeExample": "crumpleDuration={0.55}"
+        },
+        {
+          "name": "releaseDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 308,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.4,
+          "description": "释放时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 21
+          },
+          "codeExample": "releaseDuration={0.4}"
+        },
+        {
+          "name": "foldCount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 309,
+            "kind": "parameter"
+          },
+          "defaultValue": 6,
+          "description": "折叠数量，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 22
+          },
+          "codeExample": "foldCount={6}"
+        },
+        {
+          "name": "foldSharpness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 310,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "折叠锐度，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 23
+          },
+          "codeExample": "foldSharpness={0.6}"
+        },
+        {
+          "name": "wrinkleDepth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.65",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 311,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.65,
+          "description": "褶皱深度，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 24
+          },
+          "codeExample": "wrinkleDepth={0.65}"
+        },
+        {
+          "name": "creaseStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.18",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 312,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.18,
+          "description": "折痕强度，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 25
+          },
+          "codeExample": "creaseStrength={0.18}"
+        },
+        {
+          "name": "paperColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f4f0e8'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 313,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f4f0e8",
+          "description": "纸张颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 26
+          },
+          "codeExample": "paperColor={palette.ivory}",
+          "usageExamples": [
+            "paperColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "roughness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.92",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 314,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.92,
+          "description": "粗糙度，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 27
+          },
+          "codeExample": "roughness={0.92}"
+        },
+        {
+          "name": "paperTexture",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.08",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 315,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.08,
+          "description": "纸张纹理，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 28
+          },
+          "codeExample": "paperTexture={0.08}"
+        },
+        {
+          "name": "lightIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 316,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.8,
+          "description": "光照强度，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 29
+          },
+          "codeExample": "lightIntensity={1.8}"
+        },
+        {
+          "name": "lightAngle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "-35",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 317,
+            "kind": "parameter"
+          },
+          "defaultValue": -35,
+          "description": "光照角度，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 30
+          },
+          "codeExample": "lightAngle={-35}"
+        },
+        {
+          "name": "shadow",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 318,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否阴影，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "shadow={true}"
+        },
+        {
+          "name": "shadowOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.08",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 319,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.08,
+          "description": "阴影不透明度，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 32
+          },
+          "codeExample": "shadowOpacity={0.16}",
+          "usageExamples": [
+            "shadowOpacity={0.16}"
+          ]
+        },
+        {
+          "name": "draggable",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 320,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否可拖动，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "draggable={true}"
+        },
+        {
+          "name": "dragRotation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 321,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "拖动旋转角度，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 34
+          },
+          "codeExample": "dragRotation={10}"
+        },
+        {
+          "name": "dragRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "180",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 322,
+            "kind": "parameter"
+          },
+          "defaultValue": 180,
+          "description": "拖动半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 35
+          },
+          "codeExample": "dragRadius={180}"
+        },
+        {
+          "name": "returnToOrigin",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 323,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否返回目标起点，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "returnToOrigin={true}"
+        },
+        {
+          "name": "rotation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 324,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "旋转角度，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 37
+          },
+          "codeExample": "rotation={0}"
+        },
+        {
+          "name": "seed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 325,
+            "kind": "parameter"
+          },
+          "defaultValue": 7,
+          "description": "随机种子，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 38
+          },
+          "codeExample": "seed={12}",
+          "usageExamples": [
+            "seed={12}"
+          ]
+        },
+        {
+          "name": "detail",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "64",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 326,
+            "kind": "parameter"
+          },
+          "defaultValue": 64,
+          "description": "细节，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 39
+          },
+          "codeExample": "detail={64}"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 327,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 40
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "resetKey",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 328,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "重置身份标识，控制 paper crumple 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 41
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "resetKey={revision}",
+          "usageExamples": [
+            "resetKey={revision}"
+          ]
+        },
+        {
+          "name": "onStateChange",
+          "type": "(state: PaperCrumpleState) => void",
+          "required": false,
+          "description": "控件的状态机切换状态时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 42
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((state: PaperCrumpleState) => void) | undefined"
+          },
+          "codeExample": "onStateChange={setState}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onStateChange={setState}"
+          ]
+        },
+        {
+          "name": "onError",
+          "type": "(error: Error) => void",
+          "required": false,
+          "description": "错误时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((error: Error) => void) | undefined"
+          },
+          "codeExample": "onError={reason => setError(reason.message)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onError={reason => setError(reason.message)}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 331,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 44
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PaperCrumple/PaperCrumple.tsx",
+            "line": 45
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "select",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles['aw-micro-select']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value={release}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3382
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "ChangeEventHandler<HTMLSelectElement> | undefined",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "usageExamples": [
+            "onChange={event => setRelease(event.target.value as PaperCrumpleRelease)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3383
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<><option value=\"creased\">保留折痕</option><option value=\"restore\">恢复平整</option><option value=\"stay\">保持揉皱</option></>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "option · t2",
+      "props": [
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value=\"creased\"",
+            "value=\"restore\"",
+            "value=\"stay\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3336
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>保留折痕</>}",
+            "children={<>恢复平整</>}",
+            "children={<>保持揉皱</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "name": "option · t3",
+      "props": [
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value=\"creased\"",
+            "value=\"restore\"",
+            "value=\"stay\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3336
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>保留折痕</>}",
+            "children={<>恢复平整</>}",
+            "children={<>保持揉皱</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "name": "option · t4",
+      "props": [
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value=\"creased\"",
+            "value=\"restore\"",
+            "value=\"stay\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3336
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>保留折痕</>}",
+            "children={<>恢复平整</>}",
+            "children={<>保持揉皱</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t5",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles['aw-micro-action']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => { setRevision(value => value + 1); setError(''); }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>重置纸张</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

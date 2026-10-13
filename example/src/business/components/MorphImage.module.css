@@ -1,0 +1,14 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-morph-image, .aw-business-media-caption { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-morph-image { position:relative; height:300px; overflow:hidden; border-radius:var(--aw-radius-panel); background:var(--aw-surface-control); isolation:isolate }
+.aw-business-morph-image > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover }
+.aw-business-media-caption { position:absolute; bottom:0; inset-inline:0; z-index:3; padding:40px 24px 22px; color:var(--aw-palette-ivory); background:linear-gradient(transparent,color-mix(in srgb,var(--aw-palette-ink) 68%,transparent)); pointer-events:none }
+.aw-business-media-caption > span { display:block; font-size:10px; letter-spacing:.12em; margin-bottom:8px }
+.aw-business-media-caption > strong { display:flex; align-items:baseline; justify-content:space-between; font-size:21px; font-weight:500 }
+.aw-business-media-caption > strong > span { font-size:32px; font-variant-numeric:tabular-nums }
+@media (width < 600px) { .aw-business-morph-image { height:240px } }
+@media (width < 600px) { .aw-business-media-caption { padding:32px 18px 18px } }
+@media (width < 600px) { .aw-business-media-caption > strong { font-size:18px } }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-morph-image, .aw-business-morph-image::before, .aw-business-morph-image::after, .aw-business-media-caption, .aw-business-media-caption::before, .aw-business-media-caption::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-morph-image, [data-motion=reduce] .aw-business-morph-image::before, [data-motion=reduce] .aw-business-morph-image::after, [data-motion=reduce] .aw-business-media-caption, [data-motion=reduce] .aw-business-media-caption::before, [data-motion=reduce] .aw-business-media-caption::after { transition:none; animation:none; scroll-behavior:auto; }

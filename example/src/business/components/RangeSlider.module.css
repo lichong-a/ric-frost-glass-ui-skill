@@ -1,0 +1,11 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-range { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-range { width:100%; accent-color:var(--aw-color-action-primary) }
+.aw-business-range { appearance:none; height:6px; min-height:6px; margin:16px 0; padding:0; border:0; border-radius:999px; box-shadow:none; background:linear-gradient(to right,var(--aw-color-action-primary) var(--business-range-progress),var(--aw-color-border-decorative) var(--business-range-progress)); cursor:pointer }
+.aw-business-range::-webkit-slider-thumb { appearance:none; width:24px; height:24px; border:5px solid var(--aw-palette-ivory); border-radius:50%; background:var(--aw-color-action-primary); box-shadow:var(--aw-shadow-control); transition:scale 240ms var(--aw-business-spring),box-shadow 200ms ease }
+.aw-business-range::-moz-range-thumb { width:14px; height:14px; border:5px solid var(--aw-palette-ivory); border-radius:50%; background:var(--aw-color-action-primary); box-shadow:var(--aw-shadow-control); transition:scale 240ms var(--aw-business-spring) }
+.aw-business-range:active::-webkit-slider-thumb { scale:1.18 }
+.aw-business-range:active::-moz-range-thumb { scale:1.18 }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-range, .aw-business-range::before, .aw-business-range::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-range, [data-motion=reduce] .aw-business-range::before, [data-motion=reduce] .aw-business-range::after { transition:none; animation:none; scroll-behavior:auto; }

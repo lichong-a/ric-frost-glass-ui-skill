@@ -1,0 +1,949 @@
+{
+  "version": 1,
+  "id": "business-autocomplete",
+  "name": "AutoComplete",
+  "sourcePath": "src/business/demos/form/business-autocomplete.tsx",
+  "demoPath": "src/business/demos/form/business-autocomplete.tsx",
+  "fields": [
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "搜索工作入口",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.control",
+      "name": "control",
+      "label": "control · t0",
+      "description": "是否控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "control"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.placeholder",
+      "name": "placeholder",
+      "label": "占位文字 · t1",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "placeholder"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "输入“管理”或“目录”",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.type",
+      "name": "type",
+      "label": "类型 · t3",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.tabIndex",
+      "name": "tabIndex",
+      "label": "tabIndex · t3",
+      "description": "键盘 Tab 导航的焦点顺序。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "tabIndex"
+        }
+      ],
+      "type": "number | undefined",
+      "defaultValue": -1,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t4.variant",
+      "name": "variant",
+      "label": "外观 · t4",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t4",
+      "bindings": [
+        {
+          "target": "t4",
+          "name": "variant"
+        }
+      ],
+      "type": "'primary' | 'secondary' | 'danger'",
+      "defaultValue": "secondary",
+      "upstreamDefault": "'primary'",
+      "control": "select",
+      "options": [
+        {
+          "label": "primary",
+          "value": "primary"
+        },
+        {
+          "label": "secondary",
+          "value": "secondary"
+        },
+        {
+          "label": "danger",
+          "value": "danger"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t4.type",
+      "name": "type",
+      "label": "类型 · t4",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t4",
+      "bindings": [
+        {
+          "target": "t4",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "upstreamDefault": "'button'",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.query",
+      "name": "query",
+      "label": "query",
+      "description": "示例的受控状态 query；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [],
+  "inherited": [
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "div",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "input",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "ul",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "li",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "button",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "p",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import ownedStyles0 from '../../components/Button.module.css';\nimport ownedStyles1 from '../../components/DemoLayout.module.css';\nimport ownedStyles2 from '../../components/Input.module.css';\nimport ownedStyles3 from '../../components/SelectOptions.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState, useId, useEffect } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { Field } from '../../components/Field';\nimport { AnimatePresence } from 'motion/react';\nimport { DropdownSurface } from '../../components/DropdownSurface';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1,...ownedStyles2,...ownedStyles3};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\n// 场景：从较多候选项中边输入边搜索，支持键盘选择与清空。\nexport default function AutoCompleteDemo() {\n  const options = ['项目工作台', '智能体管理', '技能目录', '知识库', '工具连接', '运行记录', '团队空间'];\n  const id = useId(); const [query, setQuery] = useState(/*__AW_STATE_state.query__*/); const [selected, setSelected] = useState('');\n  const [open, setOpen] = useState(false); const [active, setActive] = useState(0);\n  const matches = options.filter(item => item.includes(query.trim()));\n  useEffect(() => {\n    if (open) document.getElementById(`${id}-option-${active}`)?.scrollIntoView({ block: 'nearest' });\n  }, [id, open, active, matches.length]);\n  function choose(value: string) { setQuery(value); setSelected(value); setOpen(false); }\n  return <BusinessDemo title=\"AutoComplete · 自动补全\" description=\"从较多候选项中边输入边搜索，支持方向键、Enter 和 Escape。\"><Field  htmlFor={id} /*__AW_PROPS_t0__*/ ><div data-ui=\"aw-business-combo\" className={cn(\"aw-business-combo\")} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }}><input className={cn('aw-business-input')} id={id} role=\"combobox\" aria-autocomplete=\"list\" aria-expanded={open} aria-controls={`${id}-options`} aria-activedescendant={open && matches[active] ? `${id}-option-${active}` : undefined} value={query}  onFocus={() => setOpen(true)} onChange={event => { setQuery(event.target.value); setSelected(''); setActive(0); setOpen(true); }} onKeyDown={event => { if (['ArrowDown','ArrowUp'].includes(event.key)) { event.preventDefault(); setOpen(true); setActive(value => matches.length ? (value + (event.key === 'ArrowDown' ? 1 : -1) + matches.length) % matches.length : 0); } else if (event.key === 'Enter' && open && matches[active]) { event.preventDefault(); choose(matches[active]); } else if (event.key === 'Escape') setOpen(false); }} /*__AW_PROPS_t1__*/  /><AnimatePresence>{open ? <DropdownSurface data-ui=\"aw-business-combo-list\" key=\"suggestions\" className={cn(\"aw-business-combo-list\")}><ul data-ui=\"aw-business-options\" id={`${id}-options`} role=\"listbox\" className={cn(\"aw-business-options\")}>{matches.length ? matches.map((item,index) => <li key={item} id={`${id}-option-${index}`} role=\"option\" aria-selected={active === index}><button className={cn('aw-business-button-feedback')}   onPointerDown={event => event.preventDefault()} onClick={() => choose(item)} /*__AW_PROPS_t3__*/ >{item}</button></li>) : <li data-ui=\"aw-business-empty\" className={cn(\"aw-business-empty\")}>没有匹配的入口</li>}</ul></DropdownSurface> : null}</AnimatePresence></div></Field><div data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}><Button  onClick={() => { setQuery(''); setSelected(''); setOpen(false); }} /*__AW_PROPS_t4__*/ >清空</Button><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">{selected ? `已选择：${selected}` : '尚未选择入口'}</p></div></BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Field",
+      "sourcePath": "src/business/components/Field.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "label=\"搜索工作入口\"",
+          "usageExamples": [
+            "label=\"搜索工作入口\""
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><div data-ui=\"aw-business-combo\" className={cn(\"aw-business-combo\")} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }}><input className={cn('aw-business-input')} id={id} role=\"combobox\" aria-autocomplete=\"list\" aria-expanded={open} aria-controls={`${id}-options`} aria-activedescendant={open && matches[active] ? `${id}-option-${active}` : undefined} value={query} placeholder=\"输入“管理”或“目录”\" onFocus={() => setOpen(true)} onChange={event => { setQuery(event.target.value); setSelected(''); setActive(0); setOpen(true); }} onKeyDown={event => { if (['ArrowDown','ArrowUp'].includes(event.key)) { event.preventDefault(); setOpen(true); setActive(value => matches.length ? (value + (event.key === 'ArrowDown' ? 1 : -1) + matches.length) % matches.length : 0); } else if (event.key === 'Enter' && open && matches[active]) { event.preventDefault(); choose(matches[active]); } else if (event.key === 'Escape') setOpen(false); }} /><AnimatePresence>{open ? <DropdownSurface data-ui=\"aw-business-combo-list\" key=\"suggestions\" className={cn(\"aw-business-combo-list\")}><ul data-ui=\"aw-business-options\" id={`${id}-options`} role=\"listbox\" className={cn(\"aw-business-options\")}>{matches.length ? matches.map((item,index) => <li key={item} id={`${id}-option-${index}`} role=\"option\" aria-selected={active === index}><button className={cn('aw-business-button-feedback')} type=\"button\" tabIndex={-1} onPointerDown={event => event.preventDefault()} onClick={() => choose(item)}>{item}</button></li>) : <li data-ui=\"aw-business-empty\" className={cn(\"aw-business-empty\")}>没有匹配的入口</li>}</ul></DropdownSurface> : null}</AnimatePresence></div></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><div data-ui=\"aw-business-combo\" className={cn(\"aw-business-combo\")} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }}><input className={cn('aw-business-input')} id={id} role=\"combobox\" aria-autocomplete=\"list\" aria-expanded={open} aria-controls={`${id}-options`} aria-activedescendant={open && matches[active] ? `${id}-option-${active}` : undefined} value={query} placeholder=\"输入“管理”或“目录”\" onFocus={() => setOpen(true)} onChange={event => { setQuery(event.target.value); setSelected(''); setActive(0); setOpen(true); }} onKeyDown={event => { if (['ArrowDown','ArrowUp'].includes(event.key)) { event.preventDefault(); setOpen(true); setActive(value => matches.length ? (value + (event.key === 'ArrowDown' ? 1 : -1) + matches.length) % matches.length : 0); } else if (event.key === 'Enter' && open && matches[active]) { event.preventDefault(); choose(matches[active]); } else if (event.key === 'Escape') setOpen(false); }} /><AnimatePresence>{open ? <DropdownSurface data-ui=\"aw-business-combo-list\" key=\"suggestions\" className={cn(\"aw-business-combo-list\")}><ul data-ui=\"aw-business-options\" id={`${id}-options`} role=\"listbox\" className={cn(\"aw-business-options\")}>{matches.length ? matches.map((item,index) => <li key={item} id={`${id}-option-${index}`} role=\"option\" aria-selected={active === index}><button className={cn('aw-business-button-feedback')} type=\"button\" tabIndex={-1} onPointerDown={event => event.preventDefault()} onClick={() => choose(item)}>{item}</button></li>) : <li data-ui=\"aw-business-empty\" className={cn(\"aw-business-empty\")}>没有匹配的入口</li>}</ul></DropdownSurface> : null}</AnimatePresence></div></>}"
+          ]
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "required": false,
+          "description": "与字段一起显示的帮助文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "hint={\"示例\"}"
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "(isControl ? children.props.id : undefined)",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "htmlFor={id}",
+          "usageExamples": [
+            "htmlFor={id}"
+          ]
+        },
+        {
+          "name": "control",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "control={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "input",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn('aw-business-input')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "required": false,
+          "description": "原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。",
+          "usageExamples": [
+            "id={id}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2707
+          }
+        },
+        {
+          "name": "role",
+          "type": "AriaRole | undefined",
+          "required": false,
+          "description": "辅助技术使用的元素角色，须与实际键盘和交互行为相匹配。",
+          "usageExamples": [
+            "role=\"combobox\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2721
+          }
+        },
+        {
+          "name": "aria-autocomplete",
+          "type": "\"inline\" | \"none\" | \"list\" | \"both\" | undefined",
+          "required": false,
+          "description": "辅助技术的 autocomplete 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-autocomplete=\"list\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2402
+          }
+        },
+        {
+          "name": "aria-expanded",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "description": "辅助技术的 expanded 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-expanded={open}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2478
+          }
+        },
+        {
+          "name": "aria-controls",
+          "type": "string | undefined",
+          "required": false,
+          "description": "辅助技术的 controls 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-controls={`${id}-options`}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2444
+          }
+        },
+        {
+          "name": "aria-activedescendant",
+          "type": "string | undefined",
+          "required": false,
+          "description": "辅助技术的 activedescendant 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-activedescendant={open && matches[active] ? `${id}-option-${active}` : undefined}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2395
+          }
+        },
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value={query}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3215
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string | undefined",
+          "required": false,
+          "description": "尚未填写或选择时显示的提示文字。",
+          "usageExamples": [
+            "placeholder=\"输入“管理”或“目录”\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3208
+          }
+        },
+        {
+          "name": "onFocus",
+          "type": "FocusEventHandler<HTMLInputElement> | undefined",
+          "required": false,
+          "description": "焦点时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onFocus={() => setOpen(true)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2195
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "ChangeEventHandler<HTMLInputElement> | undefined",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "usageExamples": [
+            "onChange={event => { setQuery(event.target.value); setSelected(''); setActive(0); setOpen(true); }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3218
+          }
+        },
+        {
+          "name": "onKeyDown",
+          "type": "KeyboardEventHandler<HTMLInputElement> | undefined",
+          "required": false,
+          "description": "身份标识down时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onKeyDown={event => { if (['ArrowDown','ArrowUp'].includes(event.key)) { event.preventDefault(); setOpen(true); setActive(value => matches.length ? (value + (event.key === 'ArrowDown' ? 1 : -1) + matches.length) % matches.length : 0); } else if (event.key === 'Enter' && open && matches[active]) { event.preventDefault(); choose(matches[active]); } else if (event.key === 'Escape') setOpen(false); }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2221
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "DropdownSurface",
+      "sourcePath": "src/business/components/DropdownSurface.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/DropdownSurface.tsx",
+            "line": 9
+          },
+          "codeExample": "children={<><ul data-ui=\"aw-business-options\" id={`${id}-options`} role=\"listbox\" className={cn(\"aw-business-options\")}>{matches.length ? matches.map((item,index) => <li key={item} id={`${id}-option-${index}`} role=\"option\" aria-selected={active === index}><button className={cn('aw-business-button-feedback')} type=\"button\" tabIndex={-1} onPointerDown={event => event.preventDefault()} onClick={() => choose(item)}>{item}</button></li>) : <li data-ui=\"aw-business-empty\" className={cn(\"aw-business-empty\")}>没有匹配的入口</li>}</ul></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><ul data-ui=\"aw-business-options\" id={`${id}-options`} role=\"listbox\" className={cn(\"aw-business-options\")}>{matches.length ? matches.map((item,index) => <li key={item} id={`${id}-option-${index}`} role=\"option\" aria-selected={active === index}><button className={cn('aw-business-button-feedback')} type=\"button\" tabIndex={-1} onPointerDown={event => event.preventDefault()} onClick={() => choose(item)}>{item}</button></li>) : <li data-ui=\"aw-business-empty\" className={cn(\"aw-business-empty\")}>没有匹配的入口</li>}</ul></>}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/DropdownSurface.tsx",
+            "line": 9,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DropdownSurface.tsx",
+            "line": 9
+          },
+          "codeExample": "className={cn(\"aw-business-combo-list\")}",
+          "usageExamples": [
+            "className={cn(\"aw-business-combo-list\")}"
+          ]
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/DropdownSurface.tsx",
+            "line": 9
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "surfaceRef",
+          "type": "Ref<HTMLDivElement>",
+          "required": false,
+          "description": "连接弹出面板的 DOM ref，供调用方测量与管理焦点。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/DropdownSurface.tsx",
+            "line": 9
+          },
+          "codeExample": "const elementRef = useRef<HTMLDivElement | null>(null);\n// JSX: surfaceRef={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t3",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn('aw-business-button-feedback')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "tabIndex",
+          "type": "number | undefined",
+          "required": false,
+          "description": "键盘 Tab 导航的焦点顺序。",
+          "usageExamples": [
+            "tabIndex={-1}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2713
+          }
+        },
+        {
+          "name": "onPointerDown",
+          "type": "PointerEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "指针down时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onPointerDown={event => event.preventDefault()}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2329
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => choose(item)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>{item}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "name": "Button",
+      "sourcePath": "src/business/components/Button.tsx",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "defaultExpression": "'button'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "button",
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "button",
+            "reset",
+            "submit"
+          ],
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              "button",
+              "reset",
+              "submit"
+            ]
+          },
+          "codeExample": "type={\"button\"}"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "children={<>清空</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>清空</>}"
+          ]
+        },
+        {
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'danger'",
+          "required": false,
+          "defaultExpression": "'primary'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "primary",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "primary",
+            "secondary",
+            "danger"
+          ],
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "primary",
+              "secondary",
+              "danger"
+            ]
+          },
+          "codeExample": "variant=\"secondary\"",
+          "usageExamples": [
+            "variant=\"secondary\""
+          ]
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "native-composition",
+  "notes": [
+    "该业务能力由示例函数组合原生元素与下面的叶组件；示例函数没有接收公开 Props。原生属性按元素列出，演示内部 useState 配置不作为公开 Props 或组件默认值。"
+  ]
+}

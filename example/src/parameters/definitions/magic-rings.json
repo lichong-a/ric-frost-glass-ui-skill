@@ -1,0 +1,1750 @@
+{
+  "version": 1,
+  "id": "magic-rings",
+  "name": "Magic Rings",
+  "sourcePath": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+  "demoPath": "src/demos/background/magic-rings.tsx",
+  "fields": [
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#cbe3a5",
+      "upstreamDefault": "'#fc42ff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.colorTwo",
+      "name": "colorTwo",
+      "label": "colorTwo · t0",
+      "description": "颜色第二，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colorTwo"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#92dce5",
+      "upstreamDefault": "'#42fcff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ringCount",
+      "name": "ringCount",
+      "label": "ringCount · t0",
+      "description": "圆环数量，控制 magic rings 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。绘制的圆环数量。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ringCount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "upstreamDefault": "6",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 16,
+      "step": 1,
+      "unit": "个"
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.attenuation",
+      "name": "attenuation",
+      "label": "attenuation · t0",
+      "description": "衰减，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "attenuation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineThickness",
+      "name": "lineThickness",
+      "label": "lineThickness · t0",
+      "description": "线条厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineThickness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.baseRadius",
+      "name": "baseRadius",
+      "label": "baseRadius · t0",
+      "description": "基础半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "baseRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.35",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radiusStep",
+      "name": "radiusStep",
+      "label": "radiusStep · t0",
+      "description": "半径步进，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radiusStep"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scaleRate",
+      "name": "scaleRate",
+      "label": "scaleRate · t0",
+      "description": "缩放速率，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scaleRate"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 magic rings 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。圆环的不透明度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.noiseAmount",
+      "name": "noiseAmount",
+      "label": "noiseAmount · t0",
+      "description": "噪声幅度，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "noiseAmount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.08,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ringGap",
+      "name": "ringGap",
+      "label": "ringGap · t0",
+      "description": "圆环间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ringGap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.followMouse",
+      "name": "followMouse",
+      "label": "followMouse · t0",
+      "description": "是否跟随鼠标，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "followMouse"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseInfluence",
+      "name": "mouseInfluence",
+      "label": "mouseInfluence · t0",
+      "description": "鼠标影响系数，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseInfluence"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.18,
+      "upstreamDefault": "0.2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverScale",
+      "name": "hoverScale",
+      "label": "hoverScale · t0",
+      "description": "悬停缩放，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.15,
+      "upstreamDefault": "1.2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.parallax",
+      "name": "parallax",
+      "label": "parallax · t0",
+      "description": "视差，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "parallax"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.04,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clickBurst",
+      "name": "clickBurst",
+      "label": "clickBurst · t0",
+      "description": "是否点击爆发，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clickBurst"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.blur",
+      "name": "blur",
+      "label": "blur · t0",
+      "description": "模糊，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "blur"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rotation",
+      "name": "rotation",
+      "label": "旋转 · t0",
+      "description": "旋转角度，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rotation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeIn",
+      "name": "fadeIn",
+      "label": "fadeIn · t0",
+      "description": "淡出进入，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeIn"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.7,
+      "upstreamDefault": "0.7",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeOut",
+      "name": "fadeOut",
+      "label": "fadeOut · t0",
+      "description": "淡出退出，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeOut"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.alphaMode",
+      "name": "alphaMode",
+      "label": "alphaMode · t0",
+      "description": "透明度模式，控制 magic rings 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "alphaMode"
+        }
+      ],
+      "type": "'luminance' | 'coverage'",
+      "defaultValue": "luminance",
+      "upstreamDefault": "'luminance'",
+      "control": "select",
+      "options": [
+        {
+          "label": "luminance",
+          "value": "luminance"
+        },
+        {
+          "label": "coverage",
+          "value": "coverage"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#fc42ff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 102,
+        "kind": "parameter"
+      },
+      "defaultValue": "#fc42ff",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 77
+      },
+      "codeExample": "color=\"#cbe3a5\"",
+      "usageExamples": [
+        "color=\"#cbe3a5\""
+      ]
+    },
+    {
+      "name": "colorTwo",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#42fcff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 103,
+        "kind": "parameter"
+      },
+      "defaultValue": "#42fcff",
+      "description": "颜色第二，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 78
+      },
+      "codeExample": "colorTwo=\"#92dce5\"",
+      "usageExamples": [
+        "colorTwo=\"#92dce5\""
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 104,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 79
+      },
+      "codeExample": "speed={1}",
+      "usageExamples": [
+        "speed={1}"
+      ]
+    },
+    {
+      "name": "ringCount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 105,
+        "kind": "parameter"
+      },
+      "defaultValue": 6,
+      "description": "圆环数量，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 80
+      },
+      "codeExample": "ringCount={6}",
+      "usageExamples": [
+        "ringCount={6}"
+      ]
+    },
+    {
+      "name": "attenuation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 106,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "衰减，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 81
+      },
+      "codeExample": "attenuation={10}",
+      "usageExamples": [
+        "attenuation={10}"
+      ]
+    },
+    {
+      "name": "lineThickness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 107,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "线条厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 82
+      },
+      "codeExample": "lineThickness={2}",
+      "usageExamples": [
+        "lineThickness={2}"
+      ]
+    },
+    {
+      "name": "baseRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.35",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 108,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.35,
+      "description": "基础半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 83
+      },
+      "codeExample": "baseRadius={0.3}",
+      "usageExamples": [
+        "baseRadius={0.3}"
+      ]
+    },
+    {
+      "name": "radiusStep",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 109,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "半径步进，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 84
+      },
+      "codeExample": "radiusStep={0.1}",
+      "usageExamples": [
+        "radiusStep={0.1}"
+      ]
+    },
+    {
+      "name": "scaleRate",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 110,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "缩放速率，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 85
+      },
+      "codeExample": "scaleRate={0.1}",
+      "usageExamples": [
+        "scaleRate={0.1}"
+      ]
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 111,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 86
+      },
+      "codeExample": "opacity={1}",
+      "usageExamples": [
+        "opacity={1}"
+      ]
+    },
+    {
+      "name": "blur",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 112,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "模糊，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 87
+      },
+      "codeExample": "blur={0}"
+    },
+    {
+      "name": "noiseAmount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 113,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "噪声幅度，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 88
+      },
+      "codeExample": "noiseAmount={0.08}",
+      "usageExamples": [
+        "noiseAmount={0.08}"
+      ]
+    },
+    {
+      "name": "rotation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 114,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "旋转角度，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 89
+      },
+      "codeExample": "rotation={0}"
+    },
+    {
+      "name": "ringGap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 115,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "圆环间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 90
+      },
+      "codeExample": "ringGap={1.5}",
+      "usageExamples": [
+        "ringGap={1.5}"
+      ]
+    },
+    {
+      "name": "fadeIn",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 116,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.7,
+      "description": "淡出进入，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 91
+      },
+      "codeExample": "fadeIn={0.7}"
+    },
+    {
+      "name": "fadeOut",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 117,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "淡出退出，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 92
+      },
+      "codeExample": "fadeOut={0.5}"
+    },
+    {
+      "name": "followMouse",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 118,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否跟随鼠标，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 93
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "followMouse",
+      "usageExamples": [
+        "followMouse"
+      ]
+    },
+    {
+      "name": "mouseInfluence",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 119,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "鼠标影响系数，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 94
+      },
+      "codeExample": "mouseInfluence={0.18}",
+      "usageExamples": [
+        "mouseInfluence={0.18}"
+      ]
+    },
+    {
+      "name": "hoverScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 120,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.2,
+      "description": "悬停缩放，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 95
+      },
+      "codeExample": "hoverScale={1.15}",
+      "usageExamples": [
+        "hoverScale={1.15}"
+      ]
+    },
+    {
+      "name": "parallax",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 121,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "视差，控制 magic rings 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 96
+      },
+      "codeExample": "parallax={0.04}",
+      "usageExamples": [
+        "parallax={0.04}"
+      ]
+    },
+    {
+      "name": "clickBurst",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 122,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否点击爆发，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 97
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickBurst",
+      "usageExamples": [
+        "clickBurst"
+      ]
+    },
+    {
+      "name": "alphaMode",
+      "type": "'luminance' | 'coverage'",
+      "required": false,
+      "defaultExpression": "'luminance'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 123,
+        "kind": "parameter"
+      },
+      "defaultValue": "luminance",
+      "description": "透明度模式，控制 magic rings 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "luminance",
+        "coverage"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+        "line": 98
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "luminance",
+          "coverage"
+        ]
+      },
+      "codeExample": "alphaMode={\"luminance\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Animations/MagicRings/MagicRings';\nimport styles from './magic-rings.module.css';\n\nexport default function MagicRingsDemo() {\n  return (\n    <div className={styles.stage} data-visual-demo=\"magic-rings\">\n      <Component\n\n\n             /*__AW_PROPS_t0__*/  />\n      <p className={styles.hint}>移动指针牵引光环 · 点击触发脉冲</p>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "MagicRings",
+      "sourcePath": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+      "props": [
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#fc42ff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 102,
+            "kind": "parameter"
+          },
+          "defaultValue": "#fc42ff",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 77
+          },
+          "codeExample": "color=\"#cbe3a5\"",
+          "usageExamples": [
+            "color=\"#cbe3a5\""
+          ]
+        },
+        {
+          "name": "colorTwo",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#42fcff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 103,
+            "kind": "parameter"
+          },
+          "defaultValue": "#42fcff",
+          "description": "颜色第二，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 78
+          },
+          "codeExample": "colorTwo=\"#92dce5\"",
+          "usageExamples": [
+            "colorTwo=\"#92dce5\""
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 104,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 79
+          },
+          "codeExample": "speed={1}",
+          "usageExamples": [
+            "speed={1}"
+          ]
+        },
+        {
+          "name": "ringCount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 105,
+            "kind": "parameter"
+          },
+          "defaultValue": 6,
+          "description": "圆环数量，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 80
+          },
+          "codeExample": "ringCount={6}",
+          "usageExamples": [
+            "ringCount={6}"
+          ]
+        },
+        {
+          "name": "attenuation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 106,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "衰减，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 81
+          },
+          "codeExample": "attenuation={10}",
+          "usageExamples": [
+            "attenuation={10}"
+          ]
+        },
+        {
+          "name": "lineThickness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 107,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "线条厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 82
+          },
+          "codeExample": "lineThickness={2}",
+          "usageExamples": [
+            "lineThickness={2}"
+          ]
+        },
+        {
+          "name": "baseRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.35",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 108,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.35,
+          "description": "基础半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 83
+          },
+          "codeExample": "baseRadius={0.3}",
+          "usageExamples": [
+            "baseRadius={0.3}"
+          ]
+        },
+        {
+          "name": "radiusStep",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 109,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "半径步进，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 84
+          },
+          "codeExample": "radiusStep={0.1}",
+          "usageExamples": [
+            "radiusStep={0.1}"
+          ]
+        },
+        {
+          "name": "scaleRate",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 110,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "缩放速率，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 85
+          },
+          "codeExample": "scaleRate={0.1}",
+          "usageExamples": [
+            "scaleRate={0.1}"
+          ]
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 111,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 86
+          },
+          "codeExample": "opacity={1}",
+          "usageExamples": [
+            "opacity={1}"
+          ]
+        },
+        {
+          "name": "blur",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 112,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "模糊，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 87
+          },
+          "codeExample": "blur={0}"
+        },
+        {
+          "name": "noiseAmount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 113,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "噪声幅度，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 88
+          },
+          "codeExample": "noiseAmount={0.08}",
+          "usageExamples": [
+            "noiseAmount={0.08}"
+          ]
+        },
+        {
+          "name": "rotation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 114,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "旋转角度，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 89
+          },
+          "codeExample": "rotation={0}"
+        },
+        {
+          "name": "ringGap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 115,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "圆环间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 90
+          },
+          "codeExample": "ringGap={1.5}",
+          "usageExamples": [
+            "ringGap={1.5}"
+          ]
+        },
+        {
+          "name": "fadeIn",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 116,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.7,
+          "description": "淡出进入，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 91
+          },
+          "codeExample": "fadeIn={0.7}"
+        },
+        {
+          "name": "fadeOut",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 117,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "淡出退出，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 92
+          },
+          "codeExample": "fadeOut={0.5}"
+        },
+        {
+          "name": "followMouse",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 118,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否跟随鼠标，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 93
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "followMouse",
+          "usageExamples": [
+            "followMouse"
+          ]
+        },
+        {
+          "name": "mouseInfluence",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 119,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "鼠标影响系数，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 94
+          },
+          "codeExample": "mouseInfluence={0.18}",
+          "usageExamples": [
+            "mouseInfluence={0.18}"
+          ]
+        },
+        {
+          "name": "hoverScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 120,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.2,
+          "description": "悬停缩放，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 95
+          },
+          "codeExample": "hoverScale={1.15}",
+          "usageExamples": [
+            "hoverScale={1.15}"
+          ]
+        },
+        {
+          "name": "parallax",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 121,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "视差，控制 magic rings 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 96
+          },
+          "codeExample": "parallax={0.04}",
+          "usageExamples": [
+            "parallax={0.04}"
+          ]
+        },
+        {
+          "name": "clickBurst",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 122,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否点击爆发，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 97
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickBurst",
+          "usageExamples": [
+            "clickBurst"
+          ]
+        },
+        {
+          "name": "alphaMode",
+          "type": "'luminance' | 'coverage'",
+          "required": false,
+          "defaultExpression": "'luminance'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 123,
+            "kind": "parameter"
+          },
+          "defaultValue": "luminance",
+          "description": "透明度模式，控制 magic rings 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "luminance",
+            "coverage"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MagicRings/MagicRings.tsx",
+            "line": 98
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "luminance",
+              "coverage"
+            ]
+          },
+          "codeExample": "alphaMode={\"luminance\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

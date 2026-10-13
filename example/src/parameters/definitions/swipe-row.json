@@ -1,0 +1,2168 @@
+{
+  "version": 1,
+  "id": "swipe-row",
+  "name": "Swipe Row",
+  "sourcePath": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+  "demoPath": "src/demos/data/swipe-row.tsx",
+  "fields": [
+    {
+      "key": "t0.actions",
+      "name": "actions",
+      "label": "actions · t0",
+      "description": "操作项的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "actions"
+        }
+      ],
+      "type": "SwipeAction[]",
+      "defaultValue": [
+        {
+          "id": "archive",
+          "label": "归档",
+          "color": "#52604e"
+        },
+        {
+          "id": "remove",
+          "label": "移除",
+          "color": "#9c6d56",
+          "dismiss": true
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ACTIONS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "id": {
+              "kind": "string"
+            },
+            "label": {
+              "kind": "string"
+            },
+            "color": {
+              "kind": "string"
+            },
+            "dismiss": {
+              "kind": "boolean"
+            }
+          },
+          "required": [
+            "id",
+            "label"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rowColor",
+      "name": "rowColor",
+      "label": "rowColor · t0",
+      "description": "行颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rowColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "rgb(250 247 240 / 0.82)",
+      "upstreamDefault": "'#27272a'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.drawerColor",
+      "name": "drawerColor",
+      "label": "drawerColor · t0",
+      "description": "抽屉颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "drawerColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#3f3f46'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.height",
+      "name": "height",
+      "label": "高度 · t0",
+      "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "height"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 72,
+      "upstreamDefault": "64",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 16,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "演示技能草稿",
+      "upstreamDefault": "'List item'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.haptic",
+      "name": "haptic",
+      "label": "haptic · t0",
+      "description": "是否触感回弹，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "haptic"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.actionColor",
+      "name": "actionColor",
+      "label": "actionColor · t0",
+      "description": "操作颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "actionColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#e5484d",
+      "upstreamDefault": "'#e5484d'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.actionWidth",
+      "name": "actionWidth",
+      "label": "actionWidth · t0",
+      "description": "操作宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "actionWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 80,
+      "upstreamDefault": "80",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 swipe row 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "'left' | 'right'",
+      "defaultValue": "left",
+      "upstreamDefault": "'left'",
+      "control": "select",
+      "options": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.snapBounce",
+      "name": "snapBounce",
+      "label": "snapBounce · t0",
+      "description": "吸附回弹，控制 swipe row 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "snapBounce"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.2",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.resistance",
+      "name": "resistance",
+      "label": "resistance · t0",
+      "description": "阻力，控制 swipe row 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "resistance"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.55,
+      "upstreamDefault": "0.55",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.collapseMs",
+      "name": "collapseMs",
+      "label": "collapseMs · t0",
+      "description": "收起毫秒，控制 swipe row 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "collapseMs"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 200,
+      "upstreamDefault": "200",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.commitAt",
+      "name": "commitAt",
+      "label": "commitAt · t0",
+      "description": "提交阈值，控制 swipe row 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "commitAt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fullSwipe",
+      "name": "fullSwipe",
+      "label": "fullSwipe · t0",
+      "description": "是否完整滑动，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fullSwipe"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.closeOnAction",
+      "name": "closeOnAction",
+      "label": "closeOnAction · t0",
+      "description": "是否关闭操作，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "closeOnAction"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.type",
+      "name": "type",
+      "label": "类型 · t2",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.open",
+      "name": "open",
+      "label": "打开状态",
+      "description": "示例的受控状态 open；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "boolean",
+      "defaultValue": false,
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "open"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 28
+      },
+      "codeExample": "children={<><div style={{ padding: '16px 20px' }}><strong>技能配置草稿</strong><p style={{ margin: '4px 0 0', fontSize: 13 }}>仅在本地示例中归档或移除</p></div></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><div style={{ padding: '16px 20px' }}><strong>技能配置草稿</strong><p style={{ margin: '4px 0 0', fontSize: 13 }}>仅在本地示例中归档或移除</p></div></>}"
+      ]
+    },
+    {
+      "name": "actions",
+      "type": "SwipeAction[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ACTIONS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 111,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        {
+          "id": "delete",
+          "label": "Delete"
+        }
+      ],
+      "defaultResolvedExpression": "[{ id: 'delete', label: 'Delete' }]",
+      "description": "操作项的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "SwipeAction",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "label",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "icon",
+                "type": "ReactNode",
+                "required": false
+              },
+              {
+                "name": "color",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "dismiss",
+                "type": "boolean",
+                "required": false,
+                "kind": "enum",
+                "options": [
+                  false,
+                  true
+                ]
+              },
+              {
+                "name": "onSelect",
+                "type": "() => void",
+                "required": false,
+                "kind": "callback",
+                "signature": "(() => void) | undefined"
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "actions={actions}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "actions={actions}"
+      ]
+    },
+    {
+      "name": "actionColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#e5484d'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 112,
+        "kind": "parameter"
+      },
+      "defaultValue": "#e5484d",
+      "description": "操作颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 30
+      },
+      "codeExample": "actionColor={\"#e5484d\"}"
+    },
+    {
+      "name": "drawerColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#3f3f46'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 113,
+        "kind": "parameter"
+      },
+      "defaultValue": "#3f3f46",
+      "description": "抽屉颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 31
+      },
+      "codeExample": "drawerColor={palette.sage}",
+      "usageExamples": [
+        "drawerColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "rowColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#27272a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 114,
+        "kind": "parameter"
+      },
+      "defaultValue": "#27272a",
+      "description": "行颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 32
+      },
+      "codeExample": "rowColor={palette.surface}",
+      "usageExamples": [
+        "rowColor={palette.surface}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 115,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 33
+      },
+      "codeExample": "textColor={palette.ink}",
+      "usageExamples": [
+        "textColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "64",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 116,
+        "kind": "parameter"
+      },
+      "defaultValue": 64,
+      "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 34
+      },
+      "codeExample": "height={72}",
+      "usageExamples": [
+        "height={72}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 117,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 35
+      },
+      "codeExample": "radius={16}",
+      "usageExamples": [
+        "radius={16}"
+      ]
+    },
+    {
+      "name": "actionWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "80",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 118,
+        "kind": "parameter"
+      },
+      "defaultValue": 80,
+      "description": "操作宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 36
+      },
+      "codeExample": "actionWidth={80}"
+    },
+    {
+      "name": "direction",
+      "type": "'left' | 'right'",
+      "required": false,
+      "defaultExpression": "'left'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 119,
+        "kind": "parameter"
+      },
+      "defaultValue": "left",
+      "description": "方向，控制 swipe row 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "left",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 37
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "left",
+          "right"
+        ]
+      },
+      "codeExample": "direction={\"left\"}"
+    },
+    {
+      "name": "snapBounce",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 120,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "吸附回弹，控制 swipe row 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 38
+      },
+      "codeExample": "snapBounce={0.2}"
+    },
+    {
+      "name": "resistance",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.55",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 121,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.55,
+      "description": "阻力，控制 swipe row 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 39
+      },
+      "codeExample": "resistance={0.55}"
+    },
+    {
+      "name": "collapseMs",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 122,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "收起毫秒，控制 swipe row 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 40
+      },
+      "codeExample": "collapseMs={200}"
+    },
+    {
+      "name": "commitAt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 123,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "提交阈值，控制 swipe row 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 41
+      },
+      "codeExample": "commitAt={0.6}"
+    },
+    {
+      "name": "fullSwipe",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 124,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否完整滑动，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 42
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "fullSwipe={true}"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 125,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "openState",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 147,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "是否展开或显示内容，由调用方控制。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 44
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "open={open}",
+      "usageExamples": [
+        "open={open}"
+      ]
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false,
+      "description": "展开状态改变时通知调用方，参数为新的布尔状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 45
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((open: boolean) => void) | undefined"
+      },
+      "codeExample": "onOpenChange={setOpen}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onOpenChange={setOpen}"
+      ]
+    },
+    {
+      "name": "onAction",
+      "type": "(action: SwipeAction) => void",
+      "required": false,
+      "description": "用户激活操作项时通知调用方，按签名接收该动作的身份或数据。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 46
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((action: SwipeAction) => void) | undefined"
+      },
+      "codeExample": "onAction={action => { setMessage(`已选择：${action.label}`); if (action.dismiss) setRemoved(true); }}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onAction={action => { setMessage(`已选择：${action.label}`); if (action.dismiss) setRemoved(true); }}"
+      ]
+    },
+    {
+      "name": "onCommit",
+      "type": "(action: SwipeAction) => void",
+      "required": false,
+      "description": "交互达到提交阈值并确认时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 47
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((action: SwipeAction) => void) | undefined"
+      },
+      "codeExample": "onCommit={action => { setRemoved(true); setMessage(`滑动已确认：${action.label}`); }}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onCommit={action => { setRemoved(true); setMessage(`滑动已确认：${action.label}`); }}"
+      ]
+    },
+    {
+      "name": "closeOnAction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 130,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否关闭操作，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 48
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "closeOnAction={true}"
+    },
+    {
+      "name": "haptic",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 131,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否触感回弹，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 49
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "haptic={false}",
+      "usageExamples": [
+        "haptic={false}"
+      ]
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'List item'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 132,
+        "kind": "parameter"
+      },
+      "defaultValue": "List item",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 50
+      },
+      "codeExample": "label=\"演示技能草稿\"",
+      "usageExamples": [
+        "label=\"演示技能草稿\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 133,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 51
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+        "line": 52
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport SwipeRow from '../../../.upstream/src/ts-default/Micro/SwipeRow/SwipeRow';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\n\nexport default function SwipeRowDemo() {\n  const [message, setMessage] = useState('向左滑动条目，展开操作。');\n  const [open, setOpen] = useState(/*__AW_STATE_state.open__*/);\n  const [removed, setRemoved] = useState(false);\n  const [revision, setRevision] = useState(0);\n  return <DemoPanel title=\"Swipe Row · 行滑动操作\"><div className={cn(\"aw-micro-stack\")}>\n    <div className={cn(\"aw-micro-wide\")}>{removed ? <p className={cn(\"aw-micro-hint\")}>本地演示行已移除。</p> : <SwipeRow key={revision}  open={open} onOpenChange={setOpen}        onAction={action => { setMessage(`已选择：${action.label}`); if (action.dismiss) setRemoved(true); }} onCommit={action => { setRemoved(true); setMessage(`滑动已确认：${action.label}`); }} /*__AW_PROPS_t0__*/ ><div style={{ padding: '16px 20px' }}><strong>技能配置草稿</strong><p style={{ margin: '4px 0 0', fontSize: 13 }}>仅在本地示例中归档或移除</p></div></SwipeRow>}</div>\n    <div className={cn(\"aw-micro-controls\")}><button className={styles['aw-micro-action']}  onClick={() => setOpen(value => !value)} disabled={removed} /*__AW_PROPS_t1__*/ >{open ? '关闭行操作' : '展开行操作'}</button><button className={styles['aw-micro-action']}  onClick={() => { setOpen(false); setRemoved(false); setRevision(value => value + 1); setMessage('示例行已恢复。'); }} /*__AW_PROPS_t2__*/ >恢复示例行</button></div>\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">{message}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "SwipeRow",
+      "sourcePath": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 28
+          },
+          "codeExample": "children={<><div style={{ padding: '16px 20px' }}><strong>技能配置草稿</strong><p style={{ margin: '4px 0 0', fontSize: 13 }}>仅在本地示例中归档或移除</p></div></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><div style={{ padding: '16px 20px' }}><strong>技能配置草稿</strong><p style={{ margin: '4px 0 0', fontSize: 13 }}>仅在本地示例中归档或移除</p></div></>}"
+          ]
+        },
+        {
+          "name": "actions",
+          "type": "SwipeAction[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ACTIONS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 111,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            {
+              "id": "delete",
+              "label": "Delete"
+            }
+          ],
+          "defaultResolvedExpression": "[{ id: 'delete', label: 'Delete' }]",
+          "description": "操作项的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "SwipeAction",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "id",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "icon",
+                    "type": "ReactNode",
+                    "required": false
+                  },
+                  {
+                    "name": "color",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "dismiss",
+                    "type": "boolean",
+                    "required": false,
+                    "kind": "enum",
+                    "options": [
+                      false,
+                      true
+                    ]
+                  },
+                  {
+                    "name": "onSelect",
+                    "type": "() => void",
+                    "required": false,
+                    "kind": "callback",
+                    "signature": "(() => void) | undefined"
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "actions={actions}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "actions={actions}"
+          ]
+        },
+        {
+          "name": "actionColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#e5484d'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 112,
+            "kind": "parameter"
+          },
+          "defaultValue": "#e5484d",
+          "description": "操作颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 30
+          },
+          "codeExample": "actionColor={\"#e5484d\"}"
+        },
+        {
+          "name": "drawerColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#3f3f46'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 113,
+            "kind": "parameter"
+          },
+          "defaultValue": "#3f3f46",
+          "description": "抽屉颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 31
+          },
+          "codeExample": "drawerColor={palette.sage}",
+          "usageExamples": [
+            "drawerColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "rowColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#27272a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 114,
+            "kind": "parameter"
+          },
+          "defaultValue": "#27272a",
+          "description": "行颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 32
+          },
+          "codeExample": "rowColor={palette.surface}",
+          "usageExamples": [
+            "rowColor={palette.surface}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 115,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 33
+          },
+          "codeExample": "textColor={palette.ink}",
+          "usageExamples": [
+            "textColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "64",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 116,
+            "kind": "parameter"
+          },
+          "defaultValue": 64,
+          "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 34
+          },
+          "codeExample": "height={72}",
+          "usageExamples": [
+            "height={72}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 117,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 35
+          },
+          "codeExample": "radius={16}",
+          "usageExamples": [
+            "radius={16}"
+          ]
+        },
+        {
+          "name": "actionWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "80",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 118,
+            "kind": "parameter"
+          },
+          "defaultValue": 80,
+          "description": "操作宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 36
+          },
+          "codeExample": "actionWidth={80}"
+        },
+        {
+          "name": "direction",
+          "type": "'left' | 'right'",
+          "required": false,
+          "defaultExpression": "'left'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 119,
+            "kind": "parameter"
+          },
+          "defaultValue": "left",
+          "description": "方向，控制 swipe row 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "left",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 37
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "left",
+              "right"
+            ]
+          },
+          "codeExample": "direction={\"left\"}"
+        },
+        {
+          "name": "snapBounce",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 120,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "吸附回弹，控制 swipe row 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 38
+          },
+          "codeExample": "snapBounce={0.2}"
+        },
+        {
+          "name": "resistance",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.55",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 121,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.55,
+          "description": "阻力，控制 swipe row 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 39
+          },
+          "codeExample": "resistance={0.55}"
+        },
+        {
+          "name": "collapseMs",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 122,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "收起毫秒，控制 swipe row 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 40
+          },
+          "codeExample": "collapseMs={200}"
+        },
+        {
+          "name": "commitAt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 123,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "提交阈值，控制 swipe row 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 41
+          },
+          "codeExample": "commitAt={0.6}"
+        },
+        {
+          "name": "fullSwipe",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 124,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否完整滑动，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 42
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "fullSwipe={true}"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 125,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "openState",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 147,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "是否展开或显示内容，由调用方控制。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 44
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "open={open}",
+          "usageExamples": [
+            "open={open}"
+          ]
+        },
+        {
+          "name": "onOpenChange",
+          "type": "(open: boolean) => void",
+          "required": false,
+          "description": "展开状态改变时通知调用方，参数为新的布尔状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 45
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((open: boolean) => void) | undefined"
+          },
+          "codeExample": "onOpenChange={setOpen}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onOpenChange={setOpen}"
+          ]
+        },
+        {
+          "name": "onAction",
+          "type": "(action: SwipeAction) => void",
+          "required": false,
+          "description": "用户激活操作项时通知调用方，按签名接收该动作的身份或数据。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 46
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((action: SwipeAction) => void) | undefined"
+          },
+          "codeExample": "onAction={action => { setMessage(`已选择：${action.label}`); if (action.dismiss) setRemoved(true); }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onAction={action => { setMessage(`已选择：${action.label}`); if (action.dismiss) setRemoved(true); }}"
+          ]
+        },
+        {
+          "name": "onCommit",
+          "type": "(action: SwipeAction) => void",
+          "required": false,
+          "description": "交互达到提交阈值并确认时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 47
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((action: SwipeAction) => void) | undefined"
+          },
+          "codeExample": "onCommit={action => { setRemoved(true); setMessage(`滑动已确认：${action.label}`); }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onCommit={action => { setRemoved(true); setMessage(`滑动已确认：${action.label}`); }}"
+          ]
+        },
+        {
+          "name": "closeOnAction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 130,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否关闭操作，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 48
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "closeOnAction={true}"
+        },
+        {
+          "name": "haptic",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 131,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否触感回弹，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 49
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "haptic={false}",
+          "usageExamples": [
+            "haptic={false}"
+          ]
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'List item'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 132,
+            "kind": "parameter"
+          },
+          "defaultValue": "List item",
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 50
+          },
+          "codeExample": "label=\"演示技能草稿\"",
+          "usageExamples": [
+            "label=\"演示技能草稿\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 133,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 51
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/SwipeRow/SwipeRow.tsx",
+            "line": 52
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "button · t1",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles['aw-micro-action']}",
+            "className={styles['aw-micro-action']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\"",
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setOpen(value => !value)}",
+            "onClick={() => { setOpen(false); setRemoved(false); setRevision(value => value + 1); setMessage('示例行已恢复。'); }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": "是否禁用控件的用户交互。",
+          "usageExamples": [
+            "disabled={removed}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2957
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>{open ? '关闭行操作' : '展开行操作'}</>}",
+            "children={<>恢复示例行</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "button · t2",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles['aw-micro-action']}",
+            "className={styles['aw-micro-action']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\"",
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setOpen(value => !value)}",
+            "onClick={() => { setOpen(false); setRemoved(false); setRevision(value => value + 1); setMessage('示例行已恢复。'); }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": "是否禁用控件的用户交互。",
+          "usageExamples": [
+            "disabled={removed}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2957
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>{open ? '关闭行操作' : '展开行操作'}</>}",
+            "children={<>恢复示例行</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

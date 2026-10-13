@@ -1,6 +1,6 @@
 # Scroll Reveal
 
-文字效果 · `scroll-reveal` · 中文意图：滚动文字揭示 / 滚动变清晰
+滚动与转场 · `scroll-reveal` · 中文意图：滚动文字揭示 / 滚动变清晰
 
 目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
@@ -14,9 +14,10 @@
 
 | 资源 | 位置与用途 |
 |---|---|
-| 自有示例（随包） | [example/src/demos/scroll-reveal.tsx](../../src/demos/scroll-reveal.tsx) |
+| 自有示例（随包） | [example/src/demos/scroll/scroll-reveal.tsx](../../src/demos/scroll/scroll-reveal.tsx) |
 | 组件实现（准备后存在） | [example/.upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx](../../.upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx) |
 | 组件 CSS（准备后存在） | [example/.upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.css](../../.upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.css) |
+| 单独 Props 记录 | [example/src/parameters/definitions/scroll-reveal.json](../../src/parameters/definitions/scroll-reveal.json) |
 | 固定版本 | `2139cb3098d4fedc6264f13e50dcb4694224ba7c` |
 
 先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在包根运行：
@@ -32,28 +33,129 @@ node scripts/example.mjs setup --component scroll-reveal
 以下来自本包自有示例的实际用法；它只表示本例参数，不代表上游所有 Props。
 
 ```tsx
+// 当前 Scroll Reveal 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
 // Authored integration demo; implementation is installed from the pinned official source.
-import Component from '../../.upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal';
-import { palette } from '../shared/demo-support';
-import { useRef } from "react";
-// 在预览容器中滚动，观察字词从模糊到清晰。
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Component from '../../../.upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal';
+import styles from './scroll-reveal.module.css';
 
 export default function ScrollRevealDemo() {
   const scrollRef = useRef<HTMLDivElement>(null!);
+  const contentRef = useRef<HTMLElement>(null);
+  const [viewportHeight, setViewportHeight] = useState(0);
+
+  useLayoutEffect(() => {
+    const scroller = scrollRef.current;
+    const measure = () => setViewportHeight(scroller.clientHeight);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(scroller);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    ScrollTrigger.getAll().filter(trigger => trigger.scroller === scrollRef.current).forEach(trigger => trigger.refresh());
+  }, [viewportHeight]);
+
+  const startScrolling = () => {
+    scrollRef.current.scrollTo({
+      top: viewportHeight,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+    });
+    contentRef.current?.focus({ preventScroll: true });
+  };
+
   return (
-    <div className="aw-demo-stage" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>
-      <div ref={scrollRef} style={{ height: 340, overflowY: 'auto', padding: 24, color: palette.ink }}><p style={{ paddingBottom: 140, color: palette.muted }}>继续向下滚动，逐词揭示内容</p><Component scrollContainerRef={scrollRef} baseOpacity={0.15} enableBlur baseRotation={2} blurStrength={5} rotationEnd="center center" wordAnimationEnd="center center">Clarity gives every idea room to become something useful.</Component><div style={{ height: 330 }} /></div>
+    <div className={styles.stage}>
+      <div ref={scrollRef} className={styles.scroller} role="region" aria-label="Scroll Reveal 滚动演示" tabIndex={0}>
+        <section className={styles.intro} style={{ height: viewportHeight }} data-scroll-screen="intro">
+          <p className={styles.eyebrow}>SCROLL REVEAL</p>
+          <h2 className={styles.heading}>继续向下，让想法逐词清晰</h2>
+          <p className={styles.guide}>在预览区域内滚动，下一屏的文字将由朦胧变清晰。向上滚动可重新观察。</p>
+          <button className={styles.startButton}  onClick={startScrolling} type={"button"} >开始滚动 ↓</button>
+        </section>
+        <section ref={contentRef} className={styles.content} style={{ minHeight: viewportHeight }} tabIndex={-1} aria-label="逐词揭示效果" data-scroll-screen="content">
+          {viewportHeight > 0 ? <Component
+            scrollContainerRef={scrollRef}
+            containerClassName={styles.revealContainer}
+            textClassName={styles.revealText}
+
+
+
+
+
+             baseOpacity={0.1} enableBlur={true} baseRotation={3} blurStrength={4} rotationEnd={"center center+=10%"} wordAnimationEnd={"center center+=10%"}
+          >Clarity gives every idea room to become something useful.</Component> : null}
+        </section>
+      </div>
     </div>
   );
 }
+
 ```
 
-完整 Props、类型、回调和默认值以安装后的对应 TSX 源码为准。先读取本例使用的参数，再沿类型定义补充当前任务需要的选项；不要根据通用模板假定所有组件都有 color / speed / children。
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `scrollContainerRef` | `RefObject<HTMLElement>` | 否 | `未指定` | 滚动容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。 |
+| `enableBlur` | `boolean` | 否 | `true` | 是否启用模糊，决定该分支的展示或交互行为。 |
+| `baseOpacity` | `number` | 否 | `0.1` | 基础不透明度，控制 scroll reveal 的对应渲染或交互参数。 |
+| `baseRotation` | `number` | 否 | `3` | 基础旋转角度，控制 scroll reveal 的对应渲染或交互参数。 |
+| `blurStrength` | `number` | 否 | `4` | 模糊强度，控制 scroll reveal 的对应渲染或交互参数。 |
+| `containerClassName` | `string` | 否 | `''` | 容器类名名称，控制 scroll reveal 的对应渲染或交互参数。 |
+| `textClassName` | `string` | 否 | `''` | 文字类名名称，控制 scroll reveal 的对应渲染或交互参数。 |
+| `rotationEnd` | `string` | 否 | `'bottom bottom'` | 旋转角度结束，控制 scroll reveal 的对应渲染或交互参数。 |
+| `wordAnimationEnd` | `string` | 否 | `'bottom bottom'` | 单词动画结束，控制 scroll reveal 的对应渲染或交互参数。 |
+| `button.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `未指定` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `button.onClick` | `MouseEventHandler<HTMLButtonElement> \| undefined` | 否 | `未指定` | 用户点击或通过键盘激活时触发的事件处理函数。 |
+| `button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+
+**继承的原生属性：**
+
+- `DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+
+**children 的真实接入：**
+
+```tsx
+children={<>Clarity gives every idea room to become something useful.</>}
+```
+
+**scrollContainerRef 的真实接入：**
+
+```tsx
+const elementRef = useRef<HTMLElement | null>(null);
+// JSX: scrollContainerRef={elementRef}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 调节结束后重建 |
+| `t1.baseOpacity` | `0.1` | range | 0 ~ 1 比例 | 调节结束后重建 |
+| `t1.enableBlur` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t1.baseRotation` | `3` | range | -12 ~ 12 ° | 调节结束后重建 |
+| `t1.blurStrength` | `4` | range | 0 ~ 12 px | 调节结束后重建 |
+| `t1.rotationEnd` | `"center center+=10%"` | text | 不限 ~ 不限 | 调节结束后重建 |
+| `t1.wordAnimationEnd` | `"center center+=10%"` | text | 不限 ~ 不限 | 调节结束后重建 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. Agent Wan 皮肤
 
 - 标题按页面层级选择宋体或 UI 字体；正文保持无衬线。动画终态必须是完整、清晰、可复制的文字。
-- 优先通过组件真实 Props 设置颜色和强度；使用主题提供的茶绿、沙米、象牙白及墨色映射。
+- 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 
 ## 5. 加载、动效与降级
@@ -62,9 +164,9 @@ export default function ScrollRevealDemo() {
 
 - 依赖清单：`gsap`、`react`。安装前复用目标项目的兼容版本，不重复加载。
 - 运行类型：本例预览入口不要求预先通过图形接口检查；实际组件内部的可选渲染分支由源码和本例 Props 决定。此说明不等于浏览器运行证明。
-- 动效策略：按触发播放；循环、乱码与大幅字形变换需明确场景。
+- 动效策略：遵从系统减少动效偏好，功能交互保持可用。
 - 示例库降级：动态偏好或能力检查不满足时先不挂载本项，显示原因；减少运动时可明确选择仅播放本次。
-- 业务接入的静态降级要求：输出完整可选择的静态文本；数值直接显示真实终值。
+- 业务接入的静态降级要求：保留可读内容与原生交互，并提供当前组件的静态状态
 - 卸载时释放本例监听、计时、动画帧及拥有的渲染资源；不以隐藏 CSS 代替停止循环。
 
 仅当前需求涉及高级运行、资源或设备权限时再读 [效果与降级策略](../effects-policy.md)。
@@ -74,8 +176,8 @@ export default function ScrollRevealDemo() {
 1. 参数与对应源码真实 API 一致，构建可导入，安装失败可恢复。
 2. 能观察到第 1 节的核心机制，而不只是相同名称的占位卡片。
 3. 真实状态 / 事件 / 键盘与必要的触屏等价操作可用。
-4. 低饱和配色、文字对比、阅读面、稳定命中范围与基础规范一致。
+4. 画布保留本例的效果对比度和原版配色；外壳、阅读面与基础规范一致。
 5. 只激活本项；切换或卸载后停止其持续工作。
 6. 减少运动与不可用情形保留本节所述等价内容或功能。
 
-只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [文字效果](../categories/text-animations.md)；否则直接完成当前组件。
+只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [滚动与转场](../categories/scroll.md)；否则直接完成当前组件。

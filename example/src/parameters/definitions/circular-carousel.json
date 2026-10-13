@@ -1,0 +1,2312 @@
+{
+  "version": 1,
+  "id": "circular-carousel",
+  "name": "Circular Carousel",
+  "sourcePath": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+  "demoPath": "src/demos/media/circular-carousel.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "CircularCarouselItem[]",
+      "defaultValue": [
+        {
+          "src": "@media/scene-1.svg",
+          "alt": "山雾",
+          "title": "山雾",
+          "subtitle": "自然色素材"
+        },
+        {
+          "src": "@media/scene-2.svg",
+          "alt": "茶庭",
+          "title": "茶庭",
+          "subtitle": "自然色素材"
+        },
+        {
+          "src": "@media/scene-3.svg",
+          "alt": "沙洲",
+          "title": "沙洲",
+          "subtitle": "自然色素材"
+        },
+        {
+          "src": "@media/scene-4.svg",
+          "alt": "静水",
+          "title": "静水",
+          "subtitle": "自然色素材"
+        },
+        {
+          "src": "@media/scene-5.svg",
+          "alt": "林间",
+          "title": "林间",
+          "subtitle": "自然色素材"
+        },
+        {
+          "src": "@media/scene-6.svg",
+          "alt": "岩纹",
+          "title": "岩纹",
+          "subtitle": "自然色素材"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "src": {
+              "kind": "string"
+            },
+            "alt": {
+              "kind": "string"
+            },
+            "title": {
+              "kind": "string"
+            },
+            "subtitle": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "src"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.preset",
+      "name": "preset",
+      "label": "preset · t0",
+      "description": "预设，控制 circular carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "preset"
+        }
+      ],
+      "type": "CircularCarouselPreset",
+      "defaultValue": "cylinder",
+      "upstreamDefault": "'cylinder'",
+      "control": "select",
+      "options": [
+        {
+          "label": "cylinder",
+          "value": "cylinder"
+        },
+        {
+          "label": "orbit",
+          "value": "orbit"
+        },
+        {
+          "label": "wheel",
+          "value": "wheel"
+        },
+        {
+          "label": "panorama",
+          "value": "panorama"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "入场，控制 circular carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "CircularCarouselIntro",
+      "defaultValue": "rise",
+      "upstreamDefault": "'rise'",
+      "control": "select",
+      "options": [
+        {
+          "label": "assemble",
+          "value": "assemble"
+        },
+        {
+          "label": "rise",
+          "value": "rise"
+        },
+        {
+          "label": "spin",
+          "value": "spin"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cardWidth",
+      "name": "cardWidth",
+      "label": "cardWidth · t0",
+      "description": "卡片宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cardWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 160,
+      "upstreamDefault": "220",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.aspectRatio",
+      "name": "aspectRatio",
+      "label": "aspectRatio · t0",
+      "description": "宽高比例，控制 circular carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aspectRatio"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.25,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 18,
+      "upstreamDefault": "25",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "upstreamDefault": "14",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoplay",
+      "name": "autoplay",
+      "label": "自动播放 · t0",
+      "description": "是否自动播放，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoplay"
+        }
+      ],
+      "type": "CircularCarouselAutoplay",
+      "defaultValue": "off",
+      "upstreamDefault": "'drift'",
+      "control": "select",
+      "options": [
+        {
+          "label": "drift",
+          "value": "drift"
+        },
+        {
+          "label": "step",
+          "value": "step"
+        },
+        {
+          "label": "off",
+          "value": "off"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.draggable",
+      "name": "draggable",
+      "label": "draggable · t0",
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "draggable"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.snap",
+      "name": "snap",
+      "label": "snap · t0",
+      "description": "是否吸附，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "snap"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pauseOnHover",
+      "name": "pauseOnHover",
+      "label": "pauseOnHover · t0",
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pauseOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.captions",
+      "name": "captions",
+      "label": "captions · t0",
+      "description": "是否图注，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "captions"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeColor",
+      "name": "fadeColor",
+      "label": "fadeColor · t0",
+      "description": "淡出颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#e8e4d7",
+      "upstreamDefault": "'#000000'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cornerRadius",
+      "name": "cornerRadius",
+      "label": "cornerRadius · t0",
+      "description": "角半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cornerRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "12",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interval",
+      "name": "interval",
+      "label": "interval · t0",
+      "description": "间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interval"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 circular carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "'left' | 'right'",
+      "defaultValue": "left",
+      "upstreamDefault": "'left'",
+      "control": "select",
+      "options": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.momentum",
+      "name": "momentum",
+      "label": "momentum · t0",
+      "description": "动量，控制 circular carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "momentum"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.focusOnClick",
+      "name": "focusOnClick",
+      "label": "focusOnClick · t0",
+      "description": "是否焦点点击，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "focusOnClick"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.parallax",
+      "name": "parallax",
+      "label": "parallax · t0",
+      "description": "视差，控制 circular carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "parallax"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stretch",
+      "name": "stretch",
+      "label": "stretch · t0",
+      "description": "拉伸，控制 circular carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stretch"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.depthFade",
+      "name": "depthFade",
+      "label": "depthFade · t0",
+      "description": "深度淡出，控制 circular carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "depthFade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.55,
+      "upstreamDefault": "0.55",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.innerShade",
+      "name": "innerShade",
+      "label": "innerShade · t0",
+      "description": "内侧暗部，控制 circular carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "innerShade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "CircularCarouselItem[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 320,
+        "kind": "parameter"
+      },
+      "defaultResolvedExpression": "[\n  {\n    src: photo('photo-1506744038136-46273834b3fb'),\n    alt: 'Mist drifting through a mountain valley',\n    title: 'Valley',\n    subtitle: 'Landscape'\n  },\n  {\n    src: photo('photo-1524504388940-b1c1722653e1'),\n    alt: 'A woman with long hair in soft studio light',\n    title: 'Portrait',\n    subtitle: 'Studio'\n  },\n  {\n    src: photo('photo-1486406146926-c627a92ad1ab'),\n    alt: 'Glass towers seen from street level',\n    title: 'Towers',\n    subtitle: 'Architecture'\n  },\n  {\n    src: photo('photo-1502680390469-be75c86b636f'),\n    alt: 'A surfer carving inside a breaking wave',\n    title: 'Swell',\n    subtitle: 'Ocean'\n  },\n  {\n    src: photo('photo-1487958449943-2429e8be8625'),\n    alt: 'An angular white building against the sky',\n    title: 'Facade',\n    subtitle: 'Architecture'\n  },\n  {\n    src: photo('photo-1509631179647-0177331693ae'),\n    alt: 'A model in striped trousers leaning on a wall',\n    title: 'Pose',\n    subtitle: 'Editorial'\n  },\n  {\n    src: photo('photo-1519681393784-d120267933ba'),\n    alt: 'The Milky Way above snowy peaks',\n    title: 'Night',\n    subtitle: 'Sky'\n  },\n  {\n    src: photo('photo-1485968579580-b6d095142e6e'),\n    alt: 'A woman in a long coat on a city street',\n    title: 'Street',\n    subtitle: 'Editorial'\n  },\n  {\n    src: photo('photo-1493246507139-91e8fad9978e'),\n    alt: 'Mountains mirrored in a still lake',\n    title: 'Mirror',\n    subtitle: 'Landscape'\n  },\n  {\n    src: photo('photo-1511818966892-d7d671e672a2'),\n    alt: 'A glass skyscraper under a cloudy sky',\n    title: 'Glass',\n    subtitle: 'Architecture'\n  }\n]",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "CircularCarouselItem",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "src",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "alt",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "subtitle",
+                "type": "string",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], title: LABELS[index], subtitle: '自然色素材' }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], title: LABELS[index], subtitle: '自然色素材' }))}"
+      ]
+    },
+    {
+      "name": "preset",
+      "type": "CircularCarouselPreset",
+      "required": false,
+      "defaultExpression": "'cylinder'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 321,
+        "kind": "parameter"
+      },
+      "defaultValue": "cylinder",
+      "description": "预设，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "cylinder",
+        "orbit",
+        "wheel",
+        "panorama"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "cylinder",
+          "orbit",
+          "wheel",
+          "panorama"
+        ]
+      },
+      "codeExample": "preset=\"cylinder\"",
+      "usageExamples": [
+        "preset=\"cylinder\""
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "CircularCarouselIntro",
+      "required": false,
+      "defaultExpression": "'rise'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 322,
+        "kind": "parameter"
+      },
+      "defaultValue": "rise",
+      "description": "入场，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "assemble",
+        "rise",
+        "spin",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "assemble",
+          "rise",
+          "spin",
+          "none"
+        ]
+      },
+      "codeExample": "intro=\"rise\"",
+      "usageExamples": [
+        "intro=\"rise\""
+      ]
+    },
+    {
+      "name": "cardWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "220",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 323,
+        "kind": "parameter"
+      },
+      "defaultValue": 220,
+      "description": "卡片宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 22
+      },
+      "codeExample": "cardWidth={160}",
+      "usageExamples": [
+        "cardWidth={160}"
+      ]
+    },
+    {
+      "name": "aspectRatio",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 324,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "宽高比例，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 23
+      },
+      "codeExample": "aspectRatio={1.25}",
+      "usageExamples": [
+        "aspectRatio={1.25}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 325,
+        "kind": "parameter"
+      },
+      "defaultValue": 25,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 24
+      },
+      "codeExample": "gap={18}",
+      "usageExamples": [
+        "gap={18}"
+      ]
+    },
+    {
+      "name": "curve",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "layout.curve",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 358,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "曲线，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 25
+      },
+      "codeExample": "curve={1}"
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "layout.tilt",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 357,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "倾斜，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 26
+      },
+      "codeExample": "tilt={1}"
+    },
+    {
+      "name": "perspective",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "layout.perspective",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 439,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "透视，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 27
+      },
+      "codeExample": "perspective={1}"
+    },
+    {
+      "name": "autoplay",
+      "type": "CircularCarouselAutoplay",
+      "required": false,
+      "defaultExpression": "'drift'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 329,
+        "kind": "parameter"
+      },
+      "defaultValue": "drift",
+      "description": "是否自动播放，决定该分支的展示或交互行为。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "drift",
+        "step",
+        "off"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "drift",
+          "step",
+          "off"
+        ]
+      },
+      "codeExample": "autoplay=\"off\"",
+      "usageExamples": [
+        "autoplay=\"off\""
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "14",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 330,
+        "kind": "parameter"
+      },
+      "defaultValue": 14,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 29
+      },
+      "codeExample": "speed={6}",
+      "usageExamples": [
+        "speed={6}"
+      ]
+    },
+    {
+      "name": "interval",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 331,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 30
+      },
+      "codeExample": "interval={3}"
+    },
+    {
+      "name": "direction",
+      "type": "'left' | 'right'",
+      "required": false,
+      "defaultExpression": "'left'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 332,
+        "kind": "parameter"
+      },
+      "defaultValue": "left",
+      "description": "方向，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "left",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "left",
+          "right"
+        ]
+      },
+      "codeExample": "direction={\"left\"}"
+    },
+    {
+      "name": "draggable",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 333,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "draggable",
+      "usageExamples": [
+        "draggable"
+      ]
+    },
+    {
+      "name": "momentum",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 334,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "动量，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 33
+      },
+      "codeExample": "momentum={0.6}"
+    },
+    {
+      "name": "snap",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 335,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否吸附，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "snap",
+      "usageExamples": [
+        "snap"
+      ]
+    },
+    {
+      "name": "pauseOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 336,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "pauseOnHover",
+      "usageExamples": [
+        "pauseOnHover"
+      ]
+    },
+    {
+      "name": "focusOnClick",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 337,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否焦点点击，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "focusOnClick={true}"
+    },
+    {
+      "name": "parallax",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 338,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "视差，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 37
+      },
+      "codeExample": "parallax={0.3}"
+    },
+    {
+      "name": "stretch",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 339,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "拉伸，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 38
+      },
+      "codeExample": "stretch={0.5}"
+    },
+    {
+      "name": "depthFade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.55",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 340,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.55,
+      "description": "深度淡出，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 39
+      },
+      "codeExample": "depthFade={0.55}"
+    },
+    {
+      "name": "fadeColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#000000'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 341,
+        "kind": "parameter"
+      },
+      "defaultValue": "#000000",
+      "description": "淡出颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 40
+      },
+      "codeExample": "fadeColor={palette.canvas}",
+      "usageExamples": [
+        "fadeColor={palette.canvas}"
+      ]
+    },
+    {
+      "name": "innerShade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 342,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "内侧暗部，控制 circular carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 41
+      },
+      "codeExample": "innerShade={0.6}"
+    },
+    {
+      "name": "cornerRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 343,
+        "kind": "parameter"
+      },
+      "defaultValue": 12,
+      "description": "角半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 42
+      },
+      "codeExample": "cornerRadius={20}",
+      "usageExamples": [
+        "cornerRadius={20}"
+      ]
+    },
+    {
+      "name": "captions",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 344,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否图注，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "captions",
+      "usageExamples": [
+        "captions"
+      ]
+    },
+    {
+      "name": "onChange",
+      "type": "(index: number) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 44
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((index: number) => void) | undefined"
+      },
+      "codeExample": "onChange={index => setStatus('当前图片：' + LABELS[index % LABELS.length])}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={index => setStatus('当前图片：' + LABELS[index % LABELS.length])}"
+      ]
+    },
+    {
+      "name": "onItemClick",
+      "type": "(item: CircularCarouselItem, index: number) => void",
+      "required": false,
+      "description": "用户点击列表或菜单项时通知调用方，参数为条目及索引。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 45
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((item: CircularCarouselItem, index: number) => void) | undefined"
+      },
+      "codeExample": "onItemClick={(_item, index) => setStatus('点击图片：' + LABELS[index % LABELS.length])}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onItemClick={(_item, index) => setStatus('点击图片：' + LABELS[index % LABELS.length])}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 347,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 46
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+        "line": 47
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/CircularCarousel/CircularCarousel';\nimport { LABELS, palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 真实3D圆柱轮播，提供拖动、聚焦和当前项反馈。\n\nexport default function CircularCarouselDemo() {\n  const [status, setStatus] = useState(\"拖动环形轮播，点击某张图片聚焦\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ position: 'relative', height: 330, minHeight: 0, width: '100%' }}><Component\n\n\n\nonChange={index => setStatus('当前图片：' + LABELS[index % LABELS.length])}\nonItemClick={(_item, index) => setStatus('点击图片：' + LABELS[index % LABELS.length])} /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "CircularCarousel",
+      "sourcePath": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "CircularCarouselItem[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 320,
+            "kind": "parameter"
+          },
+          "defaultResolvedExpression": "[\n  {\n    src: photo('photo-1506744038136-46273834b3fb'),\n    alt: 'Mist drifting through a mountain valley',\n    title: 'Valley',\n    subtitle: 'Landscape'\n  },\n  {\n    src: photo('photo-1524504388940-b1c1722653e1'),\n    alt: 'A woman with long hair in soft studio light',\n    title: 'Portrait',\n    subtitle: 'Studio'\n  },\n  {\n    src: photo('photo-1486406146926-c627a92ad1ab'),\n    alt: 'Glass towers seen from street level',\n    title: 'Towers',\n    subtitle: 'Architecture'\n  },\n  {\n    src: photo('photo-1502680390469-be75c86b636f'),\n    alt: 'A surfer carving inside a breaking wave',\n    title: 'Swell',\n    subtitle: 'Ocean'\n  },\n  {\n    src: photo('photo-1487958449943-2429e8be8625'),\n    alt: 'An angular white building against the sky',\n    title: 'Facade',\n    subtitle: 'Architecture'\n  },\n  {\n    src: photo('photo-1509631179647-0177331693ae'),\n    alt: 'A model in striped trousers leaning on a wall',\n    title: 'Pose',\n    subtitle: 'Editorial'\n  },\n  {\n    src: photo('photo-1519681393784-d120267933ba'),\n    alt: 'The Milky Way above snowy peaks',\n    title: 'Night',\n    subtitle: 'Sky'\n  },\n  {\n    src: photo('photo-1485968579580-b6d095142e6e'),\n    alt: 'A woman in a long coat on a city street',\n    title: 'Street',\n    subtitle: 'Editorial'\n  },\n  {\n    src: photo('photo-1493246507139-91e8fad9978e'),\n    alt: 'Mountains mirrored in a still lake',\n    title: 'Mirror',\n    subtitle: 'Landscape'\n  },\n  {\n    src: photo('photo-1511818966892-d7d671e672a2'),\n    alt: 'A glass skyscraper under a cloudy sky',\n    title: 'Glass',\n    subtitle: 'Architecture'\n  }\n]",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "CircularCarouselItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "src",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "title",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "subtitle",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], title: LABELS[index], subtitle: '自然色素材' }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], title: LABELS[index], subtitle: '自然色素材' }))}"
+          ]
+        },
+        {
+          "name": "preset",
+          "type": "CircularCarouselPreset",
+          "required": false,
+          "defaultExpression": "'cylinder'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 321,
+            "kind": "parameter"
+          },
+          "defaultValue": "cylinder",
+          "description": "预设，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "cylinder",
+            "orbit",
+            "wheel",
+            "panorama"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "cylinder",
+              "orbit",
+              "wheel",
+              "panorama"
+            ]
+          },
+          "codeExample": "preset=\"cylinder\"",
+          "usageExamples": [
+            "preset=\"cylinder\""
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "CircularCarouselIntro",
+          "required": false,
+          "defaultExpression": "'rise'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 322,
+            "kind": "parameter"
+          },
+          "defaultValue": "rise",
+          "description": "入场，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "assemble",
+            "rise",
+            "spin",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "assemble",
+              "rise",
+              "spin",
+              "none"
+            ]
+          },
+          "codeExample": "intro=\"rise\"",
+          "usageExamples": [
+            "intro=\"rise\""
+          ]
+        },
+        {
+          "name": "cardWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "220",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 323,
+            "kind": "parameter"
+          },
+          "defaultValue": 220,
+          "description": "卡片宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 22
+          },
+          "codeExample": "cardWidth={160}",
+          "usageExamples": [
+            "cardWidth={160}"
+          ]
+        },
+        {
+          "name": "aspectRatio",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 324,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "宽高比例，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 23
+          },
+          "codeExample": "aspectRatio={1.25}",
+          "usageExamples": [
+            "aspectRatio={1.25}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 325,
+            "kind": "parameter"
+          },
+          "defaultValue": 25,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 24
+          },
+          "codeExample": "gap={18}",
+          "usageExamples": [
+            "gap={18}"
+          ]
+        },
+        {
+          "name": "curve",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "layout.curve",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 358,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "曲线，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 25
+          },
+          "codeExample": "curve={1}"
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "layout.tilt",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 357,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "倾斜，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 26
+          },
+          "codeExample": "tilt={1}"
+        },
+        {
+          "name": "perspective",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "layout.perspective",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 439,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "透视，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 27
+          },
+          "codeExample": "perspective={1}"
+        },
+        {
+          "name": "autoplay",
+          "type": "CircularCarouselAutoplay",
+          "required": false,
+          "defaultExpression": "'drift'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 329,
+            "kind": "parameter"
+          },
+          "defaultValue": "drift",
+          "description": "是否自动播放，决定该分支的展示或交互行为。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "drift",
+            "step",
+            "off"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "drift",
+              "step",
+              "off"
+            ]
+          },
+          "codeExample": "autoplay=\"off\"",
+          "usageExamples": [
+            "autoplay=\"off\""
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "14",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 330,
+            "kind": "parameter"
+          },
+          "defaultValue": 14,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 29
+          },
+          "codeExample": "speed={6}",
+          "usageExamples": [
+            "speed={6}"
+          ]
+        },
+        {
+          "name": "interval",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 331,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 30
+          },
+          "codeExample": "interval={3}"
+        },
+        {
+          "name": "direction",
+          "type": "'left' | 'right'",
+          "required": false,
+          "defaultExpression": "'left'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 332,
+            "kind": "parameter"
+          },
+          "defaultValue": "left",
+          "description": "方向，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "left",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "left",
+              "right"
+            ]
+          },
+          "codeExample": "direction={\"left\"}"
+        },
+        {
+          "name": "draggable",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 333,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否可拖动，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "draggable",
+          "usageExamples": [
+            "draggable"
+          ]
+        },
+        {
+          "name": "momentum",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 334,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "动量，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 33
+          },
+          "codeExample": "momentum={0.6}"
+        },
+        {
+          "name": "snap",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 335,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否吸附，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "snap",
+          "usageExamples": [
+            "snap"
+          ]
+        },
+        {
+          "name": "pauseOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 336,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pauseOnHover",
+          "usageExamples": [
+            "pauseOnHover"
+          ]
+        },
+        {
+          "name": "focusOnClick",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 337,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否焦点点击，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "focusOnClick={true}"
+        },
+        {
+          "name": "parallax",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 338,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "视差，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 37
+          },
+          "codeExample": "parallax={0.3}"
+        },
+        {
+          "name": "stretch",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 339,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "拉伸，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 38
+          },
+          "codeExample": "stretch={0.5}"
+        },
+        {
+          "name": "depthFade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.55",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 340,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.55,
+          "description": "深度淡出，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 39
+          },
+          "codeExample": "depthFade={0.55}"
+        },
+        {
+          "name": "fadeColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#000000'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 341,
+            "kind": "parameter"
+          },
+          "defaultValue": "#000000",
+          "description": "淡出颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 40
+          },
+          "codeExample": "fadeColor={palette.canvas}",
+          "usageExamples": [
+            "fadeColor={palette.canvas}"
+          ]
+        },
+        {
+          "name": "innerShade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 342,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "内侧暗部，控制 circular carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 41
+          },
+          "codeExample": "innerShade={0.6}"
+        },
+        {
+          "name": "cornerRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 343,
+            "kind": "parameter"
+          },
+          "defaultValue": 12,
+          "description": "角半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 42
+          },
+          "codeExample": "cornerRadius={20}",
+          "usageExamples": [
+            "cornerRadius={20}"
+          ]
+        },
+        {
+          "name": "captions",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 344,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否图注，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "captions",
+          "usageExamples": [
+            "captions"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(index: number) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 44
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((index: number) => void) | undefined"
+          },
+          "codeExample": "onChange={index => setStatus('当前图片：' + LABELS[index % LABELS.length])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={index => setStatus('当前图片：' + LABELS[index % LABELS.length])}"
+          ]
+        },
+        {
+          "name": "onItemClick",
+          "type": "(item: CircularCarouselItem, index: number) => void",
+          "required": false,
+          "description": "用户点击列表或菜单项时通知调用方，参数为条目及索引。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 45
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((item: CircularCarouselItem, index: number) => void) | undefined"
+          },
+          "codeExample": "onItemClick={(_item, index) => setStatus('点击图片：' + LABELS[index % LABELS.length])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onItemClick={(_item, index) => setStatus('点击图片：' + LABELS[index % LABELS.length])}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 347,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 46
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularCarousel/CircularCarousel.tsx",
+            "line": 47
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

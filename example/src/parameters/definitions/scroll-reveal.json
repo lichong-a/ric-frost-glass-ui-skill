@@ -1,0 +1,801 @@
+{
+  "version": 1,
+  "id": "scroll-reveal",
+  "name": "Scroll Reveal",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+  "demoPath": "src/demos/scroll/scroll-reveal.tsx",
+  "fields": [
+    {
+      "key": "t0.type",
+      "name": "type",
+      "label": "类型 · t0",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.baseOpacity",
+      "name": "baseOpacity",
+      "label": "baseOpacity · t1",
+      "description": "基础不透明度，控制 scroll reveal 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。文字进入可视区域前的不透明度。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "baseOpacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t1.enableBlur",
+      "name": "enableBlur",
+      "label": "enableBlur · t1",
+      "description": "是否启用模糊，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "enableBlur"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.baseRotation",
+      "name": "baseRotation",
+      "label": "baseRotation · t1",
+      "description": "基础旋转角度，控制 scroll reveal 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。进入前文字容器的旋转角度。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "baseRotation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": -12,
+      "max": 12,
+      "step": 1,
+      "unit": "°"
+    },
+    {
+      "key": "t1.blurStrength",
+      "name": "blurStrength",
+      "label": "blurStrength · t1",
+      "description": "模糊强度，控制 scroll reveal 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。进入前的文字模糊半径。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "blurStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "4",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 12,
+      "step": 0.5,
+      "unit": "px"
+    },
+    {
+      "key": "t1.rotationEnd",
+      "name": "rotationEnd",
+      "label": "rotationEnd · t1",
+      "description": "旋转角度结束，控制 scroll reveal 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "rotationEnd"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "center center+=10%",
+      "upstreamDefault": "'bottom bottom'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.wordAnimationEnd",
+      "name": "wordAnimationEnd",
+      "label": "wordAnimationEnd · t1",
+      "description": "单词动画结束，控制 scroll reveal 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "wordAnimationEnd"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "center center+=10%",
+      "upstreamDefault": "'bottom bottom'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": true,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 11
+      },
+      "codeExample": "children={<>Clarity gives every idea room to become something useful.</>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<>Clarity gives every idea room to become something useful.</>}"
+      ]
+    },
+    {
+      "name": "scrollContainerRef",
+      "type": "RefObject<HTMLElement>",
+      "required": false,
+      "description": "滚动容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 12
+      },
+      "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: scrollContainerRef={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+      "usageExamples": [
+        "scrollContainerRef={scrollRef}"
+      ]
+    },
+    {
+      "name": "enableBlur",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 26,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否启用模糊，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 13
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "enableBlur={true}",
+      "usageExamples": [
+        "enableBlur={true}"
+      ]
+    },
+    {
+      "name": "baseOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 27,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "基础不透明度，控制 scroll reveal 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 14
+      },
+      "codeExample": "baseOpacity={0.1}",
+      "usageExamples": [
+        "baseOpacity={0.1}"
+      ]
+    },
+    {
+      "name": "baseRotation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 28,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "基础旋转角度，控制 scroll reveal 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 15
+      },
+      "codeExample": "baseRotation={3}",
+      "usageExamples": [
+        "baseRotation={3}"
+      ]
+    },
+    {
+      "name": "blurStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 29,
+        "kind": "parameter"
+      },
+      "defaultValue": 4,
+      "description": "模糊强度，控制 scroll reveal 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 16
+      },
+      "codeExample": "blurStrength={4}",
+      "usageExamples": [
+        "blurStrength={4}"
+      ]
+    },
+    {
+      "name": "containerClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 30,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "容器类名名称，控制 scroll reveal 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 17
+      },
+      "codeExample": "containerClassName={styles.revealContainer}",
+      "usageExamples": [
+        "containerClassName={styles.revealContainer}"
+      ]
+    },
+    {
+      "name": "textClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 31,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "文字类名名称，控制 scroll reveal 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 18
+      },
+      "codeExample": "textClassName={styles.revealText}",
+      "usageExamples": [
+        "textClassName={styles.revealText}"
+      ]
+    },
+    {
+      "name": "rotationEnd",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'bottom bottom'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 32,
+        "kind": "parameter"
+      },
+      "defaultValue": "bottom bottom",
+      "description": "旋转角度结束，控制 scroll reveal 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 19
+      },
+      "codeExample": "rotationEnd=\"center center+=10%\"",
+      "usageExamples": [
+        "rotationEnd=\"center center+=10%\""
+      ]
+    },
+    {
+      "name": "wordAnimationEnd",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'bottom bottom'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 33,
+        "kind": "parameter"
+      },
+      "defaultValue": "bottom bottom",
+      "description": "单词动画结束，控制 scroll reveal 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+        "line": 20
+      },
+      "codeExample": "wordAnimationEnd=\"center center+=10%\"",
+      "usageExamples": [
+        "wordAnimationEnd=\"center center+=10%\""
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport { useEffect, useLayoutEffect, useRef, useState } from 'react';\nimport { ScrollTrigger } from 'gsap/ScrollTrigger';\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal';\nimport styles from './scroll-reveal.module.css';\n\nexport default function ScrollRevealDemo() {\n  const scrollRef = useRef<HTMLDivElement>(null!);\n  const contentRef = useRef<HTMLElement>(null);\n  const [viewportHeight, setViewportHeight] = useState(0);\n\n  useLayoutEffect(() => {\n    const scroller = scrollRef.current;\n    const measure = () => setViewportHeight(scroller.clientHeight);\n    measure();\n    const observer = new ResizeObserver(measure);\n    observer.observe(scroller);\n    return () => observer.disconnect();\n  }, []);\n\n  useEffect(() => {\n    ScrollTrigger.getAll().filter(trigger => trigger.scroller === scrollRef.current).forEach(trigger => trigger.refresh());\n  }, [viewportHeight]);\n\n  const startScrolling = () => {\n    scrollRef.current.scrollTo({\n      top: viewportHeight,\n      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'\n    });\n    contentRef.current?.focus({ preventScroll: true });\n  };\n\n  return (\n    <div className={styles.stage}>\n      <div ref={scrollRef} className={styles.scroller} role=\"region\" aria-label=\"Scroll Reveal 滚动演示\" tabIndex={0}>\n        <section className={styles.intro} style={{ height: viewportHeight }} data-scroll-screen=\"intro\">\n          <p className={styles.eyebrow}>SCROLL REVEAL</p>\n          <h2 className={styles.heading}>继续向下，让想法逐词清晰</h2>\n          <p className={styles.guide}>在预览区域内滚动，下一屏的文字将由朦胧变清晰。向上滚动可重新观察。</p>\n          <button className={styles.startButton}  onClick={startScrolling} /*__AW_PROPS_t0__*/ >开始滚动 ↓</button>\n        </section>\n        <section ref={contentRef} className={styles.content} style={{ minHeight: viewportHeight }} tabIndex={-1} aria-label=\"逐词揭示效果\" data-scroll-screen=\"content\">\n          {viewportHeight > 0 ? <Component\n            scrollContainerRef={scrollRef}\n            containerClassName={styles.revealContainer}\n            textClassName={styles.revealText}\n\n\n\n\n\n             /*__AW_PROPS_t1__*/\n          >Clarity gives every idea room to become something useful.</Component> : null}\n        </section>\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles.startButton}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={startScrolling}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>开始滚动 ↓</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "ScrollReveal",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 11
+          },
+          "codeExample": "children={<>Clarity gives every idea room to become something useful.</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>Clarity gives every idea room to become something useful.</>}"
+          ]
+        },
+        {
+          "name": "scrollContainerRef",
+          "type": "RefObject<HTMLElement>",
+          "required": false,
+          "description": "滚动容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 12
+          },
+          "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: scrollContainerRef={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "scrollContainerRef={scrollRef}"
+          ]
+        },
+        {
+          "name": "enableBlur",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 26,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否启用模糊，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 13
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "enableBlur={true}",
+          "usageExamples": [
+            "enableBlur={true}"
+          ]
+        },
+        {
+          "name": "baseOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 27,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "基础不透明度，控制 scroll reveal 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 14
+          },
+          "codeExample": "baseOpacity={0.1}",
+          "usageExamples": [
+            "baseOpacity={0.1}"
+          ]
+        },
+        {
+          "name": "baseRotation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 28,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "基础旋转角度，控制 scroll reveal 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 15
+          },
+          "codeExample": "baseRotation={3}",
+          "usageExamples": [
+            "baseRotation={3}"
+          ]
+        },
+        {
+          "name": "blurStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 29,
+            "kind": "parameter"
+          },
+          "defaultValue": 4,
+          "description": "模糊强度，控制 scroll reveal 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 16
+          },
+          "codeExample": "blurStrength={4}",
+          "usageExamples": [
+            "blurStrength={4}"
+          ]
+        },
+        {
+          "name": "containerClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 30,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "容器类名名称，控制 scroll reveal 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 17
+          },
+          "codeExample": "containerClassName={styles.revealContainer}",
+          "usageExamples": [
+            "containerClassName={styles.revealContainer}"
+          ]
+        },
+        {
+          "name": "textClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 31,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "文字类名名称，控制 scroll reveal 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 18
+          },
+          "codeExample": "textClassName={styles.revealText}",
+          "usageExamples": [
+            "textClassName={styles.revealText}"
+          ]
+        },
+        {
+          "name": "rotationEnd",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'bottom bottom'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 32,
+            "kind": "parameter"
+          },
+          "defaultValue": "bottom bottom",
+          "description": "旋转角度结束，控制 scroll reveal 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 19
+          },
+          "codeExample": "rotationEnd=\"center center+=10%\"",
+          "usageExamples": [
+            "rotationEnd=\"center center+=10%\""
+          ]
+        },
+        {
+          "name": "wordAnimationEnd",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'bottom bottom'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 33,
+            "kind": "parameter"
+          },
+          "defaultValue": "bottom bottom",
+          "description": "单词动画结束，控制 scroll reveal 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+            "line": 20
+          },
+          "codeExample": "wordAnimationEnd=\"center center+=10%\"",
+          "usageExamples": [
+            "wordAnimationEnd=\"center center+=10%\""
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

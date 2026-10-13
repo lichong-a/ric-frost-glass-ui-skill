@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "id": "business-togglebutton",
+  "name": "ToggleButton",
+  "sourcePath": "src/business/components/ToggleButton.tsx",
+  "demoPath": "src/business/demos/form/business-togglebutton.tsx",
+  "fields": [
+    {
+      "key": "state.enabled",
+      "name": "enabled",
+      "label": "enabled",
+      "description": "示例的受控状态 enabled；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "boolean",
+      "defaultValue": false,
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pressed"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>",
+      "codeExample": "children={<>{enabled ? '已关注' : '关注此空间'}</>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<>{enabled ? '已关注' : '关注此空间'}</>}"
+      ]
+    },
+    {
+      "name": "pressed",
+      "type": "boolean",
+      "required": true,
+      "description": "按钮的当前切换选中状态。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/ToggleButton.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "pressed={enabled}",
+      "usageExamples": [
+        "pressed={enabled}"
+      ]
+    },
+    {
+      "name": "onPressedChange",
+      "type": "(pressed: boolean) => void",
+      "required": true,
+      "description": "切换按钮改变选中状态时回调，参数为新的布尔状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/ToggleButton.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(pressed: boolean) => void"
+      },
+      "codeExample": "onPressedChange={setEnabled}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onPressedChange={setEnabled}"
+      ]
+    },
+    {
+      "name": "ref",
+      "type": "Ref<HTMLButtonElement>",
+      "required": false,
+      "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/ToggleButton.tsx",
+        "line": 11
+      },
+      "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { ToggleButton } from '../../components/ToggleButton';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function ToggleButtonDemo() {\n  const [enabled, setEnabled] = useState(/*__AW_STATE_state.enabled__*/);\n  return <BusinessDemo title=\"ToggleButton · 切换按钮\" description=\"弹性图标与按压反馈表达开关状态，保留 aria-pressed。\">\n    <ToggleButton pressed={enabled} onPressedChange={setEnabled}>{enabled ? '已关注' : '关注此空间'}</ToggleButton>\n    <p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">关注：{enabled ? '开启' : '关闭'}</p>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ToggleButton",
+      "sourcePath": "src/business/components/ToggleButton.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>",
+          "codeExample": "children={<>{enabled ? '已关注' : '关注此空间'}</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>{enabled ? '已关注' : '关注此空间'}</>}"
+          ]
+        },
+        {
+          "name": "pressed",
+          "type": "boolean",
+          "required": true,
+          "description": "按钮的当前切换选中状态。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pressed={enabled}",
+          "usageExamples": [
+            "pressed={enabled}"
+          ]
+        },
+        {
+          "name": "onPressedChange",
+          "type": "(pressed: boolean) => void",
+          "required": true,
+          "description": "切换按钮改变选中状态时回调，参数为新的布尔状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(pressed: boolean) => void"
+          },
+          "codeExample": "onPressedChange={setEnabled}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onPressedChange={setEnabled}"
+          ]
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

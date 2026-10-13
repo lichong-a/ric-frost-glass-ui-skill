@@ -1,0 +1,1434 @@
+{
+  "version": 1,
+  "id": "split-flap-text",
+  "name": "Split Flap Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+  "demoPath": "src/demos/text/split-flap-text.tsx",
+  "fields": [
+    {
+      "key": "t0.words",
+      "name": "words",
+      "label": "words · t0",
+      "description": "按顺序轮播或翻转的文字列表。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "words"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "AGENT WAN",
+        "FLOW READY",
+        "SKILL SYNC"
+      ],
+      "upstreamDefault": "['LAUNCH READY', 'SYNC ONLINE', 'SIGNAL LIVE']",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.flipDuration",
+      "name": "flipDuration",
+      "label": "flipDuration · t0",
+      "description": "翻转时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "flipDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0.12",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stagger",
+      "name": "stagger",
+      "label": "错峰间隔 · t0",
+      "description": "错开，控制 split flap text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stagger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.035,
+      "upstreamDefault": "0.06",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cycleDelay",
+      "name": "cycleDelay",
+      "label": "cycleDelay · t0",
+      "description": "循环周期延迟，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cycleDelay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3200,
+      "upstreamDefault": "2400",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.charset",
+      "name": "charset",
+      "label": "charset · t0",
+      "description": "字符集，控制 split flap text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "charset"
+        }
+      ],
+      "type": "'alpha' | 'alphanumeric' | 'numeric' | (string & {})",
+      "defaultValue": "alphanumeric",
+      "upstreamDefault": "'alphanumeric'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.flipsPerChar",
+      "name": "flipsPerChar",
+      "label": "flipsPerChar · t0",
+      "description": "翻转次数每个字符，控制 split flap text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "flipsPerChar"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 5,
+      "upstreamDefault": "8",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tileColor",
+      "name": "tileColor",
+      "label": "tileColor · t0",
+      "description": "字符格颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tileColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#111827'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#f8fafc'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tileRadius",
+      "name": "tileRadius",
+      "label": "tileRadius · t0",
+      "description": "字符格半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tileRadius"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 10,
+      "upstreamDefault": "8",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 4,
+      "upstreamDefault": "6",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 32,
+      "upstreamDefault": "52",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.loop",
+      "name": "loop",
+      "label": "循环 · t0",
+      "description": "是否循环，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "loop"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.padTo",
+      "name": "padTo",
+      "label": "padTo · t0",
+      "description": "留白目标，控制 split flap text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "padTo"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "12",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "CSSProperties | undefined",
+      "defaultValue": {},
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {},
+        "required": []
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "words",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "['LAUNCH READY', 'SYNC ONLINE', 'SIGNAL LIVE']",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 105,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "LAUNCH READY",
+        "SYNC ONLINE",
+        "SIGNAL LIVE"
+      ],
+      "description": "按顺序轮播或翻转的文字列表。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "words={['AGENT WAN', 'FLOW READY', 'SKILL SYNC']}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "words={['AGENT WAN', 'FLOW READY', 'SKILL SYNC']}"
+      ]
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "required": false,
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 32
+      },
+      "codeExample": "text={\"示例\"}"
+    },
+    {
+      "name": "flipDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 107,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.12,
+      "description": "翻转时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 33
+      },
+      "codeExample": "flipDuration={0.12}",
+      "usageExamples": [
+        "flipDuration={0.12}"
+      ]
+    },
+    {
+      "name": "stagger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.06",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 108,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.06,
+      "description": "错开，控制 split flap text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 34
+      },
+      "codeExample": "stagger={0.035}",
+      "usageExamples": [
+        "stagger={0.035}"
+      ]
+    },
+    {
+      "name": "cycleDelay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 109,
+        "kind": "parameter"
+      },
+      "defaultValue": 2400,
+      "description": "循环周期延迟，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 35
+      },
+      "codeExample": "cycleDelay={3200}",
+      "usageExamples": [
+        "cycleDelay={3200}"
+      ]
+    },
+    {
+      "name": "charset",
+      "type": "'alpha' | 'alphanumeric' | 'numeric' | (string & {})",
+      "required": false,
+      "defaultExpression": "'alphanumeric'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 110,
+        "kind": "parameter"
+      },
+      "defaultValue": "alphanumeric",
+      "description": "字符集，控制 split flap text 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "union",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string & {}"
+          },
+          {
+            "type": "\"alpha\"",
+            "kind": "enum",
+            "options": [
+              "alpha"
+            ]
+          },
+          {
+            "type": "\"alphanumeric\"",
+            "kind": "enum",
+            "options": [
+              "alphanumeric"
+            ]
+          },
+          {
+            "type": "\"numeric\"",
+            "kind": "enum",
+            "options": [
+              "numeric"
+            ]
+          }
+        ]
+      },
+      "codeExample": "charset=\"alphanumeric\"",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "charset=\"alphanumeric\""
+      ]
+    },
+    {
+      "name": "flipsPerChar",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 111,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "翻转次数每个字符，控制 split flap text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 37
+      },
+      "codeExample": "flipsPerChar={5}",
+      "usageExamples": [
+        "flipsPerChar={5}"
+      ]
+    },
+    {
+      "name": "tileColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#111827'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 112,
+        "kind": "parameter"
+      },
+      "defaultValue": "#111827",
+      "description": "字符格颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 38
+      },
+      "codeExample": "tileColor={palette.primary}",
+      "usageExamples": [
+        "tileColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f8fafc'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 113,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f8fafc",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 39
+      },
+      "codeExample": "textColor={palette.ivory}",
+      "usageExamples": [
+        "textColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "tileRadius",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 114,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "字符格半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 40
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "tileRadius={10}",
+      "usageExamples": [
+        "tileRadius={10}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 115,
+        "kind": "parameter"
+      },
+      "defaultValue": 6,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 41
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "gap={4}",
+      "usageExamples": [
+        "gap={4}"
+      ]
+    },
+    {
+      "name": "fontSize",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "52",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 116,
+        "kind": "parameter"
+      },
+      "defaultValue": 52,
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 42
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "fontSize={32}",
+      "usageExamples": [
+        "fontSize={32}"
+      ]
+    },
+    {
+      "name": "loop",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 117,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否循环，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "loop",
+      "usageExamples": [
+        "loop"
+      ]
+    },
+    {
+      "name": "padTo",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 118,
+        "kind": "parameter"
+      },
+      "defaultValue": 12,
+      "description": "留白目标，控制 split flap text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 44
+      },
+      "codeExample": "padTo={10}",
+      "usageExamples": [
+        "padTo={10}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string | undefined",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 119,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2700
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties | undefined",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+        "line": 120,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2712
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "style={{}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "children={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "HTMLAttributes<HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText';\nimport { palette } from '../../shared/demo-support';\n\n// 翻牌字符集采用英文和数字；业务状态另提供不依赖动效的可读文本。\n\nexport default function SplitFlapTextDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>\n      <Component\n\n\n     /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "SplitFlapText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+      "props": [
+        {
+          "name": "words",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "['LAUNCH READY', 'SYNC ONLINE', 'SIGNAL LIVE']",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 105,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "LAUNCH READY",
+            "SYNC ONLINE",
+            "SIGNAL LIVE"
+          ],
+          "description": "按顺序轮播或翻转的文字列表。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "words={['AGENT WAN', 'FLOW READY', 'SKILL SYNC']}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "words={['AGENT WAN', 'FLOW READY', 'SKILL SYNC']}"
+          ]
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 32
+          },
+          "codeExample": "text={\"示例\"}"
+        },
+        {
+          "name": "flipDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 107,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.12,
+          "description": "翻转时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 33
+          },
+          "codeExample": "flipDuration={0.12}",
+          "usageExamples": [
+            "flipDuration={0.12}"
+          ]
+        },
+        {
+          "name": "stagger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.06",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 108,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.06,
+          "description": "错开，控制 split flap text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 34
+          },
+          "codeExample": "stagger={0.035}",
+          "usageExamples": [
+            "stagger={0.035}"
+          ]
+        },
+        {
+          "name": "cycleDelay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 109,
+            "kind": "parameter"
+          },
+          "defaultValue": 2400,
+          "description": "循环周期延迟，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 35
+          },
+          "codeExample": "cycleDelay={3200}",
+          "usageExamples": [
+            "cycleDelay={3200}"
+          ]
+        },
+        {
+          "name": "charset",
+          "type": "'alpha' | 'alphanumeric' | 'numeric' | (string & {})",
+          "required": false,
+          "defaultExpression": "'alphanumeric'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 110,
+            "kind": "parameter"
+          },
+          "defaultValue": "alphanumeric",
+          "description": "字符集，控制 split flap text 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "union",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string & {}"
+              },
+              {
+                "type": "\"alpha\"",
+                "kind": "enum",
+                "options": [
+                  "alpha"
+                ]
+              },
+              {
+                "type": "\"alphanumeric\"",
+                "kind": "enum",
+                "options": [
+                  "alphanumeric"
+                ]
+              },
+              {
+                "type": "\"numeric\"",
+                "kind": "enum",
+                "options": [
+                  "numeric"
+                ]
+              }
+            ]
+          },
+          "codeExample": "charset=\"alphanumeric\"",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "charset=\"alphanumeric\""
+          ]
+        },
+        {
+          "name": "flipsPerChar",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 111,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "翻转次数每个字符，控制 split flap text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 37
+          },
+          "codeExample": "flipsPerChar={5}",
+          "usageExamples": [
+            "flipsPerChar={5}"
+          ]
+        },
+        {
+          "name": "tileColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#111827'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 112,
+            "kind": "parameter"
+          },
+          "defaultValue": "#111827",
+          "description": "字符格颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 38
+          },
+          "codeExample": "tileColor={palette.primary}",
+          "usageExamples": [
+            "tileColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f8fafc'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 113,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f8fafc",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 39
+          },
+          "codeExample": "textColor={palette.ivory}",
+          "usageExamples": [
+            "textColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "tileRadius",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 114,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "字符格半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 40
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "tileRadius={10}",
+          "usageExamples": [
+            "tileRadius={10}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 115,
+            "kind": "parameter"
+          },
+          "defaultValue": 6,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 41
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "gap={4}",
+          "usageExamples": [
+            "gap={4}"
+          ]
+        },
+        {
+          "name": "fontSize",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "52",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 116,
+            "kind": "parameter"
+          },
+          "defaultValue": 52,
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 42
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "fontSize={32}",
+          "usageExamples": [
+            "fontSize={32}"
+          ]
+        },
+        {
+          "name": "loop",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 117,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否循环，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "loop",
+          "usageExamples": [
+            "loop"
+          ]
+        },
+        {
+          "name": "padTo",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 118,
+            "kind": "parameter"
+          },
+          "defaultValue": 12,
+          "description": "留白目标，控制 split flap text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 44
+          },
+          "codeExample": "padTo={10}",
+          "usageExamples": [
+            "padTo={10}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 119,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties | undefined",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitFlapText/SplitFlapText.tsx",
+            "line": 120,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2712
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "style={{}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "HTMLAttributes<HTMLDivElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

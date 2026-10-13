@@ -1,0 +1,1630 @@
+{
+  "version": 1,
+  "id": "bounce-cards",
+  "name": "Bounce Cards",
+  "sourcePath": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+  "demoPath": "src/demos/cards/bounce-cards.tsx",
+  "fields": [
+    {
+      "key": "t0.images",
+      "name": "images",
+      "label": "图片数据 · t0",
+      "description": "参与画廊、轮播或效果的图像列表。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "images"
+        }
+      ],
+      "type": "BounceCardImage[]",
+      "defaultValue": [
+        {
+          "src": "@media/scene-1.svg",
+          "alt": "山雾"
+        },
+        {
+          "src": "@media/scene-2.svg",
+          "alt": "茶庭"
+        },
+        {
+          "src": "@media/scene-3.svg",
+          "alt": "沙洲"
+        },
+        {
+          "src": "@media/scene-4.svg",
+          "alt": "静水"
+        },
+        {
+          "src": "@media/scene-5.svg",
+          "alt": "林间"
+        }
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "string"
+            },
+            {
+              "kind": "object",
+              "properties": {
+                "src": {
+                  "kind": "string"
+                },
+                "alt": {
+                  "kind": "string"
+                }
+              },
+              "required": [
+                "src"
+              ]
+            }
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.containerWidth",
+      "name": "containerWidth",
+      "label": "containerWidth · t0",
+      "description": "容器宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "containerWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 520,
+      "upstreamDefault": "400",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.containerHeight",
+      "name": "containerHeight",
+      "label": "containerHeight · t0",
+      "description": "容器高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "containerHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 280,
+      "upstreamDefault": "400",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cardSize",
+      "name": "cardSize",
+      "label": "cardSize · t0",
+      "description": "卡片尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cardSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 150,
+      "upstreamDefault": "200",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spread",
+      "name": "spread",
+      "label": "展开距离 · t0",
+      "description": "展开间距，控制 bounce cards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 70,
+      "upstreamDefault": "85",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rotation",
+      "name": "rotation",
+      "label": "旋转 · t0",
+      "description": "旋转角度，控制 bounce cards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rotation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.arc",
+      "name": "arc",
+      "label": "arc · t0",
+      "description": "弧线，控制 bounce cards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "arc"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animationDelay",
+      "name": "animationDelay",
+      "label": "animationDelay · t0",
+      "description": "动画延迟，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animationDelay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animationStagger",
+      "name": "animationStagger",
+      "label": "animationStagger · t0",
+      "description": "动画错开，控制 bounce cards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animationStagger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.07,
+      "upstreamDefault": "0.06",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bounciness",
+      "name": "bounciness",
+      "label": "bounciness · t0",
+      "description": "弹性，控制 bounce cards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bounciness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.enableHover",
+      "name": "enableHover",
+      "label": "悬停响应 · t0",
+      "description": "是否启用悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "enableHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pushDistance",
+      "name": "pushDistance",
+      "label": "pushDistance · t0",
+      "description": "推移距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pushDistance"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 80,
+      "upstreamDefault": "160",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverScale",
+      "name": "hoverScale",
+      "label": "hoverScale · t0",
+      "description": "悬停缩放，控制 bounce cards 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.03,
+      "upstreamDefault": "1.06",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.borderWidth",
+      "name": "borderWidth",
+      "label": "borderWidth · t0",
+      "description": "边框宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "borderWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.borderColor",
+      "name": "borderColor",
+      "label": "边框颜色 · t0",
+      "description": "边框颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "borderColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "25",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shadow",
+      "name": "shadow",
+      "label": "shadow · t0",
+      "description": "是否阴影，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shadow"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "images",
+      "type": "BounceCardImage[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "参与画廊、轮播或效果的图像列表。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "BounceCardImage",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "{ src: string; alt?: string; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "src",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "images={MEDIA.slice(0, 5).map((src, index) => ({ src, alt: LABELS[index] }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "images={MEDIA.slice(0, 5).map((src, index) => ({ src, alt: LABELS[index] }))}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 11
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 12
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "containerWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "容器宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 13
+      },
+      "codeExample": "containerWidth={520}",
+      "usageExamples": [
+        "containerWidth={520}"
+      ]
+    },
+    {
+      "name": "containerHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "容器高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 14
+      },
+      "codeExample": "containerHeight={280}",
+      "usageExamples": [
+        "containerHeight={280}"
+      ]
+    },
+    {
+      "name": "cardSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "卡片尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 15
+      },
+      "codeExample": "cardSize={150}",
+      "usageExamples": [
+        "cardSize={150}"
+      ]
+    },
+    {
+      "name": "spread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "85",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": 85,
+      "description": "展开间距，控制 bounce cards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 16
+      },
+      "codeExample": "spread={70}",
+      "usageExamples": [
+        "spread={70}"
+      ]
+    },
+    {
+      "name": "rotation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "旋转角度，控制 bounce cards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 17
+      },
+      "codeExample": "rotation={6}",
+      "usageExamples": [
+        "rotation={6}"
+      ]
+    },
+    {
+      "name": "arc",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "弧线，控制 bounce cards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 18
+      },
+      "codeExample": "arc={8}",
+      "usageExamples": [
+        "arc={8}"
+      ]
+    },
+    {
+      "name": "animationDelay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "动画延迟，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 19
+      },
+      "codeExample": "animationDelay={0.2}",
+      "usageExamples": [
+        "animationDelay={0.2}"
+      ]
+    },
+    {
+      "name": "animationStagger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.06",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.06,
+      "description": "动画错开，控制 bounce cards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 20
+      },
+      "codeExample": "animationStagger={0.07}",
+      "usageExamples": [
+        "animationStagger={0.07}"
+      ]
+    },
+    {
+      "name": "bounciness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "弹性，控制 bounce cards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 21
+      },
+      "codeExample": "bounciness={0.4}",
+      "usageExamples": [
+        "bounciness={0.4}"
+      ]
+    },
+    {
+      "name": "enableHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否启用悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 22
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "enableHover",
+      "usageExamples": [
+        "enableHover"
+      ]
+    },
+    {
+      "name": "pushDistance",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "160",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": 160,
+      "description": "推移距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 23
+      },
+      "codeExample": "pushDistance={80}",
+      "usageExamples": [
+        "pushDistance={80}"
+      ]
+    },
+    {
+      "name": "hoverScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.06",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.06,
+      "description": "悬停缩放，控制 bounce cards 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 24
+      },
+      "codeExample": "hoverScale={1.03}",
+      "usageExamples": [
+        "hoverScale={1.03}"
+      ]
+    },
+    {
+      "name": "borderWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 81,
+        "kind": "parameter"
+      },
+      "defaultValue": 5,
+      "description": "边框宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 25
+      },
+      "codeExample": "borderWidth={4}",
+      "usageExamples": [
+        "borderWidth={4}"
+      ]
+    },
+    {
+      "name": "borderColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 82,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "边框颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 26
+      },
+      "codeExample": "borderColor={palette.ivory}",
+      "usageExamples": [
+        "borderColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 83,
+        "kind": "parameter"
+      },
+      "defaultValue": 25,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 27
+      },
+      "codeExample": "radius={20}",
+      "usageExamples": [
+        "radius={20}"
+      ]
+    },
+    {
+      "name": "shadow",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 84,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否阴影，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "shadow",
+      "usageExamples": [
+        "shadow"
+      ]
+    },
+    {
+      "name": "transformStyles",
+      "type": "string[]",
+      "required": false,
+      "description": "变换样式列表的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "transformStyles={[\"示例\"]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "onCardClick",
+      "type": "(index: number) => void",
+      "required": false,
+      "description": "卡片点击时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((index: number) => void) | undefined"
+      },
+      "codeExample": "onCardClick={index => setStatus('点击卡片：' + LABELS[index % LABELS.length])}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onCardClick={index => setStatus('点击卡片：' + LABELS[index % LABELS.length])}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/BounceCards/BounceCards';\nimport { LABELS, palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 真实扇形卡片弹入、悬停分离和点击回调。\n\nexport default function BounceCardsDemo() {\n  const [status, setStatus] = useState(\"悬停让卡片分开，点击选择\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ minHeight: 310, width: '100%', display: 'grid', placeItems: 'center' }}><Component\n\n\n\n\nonCardClick={index => setStatus('点击卡片：' + LABELS[index % LABELS.length])} /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "BounceCards",
+      "sourcePath": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+      "props": [
+        {
+          "name": "images",
+          "type": "BounceCardImage[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "参与画廊、轮播或效果的图像列表。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "BounceCardImage",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "{ src: string; alt?: string; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "src",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "alt",
+                        "type": "string",
+                        "required": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "images={MEDIA.slice(0, 5).map((src, index) => ({ src, alt: LABELS[index] }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "images={MEDIA.slice(0, 5).map((src, index) => ({ src, alt: LABELS[index] }))}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 11
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 12
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "containerWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "容器宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 13
+          },
+          "codeExample": "containerWidth={520}",
+          "usageExamples": [
+            "containerWidth={520}"
+          ]
+        },
+        {
+          "name": "containerHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "容器高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 14
+          },
+          "codeExample": "containerHeight={280}",
+          "usageExamples": [
+            "containerHeight={280}"
+          ]
+        },
+        {
+          "name": "cardSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "卡片尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 15
+          },
+          "codeExample": "cardSize={150}",
+          "usageExamples": [
+            "cardSize={150}"
+          ]
+        },
+        {
+          "name": "spread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "85",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": 85,
+          "description": "展开间距，控制 bounce cards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 16
+          },
+          "codeExample": "spread={70}",
+          "usageExamples": [
+            "spread={70}"
+          ]
+        },
+        {
+          "name": "rotation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "旋转角度，控制 bounce cards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 17
+          },
+          "codeExample": "rotation={6}",
+          "usageExamples": [
+            "rotation={6}"
+          ]
+        },
+        {
+          "name": "arc",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "弧线，控制 bounce cards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 18
+          },
+          "codeExample": "arc={8}",
+          "usageExamples": [
+            "arc={8}"
+          ]
+        },
+        {
+          "name": "animationDelay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "动画延迟，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 19
+          },
+          "codeExample": "animationDelay={0.2}",
+          "usageExamples": [
+            "animationDelay={0.2}"
+          ]
+        },
+        {
+          "name": "animationStagger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.06",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.06,
+          "description": "动画错开，控制 bounce cards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 20
+          },
+          "codeExample": "animationStagger={0.07}",
+          "usageExamples": [
+            "animationStagger={0.07}"
+          ]
+        },
+        {
+          "name": "bounciness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "弹性，控制 bounce cards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 21
+          },
+          "codeExample": "bounciness={0.4}",
+          "usageExamples": [
+            "bounciness={0.4}"
+          ]
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否启用悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 22
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "enableHover",
+          "usageExamples": [
+            "enableHover"
+          ]
+        },
+        {
+          "name": "pushDistance",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "160",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": 160,
+          "description": "推移距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 23
+          },
+          "codeExample": "pushDistance={80}",
+          "usageExamples": [
+            "pushDistance={80}"
+          ]
+        },
+        {
+          "name": "hoverScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.06",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.06,
+          "description": "悬停缩放，控制 bounce cards 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 24
+          },
+          "codeExample": "hoverScale={1.03}",
+          "usageExamples": [
+            "hoverScale={1.03}"
+          ]
+        },
+        {
+          "name": "borderWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 81,
+            "kind": "parameter"
+          },
+          "defaultValue": 5,
+          "description": "边框宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 25
+          },
+          "codeExample": "borderWidth={4}",
+          "usageExamples": [
+            "borderWidth={4}"
+          ]
+        },
+        {
+          "name": "borderColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 82,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "边框颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 26
+          },
+          "codeExample": "borderColor={palette.ivory}",
+          "usageExamples": [
+            "borderColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 83,
+            "kind": "parameter"
+          },
+          "defaultValue": 25,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 27
+          },
+          "codeExample": "radius={20}",
+          "usageExamples": [
+            "radius={20}"
+          ]
+        },
+        {
+          "name": "shadow",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 84,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否阴影，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "shadow",
+          "usageExamples": [
+            "shadow"
+          ]
+        },
+        {
+          "name": "transformStyles",
+          "type": "string[]",
+          "required": false,
+          "description": "变换样式列表的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "transformStyles={[\"示例\"]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "onCardClick",
+          "type": "(index: number) => void",
+          "required": false,
+          "description": "卡片点击时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BounceCards/BounceCards.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((index: number) => void) | undefined"
+          },
+          "codeExample": "onCardClick={index => setStatus('点击卡片：' + LABELS[index % LABELS.length])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onCardClick={index => setStatus('点击卡片：' + LABELS[index % LABELS.length])}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

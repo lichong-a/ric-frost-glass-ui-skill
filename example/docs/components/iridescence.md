@@ -1,6 +1,6 @@
 # Iridescence
 
-背景效果 · `iridescence` · 中文意图：虹彩液面 / 柔光液面
+背景与光效 · `iridescence` · 中文意图：虹彩液面 / 柔光液面
 
 目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
@@ -14,9 +14,10 @@
 
 | 资源 | 位置与用途 |
 |---|---|
-| 自有示例（随包） | [example/src/demos/iridescence.tsx](../../src/demos/iridescence.tsx) |
+| 自有示例（随包） | [example/src/demos/background/iridescence.tsx](../../src/demos/background/iridescence.tsx) |
 | 组件实现（准备后存在） | [example/.upstream/src/ts-default/Backgrounds/Iridescence/Iridescence.tsx](../../.upstream/src/ts-default/Backgrounds/Iridescence/Iridescence.tsx) |
 | 组件 CSS（准备后存在） | [example/.upstream/src/ts-default/Backgrounds/Iridescence/Iridescence.css](../../.upstream/src/ts-default/Backgrounds/Iridescence/Iridescence.css) |
+| 单独 Props 记录 | [example/src/parameters/definitions/iridescence.json](../../src/parameters/definitions/iridescence.json) |
 | 固定版本 | `2139cb3098d4fedc6264f13e50dcb4694224ba7c` |
 
 先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在包根运行：
@@ -32,8 +33,10 @@ node scripts/example.mjs setup --component iridescence
 以下来自本包自有示例的实际用法；它只表示本例参数，不代表上游所有 Props。
 
 ```tsx
-import Component from '../../.upstream/src/ts-default/Backgrounds/Iridescence/Iridescence';
-import { palette } from '../shared/demo-support';
+// 当前 Iridescence 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
+import Component from '../../../.upstream/src/ts-default/Backgrounds/Iridescence/Iridescence';
+
 
 /** Agent Wan natural-tone preset for the real Iridescence component. */
 export default function IridescenceDemo() {
@@ -41,31 +44,102 @@ export default function IridescenceDemo() {
     <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
       <div style={{ width: '100%', height: 560, position: 'relative' }}>
         <Component
-          color={palette.sage}
-          speed={0.4}
-          amplitude={0.15}
-          saturation={0.25}
-          brightness={1.1}
-          warp={0.6}
-          sheen={0.2}
-          grain={0.02}
-          mouseReact
-          clickSwirl
+
+
+
+
+
+
+
+
+
+           color={"#a6b39a"} speed={0.4} amplitude={0.15} saturation={0.25} brightness={1.1} warp={0.6} sheen={0.2} grain={0.02} mouseReact={true} clickSwirl={true} scale={1} detail={8} rotation={0} hueShift={0} contrast={1} stir={0.5} fade={0} opacity={1} resolution={1} paused={false}
         />
       </div>
     </div>
   );
 }
+
 ```
 
-完整 Props、类型、回调和默认值以安装后的对应 TSX 源码为准。先读取本例使用的参数，再沿类型定义补充当前任务需要的选项；不要根据通用模板假定所有组件都有 color / speed / children。
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `color` | `string \| [number, number, number]` | 否 | `[1, 1, 1]` | 颜色，传入组件支持的 CSS 或着色器颜色格式。 |
+| `speed` | `number` | 否 | `1` | 动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。 |
+| `amplitude` | `number` | 否 | `0.1` | 振幅，控制 iridescence 的对应渲染或交互参数。 |
+| `mouseReact` | `boolean` | 否 | `true` | 是否鼠标响应，决定该分支的展示或交互行为。 |
+| `scale` | `number` | 否 | `1` | 缩放，控制 iridescence 的对应渲染或交互参数。 |
+| `detail` | `number` | 否 | `8` | 细节，控制 iridescence 的对应渲染或交互参数。 |
+| `rotation` | `number` | 否 | `0` | 旋转角度，控制 iridescence 的对应渲染或交互参数。 |
+| `warp` | `number` | 否 | `1` | 形变，控制 iridescence 的对应渲染或交互参数。 |
+| `hueShift` | `number` | 否 | `0` | 色相偏移，控制 iridescence 的对应渲染或交互参数。 |
+| `saturation` | `number` | 否 | `1` | 饱和度，控制 iridescence 的对应渲染或交互参数。 |
+| `brightness` | `number` | 否 | `1.5` | 亮度，控制 iridescence 的对应渲染或交互参数。 |
+| `contrast` | `number` | 否 | `1` | 对比度，控制 iridescence 的对应渲染或交互参数。 |
+| `stir` | `number` | 否 | `0.5` | 搅动，控制 iridescence 的对应渲染或交互参数。 |
+| `sheen` | `number` | 否 | `0.3` | 光泽，控制 iridescence 的对应渲染或交互参数。 |
+| `clickSwirl` | `boolean` | 否 | `true` | 是否点击旋涡，决定该分支的展示或交互行为。 |
+| `grain` | `number` | 否 | `0` | 颗粒，控制 iridescence 的对应渲染或交互参数。 |
+| `fade` | `number` | 否 | `0` | 淡出，控制 iridescence 的对应渲染或交互参数。 |
+| `opacity` | `number` | 否 | `1` | 不透明度，控制 iridescence 的对应渲染或交互参数。 |
+| `resolution` | `number` | 否 | `1` | 分辨率，控制 iridescence 的对应渲染或交互参数。 |
+| `paused` | `boolean` | 否 | `false` | 是否暂停持续动画或模拟更新。 |
+| `className` | `string` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `style` | `React.CSSProperties` | 否 | `未指定` | 容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。 |
+
+**color 的真实接入：**
+
+```tsx
+color={palette.sage}
+```
+
+**style 的真实接入：**
+
+```tsx
+style={{ width: "100%", minHeight: 240 }}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.color` | `"#a6b39a"` | color | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.speed` | `0.4` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.amplitude` | `0.15` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.saturation` | `0.25` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.brightness` | `1.1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.warp` | `0.6` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.sheen` | `0.2` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.grain` | `0.02` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.mouseReact` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.clickSwirl` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.scale` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.detail` | `8` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.rotation` | `0` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.hueShift` | `0` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.contrast` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.stir` | `0.5` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.fade` | `0` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.opacity` | `1` | range | 0 ~ 1 比例 | 调节结束后重建 |
+| `t0.resolution` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.paused` | `false` | switch | 不限 ~ 不限 | 调节结束后重建 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. Agent Wan 皮肤
 
-- 背景降低饱和度和亮度跨度，舞台单独限界；业务正文仍放在稳定阅读面上。
-- 优先通过组件真实 Props 设置颜色和强度；使用主题提供的茶绿、沙米、象牙白及墨色映射。
+- 画布优先保留 React Bits 的原版配色与可观察强度，背景有独立边界并为光晕预留空间；业务正文使用稳定阅读面。
+- 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
-- 保留折射或反光的可观察变化，但色彩与高光幅度保持克制；彩色反射不覆盖关键文字。
+- 保留折射、光晕或反光的可观察变化；本例允许深色画布和原版高光强度，阅读文字应保持清晰。
 
 ## 5. 加载、动效与降级
 
@@ -75,7 +149,7 @@ export default function IridescenceDemo() {
 - 运行类型：本例预览入口声明需 WebGL；这是当前示例的运行配置，不是仅凭源码关键词推断。此说明不等于浏览器运行证明。
 - 动效策略：按需启用的持续 / 高运动效果。
 - 示例库降级：动态偏好或能力检查不满足时先不挂载本项，显示原因；减少运动时可明确选择仅播放本次。
-- 业务接入的静态降级要求：使用 Agent Wan 静态茶绿 / 沙米环境渐变，主体内容和交互不变。
+- 业务接入的静态降级要求：保留可读内容与原生交互，并提供当前组件的静态状态
 - 卸载时释放本例监听、计时、动画帧及拥有的渲染资源；不以隐藏 CSS 代替停止循环。
 
 仅当前需求涉及高级运行、资源或设备权限时再读 [效果与降级策略](../effects-policy.md)。
@@ -85,8 +159,8 @@ export default function IridescenceDemo() {
 1. 参数与对应源码真实 API 一致，构建可导入，安装失败可恢复。
 2. 能观察到第 1 节的核心机制，而不只是相同名称的占位卡片。
 3. 真实状态 / 事件 / 键盘与必要的触屏等价操作可用。
-4. 低饱和配色、文字对比、阅读面、稳定命中范围与基础规范一致。
+4. 画布保留本例的效果对比度和原版配色；外壳、阅读面与基础规范一致。
 5. 只激活本项；切换或卸载后停止其持续工作。
 6. 减少运动与不可用情形保留本节所述等价内容或功能。
 
-只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [背景效果](../categories/backgrounds.md)；否则直接完成当前组件。
+只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [背景与光效](../categories/background.md)；否则直接完成当前组件。

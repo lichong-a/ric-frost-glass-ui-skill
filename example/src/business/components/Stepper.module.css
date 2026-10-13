@@ -1,0 +1,13 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-flow-steps, .aw-business-step-number, .aw-business-flow-progress { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-flow-steps { list-style:none; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin:0; padding:0 }
+.aw-business-flow-steps li { display:flex; align-items:center; gap:9px; padding:12px 10px; border-radius:12px; background:var(--aw-surface-control); font-size:13px; transition:background-color 200ms ease,color 200ms ease }
+.aw-business-flow-steps li[aria-current=step] { background:color-mix(in srgb,var(--aw-color-action-primary) 10%,var(--aw-surface-control)); color:var(--aw-color-action-primary) }
+.aw-business-step-number { display:grid; place-items:center; flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--aw-color-border-decorative) }
+.aw-business-flow-steps li[aria-current=step] .aw-business-step-number, .aw-business-flow-steps li[data-complete=true] .aw-business-step-number { color:var(--aw-palette-ivory); background:var(--aw-color-action-primary) }
+.aw-business-flow-progress { height:4px; overflow:hidden; border-radius:999px; background:var(--aw-color-border-decorative) }
+.aw-business-flow-progress > div { height:100%; background:var(--aw-color-action-primary); border-radius:inherit }
+@media (width < 600px) { .aw-business-flow-steps li { flex-direction:column; text-align:center; gap:6px; padding:10px 4px } }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-flow-steps, .aw-business-flow-steps::before, .aw-business-flow-steps::after, .aw-business-step-number, .aw-business-step-number::before, .aw-business-step-number::after, .aw-business-flow-progress, .aw-business-flow-progress::before, .aw-business-flow-progress::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-flow-steps, [data-motion=reduce] .aw-business-flow-steps::before, [data-motion=reduce] .aw-business-flow-steps::after, [data-motion=reduce] .aw-business-step-number, [data-motion=reduce] .aw-business-step-number::before, [data-motion=reduce] .aw-business-step-number::after, [data-motion=reduce] .aw-business-flow-progress, [data-motion=reduce] .aw-business-flow-progress::before, [data-motion=reduce] .aw-business-flow-progress::after { transition:none; animation:none; scroll-behavior:auto; }

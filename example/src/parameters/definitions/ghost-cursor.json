@@ -1,0 +1,1478 @@
+{
+  "version": 1,
+  "id": "ghost-cursor",
+  "name": "Ghost Cursor",
+  "sourcePath": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+  "demoPath": "src/demos/pointer/ghost-cursor.tsx",
+  "fields": [
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#b8e3c5",
+      "upstreamDefault": "'#B497CF'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.brightness",
+      "name": "brightness",
+      "label": "亮度 · t0",
+      "description": "亮度，控制 ghost cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "brightness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.15,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edgeIntensity",
+      "name": "edgeIntensity",
+      "label": "edgeIntensity · t0",
+      "description": "边缘强度，控制 ghost cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trailLength",
+      "name": "trailLength",
+      "label": "trailLength · t0",
+      "description": "轨迹长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。保存用于轨迹绘制的历史点数量。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trailLength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 50,
+      "upstreamDefault": "50",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "点"
+    },
+    {
+      "key": "t0.inertia",
+      "name": "inertia",
+      "label": "inertia · t0",
+      "description": "惯性，控制 ghost cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "inertia"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grainIntensity",
+      "name": "grainIntensity",
+      "label": "grainIntensity · t0",
+      "description": "颗粒强度，控制 ghost cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grainIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.04,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bloomStrength",
+      "name": "bloomStrength",
+      "label": "bloomStrength · t0",
+      "description": "泛光强度，控制 ghost cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bloomStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.22,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bloomRadius",
+      "name": "bloomRadius",
+      "label": "bloomRadius · t0",
+      "description": "泛光半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bloomRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1.0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bloomThreshold",
+      "name": "bloomThreshold",
+      "label": "bloomThreshold · t0",
+      "description": "泛光阈值，控制 ghost cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bloomThreshold"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.025,
+      "upstreamDefault": "0.025",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeDelayMs",
+      "name": "fadeDelayMs",
+      "label": "fadeDelayMs · t0",
+      "description": "淡出延迟毫秒，决定动画或交互阶段的时间安排；单位以该组件源码为准。 以下范围仅限制此演示面板，不改变上游 API。停止移动后的淡出等待时间。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeDelayMs"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 700,
+      "upstreamDefault": "(isTouch ? 500 : 1000)",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 2000,
+      "step": 50,
+      "unit": "ms"
+    },
+    {
+      "key": "t0.fadeDurationMs",
+      "name": "fadeDurationMs",
+      "label": "fadeDurationMs · t0",
+      "description": "淡出时长毫秒，决定动画或交互阶段的时间安排；单位以该组件源码为准。 以下范围仅限制此演示面板，不改变上游 API。停止移动后的淡出持续时间。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeDurationMs"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1400,
+      "upstreamDefault": "(isTouch ? 1000 : 1500)",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 50,
+      "max": 2000,
+      "step": 50,
+      "unit": "ms"
+    },
+    {
+      "key": "t0.mixBlendMode",
+      "name": "mixBlendMode",
+      "label": "mixBlendMode · t0",
+      "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mixBlendMode"
+        }
+      ],
+      "type": "React.CSSProperties['mixBlendMode']",
+      "defaultValue": "screen",
+      "upstreamDefault": "'screen'",
+      "control": "select",
+      "options": [
+        {
+          "label": "color",
+          "value": "color"
+        },
+        {
+          "label": "-moz-initial",
+          "value": "-moz-initial"
+        },
+        {
+          "label": "inherit",
+          "value": "inherit"
+        },
+        {
+          "label": "initial",
+          "value": "initial"
+        },
+        {
+          "label": "revert",
+          "value": "revert"
+        },
+        {
+          "label": "revert-layer",
+          "value": "revert-layer"
+        },
+        {
+          "label": "unset",
+          "value": "unset"
+        },
+        {
+          "label": "overlay",
+          "value": "overlay"
+        },
+        {
+          "label": "normal",
+          "value": "normal"
+        },
+        {
+          "label": "saturation",
+          "value": "saturation"
+        },
+        {
+          "label": "multiply",
+          "value": "multiply"
+        },
+        {
+          "label": "color-burn",
+          "value": "color-burn"
+        },
+        {
+          "label": "color-dodge",
+          "value": "color-dodge"
+        },
+        {
+          "label": "darken",
+          "value": "darken"
+        },
+        {
+          "label": "difference",
+          "value": "difference"
+        },
+        {
+          "label": "exclusion",
+          "value": "exclusion"
+        },
+        {
+          "label": "hard-light",
+          "value": "hard-light"
+        },
+        {
+          "label": "hue",
+          "value": "hue"
+        },
+        {
+          "label": "lighten",
+          "value": "lighten"
+        },
+        {
+          "label": "luminosity",
+          "value": "luminosity"
+        },
+        {
+          "label": "screen",
+          "value": "screen"
+        },
+        {
+          "label": "soft-light",
+          "value": "soft-light"
+        },
+        {
+          "label": "plus-darker",
+          "value": "plus-darker"
+        },
+        {
+          "label": "plus-lighter",
+          "value": "plus-lighter"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.maxDevicePixelRatio",
+      "name": "maxDevicePixelRatio",
+      "label": "maxDevicePixelRatio · t0",
+      "description": "最大设备像素比例，控制 ghost cursor 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。限制绘图缓冲的设备像素比。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "maxDevicePixelRatio"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "0.5",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.25,
+      "max": 2,
+      "step": 0.25,
+      "unit": "倍率"
+    },
+    {
+      "key": "t0.targetPixels",
+      "name": "targetPixels",
+      "label": "targetPixels · t0",
+      "description": "目标像素，控制 ghost cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "targetPixels"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 500000,
+      "upstreamDefault": "(isTouch ? 0.9e6 : 1.3e6)",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.zIndex",
+      "name": "zIndex",
+      "label": "zIndex · t0",
+      "description": "Z轴索引，控制 ghost cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "zIndex"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 544,
+        "kind": "implementation-fallback"
+      },
+      "defaultValue": "",
+      "defaultCondition": "nullish",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 12
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 13
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "trailLength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "50",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 37,
+        "kind": "parameter"
+      },
+      "defaultValue": 50,
+      "description": "轨迹长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 15
+      },
+      "codeExample": "trailLength={50}",
+      "usageExamples": [
+        "trailLength={50}"
+      ]
+    },
+    {
+      "name": "inertia",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 38,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "惯性，控制 ghost cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 16
+      },
+      "codeExample": "inertia={0.5}",
+      "usageExamples": [
+        "inertia={0.5}"
+      ]
+    },
+    {
+      "name": "grainIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 39,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "颗粒强度，控制 ghost cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 17
+      },
+      "codeExample": "grainIntensity={0.04}",
+      "usageExamples": [
+        "grainIntensity={0.04}"
+      ]
+    },
+    {
+      "name": "bloomStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 40,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "泛光强度，控制 ghost cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 18
+      },
+      "codeExample": "bloomStrength={0.22}",
+      "usageExamples": [
+        "bloomStrength={0.22}"
+      ]
+    },
+    {
+      "name": "bloomRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 41,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "泛光半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 19
+      },
+      "codeExample": "bloomRadius={1}",
+      "usageExamples": [
+        "bloomRadius={1}"
+      ]
+    },
+    {
+      "name": "bloomThreshold",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.025",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 42,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.025,
+      "description": "泛光阈值，控制 ghost cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 20
+      },
+      "codeExample": "bloomThreshold={0.025}",
+      "usageExamples": [
+        "bloomThreshold={0.025}"
+      ]
+    },
+    {
+      "name": "brightness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 44,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "亮度，控制 ghost cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 22
+      },
+      "codeExample": "brightness={1.15}",
+      "usageExamples": [
+        "brightness={1.15}"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#B497CF'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 45,
+        "kind": "parameter"
+      },
+      "defaultValue": "#B497CF",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 23
+      },
+      "codeExample": "color=\"#b8e3c5\"",
+      "usageExamples": [
+        "color=\"#b8e3c5\""
+      ]
+    },
+    {
+      "name": "mixBlendMode",
+      "type": "React.CSSProperties['mixBlendMode']",
+      "required": false,
+      "defaultExpression": "'screen'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 46,
+        "kind": "parameter"
+      },
+      "defaultValue": "screen",
+      "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "color",
+        "-moz-initial",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset",
+        "overlay",
+        "normal",
+        "saturation",
+        "multiply",
+        "color-burn",
+        "color-dodge",
+        "darken",
+        "difference",
+        "exclusion",
+        "hard-light",
+        "hue",
+        "lighten",
+        "luminosity",
+        "screen",
+        "soft-light",
+        "plus-darker",
+        "plus-lighter"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "color",
+          "-moz-initial",
+          "inherit",
+          "initial",
+          "revert",
+          "revert-layer",
+          "unset",
+          "overlay",
+          "normal",
+          "saturation",
+          "multiply",
+          "color-burn",
+          "color-dodge",
+          "darken",
+          "difference",
+          "exclusion",
+          "hard-light",
+          "hue",
+          "lighten",
+          "luminosity",
+          "screen",
+          "soft-light",
+          "plus-darker",
+          "plus-lighter"
+        ]
+      },
+      "codeExample": "mixBlendMode=\"screen\"",
+      "usageExamples": [
+        "mixBlendMode=\"screen\""
+      ]
+    },
+    {
+      "name": "edgeIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 47,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "边缘强度，控制 ghost cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 25
+      },
+      "codeExample": "edgeIntensity={0.15}",
+      "usageExamples": [
+        "edgeIntensity={0.15}"
+      ]
+    },
+    {
+      "name": "maxDevicePixelRatio",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 49,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "最大设备像素比例，控制 ghost cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 27
+      },
+      "codeExample": "maxDevicePixelRatio={1.5}",
+      "usageExamples": [
+        "maxDevicePixelRatio={1.5}"
+      ]
+    },
+    {
+      "name": "targetPixels",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "(isTouch ? 0.9e6 : 1.3e6)",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 82,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "目标像素，控制 ghost cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 28
+      },
+      "codeExample": "targetPixels={500000}",
+      "usageExamples": [
+        "targetPixels={500000}"
+      ]
+    },
+    {
+      "name": "fadeDelayMs",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "(isTouch ? 500 : 1000)",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 83,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "淡出延迟毫秒，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 29
+      },
+      "codeExample": "fadeDelayMs={700}",
+      "usageExamples": [
+        "fadeDelayMs={700}"
+      ]
+    },
+    {
+      "name": "fadeDurationMs",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "(isTouch ? 1000 : 1500)",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 84,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "淡出时长毫秒，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 30
+      },
+      "codeExample": "fadeDurationMs={1400}",
+      "usageExamples": [
+        "fadeDurationMs={1400}"
+      ]
+    },
+    {
+      "name": "zIndex",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 54,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "Z轴索引，控制 ghost cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+        "line": 31
+      },
+      "codeExample": "zIndex={2}",
+      "usageExamples": [
+        "zIndex={2}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Animations/GhostCursor/GhostCursor';\nimport styles from './ghost-cursor.module.css';\n\nexport default function GhostCursorDemo() {\n  return (\n    <div className={styles.stage} data-visual-demo=\"ghost-cursor\">\n      <div className={styles.content}><span className={styles.eyebrow}>GHOST CURSOR</span><h2 className={styles.title}>如烟，如影</h2><p className={styles.description}>移动指针，留下柔和的发光烟雾。</p></div>\n      <Component\n\n\n            /*__AW_PROPS_t0__*/  />\n      <p className={styles.hint}>快速划过或缓慢游走，观察拖影逐渐散开。</p>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "GhostCursor",
+      "sourcePath": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 544,
+            "kind": "implementation-fallback"
+          },
+          "defaultValue": "",
+          "defaultCondition": "nullish",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 12
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 13
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "trailLength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "50",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 37,
+            "kind": "parameter"
+          },
+          "defaultValue": 50,
+          "description": "轨迹长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 15
+          },
+          "codeExample": "trailLength={50}",
+          "usageExamples": [
+            "trailLength={50}"
+          ]
+        },
+        {
+          "name": "inertia",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 38,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "惯性，控制 ghost cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 16
+          },
+          "codeExample": "inertia={0.5}",
+          "usageExamples": [
+            "inertia={0.5}"
+          ]
+        },
+        {
+          "name": "grainIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 39,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "颗粒强度，控制 ghost cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 17
+          },
+          "codeExample": "grainIntensity={0.04}",
+          "usageExamples": [
+            "grainIntensity={0.04}"
+          ]
+        },
+        {
+          "name": "bloomStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 40,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "泛光强度，控制 ghost cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 18
+          },
+          "codeExample": "bloomStrength={0.22}",
+          "usageExamples": [
+            "bloomStrength={0.22}"
+          ]
+        },
+        {
+          "name": "bloomRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 41,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "泛光半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 19
+          },
+          "codeExample": "bloomRadius={1}",
+          "usageExamples": [
+            "bloomRadius={1}"
+          ]
+        },
+        {
+          "name": "bloomThreshold",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.025",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 42,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.025,
+          "description": "泛光阈值，控制 ghost cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 20
+          },
+          "codeExample": "bloomThreshold={0.025}",
+          "usageExamples": [
+            "bloomThreshold={0.025}"
+          ]
+        },
+        {
+          "name": "brightness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 44,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "亮度，控制 ghost cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 22
+          },
+          "codeExample": "brightness={1.15}",
+          "usageExamples": [
+            "brightness={1.15}"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#B497CF'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 45,
+            "kind": "parameter"
+          },
+          "defaultValue": "#B497CF",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 23
+          },
+          "codeExample": "color=\"#b8e3c5\"",
+          "usageExamples": [
+            "color=\"#b8e3c5\""
+          ]
+        },
+        {
+          "name": "mixBlendMode",
+          "type": "React.CSSProperties['mixBlendMode']",
+          "required": false,
+          "defaultExpression": "'screen'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 46,
+            "kind": "parameter"
+          },
+          "defaultValue": "screen",
+          "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "color",
+            "-moz-initial",
+            "inherit",
+            "initial",
+            "revert",
+            "revert-layer",
+            "unset",
+            "overlay",
+            "normal",
+            "saturation",
+            "multiply",
+            "color-burn",
+            "color-dodge",
+            "darken",
+            "difference",
+            "exclusion",
+            "hard-light",
+            "hue",
+            "lighten",
+            "luminosity",
+            "screen",
+            "soft-light",
+            "plus-darker",
+            "plus-lighter"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "color",
+              "-moz-initial",
+              "inherit",
+              "initial",
+              "revert",
+              "revert-layer",
+              "unset",
+              "overlay",
+              "normal",
+              "saturation",
+              "multiply",
+              "color-burn",
+              "color-dodge",
+              "darken",
+              "difference",
+              "exclusion",
+              "hard-light",
+              "hue",
+              "lighten",
+              "luminosity",
+              "screen",
+              "soft-light",
+              "plus-darker",
+              "plus-lighter"
+            ]
+          },
+          "codeExample": "mixBlendMode=\"screen\"",
+          "usageExamples": [
+            "mixBlendMode=\"screen\""
+          ]
+        },
+        {
+          "name": "edgeIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 47,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "边缘强度，控制 ghost cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 25
+          },
+          "codeExample": "edgeIntensity={0.15}",
+          "usageExamples": [
+            "edgeIntensity={0.15}"
+          ]
+        },
+        {
+          "name": "maxDevicePixelRatio",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 49,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "最大设备像素比例，控制 ghost cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 27
+          },
+          "codeExample": "maxDevicePixelRatio={1.5}",
+          "usageExamples": [
+            "maxDevicePixelRatio={1.5}"
+          ]
+        },
+        {
+          "name": "targetPixels",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "(isTouch ? 0.9e6 : 1.3e6)",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 82,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "目标像素，控制 ghost cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 28
+          },
+          "codeExample": "targetPixels={500000}",
+          "usageExamples": [
+            "targetPixels={500000}"
+          ]
+        },
+        {
+          "name": "fadeDelayMs",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "(isTouch ? 500 : 1000)",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 83,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "淡出延迟毫秒，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 29
+          },
+          "codeExample": "fadeDelayMs={700}",
+          "usageExamples": [
+            "fadeDelayMs={700}"
+          ]
+        },
+        {
+          "name": "fadeDurationMs",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "(isTouch ? 1000 : 1500)",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 84,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "淡出时长毫秒，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 30
+          },
+          "codeExample": "fadeDurationMs={1400}",
+          "usageExamples": [
+            "fadeDurationMs={1400}"
+          ]
+        },
+        {
+          "name": "zIndex",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 54,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "Z轴索引，控制 ghost cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/GhostCursor/GhostCursor.tsx",
+            "line": 31
+          },
+          "codeExample": "zIndex={2}",
+          "usageExamples": [
+            "zIndex={2}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

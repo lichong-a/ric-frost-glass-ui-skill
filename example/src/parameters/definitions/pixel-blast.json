@@ -1,0 +1,1704 @@
+{
+  "version": 1,
+  "id": "pixel-blast",
+  "name": "Pixel Blast",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+  "demoPath": "src/demos/background/pixel-blast.tsx",
+  "fields": [
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#B497CF'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.variant",
+      "name": "variant",
+      "label": "外观 · t0",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "variant"
+        }
+      ],
+      "type": "PixelBlastVariant",
+      "defaultValue": "square",
+      "upstreamDefault": "'square'",
+      "control": "select",
+      "options": [
+        {
+          "label": "square",
+          "value": "square"
+        },
+        {
+          "label": "circle",
+          "value": "circle"
+        },
+        {
+          "label": "triangle",
+          "value": "triangle"
+        },
+        {
+          "label": "diamond",
+          "value": "diamond"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pixelSize",
+      "name": "pixelSize",
+      "label": "pixelSize · t0",
+      "description": "像素尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pixelSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.patternScale",
+      "name": "patternScale",
+      "label": "patternScale · t0",
+      "description": "图样缩放，控制 pixel blast 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "patternScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.patternDensity",
+      "name": "patternDensity",
+      "label": "patternDensity · t0",
+      "description": "图样密度，控制 pixel blast 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "patternDensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.85,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.liquid",
+      "name": "liquid",
+      "label": "liquid · t0",
+      "description": "是否液体，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "liquid"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.liquidStrength",
+      "name": "liquidStrength",
+      "label": "liquidStrength · t0",
+      "description": "液体强度，控制 pixel blast 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "liquidStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.035,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.enableRipples",
+      "name": "enableRipples",
+      "label": "enableRipples · t0",
+      "description": "是否启用波纹组，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "enableRipples"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleIntensityScale",
+      "name": "rippleIntensityScale",
+      "label": "rippleIntensityScale · t0",
+      "description": "波纹强度缩放，控制 pixel blast 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleIntensityScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.transparent",
+      "name": "transparent",
+      "label": "transparent · t0",
+      "description": "是否透明背景，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "transparent"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoPauseOffscreen",
+      "name": "autoPauseOffscreen",
+      "label": "autoPauseOffscreen · t0",
+      "description": "是否自动暂停视口外，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoPauseOffscreen"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.antialias",
+      "name": "antialias",
+      "label": "antialias · t0",
+      "description": "是否抗锯齿，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "antialias"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.liquidRadius",
+      "name": "liquidRadius",
+      "label": "liquidRadius · t0",
+      "description": "液体半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "liquidRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pixelSizeJitter",
+      "name": "pixelSizeJitter",
+      "label": "pixelSizeJitter · t0",
+      "description": "像素尺寸抖动，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pixelSizeJitter"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleThickness",
+      "name": "rippleThickness",
+      "label": "rippleThickness · t0",
+      "description": "波纹厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleThickness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleSpeed",
+      "name": "rippleSpeed",
+      "label": "rippleSpeed · t0",
+      "description": "波纹速度，控制 pixel blast 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.liquidWobbleSpeed",
+      "name": "liquidWobbleSpeed",
+      "label": "liquidWobbleSpeed · t0",
+      "description": "液体摇晃速度，控制 pixel blast 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "liquidWobbleSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4.5,
+      "upstreamDefault": "4.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edgeFade",
+      "name": "edgeFade",
+      "label": "edgeFade · t0",
+      "description": "边缘淡出，控制 pixel blast 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeFade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.noiseAmount",
+      "name": "noiseAmount",
+      "label": "noiseAmount · t0",
+      "description": "噪声幅度，控制 pixel blast 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "noiseAmount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "variant",
+      "type": "PixelBlastVariant",
+      "required": false,
+      "defaultExpression": "'square'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 358,
+        "kind": "parameter"
+      },
+      "defaultValue": "square",
+      "description": "选择组件内置的外观或效果变体。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "square",
+        "circle",
+        "triangle",
+        "diamond"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "square",
+          "circle",
+          "triangle",
+          "diamond"
+        ]
+      },
+      "codeExample": "variant=\"square\"",
+      "usageExamples": [
+        "variant=\"square\""
+      ]
+    },
+    {
+      "name": "pixelSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 359,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "像素尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 36
+      },
+      "codeExample": "pixelSize={4}",
+      "usageExamples": [
+        "pixelSize={4}"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#B497CF'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 360,
+        "kind": "parameter"
+      },
+      "defaultValue": "#B497CF",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 37
+      },
+      "codeExample": "color={palette.sage}",
+      "usageExamples": [
+        "color={palette.sage}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 698,
+        "kind": "implementation-fallback"
+      },
+      "defaultValue": "",
+      "defaultCondition": "nullish",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 38
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 39
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "antialias",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 363,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否抗锯齿，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 40
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "antialias={true}"
+    },
+    {
+      "name": "patternScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 364,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "图样缩放，控制 pixel blast 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 41
+      },
+      "codeExample": "patternScale={2}",
+      "usageExamples": [
+        "patternScale={2}"
+      ]
+    },
+    {
+      "name": "patternDensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 365,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "图样密度，控制 pixel blast 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 42
+      },
+      "codeExample": "patternDensity={0.85}",
+      "usageExamples": [
+        "patternDensity={0.85}"
+      ]
+    },
+    {
+      "name": "liquid",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 366,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否液体，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "liquid",
+      "usageExamples": [
+        "liquid"
+      ]
+    },
+    {
+      "name": "liquidStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 367,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "液体强度，控制 pixel blast 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 44
+      },
+      "codeExample": "liquidStrength={0.035}",
+      "usageExamples": [
+        "liquidStrength={0.035}"
+      ]
+    },
+    {
+      "name": "liquidRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 368,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "液体半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 45
+      },
+      "codeExample": "liquidRadius={1}"
+    },
+    {
+      "name": "pixelSizeJitter",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 369,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "像素尺寸抖动，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 46
+      },
+      "codeExample": "pixelSizeJitter={0}"
+    },
+    {
+      "name": "enableRipples",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 370,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否启用波纹组，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 47
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "enableRipples",
+      "usageExamples": [
+        "enableRipples"
+      ]
+    },
+    {
+      "name": "rippleIntensityScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 371,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "波纹强度缩放，控制 pixel blast 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 48
+      },
+      "codeExample": "rippleIntensityScale={0.8}",
+      "usageExamples": [
+        "rippleIntensityScale={0.8}"
+      ]
+    },
+    {
+      "name": "rippleThickness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 372,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "波纹厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 49
+      },
+      "codeExample": "rippleThickness={0.1}"
+    },
+    {
+      "name": "rippleSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 373,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "波纹速度，控制 pixel blast 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 50
+      },
+      "codeExample": "rippleSpeed={0.3}"
+    },
+    {
+      "name": "liquidWobbleSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 374,
+        "kind": "parameter"
+      },
+      "defaultValue": 4.5,
+      "description": "液体摇晃速度，控制 pixel blast 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 51
+      },
+      "codeExample": "liquidWobbleSpeed={4.5}"
+    },
+    {
+      "name": "autoPauseOffscreen",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 375,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否自动暂停视口外，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 52
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "autoPauseOffscreen",
+      "usageExamples": [
+        "autoPauseOffscreen"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 376,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 53
+      },
+      "codeExample": "speed={0.25}",
+      "usageExamples": [
+        "speed={0.25}"
+      ]
+    },
+    {
+      "name": "transparent",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 377,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否透明背景，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 54
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "transparent",
+      "usageExamples": [
+        "transparent"
+      ]
+    },
+    {
+      "name": "edgeFade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 378,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "边缘淡出，控制 pixel blast 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 55
+      },
+      "codeExample": "edgeFade={0.5}"
+    },
+    {
+      "name": "noiseAmount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 379,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "噪声幅度，控制 pixel blast 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+        "line": 56
+      },
+      "codeExample": "noiseAmount={0}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast';\n\n\n/** Agent Wan natural-tone preset for the real Pixel Blast component. */\nexport default function PixelBlastDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "PixelBlast",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+      "props": [
+        {
+          "name": "variant",
+          "type": "PixelBlastVariant",
+          "required": false,
+          "defaultExpression": "'square'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 358,
+            "kind": "parameter"
+          },
+          "defaultValue": "square",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "square",
+            "circle",
+            "triangle",
+            "diamond"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "square",
+              "circle",
+              "triangle",
+              "diamond"
+            ]
+          },
+          "codeExample": "variant=\"square\"",
+          "usageExamples": [
+            "variant=\"square\""
+          ]
+        },
+        {
+          "name": "pixelSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 359,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "像素尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 36
+          },
+          "codeExample": "pixelSize={4}",
+          "usageExamples": [
+            "pixelSize={4}"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#B497CF'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 360,
+            "kind": "parameter"
+          },
+          "defaultValue": "#B497CF",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 37
+          },
+          "codeExample": "color={palette.sage}",
+          "usageExamples": [
+            "color={palette.sage}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 698,
+            "kind": "implementation-fallback"
+          },
+          "defaultValue": "",
+          "defaultCondition": "nullish",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 38
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 39
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "antialias",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 363,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否抗锯齿，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 40
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "antialias={true}"
+        },
+        {
+          "name": "patternScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 364,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "图样缩放，控制 pixel blast 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 41
+          },
+          "codeExample": "patternScale={2}",
+          "usageExamples": [
+            "patternScale={2}"
+          ]
+        },
+        {
+          "name": "patternDensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 365,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "图样密度，控制 pixel blast 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 42
+          },
+          "codeExample": "patternDensity={0.85}",
+          "usageExamples": [
+            "patternDensity={0.85}"
+          ]
+        },
+        {
+          "name": "liquid",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 366,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否液体，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "liquid",
+          "usageExamples": [
+            "liquid"
+          ]
+        },
+        {
+          "name": "liquidStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 367,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "液体强度，控制 pixel blast 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 44
+          },
+          "codeExample": "liquidStrength={0.035}",
+          "usageExamples": [
+            "liquidStrength={0.035}"
+          ]
+        },
+        {
+          "name": "liquidRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 368,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "液体半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 45
+          },
+          "codeExample": "liquidRadius={1}"
+        },
+        {
+          "name": "pixelSizeJitter",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 369,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "像素尺寸抖动，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 46
+          },
+          "codeExample": "pixelSizeJitter={0}"
+        },
+        {
+          "name": "enableRipples",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 370,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否启用波纹组，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 47
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "enableRipples",
+          "usageExamples": [
+            "enableRipples"
+          ]
+        },
+        {
+          "name": "rippleIntensityScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 371,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "波纹强度缩放，控制 pixel blast 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 48
+          },
+          "codeExample": "rippleIntensityScale={0.8}",
+          "usageExamples": [
+            "rippleIntensityScale={0.8}"
+          ]
+        },
+        {
+          "name": "rippleThickness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 372,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "波纹厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 49
+          },
+          "codeExample": "rippleThickness={0.1}"
+        },
+        {
+          "name": "rippleSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 373,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "波纹速度，控制 pixel blast 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 50
+          },
+          "codeExample": "rippleSpeed={0.3}"
+        },
+        {
+          "name": "liquidWobbleSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 374,
+            "kind": "parameter"
+          },
+          "defaultValue": 4.5,
+          "description": "液体摇晃速度，控制 pixel blast 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 51
+          },
+          "codeExample": "liquidWobbleSpeed={4.5}"
+        },
+        {
+          "name": "autoPauseOffscreen",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 375,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否自动暂停视口外，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 52
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "autoPauseOffscreen",
+          "usageExamples": [
+            "autoPauseOffscreen"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 376,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 53
+          },
+          "codeExample": "speed={0.25}",
+          "usageExamples": [
+            "speed={0.25}"
+          ]
+        },
+        {
+          "name": "transparent",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 377,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否透明背景，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 54
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "transparent",
+          "usageExamples": [
+            "transparent"
+          ]
+        },
+        {
+          "name": "edgeFade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 378,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "边缘淡出，控制 pixel blast 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 55
+          },
+          "codeExample": "edgeFade={0.5}"
+        },
+        {
+          "name": "noiseAmount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 379,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "噪声幅度，控制 pixel blast 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
+            "line": 56
+          },
+          "codeExample": "noiseAmount={0}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

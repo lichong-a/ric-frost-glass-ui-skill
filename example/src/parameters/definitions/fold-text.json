@@ -1,0 +1,1267 @@
+{
+  "version": 1,
+  "id": "fold-text",
+  "name": "Fold Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+  "demoPath": "src/demos/text/fold-text.tsx",
+  "fields": [
+    {
+      "key": "t0.text",
+      "name": "text",
+      "label": "文字内容 · t0",
+      "description": "显示或生成效果的文字内容。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "text"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "Build with clarity",
+      "upstreamDefault": "'Design unfolds'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.splitBy",
+      "name": "splitBy",
+      "label": "splitBy · t0",
+      "description": "拆分单位，控制 fold text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "splitBy"
+        }
+      ],
+      "type": "SplitBy",
+      "defaultValue": "char",
+      "upstreamDefault": "'char'",
+      "control": "select",
+      "options": [
+        {
+          "label": "char",
+          "value": "char"
+        },
+        {
+          "label": "word",
+          "value": "word"
+        },
+        {
+          "label": "line",
+          "value": "line"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hinge",
+      "name": "hinge",
+      "label": "hinge · t0",
+      "description": "铰链，控制 fold text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hinge"
+        }
+      ],
+      "type": "Hinge",
+      "defaultValue": "top",
+      "upstreamDefault": "'top'",
+      "control": "select",
+      "options": [
+        {
+          "label": "top",
+          "value": "top"
+        },
+        {
+          "label": "bottom",
+          "value": "bottom"
+        },
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trigger",
+      "name": "trigger",
+      "label": "trigger · t0",
+      "description": "触发方式，控制 fold text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trigger"
+        }
+      ],
+      "type": "Trigger",
+      "defaultValue": "mount",
+      "upstreamDefault": "'mount'",
+      "control": "select",
+      "options": [
+        {
+          "label": "mount",
+          "value": "mount"
+        },
+        {
+          "label": "hover",
+          "value": "hover"
+        },
+        {
+          "label": "scroll",
+          "value": "scroll"
+        },
+        {
+          "label": "loop",
+          "value": "loop"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.duration",
+      "name": "duration",
+      "label": "持续时间 · t0",
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "duration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.55,
+      "upstreamDefault": "0.65",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stagger",
+      "name": "stagger",
+      "label": "错峰间隔 · t0",
+      "description": "错开，控制 fold text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stagger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.035,
+      "upstreamDefault": "0.045",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.perspective",
+      "name": "perspective",
+      "label": "perspective · t0",
+      "description": "透视，控制 fold text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "perspective"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 800,
+      "upstreamDefault": "700",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.creaseShading",
+      "name": "creaseShading",
+      "label": "creaseShading · t0",
+      "description": "折痕面部明暗，控制 fold text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "creaseShading"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.55",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "string | number",
+      "defaultValue": "clamp(36px, 6vw, 64px)",
+      "upstreamDefault": "80",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontWeight",
+      "name": "fontWeight",
+      "label": "字重 · t0",
+      "description": "字体字重，控制 fold text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontWeight"
+        }
+      ],
+      "type": "string | number",
+      "defaultValue": 650,
+      "upstreamDefault": "800",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f7f2e8'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ease",
+      "name": "ease",
+      "label": "ease · t0",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ease"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "power3.out",
+      "upstreamDefault": "'power3.out'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "CSSProperties",
+      "defaultValue": {},
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {},
+        "required": []
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Design unfolds'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 60,
+        "kind": "parameter"
+      },
+      "defaultValue": "Design unfolds",
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 16
+      },
+      "codeExample": "text=\"Build with clarity\"",
+      "usageExamples": [
+        "text=\"Build with clarity\""
+      ]
+    },
+    {
+      "name": "splitBy",
+      "type": "SplitBy",
+      "required": false,
+      "defaultExpression": "'char'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 61,
+        "kind": "parameter"
+      },
+      "defaultValue": "char",
+      "description": "拆分单位，控制 fold text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "char",
+        "word",
+        "line"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "char",
+          "word",
+          "line"
+        ]
+      },
+      "codeExample": "splitBy=\"char\"",
+      "usageExamples": [
+        "splitBy=\"char\""
+      ]
+    },
+    {
+      "name": "hinge",
+      "type": "Hinge",
+      "required": false,
+      "defaultExpression": "'top'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 62,
+        "kind": "parameter"
+      },
+      "defaultValue": "top",
+      "description": "铰链，控制 fold text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "top",
+          "bottom",
+          "left",
+          "right"
+        ]
+      },
+      "codeExample": "hinge=\"top\"",
+      "usageExamples": [
+        "hinge=\"top\""
+      ]
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.65",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.65,
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 19
+      },
+      "codeExample": "duration={0.55}",
+      "usageExamples": [
+        "duration={0.55}"
+      ]
+    },
+    {
+      "name": "stagger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.045",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.045,
+      "description": "错开，控制 fold text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 20
+      },
+      "codeExample": "stagger={0.035}",
+      "usageExamples": [
+        "stagger={0.035}"
+      ]
+    },
+    {
+      "name": "ease",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'power3.out'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": "power3.out",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 21
+      },
+      "codeExample": "ease={\"power3.out\"}"
+    },
+    {
+      "name": "perspective",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "700",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": 700,
+      "description": "透视，控制 fold text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 22
+      },
+      "codeExample": "perspective={800}",
+      "usageExamples": [
+        "perspective={800}"
+      ]
+    },
+    {
+      "name": "creaseShading",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.55",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.55,
+      "description": "折痕面部明暗，控制 fold text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 23
+      },
+      "codeExample": "creaseShading={0.3}",
+      "usageExamples": [
+        "creaseShading={0.3}"
+      ]
+    },
+    {
+      "name": "trigger",
+      "type": "Trigger",
+      "required": false,
+      "defaultExpression": "'mount'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": "mount",
+      "description": "触发方式，控制 fold text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "mount",
+        "hover",
+        "scroll",
+        "loop"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "mount",
+          "hover",
+          "scroll",
+          "loop"
+        ]
+      },
+      "codeExample": "trigger=\"mount\"",
+      "usageExamples": [
+        "trigger=\"mount\""
+      ]
+    },
+    {
+      "name": "fontSize",
+      "type": "string | number",
+      "required": false,
+      "defaultExpression": "80",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": 80,
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "fontSize=\"clamp(36px, 6vw, 64px)\"",
+      "usageExamples": [
+        "fontSize=\"clamp(36px, 6vw, 64px)\""
+      ]
+    },
+    {
+      "name": "fontWeight",
+      "type": "string | number",
+      "required": false,
+      "defaultExpression": "800",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": 800,
+      "description": "字体字重，控制 fold text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "fontWeight={650}",
+      "usageExamples": [
+        "fontWeight={650}"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f7f2e8'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f7f2e8",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 27
+      },
+      "codeExample": "color={palette.ink}",
+      "usageExamples": [
+        "color={palette.ink}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 28
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+        "line": 29
+      },
+      "codeExample": "style={{}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/FoldText/FoldText';\nimport { palette } from '../../shared/demo-support';\n\n// 从顶部折线展开文字，作为标题入场样例。\n\nexport default function FoldTextDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>\n      <Component\n\n   /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "FoldText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Design unfolds'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 60,
+            "kind": "parameter"
+          },
+          "defaultValue": "Design unfolds",
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 16
+          },
+          "codeExample": "text=\"Build with clarity\"",
+          "usageExamples": [
+            "text=\"Build with clarity\""
+          ]
+        },
+        {
+          "name": "splitBy",
+          "type": "SplitBy",
+          "required": false,
+          "defaultExpression": "'char'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 61,
+            "kind": "parameter"
+          },
+          "defaultValue": "char",
+          "description": "拆分单位，控制 fold text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "char",
+            "word",
+            "line"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "char",
+              "word",
+              "line"
+            ]
+          },
+          "codeExample": "splitBy=\"char\"",
+          "usageExamples": [
+            "splitBy=\"char\""
+          ]
+        },
+        {
+          "name": "hinge",
+          "type": "Hinge",
+          "required": false,
+          "defaultExpression": "'top'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 62,
+            "kind": "parameter"
+          },
+          "defaultValue": "top",
+          "description": "铰链，控制 fold text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "top",
+              "bottom",
+              "left",
+              "right"
+            ]
+          },
+          "codeExample": "hinge=\"top\"",
+          "usageExamples": [
+            "hinge=\"top\""
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.65",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.65,
+          "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 19
+          },
+          "codeExample": "duration={0.55}",
+          "usageExamples": [
+            "duration={0.55}"
+          ]
+        },
+        {
+          "name": "stagger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.045",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.045,
+          "description": "错开，控制 fold text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 20
+          },
+          "codeExample": "stagger={0.035}",
+          "usageExamples": [
+            "stagger={0.035}"
+          ]
+        },
+        {
+          "name": "ease",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'power3.out'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": "power3.out",
+          "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 21
+          },
+          "codeExample": "ease={\"power3.out\"}"
+        },
+        {
+          "name": "perspective",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "700",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": 700,
+          "description": "透视，控制 fold text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 22
+          },
+          "codeExample": "perspective={800}",
+          "usageExamples": [
+            "perspective={800}"
+          ]
+        },
+        {
+          "name": "creaseShading",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.55",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.55,
+          "description": "折痕面部明暗，控制 fold text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 23
+          },
+          "codeExample": "creaseShading={0.3}",
+          "usageExamples": [
+            "creaseShading={0.3}"
+          ]
+        },
+        {
+          "name": "trigger",
+          "type": "Trigger",
+          "required": false,
+          "defaultExpression": "'mount'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": "mount",
+          "description": "触发方式，控制 fold text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "mount",
+            "hover",
+            "scroll",
+            "loop"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "mount",
+              "hover",
+              "scroll",
+              "loop"
+            ]
+          },
+          "codeExample": "trigger=\"mount\"",
+          "usageExamples": [
+            "trigger=\"mount\""
+          ]
+        },
+        {
+          "name": "fontSize",
+          "type": "string | number",
+          "required": false,
+          "defaultExpression": "80",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": 80,
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "fontSize=\"clamp(36px, 6vw, 64px)\"",
+          "usageExamples": [
+            "fontSize=\"clamp(36px, 6vw, 64px)\""
+          ]
+        },
+        {
+          "name": "fontWeight",
+          "type": "string | number",
+          "required": false,
+          "defaultExpression": "800",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": 800,
+          "description": "字体字重，控制 fold text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "fontWeight={650}",
+          "usageExamples": [
+            "fontWeight={650}"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f7f2e8'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f7f2e8",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 27
+          },
+          "codeExample": "color={palette.ink}",
+          "usageExamples": [
+            "color={palette.ink}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 28
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FoldText/FoldText.tsx",
+            "line": 29
+          },
+          "codeExample": "style={{}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

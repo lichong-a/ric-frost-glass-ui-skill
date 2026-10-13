@@ -1,0 +1,2305 @@
+{
+  "version": 1,
+  "id": "prompt-bar",
+  "name": "Prompt Bar",
+  "sourcePath": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+  "demoPath": "src/demos/form/prompt-bar.tsx",
+  "fields": [
+    {
+      "key": "t0.placeholder",
+      "name": "placeholder",
+      "label": "占位文字 · t0",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "placeholder"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "描述想要构建的页面…",
+      "upstreamDefault": "'Ask anything'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sources",
+      "name": "sources",
+      "label": "sources · t0",
+      "description": "按顺序展示的媒体资源地址列表。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sources"
+        }
+      ],
+      "type": "PromptBarSource[]",
+      "defaultValue": [
+        {
+          "key": "design",
+          "name": "设计规范",
+          "description": "本地演示上下文"
+        },
+        {
+          "key": "files",
+          "name": "附加示例文件",
+          "description": "只添加模拟文件名",
+          "attach": true
+        }
+      ],
+      "upstreamDefault": "DEFAULT_SOURCES",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "key": {
+              "kind": "string"
+            },
+            "name": {
+              "kind": "string"
+            },
+            "description": {
+              "kind": "string"
+            },
+            "attach": {
+              "kind": "boolean"
+            }
+          },
+          "required": [
+            "key",
+            "name"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.commands",
+      "name": "commands",
+      "label": "commands · t0",
+      "description": "命令列表的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "commands"
+        }
+      ],
+      "type": "PromptBarCommand[]",
+      "defaultValue": [
+        {
+          "key": "summarize",
+          "name": "/总结",
+          "description": "生成本地演示摘要"
+        },
+        {
+          "key": "compare",
+          "name": "/比较",
+          "description": "比较两个方案"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_COMMANDS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "key": {
+              "kind": "string"
+            },
+            "name": {
+              "kind": "string"
+            },
+            "description": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "key",
+            "name"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.models",
+      "name": "models",
+      "label": "models · t0",
+      "description": "模型的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "models"
+        }
+      ],
+      "type": "PromptBarModel[]",
+      "defaultValue": [
+        {
+          "key": "quick",
+          "name": "示例 · 快速",
+          "tag": "本地"
+        },
+        {
+          "key": "deep",
+          "name": "示例 · 深入",
+          "tag": "本地"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_MODELS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "key": {
+              "kind": "string"
+            },
+            "name": {
+              "kind": "string"
+            },
+            "tag": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "key",
+            "name"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.defaultModel",
+      "name": "defaultModel",
+      "label": "defaultModel · t0",
+      "description": "非受控初始模型，控制 prompt bar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "defaultModel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "quick",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.efforts",
+      "name": "efforts",
+      "label": "efforts · t0",
+      "description": "思考力度候选的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "efforts"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "低",
+        "中",
+        "高"
+      ],
+      "upstreamDefault": "DEFAULT_EFFORTS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.defaultEffort",
+      "name": "defaultEffort",
+      "label": "defaultEffort · t0",
+      "description": "非受控初始思考力度，控制 prompt bar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "defaultEffort"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "中",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.width",
+      "name": "width",
+      "label": "宽度 · t0",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "width"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 500,
+      "upstreamDefault": "400",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.background",
+      "name": "background",
+      "label": "background · t0",
+      "description": "背景，控制 prompt bar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "background"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "rgb(250 247 240 / 0.82)",
+      "upstreamDefault": "'#27272a'",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.menuBackground",
+      "name": "menuBackground",
+      "label": "menuBackground · t0",
+      "description": "菜单背景，控制 prompt bar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "menuBackground"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#323236'",
+      "control": "color",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sparkColor",
+      "name": "sparkColor",
+      "label": "sparkColor · t0",
+      "description": "火花颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sparkColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#b39dff'",
+      "control": "color",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sparkBoost",
+      "name": "sparkBoost",
+      "label": "sparkBoost · t0",
+      "description": "火花加速，控制 prompt bar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sparkBoost"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.maxRows",
+      "name": "maxRows",
+      "label": "maxRows · t0",
+      "description": "最大行数，控制 prompt bar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "maxRows"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 5,
+      "upstreamDefault": "5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.morphDuration",
+      "name": "morphDuration",
+      "label": "morphDuration · t0",
+      "description": "形态变换时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "morphDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 240,
+      "upstreamDefault": "240",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.squash",
+      "name": "squash",
+      "label": "squash · t0",
+      "description": "挤压，控制 prompt bar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "squash"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0.12",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tilt",
+      "name": "tilt",
+      "label": "tilt · t0",
+      "description": "倾斜，控制 prompt bar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "8",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pressScale",
+      "name": "pressScale",
+      "label": "pressScale · t0",
+      "description": "按压缩放，控制 prompt bar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pressScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.96,
+      "upstreamDefault": "0.96",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 640,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Ask anything'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 215,
+        "kind": "parameter"
+      },
+      "defaultValue": "Ask anything",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 62
+      },
+      "codeExample": "placeholder=\"描述想要构建的页面…\"",
+      "usageExamples": [
+        "placeholder=\"描述想要构建的页面…\""
+      ]
+    },
+    {
+      "name": "sources",
+      "type": "PromptBarSource[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_SOURCES",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 216,
+        "kind": "parameter"
+      },
+      "defaultResolvedExpression": "[\n  {\n    key: 'files',\n    name: 'Photos & files',\n    description: 'Upload from this device',\n    icon: Attachment01Icon,\n    attach: true\n  },\n  { key: 'web', name: 'Web search', description: 'Live results', icon: Globe02Icon },\n  { key: 'sales', name: 'Sales data', description: 'Revenue and churn', icon: ChartLineData01Icon },\n  { key: 'docs', name: 'Documents', description: 'Specs, notes, briefs', icon: File02Icon },\n  { key: 'mail', name: 'Mail', description: 'Read and draft mail', icon: Mail01Icon },\n  { key: 'calendar', name: 'Calendar', description: 'Events and availability', icon: Calendar03Icon }\n]",
+      "description": "按顺序展示的媒体资源地址列表。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 63
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "PromptBarSource",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "key",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "icon",
+                "type": "ReactNode | IconSvgElement",
+                "required": false
+              },
+              {
+                "name": "attach",
+                "type": "boolean",
+                "required": false,
+                "kind": "enum",
+                "options": [
+                  false,
+                  true
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "sources={sources}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "sources={sources}"
+      ]
+    },
+    {
+      "name": "commands",
+      "type": "PromptBarCommand[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_COMMANDS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 217,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        {
+          "key": "summarize",
+          "name": "/summarize",
+          "description": "Digest the thread so far"
+        },
+        {
+          "key": "compare",
+          "name": "/compare",
+          "description": "Two options side by side"
+        },
+        {
+          "key": "draft",
+          "name": "/draft",
+          "description": "Write a first version"
+        },
+        {
+          "key": "explain",
+          "name": "/explain",
+          "description": "A plain-language walkthrough"
+        },
+        {
+          "key": "tasks",
+          "name": "/tasks",
+          "description": "Turn this into a to-do list"
+        }
+      ],
+      "defaultResolvedExpression": "[\n  { key: 'summarize', name: '/summarize', description: 'Digest the thread so far' },\n  { key: 'compare', name: '/compare', description: 'Two options side by side' },\n  { key: 'draft', name: '/draft', description: 'Write a first version' },\n  { key: 'explain', name: '/explain', description: 'A plain-language walkthrough' },\n  { key: 'tasks', name: '/tasks', description: 'Turn this into a to-do list' }\n]",
+      "description": "命令列表的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 64
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "PromptBarCommand",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "key",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "commands={commands}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "commands={commands}"
+      ]
+    },
+    {
+      "name": "models",
+      "type": "PromptBarModel[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_MODELS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 218,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        {
+          "key": "nova-3",
+          "name": "Nova 3",
+          "tag": "Flagship"
+        },
+        {
+          "key": "nova-mini",
+          "name": "Nova Mini",
+          "tag": "Fast"
+        },
+        {
+          "key": "nova-2",
+          "name": "Nova 2",
+          "tag": "Legacy"
+        }
+      ],
+      "defaultResolvedExpression": "[\n  { key: 'nova-3', name: 'Nova 3', tag: 'Flagship' },\n  { key: 'nova-mini', name: 'Nova Mini', tag: 'Fast' },\n  { key: 'nova-2', name: 'Nova 2', tag: 'Legacy' }\n]",
+      "description": "模型的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 65
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "PromptBarModel",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "key",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "tag",
+                "type": "string",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "models={models}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "models={models}"
+      ]
+    },
+    {
+      "name": "defaultModel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 219,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "非受控初始模型，控制 prompt bar 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 66
+      },
+      "codeExample": "defaultModel=\"quick\"",
+      "usageExamples": [
+        "defaultModel=\"quick\""
+      ]
+    },
+    {
+      "name": "efforts",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_EFFORTS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 220,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "Low",
+        "Medium",
+        "High",
+        "Extra",
+        "Max"
+      ],
+      "defaultResolvedExpression": "['Low', 'Medium', 'High', 'Extra', 'Max']",
+      "description": "思考力度候选的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 67
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "efforts={['低', '中', '高']}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "efforts={['低', '中', '高']}"
+      ]
+    },
+    {
+      "name": "defaultEffort",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 221,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "非受控初始思考力度，控制 prompt bar 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 68
+      },
+      "codeExample": "defaultEffort=\"中\"",
+      "usageExamples": [
+        "defaultEffort=\"中\""
+      ]
+    },
+    {
+      "name": "onEffortChange",
+      "type": "(effort: string) => void",
+      "required": false,
+      "description": "用户切换思考力度或工作模式时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 69
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((effort: string) => void) | undefined"
+      },
+      "codeExample": "onEffortChange={effort => setMessage(`演示推理强度：${effort}`)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onEffortChange={effort => setMessage(`演示推理强度：${effort}`)}"
+      ]
+    },
+    {
+      "name": "busy",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 223,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否忙碌，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 70
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "busy={busy}",
+      "usageExamples": [
+        "busy={busy}"
+      ]
+    },
+    {
+      "name": "onSend",
+      "type": "(text: string, detail: PromptBarSendDetail) => void",
+      "required": false,
+      "description": "用户提交文本或消息时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 71
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((text: string, detail: PromptBarSendDetail) => void) | undefined"
+      },
+      "codeExample": "onSend={(text, detail) => { setBusy(true); setMessage(`已接收本地模拟请求：${text}；${detail.model?.name ?? '默认演示模型'}，附带 ${detail.attachments.length} 项。`); }}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onSend={(text, detail) => { setBusy(true); setMessage(`已接收本地模拟请求：${text}；${detail.model?.name ?? '默认演示模型'}，附带 ${detail.attachments.length} 项。`); }}"
+      ]
+    },
+    {
+      "name": "onStop",
+      "type": "() => void",
+      "required": false,
+      "description": "停止时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 72
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onStop={() => { setBusy(false); setMessage('本地模拟任务已停止。'); }}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onStop={() => { setBusy(false); setMessage('本地模拟任务已停止。'); }}"
+      ]
+    },
+    {
+      "name": "onAttach",
+      "type": "() => string | string[] | void | Promise<string | string[] | void>",
+      "required": false,
+      "description": "用户请求添加附件时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 73
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => string | string[] | void | Promise<string | string[] | void>) | undefined"
+      },
+      "codeExample": "onAttach={() => { setMessage('已添加模拟文件名，没有读取本机文件。'); return 'design-notes-demo.md'; }}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onAttach={() => { setMessage('已添加模拟文件名，没有读取本机文件。'); return 'design-notes-demo.md'; }}"
+      ]
+    },
+    {
+      "name": "onDictate",
+      "type": "() => string | void | Promise<string | void>",
+      "required": false,
+      "description": "用户激活听写入口时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 74
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => string | void | Promise<string | void>) | undefined"
+      },
+      "codeExample": "onDictate={() => { setMessage('已填入模拟语音文本，没有请求麦克风。'); return '根据霜玻璃规范创建一个技能管理页面'; }}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onDictate={() => { setMessage('已填入模拟语音文本，没有请求麦克风。'); return '根据霜玻璃规范创建一个技能管理页面'; }}"
+      ]
+    },
+    {
+      "name": "background",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#27272a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 228,
+        "kind": "parameter"
+      },
+      "defaultValue": "#27272a",
+      "description": "背景，控制 prompt bar 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 75
+      },
+      "codeExample": "background={palette.surface}",
+      "usageExamples": [
+        "background={palette.surface}"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 229,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 76
+      },
+      "codeExample": "color={palette.ink}",
+      "usageExamples": [
+        "color={palette.ink}"
+      ]
+    },
+    {
+      "name": "menuBackground",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#323236'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 230,
+        "kind": "parameter"
+      },
+      "defaultValue": "#323236",
+      "description": "菜单背景，控制 prompt bar 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 77
+      },
+      "codeExample": "menuBackground={palette.ivory}",
+      "usageExamples": [
+        "menuBackground={palette.ivory}"
+      ]
+    },
+    {
+      "name": "sparkColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#b39dff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 231,
+        "kind": "parameter"
+      },
+      "defaultValue": "#b39dff",
+      "description": "火花颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 78
+      },
+      "codeExample": "sparkColor={palette.sage}",
+      "usageExamples": [
+        "sparkColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "sparkBoost",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 232,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "火花加速，控制 prompt bar 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 79
+      },
+      "codeExample": "sparkBoost={1}"
+    },
+    {
+      "name": "width",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 233,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 80
+      },
+      "codeExample": "width={500}",
+      "usageExamples": [
+        "width={500}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 234,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 81
+      },
+      "codeExample": "radius={20}",
+      "usageExamples": [
+        "radius={20}"
+      ]
+    },
+    {
+      "name": "maxRows",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 235,
+        "kind": "parameter"
+      },
+      "defaultValue": 5,
+      "description": "最大行数，控制 prompt bar 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 82
+      },
+      "codeExample": "maxRows={5}"
+    },
+    {
+      "name": "morphDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "240",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 236,
+        "kind": "parameter"
+      },
+      "defaultValue": 240,
+      "description": "形态变换时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 83
+      },
+      "codeExample": "morphDuration={240}"
+    },
+    {
+      "name": "squash",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 237,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.12,
+      "description": "挤压，控制 prompt bar 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 84
+      },
+      "codeExample": "squash={0.12}"
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 238,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "倾斜，控制 prompt bar 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 85
+      },
+      "codeExample": "tilt={8}"
+    },
+    {
+      "name": "pressScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.96",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 239,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.96,
+      "description": "按压缩放，控制 prompt bar 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 86
+      },
+      "codeExample": "pressScale={0.96}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 240,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+        "line": 87
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport PromptBar from '../../../.upstream/src/ts-default/Micro/PromptBar/PromptBar';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\n\n\n\nexport default function PromptBarDemo() {\n  const [busy, setBusy] = useState(false);\n  const [message, setMessage] = useState('输入内容，使用 @ 或 / 选择上下文与命令。');\n  return <DemoPanel title=\"Prompt Bar · Agent 输入栏\"><div className={cn(\"aw-micro-stack\")}>\n    <div className={cn(\"aw-micro-wide\")}><PromptBar              busy={busy} onSend={(text, detail) => { setBusy(true); setMessage(`已接收本地模拟请求：${text}；${detail.model?.name ?? '默认演示模型'}，附带 ${detail.attachments.length} 项。`); }} onStop={() => { setBusy(false); setMessage('本地模拟任务已停止。'); }} onAttach={() => { setMessage('已添加模拟文件名，没有读取本机文件。'); return 'design-notes-demo.md'; }} onDictate={() => { setMessage('已填入模拟语音文本，没有请求麦克风。'); return '根据霜玻璃规范创建一个技能管理页面'; }} onEffortChange={effort => setMessage(`演示推理强度：${effort}`)} /*__AW_PROPS_t0__*/  /></div>\n    {busy ? <div className={cn(\"aw-micro-controls\")}><button className={styles['aw-micro-action']}  onClick={() => { setBusy(false); setMessage('本地模拟任务已完成。'); }} /*__AW_PROPS_t1__*/ >完成模拟任务</button></div> : null}\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">{message}</p>\n    <p className={cn(\"aw-micro-hint\")}>此示例展示输入、附件、命令、发送与停止状态，未连接模型或录音设备。</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "PromptBar",
+      "sourcePath": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+      "props": [
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Ask anything'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 215,
+            "kind": "parameter"
+          },
+          "defaultValue": "Ask anything",
+          "description": "尚未填写或选择时显示的提示文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 62
+          },
+          "codeExample": "placeholder=\"描述想要构建的页面…\"",
+          "usageExamples": [
+            "placeholder=\"描述想要构建的页面…\""
+          ]
+        },
+        {
+          "name": "sources",
+          "type": "PromptBarSource[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_SOURCES",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 216,
+            "kind": "parameter"
+          },
+          "defaultResolvedExpression": "[\n  {\n    key: 'files',\n    name: 'Photos & files',\n    description: 'Upload from this device',\n    icon: Attachment01Icon,\n    attach: true\n  },\n  { key: 'web', name: 'Web search', description: 'Live results', icon: Globe02Icon },\n  { key: 'sales', name: 'Sales data', description: 'Revenue and churn', icon: ChartLineData01Icon },\n  { key: 'docs', name: 'Documents', description: 'Specs, notes, briefs', icon: File02Icon },\n  { key: 'mail', name: 'Mail', description: 'Read and draft mail', icon: Mail01Icon },\n  { key: 'calendar', name: 'Calendar', description: 'Events and availability', icon: Calendar03Icon }\n]",
+          "description": "按顺序展示的媒体资源地址列表。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 63
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "PromptBarSource",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "key",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "icon",
+                    "type": "ReactNode | IconSvgElement",
+                    "required": false
+                  },
+                  {
+                    "name": "attach",
+                    "type": "boolean",
+                    "required": false,
+                    "kind": "enum",
+                    "options": [
+                      false,
+                      true
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "sources={sources}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "sources={sources}"
+          ]
+        },
+        {
+          "name": "commands",
+          "type": "PromptBarCommand[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_COMMANDS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 217,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            {
+              "key": "summarize",
+              "name": "/summarize",
+              "description": "Digest the thread so far"
+            },
+            {
+              "key": "compare",
+              "name": "/compare",
+              "description": "Two options side by side"
+            },
+            {
+              "key": "draft",
+              "name": "/draft",
+              "description": "Write a first version"
+            },
+            {
+              "key": "explain",
+              "name": "/explain",
+              "description": "A plain-language walkthrough"
+            },
+            {
+              "key": "tasks",
+              "name": "/tasks",
+              "description": "Turn this into a to-do list"
+            }
+          ],
+          "defaultResolvedExpression": "[\n  { key: 'summarize', name: '/summarize', description: 'Digest the thread so far' },\n  { key: 'compare', name: '/compare', description: 'Two options side by side' },\n  { key: 'draft', name: '/draft', description: 'Write a first version' },\n  { key: 'explain', name: '/explain', description: 'A plain-language walkthrough' },\n  { key: 'tasks', name: '/tasks', description: 'Turn this into a to-do list' }\n]",
+          "description": "命令列表的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 64
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "PromptBarCommand",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "key",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "commands={commands}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "commands={commands}"
+          ]
+        },
+        {
+          "name": "models",
+          "type": "PromptBarModel[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_MODELS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 218,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            {
+              "key": "nova-3",
+              "name": "Nova 3",
+              "tag": "Flagship"
+            },
+            {
+              "key": "nova-mini",
+              "name": "Nova Mini",
+              "tag": "Fast"
+            },
+            {
+              "key": "nova-2",
+              "name": "Nova 2",
+              "tag": "Legacy"
+            }
+          ],
+          "defaultResolvedExpression": "[\n  { key: 'nova-3', name: 'Nova 3', tag: 'Flagship' },\n  { key: 'nova-mini', name: 'Nova Mini', tag: 'Fast' },\n  { key: 'nova-2', name: 'Nova 2', tag: 'Legacy' }\n]",
+          "description": "模型的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 65
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "PromptBarModel",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "key",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "tag",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "models={models}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "models={models}"
+          ]
+        },
+        {
+          "name": "defaultModel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 219,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "非受控初始模型，控制 prompt bar 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 66
+          },
+          "codeExample": "defaultModel=\"quick\"",
+          "usageExamples": [
+            "defaultModel=\"quick\""
+          ]
+        },
+        {
+          "name": "efforts",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_EFFORTS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 220,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "Low",
+            "Medium",
+            "High",
+            "Extra",
+            "Max"
+          ],
+          "defaultResolvedExpression": "['Low', 'Medium', 'High', 'Extra', 'Max']",
+          "description": "思考力度候选的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 67
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "efforts={['低', '中', '高']}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "efforts={['低', '中', '高']}"
+          ]
+        },
+        {
+          "name": "defaultEffort",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 221,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "非受控初始思考力度，控制 prompt bar 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 68
+          },
+          "codeExample": "defaultEffort=\"中\"",
+          "usageExamples": [
+            "defaultEffort=\"中\""
+          ]
+        },
+        {
+          "name": "onEffortChange",
+          "type": "(effort: string) => void",
+          "required": false,
+          "description": "用户切换思考力度或工作模式时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 69
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((effort: string) => void) | undefined"
+          },
+          "codeExample": "onEffortChange={effort => setMessage(`演示推理强度：${effort}`)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onEffortChange={effort => setMessage(`演示推理强度：${effort}`)}"
+          ]
+        },
+        {
+          "name": "busy",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 223,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否忙碌，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 70
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "busy={busy}",
+          "usageExamples": [
+            "busy={busy}"
+          ]
+        },
+        {
+          "name": "onSend",
+          "type": "(text: string, detail: PromptBarSendDetail) => void",
+          "required": false,
+          "description": "用户提交文本或消息时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 71
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((text: string, detail: PromptBarSendDetail) => void) | undefined"
+          },
+          "codeExample": "onSend={(text, detail) => { setBusy(true); setMessage(`已接收本地模拟请求：${text}；${detail.model?.name ?? '默认演示模型'}，附带 ${detail.attachments.length} 项。`); }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onSend={(text, detail) => { setBusy(true); setMessage(`已接收本地模拟请求：${text}；${detail.model?.name ?? '默认演示模型'}，附带 ${detail.attachments.length} 项。`); }}"
+          ]
+        },
+        {
+          "name": "onStop",
+          "type": "() => void",
+          "required": false,
+          "description": "停止时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 72
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onStop={() => { setBusy(false); setMessage('本地模拟任务已停止。'); }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onStop={() => { setBusy(false); setMessage('本地模拟任务已停止。'); }}"
+          ]
+        },
+        {
+          "name": "onAttach",
+          "type": "() => string | string[] | void | Promise<string | string[] | void>",
+          "required": false,
+          "description": "用户请求添加附件时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 73
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => string | string[] | void | Promise<string | string[] | void>) | undefined"
+          },
+          "codeExample": "onAttach={() => { setMessage('已添加模拟文件名，没有读取本机文件。'); return 'design-notes-demo.md'; }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onAttach={() => { setMessage('已添加模拟文件名，没有读取本机文件。'); return 'design-notes-demo.md'; }}"
+          ]
+        },
+        {
+          "name": "onDictate",
+          "type": "() => string | void | Promise<string | void>",
+          "required": false,
+          "description": "用户激活听写入口时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 74
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => string | void | Promise<string | void>) | undefined"
+          },
+          "codeExample": "onDictate={() => { setMessage('已填入模拟语音文本，没有请求麦克风。'); return '根据霜玻璃规范创建一个技能管理页面'; }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onDictate={() => { setMessage('已填入模拟语音文本，没有请求麦克风。'); return '根据霜玻璃规范创建一个技能管理页面'; }}"
+          ]
+        },
+        {
+          "name": "background",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#27272a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 228,
+            "kind": "parameter"
+          },
+          "defaultValue": "#27272a",
+          "description": "背景，控制 prompt bar 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 75
+          },
+          "codeExample": "background={palette.surface}",
+          "usageExamples": [
+            "background={palette.surface}"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 229,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 76
+          },
+          "codeExample": "color={palette.ink}",
+          "usageExamples": [
+            "color={palette.ink}"
+          ]
+        },
+        {
+          "name": "menuBackground",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#323236'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 230,
+            "kind": "parameter"
+          },
+          "defaultValue": "#323236",
+          "description": "菜单背景，控制 prompt bar 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 77
+          },
+          "codeExample": "menuBackground={palette.ivory}",
+          "usageExamples": [
+            "menuBackground={palette.ivory}"
+          ]
+        },
+        {
+          "name": "sparkColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#b39dff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 231,
+            "kind": "parameter"
+          },
+          "defaultValue": "#b39dff",
+          "description": "火花颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 78
+          },
+          "codeExample": "sparkColor={palette.sage}",
+          "usageExamples": [
+            "sparkColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "sparkBoost",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 232,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "火花加速，控制 prompt bar 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 79
+          },
+          "codeExample": "sparkBoost={1}"
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 233,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 80
+          },
+          "codeExample": "width={500}",
+          "usageExamples": [
+            "width={500}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 234,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 81
+          },
+          "codeExample": "radius={20}",
+          "usageExamples": [
+            "radius={20}"
+          ]
+        },
+        {
+          "name": "maxRows",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 235,
+            "kind": "parameter"
+          },
+          "defaultValue": 5,
+          "description": "最大行数，控制 prompt bar 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 82
+          },
+          "codeExample": "maxRows={5}"
+        },
+        {
+          "name": "morphDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "240",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 236,
+            "kind": "parameter"
+          },
+          "defaultValue": 240,
+          "description": "形态变换时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 83
+          },
+          "codeExample": "morphDuration={240}"
+        },
+        {
+          "name": "squash",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 237,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.12,
+          "description": "挤压，控制 prompt bar 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 84
+          },
+          "codeExample": "squash={0.12}"
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 238,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "倾斜，控制 prompt bar 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 85
+          },
+          "codeExample": "tilt={8}"
+        },
+        {
+          "name": "pressScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.96",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 239,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.96,
+          "description": "按压缩放，控制 prompt bar 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 86
+          },
+          "codeExample": "pressScale={0.96}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 240,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PromptBar/PromptBar.tsx",
+            "line": 87
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles['aw-micro-action']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => { setBusy(false); setMessage('本地模拟任务已完成。'); }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>完成模拟任务</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

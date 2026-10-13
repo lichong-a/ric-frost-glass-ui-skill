@@ -1,0 +1,1611 @@
+{
+  "version": 1,
+  "id": "text-cursor",
+  "name": "Text Cursor",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+  "demoPath": "src/demos/pointer/text-cursor.tsx",
+  "fields": [
+    {
+      "key": "t0.text",
+      "name": "text",
+      "label": "文字内容 · t0",
+      "description": "显示或生成效果的文字内容。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "text"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "✦",
+      "upstreamDefault": "'Hello'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mode",
+      "name": "mode",
+      "label": "mode · t0",
+      "description": "选择组件的渲染或交互工作模式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mode"
+        }
+      ],
+      "type": "Mode",
+      "defaultValue": "stamp",
+      "upstreamDefault": "'stamp'",
+      "control": "select",
+      "options": [
+        {
+          "label": "stamp",
+          "value": "stamp"
+        },
+        {
+          "label": "chain",
+          "value": "chain"
+        },
+        {
+          "label": "ribbon",
+          "value": "ribbon"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 26,
+      "upstreamDefault": "28",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spacing",
+      "name": "spacing",
+      "label": "spacing · t0",
+      "description": "间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spacing"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 70,
+      "upstreamDefault": "88",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.maxPoints",
+      "name": "maxPoints",
+      "label": "maxPoints · t0",
+      "description": "最大点组，控制 text cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "maxPoints"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "7",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'currentColor'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shrink",
+      "name": "shrink",
+      "label": "shrink · t0",
+      "description": "收缩，控制 text cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shrink"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 text cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.smoothing",
+      "name": "smoothing",
+      "label": "smoothing · t0",
+      "description": "平滑，控制 text cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "smoothing"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.exitDuration",
+      "name": "exitDuration",
+      "label": "exitDuration · t0",
+      "description": "退出时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "exitDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.removalInterval",
+      "name": "removalInterval",
+      "label": "removalInterval · t0",
+      "description": "移除间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "removalInterval"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 40,
+      "upstreamDefault": "30",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.followMouseDirection",
+      "name": "followMouseDirection",
+      "label": "followMouseDirection · t0",
+      "description": "是否跟随鼠标方向，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "followMouseDirection"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.keepUpright",
+      "name": "keepUpright",
+      "label": "keepUpright · t0",
+      "description": "是否保持直立，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "keepUpright"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.randomFloat",
+      "name": "randomFloat",
+      "label": "randomFloat · t0",
+      "description": "是否随机浮动，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "randomFloat"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.popIn",
+      "name": "popIn",
+      "label": "popIn · t0",
+      "description": "是否弹出进入，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "popIn"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hideCursor",
+      "name": "hideCursor",
+      "label": "hideCursor · t0",
+      "description": "是否隐藏指针，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hideCursor"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontWeight",
+      "name": "fontWeight",
+      "label": "字重 · t0",
+      "description": "字体字重，控制 text cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontWeight"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 600,
+      "upstreamDefault": "600",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontFamily",
+      "name": "fontFamily",
+      "label": "字体 · t0",
+      "description": "字体字族，控制 text cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontFamily"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "inherit",
+      "upstreamDefault": "'inherit'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Hello'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": "Hello",
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 10
+      },
+      "codeExample": "text=\"✦\"",
+      "usageExamples": [
+        "text=\"✦\""
+      ]
+    },
+    {
+      "name": "mode",
+      "type": "Mode",
+      "required": false,
+      "defaultExpression": "'stamp'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": "stamp",
+      "description": "选择组件的渲染或交互工作模式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "stamp",
+        "chain",
+        "ribbon"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "stamp",
+          "chain",
+          "ribbon"
+        ]
+      },
+      "codeExample": "mode=\"stamp\"",
+      "usageExamples": [
+        "mode=\"stamp\""
+      ]
+    },
+    {
+      "name": "spacing",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "88",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": 88,
+      "description": "间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 12
+      },
+      "codeExample": "spacing={70}",
+      "usageExamples": [
+        "spacing={70}"
+      ]
+    },
+    {
+      "name": "maxPoints",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": 7,
+      "description": "最大点组，控制 text cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 13
+      },
+      "codeExample": "maxPoints={8}",
+      "usageExamples": [
+        "maxPoints={8}"
+      ]
+    },
+    {
+      "name": "followMouseDirection",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否跟随鼠标方向，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "followMouseDirection",
+      "usageExamples": [
+        "followMouseDirection"
+      ]
+    },
+    {
+      "name": "randomFloat",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否随机浮动，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "randomFloat={false}",
+      "usageExamples": [
+        "randomFloat={false}"
+      ]
+    },
+    {
+      "name": "exitDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "退出时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 16
+      },
+      "codeExample": "exitDuration={0.45}",
+      "usageExamples": [
+        "exitDuration={0.45}"
+      ]
+    },
+    {
+      "name": "removalInterval",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "30",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": 30,
+      "description": "移除间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 17
+      },
+      "codeExample": "removalInterval={40}",
+      "usageExamples": [
+        "removalInterval={40}"
+      ]
+    },
+    {
+      "name": "shrink",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "收缩，控制 text cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 18
+      },
+      "codeExample": "shrink={0.45}",
+      "usageExamples": [
+        "shrink={0.45}"
+      ]
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "淡出，控制 text cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 19
+      },
+      "codeExample": "fade={0.65}",
+      "usageExamples": [
+        "fade={0.65}"
+      ]
+    },
+    {
+      "name": "smoothing",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "平滑，控制 text cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 20
+      },
+      "codeExample": "smoothing={0.3}",
+      "usageExamples": [
+        "smoothing={0.3}"
+      ]
+    },
+    {
+      "name": "popIn",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否弹出进入，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "popIn",
+      "usageExamples": [
+        "popIn"
+      ]
+    },
+    {
+      "name": "keepUpright",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否保持直立，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 22
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "keepUpright",
+      "usageExamples": [
+        "keepUpright"
+      ]
+    },
+    {
+      "name": "hideCursor",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否隐藏指针，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "hideCursor={false}",
+      "usageExamples": [
+        "hideCursor={false}"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'currentColor'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 81,
+        "kind": "parameter"
+      },
+      "defaultValue": "currentColor",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 24
+      },
+      "codeExample": "color={palette.primary}",
+      "usageExamples": [
+        "color={palette.primary}"
+      ]
+    },
+    {
+      "name": "fontSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "28",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 82,
+        "kind": "parameter"
+      },
+      "defaultValue": 28,
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 25
+      },
+      "codeExample": "fontSize={26}",
+      "usageExamples": [
+        "fontSize={26}"
+      ]
+    },
+    {
+      "name": "fontWeight",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "600",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 83,
+        "kind": "parameter"
+      },
+      "defaultValue": 600,
+      "description": "字体字重，控制 text cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "fontWeight={600}"
+    },
+    {
+      "name": "fontFamily",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'inherit'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 84,
+        "kind": "parameter"
+      },
+      "defaultValue": "inherit",
+      "description": "字体字族，控制 text cursor 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 27
+      },
+      "codeExample": "fontFamily={\"inherit\"}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 85,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 28
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+        "line": 29
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/TextCursor/TextCursor';\nimport { palette } from '../../shared/demo-support';\n\n// 移动指针留下短暂字形路径，原生指针仍保留。\n\nexport default function TextCursorDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n\n    /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "TextCursor",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Hello'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": "Hello",
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 10
+          },
+          "codeExample": "text=\"✦\"",
+          "usageExamples": [
+            "text=\"✦\""
+          ]
+        },
+        {
+          "name": "mode",
+          "type": "Mode",
+          "required": false,
+          "defaultExpression": "'stamp'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": "stamp",
+          "description": "选择组件的渲染或交互工作模式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "stamp",
+            "chain",
+            "ribbon"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "stamp",
+              "chain",
+              "ribbon"
+            ]
+          },
+          "codeExample": "mode=\"stamp\"",
+          "usageExamples": [
+            "mode=\"stamp\""
+          ]
+        },
+        {
+          "name": "spacing",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "88",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": 88,
+          "description": "间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 12
+          },
+          "codeExample": "spacing={70}",
+          "usageExamples": [
+            "spacing={70}"
+          ]
+        },
+        {
+          "name": "maxPoints",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": 7,
+          "description": "最大点组，控制 text cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 13
+          },
+          "codeExample": "maxPoints={8}",
+          "usageExamples": [
+            "maxPoints={8}"
+          ]
+        },
+        {
+          "name": "followMouseDirection",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否跟随鼠标方向，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "followMouseDirection",
+          "usageExamples": [
+            "followMouseDirection"
+          ]
+        },
+        {
+          "name": "randomFloat",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否随机浮动，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "randomFloat={false}",
+          "usageExamples": [
+            "randomFloat={false}"
+          ]
+        },
+        {
+          "name": "exitDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "退出时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 16
+          },
+          "codeExample": "exitDuration={0.45}",
+          "usageExamples": [
+            "exitDuration={0.45}"
+          ]
+        },
+        {
+          "name": "removalInterval",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "30",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": 30,
+          "description": "移除间隔，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 17
+          },
+          "codeExample": "removalInterval={40}",
+          "usageExamples": [
+            "removalInterval={40}"
+          ]
+        },
+        {
+          "name": "shrink",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "收缩，控制 text cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 18
+          },
+          "codeExample": "shrink={0.45}",
+          "usageExamples": [
+            "shrink={0.45}"
+          ]
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "淡出，控制 text cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 19
+          },
+          "codeExample": "fade={0.65}",
+          "usageExamples": [
+            "fade={0.65}"
+          ]
+        },
+        {
+          "name": "smoothing",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "平滑，控制 text cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 20
+          },
+          "codeExample": "smoothing={0.3}",
+          "usageExamples": [
+            "smoothing={0.3}"
+          ]
+        },
+        {
+          "name": "popIn",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否弹出进入，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "popIn",
+          "usageExamples": [
+            "popIn"
+          ]
+        },
+        {
+          "name": "keepUpright",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否保持直立，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 22
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "keepUpright",
+          "usageExamples": [
+            "keepUpright"
+          ]
+        },
+        {
+          "name": "hideCursor",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否隐藏指针，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "hideCursor={false}",
+          "usageExamples": [
+            "hideCursor={false}"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'currentColor'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 81,
+            "kind": "parameter"
+          },
+          "defaultValue": "currentColor",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 24
+          },
+          "codeExample": "color={palette.primary}",
+          "usageExamples": [
+            "color={palette.primary}"
+          ]
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "28",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 82,
+            "kind": "parameter"
+          },
+          "defaultValue": 28,
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 25
+          },
+          "codeExample": "fontSize={26}",
+          "usageExamples": [
+            "fontSize={26}"
+          ]
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "600",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 83,
+            "kind": "parameter"
+          },
+          "defaultValue": 600,
+          "description": "字体字重，控制 text cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "fontWeight={600}"
+        },
+        {
+          "name": "fontFamily",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'inherit'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 84,
+            "kind": "parameter"
+          },
+          "defaultValue": "inherit",
+          "description": "字体字族，控制 text cursor 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 27
+          },
+          "codeExample": "fontFamily={\"inherit\"}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 85,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 28
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TextCursor/TextCursor.tsx",
+            "line": 29
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

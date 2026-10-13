@@ -1,0 +1,1854 @@
+{
+  "version": 1,
+  "id": "voice-pill",
+  "name": "Voice Pill",
+  "sourcePath": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+  "demoPath": "src/demos/actions/voice-pill.tsx",
+  "fields": [
+    {
+      "key": "t0.reactive",
+      "name": "reactive",
+      "label": "reactive · t0",
+      "description": "交互响应，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "reactive"
+        }
+      ],
+      "type": "VoicePillSource",
+      "defaultValue": "simulated",
+      "upstreamDefault": "'simulated'",
+      "control": "select",
+      "options": [
+        {
+          "label": "simulated",
+          "value": "simulated"
+        },
+        {
+          "label": "mic",
+          "value": "mic"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mode",
+      "name": "mode",
+      "label": "mode · t0",
+      "description": "选择组件的渲染或交互工作模式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mode"
+        }
+      ],
+      "type": "VoicePillMode",
+      "defaultValue": "toggle",
+      "upstreamDefault": "'auto'",
+      "control": "select",
+      "options": [
+        {
+          "label": "auto",
+          "value": "auto"
+        },
+        {
+          "label": "hold",
+          "value": "hold"
+        },
+        {
+          "label": "toggle",
+          "value": "toggle"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.waveform",
+      "name": "waveform",
+      "label": "waveform · t0",
+      "description": "是否波形信号，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "waveform"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showTime",
+      "name": "showTime",
+      "label": "showTime · t0",
+      "description": "是否显示时间，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showTime"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 40,
+      "upstreamDefault": "28",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.background",
+      "name": "background",
+      "label": "background · t0",
+      "description": "背景，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "background"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "rgb(250 247 240 / 0.82)",
+      "upstreamDefault": "'#27272a'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.iconColor",
+      "name": "iconColor",
+      "label": "iconColor · t0",
+      "description": "图标颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "iconColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#a1a1aa'",
+      "control": "color",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ariaLabel",
+      "name": "ariaLabel",
+      "label": "ariaLabel · t0",
+      "description": "无障碍标签，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ariaLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "开始或停止模拟语音波形",
+      "upstreamDefault": "'Dictate'",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shape",
+      "name": "shape",
+      "label": "shape · t0",
+      "description": "形状，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shape"
+        }
+      ],
+      "type": "VoicePillShape",
+      "defaultValue": "pill",
+      "upstreamDefault": "'pill'",
+      "control": "select",
+      "options": [
+        {
+          "label": "pill",
+          "value": "pill"
+        },
+        {
+          "label": "rounded",
+          "value": "rounded"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.reach",
+      "name": "reach",
+      "label": "reach · t0",
+      "description": "作用距离，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "reach"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "8",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.slideToCancel",
+      "name": "slideToCancel",
+      "label": "slideToCancel · t0",
+      "description": "是否滑动目标取消，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "slideToCancel"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cancelDistance",
+      "name": "cancelDistance",
+      "label": "cancelDistance · t0",
+      "description": "取消距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cancelDistance"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 64,
+      "upstreamDefault": "64",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.attack",
+      "name": "attack",
+      "label": "attack · t0",
+      "description": "起始响应，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "attack"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 40,
+      "upstreamDefault": "40",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.release",
+      "name": "release",
+      "label": "release · t0",
+      "description": "释放，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "release"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 240,
+      "upstreamDefault": "240",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sensitivity",
+      "name": "sensitivity",
+      "label": "sensitivity · t0",
+      "description": "灵敏度，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sensitivity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.floor",
+      "name": "floor",
+      "label": "floor · t0",
+      "description": "底部，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "floor"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.openDuration",
+      "name": "openDuration",
+      "label": "openDuration · t0",
+      "description": "打开时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "openDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 200,
+      "upstreamDefault": "200",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pressScale",
+      "name": "pressScale",
+      "label": "pressScale · t0",
+      "description": "按压缩放，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pressScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.95,
+      "upstreamDefault": "0.95",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.holdAfter",
+      "name": "holdAfter",
+      "label": "holdAfter · t0",
+      "description": "按住之后，控制 voice pill 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "holdAfter"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 300,
+      "upstreamDefault": "300",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 225,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 31
+      },
+      "codeExample": "accentColor={palette.primary}",
+      "usageExamples": [
+        "accentColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "iconColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#a1a1aa'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 226,
+        "kind": "parameter"
+      },
+      "defaultValue": "#a1a1aa",
+      "description": "图标颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 32
+      },
+      "codeExample": "iconColor={palette.ink}",
+      "usageExamples": [
+        "iconColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "background",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#27272a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 227,
+        "kind": "parameter"
+      },
+      "defaultValue": "#27272a",
+      "description": "背景，控制 voice pill 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 33
+      },
+      "codeExample": "background={palette.surface}",
+      "usageExamples": [
+        "background={palette.surface}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "28",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 228,
+        "kind": "parameter"
+      },
+      "defaultValue": 28,
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 34
+      },
+      "codeExample": "size={40}",
+      "usageExamples": [
+        "size={40}"
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "VoicePillShape",
+      "required": false,
+      "defaultExpression": "'pill'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 229,
+        "kind": "parameter"
+      },
+      "defaultValue": "pill",
+      "description": "形状，控制 voice pill 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "pill",
+        "rounded"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "pill",
+          "rounded"
+        ]
+      },
+      "codeExample": "shape={\"pill\"}"
+    },
+    {
+      "name": "reach",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 230,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "作用距离，控制 voice pill 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 36
+      },
+      "codeExample": "reach={8}"
+    },
+    {
+      "name": "showTime",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 231,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示时间，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 37
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showTime",
+      "usageExamples": [
+        "showTime"
+      ]
+    },
+    {
+      "name": "waveform",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 232,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否波形信号，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 38
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "waveform",
+      "usageExamples": [
+        "waveform"
+      ]
+    },
+    {
+      "name": "slideToCancel",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 233,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否滑动目标取消，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 39
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "slideToCancel={true}"
+    },
+    {
+      "name": "cancelDistance",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "64",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 234,
+        "kind": "parameter"
+      },
+      "defaultValue": 64,
+      "description": "取消距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 40
+      },
+      "codeExample": "cancelDistance={64}"
+    },
+    {
+      "name": "attack",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "40",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 235,
+        "kind": "parameter"
+      },
+      "defaultValue": 40,
+      "description": "起始响应，控制 voice pill 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 41
+      },
+      "codeExample": "attack={40}"
+    },
+    {
+      "name": "release",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "240",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 236,
+        "kind": "parameter"
+      },
+      "defaultValue": 240,
+      "description": "释放，控制 voice pill 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 42
+      },
+      "codeExample": "release={240}"
+    },
+    {
+      "name": "sensitivity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 237,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "灵敏度，控制 voice pill 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 43
+      },
+      "codeExample": "sensitivity={1}"
+    },
+    {
+      "name": "floor",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 238,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "底部，控制 voice pill 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 44
+      },
+      "codeExample": "floor={0.1}"
+    },
+    {
+      "name": "openDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 239,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "打开时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 45
+      },
+      "codeExample": "openDuration={200}"
+    },
+    {
+      "name": "pressScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.95",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 240,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.95,
+      "description": "按压缩放，控制 voice pill 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 46
+      },
+      "codeExample": "pressScale={0.95}"
+    },
+    {
+      "name": "mode",
+      "type": "VoicePillMode",
+      "required": false,
+      "defaultExpression": "'auto'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 241,
+        "kind": "parameter"
+      },
+      "defaultValue": "auto",
+      "description": "选择组件的渲染或交互工作模式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "auto",
+        "hold",
+        "toggle"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 47
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "auto",
+          "hold",
+          "toggle"
+        ]
+      },
+      "codeExample": "mode=\"toggle\"",
+      "usageExamples": [
+        "mode=\"toggle\""
+      ]
+    },
+    {
+      "name": "holdAfter",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "300",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 242,
+        "kind": "parameter"
+      },
+      "defaultValue": 300,
+      "description": "按住之后，控制 voice pill 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 48
+      },
+      "codeExample": "holdAfter={300}"
+    },
+    {
+      "name": "reactive",
+      "type": "VoicePillSource",
+      "required": false,
+      "defaultExpression": "'simulated'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 243,
+        "kind": "parameter"
+      },
+      "defaultValue": "simulated",
+      "description": "交互响应，控制 voice pill 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "simulated",
+        "mic"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 49
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "simulated",
+          "mic"
+        ]
+      },
+      "codeExample": "reactive=\"simulated\"",
+      "usageExamples": [
+        "reactive=\"simulated\""
+      ]
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 244,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 50
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Dictate'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 245,
+        "kind": "parameter"
+      },
+      "defaultValue": "Dictate",
+      "description": "无障碍标签，控制 voice pill 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 51
+      },
+      "codeExample": "ariaLabel=\"开始或停止模拟语音波形\"",
+      "usageExamples": [
+        "ariaLabel=\"开始或停止模拟语音波形\""
+      ]
+    },
+    {
+      "name": "onStart",
+      "type": "(info: { source: VoicePillSource }) => void",
+      "required": false,
+      "description": "动作或动画开始时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 52
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((info: { source: VoicePillSource; }) => void) | undefined"
+      },
+      "codeExample": "onStart={() => setMessage('正在播放模拟语音波形。')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onStart={() => setMessage('正在播放模拟语音波形。')}"
+      ]
+    },
+    {
+      "name": "onStop",
+      "type": "(info: { reason: VoicePillStopReason; duration: number }) => void",
+      "required": false,
+      "description": "停止时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 53
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((info: { reason: VoicePillStopReason; duration: number; }) => void) | undefined"
+      },
+      "codeExample": "onStop={detail => setMessage(`模拟结束，用时 ${(detail.duration / 1000).toFixed(1)} 秒；原因：${detail.reason}。`)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onStop={detail => setMessage(`模拟结束，用时 ${(detail.duration / 1000).toFixed(1)} 秒；原因：${detail.reason}。`)}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 248,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+        "line": 54
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport VoicePill from '../../../.upstream/src/ts-default/Micro/VoicePill/VoicePill';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nexport default function VoicePillDemo() {\n  const [message, setMessage] = useState('点击开始模拟，再次点击结束。');\n  return <DemoPanel title=\"Voice Pill · 语音胶囊\"><div className={cn(\"aw-micro-stack\")}>\n    <VoicePill          onStart={() => setMessage('正在播放模拟语音波形。')} onStop={detail => setMessage(`模拟结束，用时 ${(detail.duration / 1000).toFixed(1)} 秒；原因：${detail.reason}。`)} /*__AW_PROPS_t0__*/  />\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">{message}</p>\n    <p className={cn(\"aw-micro-hint\")}>仅模拟波形与计时，不请求麦克风，不录音。</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "VoicePill",
+      "sourcePath": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+      "props": [
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 225,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 31
+          },
+          "codeExample": "accentColor={palette.primary}",
+          "usageExamples": [
+            "accentColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "iconColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#a1a1aa'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 226,
+            "kind": "parameter"
+          },
+          "defaultValue": "#a1a1aa",
+          "description": "图标颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 32
+          },
+          "codeExample": "iconColor={palette.ink}",
+          "usageExamples": [
+            "iconColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "background",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#27272a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 227,
+            "kind": "parameter"
+          },
+          "defaultValue": "#27272a",
+          "description": "背景，控制 voice pill 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 33
+          },
+          "codeExample": "background={palette.surface}",
+          "usageExamples": [
+            "background={palette.surface}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "28",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 228,
+            "kind": "parameter"
+          },
+          "defaultValue": 28,
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 34
+          },
+          "codeExample": "size={40}",
+          "usageExamples": [
+            "size={40}"
+          ]
+        },
+        {
+          "name": "shape",
+          "type": "VoicePillShape",
+          "required": false,
+          "defaultExpression": "'pill'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 229,
+            "kind": "parameter"
+          },
+          "defaultValue": "pill",
+          "description": "形状，控制 voice pill 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "pill",
+            "rounded"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "pill",
+              "rounded"
+            ]
+          },
+          "codeExample": "shape={\"pill\"}"
+        },
+        {
+          "name": "reach",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 230,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "作用距离，控制 voice pill 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 36
+          },
+          "codeExample": "reach={8}"
+        },
+        {
+          "name": "showTime",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 231,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示时间，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 37
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showTime",
+          "usageExamples": [
+            "showTime"
+          ]
+        },
+        {
+          "name": "waveform",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 232,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否波形信号，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 38
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "waveform",
+          "usageExamples": [
+            "waveform"
+          ]
+        },
+        {
+          "name": "slideToCancel",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 233,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否滑动目标取消，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 39
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "slideToCancel={true}"
+        },
+        {
+          "name": "cancelDistance",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "64",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 234,
+            "kind": "parameter"
+          },
+          "defaultValue": 64,
+          "description": "取消距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 40
+          },
+          "codeExample": "cancelDistance={64}"
+        },
+        {
+          "name": "attack",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "40",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 235,
+            "kind": "parameter"
+          },
+          "defaultValue": 40,
+          "description": "起始响应，控制 voice pill 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 41
+          },
+          "codeExample": "attack={40}"
+        },
+        {
+          "name": "release",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "240",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 236,
+            "kind": "parameter"
+          },
+          "defaultValue": 240,
+          "description": "释放，控制 voice pill 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 42
+          },
+          "codeExample": "release={240}"
+        },
+        {
+          "name": "sensitivity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 237,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "灵敏度，控制 voice pill 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 43
+          },
+          "codeExample": "sensitivity={1}"
+        },
+        {
+          "name": "floor",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 238,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "底部，控制 voice pill 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 44
+          },
+          "codeExample": "floor={0.1}"
+        },
+        {
+          "name": "openDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 239,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "打开时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 45
+          },
+          "codeExample": "openDuration={200}"
+        },
+        {
+          "name": "pressScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.95",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 240,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.95,
+          "description": "按压缩放，控制 voice pill 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 46
+          },
+          "codeExample": "pressScale={0.95}"
+        },
+        {
+          "name": "mode",
+          "type": "VoicePillMode",
+          "required": false,
+          "defaultExpression": "'auto'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 241,
+            "kind": "parameter"
+          },
+          "defaultValue": "auto",
+          "description": "选择组件的渲染或交互工作模式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "auto",
+            "hold",
+            "toggle"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 47
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "auto",
+              "hold",
+              "toggle"
+            ]
+          },
+          "codeExample": "mode=\"toggle\"",
+          "usageExamples": [
+            "mode=\"toggle\""
+          ]
+        },
+        {
+          "name": "holdAfter",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "300",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 242,
+            "kind": "parameter"
+          },
+          "defaultValue": 300,
+          "description": "按住之后，控制 voice pill 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 48
+          },
+          "codeExample": "holdAfter={300}"
+        },
+        {
+          "name": "reactive",
+          "type": "VoicePillSource",
+          "required": false,
+          "defaultExpression": "'simulated'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 243,
+            "kind": "parameter"
+          },
+          "defaultValue": "simulated",
+          "description": "交互响应，控制 voice pill 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "simulated",
+            "mic"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 49
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "simulated",
+              "mic"
+            ]
+          },
+          "codeExample": "reactive=\"simulated\"",
+          "usageExamples": [
+            "reactive=\"simulated\""
+          ]
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 244,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 50
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Dictate'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 245,
+            "kind": "parameter"
+          },
+          "defaultValue": "Dictate",
+          "description": "无障碍标签，控制 voice pill 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 51
+          },
+          "codeExample": "ariaLabel=\"开始或停止模拟语音波形\"",
+          "usageExamples": [
+            "ariaLabel=\"开始或停止模拟语音波形\""
+          ]
+        },
+        {
+          "name": "onStart",
+          "type": "(info: { source: VoicePillSource }) => void",
+          "required": false,
+          "description": "动作或动画开始时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 52
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((info: { source: VoicePillSource; }) => void) | undefined"
+          },
+          "codeExample": "onStart={() => setMessage('正在播放模拟语音波形。')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onStart={() => setMessage('正在播放模拟语音波形。')}"
+          ]
+        },
+        {
+          "name": "onStop",
+          "type": "(info: { reason: VoicePillStopReason; duration: number }) => void",
+          "required": false,
+          "description": "停止时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 53
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((info: { reason: VoicePillStopReason; duration: number; }) => void) | undefined"
+          },
+          "codeExample": "onStop={detail => setMessage(`模拟结束，用时 ${(detail.duration / 1000).toFixed(1)} 秒；原因：${detail.reason}。`)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onStop={detail => setMessage(`模拟结束，用时 ${(detail.duration / 1000).toFixed(1)} 秒；原因：${detail.reason}。`)}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 248,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/VoicePill/VoicePill.tsx",
+            "line": 54
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,1902 @@
+{
+  "version": 1,
+  "id": "blob-cursor",
+  "name": "Blob Cursor",
+  "sourcePath": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+  "demoPath": "src/demos/pointer/blob-cursor.tsx",
+  "fields": [
+    {
+      "key": "t0.material",
+      "name": "material",
+      "label": "material · t0",
+      "description": "材质，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "material"
+        }
+      ],
+      "type": "Material",
+      "defaultValue": "jelly",
+      "upstreamDefault": "'chrome'",
+      "control": "select",
+      "options": [
+        {
+          "label": "chrome",
+          "value": "chrome"
+        },
+        {
+          "label": "jelly",
+          "value": "jelly"
+        },
+        {
+          "label": "pearl",
+          "value": "pearl"
+        },
+        {
+          "label": "ink",
+          "value": "ink"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#3B82F6'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 95,
+      "upstreamDefault": "140",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.morph",
+      "name": "morph",
+      "label": "morph · t0",
+      "description": "形态变换，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "morph"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.morphSpeed",
+      "name": "morphSpeed",
+      "label": "morphSpeed · t0",
+      "description": "形态变换速度，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "morphSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.4",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trail",
+      "name": "trail",
+      "label": "trail · t0",
+      "description": "轨迹，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trail"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lag",
+      "name": "lag",
+      "label": "lag · t0",
+      "description": "滞后，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lag"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.35,
+      "upstreamDefault": "0.55",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.goo",
+      "name": "goo",
+      "label": "goo · t0",
+      "description": "粘液，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "goo"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stretch",
+      "name": "stretch",
+      "label": "stretch · t0",
+      "description": "拉伸，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stretch"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.wobble",
+      "name": "wobble",
+      "label": "wobble · t0",
+      "description": "摇晃，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "wobble"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.drip",
+      "name": "drip",
+      "label": "drip · t0",
+      "description": "滴落，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "drip"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.splash",
+      "name": "splash",
+      "label": "splash · t0",
+      "description": "是否飞溅，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "splash"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.splashCount",
+      "name": "splashCount",
+      "label": "splashCount · t0",
+      "description": "飞溅数量，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "splashCount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "upstreamDefault": "6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shine",
+      "name": "shine",
+      "label": "shine · t0",
+      "description": "扫光，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shine"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shadow",
+      "name": "shadow",
+      "label": "shadow · t0",
+      "description": "是否阴影，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shadow"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hideCursor",
+      "name": "hideCursor",
+      "label": "hideCursor · t0",
+      "description": "是否隐藏指针，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hideCursor"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.depth",
+      "name": "depth",
+      "label": "depth · t0",
+      "description": "深度，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "depth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.splashSpeed",
+      "name": "splashSpeed",
+      "label": "splashSpeed · t0",
+      "description": "飞溅速度，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "splashSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.splashSize",
+      "name": "splashSize",
+      "label": "splashSize · t0",
+      "description": "飞溅尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "splashSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.splashGravity",
+      "name": "splashGravity",
+      "label": "splashGravity · t0",
+      "description": "飞溅重力，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "splashGravity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.regrow",
+      "name": "regrow",
+      "label": "regrow · t0",
+      "description": "重新生长，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "regrow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.blend",
+      "name": "blend",
+      "label": "混合程度 · t0",
+      "description": "混合，控制 blob cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "blend"
+        }
+      ],
+      "type": "Blend",
+      "defaultValue": "normal",
+      "upstreamDefault": "'normal'",
+      "control": "select",
+      "options": [
+        {
+          "label": "normal",
+          "value": "normal"
+        },
+        {
+          "label": "difference",
+          "value": "difference"
+        },
+        {
+          "label": "exclusion",
+          "value": "exclusion"
+        },
+        {
+          "label": "multiply",
+          "value": "multiply"
+        },
+        {
+          "label": "screen",
+          "value": "screen"
+        },
+        {
+          "label": "overlay",
+          "value": "overlay"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "material",
+      "type": "Material",
+      "required": false,
+      "defaultExpression": "'chrome'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 224,
+        "kind": "parameter"
+      },
+      "defaultValue": "chrome",
+      "description": "材质，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "chrome",
+        "jelly",
+        "pearl",
+        "ink"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "chrome",
+          "jelly",
+          "pearl",
+          "ink"
+        ]
+      },
+      "codeExample": "material=\"jelly\"",
+      "usageExamples": [
+        "material=\"jelly\""
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#3B82F6'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 225,
+        "kind": "parameter"
+      },
+      "defaultValue": "#3B82F6",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 16
+      },
+      "codeExample": "color={palette.primary}",
+      "usageExamples": [
+        "color={palette.primary}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "140",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 226,
+        "kind": "parameter"
+      },
+      "defaultValue": 140,
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 17
+      },
+      "codeExample": "size={95}",
+      "usageExamples": [
+        "size={95}"
+      ]
+    },
+    {
+      "name": "morph",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 227,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "形态变换，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 18
+      },
+      "codeExample": "morph={0.45}",
+      "usageExamples": [
+        "morph={0.45}"
+      ]
+    },
+    {
+      "name": "morphSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 228,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.4,
+      "description": "形态变换速度，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 19
+      },
+      "codeExample": "morphSpeed={0.4}",
+      "usageExamples": [
+        "morphSpeed={0.4}"
+      ]
+    },
+    {
+      "name": "depth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 229,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "深度，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 20
+      },
+      "codeExample": "depth={1}"
+    },
+    {
+      "name": "trail",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 230,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "轨迹，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 21
+      },
+      "codeExample": "trail={0.4}",
+      "usageExamples": [
+        "trail={0.4}"
+      ]
+    },
+    {
+      "name": "lag",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.55",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 231,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.55,
+      "description": "滞后，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 22
+      },
+      "codeExample": "lag={0.35}",
+      "usageExamples": [
+        "lag={0.35}"
+      ]
+    },
+    {
+      "name": "goo",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 232,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "粘液，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 23
+      },
+      "codeExample": "goo={0.6}",
+      "usageExamples": [
+        "goo={0.6}"
+      ]
+    },
+    {
+      "name": "stretch",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 233,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "拉伸，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 24
+      },
+      "codeExample": "stretch={0.6}",
+      "usageExamples": [
+        "stretch={0.6}"
+      ]
+    },
+    {
+      "name": "wobble",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 234,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "摇晃，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 25
+      },
+      "codeExample": "wobble={0.3}",
+      "usageExamples": [
+        "wobble={0.3}"
+      ]
+    },
+    {
+      "name": "drip",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 235,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "滴落，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 26
+      },
+      "codeExample": "drip={0.25}",
+      "usageExamples": [
+        "drip={0.25}"
+      ]
+    },
+    {
+      "name": "splash",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 236,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否飞溅，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 27
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "splash",
+      "usageExamples": [
+        "splash"
+      ]
+    },
+    {
+      "name": "splashCount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 237,
+        "kind": "parameter"
+      },
+      "defaultValue": 6,
+      "description": "飞溅数量，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 28
+      },
+      "codeExample": "splashCount={6}",
+      "usageExamples": [
+        "splashCount={6}"
+      ]
+    },
+    {
+      "name": "splashSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 238,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "飞溅速度，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 29
+      },
+      "codeExample": "splashSpeed={0.5}"
+    },
+    {
+      "name": "splashSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 239,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "飞溅尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 30
+      },
+      "codeExample": "splashSize={0.5}"
+    },
+    {
+      "name": "splashGravity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 240,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "飞溅重力，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 31
+      },
+      "codeExample": "splashGravity={0}"
+    },
+    {
+      "name": "regrow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 241,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "重新生长，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 32
+      },
+      "codeExample": "regrow={0.5}"
+    },
+    {
+      "name": "shine",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 242,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "扫光，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 33
+      },
+      "codeExample": "shine={0.4}",
+      "usageExamples": [
+        "shine={0.4}"
+      ]
+    },
+    {
+      "name": "shadow",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 243,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否阴影，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "shadow",
+      "usageExamples": [
+        "shadow"
+      ]
+    },
+    {
+      "name": "blend",
+      "type": "Blend",
+      "required": false,
+      "defaultExpression": "'normal'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 244,
+        "kind": "parameter"
+      },
+      "defaultValue": "normal",
+      "description": "混合，控制 blob cursor 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "normal",
+        "difference",
+        "exclusion",
+        "multiply",
+        "screen",
+        "overlay"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "normal",
+          "difference",
+          "exclusion",
+          "multiply",
+          "screen",
+          "overlay"
+        ]
+      },
+      "codeExample": "blend={\"normal\"}"
+    },
+    {
+      "name": "hideCursor",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 245,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否隐藏指针，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "hideCursor={false}",
+      "usageExamples": [
+        "hideCursor={false}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 246,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 37
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+        "line": 38
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/BlobCursor/BlobCursor';\nimport { palette } from '../../shared/demo-support';\n\n// 真实胶状体跟随指针并在点击时分裂；原生指针保持可见。\n// 此演示需要可用的WebGL上下文；上下文创建失败时应显示能力提示，不能声称效果已经运行。\n\nexport default function BlobCursorDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n\n  /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "BlobCursor",
+      "sourcePath": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+      "props": [
+        {
+          "name": "material",
+          "type": "Material",
+          "required": false,
+          "defaultExpression": "'chrome'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 224,
+            "kind": "parameter"
+          },
+          "defaultValue": "chrome",
+          "description": "材质，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "chrome",
+            "jelly",
+            "pearl",
+            "ink"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "chrome",
+              "jelly",
+              "pearl",
+              "ink"
+            ]
+          },
+          "codeExample": "material=\"jelly\"",
+          "usageExamples": [
+            "material=\"jelly\""
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#3B82F6'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 225,
+            "kind": "parameter"
+          },
+          "defaultValue": "#3B82F6",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 16
+          },
+          "codeExample": "color={palette.primary}",
+          "usageExamples": [
+            "color={palette.primary}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "140",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 226,
+            "kind": "parameter"
+          },
+          "defaultValue": 140,
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 17
+          },
+          "codeExample": "size={95}",
+          "usageExamples": [
+            "size={95}"
+          ]
+        },
+        {
+          "name": "morph",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 227,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "形态变换，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 18
+          },
+          "codeExample": "morph={0.45}",
+          "usageExamples": [
+            "morph={0.45}"
+          ]
+        },
+        {
+          "name": "morphSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 228,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.4,
+          "description": "形态变换速度，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 19
+          },
+          "codeExample": "morphSpeed={0.4}",
+          "usageExamples": [
+            "morphSpeed={0.4}"
+          ]
+        },
+        {
+          "name": "depth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 229,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "深度，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 20
+          },
+          "codeExample": "depth={1}"
+        },
+        {
+          "name": "trail",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 230,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "轨迹，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 21
+          },
+          "codeExample": "trail={0.4}",
+          "usageExamples": [
+            "trail={0.4}"
+          ]
+        },
+        {
+          "name": "lag",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.55",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 231,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.55,
+          "description": "滞后，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 22
+          },
+          "codeExample": "lag={0.35}",
+          "usageExamples": [
+            "lag={0.35}"
+          ]
+        },
+        {
+          "name": "goo",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 232,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "粘液，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 23
+          },
+          "codeExample": "goo={0.6}",
+          "usageExamples": [
+            "goo={0.6}"
+          ]
+        },
+        {
+          "name": "stretch",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 233,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "拉伸，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 24
+          },
+          "codeExample": "stretch={0.6}",
+          "usageExamples": [
+            "stretch={0.6}"
+          ]
+        },
+        {
+          "name": "wobble",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 234,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "摇晃，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 25
+          },
+          "codeExample": "wobble={0.3}",
+          "usageExamples": [
+            "wobble={0.3}"
+          ]
+        },
+        {
+          "name": "drip",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 235,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "滴落，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 26
+          },
+          "codeExample": "drip={0.25}",
+          "usageExamples": [
+            "drip={0.25}"
+          ]
+        },
+        {
+          "name": "splash",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 236,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否飞溅，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 27
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "splash",
+          "usageExamples": [
+            "splash"
+          ]
+        },
+        {
+          "name": "splashCount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 237,
+            "kind": "parameter"
+          },
+          "defaultValue": 6,
+          "description": "飞溅数量，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 28
+          },
+          "codeExample": "splashCount={6}",
+          "usageExamples": [
+            "splashCount={6}"
+          ]
+        },
+        {
+          "name": "splashSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 238,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "飞溅速度，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 29
+          },
+          "codeExample": "splashSpeed={0.5}"
+        },
+        {
+          "name": "splashSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 239,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "飞溅尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 30
+          },
+          "codeExample": "splashSize={0.5}"
+        },
+        {
+          "name": "splashGravity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 240,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "飞溅重力，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 31
+          },
+          "codeExample": "splashGravity={0}"
+        },
+        {
+          "name": "regrow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 241,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "重新生长，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 32
+          },
+          "codeExample": "regrow={0.5}"
+        },
+        {
+          "name": "shine",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 242,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "扫光，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 33
+          },
+          "codeExample": "shine={0.4}",
+          "usageExamples": [
+            "shine={0.4}"
+          ]
+        },
+        {
+          "name": "shadow",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 243,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否阴影，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "shadow",
+          "usageExamples": [
+            "shadow"
+          ]
+        },
+        {
+          "name": "blend",
+          "type": "Blend",
+          "required": false,
+          "defaultExpression": "'normal'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 244,
+            "kind": "parameter"
+          },
+          "defaultValue": "normal",
+          "description": "混合，控制 blob cursor 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "normal",
+            "difference",
+            "exclusion",
+            "multiply",
+            "screen",
+            "overlay"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "normal",
+              "difference",
+              "exclusion",
+              "multiply",
+              "screen",
+              "overlay"
+            ]
+          },
+          "codeExample": "blend={\"normal\"}"
+        },
+        {
+          "name": "hideCursor",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 245,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否隐藏指针，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "hideCursor={false}",
+          "usageExamples": [
+            "hideCursor={false}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 246,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 37
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/BlobCursor/BlobCursor.tsx",
+            "line": 38
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

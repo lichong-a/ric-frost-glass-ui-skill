@@ -1,0 +1,707 @@
+{
+  "version": 1,
+  "id": "scroll-float",
+  "name": "Scroll Float",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+  "demoPath": "src/demos/scroll/scroll-float.tsx",
+  "fields": [
+    {
+      "key": "t0.type",
+      "name": "type",
+      "label": "类型 · t0",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.animationDuration",
+      "name": "animationDuration",
+      "label": "动画时长 · t1",
+      "description": "动画时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。 以下范围仅限制此演示面板，不改变上游 API。GSAP 的动画时长；更改会重建示例，释放滚动触发器。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "animationDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.1,
+      "max": 3,
+      "step": 0.1,
+      "unit": "s"
+    },
+    {
+      "key": "t1.ease",
+      "name": "ease",
+      "label": "ease · t1",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "ease"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "back.inOut(2)",
+      "upstreamDefault": "'back.inOut(2)'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.scrollStart",
+      "name": "scrollStart",
+      "label": "scrollStart · t1",
+      "description": "滚动开始，控制 scroll float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "scrollStart"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "top bottom",
+      "upstreamDefault": "'center bottom+=50%'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.scrollEnd",
+      "name": "scrollEnd",
+      "label": "scrollEnd · t1",
+      "description": "滚动结束，控制 scroll float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "scrollEnd"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "center center",
+      "upstreamDefault": "'bottom bottom-=40%'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.stagger",
+      "name": "stagger",
+      "label": "错峰间隔 · t1",
+      "description": "错开，控制 scroll float 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。每个字符的错峰间隔。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "stagger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.03,
+      "upstreamDefault": "0.03",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 0.2,
+      "step": 0.01,
+      "unit": "s"
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": true,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 12
+      },
+      "codeExample": "children={<>QUIET FLOW</>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<>QUIET FLOW</>}"
+      ]
+    },
+    {
+      "name": "scrollContainerRef",
+      "type": "RefObject<HTMLElement>",
+      "required": false,
+      "description": "滚动容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 13
+      },
+      "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: scrollContainerRef={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+      "usageExamples": [
+        "scrollContainerRef={scrollRef}"
+      ]
+    },
+    {
+      "name": "containerClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 26,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "容器类名名称，控制 scroll float 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 14
+      },
+      "codeExample": "containerClassName={styles.floatContainer}",
+      "usageExamples": [
+        "containerClassName={styles.floatContainer}"
+      ]
+    },
+    {
+      "name": "textClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 27,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "文字类名名称，控制 scroll float 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 15
+      },
+      "codeExample": "textClassName={styles.floatText}",
+      "usageExamples": [
+        "textClassName={styles.floatText}"
+      ]
+    },
+    {
+      "name": "animationDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 28,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "动画时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 16
+      },
+      "codeExample": "animationDuration={1}",
+      "usageExamples": [
+        "animationDuration={1}"
+      ]
+    },
+    {
+      "name": "ease",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'back.inOut(2)'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 29,
+        "kind": "parameter"
+      },
+      "defaultValue": "back.inOut(2)",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 17
+      },
+      "codeExample": "ease=\"back.inOut(2)\"",
+      "usageExamples": [
+        "ease=\"back.inOut(2)\""
+      ]
+    },
+    {
+      "name": "scrollStart",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'center bottom+=50%'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 30,
+        "kind": "parameter"
+      },
+      "defaultValue": "center bottom+=50%",
+      "description": "滚动开始，控制 scroll float 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 18
+      },
+      "codeExample": "scrollStart=\"top bottom\"",
+      "usageExamples": [
+        "scrollStart=\"top bottom\""
+      ]
+    },
+    {
+      "name": "scrollEnd",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'bottom bottom-=40%'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 31,
+        "kind": "parameter"
+      },
+      "defaultValue": "bottom bottom-=40%",
+      "description": "滚动结束，控制 scroll float 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 19
+      },
+      "codeExample": "scrollEnd=\"center center\"",
+      "usageExamples": [
+        "scrollEnd=\"center center\""
+      ]
+    },
+    {
+      "name": "stagger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.03",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 32,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.03,
+      "description": "错开，控制 scroll float 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+        "line": 20
+      },
+      "codeExample": "stagger={0.03}",
+      "usageExamples": [
+        "stagger={0.03}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport { useEffect, useLayoutEffect, useRef, useState } from 'react';\nimport { ScrollTrigger } from 'gsap/ScrollTrigger';\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat';\nimport styles from './scroll-float.module.css';\n\nexport default function ScrollFloatDemo() {\n  const scrollRef = useRef<HTMLDivElement>(null!);\n  const contentRef = useRef<HTMLElement>(null);\n  const [viewportHeight, setViewportHeight] = useState(0);\n\n  useLayoutEffect(() => {\n    const scroller = scrollRef.current;\n    const measure = () => setViewportHeight(scroller.clientHeight);\n    measure();\n    const observer = new ResizeObserver(measure);\n    observer.observe(scroller);\n    return () => observer.disconnect();\n  }, []);\n\n  useEffect(() => {\n    ScrollTrigger.getAll().filter(trigger => trigger.scroller === scrollRef.current).forEach(trigger => trigger.refresh());\n  }, [viewportHeight]);\n\n  useEffect(() => {\n    const scroller = scrollRef.current;\n    // The locked ScrollFloat effect has no cleanup; release only this demo's triggers.\n    return () => ScrollTrigger.getAll().filter(trigger => trigger.scroller === scroller).forEach(trigger => trigger.kill());\n  }, []);\n\n  const startScrolling = () => {\n    scrollRef.current.scrollTo({\n      top: viewportHeight,\n      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'\n    });\n    contentRef.current?.focus({ preventScroll: true });\n  };\n\n  return (\n    <div className={styles.stage}>\n      <div ref={scrollRef} className={styles.scroller} role=\"region\" aria-label=\"Scroll Float 滚动演示\" tabIndex={0}>\n        <section className={styles.intro} style={{ height: viewportHeight }} data-scroll-screen=\"intro\">\n          <p className={styles.eyebrow}>SCROLL FLOAT</p>\n          <h2 className={styles.heading}>向下滚动，让文字浮现</h2>\n          <p className={styles.guide}>在预览区域内滚动，下一屏的字母会逐个上浮。向上滚动可倒放。</p>\n          <button className={styles.startButton}  onClick={startScrolling} /*__AW_PROPS_t0__*/ >开始滚动 ↓</button>\n        </section>\n        <section ref={contentRef} className={styles.content} style={{ minHeight: viewportHeight }} tabIndex={-1} aria-label=\"文字浮现效果\" data-scroll-screen=\"content\">\n          {viewportHeight > 0 ? <Component\n            scrollContainerRef={scrollRef}\n            containerClassName={styles.floatContainer}\n            textClassName={styles.floatText}\n\n\n\n\n             /*__AW_PROPS_t1__*/\n          >QUIET FLOW</Component> : null}\n        </section>\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles.startButton}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={startScrolling}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>开始滚动 ↓</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "ScrollFloat",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 12
+          },
+          "codeExample": "children={<>QUIET FLOW</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>QUIET FLOW</>}"
+          ]
+        },
+        {
+          "name": "scrollContainerRef",
+          "type": "RefObject<HTMLElement>",
+          "required": false,
+          "description": "滚动容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 13
+          },
+          "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: scrollContainerRef={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "scrollContainerRef={scrollRef}"
+          ]
+        },
+        {
+          "name": "containerClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 26,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "容器类名名称，控制 scroll float 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 14
+          },
+          "codeExample": "containerClassName={styles.floatContainer}",
+          "usageExamples": [
+            "containerClassName={styles.floatContainer}"
+          ]
+        },
+        {
+          "name": "textClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 27,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "文字类名名称，控制 scroll float 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 15
+          },
+          "codeExample": "textClassName={styles.floatText}",
+          "usageExamples": [
+            "textClassName={styles.floatText}"
+          ]
+        },
+        {
+          "name": "animationDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 28,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "动画时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 16
+          },
+          "codeExample": "animationDuration={1}",
+          "usageExamples": [
+            "animationDuration={1}"
+          ]
+        },
+        {
+          "name": "ease",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'back.inOut(2)'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 29,
+            "kind": "parameter"
+          },
+          "defaultValue": "back.inOut(2)",
+          "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 17
+          },
+          "codeExample": "ease=\"back.inOut(2)\"",
+          "usageExamples": [
+            "ease=\"back.inOut(2)\""
+          ]
+        },
+        {
+          "name": "scrollStart",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'center bottom+=50%'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 30,
+            "kind": "parameter"
+          },
+          "defaultValue": "center bottom+=50%",
+          "description": "滚动开始，控制 scroll float 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 18
+          },
+          "codeExample": "scrollStart=\"top bottom\"",
+          "usageExamples": [
+            "scrollStart=\"top bottom\""
+          ]
+        },
+        {
+          "name": "scrollEnd",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'bottom bottom-=40%'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 31,
+            "kind": "parameter"
+          },
+          "defaultValue": "bottom bottom-=40%",
+          "description": "滚动结束，控制 scroll float 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 19
+          },
+          "codeExample": "scrollEnd=\"center center\"",
+          "usageExamples": [
+            "scrollEnd=\"center center\""
+          ]
+        },
+        {
+          "name": "stagger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.03",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 32,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.03,
+          "description": "错开，控制 scroll float 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+            "line": 20
+          },
+          "codeExample": "stagger={0.03}",
+          "usageExamples": [
+            "stagger={0.03}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

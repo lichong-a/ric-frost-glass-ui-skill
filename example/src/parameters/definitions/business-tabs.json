@@ -1,0 +1,434 @@
+{
+  "version": 1,
+  "id": "business-tabs",
+  "name": "Tabs",
+  "sourcePath": "src/business/demos/navigation/business-tabs.tsx",
+  "demoPath": "src/business/demos/navigation/business-tabs.tsx",
+  "fields": [
+    {
+      "key": "t0.type",
+      "name": "type",
+      "label": "类型 · t0",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.active",
+      "name": "active",
+      "label": "active",
+      "description": "示例的受控状态 active；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "number",
+      "defaultValue": 0,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [],
+  "inherited": [
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "div",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "button",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "span",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "section",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "h3",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "p",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import ownedStyles0 from '../../components/Button.module.css';\nimport ownedStyles1 from '../../components/DemoLayout.module.css';\nimport ownedStyles2 from '../../components/Tabs.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useId, useState } from 'react';\nimport { LayoutGroup } from 'motion/react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { AnimatedSwap } from '../../components/AnimatedSwap';\nimport { SelectionIndicator } from '../../components/SelectionIndicator';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1,...ownedStyles2};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessTabsDemo() {\n  const [active, setActive] = useState(/*__AW_STATE_state.active__*/);\n  const tabs = ['概览', '活动', '设置'];\n  const prefix = useId();\n  return <BusinessDemo title=\"Tabs\" description=\"选中背景弹性滑动，面板轻盈切换；方向键同步标签和焦点。\">\n    <LayoutGroup id={prefix}><div data-ui=\"aw-business-animated-tabs\" role=\"tablist\" aria-label=\"工作空间内容\" className={cn(\"aw-business-animated-tabs\")}>{tabs.map((label, index) => <button className={cn('aw-business-button-feedback')}  key={label} id={`${prefix}-tab-${index}`} role=\"tab\" aria-selected={active === index} aria-controls={`${prefix}-panel-${index}`} tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)} onKeyDown={event => {\n      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;\n      event.preventDefault();\n      const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + (event.key === 'ArrowLeft' ? -1 : 1) + tabs.length) % tabs.length;\n      setActive(next); document.getElementById(`${prefix}-tab-${next}`)?.focus();\n    }} /*__AW_PROPS_t0__*/ >{active === index ? <SelectionIndicator identity={`${prefix}-selected`} /> : null}<span>{label}</span></button>)}</div></LayoutGroup>\n    {tabs.map((label, index) => <section id={`${prefix}-panel-${index}`} role=\"tabpanel\" aria-labelledby={`${prefix}-tab-${index}`} tabIndex={0} hidden={active !== index} key={label}>\n      {active === index ? <AnimatedSwap value={active}><div data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>{label}</h3><p>{index === 0 ? '当前空间有6项本地任务。' : index === 1 ? '这里显示当前示例的活动摘要。' : '工作空间设置可按业务权限接入。'}</p></div></AnimatedSwap> : null}\n    </section>)}\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn('aw-business-button-feedback')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "key",
+          "type": "Key | null | undefined",
+          "required": false,
+          "description": "React 列表项身份，用于更新时保持对应节点。",
+          "usageExamples": [
+            "key={label}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 250
+          }
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "required": false,
+          "description": "原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。",
+          "usageExamples": [
+            "id={`${prefix}-tab-${index}`}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2707
+          }
+        },
+        {
+          "name": "role",
+          "type": "AriaRole | undefined",
+          "required": false,
+          "description": "辅助技术使用的元素角色，须与实际键盘和交互行为相匹配。",
+          "usageExamples": [
+            "role=\"tab\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2721
+          }
+        },
+        {
+          "name": "aria-selected",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "description": "辅助技术的 selected 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-selected={active === index}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2595
+          }
+        },
+        {
+          "name": "aria-controls",
+          "type": "string | undefined",
+          "required": false,
+          "description": "辅助技术的 controls 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-controls={`${prefix}-panel-${index}`}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2444
+          }
+        },
+        {
+          "name": "tabIndex",
+          "type": "number | undefined",
+          "required": false,
+          "description": "键盘 Tab 导航的焦点顺序。",
+          "usageExamples": [
+            "tabIndex={active === index ? 0 : -1}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2713
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setActive(index)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "onKeyDown",
+          "type": "KeyboardEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "身份标识down时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onKeyDown={event => {\n      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;\n      event.preventDefault();\n      const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + (event.key === 'ArrowLeft' ? -1 : 1) + tabs.length) % tabs.length;\n      setActive(next); document.getElementById(`${prefix}-tab-${next}`)?.focus();\n    }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2221
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>{active === index ? <SelectionIndicator identity={`${prefix}-selected`} /> : null}<span>{label}</span></>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "SelectionIndicator",
+      "sourcePath": "src/business/components/SelectionIndicator.tsx",
+      "props": [
+        {
+          "name": "identity",
+          "type": "string",
+          "required": true,
+          "description": "区分本次内容或动效节点的身份，改变后用于切换和布局过渡。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/SelectionIndicator.tsx",
+            "line": 8
+          },
+          "codeExample": "identity={`${prefix}-selected`}",
+          "usageExamples": [
+            "identity={`${prefix}-selected`}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/SelectionIndicator.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/SelectionIndicator.tsx",
+            "line": 8
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t2",
+      "name": "AnimatedSwap",
+      "sourcePath": "src/business/components/AnimatedSwap.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/AnimatedSwap.tsx",
+            "line": 15
+          },
+          "codeExample": "children={<><div data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>{label}</h3><p>{index === 0 ? '当前空间有6项本地任务。' : index === 1 ? '这里显示当前示例的活动摘要。' : '工作空间设置可按业务权限接入。'}</p></div></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><div data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>{label}</h3><p>{index === 0 ? '当前空间有6项本地任务。' : index === 1 ? '这里显示当前示例的活动摘要。' : '工作空间设置可按业务权限接入。'}</p></div></>}"
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string | number",
+          "required": true,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "code",
+          "valueKind": "union",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/AnimatedSwap.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "value={active}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "value={active}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/AnimatedSwap.tsx",
+            "line": 15,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSwap.tsx",
+            "line": 15
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "native-composition",
+  "notes": [
+    "该业务能力由示例函数组合原生元素与下面的叶组件；示例函数没有接收公开 Props。原生属性按元素列出，演示内部 useState 配置不作为公开 Props 或组件默认值。"
+  ]
+}

@@ -1,0 +1,952 @@
+{
+  "version": 1,
+  "id": "business-treeselect",
+  "name": "TreeSelect",
+  "sourcePath": "src/business/demos/form/business-treeselect.tsx",
+  "demoPath": "src/business/demos/form/business-treeselect.tsx",
+  "fields": [
+    {
+      "key": "t0.type",
+      "name": "type",
+      "label": "类型 · t0",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.variant",
+      "name": "variant",
+      "label": "外观 · t1",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "variant"
+        }
+      ],
+      "type": "'primary' | 'secondary' | 'danger'",
+      "defaultValue": "secondary",
+      "upstreamDefault": "'primary'",
+      "control": "select",
+      "options": [
+        {
+          "label": "primary",
+          "value": "primary"
+        },
+        {
+          "label": "secondary",
+          "value": "secondary"
+        },
+        {
+          "label": "danger",
+          "value": "danger"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "upstreamDefault": "'button'",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.minWidth",
+      "name": "minWidth",
+      "label": "minWidth · t2",
+      "description": "最小宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "minWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 280,
+      "upstreamDefault": "280",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.nodes",
+      "name": "nodes",
+      "label": "nodes · t3",
+      "description": "树或组织结构的节点数据，子节点和标识按类型定义。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "nodes"
+        }
+      ],
+      "type": "TreeItem[]",
+      "defaultValue": [
+        {
+          "key": "workspace",
+          "label": "工作空间",
+          "children": [
+            {
+              "key": "agents",
+              "label": "智能体",
+              "children": [
+                {
+                  "key": "research",
+                  "label": "资料助理"
+                },
+                {
+                  "key": "service",
+                  "label": "服务助理"
+                }
+              ]
+            },
+            {
+              "key": "skills",
+              "label": "技能",
+              "children": [
+                {
+                  "key": "writing",
+                  "label": "文档写作"
+                },
+                {
+                  "key": "search",
+                  "label": "知识检索"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "key": {
+              "kind": "string"
+            },
+            "label": {
+              "kind": "string"
+            },
+            "children": {
+              "kind": "array"
+            }
+          },
+          "required": [
+            "key",
+            "label"
+          ]
+        }
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.level",
+      "name": "level",
+      "label": "level · t3",
+      "description": "树节点当前的层级，用于缩进与辅助技术层级。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "level"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.open",
+      "name": "open",
+      "label": "打开状态",
+      "description": "示例的受控状态 open；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "boolean",
+      "defaultValue": false,
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "open"
+        }
+      ]
+    },
+    {
+      "key": "state.selected",
+      "name": "selected",
+      "label": "selected",
+      "description": "示例的受控状态 selected；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string|null",
+      "defaultValue": null,
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "null"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "selected"
+        }
+      ]
+    },
+    {
+      "key": "state.expanded",
+      "name": "expanded",
+      "label": "展开状态",
+      "description": "示例的受控状态 expanded；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "array",
+      "defaultValue": [
+        "workspace"
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "expanded"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [],
+  "inherited": [
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "div",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "button",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import ownedStyles0 from '../../components/Button.module.css';\nimport ownedStyles1 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState, useRef } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { Popover } from '../../components/Popover';\nimport { TreeRows } from '../../components/TreeRows';\nimport { workspaceTree } from '../../data';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessTreeSelectDemo() {\n  const [open,setOpen]=useState(/*__AW_STATE_state.open__*/); const [selected,setSelected]=useState<string|null>(/*__AW_STATE_state.selected__*/); const [expanded,setExpanded]=useState(/*__AW_STATE_state.expanded__*/); const anchor=useRef<HTMLButtonElement>(null);\n  let selectedLabel = selected;\n  const remaining = [...workspaceTree];\n  while (remaining.length) {\n    const node = remaining.pop();\n    if (!node) break;\n    if (node.key === selected) { selectedLabel = node.label; break; }\n    remaining.push(...(node.children ?? []));\n  }\n  return <BusinessDemo title=\"TreeSelect\" description=\"在浮层中展开层级并选择节点，选择后关闭，支持清除。\">\n    <div data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}><button data-ui=\"aw-button\"  className={cn(\"aw-button\")} ref={anchor} aria-haspopup=\"tree\" aria-expanded={open} onClick={()=>setOpen(value=>!value)} /*__AW_PROPS_t0__*/ >{selectedLabel??'选择资料节点'}</button><Button  disabled={!selected} onClick={()=>setSelected(null)} /*__AW_PROPS_t1__*/ >清除</Button></div><Popover open={open} onClose={()=>setOpen(false)} anchorRef={anchor} /*__AW_PROPS_t2__*/ ><TreeRows  selected={selected} expanded={expanded} onSelect={key=>{setSelected(key);setOpen(false);}} onToggle={key=>setExpanded(current=>current.includes(key)?current.filter(value=>value!==key):[...current,key])} /*__AW_PROPS_t3__*/  /></Popover>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "button",
+      "props": [
+        {
+          "name": "data-ui",
+          "type": "any",
+          "required": false,
+          "description": "示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。",
+          "usageExamples": [
+            "data-ui=\"aw-button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>"
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn(\"aw-button\")}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "usageExamples": [
+            "ref={anchor}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 292
+          }
+        },
+        {
+          "name": "aria-haspopup",
+          "type": "boolean | \"grid\" | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"listbox\" | \"tree\" | undefined",
+          "required": false,
+          "description": "辅助技术的 haspopup 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-haspopup=\"tree\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2490
+          }
+        },
+        {
+          "name": "aria-expanded",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "description": "辅助技术的 expanded 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-expanded={open}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2478
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={()=>setOpen(value=>!value)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>{selectedLabel??'选择资料节点'}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "Button",
+      "sourcePath": "src/business/components/Button.tsx",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "defaultExpression": "'button'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "button",
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "button",
+            "reset",
+            "submit"
+          ],
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              "button",
+              "reset",
+              "submit"
+            ]
+          },
+          "codeExample": "type={\"button\"}"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "children={<>清除</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>清除</>}"
+          ]
+        },
+        {
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'danger'",
+          "required": false,
+          "defaultExpression": "'primary'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "primary",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "primary",
+            "secondary",
+            "danger"
+          ],
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "primary",
+              "secondary",
+              "danger"
+            ]
+          },
+          "codeExample": "variant=\"secondary\"",
+          "usageExamples": [
+            "variant=\"secondary\""
+          ]
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "Popover",
+      "sourcePath": "src/business/components/Popover.tsx",
+      "props": [
+        {
+          "name": "open",
+          "type": "boolean",
+          "required": true,
+          "description": "是否展开或显示内容，由调用方控制。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Popover.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "open={open}",
+          "usageExamples": [
+            "open={open}"
+          ]
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "required": true,
+          "description": "请求关闭弹层、对话框或提示时调用，调用方同步更新 open 状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Popover.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "() => void"
+          },
+          "codeExample": "onClose={()=>setOpen(false)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onClose={()=>setOpen(false)}"
+          ]
+        },
+        {
+          "name": "anchorRef",
+          "type": "RefObject<HTMLElement | null>",
+          "required": true,
+          "description": "连接触发器 DOM 的 ref，供弹层定位及焦点返回使用。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Popover.tsx",
+            "line": 11
+          },
+          "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: anchorRef={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "anchorRef={anchor}"
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Popover.tsx",
+            "line": 11
+          },
+          "codeExample": "children={<><TreeRows nodes={workspaceTree} selected={selected} expanded={expanded} onSelect={key=>{setSelected(key);setOpen(false);}} onToggle={key=>setExpanded(current=>current.includes(key)?current.filter(value=>value!==key):[...current,key])} /></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><TreeRows nodes={workspaceTree} selected={selected} expanded={expanded} onSelect={key=>{setSelected(key);setOpen(false);}} onToggle={key=>setExpanded(current=>current.includes(key)?current.filter(value=>value!==key):[...current,key])} /></>}"
+          ]
+        },
+        {
+          "name": "minWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "280",
+          "defaultSource": {
+            "path": "src/business/components/Popover.tsx",
+            "line": 11,
+            "kind": "parameter"
+          },
+          "defaultValue": 280,
+          "description": "最小宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Popover.tsx",
+            "line": 11
+          },
+          "codeExample": "minWidth={280}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t3",
+      "name": "TreeRows",
+      "sourcePath": "src/business/components/TreeRows.tsx",
+      "props": [
+        {
+          "name": "nodes",
+          "type": "TreeItem[]",
+          "required": true,
+          "description": "树或组织结构的节点数据，子节点和标识按类型定义。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/TreeRows.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "TreeItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "key",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "children",
+                    "type": "TreeItem[]",
+                    "required": false,
+                    "kind": "array",
+                    "items": [
+                      {
+                        "type": "TreeItem"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "nodes={workspaceTree}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "nodes={workspaceTree}"
+          ]
+        },
+        {
+          "name": "selected",
+          "type": "string | null",
+          "required": true,
+          "description": "当前选中项的标识。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/TreeRows.tsx",
+            "line": 8
+          },
+          "codeExample": "selected={selected}",
+          "usageExamples": [
+            "selected={selected}"
+          ]
+        },
+        {
+          "name": "expanded",
+          "type": "string[]",
+          "required": true,
+          "description": "当前展开节点的标识集合。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/TreeRows.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "expanded={expanded}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "expanded={expanded}"
+          ]
+        },
+        {
+          "name": "onSelect",
+          "type": "(key: string) => void",
+          "required": true,
+          "description": "用户选择条目时通知调用方，参数为选中项的标识或数据。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/TreeRows.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(key: string) => void"
+          },
+          "codeExample": "onSelect={key=>{setSelected(key);setOpen(false);}}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onSelect={key=>{setSelected(key);setOpen(false);}}"
+          ]
+        },
+        {
+          "name": "onToggle",
+          "type": "(key: string) => void",
+          "required": true,
+          "description": "节点展开或收起时通知调用方，参数为目标节点的标识。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/TreeRows.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(key: string) => void"
+          },
+          "codeExample": "onToggle={key=>setExpanded(current=>current.includes(key)?current.filter(value=>value!==key):[...current,key])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onToggle={key=>setExpanded(current=>current.includes(key)?current.filter(value=>value!==key):[...current,key])}"
+          ]
+        },
+        {
+          "name": "level",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": "src/business/components/TreeRows.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "树节点当前的层级，用于缩进与辅助技术层级。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/TreeRows.tsx",
+            "line": 8
+          },
+          "codeExample": "level={1}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "native-composition",
+  "notes": [
+    "该业务能力由示例函数组合原生元素与下面的叶组件；示例函数没有接收公开 Props。原生属性按元素列出，演示内部 useState 配置不作为公开 Props 或组件默认值。"
+  ]
+}

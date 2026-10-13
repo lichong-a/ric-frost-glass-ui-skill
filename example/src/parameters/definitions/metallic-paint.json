@@ -1,0 +1,1581 @@
+{
+  "version": 1,
+  "id": "metallic-paint",
+  "name": "Metallic Paint",
+  "sourcePath": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+  "demoPath": "src/demos/media/metallic-paint.tsx",
+  "fields": [
+    {
+      "key": "t0.text",
+      "name": "text",
+      "label": "文字内容 · t0",
+      "description": "显示或生成效果的文字内容。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "text"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "WAN",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'transparent'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.softness",
+      "name": "softness",
+      "label": "softness · t0",
+      "description": "柔和度，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "softness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dispersion",
+      "name": "dispersion",
+      "label": "dispersion · t0",
+      "description": "色散，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dispersion"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.05,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.distortion",
+      "name": "distortion",
+      "label": "distortion · t0",
+      "description": "扭曲，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "distortion"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.07",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edgeBend",
+      "name": "edgeBend",
+      "label": "edgeBend · t0",
+      "description": "边缘弯曲，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeBend"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseTilt",
+      "name": "mouseTilt",
+      "label": "mouseTilt · t0",
+      "description": "鼠标倾斜，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseTilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dpr",
+      "name": "dpr",
+      "label": "像素比 · t0",
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dpr"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontFamily",
+      "name": "fontFamily",
+      "label": "字体 · t0",
+      "description": "字体字族，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontFamily"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "system-ui, sans-serif",
+      "upstreamDefault": "'system-ui, sans-serif'",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontWeight",
+      "name": "fontWeight",
+      "label": "字重 · t0",
+      "description": "字体字重，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontWeight"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 800,
+      "upstreamDefault": "800",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.density",
+      "name": "density",
+      "label": "density · t0",
+      "description": "密度，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "density"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.angle",
+      "name": "angle",
+      "label": "angle · t0",
+      "description": "角度，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "angle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 70,
+      "upstreamDefault": "70",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scale",
+      "name": "scale",
+      "label": "缩放 · t0",
+      "description": "缩放，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rotation",
+      "name": "rotation",
+      "label": "旋转 · t0",
+      "description": "旋转角度，控制 metallic paint 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rotation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "imageSrc",
+      "type": "string",
+      "required": false,
+      "description": "用作主图或纹理的图像资源地址。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 7
+      },
+      "codeExample": "imageSrc={\"示例\"}"
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "required": false,
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 8
+      },
+      "codeExample": "text=\"WAN\"",
+      "usageExamples": [
+        "text=\"WAN\""
+      ]
+    },
+    {
+      "name": "fontFamily",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'system-ui, sans-serif'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 507,
+        "kind": "parameter"
+      },
+      "defaultValue": "system-ui, sans-serif",
+      "description": "字体字族，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 9
+      },
+      "codeExample": "fontFamily={\"system-ui, sans-serif\"}"
+    },
+    {
+      "name": "fontWeight",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "800",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 508,
+        "kind": "parameter"
+      },
+      "defaultValue": 800,
+      "description": "字体字重，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "fontWeight={800}"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 509,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 11
+      },
+      "codeExample": "color={palette.primary}",
+      "usageExamples": [
+        "color={palette.primary}"
+      ]
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'transparent'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 510,
+        "kind": "parameter"
+      },
+      "defaultValue": "transparent",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 12
+      },
+      "codeExample": "backgroundColor={palette.ivory}",
+      "usageExamples": [
+        "backgroundColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "density",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 511,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "密度，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 13
+      },
+      "codeExample": "density={2}"
+    },
+    {
+      "name": "softness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 512,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "柔和度，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 14
+      },
+      "codeExample": "softness={0.65}",
+      "usageExamples": [
+        "softness={0.65}"
+      ]
+    },
+    {
+      "name": "dispersion",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 513,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "色散，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 15
+      },
+      "codeExample": "dispersion={0.05}",
+      "usageExamples": [
+        "dispersion={0.05}"
+      ]
+    },
+    {
+      "name": "distortion",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.07",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 514,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.07,
+      "description": "扭曲，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 16
+      },
+      "codeExample": "distortion={0.3}",
+      "usageExamples": [
+        "distortion={0.3}"
+      ]
+    },
+    {
+      "name": "edgeBend",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 515,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "边缘弯曲，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 17
+      },
+      "codeExample": "edgeBend={0.6}",
+      "usageExamples": [
+        "edgeBend={0.6}"
+      ]
+    },
+    {
+      "name": "angle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "70",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 516,
+        "kind": "parameter"
+      },
+      "defaultValue": 70,
+      "description": "角度，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 18
+      },
+      "codeExample": "angle={70}"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 517,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 19
+      },
+      "codeExample": "speed={0.4}",
+      "usageExamples": [
+        "speed={0.4}"
+      ]
+    },
+    {
+      "name": "scale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 518,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "缩放，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 20
+      },
+      "codeExample": "scale={0.6}"
+    },
+    {
+      "name": "rotation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 519,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "旋转角度，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 21
+      },
+      "codeExample": "rotation={0}"
+    },
+    {
+      "name": "mouseTilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 520,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "鼠标倾斜，控制 metallic paint 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 22
+      },
+      "codeExample": "mouseTilt={0.2}",
+      "usageExamples": [
+        "mouseTilt={0.2}"
+      ]
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 521,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode",
+      "usageExamples": [
+        "lightMode"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 522,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 523,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 26
+      },
+      "codeExample": "dpr={1.5}",
+      "usageExamples": [
+        "dpr={1.5}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 525,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 27
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+        "line": 28
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint';\nimport { palette } from '../../shared/demo-support';\n\n// 使用组件的真实文字金属材质分支，不依赖外部logo图片。\n// 此演示需要可用的WebGL上下文；上下文创建失败时应显示能力提示，不能声称效果已经运行。\n\nexport default function MetallicPaintDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n    /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "MetallicPaint",
+      "sourcePath": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+      "props": [
+        {
+          "name": "imageSrc",
+          "type": "string",
+          "required": false,
+          "description": "用作主图或纹理的图像资源地址。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 7
+          },
+          "codeExample": "imageSrc={\"示例\"}"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 8
+          },
+          "codeExample": "text=\"WAN\"",
+          "usageExamples": [
+            "text=\"WAN\""
+          ]
+        },
+        {
+          "name": "fontFamily",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'system-ui, sans-serif'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 507,
+            "kind": "parameter"
+          },
+          "defaultValue": "system-ui, sans-serif",
+          "description": "字体字族，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 9
+          },
+          "codeExample": "fontFamily={\"system-ui, sans-serif\"}"
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "800",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 508,
+            "kind": "parameter"
+          },
+          "defaultValue": 800,
+          "description": "字体字重，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "fontWeight={800}"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 509,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 11
+          },
+          "codeExample": "color={palette.primary}",
+          "usageExamples": [
+            "color={palette.primary}"
+          ]
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'transparent'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 510,
+            "kind": "parameter"
+          },
+          "defaultValue": "transparent",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 12
+          },
+          "codeExample": "backgroundColor={palette.ivory}",
+          "usageExamples": [
+            "backgroundColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "density",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 511,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "密度，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 13
+          },
+          "codeExample": "density={2}"
+        },
+        {
+          "name": "softness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 512,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "柔和度，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 14
+          },
+          "codeExample": "softness={0.65}",
+          "usageExamples": [
+            "softness={0.65}"
+          ]
+        },
+        {
+          "name": "dispersion",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 513,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "色散，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 15
+          },
+          "codeExample": "dispersion={0.05}",
+          "usageExamples": [
+            "dispersion={0.05}"
+          ]
+        },
+        {
+          "name": "distortion",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.07",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 514,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.07,
+          "description": "扭曲，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 16
+          },
+          "codeExample": "distortion={0.3}",
+          "usageExamples": [
+            "distortion={0.3}"
+          ]
+        },
+        {
+          "name": "edgeBend",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 515,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "边缘弯曲，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 17
+          },
+          "codeExample": "edgeBend={0.6}",
+          "usageExamples": [
+            "edgeBend={0.6}"
+          ]
+        },
+        {
+          "name": "angle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "70",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 516,
+            "kind": "parameter"
+          },
+          "defaultValue": 70,
+          "description": "角度，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 18
+          },
+          "codeExample": "angle={70}"
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 517,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 19
+          },
+          "codeExample": "speed={0.4}",
+          "usageExamples": [
+            "speed={0.4}"
+          ]
+        },
+        {
+          "name": "scale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 518,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "缩放，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 20
+          },
+          "codeExample": "scale={0.6}"
+        },
+        {
+          "name": "rotation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 519,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "旋转角度，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 21
+          },
+          "codeExample": "rotation={0}"
+        },
+        {
+          "name": "mouseTilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 520,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "鼠标倾斜，控制 metallic paint 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 22
+          },
+          "codeExample": "mouseTilt={0.2}",
+          "usageExamples": [
+            "mouseTilt={0.2}"
+          ]
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 521,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode",
+          "usageExamples": [
+            "lightMode"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 522,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 523,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 26
+          },
+          "codeExample": "dpr={1.5}",
+          "usageExamples": [
+            "dpr={1.5}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 525,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 27
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetallicPaint/MetallicPaint.tsx",
+            "line": 28
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

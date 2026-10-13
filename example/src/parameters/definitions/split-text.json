@@ -1,0 +1,1321 @@
+{
+  "version": 1,
+  "id": "split-text",
+  "name": "Split Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+  "demoPath": "src/demos/text/split-text.tsx",
+  "fields": [
+    {
+      "key": "t0.text",
+      "name": "text",
+      "label": "文字内容 · t0",
+      "description": "显示或生成效果的文字内容。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "text"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "自然有序，清晰可见",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.delay",
+      "name": "delay",
+      "label": "延迟 · t0",
+      "description": "开始动画或执行回调之前的等待时长。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "delay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 55,
+      "upstreamDefault": "50",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.duration",
+      "name": "duration",
+      "label": "持续时间 · t0",
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "duration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "1.25",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.splitType",
+      "name": "splitType",
+      "label": "splitType · t0",
+      "description": "拆分类型，控制 split text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "splitType"
+        }
+      ],
+      "type": "'chars' | 'words' | 'lines' | 'words, chars'",
+      "defaultValue": "chars",
+      "upstreamDefault": "'chars'",
+      "control": "select",
+      "options": [
+        {
+          "label": "chars",
+          "value": "chars"
+        },
+        {
+          "label": "words",
+          "value": "words"
+        },
+        {
+          "label": "lines",
+          "value": "lines"
+        },
+        {
+          "label": "words, chars",
+          "value": "words, chars"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.from",
+      "name": "from",
+      "label": "from · t0",
+      "description": "起始的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "from"
+        }
+      ],
+      "type": "gsap.TweenVars",
+      "defaultValue": {
+        "opacity": 0,
+        "y": 24
+      },
+      "upstreamDefault": "{ opacity: 0, y: 40 }",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "opacity": {
+            "kind": "number"
+          },
+          "y": {
+            "kind": "number"
+          }
+        },
+        "required": [
+          "opacity",
+          "y"
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.to",
+      "name": "to",
+      "label": "to · t0",
+      "description": "目标的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "to"
+        }
+      ],
+      "type": "gsap.TweenVars",
+      "defaultValue": {
+        "opacity": 1,
+        "y": 0
+      },
+      "upstreamDefault": "{ opacity: 1, y: 0 }",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "opacity": {
+            "kind": "number"
+          },
+          "y": {
+            "kind": "number"
+          }
+        },
+        "required": [
+          "opacity",
+          "y"
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.threshold",
+      "name": "threshold",
+      "label": "触发阈值 · t0",
+      "description": "阈值，控制 split text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "threshold"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rootMargin",
+      "name": "rootMargin",
+      "label": "观察边距 · t0",
+      "description": "IntersectionObserver 的视口边界扩展量，如 0px 或 -20% 0px。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rootMargin"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "0px",
+      "upstreamDefault": "'-100px'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textAlign",
+      "name": "textAlign",
+      "label": "textAlign · t0",
+      "description": "文字对齐的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textAlign"
+        }
+      ],
+      "type": "React.CSSProperties['textAlign']",
+      "defaultValue": "center",
+      "upstreamDefault": "'center'",
+      "control": "select",
+      "options": [
+        {
+          "label": "-moz-initial",
+          "value": "-moz-initial"
+        },
+        {
+          "label": "inherit",
+          "value": "inherit"
+        },
+        {
+          "label": "initial",
+          "value": "initial"
+        },
+        {
+          "label": "revert",
+          "value": "revert"
+        },
+        {
+          "label": "revert-layer",
+          "value": "revert-layer"
+        },
+        {
+          "label": "unset",
+          "value": "unset"
+        },
+        {
+          "label": "center",
+          "value": "center"
+        },
+        {
+          "label": "end",
+          "value": "end"
+        },
+        {
+          "label": "start",
+          "value": "start"
+        },
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        },
+        {
+          "label": "-khtml-center",
+          "value": "-khtml-center"
+        },
+        {
+          "label": "-khtml-left",
+          "value": "-khtml-left"
+        },
+        {
+          "label": "-khtml-right",
+          "value": "-khtml-right"
+        },
+        {
+          "label": "-moz-center",
+          "value": "-moz-center"
+        },
+        {
+          "label": "-moz-left",
+          "value": "-moz-left"
+        },
+        {
+          "label": "-moz-right",
+          "value": "-moz-right"
+        },
+        {
+          "label": "-webkit-center",
+          "value": "-webkit-center"
+        },
+        {
+          "label": "-webkit-left",
+          "value": "-webkit-left"
+        },
+        {
+          "label": "-webkit-match-parent",
+          "value": "-webkit-match-parent"
+        },
+        {
+          "label": "-webkit-right",
+          "value": "-webkit-right"
+        },
+        {
+          "label": "justify",
+          "value": "justify"
+        },
+        {
+          "label": "match-parent",
+          "value": "match-parent"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tag",
+      "name": "tag",
+      "label": "tag · t0",
+      "description": "标签，控制 split text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tag"
+        }
+      ],
+      "type": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'",
+      "defaultValue": "p",
+      "upstreamDefault": "'p'",
+      "control": "select",
+      "options": [
+        {
+          "label": "h1",
+          "value": "h1"
+        },
+        {
+          "label": "h2",
+          "value": "h2"
+        },
+        {
+          "label": "h3",
+          "value": "h3"
+        },
+        {
+          "label": "h4",
+          "value": "h4"
+        },
+        {
+          "label": "h5",
+          "value": "h5"
+        },
+        {
+          "label": "h6",
+          "value": "h6"
+        },
+        {
+          "label": "p",
+          "value": "p"
+        },
+        {
+          "label": "span",
+          "value": "span"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": true,
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 12
+      },
+      "codeExample": "text=\"自然有序，清晰可见\"",
+      "usageExamples": [
+        "text=\"自然有序，清晰可见\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 29,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 13
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "50",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 30,
+        "kind": "parameter"
+      },
+      "defaultValue": 50,
+      "description": "开始动画或执行回调之前的等待时长。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 14
+      },
+      "codeExample": "delay={55}",
+      "usageExamples": [
+        "delay={55}"
+      ]
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 31,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.25,
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 15
+      },
+      "codeExample": "duration={0.5}",
+      "usageExamples": [
+        "duration={0.5}"
+      ]
+    },
+    {
+      "name": "ease",
+      "type": "string | ((t: number) => number)",
+      "required": false,
+      "defaultExpression": "'power3.out'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 32,
+        "kind": "parameter"
+      },
+      "defaultValue": "power3.out",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "(t: number) => number",
+            "kind": "callback",
+            "signature": "(t: number) => number"
+          }
+        ]
+      },
+      "codeExample": "ease=\"power3.out\"",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "ease=\"power3.out\""
+      ]
+    },
+    {
+      "name": "splitType",
+      "type": "'chars' | 'words' | 'lines' | 'words, chars'",
+      "required": false,
+      "defaultExpression": "'chars'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 33,
+        "kind": "parameter"
+      },
+      "defaultValue": "chars",
+      "description": "拆分类型，控制 split text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "chars",
+        "words",
+        "lines",
+        "words, chars"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "chars",
+          "words",
+          "lines",
+          "words, chars"
+        ]
+      },
+      "codeExample": "splitType=\"chars\"",
+      "usageExamples": [
+        "splitType=\"chars\""
+      ]
+    },
+    {
+      "name": "from",
+      "type": "gsap.TweenVars",
+      "required": false,
+      "defaultExpression": "{ opacity: 0, y: 40 }",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 34,
+        "kind": "parameter"
+      },
+      "defaultValue": {
+        "opacity": 0,
+        "y": 40
+      },
+      "description": "起始的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 18
+      },
+      "codeExample": "from={{ opacity: 0, y: 24 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "from={{ opacity: 0, y: 24 }}"
+      ]
+    },
+    {
+      "name": "to",
+      "type": "gsap.TweenVars",
+      "required": false,
+      "defaultExpression": "{ opacity: 1, y: 0 }",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 35,
+        "kind": "parameter"
+      },
+      "defaultValue": {
+        "opacity": 1,
+        "y": 0
+      },
+      "description": "目标的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 19
+      },
+      "codeExample": "to={{ opacity: 1, y: 0 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "to={{ opacity: 1, y: 0 }}"
+      ]
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 36,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "阈值，控制 split text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 20
+      },
+      "codeExample": "threshold={0.1}",
+      "usageExamples": [
+        "threshold={0.1}"
+      ]
+    },
+    {
+      "name": "rootMargin",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'-100px'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 37,
+        "kind": "parameter"
+      },
+      "defaultValue": "-100px",
+      "description": "IntersectionObserver 的视口边界扩展量，如 0px 或 -20% 0px。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 21
+      },
+      "codeExample": "rootMargin=\"0px\"",
+      "usageExamples": [
+        "rootMargin=\"0px\""
+      ]
+    },
+    {
+      "name": "tag",
+      "type": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'",
+      "required": false,
+      "defaultExpression": "'p'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 39,
+        "kind": "parameter"
+      },
+      "defaultValue": "p",
+      "description": "标签，控制 split text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "p",
+        "span"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 22
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "p",
+          "span"
+        ]
+      },
+      "codeExample": "tag=\"p\"",
+      "usageExamples": [
+        "tag=\"p\""
+      ]
+    },
+    {
+      "name": "textAlign",
+      "type": "React.CSSProperties['textAlign']",
+      "required": false,
+      "defaultExpression": "'center'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 38,
+        "kind": "parameter"
+      },
+      "defaultValue": "center",
+      "description": "文字对齐的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "-moz-initial",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset",
+        "center",
+        "end",
+        "start",
+        "left",
+        "right",
+        "-khtml-center",
+        "-khtml-left",
+        "-khtml-right",
+        "-moz-center",
+        "-moz-left",
+        "-moz-right",
+        "-webkit-center",
+        "-webkit-left",
+        "-webkit-match-parent",
+        "-webkit-right",
+        "justify",
+        "match-parent"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "-moz-initial",
+          "inherit",
+          "initial",
+          "revert",
+          "revert-layer",
+          "unset",
+          "center",
+          "end",
+          "start",
+          "left",
+          "right",
+          "-khtml-center",
+          "-khtml-left",
+          "-khtml-right",
+          "-moz-center",
+          "-moz-left",
+          "-moz-right",
+          "-webkit-center",
+          "-webkit-left",
+          "-webkit-match-parent",
+          "-webkit-right",
+          "justify",
+          "match-parent"
+        ]
+      },
+      "codeExample": "textAlign=\"center\"",
+      "usageExamples": [
+        "textAlign=\"center\""
+      ]
+    },
+    {
+      "name": "onLetterAnimationComplete",
+      "type": "() => void",
+      "required": false,
+      "description": "字母动画完成时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onLetterAnimationComplete={() => {}}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/SplitText/SplitText';\nimport { palette } from '../../shared/demo-support';\n\n// GSAP逐字入场；字体大小由演示容器继承。\n\nexport default function SplitTextDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, lineHeight: 1.35, padding: 24 }}>\n      <Component    ease=\"power3.out\"\n\n    /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "SplitText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 12
+          },
+          "codeExample": "text=\"自然有序，清晰可见\"",
+          "usageExamples": [
+            "text=\"自然有序，清晰可见\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 29,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 13
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "50",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 30,
+            "kind": "parameter"
+          },
+          "defaultValue": 50,
+          "description": "开始动画或执行回调之前的等待时长。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 14
+          },
+          "codeExample": "delay={55}",
+          "usageExamples": [
+            "delay={55}"
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 31,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.25,
+          "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 15
+          },
+          "codeExample": "duration={0.5}",
+          "usageExamples": [
+            "duration={0.5}"
+          ]
+        },
+        {
+          "name": "ease",
+          "type": "string | ((t: number) => number)",
+          "required": false,
+          "defaultExpression": "'power3.out'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 32,
+            "kind": "parameter"
+          },
+          "defaultValue": "power3.out",
+          "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "(t: number) => number",
+                "kind": "callback",
+                "signature": "(t: number) => number"
+              }
+            ]
+          },
+          "codeExample": "ease=\"power3.out\"",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "ease=\"power3.out\""
+          ]
+        },
+        {
+          "name": "splitType",
+          "type": "'chars' | 'words' | 'lines' | 'words, chars'",
+          "required": false,
+          "defaultExpression": "'chars'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 33,
+            "kind": "parameter"
+          },
+          "defaultValue": "chars",
+          "description": "拆分类型，控制 split text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "chars",
+            "words",
+            "lines",
+            "words, chars"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "chars",
+              "words",
+              "lines",
+              "words, chars"
+            ]
+          },
+          "codeExample": "splitType=\"chars\"",
+          "usageExamples": [
+            "splitType=\"chars\""
+          ]
+        },
+        {
+          "name": "from",
+          "type": "gsap.TweenVars",
+          "required": false,
+          "defaultExpression": "{ opacity: 0, y: 40 }",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 34,
+            "kind": "parameter"
+          },
+          "defaultValue": {
+            "opacity": 0,
+            "y": 40
+          },
+          "description": "起始的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 18
+          },
+          "codeExample": "from={{ opacity: 0, y: 24 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "from={{ opacity: 0, y: 24 }}"
+          ]
+        },
+        {
+          "name": "to",
+          "type": "gsap.TweenVars",
+          "required": false,
+          "defaultExpression": "{ opacity: 1, y: 0 }",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 35,
+            "kind": "parameter"
+          },
+          "defaultValue": {
+            "opacity": 1,
+            "y": 0
+          },
+          "description": "目标的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 19
+          },
+          "codeExample": "to={{ opacity: 1, y: 0 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "to={{ opacity: 1, y: 0 }}"
+          ]
+        },
+        {
+          "name": "threshold",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 36,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "阈值，控制 split text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 20
+          },
+          "codeExample": "threshold={0.1}",
+          "usageExamples": [
+            "threshold={0.1}"
+          ]
+        },
+        {
+          "name": "rootMargin",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'-100px'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 37,
+            "kind": "parameter"
+          },
+          "defaultValue": "-100px",
+          "description": "IntersectionObserver 的视口边界扩展量，如 0px 或 -20% 0px。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 21
+          },
+          "codeExample": "rootMargin=\"0px\"",
+          "usageExamples": [
+            "rootMargin=\"0px\""
+          ]
+        },
+        {
+          "name": "tag",
+          "type": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'",
+          "required": false,
+          "defaultExpression": "'p'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 39,
+            "kind": "parameter"
+          },
+          "defaultValue": "p",
+          "description": "标签，控制 split text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "p",
+            "span"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 22
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6",
+              "p",
+              "span"
+            ]
+          },
+          "codeExample": "tag=\"p\"",
+          "usageExamples": [
+            "tag=\"p\""
+          ]
+        },
+        {
+          "name": "textAlign",
+          "type": "React.CSSProperties['textAlign']",
+          "required": false,
+          "defaultExpression": "'center'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 38,
+            "kind": "parameter"
+          },
+          "defaultValue": "center",
+          "description": "文字对齐的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "-moz-initial",
+            "inherit",
+            "initial",
+            "revert",
+            "revert-layer",
+            "unset",
+            "center",
+            "end",
+            "start",
+            "left",
+            "right",
+            "-khtml-center",
+            "-khtml-left",
+            "-khtml-right",
+            "-moz-center",
+            "-moz-left",
+            "-moz-right",
+            "-webkit-center",
+            "-webkit-left",
+            "-webkit-match-parent",
+            "-webkit-right",
+            "justify",
+            "match-parent"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "-moz-initial",
+              "inherit",
+              "initial",
+              "revert",
+              "revert-layer",
+              "unset",
+              "center",
+              "end",
+              "start",
+              "left",
+              "right",
+              "-khtml-center",
+              "-khtml-left",
+              "-khtml-right",
+              "-moz-center",
+              "-moz-left",
+              "-moz-right",
+              "-webkit-center",
+              "-webkit-left",
+              "-webkit-match-parent",
+              "-webkit-right",
+              "justify",
+              "match-parent"
+            ]
+          },
+          "codeExample": "textAlign=\"center\"",
+          "usageExamples": [
+            "textAlign=\"center\""
+          ]
+        },
+        {
+          "name": "onLetterAnimationComplete",
+          "type": "() => void",
+          "required": false,
+          "description": "字母动画完成时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/SplitText/SplitText.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onLetterAnimationComplete={() => {}}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

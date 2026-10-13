@@ -1,0 +1,662 @@
+{
+  "version": 1,
+  "id": "true-focus",
+  "name": "True Focus",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+  "demoPath": "src/demos/text/true-focus.tsx",
+  "fields": [
+    {
+      "key": "t0.sentence",
+      "name": "sentence",
+      "label": "sentence · t0",
+      "description": "句段，控制 true focus 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sentence"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "清晰 专注 协作",
+      "upstreamDefault": "'True Focus'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.separator",
+      "name": "separator",
+      "label": "separator · t0",
+      "description": "分隔符，控制 true focus 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "separator"
+        }
+      ],
+      "type": "string",
+      "defaultValue": " ",
+      "upstreamDefault": "' '",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.manualMode",
+      "name": "manualMode",
+      "label": "manualMode · t0",
+      "description": "是否手动模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "manualMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.blurAmount",
+      "name": "blurAmount",
+      "label": "blurAmount · t0",
+      "description": "模糊幅度，控制 true focus 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "blurAmount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "5",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.borderColor",
+      "name": "borderColor",
+      "label": "边框颜色 · t0",
+      "description": "边框颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "borderColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'green'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glowColor",
+      "name": "glowColor",
+      "label": "glowColor · t0",
+      "description": "辉光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glowColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'rgba(0, 255, 0, 0.6)'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animationDuration",
+      "name": "animationDuration",
+      "label": "动画时长 · t0",
+      "description": "动画时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animationDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pauseBetweenAnimations",
+      "name": "pauseBetweenAnimations",
+      "label": "pauseBetweenAnimations · t0",
+      "description": "是否暂停之间动画组，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pauseBetweenAnimations"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "sentence",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'True Focus'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 26,
+        "kind": "parameter"
+      },
+      "defaultValue": "True Focus",
+      "description": "句段，控制 true focus 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 8
+      },
+      "codeExample": "sentence=\"清晰 专注 协作\"",
+      "usageExamples": [
+        "sentence=\"清晰 专注 协作\""
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "' '",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 27,
+        "kind": "parameter"
+      },
+      "defaultValue": " ",
+      "description": "分隔符，控制 true focus 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 9
+      },
+      "codeExample": "separator=\" \"",
+      "usageExamples": [
+        "separator=\" \""
+      ]
+    },
+    {
+      "name": "manualMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 28,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否手动模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "manualMode={false}",
+      "usageExamples": [
+        "manualMode={false}"
+      ]
+    },
+    {
+      "name": "blurAmount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 29,
+        "kind": "parameter"
+      },
+      "defaultValue": 5,
+      "description": "模糊幅度，控制 true focus 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 11
+      },
+      "codeExample": "blurAmount={3}",
+      "usageExamples": [
+        "blurAmount={3}"
+      ]
+    },
+    {
+      "name": "borderColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'green'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 30,
+        "kind": "parameter"
+      },
+      "defaultValue": "green",
+      "description": "边框颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 12
+      },
+      "codeExample": "borderColor={palette.primary}",
+      "usageExamples": [
+        "borderColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "glowColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'rgba(0, 255, 0, 0.6)'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 31,
+        "kind": "parameter"
+      },
+      "defaultValue": "rgba(0, 255, 0, 0.6)",
+      "description": "辉光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 13
+      },
+      "codeExample": "glowColor={palette.sage}",
+      "usageExamples": [
+        "glowColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "animationDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 32,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "动画时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 14
+      },
+      "codeExample": "animationDuration={0.65}",
+      "usageExamples": [
+        "animationDuration={0.65}"
+      ]
+    },
+    {
+      "name": "pauseBetweenAnimations",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 33,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "是否暂停之间动画组，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+        "line": 15
+      },
+      "codeExample": "pauseBetweenAnimations={1.5}",
+      "usageExamples": [
+        "pauseBetweenAnimations={1.5}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus';\nimport { palette } from '../../shared/demo-support';\n\n// 焦点框与字形清晰度在词组间切换。\n\nexport default function TrueFocusDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>\n      <Component\n\n  /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "TrueFocus",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+      "props": [
+        {
+          "name": "sentence",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'True Focus'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 26,
+            "kind": "parameter"
+          },
+          "defaultValue": "True Focus",
+          "description": "句段，控制 true focus 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 8
+          },
+          "codeExample": "sentence=\"清晰 专注 协作\"",
+          "usageExamples": [
+            "sentence=\"清晰 专注 协作\""
+          ]
+        },
+        {
+          "name": "separator",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "' '",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 27,
+            "kind": "parameter"
+          },
+          "defaultValue": " ",
+          "description": "分隔符，控制 true focus 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 9
+          },
+          "codeExample": "separator=\" \"",
+          "usageExamples": [
+            "separator=\" \""
+          ]
+        },
+        {
+          "name": "manualMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 28,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否手动模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "manualMode={false}",
+          "usageExamples": [
+            "manualMode={false}"
+          ]
+        },
+        {
+          "name": "blurAmount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 29,
+            "kind": "parameter"
+          },
+          "defaultValue": 5,
+          "description": "模糊幅度，控制 true focus 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 11
+          },
+          "codeExample": "blurAmount={3}",
+          "usageExamples": [
+            "blurAmount={3}"
+          ]
+        },
+        {
+          "name": "borderColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'green'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 30,
+            "kind": "parameter"
+          },
+          "defaultValue": "green",
+          "description": "边框颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 12
+          },
+          "codeExample": "borderColor={palette.primary}",
+          "usageExamples": [
+            "borderColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "glowColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'rgba(0, 255, 0, 0.6)'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 31,
+            "kind": "parameter"
+          },
+          "defaultValue": "rgba(0, 255, 0, 0.6)",
+          "description": "辉光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 13
+          },
+          "codeExample": "glowColor={palette.sage}",
+          "usageExamples": [
+            "glowColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "animationDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 32,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "动画时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 14
+          },
+          "codeExample": "animationDuration={0.65}",
+          "usageExamples": [
+            "animationDuration={0.65}"
+          ]
+        },
+        {
+          "name": "pauseBetweenAnimations",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 33,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "是否暂停之间动画组，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/TrueFocus/TrueFocus.tsx",
+            "line": 15
+          },
+          "codeExample": "pauseBetweenAnimations={1.5}",
+          "usageExamples": [
+            "pauseBetweenAnimations={1.5}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

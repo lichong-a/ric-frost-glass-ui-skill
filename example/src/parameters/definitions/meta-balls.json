@@ -1,0 +1,1871 @@
+{
+  "version": 1,
+  "id": "meta-balls",
+  "name": "Meta Balls",
+  "sourcePath": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+  "demoPath": "src/demos/background/meta-balls.tsx",
+  "fields": [
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cursorBallColor",
+      "name": "cursorBallColor",
+      "label": "cursorBallColor · t0",
+      "description": "指针球体颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cursorBallColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#c3ae88",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.variant",
+      "name": "variant",
+      "label": "外观 · t0",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "variant"
+        }
+      ],
+      "type": "Variant",
+      "defaultValue": "solid",
+      "upstreamDefault": "'solid'",
+      "control": "select",
+      "options": [
+        {
+          "label": "solid",
+          "value": "solid"
+        },
+        {
+          "label": "outline",
+          "value": "outline"
+        },
+        {
+          "label": "contour",
+          "value": "contour"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.motion",
+      "name": "motion",
+      "label": "motion · t0",
+      "description": "动效，控制 meta balls 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "motion"
+        }
+      ],
+      "type": "Motion",
+      "defaultValue": "orbit",
+      "upstreamDefault": "'orbit'",
+      "control": "select",
+      "options": [
+        {
+          "label": "orbit",
+          "value": "orbit"
+        },
+        {
+          "label": "drift",
+          "value": "drift"
+        },
+        {
+          "label": "lava",
+          "value": "lava"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ballCount",
+      "name": "ballCount",
+      "label": "ballCount · t0",
+      "description": "球体数量，控制 meta balls 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ballCount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 9,
+      "upstreamDefault": "15",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animationSize",
+      "name": "animationSize",
+      "label": "animationSize · t0",
+      "description": "动画尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animationSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 25,
+      "upstreamDefault": "30",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gooeyness",
+      "name": "gooeyness",
+      "label": "gooeyness · t0",
+      "description": "粘连程度，控制 meta balls 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gooeyness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stretch",
+      "name": "stretch",
+      "label": "stretch · t0",
+      "description": "拉伸，控制 meta balls 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stretch"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.wobble",
+      "name": "wobble",
+      "label": "wobble · t0",
+      "description": "摇晃，控制 meta balls 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "wobble"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.enableTransparency",
+      "name": "enableTransparency",
+      "label": "enableTransparency · t0",
+      "description": "是否启用透明，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "enableTransparency"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.enableMouseInteraction",
+      "name": "enableMouseInteraction",
+      "label": "enableMouseInteraction · t0",
+      "description": "是否启用鼠标交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "enableMouseInteraction"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clickBurst",
+      "name": "clickBurst",
+      "label": "clickBurst · t0",
+      "description": "是否点击爆发，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clickBurst"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dpr",
+      "name": "dpr",
+      "label": "像素比 · t0",
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dpr"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverSmoothness",
+      "name": "hoverSmoothness",
+      "label": "hoverSmoothness · t0",
+      "description": "悬停平滑程度，控制 meta balls 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverSmoothness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clumpFactor",
+      "name": "clumpFactor",
+      "label": "clumpFactor · t0",
+      "description": "聚团系数，控制 meta balls 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clumpFactor"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cursorBallSize",
+      "name": "cursorBallSize",
+      "label": "cursorBallSize · t0",
+      "description": "指针球体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cursorBallSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stickiness",
+      "name": "stickiness",
+      "label": "stickiness · t0",
+      "description": "粘滞，控制 meta balls 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stickiness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineWidth",
+      "name": "lineWidth",
+      "label": "lineWidth · t0",
+      "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rings",
+      "name": "rings",
+      "label": "rings · t0",
+      "description": "圆环组，控制 meta balls 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rings"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 201,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 11
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 202,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 12
+      },
+      "codeExample": "color={palette.primary}",
+      "usageExamples": [
+        "color={palette.primary}"
+      ]
+    },
+    {
+      "name": "cursorBallColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 203,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "指针球体颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 13
+      },
+      "codeExample": "cursorBallColor={palette.sand}",
+      "usageExamples": [
+        "cursorBallColor={palette.sand}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 204,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 14
+      },
+      "codeExample": "speed={0.5}",
+      "usageExamples": [
+        "speed={0.5}"
+      ]
+    },
+    {
+      "name": "enableMouseInteraction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 205,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否启用鼠标交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "enableMouseInteraction",
+      "usageExamples": [
+        "enableMouseInteraction"
+      ]
+    },
+    {
+      "name": "hoverSmoothness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 206,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "悬停平滑程度，控制 meta balls 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 16
+      },
+      "codeExample": "hoverSmoothness={0.1}"
+    },
+    {
+      "name": "animationSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "30",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 207,
+        "kind": "parameter"
+      },
+      "defaultValue": 30,
+      "description": "动画尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 17
+      },
+      "codeExample": "animationSize={25}",
+      "usageExamples": [
+        "animationSize={25}"
+      ]
+    },
+    {
+      "name": "ballCount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 208,
+        "kind": "parameter"
+      },
+      "defaultValue": 15,
+      "description": "球体数量，控制 meta balls 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 18
+      },
+      "codeExample": "ballCount={9}",
+      "usageExamples": [
+        "ballCount={9}"
+      ]
+    },
+    {
+      "name": "clumpFactor",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 209,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "聚团系数，控制 meta balls 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 19
+      },
+      "codeExample": "clumpFactor={1}"
+    },
+    {
+      "name": "cursorBallSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 210,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "指针球体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 20
+      },
+      "codeExample": "cursorBallSize={3}"
+    },
+    {
+      "name": "enableTransparency",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 211,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否启用透明，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "enableTransparency",
+      "usageExamples": [
+        "enableTransparency"
+      ]
+    },
+    {
+      "name": "variant",
+      "type": "Variant",
+      "required": false,
+      "defaultExpression": "'solid'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 212,
+        "kind": "parameter"
+      },
+      "defaultValue": "solid",
+      "description": "选择组件内置的外观或效果变体。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "solid",
+        "outline",
+        "contour"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 22
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "solid",
+          "outline",
+          "contour"
+        ]
+      },
+      "codeExample": "variant=\"solid\"",
+      "usageExamples": [
+        "variant=\"solid\""
+      ]
+    },
+    {
+      "name": "motion",
+      "type": "Motion",
+      "required": false,
+      "defaultExpression": "'orbit'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 213,
+        "kind": "parameter"
+      },
+      "defaultValue": "orbit",
+      "description": "动效，控制 meta balls 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "orbit",
+        "drift",
+        "lava"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "orbit",
+          "drift",
+          "lava"
+        ]
+      },
+      "codeExample": "motion=\"orbit\"",
+      "usageExamples": [
+        "motion=\"orbit\""
+      ]
+    },
+    {
+      "name": "gooeyness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 214,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "粘连程度，控制 meta balls 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 24
+      },
+      "codeExample": "gooeyness={0.5}",
+      "usageExamples": [
+        "gooeyness={0.5}"
+      ]
+    },
+    {
+      "name": "stickiness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 215,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "粘滞，控制 meta balls 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 25
+      },
+      "codeExample": "stickiness={0.5}"
+    },
+    {
+      "name": "stretch",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 216,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "拉伸，控制 meta balls 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 26
+      },
+      "codeExample": "stretch={0.4}",
+      "usageExamples": [
+        "stretch={0.4}"
+      ]
+    },
+    {
+      "name": "wobble",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 217,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "摇晃，控制 meta balls 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 27
+      },
+      "codeExample": "wobble={0.3}",
+      "usageExamples": [
+        "wobble={0.3}"
+      ]
+    },
+    {
+      "name": "lineWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 218,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 28
+      },
+      "codeExample": "lineWidth={1.5}"
+    },
+    {
+      "name": "rings",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 219,
+        "kind": "parameter"
+      },
+      "defaultValue": 4,
+      "description": "圆环组，控制 meta balls 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 29
+      },
+      "codeExample": "rings={4}"
+    },
+    {
+      "name": "clickBurst",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 220,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否点击爆发，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickBurst",
+      "usageExamples": [
+        "clickBurst"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 221,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 222,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 33
+      },
+      "codeExample": "dpr={1.5}",
+      "usageExamples": [
+        "dpr={1.5}"
+      ]
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+        "line": 34
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/MetaBalls/MetaBalls';\nimport { palette } from '../../shared/demo-support';\n\n// 真实等值面融合、拉伸与指针球相互作用。\n// 此演示需要可用的WebGL上下文；上下文创建失败时应显示能力提示，不能声称效果已经运行。\n\nexport default function MetaBallsDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n      /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "MetaBalls",
+      "sourcePath": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 201,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 11
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 202,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 12
+          },
+          "codeExample": "color={palette.primary}",
+          "usageExamples": [
+            "color={palette.primary}"
+          ]
+        },
+        {
+          "name": "cursorBallColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 203,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "指针球体颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 13
+          },
+          "codeExample": "cursorBallColor={palette.sand}",
+          "usageExamples": [
+            "cursorBallColor={palette.sand}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 204,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 14
+          },
+          "codeExample": "speed={0.5}",
+          "usageExamples": [
+            "speed={0.5}"
+          ]
+        },
+        {
+          "name": "enableMouseInteraction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 205,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否启用鼠标交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "enableMouseInteraction",
+          "usageExamples": [
+            "enableMouseInteraction"
+          ]
+        },
+        {
+          "name": "hoverSmoothness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 206,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "悬停平滑程度，控制 meta balls 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 16
+          },
+          "codeExample": "hoverSmoothness={0.1}"
+        },
+        {
+          "name": "animationSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "30",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 207,
+            "kind": "parameter"
+          },
+          "defaultValue": 30,
+          "description": "动画尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 17
+          },
+          "codeExample": "animationSize={25}",
+          "usageExamples": [
+            "animationSize={25}"
+          ]
+        },
+        {
+          "name": "ballCount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 208,
+            "kind": "parameter"
+          },
+          "defaultValue": 15,
+          "description": "球体数量，控制 meta balls 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 18
+          },
+          "codeExample": "ballCount={9}",
+          "usageExamples": [
+            "ballCount={9}"
+          ]
+        },
+        {
+          "name": "clumpFactor",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 209,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "聚团系数，控制 meta balls 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 19
+          },
+          "codeExample": "clumpFactor={1}"
+        },
+        {
+          "name": "cursorBallSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 210,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "指针球体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 20
+          },
+          "codeExample": "cursorBallSize={3}"
+        },
+        {
+          "name": "enableTransparency",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 211,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否启用透明，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "enableTransparency",
+          "usageExamples": [
+            "enableTransparency"
+          ]
+        },
+        {
+          "name": "variant",
+          "type": "Variant",
+          "required": false,
+          "defaultExpression": "'solid'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 212,
+            "kind": "parameter"
+          },
+          "defaultValue": "solid",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "solid",
+            "outline",
+            "contour"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 22
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "solid",
+              "outline",
+              "contour"
+            ]
+          },
+          "codeExample": "variant=\"solid\"",
+          "usageExamples": [
+            "variant=\"solid\""
+          ]
+        },
+        {
+          "name": "motion",
+          "type": "Motion",
+          "required": false,
+          "defaultExpression": "'orbit'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 213,
+            "kind": "parameter"
+          },
+          "defaultValue": "orbit",
+          "description": "动效，控制 meta balls 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "orbit",
+            "drift",
+            "lava"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "orbit",
+              "drift",
+              "lava"
+            ]
+          },
+          "codeExample": "motion=\"orbit\"",
+          "usageExamples": [
+            "motion=\"orbit\""
+          ]
+        },
+        {
+          "name": "gooeyness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 214,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "粘连程度，控制 meta balls 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 24
+          },
+          "codeExample": "gooeyness={0.5}",
+          "usageExamples": [
+            "gooeyness={0.5}"
+          ]
+        },
+        {
+          "name": "stickiness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 215,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "粘滞，控制 meta balls 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 25
+          },
+          "codeExample": "stickiness={0.5}"
+        },
+        {
+          "name": "stretch",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 216,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "拉伸，控制 meta balls 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 26
+          },
+          "codeExample": "stretch={0.4}",
+          "usageExamples": [
+            "stretch={0.4}"
+          ]
+        },
+        {
+          "name": "wobble",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 217,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "摇晃，控制 meta balls 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 27
+          },
+          "codeExample": "wobble={0.3}",
+          "usageExamples": [
+            "wobble={0.3}"
+          ]
+        },
+        {
+          "name": "lineWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 218,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 28
+          },
+          "codeExample": "lineWidth={1.5}"
+        },
+        {
+          "name": "rings",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 219,
+            "kind": "parameter"
+          },
+          "defaultValue": 4,
+          "description": "圆环组，控制 meta balls 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 29
+          },
+          "codeExample": "rings={4}"
+        },
+        {
+          "name": "clickBurst",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 220,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否点击爆发，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickBurst",
+          "usageExamples": [
+            "clickBurst"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 221,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 222,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 33
+          },
+          "codeExample": "dpr={1.5}",
+          "usageExamples": [
+            "dpr={1.5}"
+          ]
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/MetaBalls/MetaBalls.tsx",
+            "line": 34
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

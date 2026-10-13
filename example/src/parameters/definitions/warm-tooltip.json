@@ -1,0 +1,1695 @@
+{
+  "version": 1,
+  "id": "warm-tooltip",
+  "name": "Warm Tooltip",
+  "sourcePath": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+  "demoPath": "src/demos/overlay/warm-tooltip.tsx",
+  "fields": [
+    {
+      "key": "t0.delay",
+      "name": "delay",
+      "label": "延迟 · t0",
+      "description": "开始动画或执行回调之前的等待时长。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "delay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 600,
+      "upstreamDefault": "400",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.warmWindow",
+      "name": "warmWindow",
+      "label": "warmWindow · t0",
+      "description": "预热窗口，控制 warm tooltip 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "warmWindow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1200,
+      "upstreamDefault": "300",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.travel",
+      "name": "travel",
+      "label": "travel · t0",
+      "description": "移动距离，控制 warm tooltip 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "travel"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 320,
+      "upstreamDefault": "320",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lean",
+      "name": "lean",
+      "label": "lean · t0",
+      "description": "倾斜，控制 warm tooltip 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lean"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.surfaceColor",
+      "name": "surfaceColor",
+      "label": "表面颜色 · t1",
+      "description": "表面颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "surfaceColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.inkColor",
+      "name": "inkColor",
+      "label": "inkColor · t1",
+      "description": "墨色颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "inkColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#18181b'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.radius",
+      "name": "radius",
+      "label": "圆角 · t1",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "8",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.side",
+      "name": "side",
+      "label": "side · t1",
+      "description": "抽屉或浮层从哪个边缘出现。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "side"
+        }
+      ],
+      "type": "WarmTooltipSide",
+      "defaultValue": "top",
+      "upstreamDefault": "'top'",
+      "control": "select",
+      "options": [
+        {
+          "label": "top",
+          "value": "top"
+        },
+        {
+          "label": "bottom",
+          "value": "bottom"
+        },
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.size",
+      "name": "size",
+      "label": "尺寸 · t1",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "size"
+        }
+      ],
+      "type": "WarmTooltipSize",
+      "defaultValue": "md",
+      "upstreamDefault": "'md'",
+      "control": "select",
+      "options": [
+        {
+          "label": "sm",
+          "value": "sm"
+        },
+        {
+          "label": "md",
+          "value": "md"
+        },
+        {
+          "label": "lg",
+          "value": "lg"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.gap",
+      "name": "gap",
+      "label": "间距 · t1",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "8",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.arrow",
+      "name": "arrow",
+      "label": "arrow · t1",
+      "description": "是否箭头，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "arrow"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.popDuration",
+      "name": "popDuration",
+      "label": "popDuration · t1",
+      "description": "弹出时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "popDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 160,
+      "upstreamDefault": "160",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.popScale",
+      "name": "popScale",
+      "label": "popScale · t1",
+      "description": "弹出缩放，控制 warm tooltip 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "popScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.94,
+      "upstreamDefault": "0.94",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.popBlur",
+      "name": "popBlur",
+      "label": "popBlur · t1",
+      "description": "弹出模糊，控制 warm tooltip 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "popBlur"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "4",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.showFuse",
+      "name": "showFuse",
+      "label": "showFuse · t1",
+      "description": "是否显示导火线，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "showFuse"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.longPress",
+      "name": "longPress",
+      "label": "longPress · t1",
+      "description": "长按按压，控制 warm tooltip 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "longPress"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 500,
+      "upstreamDefault": "500",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.disabled",
+      "name": "disabled",
+      "label": "禁用 · t1",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.type",
+      "name": "type",
+      "label": "类型 · t2",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "content",
+      "type": "ReactNode",
+      "required": true,
+      "description": "内容，控制 warm tooltip 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 52
+      },
+      "codeExample": "content={item.content}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "content={item.content}"
+      ]
+    },
+    {
+      "name": "shortcut",
+      "type": "ReactNode",
+      "required": false,
+      "description": "快捷键，控制 warm tooltip 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 53
+      },
+      "codeExample": "shortcut={item.shortcut}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "shortcut={item.shortcut}"
+      ]
+    },
+    {
+      "name": "children",
+      "type": "ReactElement<Record<string, unknown>>",
+      "required": true,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 54
+      },
+      "codeExample": "children={<><button type=\"button\" className={cn(\"aw-micro-action\")} onClick={() => setMessage(`已触发本地演示操作：${item.label}`)}>{item.label}</button></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><button type=\"button\" className={cn(\"aw-micro-action\")} onClick={() => setMessage(`已触发本地演示操作：${item.label}`)}>{item.label}</button></>}"
+      ]
+    },
+    {
+      "name": "side",
+      "type": "WarmTooltipSide",
+      "required": false,
+      "defaultExpression": "'top'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 660,
+        "kind": "parameter"
+      },
+      "defaultValue": "top",
+      "description": "抽屉或浮层从哪个边缘出现。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 55
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "top",
+          "bottom",
+          "left",
+          "right"
+        ]
+      },
+      "codeExample": "side=\"top\"",
+      "usageExamples": [
+        "side=\"top\""
+      ]
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "required": false,
+      "description": "开始动画或执行回调之前的等待时长。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 56
+      },
+      "codeExample": "delay={1}"
+    },
+    {
+      "name": "warmWindow",
+      "type": "number",
+      "required": false,
+      "description": "预热窗口，控制 warm tooltip 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 57
+      },
+      "codeExample": "warmWindow={1}"
+    },
+    {
+      "name": "surfaceColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 663,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "表面颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 58
+      },
+      "codeExample": "surfaceColor={palette.primary}",
+      "usageExamples": [
+        "surfaceColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "inkColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#18181b'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 664,
+        "kind": "parameter"
+      },
+      "defaultValue": "#18181b",
+      "description": "墨色颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 59
+      },
+      "codeExample": "inkColor={palette.ivory}",
+      "usageExamples": [
+        "inkColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "WarmTooltipSize",
+      "required": false,
+      "defaultExpression": "'md'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 665,
+        "kind": "parameter"
+      },
+      "defaultValue": "md",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 60
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "codeExample": "size={\"md\"}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 666,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 61
+      },
+      "codeExample": "radius={10}",
+      "usageExamples": [
+        "radius={10}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 667,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 62
+      },
+      "codeExample": "gap={8}"
+    },
+    {
+      "name": "arrow",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 668,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否箭头，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 63
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "arrow={true}"
+    },
+    {
+      "name": "popDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "160",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 669,
+        "kind": "parameter"
+      },
+      "defaultValue": 160,
+      "description": "弹出时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 64
+      },
+      "codeExample": "popDuration={160}"
+    },
+    {
+      "name": "popScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.94",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 670,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.94,
+      "description": "弹出缩放，控制 warm tooltip 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 65
+      },
+      "codeExample": "popScale={0.94}"
+    },
+    {
+      "name": "popBlur",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 671,
+        "kind": "parameter"
+      },
+      "defaultValue": 4,
+      "description": "弹出模糊，控制 warm tooltip 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 66
+      },
+      "codeExample": "popBlur={4}"
+    },
+    {
+      "name": "showFuse",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 672,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否显示导火线，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 67
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showFuse={false}"
+    },
+    {
+      "name": "longPress",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "500",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 673,
+        "kind": "parameter"
+      },
+      "defaultValue": 500,
+      "description": "长按按压，控制 warm tooltip 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 68
+      },
+      "codeExample": "longPress={500}"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 674,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 69
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 675,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+        "line": 70
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport WarmTooltip, { WarmTooltipGroup } from '../../../.upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nconst actions = [{ label: '复制', content: '复制当前组件配置', shortcut: '⌘ C' }, { label: '收藏', content: '加入本地演示收藏', shortcut: '⌘ D' }, { label: '检查', content: '查看组件验收要求', shortcut: '⌘ I' }];\nexport default function WarmTooltipDemo() {\n  const [message, setMessage] = useState('悬停或聚焦一个操作，然后移到相邻操作。');\n  const [warm, setWarm] = useState(false);\n  return <DemoPanel title=\"Warm Tooltip · 连续提示\"><div className={cn(\"aw-micro-stack\")}>\n    <WarmTooltipGroup   onWarmChange={setWarm} /*__AW_PROPS_t0__*/ ><div className={cn(\"aw-micro-row\")}>{actions.map(item => <WarmTooltip key={item.label} content={item.content} shortcut={item.shortcut}     /*__AW_PROPS_t1__*/ ><button  className={cn(\"aw-micro-action\")} onClick={() => setMessage(`已触发本地演示操作：${item.label}`)} /*__AW_PROPS_t2__*/ >{item.label}</button></WarmTooltip>)}</div></WarmTooltipGroup>\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">{message} 提示组：{warm ? '连续浏览中' : '等待首次提示'}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "WarmTooltipGroup",
+      "sourcePath": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+      "props": [
+        {
+          "name": "delay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 193,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "开始动画或执行回调之前的等待时长。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 39
+          },
+          "codeExample": "delay={600}",
+          "usageExamples": [
+            "delay={600}"
+          ]
+        },
+        {
+          "name": "warmWindow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "300",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 193,
+            "kind": "parameter"
+          },
+          "defaultValue": 300,
+          "description": "预热窗口，控制 warm tooltip 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 40
+          },
+          "codeExample": "warmWindow={1200}",
+          "usageExamples": [
+            "warmWindow={1200}"
+          ]
+        },
+        {
+          "name": "travel",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "320",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 193,
+            "kind": "parameter"
+          },
+          "defaultValue": 320,
+          "description": "移动距离，控制 warm tooltip 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 41
+          },
+          "codeExample": "travel={320}"
+        },
+        {
+          "name": "lean",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 193,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "倾斜，控制 warm tooltip 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 42
+          },
+          "codeExample": "lean={0}"
+        },
+        {
+          "name": "onWarmChange",
+          "type": "(warm: boolean) => void",
+          "required": false,
+          "description": "预热改变时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((warm: boolean) => void) | undefined"
+          },
+          "codeExample": "onWarmChange={setWarm}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onWarmChange={setWarm}"
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 44
+          },
+          "codeExample": "children={<><div className={cn(\"aw-micro-row\")}>{actions.map(item => <WarmTooltip key={item.label} content={item.content} shortcut={item.shortcut} surfaceColor={palette.primary} inkColor={palette.ivory} radius={10} side=\"top\"><button type=\"button\" className={cn(\"aw-micro-action\")} onClick={() => setMessage(`已触发本地演示操作：${item.label}`)}>{item.label}</button></WarmTooltip>)}</div></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><div className={cn(\"aw-micro-row\")}>{actions.map(item => <WarmTooltip key={item.label} content={item.content} shortcut={item.shortcut} surfaceColor={palette.primary} inkColor={palette.ivory} radius={10} side=\"top\"><button type=\"button\" className={cn(\"aw-micro-action\")} onClick={() => setMessage(`已触发本地演示操作：${item.label}`)}>{item.label}</button></WarmTooltip>)}</div></>}"
+          ]
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<WarmTooltipGroupHandle> | undefined",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 292
+          },
+          "sourceDescription": "Allows getting a ref to the component instance.\nOnce the component unmounts, React will set `ref.current` to `null`\n(or call the ref with `null` if you passed a callback ref).",
+          "inheritedFrom": "Ref<WarmTooltipGroupHandle> | undefined",
+          "codeExample": "const elementRef = useRef<WarmTooltipGroupHandle | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "Ref<WarmTooltipGroupHandle> | undefined",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "组件由 forwardRef 暴露的 ref；句柄类型按签名传递，React 特殊属性不作为普通文本配置。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "WarmTooltip",
+      "sourcePath": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+      "props": [
+        {
+          "name": "content",
+          "type": "ReactNode",
+          "required": true,
+          "description": "内容，控制 warm tooltip 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 52
+          },
+          "codeExample": "content={item.content}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "content={item.content}"
+          ]
+        },
+        {
+          "name": "shortcut",
+          "type": "ReactNode",
+          "required": false,
+          "description": "快捷键，控制 warm tooltip 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 53
+          },
+          "codeExample": "shortcut={item.shortcut}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "shortcut={item.shortcut}"
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactElement<Record<string, unknown>>",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 54
+          },
+          "codeExample": "children={<><button type=\"button\" className={cn(\"aw-micro-action\")} onClick={() => setMessage(`已触发本地演示操作：${item.label}`)}>{item.label}</button></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><button type=\"button\" className={cn(\"aw-micro-action\")} onClick={() => setMessage(`已触发本地演示操作：${item.label}`)}>{item.label}</button></>}"
+          ]
+        },
+        {
+          "name": "side",
+          "type": "WarmTooltipSide",
+          "required": false,
+          "defaultExpression": "'top'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 660,
+            "kind": "parameter"
+          },
+          "defaultValue": "top",
+          "description": "抽屉或浮层从哪个边缘出现。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 55
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "top",
+              "bottom",
+              "left",
+              "right"
+            ]
+          },
+          "codeExample": "side=\"top\"",
+          "usageExamples": [
+            "side=\"top\""
+          ]
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "required": false,
+          "description": "开始动画或执行回调之前的等待时长。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 56
+          },
+          "codeExample": "delay={1}"
+        },
+        {
+          "name": "warmWindow",
+          "type": "number",
+          "required": false,
+          "description": "预热窗口，控制 warm tooltip 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 57
+          },
+          "codeExample": "warmWindow={1}"
+        },
+        {
+          "name": "surfaceColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 663,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "表面颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 58
+          },
+          "codeExample": "surfaceColor={palette.primary}",
+          "usageExamples": [
+            "surfaceColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "inkColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#18181b'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 664,
+            "kind": "parameter"
+          },
+          "defaultValue": "#18181b",
+          "description": "墨色颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 59
+          },
+          "codeExample": "inkColor={palette.ivory}",
+          "usageExamples": [
+            "inkColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "WarmTooltipSize",
+          "required": false,
+          "defaultExpression": "'md'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 665,
+            "kind": "parameter"
+          },
+          "defaultValue": "md",
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 60
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "codeExample": "size={\"md\"}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 666,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 61
+          },
+          "codeExample": "radius={10}",
+          "usageExamples": [
+            "radius={10}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 667,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 62
+          },
+          "codeExample": "gap={8}"
+        },
+        {
+          "name": "arrow",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 668,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否箭头，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 63
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "arrow={true}"
+        },
+        {
+          "name": "popDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "160",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 669,
+            "kind": "parameter"
+          },
+          "defaultValue": 160,
+          "description": "弹出时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 64
+          },
+          "codeExample": "popDuration={160}"
+        },
+        {
+          "name": "popScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.94",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 670,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.94,
+          "description": "弹出缩放，控制 warm tooltip 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 65
+          },
+          "codeExample": "popScale={0.94}"
+        },
+        {
+          "name": "popBlur",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 671,
+            "kind": "parameter"
+          },
+          "defaultValue": 4,
+          "description": "弹出模糊，控制 warm tooltip 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 66
+          },
+          "codeExample": "popBlur={4}"
+        },
+        {
+          "name": "showFuse",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 672,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否显示导火线，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 67
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showFuse={false}"
+        },
+        {
+          "name": "longPress",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "500",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 673,
+            "kind": "parameter"
+          },
+          "defaultValue": 500,
+          "description": "长按按压，控制 warm tooltip 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 68
+          },
+          "codeExample": "longPress={500}"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 674,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 69
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 675,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/WarmTooltip/WarmTooltip.tsx",
+            "line": 70
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t2",
+      "name": "button",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn(\"aw-micro-action\")}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setMessage(`已触发本地演示操作：${item.label}`)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>{item.label}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

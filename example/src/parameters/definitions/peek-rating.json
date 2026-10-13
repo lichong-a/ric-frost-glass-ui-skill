@@ -1,0 +1,1675 @@
+{
+  "version": 1,
+  "id": "peek-rating",
+  "name": "Peek Rating",
+  "sourcePath": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+  "demoPath": "src/demos/form/peek-rating.tsx",
+  "fields": [
+    {
+      "key": "t0.count",
+      "name": "count",
+      "label": "count · t0",
+      "description": "数量，控制 peek rating 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "count"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 5,
+      "upstreamDefault": "5",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 128,
+      "step": 1
+    },
+    {
+      "key": "t0.labels",
+      "name": "labels",
+      "label": "labels · t0",
+      "description": "标签的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "labels"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "需要改进",
+        "基本可用",
+        "符合预期",
+        "体验良好",
+        "非常满意"
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.activeColor",
+      "name": "activeColor",
+      "label": "activeColor · t0",
+      "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "activeColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#c3ae88",
+      "upstreamDefault": "'#f5b400'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tipColor",
+      "name": "tipColor",
+      "label": "tipColor · t0",
+      "description": "提示颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tipColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#27272a'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tipTextColor",
+      "name": "tipTextColor",
+      "label": "tipTextColor · t0",
+      "description": "提示文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tipTextColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 40,
+      "upstreamDefault": "28",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.allowClear",
+      "name": "allowClear",
+      "label": "allowClear · t0",
+      "description": "是否允许清除，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "allowClear"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ariaLabel",
+      "name": "ariaLabel",
+      "label": "ariaLabel · t0",
+      "description": "无障碍标签，控制 peek rating 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ariaLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "为本次示例体验评分",
+      "upstreamDefault": "'Rating'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shape",
+      "name": "shape",
+      "label": "shape · t0",
+      "description": "形状，控制 peek rating 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shape"
+        }
+      ],
+      "type": "PeekRatingShape",
+      "defaultValue": "star",
+      "upstreamDefault": "'star'",
+      "control": "select",
+      "options": [
+        {
+          "label": "star",
+          "value": "star"
+        },
+        {
+          "label": "heart",
+          "value": "heart"
+        },
+        {
+          "label": "bolt",
+          "value": "bolt"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lift",
+      "name": "lift",
+      "label": "lift · t0",
+      "description": "抬起，控制 peek rating 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lift"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "upstreamDefault": "6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.magnify",
+      "name": "magnify",
+      "label": "magnify · t0",
+      "description": "放大，控制 peek rating 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "magnify"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.15,
+      "upstreamDefault": "1.15",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.riseDuration",
+      "name": "riseDuration",
+      "label": "riseDuration · t0",
+      "description": "上升时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "riseDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 320,
+      "upstreamDefault": "320",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.popScale",
+      "name": "popScale",
+      "label": "popScale · t0",
+      "description": "弹出缩放，控制 peek rating 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "popScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.3,
+      "upstreamDefault": "1.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showTip",
+      "name": "showTip",
+      "label": "showTip · t0",
+      "description": "是否显示提示，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showTip"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.readOnly",
+      "name": "readOnly",
+      "label": "只读 · t0",
+      "description": "是否只读；仍可聚焦，但不允许用户修改原生输入值。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "readOnly"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.value",
+      "name": "value",
+      "label": "当前值",
+      "description": "示例的受控状态 value；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "number",
+      "defaultValue": 3,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "value",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "inner",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 79,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 12
+      },
+      "codeExample": "value={value}",
+      "usageExamples": [
+        "value={value}"
+      ]
+    },
+    {
+      "name": "defaultValue",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 55,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "非受控模式的初始值；挂载后更新通常通过内部状态或受控 value 完成。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 13
+      },
+      "codeExample": "defaultValue={0}"
+    },
+    {
+      "name": "onChange",
+      "type": "(value: number) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((value: number) => void) | undefined"
+      },
+      "codeExample": "onChange={setValue}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={setValue}"
+      ]
+    },
+    {
+      "name": "onPreview",
+      "type": "(value: number | null) => void",
+      "required": false,
+      "description": "预览时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((value: number | null) => void) | undefined"
+      },
+      "codeExample": "onPreview={setPreview}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onPreview={setPreview}"
+      ]
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 58,
+        "kind": "parameter"
+      },
+      "defaultValue": 5,
+      "description": "数量，控制 peek rating 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 16
+      },
+      "codeExample": "count={5}",
+      "usageExamples": [
+        "count={5}"
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "PeekRatingShape",
+      "required": false,
+      "defaultExpression": "'star'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 59,
+        "kind": "parameter"
+      },
+      "defaultValue": "star",
+      "description": "形状，控制 peek rating 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "star",
+        "heart",
+        "bolt"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "star",
+          "heart",
+          "bolt"
+        ]
+      },
+      "codeExample": "shape={\"star\"}"
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false,
+      "defaultExpression": "<HugeiconsIcon icon={shapeIcon} size={size} fill=\"currentColor\" strokeWidth={1.5} />",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 346,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "图标，控制 peek rating 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 18
+      },
+      "codeExample": "icon={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    },
+    {
+      "name": "labels",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 61,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "标签的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "labels={labels}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "labels={labels}"
+      ]
+    },
+    {
+      "name": "activeColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5b400'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 62,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5b400",
+      "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 20
+      },
+      "codeExample": "activeColor={palette.sand}",
+      "usageExamples": [
+        "activeColor={palette.sand}"
+      ]
+    },
+    {
+      "name": "idleColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#52525b'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": "#52525b",
+      "description": "静止颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 21
+      },
+      "codeExample": "idleColor={palette.sage}",
+      "usageExamples": [
+        "idleColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "tipColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#27272a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": "#27272a",
+      "description": "提示颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 22
+      },
+      "codeExample": "tipColor={palette.primary}",
+      "usageExamples": [
+        "tipColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "tipTextColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "提示文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 23
+      },
+      "codeExample": "tipTextColor={palette.ivory}",
+      "usageExamples": [
+        "tipTextColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "28",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": 28,
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 24
+      },
+      "codeExample": "size={40}",
+      "usageExamples": [
+        "size={40}"
+      ]
+    },
+    {
+      "name": "lift",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 6,
+      "description": "抬起，控制 peek rating 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 25
+      },
+      "codeExample": "lift={6}"
+    },
+    {
+      "name": "magnify",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.15,
+      "description": "放大，控制 peek rating 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 26
+      },
+      "codeExample": "magnify={1.15}"
+    },
+    {
+      "name": "riseDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "320",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": 320,
+      "description": "上升时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 27
+      },
+      "codeExample": "riseDuration={320}"
+    },
+    {
+      "name": "popScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.3,
+      "description": "弹出缩放，控制 peek rating 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 28
+      },
+      "codeExample": "popScale={1.3}"
+    },
+    {
+      "name": "showTip",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示提示，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showTip={true}"
+    },
+    {
+      "name": "allowClear",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否允许清除，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "allowClear",
+      "usageExamples": [
+        "allowClear"
+      ]
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否只读；仍可聚焦，但不允许用户修改原生输入值。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "readOnly={false}"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Rating'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": "Rating",
+      "description": "无障碍标签，控制 peek rating 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 33
+      },
+      "codeExample": "ariaLabel=\"为本次示例体验评分\"",
+      "usageExamples": [
+        "ariaLabel=\"为本次示例体验评分\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+        "line": 34
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport PeekRating from '../../../.upstream/src/ts-default/Micro/PeekRating/PeekRating';\nimport { palette, DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nconst labels = ['需要改进', '基本可用', '符合预期', '体验良好', '非常满意'];\nexport default function PeekRatingDemo() {\n  const [value, setValue] = useState(/*__AW_STATE_state.value__*/);\n  const [preview, setPreview] = useState<number | null>(null);\n  return <DemoPanel title=\"Peek Rating · 预览评分\"><div className={cn(\"aw-micro-stack\")}>\n    <PeekRating value={value} onChange={setValue} onPreview={setPreview}    idleColor={palette.sage}      /*__AW_PROPS_t0__*/  />\n    <p className={cn(\"aw-micro-hint\")}>悬停查看提示，点击提交评分；再次点击当前分数可清空。</p>\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">已选：{value ? `${value} 分 · ${labels[value - 1]}` : '未评分'}{preview ? `；正在预览 ${preview} 分` : ''}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "PeekRating",
+      "sourcePath": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+      "props": [
+        {
+          "name": "value",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "inner",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 79,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 12
+          },
+          "codeExample": "value={value}",
+          "usageExamples": [
+            "value={value}"
+          ]
+        },
+        {
+          "name": "defaultValue",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 55,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "非受控模式的初始值；挂载后更新通常通过内部状态或受控 value 完成。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 13
+          },
+          "codeExample": "defaultValue={0}"
+        },
+        {
+          "name": "onChange",
+          "type": "(value: number) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((value: number) => void) | undefined"
+          },
+          "codeExample": "onChange={setValue}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={setValue}"
+          ]
+        },
+        {
+          "name": "onPreview",
+          "type": "(value: number | null) => void",
+          "required": false,
+          "description": "预览时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((value: number | null) => void) | undefined"
+          },
+          "codeExample": "onPreview={setPreview}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onPreview={setPreview}"
+          ]
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 58,
+            "kind": "parameter"
+          },
+          "defaultValue": 5,
+          "description": "数量，控制 peek rating 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 16
+          },
+          "codeExample": "count={5}",
+          "usageExamples": [
+            "count={5}"
+          ]
+        },
+        {
+          "name": "shape",
+          "type": "PeekRatingShape",
+          "required": false,
+          "defaultExpression": "'star'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 59,
+            "kind": "parameter"
+          },
+          "defaultValue": "star",
+          "description": "形状，控制 peek rating 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "star",
+            "heart",
+            "bolt"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "star",
+              "heart",
+              "bolt"
+            ]
+          },
+          "codeExample": "shape={\"star\"}"
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "required": false,
+          "defaultExpression": "<HugeiconsIcon icon={shapeIcon} size={size} fill=\"currentColor\" strokeWidth={1.5} />",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 346,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "图标，控制 peek rating 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 18
+          },
+          "codeExample": "icon={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        },
+        {
+          "name": "labels",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 61,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "标签的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "labels={labels}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "labels={labels}"
+          ]
+        },
+        {
+          "name": "activeColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5b400'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 62,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5b400",
+          "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 20
+          },
+          "codeExample": "activeColor={palette.sand}",
+          "usageExamples": [
+            "activeColor={palette.sand}"
+          ]
+        },
+        {
+          "name": "idleColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#52525b'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": "#52525b",
+          "description": "静止颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 21
+          },
+          "codeExample": "idleColor={palette.sage}",
+          "usageExamples": [
+            "idleColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "tipColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#27272a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": "#27272a",
+          "description": "提示颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 22
+          },
+          "codeExample": "tipColor={palette.primary}",
+          "usageExamples": [
+            "tipColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "tipTextColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "提示文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 23
+          },
+          "codeExample": "tipTextColor={palette.ivory}",
+          "usageExamples": [
+            "tipTextColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "28",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": 28,
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 24
+          },
+          "codeExample": "size={40}",
+          "usageExamples": [
+            "size={40}"
+          ]
+        },
+        {
+          "name": "lift",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 6,
+          "description": "抬起，控制 peek rating 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 25
+          },
+          "codeExample": "lift={6}"
+        },
+        {
+          "name": "magnify",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.15,
+          "description": "放大，控制 peek rating 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 26
+          },
+          "codeExample": "magnify={1.15}"
+        },
+        {
+          "name": "riseDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "320",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": 320,
+          "description": "上升时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 27
+          },
+          "codeExample": "riseDuration={320}"
+        },
+        {
+          "name": "popScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.3,
+          "description": "弹出缩放，控制 peek rating 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 28
+          },
+          "codeExample": "popScale={1.3}"
+        },
+        {
+          "name": "showTip",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示提示，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showTip={true}"
+        },
+        {
+          "name": "allowClear",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否允许清除，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "allowClear",
+          "usageExamples": [
+            "allowClear"
+          ]
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否只读；仍可聚焦，但不允许用户修改原生输入值。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "readOnly={false}"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Rating'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": "Rating",
+          "description": "无障碍标签，控制 peek rating 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 33
+          },
+          "codeExample": "ariaLabel=\"为本次示例体验评分\"",
+          "usageExamples": [
+            "ariaLabel=\"为本次示例体验评分\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PeekRating/PeekRating.tsx",
+            "line": 34
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

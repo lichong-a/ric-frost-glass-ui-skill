@@ -1,0 +1,36 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-date-label, .aw-business-date-open, .aw-business-calendar, .aw-business-calendar-header, .aw-business-calendar-eyebrow, .aw-business-calendar-nav, .aw-business-calendar-grid, .aw-business-calendar-week, .aw-business-calendar-row, .aw-business-calendar-month, .aw-business-calendar-footer { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-date-label { display:flex; align-items:center; gap:11px; font-variant-numeric:tabular-nums }
+.aw-business-date-label > svg { color:var(--aw-color-action-primary) }
+.aw-business-date-open { display:grid; place-items:center; width:24px; height:24px; border-radius:7px; background:color-mix(in srgb,var(--aw-color-action-primary) 8%,transparent); color:var(--aw-color-action-primary) }
+.aw-business-calendar { width:100%; padding:4px }
+.aw-business-calendar-header { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:5px 2px 19px }
+.aw-business-calendar-eyebrow { font-size:11px; letter-spacing:.08em; color:var(--aw-color-text-secondary) }
+.aw-business-calendar-header h3 { margin:5px 0 0; font-size:15px; font-weight:500; font-variant-numeric:tabular-nums }
+.aw-business-calendar-header h3 strong { font-size:23px; font-weight:600; color:var(--aw-color-action-primary) }
+.aw-business-calendar-nav { display:flex; gap:7px }
+.aw-business-calendar-nav-button { min-width:34px; min-height:34px; padding:7px; border-radius:10px }
+.aw-business-calendar-grid { position:relative }
+.aw-business-calendar-week, .aw-business-calendar-row { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:3px }
+.aw-business-calendar-week { padding-bottom:9px; color:var(--aw-color-text-secondary); font-size:12px; text-align:center }
+.aw-business-calendar-row { margin-bottom:4px }
+.aw-business-calendar-row [role=gridcell] { border-radius:10px }
+.aw-business-calendar-row [data-range=true] { background:color-mix(in srgb,var(--aw-color-action-primary) 9%,transparent); border-radius:0 }
+.aw-business-calendar-row [data-edge=true] { border-radius:10px }
+.aw-business-calendar-row button { position:relative; width:100%; min-width:0; aspect-ratio:1; padding:0; border:1px solid transparent; border-radius:10px; background:transparent; color:var(--aw-color-text-primary); font-size:13px; font-variant-numeric:tabular-nums }
+.aw-business-calendar-row button[data-outside=true] { color:var(--aw-color-text-secondary) }
+.aw-business-calendar-row button[aria-current=date] { border-color:var(--aw-color-border-control) }
+.aw-business-calendar-row button[aria-current=date]::after { content:''; position:absolute; left:calc(50% - 2px); bottom:4px; width:4px; height:4px; border-radius:50%; background:currentColor }
+.aw-business-calendar-row button:not(:disabled):hover { translate:0 0; background:color-mix(in srgb,var(--aw-color-action-primary) 12%,transparent) }
+.aw-business-calendar-row button[data-selected=true] { color:var(--aw-palette-ivory); background:var(--aw-color-action-primary); box-shadow:var(--aw-shadow-control) }
+.aw-business-calendar-row button[data-selected=true]:hover { background:var(--aw-color-action-primary) }
+.aw-business-calendar-row button:disabled { opacity:.25 }
+.aw-business-calendar-month { min-height:254px }
+.aw-business-calendar-footer { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:13px 0 0; margin-top:9px; border-top:1px solid var(--aw-color-border-decorative) }
+.aw-business-calendar-footer-button { display:flex; align-items:center; gap:4px; min-height:34px; padding:7px 10px; font-size:12px }
+.aw-business-calendar-footer > span { font-size:12px; color:var(--aw-color-text-secondary); font-variant-numeric:tabular-nums }
+@media (width < 380px) { .aw-business-calendar-month { min-height:230px } }
+@media (width < 380px) { .aw-business-calendar-row button { min-height:32px } }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-date-label, .aw-business-date-label::before, .aw-business-date-label::after, .aw-business-date-open, .aw-business-date-open::before, .aw-business-date-open::after, .aw-business-calendar, .aw-business-calendar::before, .aw-business-calendar::after, .aw-business-calendar-header, .aw-business-calendar-header::before, .aw-business-calendar-header::after, .aw-business-calendar-eyebrow, .aw-business-calendar-eyebrow::before, .aw-business-calendar-eyebrow::after, .aw-business-calendar-nav, .aw-business-calendar-nav::before, .aw-business-calendar-nav::after, .aw-business-calendar-grid, .aw-business-calendar-grid::before, .aw-business-calendar-grid::after, .aw-business-calendar-week, .aw-business-calendar-week::before, .aw-business-calendar-week::after, .aw-business-calendar-row, .aw-business-calendar-row::before, .aw-business-calendar-row::after, .aw-business-calendar-month, .aw-business-calendar-month::before, .aw-business-calendar-month::after, .aw-business-calendar-footer, .aw-business-calendar-footer::before, .aw-business-calendar-footer::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-date-label, [data-motion=reduce] .aw-business-date-label::before, [data-motion=reduce] .aw-business-date-label::after, [data-motion=reduce] .aw-business-date-open, [data-motion=reduce] .aw-business-date-open::before, [data-motion=reduce] .aw-business-date-open::after, [data-motion=reduce] .aw-business-calendar, [data-motion=reduce] .aw-business-calendar::before, [data-motion=reduce] .aw-business-calendar::after, [data-motion=reduce] .aw-business-calendar-header, [data-motion=reduce] .aw-business-calendar-header::before, [data-motion=reduce] .aw-business-calendar-header::after, [data-motion=reduce] .aw-business-calendar-eyebrow, [data-motion=reduce] .aw-business-calendar-eyebrow::before, [data-motion=reduce] .aw-business-calendar-eyebrow::after, [data-motion=reduce] .aw-business-calendar-nav, [data-motion=reduce] .aw-business-calendar-nav::before, [data-motion=reduce] .aw-business-calendar-nav::after, [data-motion=reduce] .aw-business-calendar-grid, [data-motion=reduce] .aw-business-calendar-grid::before, [data-motion=reduce] .aw-business-calendar-grid::after, [data-motion=reduce] .aw-business-calendar-week, [data-motion=reduce] .aw-business-calendar-week::before, [data-motion=reduce] .aw-business-calendar-week::after, [data-motion=reduce] .aw-business-calendar-row, [data-motion=reduce] .aw-business-calendar-row::before, [data-motion=reduce] .aw-business-calendar-row::after, [data-motion=reduce] .aw-business-calendar-month, [data-motion=reduce] .aw-business-calendar-month::before, [data-motion=reduce] .aw-business-calendar-month::after, [data-motion=reduce] .aw-business-calendar-footer, [data-motion=reduce] .aw-business-calendar-footer::before, [data-motion=reduce] .aw-business-calendar-footer::after { transition:none; animation:none; scroll-behavior:auto; }

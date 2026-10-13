@@ -1,0 +1,432 @@
+{
+  "version": 1,
+  "id": "business-textarea",
+  "name": "Textarea",
+  "sourcePath": "src/business/demos/form/business-textarea.tsx",
+  "demoPath": "src/business/demos/form/business-textarea.tsx",
+  "fields": [
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "需求说明",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.control",
+      "name": "control",
+      "label": "control · t0",
+      "description": "是否控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "control"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.rows",
+      "name": "rows",
+      "label": "行数 · t1",
+      "description": "行数，控制 textarea 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "rows"
+        }
+      ],
+      "type": "number | undefined",
+      "defaultValue": 5,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.maxLength",
+      "name": "maxLength",
+      "label": "最大长度 · t1",
+      "description": "允许输入的最大字符数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "maxLength"
+        }
+      ],
+      "type": "number | undefined",
+      "defaultValue": 500,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.placeholder",
+      "name": "placeholder",
+      "label": "占位文字 · t1",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "placeholder"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "描述需要完成的工作",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.value",
+      "name": "value",
+      "label": "当前值",
+      "description": "示例的受控状态 value；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [],
+  "inherited": [
+    {
+      "type": "DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "textarea",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "p",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport ownedStyles1 from '../../components/Input.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState, useId } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Field } from '../../components/Field';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\n// 场景：多行说明、备注和反馈，明确长度与可调整高度。\nexport default function TextareaDemo() {\n  const id = useId(); const [value, setValue] = useState(/*__AW_STATE_state.value__*/);\n  return <BusinessDemo title=\"Textarea · 多行文本\" description=\"适合说明、备注和反馈，提供字数提示。\"><Field  htmlFor={id} /*__AW_PROPS_t0__*/ ><textarea className={cn('aw-business-input')} id={id}   value={value} onChange={event => setValue(event.target.value)}  /*__AW_PROPS_t1__*/  /></Field><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">{value.length}/500 字</p></BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Field",
+      "sourcePath": "src/business/components/Field.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "label=\"需求说明\"",
+          "usageExamples": [
+            "label=\"需求说明\""
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><textarea className={cn('aw-business-input')} id={id} rows={5} maxLength={500} value={value} onChange={event => setValue(event.target.value)} placeholder=\"描述需要完成的工作\" /></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><textarea className={cn('aw-business-input')} id={id} rows={5} maxLength={500} value={value} onChange={event => setValue(event.target.value)} placeholder=\"描述需要完成的工作\" /></>}"
+          ]
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "required": false,
+          "description": "与字段一起显示的帮助文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "hint={\"示例\"}"
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "(isControl ? children.props.id : undefined)",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "htmlFor={id}",
+          "usageExamples": [
+            "htmlFor={id}"
+          ]
+        },
+        {
+          "name": "control",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "control={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "textarea",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn('aw-business-input')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "required": false,
+          "description": "原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。",
+          "usageExamples": [
+            "id={id}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2707
+          }
+        },
+        {
+          "name": "rows",
+          "type": "number | undefined",
+          "required": false,
+          "description": "行数，控制 textarea 的对应渲染或交互参数。",
+          "usageExamples": [
+            "rows={5}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3431
+          }
+        },
+        {
+          "name": "maxLength",
+          "type": "number | undefined",
+          "required": false,
+          "description": "允许输入的最大字符数。",
+          "usageExamples": [
+            "maxLength={500}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3425
+          }
+        },
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value={value}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3432
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "ChangeEventHandler<HTMLTextAreaElement> | undefined",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "usageExamples": [
+            "onChange={event => setValue(event.target.value)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3435
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string | undefined",
+          "required": false,
+          "description": "尚未填写或选择时显示的提示文字。",
+          "usageExamples": [
+            "placeholder=\"描述需要完成的工作\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3428
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "native-composition",
+  "notes": [
+    "该业务能力由示例函数组合原生元素与下面的叶组件；示例函数没有接收公开 Props。原生属性按元素列出，演示内部 useState 配置不作为公开 Props 或组件默认值。"
+  ]
+}

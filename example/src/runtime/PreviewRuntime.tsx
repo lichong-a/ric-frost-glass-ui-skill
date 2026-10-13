@@ -1,8 +1,12 @@
-import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react';
+import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { PreviewErrorBoundary } from './ErrorBoundary';
 import { detectGraphicsSupport, isMotionReduced, parseMotionMode, shouldGateMotion, type GraphicsSupport } from './policy';
 import { isHostMessage, isMatchingEnvelope, PREVIEW_PROTOCOL } from './protocol';
 import type { MotionMode, PreviewRegistry, PreviewStatus } from './types';
+import { loadDefinition } from '../parameters/load';
+import { defaultValues, validateValues } from '../parameters/validation';
+import { DemoConfigProvider } from '../parameters/DemoConfig';
+import type { DemoValues, JsonValue, ParameterDefinition } from '../parameters/types';
 
 function useSystemReducedMotion() {
   const [reduced, setReduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -43,11 +47,36 @@ export function PreviewRuntime({ registry }: { registry: PreviewRegistry }) {
   const [startedByUser, setStartedByUser] = useState(false);
   const [graphics, setGraphics] = useState<GraphicsSupport | null>(null);
   const [runtimeError, setRuntimeError] = useState<string | null>(null);
+  const [definition, setDefinition] = useState<ParameterDefinition>();
+  const [incoming, setIncoming] = useState<{ revision: number; values: DemoValues }>();
+  const [parameters, setParameters] = useState<DemoValues>({});
+  const latestRevision = useRef(-1);
+  const parameterRevision = useRef(0);
+  const pendingChanges = useRef<{ revision: number; values: DemoValues } | undefined>(undefined);
+  const changeScheduled = useRef(false);
+  const [configured, setConfigured] = useState(false);
   const systemReduced = useSystemReducedMotion();
   const reduced = isMotionReduced(motion, systemReduced);
   const motionGated = !!entry && shouldGateMotion(entry, reduced) && !startedByUser;
   const active = hostActive && documentVisible;
-  const mayMount = !!entry && !!Demo && active && !motionGated;
+  const mayMount = !!entry && !!Demo && !!definition && configured && active && !motionGated;
+
+  useEffect(() => {
+    let cancelled = false;
+    void loadDefinition(config.id).then(value => { if (!cancelled) setDefinition(value); })
+      .catch(error => { if (!cancelled) setRuntimeError(describeError(error)); });
+    return () => { cancelled = true; };
+  }, [config.id]);
+  useEffect(() => {
+    if (!definition) return;
+    if (!incoming && window.parent !== window) return;
+    if (incoming && !validateValues(definition, incoming.values)) return;
+    if (incoming && incoming.revision < latestRevision.current) return;
+    latestRevision.current = incoming?.revision ?? 0;
+    parameterRevision.current = incoming?.revision ?? 0;
+    setParameters({ ...defaultValues(definition), ...incoming?.values });
+    setConfigured(true);
+  }, [definition, incoming]);
 
   const report = useCallback((status: PreviewStatus, detail?: string) => {
     if (window.parent === window) return;
@@ -61,8 +90,12 @@ export function PreviewRuntime({ registry }: { registry: PreviewRegistry }) {
     const onMessage = (event: MessageEvent<unknown>) => {
       if (event.origin !== window.location.origin || event.source !== window.parent || !isHostMessage(event.data)) return;
       if (!isMatchingEnvelope(event.data, config.channel, config.id)) return;
-      setHostActive(event.data.active);
-      setMotion(event.data.motion);
+      if (event.data.type === 'preferences') {
+        setHostActive(event.data.active);
+        setMotion(event.data.motion);
+      } else if (event.data.revision >= latestRevision.current) {
+        setIncoming({ revision: event.data.revision, values: event.data.values });
+      }
     };
     const onVisibility = () => setDocumentVisible(!document.hidden);
     window.addEventListener('message', onMessage);
@@ -127,6 +160,29 @@ export function PreviewRuntime({ registry }: { registry: PreviewRegistry }) {
 
   const ready = useCallback(() => report('ready'), [report]);
   const boundaryError = useCallback((error: Error) => report('error', error.message), [report]);
+  const changeValue = useCallback((key: string, value: JsonValue) => {
+    if (!definition || !definition.fields.some(field => field.key === key && field.scope === 'state') || !validateValues(definition, { [key]: value })) return;
+    setParameters(before => ({ ...before, [key]: value }));
+    if (window.parent === window) return;
+    const revision = parameterRevision.current;
+    pendingChanges.current = pendingChanges.current?.revision === revision
+      ? { revision, values: { ...pendingChanges.current.values, [key]: value } }
+      : { revision, values: { [key]: value } };
+    if (changeScheduled.current) return;
+    changeScheduled.current = true;
+    // Cascade and date-range callbacks can update several controlled fields.
+    // Send their final values together, retaining the host edit's revision.
+    queueMicrotask(() => {
+      changeScheduled.current = false;
+      const batch = pendingChanges.current;
+      pendingChanges.current = undefined;
+      if (!batch || batch.revision !== parameterRevision.current) return;
+      window.parent.postMessage({
+        protocol: PREVIEW_PROTOCOL, channel: config.channel, componentId: config.id,
+        type: 'values-change', revision: batch.revision, changes: batch.values,
+      }, window.location.origin);
+    });
+  }, [definition, config.channel, config.id]);
   const reload = () => window.location.reload();
 
   if (!entry || !Demo) {
@@ -151,7 +207,7 @@ export function PreviewRuntime({ registry }: { registry: PreviewRegistry }) {
     <main className="aw-preview-runtime" data-component={entry.id} data-motion={reduced && !startedByUser ? 'reduce' : 'allow'}>
       <PreviewErrorBoundary componentName={entry.name} onError={boundaryError} onRetry={reload}>
         <Suspense fallback={<Fallback title={`正在加载 ${entry.name}`} description="仅下载并挂载当前选中的组件。" busy />}>
-          <Demo />
+          <DemoConfigProvider values={parameters} onChange={changeValue}><Demo /></DemoConfigProvider>
           <ReadySignal onReady={ready} />
         </Suspense>
       </PreviewErrorBoundary>

@@ -1,6 +1,6 @@
 # Orbit Images
 
-交互动效 · `orbit-images` · 中文意图：轨道图片 / 图片环绕
+媒体与轮播 · `orbit-images` · 中文意图：轨道图片 / 图片环绕
 
 目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
@@ -14,9 +14,10 @@
 
 | 资源 | 位置与用途 |
 |---|---|
-| 自有示例（随包） | [example/src/demos/orbit-images.tsx](../../src/demos/orbit-images.tsx) |
+| 自有示例（随包） | [example/src/demos/media/orbit-images.tsx](../../src/demos/media/orbit-images.tsx) |
 | 组件实现（准备后存在） | [example/.upstream/src/ts-default/Animations/OrbitImages/OrbitImages.tsx](../../.upstream/src/ts-default/Animations/OrbitImages/OrbitImages.tsx) |
 | 组件 CSS（准备后存在） | [example/.upstream/src/ts-default/Animations/OrbitImages/OrbitImages.css](../../.upstream/src/ts-default/Animations/OrbitImages/OrbitImages.css) |
+| 单独 Props 记录 | [example/src/parameters/definitions/orbit-images.json](../../src/parameters/definitions/orbit-images.json) |
 | 固定版本 | `2139cb3098d4fedc6264f13e50dcb4694224ba7c` |
 
 先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在包根运行：
@@ -32,31 +33,109 @@ node scripts/example.mjs setup --component orbit-images
 以下来自本包自有示例的实际用法；它只表示本例参数，不代表上游所有 Props。
 
 ```tsx
+// 当前 Orbit Images 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
 // Authored integration demo; implementation is installed from the pinned official source.
-import Component from '../../.upstream/src/ts-default/Animations/OrbitImages/OrbitImages';
-import { MEDIA, palette } from '../shared/demo-support';
+import Component from '../../../.upstream/src/ts-default/Animations/OrbitImages/OrbitImages';
+import { palette } from '../../shared/demo-support';
 
 // 六张图片沿真实SVG路径循环，轨道边界明确。
 
 export default function OrbitImagesDemo() {
-  
+
   return (
     <div className="aw-demo-stage" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>
-      <Component images={MEDIA} altPrefix="自然色图像" shape="ellipse" radiusX={220}
-radiusY={75} rotation={-6} duration={36} itemSize={62} responsive
-showPath pathColor={palette.sage} pathWidth={1} width="100%" height={340}
-centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Wan</span>} />
+      <Component
+
+
+centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Wan</span>} images={[import.meta.env.BASE_URL + "media/scene-1.svg", import.meta.env.BASE_URL + "media/scene-2.svg", import.meta.env.BASE_URL + "media/scene-3.svg", import.meta.env.BASE_URL + "media/scene-4.svg", import.meta.env.BASE_URL + "media/scene-5.svg", import.meta.env.BASE_URL + "media/scene-6.svg"]} altPrefix={"自然色图像"} shape={"ellipse"} radiusX={220} radiusY={75} rotation={-6} duration={36} itemSize={62} responsive={true} showPath={true} pathColor={"#a6b39a"} pathWidth={1} width={"100%"} height={340} baseWidth={1400} radius={300} starPoints={5} starInnerRatio={0.5} direction={"normal"} fill={true} easing={"linear"} paused={false}  />
     </div>
   );
 }
+
 ```
 
-完整 Props、类型、回调和默认值以安装后的对应 TSX 源码为准。先读取本例使用的参数，再沿类型定义补充当前任务需要的选项；不要根据通用模板假定所有组件都有 color / speed / children。
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `images` | `string[]` | 否 | `[]` | 参与画廊、轮播或效果的图像列表。 |
+| `altPrefix` | `string` | 否 | `'Orbiting image'` | 替代文字前缀，控制 orbit images 的对应渲染或交互参数。 |
+| `shape` | `OrbitShape` | 否 | `'ellipse'` | 形状，控制 orbit images 的对应渲染或交互参数。 |
+| `customPath` | `string` | 否 | `generateCirclePath(designCenterX, designCenterY, radius)` | 自定义路径，控制 orbit images 的对应渲染或交互参数。 |
+| `baseWidth` | `number` | 否 | `1400` | 基础宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `radiusX` | `number` | 否 | `700` | 半径X轴，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `radiusY` | `number` | 否 | `170` | 半径Y轴，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `radius` | `number` | 否 | `300` | 半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `starPoints` | `number` | 否 | `5` | 星点点组，控制 orbit images 的对应渲染或交互参数。 |
+| `starInnerRatio` | `number` | 否 | `0.5` | 星点内侧比例，控制 orbit images 的对应渲染或交互参数。 |
+| `rotation` | `number` | 否 | `-8` | 旋转角度，控制 orbit images 的对应渲染或交互参数。 |
+| `duration` | `number` | 否 | `40` | 一次动画或过渡的持续时长，时间单位以组件实现和示例为准。 |
+| `itemSize` | `number` | 否 | `64` | 条目尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `direction` | `'normal' \| 'reverse'` | 否 | `'normal'` | 方向，控制 orbit images 的对应渲染或交互参数。 |
+| `fill` | `boolean` | 否 | `true` | 是否填充，决定该分支的展示或交互行为。 |
+| `width` | `number \| '100%'` | 否 | `100` | 容器或效果的宽度，CSS 字符串与数值的支持以类型为准。 |
+| `height` | `number \| 'auto'` | 否 | `100` | 容器或效果的高度，CSS 字符串与数值的支持以类型为准。 |
+| `className` | `string` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `showPath` | `boolean` | 否 | `false` | 是否显示路径，决定该分支的展示或交互行为。 |
+| `pathColor` | `string` | 否 | `'rgba(0,0,0,0.1)'` | 路径颜色，传入组件支持的 CSS 或着色器颜色格式。 |
+| `pathWidth` | `number` | 否 | `2` | 路径宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `easing` | `'linear' \| 'easeIn' \| 'easeOut' \| 'easeInOut'` | 否 | `'linear'` | 动画进度的缓动曲线名称或函数，按类型传入。 |
+| `paused` | `boolean` | 否 | `false` | 是否暂停持续动画或模拟更新。 |
+| `centerContent` | `ReactNode` | 否 | `未指定` | 中心内容，控制 orbit images 的对应渲染或交互参数。 |
+| `responsive` | `boolean` | 否 | `false` | 是否响应式，决定该分支的展示或交互行为。 |
+
+**images 的真实接入：**
+
+```tsx
+images={MEDIA}
+```
+
+**centerContent 的真实接入：**
+
+```tsx
+centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Wan</span>}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.images` | `["@media/scene-1.svg","@media/scene-2.svg","@media/scene-3.svg","@media/scene-4.svg","@media/scene-5.svg","@media/scene-6.svg"]` | json | 不限 ~ 不限 | 即时应用 |
+| `t0.altPrefix` | `"自然色图像"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.shape` | `"ellipse"` | select | "ellipse" / "circle" / "square" / "rectangle" / "triangle" / "star" / "heart" / "infinity" / "wave" / "custom" | 即时应用 |
+| `t0.radiusX` | `220` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.radiusY` | `75` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.rotation` | `-6` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.duration` | `36` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.itemSize` | `62` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.responsive` | `true` | switch | 不限 ~ 不限 | 即时应用 |
+| `t0.showPath` | `true` | switch | 不限 ~ 不限 | 即时应用 |
+| `t0.pathColor` | `"#a6b39a"` | color | 不限 ~ 不限 | 即时应用 |
+| `t0.pathWidth` | `1` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.width` | `"100%"` | json | 不限 ~ 不限 | 即时应用 |
+| `t0.height` | `340` | json | 不限 ~ 不限 | 即时应用 |
+| `t0.baseWidth` | `1400` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.radius` | `300` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.starPoints` | `5` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.starInnerRatio` | `0.5` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.direction` | `"normal"` | select | "normal" / "reverse" | 即时应用 |
+| `t0.fill` | `true` | switch | 不限 ~ 不限 | 即时应用 |
+| `t0.easing` | `"linear"` | select | "linear" / "easeIn" / "easeOut" / "easeInOut" | 即时应用 |
+| `t0.paused` | `false` | switch | 不限 ~ 不限 | 即时应用 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. Agent Wan 皮肤
 
 - 容器、状态色、边界与焦点使用 Agent Wan 规范；交互命中区不随视觉形变缩小。
-- 优先通过组件真实 Props 设置颜色和强度；使用主题提供的茶绿、沙米、象牙白及墨色映射。
+- 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 
 ## 5. 加载、动效与降级
@@ -65,9 +144,9 @@ centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Wan</spa
 
 - 依赖清单：`motion`、`react`。安装前复用目标项目的兼容版本，不重复加载。
 - 运行类型：本例预览入口不要求预先通过图形接口检查；实际组件内部的可选渲染分支由源码和本例 Props 决定。此说明不等于浏览器运行证明。
-- 动效策略：按交互激活；指针装饰和持续效果只在选中示例挂载。
+- 动效策略：遵从系统减少动效偏好，功能交互保持可用。
 - 示例库降级：动态偏好或能力检查不满足时先不挂载本项，显示原因；减少运动时可明确选择仅播放本次。
-- 业务接入的静态降级要求：恢复原始内容和原生指针，保持按钮、链接与点击区域可用。
+- 业务接入的静态降级要求：保留可读内容与原生交互，并提供当前组件的静态状态
 - 卸载时释放本例监听、计时、动画帧及拥有的渲染资源；不以隐藏 CSS 代替停止循环。
 
 仅当前需求涉及高级运行、资源或设备权限时再读 [效果与降级策略](../effects-policy.md)。
@@ -77,8 +156,8 @@ centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Wan</spa
 1. 参数与对应源码真实 API 一致，构建可导入，安装失败可恢复。
 2. 能观察到第 1 节的核心机制，而不只是相同名称的占位卡片。
 3. 真实状态 / 事件 / 键盘与必要的触屏等价操作可用。
-4. 低饱和配色、文字对比、阅读面、稳定命中范围与基础规范一致。
+4. 画布保留本例的效果对比度和原版配色；外壳、阅读面与基础规范一致。
 5. 只激活本项；切换或卸载后停止其持续工作。
 6. 减少运动与不可用情形保留本节所述等价内容或功能。
 
-只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [交互动效](../categories/animations.md)；否则直接完成当前组件。
+只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [媒体与轮播](../categories/media.md)；否则直接完成当前组件。

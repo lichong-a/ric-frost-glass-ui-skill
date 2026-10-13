@@ -1,0 +1,1499 @@
+{
+  "version": 1,
+  "id": "echo-text",
+  "name": "Echo Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+  "demoPath": "src/demos/text/echo-text.tsx",
+  "fields": [
+    {
+      "key": "t0.text",
+      "name": "text",
+      "label": "文字内容 · t0",
+      "description": "显示或生成效果的文字内容。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "text"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "Quiet Motion",
+      "upstreamDefault": "'Motion Echo'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.echoes",
+      "name": "echoes",
+      "label": "echoes · t0",
+      "description": "回声层，控制 echo text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "echoes"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "upstreamDefault": "12",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lag",
+      "name": "lag",
+      "label": "lag · t0",
+      "description": "滞后，控制 echo text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lag"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.18,
+      "upstreamDefault": "0.24",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.offset",
+      "name": "offset",
+      "label": "offset · t0",
+      "description": "偏移，控制 echo text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "offset"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "36",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 echo text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "Direction",
+      "defaultValue": "right",
+      "upstreamDefault": "'right'",
+      "control": "select",
+      "options": [
+        {
+          "label": "right",
+          "value": "right"
+        },
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "up",
+          "value": "up"
+        },
+        {
+          "label": "down",
+          "value": "down"
+        },
+        {
+          "label": "diagonal",
+          "value": "diagonal"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 echo text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.68,
+      "upstreamDefault": "0.72",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.blur",
+      "name": "blur",
+      "label": "blur · t0",
+      "description": "模糊，控制 echo text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "blur"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tint",
+      "name": "tint",
+      "label": "tint · t0",
+      "description": "色调，控制 echo text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tint"
+        }
+      ],
+      "type": "string | false",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#7dd3fc'",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "boolean"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mode",
+      "name": "mode",
+      "label": "mode · t0",
+      "description": "选择组件的渲染或交互工作模式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mode"
+        }
+      ],
+      "type": "Mode",
+      "defaultValue": "both",
+      "upstreamDefault": "'both'",
+      "control": "select",
+      "options": [
+        {
+          "label": "entrance",
+          "value": "entrance"
+        },
+        {
+          "label": "pointer",
+          "value": "pointer"
+        },
+        {
+          "label": "both",
+          "value": "both"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cursorRadius",
+      "name": "cursorRadius",
+      "label": "cursorRadius · t0",
+      "description": "指针半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cursorRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 240,
+      "upstreamDefault": "320",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.duration",
+      "name": "duration",
+      "label": "持续时间 · t0",
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "duration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 700,
+      "upstreamDefault": "900",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "string | number",
+      "defaultValue": "clamp(36px, 6vw, 66px)",
+      "upstreamDefault": "'clamp(3rem, 9vw, 7rem)'",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontWeight",
+      "name": "fontWeight",
+      "label": "字重 · t0",
+      "description": "字体字重，控制 echo text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontWeight"
+        }
+      ],
+      "type": "string | number",
+      "defaultValue": 650,
+      "upstreamDefault": "800",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f8fafc'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ease",
+      "name": "ease",
+      "label": "ease · t0",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ease"
+        }
+      ],
+      "type": "Ease",
+      "defaultValue": "ease-out",
+      "upstreamDefault": "'ease-out'",
+      "control": "select",
+      "options": [
+        {
+          "label": "linear",
+          "value": "linear"
+        },
+        {
+          "label": "ease-out",
+          "value": "ease-out"
+        },
+        {
+          "label": "ease-in-out",
+          "value": "ease-in-out"
+        },
+        {
+          "label": "snappy",
+          "value": "snappy"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Motion Echo'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 62,
+        "kind": "parameter"
+      },
+      "defaultValue": "Motion Echo",
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 25
+      },
+      "codeExample": "text=\"Quiet Motion\"",
+      "usageExamples": [
+        "text=\"Quiet Motion\""
+      ]
+    },
+    {
+      "name": "echoes",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": 12,
+      "description": "回声层，控制 echo text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 26
+      },
+      "codeExample": "echoes={6}",
+      "usageExamples": [
+        "echoes={6}"
+      ]
+    },
+    {
+      "name": "lag",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.24",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.24,
+      "description": "滞后，控制 echo text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 27
+      },
+      "codeExample": "lag={0.18}",
+      "usageExamples": [
+        "lag={0.18}"
+      ]
+    },
+    {
+      "name": "offset",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "36",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": 36,
+      "description": "偏移，控制 echo text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 28
+      },
+      "codeExample": "offset={20}",
+      "usageExamples": [
+        "offset={20}"
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "Direction",
+      "required": false,
+      "defaultExpression": "'right'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": "right",
+      "description": "方向，控制 echo text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "right",
+        "left",
+        "up",
+        "down",
+        "diagonal"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "right",
+          "left",
+          "up",
+          "down",
+          "diagonal"
+        ]
+      },
+      "codeExample": "direction=\"right\"",
+      "usageExamples": [
+        "direction=\"right\""
+      ]
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.72",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.72,
+      "description": "淡出，控制 echo text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 30
+      },
+      "codeExample": "fade={0.68}",
+      "usageExamples": [
+        "fade={0.68}"
+      ]
+    },
+    {
+      "name": "blur",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "模糊，控制 echo text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 31
+      },
+      "codeExample": "blur={2}",
+      "usageExamples": [
+        "blur={2}"
+      ]
+    },
+    {
+      "name": "tint",
+      "type": "string | false",
+      "required": false,
+      "defaultExpression": "'#7dd3fc'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": "#7dd3fc",
+      "description": "色调，控制 echo text 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "union",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "false",
+            "kind": "enum",
+            "options": [
+              false
+            ]
+          }
+        ]
+      },
+      "codeExample": "tint={palette.sage}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "tint={palette.sage}"
+      ]
+    },
+    {
+      "name": "mode",
+      "type": "Mode",
+      "required": false,
+      "defaultExpression": "'both'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": "both",
+      "description": "选择组件的渲染或交互工作模式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "entrance",
+        "pointer",
+        "both"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "entrance",
+          "pointer",
+          "both"
+        ]
+      },
+      "codeExample": "mode=\"both\"",
+      "usageExamples": [
+        "mode=\"both\""
+      ]
+    },
+    {
+      "name": "cursorRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "320",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": 320,
+      "description": "指针半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 34
+      },
+      "codeExample": "cursorRadius={240}",
+      "usageExamples": [
+        "cursorRadius={240}"
+      ]
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "900",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": 900,
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 35
+      },
+      "codeExample": "duration={700}",
+      "usageExamples": [
+        "duration={700}"
+      ]
+    },
+    {
+      "name": "ease",
+      "type": "Ease",
+      "required": false,
+      "defaultExpression": "'ease-out'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": "ease-out",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "linear",
+        "ease-out",
+        "ease-in-out",
+        "snappy"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "linear",
+          "ease-out",
+          "ease-in-out",
+          "snappy"
+        ]
+      },
+      "codeExample": "ease={\"ease-out\"}"
+    },
+    {
+      "name": "fontSize",
+      "type": "string | number",
+      "required": false,
+      "defaultExpression": "'clamp(3rem, 9vw, 7rem)'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": "clamp(3rem, 9vw, 7rem)",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "text",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 37
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "fontSize=\"clamp(36px, 6vw, 66px)\"",
+      "usageExamples": [
+        "fontSize=\"clamp(36px, 6vw, 66px)\""
+      ]
+    },
+    {
+      "name": "fontWeight",
+      "type": "string | number",
+      "required": false,
+      "defaultExpression": "800",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": 800,
+      "description": "字体字重，控制 echo text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 38
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "fontWeight={650}",
+      "usageExamples": [
+        "fontWeight={650}"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f8fafc'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f8fafc",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 39
+      },
+      "codeExample": "color={palette.ink}",
+      "usageExamples": [
+        "color={palette.ink}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 40
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+        "line": 41
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/EchoText/EchoText';\nimport { palette } from '../../shared/demo-support';\n\n// 保留文字回声拖影，使用苔绿相邻色。\n\nexport default function EchoTextDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>\n      <Component\n\n    /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "EchoText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Motion Echo'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 62,
+            "kind": "parameter"
+          },
+          "defaultValue": "Motion Echo",
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 25
+          },
+          "codeExample": "text=\"Quiet Motion\"",
+          "usageExamples": [
+            "text=\"Quiet Motion\""
+          ]
+        },
+        {
+          "name": "echoes",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": 12,
+          "description": "回声层，控制 echo text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 26
+          },
+          "codeExample": "echoes={6}",
+          "usageExamples": [
+            "echoes={6}"
+          ]
+        },
+        {
+          "name": "lag",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.24",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.24,
+          "description": "滞后，控制 echo text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 27
+          },
+          "codeExample": "lag={0.18}",
+          "usageExamples": [
+            "lag={0.18}"
+          ]
+        },
+        {
+          "name": "offset",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "36",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": 36,
+          "description": "偏移，控制 echo text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 28
+          },
+          "codeExample": "offset={20}",
+          "usageExamples": [
+            "offset={20}"
+          ]
+        },
+        {
+          "name": "direction",
+          "type": "Direction",
+          "required": false,
+          "defaultExpression": "'right'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": "right",
+          "description": "方向，控制 echo text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "right",
+            "left",
+            "up",
+            "down",
+            "diagonal"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "right",
+              "left",
+              "up",
+              "down",
+              "diagonal"
+            ]
+          },
+          "codeExample": "direction=\"right\"",
+          "usageExamples": [
+            "direction=\"right\""
+          ]
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.72",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.72,
+          "description": "淡出，控制 echo text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 30
+          },
+          "codeExample": "fade={0.68}",
+          "usageExamples": [
+            "fade={0.68}"
+          ]
+        },
+        {
+          "name": "blur",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "模糊，控制 echo text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 31
+          },
+          "codeExample": "blur={2}",
+          "usageExamples": [
+            "blur={2}"
+          ]
+        },
+        {
+          "name": "tint",
+          "type": "string | false",
+          "required": false,
+          "defaultExpression": "'#7dd3fc'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": "#7dd3fc",
+          "description": "色调，控制 echo text 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "union",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "false",
+                "kind": "enum",
+                "options": [
+                  false
+                ]
+              }
+            ]
+          },
+          "codeExample": "tint={palette.sage}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "tint={palette.sage}"
+          ]
+        },
+        {
+          "name": "mode",
+          "type": "Mode",
+          "required": false,
+          "defaultExpression": "'both'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": "both",
+          "description": "选择组件的渲染或交互工作模式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "entrance",
+            "pointer",
+            "both"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "entrance",
+              "pointer",
+              "both"
+            ]
+          },
+          "codeExample": "mode=\"both\"",
+          "usageExamples": [
+            "mode=\"both\""
+          ]
+        },
+        {
+          "name": "cursorRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "320",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": 320,
+          "description": "指针半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 34
+          },
+          "codeExample": "cursorRadius={240}",
+          "usageExamples": [
+            "cursorRadius={240}"
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "900",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": 900,
+          "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 35
+          },
+          "codeExample": "duration={700}",
+          "usageExamples": [
+            "duration={700}"
+          ]
+        },
+        {
+          "name": "ease",
+          "type": "Ease",
+          "required": false,
+          "defaultExpression": "'ease-out'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": "ease-out",
+          "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "linear",
+            "ease-out",
+            "ease-in-out",
+            "snappy"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "linear",
+              "ease-out",
+              "ease-in-out",
+              "snappy"
+            ]
+          },
+          "codeExample": "ease={\"ease-out\"}"
+        },
+        {
+          "name": "fontSize",
+          "type": "string | number",
+          "required": false,
+          "defaultExpression": "'clamp(3rem, 9vw, 7rem)'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": "clamp(3rem, 9vw, 7rem)",
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "text",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 37
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "fontSize=\"clamp(36px, 6vw, 66px)\"",
+          "usageExamples": [
+            "fontSize=\"clamp(36px, 6vw, 66px)\""
+          ]
+        },
+        {
+          "name": "fontWeight",
+          "type": "string | number",
+          "required": false,
+          "defaultExpression": "800",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": 800,
+          "description": "字体字重，控制 echo text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 38
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "fontWeight={650}",
+          "usageExamples": [
+            "fontWeight={650}"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f8fafc'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f8fafc",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 39
+          },
+          "codeExample": "color={palette.ink}",
+          "usageExamples": [
+            "color={palette.ink}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 40
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/EchoText/EchoText.tsx",
+            "line": 41
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,1677 @@
+{
+  "version": 1,
+  "id": "jelly-radio",
+  "name": "Jelly Radio",
+  "sourcePath": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+  "demoPath": "src/demos/form/jelly-radio.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "JellyRadioItem[]",
+      "defaultValue": [
+        {
+          "value": "all",
+          "label": "全部"
+        },
+        {
+          "value": "enabled",
+          "label": "已启用"
+        },
+        {
+          "value": "draft",
+          "label": "草稿"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "string"
+            },
+            {
+              "kind": "object",
+              "properties": {
+                "value": {
+                  "kind": "string"
+                },
+                "disabled": {
+                  "kind": "boolean"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ]
+            }
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ariaLabel",
+      "name": "ariaLabel",
+      "label": "ariaLabel · t0",
+      "description": "无障碍标签，控制 jelly radio 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ariaLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "按技能状态筛选",
+      "upstreamDefault": "'Options'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.chipColor",
+      "name": "chipColor",
+      "label": "chipColor · t0",
+      "description": "标签片颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "chipColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "rgb(250 247 240 / 0.82)",
+      "upstreamDefault": "'#27272a'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.activeColor",
+      "name": "activeColor",
+      "label": "activeColor · t0",
+      "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "activeColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.activeTextColor",
+      "name": "activeTextColor",
+      "label": "activeTextColor · t0",
+      "description": "激活文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "activeTextColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#18181b'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "18",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "'sm' | 'md' | 'lg'",
+      "defaultValue": "md",
+      "upstreamDefault": "'md'",
+      "control": "select",
+      "options": [
+        {
+          "label": "sm",
+          "value": "sm"
+        },
+        {
+          "label": "md",
+          "value": "md"
+        },
+        {
+          "label": "lg",
+          "value": "lg"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "8",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.swell",
+      "name": "swell",
+      "label": "swell · t0",
+      "description": "膨胀，控制 jelly radio 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "swell"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.2",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.barge",
+      "name": "barge",
+      "label": "barge · t0",
+      "description": "胶冻单选项膨胀时额外推开相邻项的距离。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "barge"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "upstreamDefault": "6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shrink",
+      "name": "shrink",
+      "label": "shrink · t0",
+      "description": "收缩，控制 jelly radio 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shrink"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.05,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.jelly",
+      "name": "jelly",
+      "label": "jelly · t0",
+      "description": "胶冻程度，控制 jelly radio 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "jelly"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bounce",
+      "name": "bounce",
+      "label": "bounce · t0",
+      "description": "回弹，控制 jelly radio 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bounce"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.25",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stagger",
+      "name": "stagger",
+      "label": "错峰间隔 · t0",
+      "description": "错开，控制 jelly radio 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stagger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 22,
+      "upstreamDefault": "22",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stiffness",
+      "name": "stiffness",
+      "label": "stiffness · t0",
+      "description": "弹簧刚度，控制 jelly radio 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stiffness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 580,
+      "upstreamDefault": "580",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.value",
+      "name": "value",
+      "label": "当前值",
+      "description": "示例的受控状态 value；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "all",
+      "control": "select",
+      "options": [
+        {
+          "label": "全部",
+          "value": "all"
+        },
+        {
+          "label": "已启用",
+          "value": "enabled"
+        },
+        {
+          "label": "草稿",
+          "value": "draft"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "JellyRadioItem[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 92,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "Off",
+        "Low",
+        "Medium",
+        "High",
+        "Max"
+      ],
+      "defaultResolvedExpression": "['Off', 'Low', 'Medium', 'High', 'Max']",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 27
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "JellyRadioItem",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "{ value: string; label: ReactNode; icon?: ReactNode; disabled?: boolean; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "label",
+                    "type": "ReactNode",
+                    "required": true
+                  },
+                  {
+                    "name": "icon",
+                    "type": "ReactNode",
+                    "required": false
+                  },
+                  {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={items}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={items}"
+      ]
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "inner",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 116,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 28
+      },
+      "codeExample": "value={value}",
+      "usageExamples": [
+        "value={value}"
+      ]
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "list[0]?.value",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 115,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "非受控模式的初始值；挂载后更新通常通过内部状态或受控 value 完成。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 29
+      },
+      "codeExample": "defaultValue={\"示例\"}"
+    },
+    {
+      "name": "onChange",
+      "type": "(value: string, index: number) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((value: string, index: number) => void) | undefined"
+      },
+      "codeExample": "onChange={setValue}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={setValue}"
+      ]
+    },
+    {
+      "name": "chipColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#27272a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 96,
+        "kind": "parameter"
+      },
+      "defaultValue": "#27272a",
+      "description": "标签片颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 31
+      },
+      "codeExample": "chipColor={palette.surface}",
+      "usageExamples": [
+        "chipColor={palette.surface}"
+      ]
+    },
+    {
+      "name": "activeColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 97,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 32
+      },
+      "codeExample": "activeColor={palette.primary}",
+      "usageExamples": [
+        "activeColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 98,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 33
+      },
+      "codeExample": "textColor={palette.ink}",
+      "usageExamples": [
+        "textColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "activeTextColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#18181b'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 99,
+        "kind": "parameter"
+      },
+      "defaultValue": "#18181b",
+      "description": "激活文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 34
+      },
+      "codeExample": "activeTextColor={palette.ivory}",
+      "usageExamples": [
+        "activeTextColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "required": false,
+      "defaultExpression": "'md'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 100,
+        "kind": "parameter"
+      },
+      "defaultValue": "md",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "codeExample": "size={\"md\"}"
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 101,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 36
+      },
+      "codeExample": "gap={8}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "18",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 102,
+        "kind": "parameter"
+      },
+      "defaultValue": 18,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 37
+      },
+      "codeExample": "radius={10}",
+      "usageExamples": [
+        "radius={10}"
+      ]
+    },
+    {
+      "name": "swell",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 103,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "膨胀，控制 jelly radio 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 38
+      },
+      "codeExample": "swell={0.2}"
+    },
+    {
+      "name": "barge",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 104,
+        "kind": "parameter"
+      },
+      "defaultValue": 6,
+      "description": "胶冻单选项膨胀时额外推开相邻项的距离。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 39
+      },
+      "codeExample": "barge={6}"
+    },
+    {
+      "name": "shrink",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 105,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "收缩，控制 jelly radio 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 40
+      },
+      "codeExample": "shrink={0.05}"
+    },
+    {
+      "name": "jelly",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 106,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "胶冻程度，控制 jelly radio 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 41
+      },
+      "codeExample": "jelly={1}"
+    },
+    {
+      "name": "bounce",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 107,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.25,
+      "description": "回弹，控制 jelly radio 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 42
+      },
+      "codeExample": "bounce={0.25}"
+    },
+    {
+      "name": "stagger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "22",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 108,
+        "kind": "parameter"
+      },
+      "defaultValue": 22,
+      "description": "错开，控制 jelly radio 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 43
+      },
+      "codeExample": "stagger={22}"
+    },
+    {
+      "name": "stiffness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "580",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 109,
+        "kind": "parameter"
+      },
+      "defaultValue": 580,
+      "description": "弹簧刚度，控制 jelly radio 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 44
+      },
+      "codeExample": "stiffness={580}"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 110,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 45
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Options'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 111,
+        "kind": "parameter"
+      },
+      "defaultValue": "Options",
+      "description": "无障碍标签，控制 jelly radio 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 46
+      },
+      "codeExample": "ariaLabel=\"按技能状态筛选\"",
+      "usageExamples": [
+        "ariaLabel=\"按技能状态筛选\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 112,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+        "line": 47
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport JellyRadio from '../../../.upstream/src/ts-default/Micro/JellyRadio/JellyRadio';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nconst items = [{ value: 'all', label: '全部' }, { value: 'enabled', label: '已启用' }, { value: 'draft', label: '草稿' }];\nexport default function JellyRadioDemo() {\n  const [value, setValue] = useState(/*__AW_STATE_state.value__*/);\n  return <DemoPanel title=\"Jelly Radio · 弹性单选\"><div className={cn(\"aw-micro-stack\")}>\n    <JellyRadio  value={value} onChange={setValue}       /*__AW_PROPS_t0__*/  />\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">当前筛选：{items.find(item => item.value === value)?.label}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "JellyRadio",
+      "sourcePath": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "JellyRadioItem[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 92,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "Off",
+            "Low",
+            "Medium",
+            "High",
+            "Max"
+          ],
+          "defaultResolvedExpression": "['Off', 'Low', 'Medium', 'High', 'Max']",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 27
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "JellyRadioItem",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "{ value: string; label: ReactNode; icon?: ReactNode; disabled?: boolean; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "label",
+                        "type": "ReactNode",
+                        "required": true
+                      },
+                      {
+                        "name": "icon",
+                        "type": "ReactNode",
+                        "required": false
+                      },
+                      {
+                        "name": "disabled",
+                        "type": "boolean",
+                        "required": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={items}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={items}"
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "inner",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 116,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 28
+          },
+          "codeExample": "value={value}",
+          "usageExamples": [
+            "value={value}"
+          ]
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "list[0]?.value",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 115,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "非受控模式的初始值；挂载后更新通常通过内部状态或受控 value 完成。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 29
+          },
+          "codeExample": "defaultValue={\"示例\"}"
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string, index: number) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((value: string, index: number) => void) | undefined"
+          },
+          "codeExample": "onChange={setValue}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={setValue}"
+          ]
+        },
+        {
+          "name": "chipColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#27272a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 96,
+            "kind": "parameter"
+          },
+          "defaultValue": "#27272a",
+          "description": "标签片颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 31
+          },
+          "codeExample": "chipColor={palette.surface}",
+          "usageExamples": [
+            "chipColor={palette.surface}"
+          ]
+        },
+        {
+          "name": "activeColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 97,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "激活颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 32
+          },
+          "codeExample": "activeColor={palette.primary}",
+          "usageExamples": [
+            "activeColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 98,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 33
+          },
+          "codeExample": "textColor={palette.ink}",
+          "usageExamples": [
+            "textColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "activeTextColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#18181b'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 99,
+            "kind": "parameter"
+          },
+          "defaultValue": "#18181b",
+          "description": "激活文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 34
+          },
+          "codeExample": "activeTextColor={palette.ivory}",
+          "usageExamples": [
+            "activeTextColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "required": false,
+          "defaultExpression": "'md'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 100,
+            "kind": "parameter"
+          },
+          "defaultValue": "md",
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "codeExample": "size={\"md\"}"
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 101,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 36
+          },
+          "codeExample": "gap={8}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "18",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 102,
+            "kind": "parameter"
+          },
+          "defaultValue": 18,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 37
+          },
+          "codeExample": "radius={10}",
+          "usageExamples": [
+            "radius={10}"
+          ]
+        },
+        {
+          "name": "swell",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 103,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "膨胀，控制 jelly radio 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 38
+          },
+          "codeExample": "swell={0.2}"
+        },
+        {
+          "name": "barge",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 104,
+            "kind": "parameter"
+          },
+          "defaultValue": 6,
+          "description": "胶冻单选项膨胀时额外推开相邻项的距离。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 39
+          },
+          "codeExample": "barge={6}"
+        },
+        {
+          "name": "shrink",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 105,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "收缩，控制 jelly radio 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 40
+          },
+          "codeExample": "shrink={0.05}"
+        },
+        {
+          "name": "jelly",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 106,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "胶冻程度，控制 jelly radio 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 41
+          },
+          "codeExample": "jelly={1}"
+        },
+        {
+          "name": "bounce",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 107,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.25,
+          "description": "回弹，控制 jelly radio 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 42
+          },
+          "codeExample": "bounce={0.25}"
+        },
+        {
+          "name": "stagger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "22",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 108,
+            "kind": "parameter"
+          },
+          "defaultValue": 22,
+          "description": "错开，控制 jelly radio 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 43
+          },
+          "codeExample": "stagger={22}"
+        },
+        {
+          "name": "stiffness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "580",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 109,
+            "kind": "parameter"
+          },
+          "defaultValue": 580,
+          "description": "弹簧刚度，控制 jelly radio 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 44
+          },
+          "codeExample": "stiffness={580}"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 110,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 45
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Options'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 111,
+            "kind": "parameter"
+          },
+          "defaultValue": "Options",
+          "description": "无障碍标签，控制 jelly radio 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 46
+          },
+          "codeExample": "ariaLabel=\"按技能状态筛选\"",
+          "usageExamples": [
+            "ariaLabel=\"按技能状态筛选\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 112,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/JellyRadio/JellyRadio.tsx",
+            "line": 47
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

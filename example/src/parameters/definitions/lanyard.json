@@ -1,0 +1,1768 @@
+{
+  "version": 1,
+  "id": "lanyard",
+  "name": "Lanyard",
+  "sourcePath": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+  "demoPath": "src/demos/media/lanyard.tsx",
+  "fields": [
+    {
+      "key": "t0.frontImage",
+      "name": "frontImage",
+      "label": "frontImage · t0",
+      "description": "正面图像，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "frontImage"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "@media/scene-2.svg",
+      "control": "resource",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backImage",
+      "name": "backImage",
+      "label": "backImage · t0",
+      "description": "背面显示的图像资源。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backImage"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "@media/scene-5.svg",
+      "control": "resource",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.imageFit",
+      "name": "imageFit",
+      "label": "imageFit · t0",
+      "description": "图像适配，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "imageFit"
+        }
+      ],
+      "type": "ImageFit",
+      "defaultValue": "cover",
+      "upstreamDefault": "'cover'",
+      "control": "select",
+      "options": [
+        {
+          "label": "cover",
+          "value": "cover"
+        },
+        {
+          "label": "contain",
+          "value": "contain"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cardColor",
+      "name": "cardColor",
+      "label": "cardColor · t0",
+      "description": "卡片颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cardColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.orientation",
+      "name": "orientation",
+      "label": "方向 · t0",
+      "description": "方向，控制 lanyard 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "orientation"
+        }
+      ],
+      "type": "Orientation",
+      "defaultValue": "portrait",
+      "upstreamDefault": "'portrait'",
+      "control": "select",
+      "options": [
+        {
+          "label": "portrait",
+          "value": "portrait"
+        },
+        {
+          "label": "landscape",
+          "value": "landscape"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.finish",
+      "name": "finish",
+      "label": "finish · t0",
+      "description": "完成，控制 lanyard 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "finish"
+        }
+      ],
+      "type": "Finish",
+      "defaultValue": "matte",
+      "upstreamDefault": "'glossy'",
+      "control": "select",
+      "options": [
+        {
+          "label": "glossy",
+          "value": "glossy"
+        },
+        {
+          "label": "matte",
+          "value": "matte"
+        },
+        {
+          "label": "holographic",
+          "value": "holographic"
+        },
+        {
+          "label": "metallic",
+          "value": "metallic"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cornerRadius",
+      "name": "cornerRadius",
+      "label": "cornerRadius · t0",
+      "description": "角半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cornerRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.7,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.anchor",
+      "name": "anchor",
+      "label": "anchor · t0",
+      "description": "定位锚点，控制 lanyard 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "anchor"
+        }
+      ],
+      "type": "Anchor",
+      "defaultValue": "center",
+      "upstreamDefault": "'center'",
+      "control": "select",
+      "options": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "center",
+          "value": "center"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.strapLength",
+      "name": "strapLength",
+      "label": "strapLength · t0",
+      "description": "挂带长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "strapLength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.55,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.strapColor",
+      "name": "strapColor",
+      "label": "strapColor · t0",
+      "description": "挂带颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "strapColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#111111'",
+      "control": "color",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.strapWidth",
+      "name": "strapWidth",
+      "label": "strapWidth · t0",
+      "description": "挂带宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "strapWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "0.65",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.metal",
+      "name": "metal",
+      "label": "metal · t0",
+      "description": "金属，控制 lanyard 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "metal"
+        }
+      ],
+      "type": "Metal",
+      "defaultValue": "graphite",
+      "upstreamDefault": "'silver'",
+      "control": "select",
+      "options": [
+        {
+          "label": "graphite",
+          "value": "graphite"
+        },
+        {
+          "label": "silver",
+          "value": "silver"
+        },
+        {
+          "label": "gold",
+          "value": "gold"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.damping",
+      "name": "damping",
+      "label": "damping · t0",
+      "description": "阻尼，控制 lanyard 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "damping"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.elasticity",
+      "name": "elasticity",
+      "label": "elasticity · t0",
+      "description": "弹性，控制 lanyard 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "elasticity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.35,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.breeze",
+      "name": "breeze",
+      "label": "breeze · t0",
+      "description": "微风，控制 lanyard 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "breeze"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interactive",
+      "name": "interactive",
+      "label": "interactive · t0",
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interactive"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gravity",
+      "name": "gravity",
+      "label": "gravity · t0",
+      "description": "重力，控制 lanyard 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gravity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "frontImage",
+      "type": "string",
+      "required": false,
+      "description": "正面图像，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 24
+      },
+      "codeExample": "frontImage={MEDIA[1]}",
+      "usageExamples": [
+        "frontImage={MEDIA[1]}"
+      ]
+    },
+    {
+      "name": "backImage",
+      "type": "string",
+      "required": false,
+      "description": "背面显示的图像资源。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 25
+      },
+      "codeExample": "backImage={MEDIA[4]}",
+      "usageExamples": [
+        "backImage={MEDIA[4]}"
+      ]
+    },
+    {
+      "name": "imageFit",
+      "type": "ImageFit",
+      "required": false,
+      "defaultExpression": "'cover'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 875,
+        "kind": "parameter"
+      },
+      "defaultValue": "cover",
+      "description": "图像适配，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "cover",
+        "contain"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "cover",
+          "contain"
+        ]
+      },
+      "codeExample": "imageFit=\"cover\"",
+      "usageExamples": [
+        "imageFit=\"cover\""
+      ]
+    },
+    {
+      "name": "cardColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 876,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "卡片颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 27
+      },
+      "codeExample": "cardColor={palette.ivory}",
+      "usageExamples": [
+        "cardColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "orientation",
+      "type": "Orientation",
+      "required": false,
+      "defaultExpression": "'portrait'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 877,
+        "kind": "parameter"
+      },
+      "defaultValue": "portrait",
+      "description": "方向，控制 lanyard 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "portrait",
+        "landscape"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "portrait",
+          "landscape"
+        ]
+      },
+      "codeExample": "orientation=\"portrait\"",
+      "usageExamples": [
+        "orientation=\"portrait\""
+      ]
+    },
+    {
+      "name": "finish",
+      "type": "Finish",
+      "required": false,
+      "defaultExpression": "'glossy'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 878,
+        "kind": "parameter"
+      },
+      "defaultValue": "glossy",
+      "description": "完成，控制 lanyard 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "glossy",
+        "matte",
+        "holographic",
+        "metallic"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "glossy",
+          "matte",
+          "holographic",
+          "metallic"
+        ]
+      },
+      "codeExample": "finish=\"matte\"",
+      "usageExamples": [
+        "finish=\"matte\""
+      ]
+    },
+    {
+      "name": "cornerRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 879,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "角半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 30
+      },
+      "codeExample": "cornerRadius={0.1}",
+      "usageExamples": [
+        "cornerRadius={0.1}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 880,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 31
+      },
+      "codeExample": "size={0.7}",
+      "usageExamples": [
+        "size={0.7}"
+      ]
+    },
+    {
+      "name": "anchor",
+      "type": "Anchor",
+      "required": false,
+      "defaultExpression": "'center'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 881,
+        "kind": "parameter"
+      },
+      "defaultValue": "center",
+      "description": "定位锚点，控制 lanyard 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "left",
+        "center",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "left",
+          "center",
+          "right"
+        ]
+      },
+      "codeExample": "anchor=\"center\"",
+      "usageExamples": [
+        "anchor=\"center\""
+      ]
+    },
+    {
+      "name": "strapLength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 882,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "挂带长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 33
+      },
+      "codeExample": "strapLength={0.55}",
+      "usageExamples": [
+        "strapLength={0.55}"
+      ]
+    },
+    {
+      "name": "strapImage",
+      "type": "string",
+      "required": false,
+      "description": "挂带图像，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 34
+      },
+      "codeExample": "strapImage={\"示例\"}"
+    },
+    {
+      "name": "strapColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#111111'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 884,
+        "kind": "parameter"
+      },
+      "defaultValue": "#111111",
+      "description": "挂带颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 35
+      },
+      "codeExample": "strapColor={palette.primary}",
+      "usageExamples": [
+        "strapColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "strapWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.65",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 885,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.65,
+      "description": "挂带宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 36
+      },
+      "codeExample": "strapWidth={0.8}",
+      "usageExamples": [
+        "strapWidth={0.8}"
+      ]
+    },
+    {
+      "name": "metal",
+      "type": "Metal",
+      "required": false,
+      "defaultExpression": "'silver'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 886,
+        "kind": "parameter"
+      },
+      "defaultValue": "silver",
+      "description": "金属，控制 lanyard 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "graphite",
+        "silver",
+        "gold"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 37
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "graphite",
+          "silver",
+          "gold"
+        ]
+      },
+      "codeExample": "metal=\"graphite\"",
+      "usageExamples": [
+        "metal=\"graphite\""
+      ]
+    },
+    {
+      "name": "gravity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 887,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "重力，控制 lanyard 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 38
+      },
+      "codeExample": "gravity={1}"
+    },
+    {
+      "name": "damping",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 888,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "阻尼，控制 lanyard 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 39
+      },
+      "codeExample": "damping={0.65}",
+      "usageExamples": [
+        "damping={0.65}"
+      ]
+    },
+    {
+      "name": "elasticity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 889,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "弹性，控制 lanyard 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 40
+      },
+      "codeExample": "elasticity={0.35}",
+      "usageExamples": [
+        "elasticity={0.35}"
+      ]
+    },
+    {
+      "name": "breeze",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 890,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "微风，控制 lanyard 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 41
+      },
+      "codeExample": "breeze={0.15}",
+      "usageExamples": [
+        "breeze={0.15}"
+      ]
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 891,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 42
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "interactive",
+      "usageExamples": [
+        "interactive"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 892,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro",
+      "usageExamples": [
+        "intro"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 893,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 44
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+        "line": 45
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/Lanyard/Lanyard';\n\n\n// 真实3D挂绳和卡片物理模拟，可拖动与甩动；使用哑光自然色和本地正反面图片。\n// 此演示需要可用WebGL上下文；不支持时应显示能力提示，不声称效果已运行。\n\nexport default function LanyardDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 460, position: 'relative', overflow: 'hidden' }}>\n      <Component\n\n\n\n   /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Lanyard",
+      "sourcePath": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+      "props": [
+        {
+          "name": "frontImage",
+          "type": "string",
+          "required": false,
+          "description": "正面图像，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 24
+          },
+          "codeExample": "frontImage={MEDIA[1]}",
+          "usageExamples": [
+            "frontImage={MEDIA[1]}"
+          ]
+        },
+        {
+          "name": "backImage",
+          "type": "string",
+          "required": false,
+          "description": "背面显示的图像资源。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 25
+          },
+          "codeExample": "backImage={MEDIA[4]}",
+          "usageExamples": [
+            "backImage={MEDIA[4]}"
+          ]
+        },
+        {
+          "name": "imageFit",
+          "type": "ImageFit",
+          "required": false,
+          "defaultExpression": "'cover'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 875,
+            "kind": "parameter"
+          },
+          "defaultValue": "cover",
+          "description": "图像适配，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "cover",
+            "contain"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "cover",
+              "contain"
+            ]
+          },
+          "codeExample": "imageFit=\"cover\"",
+          "usageExamples": [
+            "imageFit=\"cover\""
+          ]
+        },
+        {
+          "name": "cardColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 876,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "卡片颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 27
+          },
+          "codeExample": "cardColor={palette.ivory}",
+          "usageExamples": [
+            "cardColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "orientation",
+          "type": "Orientation",
+          "required": false,
+          "defaultExpression": "'portrait'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 877,
+            "kind": "parameter"
+          },
+          "defaultValue": "portrait",
+          "description": "方向，控制 lanyard 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "portrait",
+            "landscape"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "portrait",
+              "landscape"
+            ]
+          },
+          "codeExample": "orientation=\"portrait\"",
+          "usageExamples": [
+            "orientation=\"portrait\""
+          ]
+        },
+        {
+          "name": "finish",
+          "type": "Finish",
+          "required": false,
+          "defaultExpression": "'glossy'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 878,
+            "kind": "parameter"
+          },
+          "defaultValue": "glossy",
+          "description": "完成，控制 lanyard 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "glossy",
+            "matte",
+            "holographic",
+            "metallic"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "glossy",
+              "matte",
+              "holographic",
+              "metallic"
+            ]
+          },
+          "codeExample": "finish=\"matte\"",
+          "usageExamples": [
+            "finish=\"matte\""
+          ]
+        },
+        {
+          "name": "cornerRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 879,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "角半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 30
+          },
+          "codeExample": "cornerRadius={0.1}",
+          "usageExamples": [
+            "cornerRadius={0.1}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 880,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 31
+          },
+          "codeExample": "size={0.7}",
+          "usageExamples": [
+            "size={0.7}"
+          ]
+        },
+        {
+          "name": "anchor",
+          "type": "Anchor",
+          "required": false,
+          "defaultExpression": "'center'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 881,
+            "kind": "parameter"
+          },
+          "defaultValue": "center",
+          "description": "定位锚点，控制 lanyard 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "left",
+            "center",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "left",
+              "center",
+              "right"
+            ]
+          },
+          "codeExample": "anchor=\"center\"",
+          "usageExamples": [
+            "anchor=\"center\""
+          ]
+        },
+        {
+          "name": "strapLength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 882,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "挂带长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 33
+          },
+          "codeExample": "strapLength={0.55}",
+          "usageExamples": [
+            "strapLength={0.55}"
+          ]
+        },
+        {
+          "name": "strapImage",
+          "type": "string",
+          "required": false,
+          "description": "挂带图像，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 34
+          },
+          "codeExample": "strapImage={\"示例\"}"
+        },
+        {
+          "name": "strapColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#111111'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 884,
+            "kind": "parameter"
+          },
+          "defaultValue": "#111111",
+          "description": "挂带颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 35
+          },
+          "codeExample": "strapColor={palette.primary}",
+          "usageExamples": [
+            "strapColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "strapWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.65",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 885,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.65,
+          "description": "挂带宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 36
+          },
+          "codeExample": "strapWidth={0.8}",
+          "usageExamples": [
+            "strapWidth={0.8}"
+          ]
+        },
+        {
+          "name": "metal",
+          "type": "Metal",
+          "required": false,
+          "defaultExpression": "'silver'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 886,
+            "kind": "parameter"
+          },
+          "defaultValue": "silver",
+          "description": "金属，控制 lanyard 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "graphite",
+            "silver",
+            "gold"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 37
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "graphite",
+              "silver",
+              "gold"
+            ]
+          },
+          "codeExample": "metal=\"graphite\"",
+          "usageExamples": [
+            "metal=\"graphite\""
+          ]
+        },
+        {
+          "name": "gravity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 887,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "重力，控制 lanyard 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 38
+          },
+          "codeExample": "gravity={1}"
+        },
+        {
+          "name": "damping",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 888,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "阻尼，控制 lanyard 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 39
+          },
+          "codeExample": "damping={0.65}",
+          "usageExamples": [
+            "damping={0.65}"
+          ]
+        },
+        {
+          "name": "elasticity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 889,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "弹性，控制 lanyard 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 40
+          },
+          "codeExample": "elasticity={0.35}",
+          "usageExamples": [
+            "elasticity={0.35}"
+          ]
+        },
+        {
+          "name": "breeze",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 890,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "微风，控制 lanyard 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 41
+          },
+          "codeExample": "breeze={0.15}",
+          "usageExamples": [
+            "breeze={0.15}"
+          ]
+        },
+        {
+          "name": "interactive",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 891,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 42
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "interactive",
+          "usageExamples": [
+            "interactive"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 892,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro",
+          "usageExamples": [
+            "intro"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 893,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 44
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Lanyard/Lanyard.tsx",
+            "line": 45
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

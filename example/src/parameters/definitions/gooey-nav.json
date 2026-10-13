@@ -1,0 +1,1587 @@
+{
+  "version": 1,
+  "id": "gooey-nav",
+  "name": "Gooey Nav",
+  "sourcePath": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+  "demoPath": "src/demos/navigation/gooey-nav.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "GooeyNavItem[]",
+      "defaultValue": [
+        {
+          "label": "工作台"
+        },
+        {
+          "label": "智能体"
+        },
+        {
+          "label": "技能"
+        },
+        {
+          "label": "设置"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "label": {
+              "kind": "string"
+            },
+            "href": {
+              "kind": "string"
+            }
+          },
+          "required": []
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.initialActiveIndex",
+      "name": "initialActiveIndex",
+      "label": "initialActiveIndex · t0",
+      "description": "初始激活索引，控制 gooey nav 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "initialActiveIndex"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 gooey nav 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "Palette",
+      "defaultValue": "light",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "Size",
+      "defaultValue": "md",
+      "upstreamDefault": "'md'",
+      "control": "select",
+      "options": [
+        {
+          "label": "sm",
+          "value": "sm"
+        },
+        {
+          "label": "md",
+          "value": "md"
+        },
+        {
+          "label": "lg",
+          "value": "lg"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.frame",
+      "name": "frame",
+      "label": "frame · t0",
+      "description": "是否外框，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "frame"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "PILLS[palette].color",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.activeTextColor",
+      "name": "activeTextColor",
+      "label": "activeTextColor · t0",
+      "description": "激活文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "activeTextColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "contrastInk(pillRgb)",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.colors",
+      "name": "colors",
+      "label": "颜色列表 · t0",
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colors"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#52604e",
+        "#a6b39a",
+        "#c3ae88"
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.particleCount",
+      "name": "particleCount",
+      "label": "particleCount · t0",
+      "description": "粒子数量，控制 gooey nav 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "particleCount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "15",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 128,
+      "step": 1
+    },
+    {
+      "key": "t0.spread",
+      "name": "spread",
+      "label": "展开距离 · t0",
+      "description": "展开间距，控制 gooey nav 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 28,
+      "upstreamDefault": "56",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animationTime",
+      "name": "animationTime",
+      "label": "animationTime · t0",
+      "description": "动画时间，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animationTime"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 450,
+      "upstreamDefault": "600",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.timeVariance",
+      "name": "timeVariance",
+      "label": "timeVariance · t0",
+      "description": "时间差异，控制 gooey nav 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "timeVariance"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 120,
+      "upstreamDefault": "300",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gooeyness",
+      "name": "gooeyness",
+      "label": "gooeyness · t0",
+      "description": "粘连程度，控制 gooey nav 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gooeyness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.wobble",
+      "name": "wobble",
+      "label": "wobble · t0",
+      "description": "摇晃，控制 gooey nav 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "wobble"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverEffect",
+      "name": "hoverEffect",
+      "label": "hoverEffect · t0",
+      "description": "是否悬停效果，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverEffect"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "GooeyNavItem[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 302,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        {
+          "label": "Home",
+          "href": "#"
+        },
+        {
+          "label": "Work",
+          "href": "#"
+        },
+        {
+          "label": "About",
+          "href": "#"
+        },
+        {
+          "label": "Contact",
+          "href": "#"
+        }
+      ],
+      "defaultResolvedExpression": "[\n  { label: 'Home', href: '#' },\n  { label: 'Work', href: '#' },\n  { label: 'About', href: '#' },\n  { label: 'Contact', href: '#' }\n]",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "GooeyNavItem",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "label",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "href",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "icon",
+                "type": "ReactNode",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={['工作台', '智能体', '技能', '设置'].map(label => ({ label }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={['工作台', '智能体', '技能', '设置'].map(label => ({ label }))}"
+      ]
+    },
+    {
+      "name": "initialActiveIndex",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 303,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "初始激活索引，控制 gooey nav 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 29
+      },
+      "codeExample": "initialActiveIndex={0}",
+      "usageExamples": [
+        "initialActiveIndex={0}"
+      ]
+    },
+    {
+      "name": "activeIndex",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "innerIndex",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 323,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "激活索引，控制 gooey nav 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 30
+      },
+      "codeExample": "activeIndex={1}"
+    },
+    {
+      "name": "onChange",
+      "type": "(index: number, item: GooeyNavItem) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((index: number, item: GooeyNavItem) => void) | undefined"
+      },
+      "codeExample": "onChange={(_index, item) => setStatus('当前导航：' + item.label)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={(_index, item) => setStatus('当前导航：' + item.label)}"
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "Palette",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 306,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 gooey nav 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"light\"",
+      "usageExamples": [
+        "theme=\"light\""
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "PILLS[palette].color",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 333,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "falsy",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 33
+      },
+      "codeExample": "color={palette.primary}",
+      "usageExamples": [
+        "color={palette.primary}"
+      ]
+    },
+    {
+      "name": "activeTextColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "contrastInk(pillRgb)",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 847,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "falsy",
+      "description": "激活文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 34
+      },
+      "codeExample": "activeTextColor={palette.ivory}",
+      "usageExamples": [
+        "activeTextColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "colors",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 309,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "colors={[palette.primary, palette.sage, palette.sand]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "colors={[palette.primary, palette.sage, palette.sand]}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "required": false,
+      "defaultExpression": "'md'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 310,
+        "kind": "parameter"
+      },
+      "defaultValue": "md",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "codeExample": "size=\"md\"",
+      "usageExamples": [
+        "size=\"md\""
+      ]
+    },
+    {
+      "name": "frame",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 311,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否外框，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 37
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "frame",
+      "usageExamples": [
+        "frame"
+      ]
+    },
+    {
+      "name": "animationTime",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "600",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 312,
+        "kind": "parameter"
+      },
+      "defaultValue": 600,
+      "description": "动画时间，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 38
+      },
+      "codeExample": "animationTime={450}",
+      "usageExamples": [
+        "animationTime={450}"
+      ]
+    },
+    {
+      "name": "particleCount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 313,
+        "kind": "parameter"
+      },
+      "defaultValue": 15,
+      "description": "粒子数量，控制 gooey nav 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 39
+      },
+      "codeExample": "particleCount={8}",
+      "usageExamples": [
+        "particleCount={8}"
+      ]
+    },
+    {
+      "name": "timeVariance",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "300",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 314,
+        "kind": "parameter"
+      },
+      "defaultValue": 300,
+      "description": "时间差异，控制 gooey nav 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 40
+      },
+      "codeExample": "timeVariance={120}",
+      "usageExamples": [
+        "timeVariance={120}"
+      ]
+    },
+    {
+      "name": "spread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "56",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 315,
+        "kind": "parameter"
+      },
+      "defaultValue": 56,
+      "description": "展开间距，控制 gooey nav 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 41
+      },
+      "codeExample": "spread={28}",
+      "usageExamples": [
+        "spread={28}"
+      ]
+    },
+    {
+      "name": "gooeyness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 316,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "粘连程度，控制 gooey nav 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 42
+      },
+      "codeExample": "gooeyness={0.4}",
+      "usageExamples": [
+        "gooeyness={0.4}"
+      ]
+    },
+    {
+      "name": "wobble",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 317,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "摇晃，控制 gooey nav 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 43
+      },
+      "codeExample": "wobble={0.3}",
+      "usageExamples": [
+        "wobble={0.3}"
+      ]
+    },
+    {
+      "name": "hoverEffect",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 318,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否悬停效果，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 44
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "hoverEffect",
+      "usageExamples": [
+        "hoverEffect"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 319,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 45
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+        "line": 46
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/GooeyNav/GooeyNav';\nimport { palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 导航选中状态由真实组件维护，事件反馈当前名称。\n// 此演示需要可用WebGL上下文；不支持时应显示能力提示，不声称效果已运行。\n\nexport default function GooeyNavDemo() {\n  const [status, setStatus] = useState(\"点击切换导航项，观察黏性高亮过渡\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ height: 300, display: 'grid', placeItems: 'center' }}><Component\n\n\n\n\nonChange={(_index, item) => setStatus('当前导航：' + item.label)} /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "GooeyNav",
+      "sourcePath": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "GooeyNavItem[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 302,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            {
+              "label": "Home",
+              "href": "#"
+            },
+            {
+              "label": "Work",
+              "href": "#"
+            },
+            {
+              "label": "About",
+              "href": "#"
+            },
+            {
+              "label": "Contact",
+              "href": "#"
+            }
+          ],
+          "defaultResolvedExpression": "[\n  { label: 'Home', href: '#' },\n  { label: 'Work', href: '#' },\n  { label: 'About', href: '#' },\n  { label: 'Contact', href: '#' }\n]",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "GooeyNavItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "href",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "icon",
+                    "type": "ReactNode",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={['工作台', '智能体', '技能', '设置'].map(label => ({ label }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={['工作台', '智能体', '技能', '设置'].map(label => ({ label }))}"
+          ]
+        },
+        {
+          "name": "initialActiveIndex",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 303,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "初始激活索引，控制 gooey nav 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 29
+          },
+          "codeExample": "initialActiveIndex={0}",
+          "usageExamples": [
+            "initialActiveIndex={0}"
+          ]
+        },
+        {
+          "name": "activeIndex",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "innerIndex",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 323,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "激活索引，控制 gooey nav 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 30
+          },
+          "codeExample": "activeIndex={1}"
+        },
+        {
+          "name": "onChange",
+          "type": "(index: number, item: GooeyNavItem) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((index: number, item: GooeyNavItem) => void) | undefined"
+          },
+          "codeExample": "onChange={(_index, item) => setStatus('当前导航：' + item.label)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={(_index, item) => setStatus('当前导航：' + item.label)}"
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "Palette",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 306,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 gooey nav 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"light\"",
+          "usageExamples": [
+            "theme=\"light\""
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "PILLS[palette].color",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 333,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 33
+          },
+          "codeExample": "color={palette.primary}",
+          "usageExamples": [
+            "color={palette.primary}"
+          ]
+        },
+        {
+          "name": "activeTextColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "contrastInk(pillRgb)",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 847,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "激活文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 34
+          },
+          "codeExample": "activeTextColor={palette.ivory}",
+          "usageExamples": [
+            "activeTextColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "colors",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 309,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "colors={[palette.primary, palette.sage, palette.sand]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "colors={[palette.primary, palette.sage, palette.sand]}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "Size",
+          "required": false,
+          "defaultExpression": "'md'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 310,
+            "kind": "parameter"
+          },
+          "defaultValue": "md",
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "codeExample": "size=\"md\"",
+          "usageExamples": [
+            "size=\"md\""
+          ]
+        },
+        {
+          "name": "frame",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 311,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否外框，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 37
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "frame",
+          "usageExamples": [
+            "frame"
+          ]
+        },
+        {
+          "name": "animationTime",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "600",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 312,
+            "kind": "parameter"
+          },
+          "defaultValue": 600,
+          "description": "动画时间，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 38
+          },
+          "codeExample": "animationTime={450}",
+          "usageExamples": [
+            "animationTime={450}"
+          ]
+        },
+        {
+          "name": "particleCount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 313,
+            "kind": "parameter"
+          },
+          "defaultValue": 15,
+          "description": "粒子数量，控制 gooey nav 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 39
+          },
+          "codeExample": "particleCount={8}",
+          "usageExamples": [
+            "particleCount={8}"
+          ]
+        },
+        {
+          "name": "timeVariance",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "300",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 314,
+            "kind": "parameter"
+          },
+          "defaultValue": 300,
+          "description": "时间差异，控制 gooey nav 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 40
+          },
+          "codeExample": "timeVariance={120}",
+          "usageExamples": [
+            "timeVariance={120}"
+          ]
+        },
+        {
+          "name": "spread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "56",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 315,
+            "kind": "parameter"
+          },
+          "defaultValue": 56,
+          "description": "展开间距，控制 gooey nav 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 41
+          },
+          "codeExample": "spread={28}",
+          "usageExamples": [
+            "spread={28}"
+          ]
+        },
+        {
+          "name": "gooeyness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 316,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "粘连程度，控制 gooey nav 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 42
+          },
+          "codeExample": "gooeyness={0.4}",
+          "usageExamples": [
+            "gooeyness={0.4}"
+          ]
+        },
+        {
+          "name": "wobble",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 317,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "摇晃，控制 gooey nav 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 43
+          },
+          "codeExample": "wobble={0.3}",
+          "usageExamples": [
+            "wobble={0.3}"
+          ]
+        },
+        {
+          "name": "hoverEffect",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 318,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否悬停效果，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 44
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "hoverEffect",
+          "usageExamples": [
+            "hoverEffect"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 319,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 45
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GooeyNav/GooeyNav.tsx",
+            "line": 46
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

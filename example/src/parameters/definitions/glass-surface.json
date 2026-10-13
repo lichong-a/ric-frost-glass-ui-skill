@@ -1,0 +1,2306 @@
+{
+  "version": 1,
+  "id": "glass-surface",
+  "name": "Glass Surface",
+  "sourcePath": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+  "demoPath": "src/demos/cards/glass-surface.tsx",
+  "fields": [
+    {
+      "key": "t0.src",
+      "name": "src",
+      "label": "资源地址 · t0",
+      "description": "加载图像、视频或纹理的资源地址。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "src"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "@media/scene-2.svg",
+      "control": "resource",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "options": [
+        {
+          "label": "纹理 · 色彩绽放",
+          "value": "@asset/restoration/chromatic-bloom.svg"
+        },
+        {
+          "label": "纹理 · 矿石潮汐",
+          "value": "@asset/restoration/mineral-tide.svg"
+        },
+        {
+          "label": "纹理 · 夜色轨道",
+          "value": "@asset/restoration/nocturne-orbit.svg"
+        },
+        {
+          "label": "纹理 · 棱彩林冠",
+          "value": "@asset/restoration/prismatic-canopy.svg"
+        },
+        {
+          "label": "纹理 · 日光沙丘",
+          "value": "@asset/restoration/solar-dunes.svg"
+        },
+        {
+          "label": "纹理 · 朱红折页",
+          "value": "@asset/restoration/vermilion-fold.svg"
+        },
+        {
+          "label": "场景 · 山雾",
+          "value": "@media/scene-1.svg"
+        },
+        {
+          "label": "场景 · 茶庭",
+          "value": "@media/scene-2.svg"
+        },
+        {
+          "label": "场景 · 沙洲",
+          "value": "@media/scene-3.svg"
+        },
+        {
+          "label": "场景 · 静水",
+          "value": "@media/scene-4.svg"
+        },
+        {
+          "label": "场景 · 林间",
+          "value": "@media/scene-5.svg"
+        },
+        {
+          "label": "场景 · 岩纹",
+          "value": "@media/scene-6.svg"
+        }
+      ]
+    },
+    {
+      "key": "t0.alt",
+      "name": "alt",
+      "label": "替代文字 · t0",
+      "description": "图像无法显示及辅助技术读取时的替代文字。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "alt"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "透过玻璃观察的自然色图形",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "CSSProperties | undefined",
+      "defaultValue": {
+        "width": "100%",
+        "height": "100%",
+        "objectFit": "cover"
+      },
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "width": {
+            "kind": "string"
+          },
+          "height": {
+            "kind": "string"
+          },
+          "objectFit": {
+            "kind": "string"
+          }
+        },
+        "required": [
+          "width",
+          "height",
+          "objectFit"
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.renderer",
+      "name": "renderer",
+      "label": "renderer · t1",
+      "description": "渲染器，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "renderer"
+        }
+      ],
+      "type": "GlassSurfaceRenderer",
+      "defaultValue": "auto",
+      "upstreamDefault": "'auto'",
+      "control": "select",
+      "options": [
+        {
+          "label": "auto",
+          "value": "auto"
+        },
+        {
+          "label": "svg",
+          "value": "svg"
+        },
+        {
+          "label": "webgl",
+          "value": "webgl"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.width",
+      "name": "width",
+      "label": "宽度 · t1",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "width"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 320,
+      "upstreamDefault": "200",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.height",
+      "name": "height",
+      "label": "高度 · t1",
+      "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "height"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 100,
+      "upstreamDefault": "80",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.borderRadius",
+      "name": "borderRadius",
+      "label": "borderRadius · t1",
+      "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "borderRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 24,
+      "upstreamDefault": "20",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.blur",
+      "name": "blur",
+      "label": "blur · t1",
+      "description": "模糊，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "blur"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 12,
+      "upstreamDefault": "11",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.brightness",
+      "name": "brightness",
+      "label": "亮度 · t1",
+      "description": "亮度，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "brightness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 52,
+      "upstreamDefault": "50",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.opacity",
+      "name": "opacity",
+      "label": "透明度 · t1",
+      "description": "不透明度，控制 glass surface 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.9,
+      "upstreamDefault": "0.93",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t1.backgroundOpacity",
+      "name": "backgroundOpacity",
+      "label": "backgroundOpacity · t1",
+      "description": "背景不透明度，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "backgroundOpacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.22,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.distortionScale",
+      "name": "distortionScale",
+      "label": "distortionScale · t1",
+      "description": "扭曲缩放，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "distortionScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": -100,
+      "upstreamDefault": "-180",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.displace",
+      "name": "displace",
+      "label": "displace · t1",
+      "description": "位移，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "displace"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.redOffset",
+      "name": "redOffset",
+      "label": "redOffset · t1",
+      "description": "红色通道偏移，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "redOffset"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.greenOffset",
+      "name": "greenOffset",
+      "label": "greenOffset · t1",
+      "description": "绿色通道偏移，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "greenOffset"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.blueOffset",
+      "name": "blueOffset",
+      "label": "blueOffset · t1",
+      "description": "蓝色通道偏移，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "blueOffset"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "upstreamDefault": "20",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.saturation",
+      "name": "saturation",
+      "label": "saturation · t1",
+      "description": "饱和度，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "saturation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.style",
+      "name": "style",
+      "label": "style · t1",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "style"
+        }
+      ],
+      "type": "CSSProperties",
+      "defaultValue": {
+        "color": "#1f2d26",
+        "padding": 24
+      },
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "color": {
+            "kind": "string"
+          },
+          "padding": {
+            "kind": "number"
+          }
+        },
+        "required": [
+          "color",
+          "padding"
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.borderWidth",
+      "name": "borderWidth",
+      "label": "borderWidth · t1",
+      "description": "边框宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "borderWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.07,
+      "upstreamDefault": "0.07",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.xChannel",
+      "name": "xChannel",
+      "label": "xChannel · t1",
+      "description": "X轴通道，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "xChannel"
+        }
+      ],
+      "type": "GlassSurfaceChannel",
+      "defaultValue": "R",
+      "upstreamDefault": "'R'",
+      "control": "select",
+      "options": [
+        {
+          "label": "R",
+          "value": "R"
+        },
+        {
+          "label": "G",
+          "value": "G"
+        },
+        {
+          "label": "B",
+          "value": "B"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.yChannel",
+      "name": "yChannel",
+      "label": "yChannel · t1",
+      "description": "Y轴通道，控制 glass surface 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "yChannel"
+        }
+      ],
+      "type": "GlassSurfaceChannel",
+      "defaultValue": "G",
+      "upstreamDefault": "'G'",
+      "control": "select",
+      "options": [
+        {
+          "label": "R",
+          "value": "R"
+        },
+        {
+          "label": "G",
+          "value": "G"
+        },
+        {
+          "label": "B",
+          "value": "B"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.mixBlendMode",
+      "name": "mixBlendMode",
+      "label": "mixBlendMode · t1",
+      "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "mixBlendMode"
+        }
+      ],
+      "type": "CSSProperties['mixBlendMode']",
+      "defaultValue": "difference",
+      "upstreamDefault": "'difference'",
+      "control": "select",
+      "options": [
+        {
+          "label": "color",
+          "value": "color"
+        },
+        {
+          "label": "-moz-initial",
+          "value": "-moz-initial"
+        },
+        {
+          "label": "inherit",
+          "value": "inherit"
+        },
+        {
+          "label": "initial",
+          "value": "initial"
+        },
+        {
+          "label": "revert",
+          "value": "revert"
+        },
+        {
+          "label": "revert-layer",
+          "value": "revert-layer"
+        },
+        {
+          "label": "unset",
+          "value": "unset"
+        },
+        {
+          "label": "overlay",
+          "value": "overlay"
+        },
+        {
+          "label": "normal",
+          "value": "normal"
+        },
+        {
+          "label": "saturation",
+          "value": "saturation"
+        },
+        {
+          "label": "multiply",
+          "value": "multiply"
+        },
+        {
+          "label": "color-burn",
+          "value": "color-burn"
+        },
+        {
+          "label": "color-dodge",
+          "value": "color-dodge"
+        },
+        {
+          "label": "darken",
+          "value": "darken"
+        },
+        {
+          "label": "difference",
+          "value": "difference"
+        },
+        {
+          "label": "exclusion",
+          "value": "exclusion"
+        },
+        {
+          "label": "hard-light",
+          "value": "hard-light"
+        },
+        {
+          "label": "hue",
+          "value": "hue"
+        },
+        {
+          "label": "lighten",
+          "value": "lighten"
+        },
+        {
+          "label": "luminosity",
+          "value": "luminosity"
+        },
+        {
+          "label": "screen",
+          "value": "screen"
+        },
+        {
+          "label": "soft-light",
+          "value": "soft-light"
+        },
+        {
+          "label": "plus-darker",
+          "value": "plus-darker"
+        },
+        {
+          "label": "plus-lighter",
+          "value": "plus-lighter"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 53
+      },
+      "codeExample": "children={<><strong style={{ fontSize: 24 }}>霜玻璃表面</strong></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><strong style={{ fontSize: 24 }}>霜玻璃表面</strong></>}"
+      ]
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 355,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 54
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "width={320}",
+      "usageExamples": [
+        "width={320}"
+      ]
+    },
+    {
+      "name": "height",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "80",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 356,
+        "kind": "parameter"
+      },
+      "defaultValue": 80,
+      "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 55
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "height={100}",
+      "usageExamples": [
+        "height={100}"
+      ]
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "20",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 357,
+        "kind": "parameter"
+      },
+      "defaultValue": 20,
+      "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 56
+      },
+      "codeExample": "borderRadius={24}",
+      "usageExamples": [
+        "borderRadius={24}"
+      ]
+    },
+    {
+      "name": "borderWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.07",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 358,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.07,
+      "description": "边框宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 57
+      },
+      "codeExample": "borderWidth={0.07}"
+    },
+    {
+      "name": "brightness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "50",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 359,
+        "kind": "parameter"
+      },
+      "defaultValue": 50,
+      "description": "亮度，控制 glass surface 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 58
+      },
+      "codeExample": "brightness={52}",
+      "usageExamples": [
+        "brightness={52}"
+      ]
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.93",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 360,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.93,
+      "description": "不透明度，控制 glass surface 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 59
+      },
+      "codeExample": "opacity={0.9}",
+      "usageExamples": [
+        "opacity={0.9}"
+      ]
+    },
+    {
+      "name": "blur",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "11",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 361,
+        "kind": "parameter"
+      },
+      "defaultValue": 11,
+      "description": "模糊，控制 glass surface 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 60
+      },
+      "codeExample": "blur={12}",
+      "usageExamples": [
+        "blur={12}"
+      ]
+    },
+    {
+      "name": "displace",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 362,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "位移，控制 glass surface 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 61
+      },
+      "codeExample": "displace={0.3}",
+      "usageExamples": [
+        "displace={0.3}"
+      ]
+    },
+    {
+      "name": "backgroundOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 363,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "背景不透明度，控制 glass surface 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 62
+      },
+      "codeExample": "backgroundOpacity={0.22}",
+      "usageExamples": [
+        "backgroundOpacity={0.22}"
+      ]
+    },
+    {
+      "name": "saturation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 364,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "饱和度，控制 glass surface 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 63
+      },
+      "codeExample": "saturation={0.8}",
+      "usageExamples": [
+        "saturation={0.8}"
+      ]
+    },
+    {
+      "name": "distortionScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "-180",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 365,
+        "kind": "parameter"
+      },
+      "defaultValue": -180,
+      "description": "扭曲缩放，控制 glass surface 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 64
+      },
+      "codeExample": "distortionScale={-100}",
+      "usageExamples": [
+        "distortionScale={-100}"
+      ]
+    },
+    {
+      "name": "redOffset",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 366,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "红色通道偏移，控制 glass surface 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 65
+      },
+      "codeExample": "redOffset={0}",
+      "usageExamples": [
+        "redOffset={0}"
+      ]
+    },
+    {
+      "name": "greenOffset",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 367,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "绿色通道偏移，控制 glass surface 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 66
+      },
+      "codeExample": "greenOffset={3}",
+      "usageExamples": [
+        "greenOffset={3}"
+      ]
+    },
+    {
+      "name": "blueOffset",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "20",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 368,
+        "kind": "parameter"
+      },
+      "defaultValue": 20,
+      "description": "蓝色通道偏移，控制 glass surface 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 67
+      },
+      "codeExample": "blueOffset={6}",
+      "usageExamples": [
+        "blueOffset={6}"
+      ]
+    },
+    {
+      "name": "xChannel",
+      "type": "GlassSurfaceChannel",
+      "required": false,
+      "defaultExpression": "'R'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 369,
+        "kind": "parameter"
+      },
+      "defaultValue": "R",
+      "description": "X轴通道，控制 glass surface 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "R",
+        "G",
+        "B"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 68
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "R",
+          "G",
+          "B"
+        ]
+      },
+      "codeExample": "xChannel={\"R\"}"
+    },
+    {
+      "name": "yChannel",
+      "type": "GlassSurfaceChannel",
+      "required": false,
+      "defaultExpression": "'G'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 370,
+        "kind": "parameter"
+      },
+      "defaultValue": "G",
+      "description": "Y轴通道，控制 glass surface 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "R",
+        "G",
+        "B"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 69
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "R",
+          "G",
+          "B"
+        ]
+      },
+      "codeExample": "yChannel={\"G\"}"
+    },
+    {
+      "name": "mixBlendMode",
+      "type": "CSSProperties['mixBlendMode']",
+      "required": false,
+      "defaultExpression": "'difference'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 371,
+        "kind": "parameter"
+      },
+      "defaultValue": "difference",
+      "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "color",
+        "-moz-initial",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset",
+        "overlay",
+        "normal",
+        "saturation",
+        "multiply",
+        "color-burn",
+        "color-dodge",
+        "darken",
+        "difference",
+        "exclusion",
+        "hard-light",
+        "hue",
+        "lighten",
+        "luminosity",
+        "screen",
+        "soft-light",
+        "plus-darker",
+        "plus-lighter"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 70
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "color",
+          "-moz-initial",
+          "inherit",
+          "initial",
+          "revert",
+          "revert-layer",
+          "unset",
+          "overlay",
+          "normal",
+          "saturation",
+          "multiply",
+          "color-burn",
+          "color-dodge",
+          "darken",
+          "difference",
+          "exclusion",
+          "hard-light",
+          "hue",
+          "lighten",
+          "luminosity",
+          "screen",
+          "soft-light",
+          "plus-darker",
+          "plus-lighter"
+        ]
+      },
+      "codeExample": "mixBlendMode={\"difference\"}"
+    },
+    {
+      "name": "refraction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 372,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否折射，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 71
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "refraction",
+      "usageExamples": [
+        "refraction"
+      ]
+    },
+    {
+      "name": "renderer",
+      "type": "GlassSurfaceRenderer",
+      "required": false,
+      "defaultExpression": "'auto'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 373,
+        "kind": "parameter"
+      },
+      "defaultValue": "auto",
+      "description": "渲染器，控制 glass surface 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "auto",
+        "svg",
+        "webgl"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 72
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "auto",
+          "svg",
+          "webgl"
+        ]
+      },
+      "codeExample": "renderer=\"auto\"",
+      "usageExamples": [
+        "renderer=\"auto\""
+      ]
+    },
+    {
+      "name": "backdrop",
+      "type": "RefObject<GlassSurfaceBackdrop | null> | GlassSurfaceBackdrop | null",
+      "required": false,
+      "description": "遮罩的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 73
+      },
+      "codeExample": "const elementRef = useRef<GlassSurfaceBackdrop | null>(null);\n// JSX: backdrop={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+      "usageExamples": [
+        "backdrop={backdropRef}"
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "string",
+      "required": false,
+      "description": "形状，控制 glass surface 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 74
+      },
+      "codeExample": "shape={\"示例\"}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 376,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 75
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 377,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+        "line": 76
+      },
+      "codeExample": "style={{ color: palette.ink, padding: 24 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "style={{ color: palette.ink, padding: 24 }}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/GlassSurface/GlassSurface';\nimport { palette } from '../../shared/demo-support';\nimport { useRef } from \"react\";\n// 显式传入真实图片backdrop，避免只有透明圆角而看不见折射；文字维持墨绿。\n// renderer=\"auto\" 根据能力选择SVG折射、WebGL折射或CSS霜玻璃回退；不将WebGL作为挂载前置条件。\n\nexport default function GlassSurfaceDemo() {\n  const backdropRef = useRef<HTMLImageElement>(null!);\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ position: 'relative', width: '100%', height: 360, overflow: 'hidden', borderRadius: 20 }}><img ref={backdropRef}    /*__AW_PROPS_t0__*/  /><div style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center' }}><Component  backdrop={backdropRef}              refraction  /*__AW_PROPS_t1__*/ ><strong style={{ fontSize: 24 }}>霜玻璃表面</strong></Component></div></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "img",
+      "props": [
+        {
+          "name": "ref",
+          "type": "Ref<HTMLImageElement> | undefined",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "usageExamples": [
+            "ref={backdropRef}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 292
+          }
+        },
+        {
+          "name": "src",
+          "type": "string | undefined",
+          "required": false,
+          "description": "加载图像、视频或纹理的资源地址。",
+          "usageExamples": [
+            "src={MEDIA[1]}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3077
+          }
+        },
+        {
+          "name": "alt",
+          "type": "string | undefined",
+          "required": false,
+          "description": "图像无法显示及辅助技术读取时的替代文字。",
+          "usageExamples": [
+            "alt=\"透过玻璃观察的自然色图形\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3069
+          }
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties | undefined",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "usageExamples": [
+            "style={{ width: '100%', height: '100%', objectFit: 'cover' }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2712
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "GlassSurface",
+      "sourcePath": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 53
+          },
+          "codeExample": "children={<><strong style={{ fontSize: 24 }}>霜玻璃表面</strong></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><strong style={{ fontSize: 24 }}>霜玻璃表面</strong></>}"
+          ]
+        },
+        {
+          "name": "width",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 355,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 54
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "width={320}",
+          "usageExamples": [
+            "width={320}"
+          ]
+        },
+        {
+          "name": "height",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "80",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 356,
+            "kind": "parameter"
+          },
+          "defaultValue": 80,
+          "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 55
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "height={100}",
+          "usageExamples": [
+            "height={100}"
+          ]
+        },
+        {
+          "name": "borderRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "20",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 357,
+            "kind": "parameter"
+          },
+          "defaultValue": 20,
+          "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 56
+          },
+          "codeExample": "borderRadius={24}",
+          "usageExamples": [
+            "borderRadius={24}"
+          ]
+        },
+        {
+          "name": "borderWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.07",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 358,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.07,
+          "description": "边框宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 57
+          },
+          "codeExample": "borderWidth={0.07}"
+        },
+        {
+          "name": "brightness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "50",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 359,
+            "kind": "parameter"
+          },
+          "defaultValue": 50,
+          "description": "亮度，控制 glass surface 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 58
+          },
+          "codeExample": "brightness={52}",
+          "usageExamples": [
+            "brightness={52}"
+          ]
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.93",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 360,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.93,
+          "description": "不透明度，控制 glass surface 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 59
+          },
+          "codeExample": "opacity={0.9}",
+          "usageExamples": [
+            "opacity={0.9}"
+          ]
+        },
+        {
+          "name": "blur",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "11",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 361,
+            "kind": "parameter"
+          },
+          "defaultValue": 11,
+          "description": "模糊，控制 glass surface 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 60
+          },
+          "codeExample": "blur={12}",
+          "usageExamples": [
+            "blur={12}"
+          ]
+        },
+        {
+          "name": "displace",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 362,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "位移，控制 glass surface 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 61
+          },
+          "codeExample": "displace={0.3}",
+          "usageExamples": [
+            "displace={0.3}"
+          ]
+        },
+        {
+          "name": "backgroundOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 363,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "背景不透明度，控制 glass surface 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 62
+          },
+          "codeExample": "backgroundOpacity={0.22}",
+          "usageExamples": [
+            "backgroundOpacity={0.22}"
+          ]
+        },
+        {
+          "name": "saturation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 364,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "饱和度，控制 glass surface 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 63
+          },
+          "codeExample": "saturation={0.8}",
+          "usageExamples": [
+            "saturation={0.8}"
+          ]
+        },
+        {
+          "name": "distortionScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "-180",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 365,
+            "kind": "parameter"
+          },
+          "defaultValue": -180,
+          "description": "扭曲缩放，控制 glass surface 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 64
+          },
+          "codeExample": "distortionScale={-100}",
+          "usageExamples": [
+            "distortionScale={-100}"
+          ]
+        },
+        {
+          "name": "redOffset",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 366,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "红色通道偏移，控制 glass surface 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 65
+          },
+          "codeExample": "redOffset={0}",
+          "usageExamples": [
+            "redOffset={0}"
+          ]
+        },
+        {
+          "name": "greenOffset",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 367,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "绿色通道偏移，控制 glass surface 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 66
+          },
+          "codeExample": "greenOffset={3}",
+          "usageExamples": [
+            "greenOffset={3}"
+          ]
+        },
+        {
+          "name": "blueOffset",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "20",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 368,
+            "kind": "parameter"
+          },
+          "defaultValue": 20,
+          "description": "蓝色通道偏移，控制 glass surface 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 67
+          },
+          "codeExample": "blueOffset={6}",
+          "usageExamples": [
+            "blueOffset={6}"
+          ]
+        },
+        {
+          "name": "xChannel",
+          "type": "GlassSurfaceChannel",
+          "required": false,
+          "defaultExpression": "'R'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 369,
+            "kind": "parameter"
+          },
+          "defaultValue": "R",
+          "description": "X轴通道，控制 glass surface 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "R",
+            "G",
+            "B"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 68
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "R",
+              "G",
+              "B"
+            ]
+          },
+          "codeExample": "xChannel={\"R\"}"
+        },
+        {
+          "name": "yChannel",
+          "type": "GlassSurfaceChannel",
+          "required": false,
+          "defaultExpression": "'G'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 370,
+            "kind": "parameter"
+          },
+          "defaultValue": "G",
+          "description": "Y轴通道，控制 glass surface 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "R",
+            "G",
+            "B"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 69
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "R",
+              "G",
+              "B"
+            ]
+          },
+          "codeExample": "yChannel={\"G\"}"
+        },
+        {
+          "name": "mixBlendMode",
+          "type": "CSSProperties['mixBlendMode']",
+          "required": false,
+          "defaultExpression": "'difference'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 371,
+            "kind": "parameter"
+          },
+          "defaultValue": "difference",
+          "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "color",
+            "-moz-initial",
+            "inherit",
+            "initial",
+            "revert",
+            "revert-layer",
+            "unset",
+            "overlay",
+            "normal",
+            "saturation",
+            "multiply",
+            "color-burn",
+            "color-dodge",
+            "darken",
+            "difference",
+            "exclusion",
+            "hard-light",
+            "hue",
+            "lighten",
+            "luminosity",
+            "screen",
+            "soft-light",
+            "plus-darker",
+            "plus-lighter"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 70
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "color",
+              "-moz-initial",
+              "inherit",
+              "initial",
+              "revert",
+              "revert-layer",
+              "unset",
+              "overlay",
+              "normal",
+              "saturation",
+              "multiply",
+              "color-burn",
+              "color-dodge",
+              "darken",
+              "difference",
+              "exclusion",
+              "hard-light",
+              "hue",
+              "lighten",
+              "luminosity",
+              "screen",
+              "soft-light",
+              "plus-darker",
+              "plus-lighter"
+            ]
+          },
+          "codeExample": "mixBlendMode={\"difference\"}"
+        },
+        {
+          "name": "refraction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 372,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否折射，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 71
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "refraction",
+          "usageExamples": [
+            "refraction"
+          ]
+        },
+        {
+          "name": "renderer",
+          "type": "GlassSurfaceRenderer",
+          "required": false,
+          "defaultExpression": "'auto'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 373,
+            "kind": "parameter"
+          },
+          "defaultValue": "auto",
+          "description": "渲染器，控制 glass surface 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "auto",
+            "svg",
+            "webgl"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 72
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "auto",
+              "svg",
+              "webgl"
+            ]
+          },
+          "codeExample": "renderer=\"auto\"",
+          "usageExamples": [
+            "renderer=\"auto\""
+          ]
+        },
+        {
+          "name": "backdrop",
+          "type": "RefObject<GlassSurfaceBackdrop | null> | GlassSurfaceBackdrop | null",
+          "required": false,
+          "description": "遮罩的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 73
+          },
+          "codeExample": "const elementRef = useRef<GlassSurfaceBackdrop | null>(null);\n// JSX: backdrop={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "backdrop={backdropRef}"
+          ]
+        },
+        {
+          "name": "shape",
+          "type": "string",
+          "required": false,
+          "description": "形状，控制 glass surface 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 74
+          },
+          "codeExample": "shape={\"示例\"}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 376,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 75
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 377,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/GlassSurface/GlassSurface.tsx",
+            "line": 76
+          },
+          "codeExample": "style={{ color: palette.ink, padding: 24 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "style={{ color: palette.ink, padding: 24 }}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

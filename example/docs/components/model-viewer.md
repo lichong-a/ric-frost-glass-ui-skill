@@ -1,6 +1,6 @@
 # Model Viewer
 
-组合组件 · `model-viewer` · 中文意图：三维模型 / 3D模型查看
+媒体与轮播 · `model-viewer` · 中文意图：三维模型 / 3D模型查看
 
 目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
@@ -14,8 +14,9 @@
 
 | 资源 | 位置与用途 |
 |---|---|
-| 自有示例（随包） | [example/src/demos/model-viewer.tsx](../../src/demos/model-viewer.tsx) |
+| 自有示例（随包） | [example/src/demos/media/model-viewer.tsx](../../src/demos/media/model-viewer.tsx) |
 | 组件实现（准备后存在） | [example/.upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx](../../.upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx) |
+| 单独 Props 记录 | [example/src/parameters/definitions/model-viewer.json](../../src/parameters/definitions/model-viewer.json) |
 | 固定版本 | `2139cb3098d4fedc6264f13e50dcb4694224ba7c` |
 
 先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在包根运行：
@@ -31,9 +32,11 @@ node scripts/example.mjs setup --component model-viewer
 以下来自本包自有示例的实际用法；它只表示本例参数，不代表上游所有 Props。
 
 ```tsx
+// 当前 Model Viewer 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
 // Authored integration demo; implementation is installed from the pinned official source.
-import Component from '../../.upstream/src/ts-default/Components/ModelViewer/ModelViewer';
-import { palette } from '../shared/demo-support';
+import Component from '../../../.upstream/src/ts-default/Components/ModelViewer/ModelViewer';
+import { palette } from '../../shared/demo-support';
 import { useState } from "react";
 // 使用自有sample-object.gltf与无HDR环境模式，避免外部模型或环境贴图依赖。
 // 此演示需要可用WebGL上下文；不支持时应显示能力提示，不声称效果已运行。
@@ -43,22 +46,112 @@ export default function ModelViewerDemo() {
 
   return (
     <div className="aw-demo-stage" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>
-      <div style={{ width: '100%', height: '100%' }}><div style={{ position: 'relative', height: 330, minHeight: 0, width: '100%' }}><Component url={import.meta.env.BASE_URL + 'media/sample-object.gltf'} width="100%" height={330}
-environment="none" exposure={1} autoRotate autoRotateSpeed={0.3}
-dragRotate zoom minZoom={0.7} maxZoom={1.7} hoverTilt={0.1}
-float={0.15} shadow shadowOpacity={0.18} resetOnDoubleClick
-onModelLoaded={() => setStatus('本地GLTF模型已加载；拖动旋转，双击复位')} /></div><p role="status" aria-live="polite" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>
+      <div style={{ width: '100%', height: '100%' }}><div style={{ position: 'relative', height: 330, minHeight: 0, width: '100%' }}><Component
+
+
+
+onModelLoaded={() => setStatus('本地GLTF模型已加载；拖动旋转，双击复位')} url={import.meta.env.BASE_URL + "media/sample-object.gltf"} width={"100%"} height={330} environment={"none"} exposure={1} autoRotate={true} autoRotateSpeed={0.3} dragRotate={true} zoom={true} minZoom={0.7} maxZoom={1.7} hoverTilt={0.1} float={0.15} shadow={true} shadowOpacity={0.18} resetOnDoubleClick={true} environmentIntensity={1} autoRotateDelay={2} turntable={false} intro={"rise"} startAngle={-30} tilt={10} offsetX={0} offsetY={0} fit={0.8}  /></div><p role="status" aria-live="polite" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>
     </div>
   );
 }
+
 ```
 
-完整 Props、类型、回调和默认值以安装后的对应 TSX 源码为准。先读取本例使用的参数，再沿类型定义补充当前任务需要的选项；不要根据通用模板假定所有组件都有 color / speed / children。
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `url` | `string` | 是 | `未指定` | 地址，控制 model viewer 的对应渲染或交互参数。 |
+| `width` | `number \| string` | 否 | `400` | 容器或效果的宽度，CSS 字符串与数值的支持以类型为准。 |
+| `height` | `number \| string` | 否 | `400` | 容器或效果的高度，CSS 字符串与数值的支持以类型为准。 |
+| `environment` | `ModelViewerEnvironment` | 否 | `'studio'` | 环境，控制 model viewer 的对应渲染或交互参数。 |
+| `environmentIntensity` | `number` | 否 | `1` | 环境强度，控制 model viewer 的对应渲染或交互参数。 |
+| `exposure` | `number` | 否 | `1` | 曝光，控制 model viewer 的对应渲染或交互参数。 |
+| `autoRotate` | `boolean` | 否 | `true` | 是否自动旋转，决定该分支的展示或交互行为。 |
+| `autoRotateSpeed` | `number` | 否 | `0.4` | 是否自动旋转速度，决定该分支的展示或交互行为。 |
+| `autoRotateDelay` | `number` | 否 | `2` | 是否自动旋转延迟，决定该分支的展示或交互行为。 |
+| `dragRotate` | `boolean` | 否 | `true` | 是否拖动旋转，决定该分支的展示或交互行为。 |
+| `turntable` | `boolean` | 否 | `false` | 是否旋转台，决定该分支的展示或交互行为。 |
+| `zoom` | `boolean` | 否 | `true` | 是否缩放，决定该分支的展示或交互行为。 |
+| `minZoom` | `number` | 否 | `0.7` | 最小缩放，控制 model viewer 的对应渲染或交互参数。 |
+| `maxZoom` | `number` | 否 | `2` | 最大缩放，控制 model viewer 的对应渲染或交互参数。 |
+| `hoverTilt` | `number` | 否 | `0.15` | 悬停倾斜，控制 model viewer 的对应渲染或交互参数。 |
+| `float` | `number` | 否 | `0.3` | 浮动，控制 model viewer 的对应渲染或交互参数。 |
+| `shadow` | `boolean` | 否 | `true` | 是否阴影，决定该分支的展示或交互行为。 |
+| `shadowOpacity` | `number` | 否 | `0.45` | 阴影不透明度，控制 model viewer 的对应渲染或交互参数。 |
+| `intro` | `ModelViewerIntro` | 否 | `'rise'` | 入场，控制 model viewer 的对应渲染或交互参数。 |
+| `startAngle` | `number` | 否 | `-30` | 开始角度，控制 model viewer 的对应渲染或交互参数。 |
+| `tilt` | `number` | 否 | `10` | 倾斜，控制 model viewer 的对应渲染或交互参数。 |
+| `offsetX` | `number` | 否 | `0` | 偏移X轴，控制 model viewer 的对应渲染或交互参数。 |
+| `offsetY` | `number` | 否 | `0` | 偏移Y轴，控制 model viewer 的对应渲染或交互参数。 |
+| `fit` | `number` | 否 | `0.8` | 适配，控制 model viewer 的对应渲染或交互参数。 |
+| `resetOnDoubleClick` | `boolean` | 否 | `true` | 是否重置双次点击，决定该分支的展示或交互行为。 |
+| `className` | `string` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `style` | `CSSProperties` | 否 | `未指定` | 容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。 |
+| `onModelLoaded` | `() => void` | 否 | `未指定` | 三维模型资源加载完成时通知调用方。 |
+| `ref` | `Ref<ModelViewerHandle>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+
+**style 的真实接入：**
+
+```tsx
+style={{ width: "100%", minHeight: 240 }}
+```
+
+**onModelLoaded 的真实接入：**
+
+```tsx
+onModelLoaded={() => setStatus('本地GLTF模型已加载；拖动旋转，双击复位')}
+```
+
+**ref 的真实接入：**
+
+```tsx
+const elementRef = useRef<ModelViewerHandle | null>(null);
+// JSX: ref={elementRef}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.url` | `"@media/sample-object.gltf"` | resource | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.width` | `"100%"` | json | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.height` | `330` | json | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.environment` | `"none"` | select | "apartment" / "city" / "dawn" / "forest" / "lobby" / "night" / "park" / "studio" / "sunset" / "warehouse" / "none" | 调节结束后重建 |
+| `t0.exposure` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.autoRotate` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.autoRotateSpeed` | `0.3` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.dragRotate` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.zoom` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.minZoom` | `0.7` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.maxZoom` | `1.7` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.hoverTilt` | `0.1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.float` | `0.15` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.shadow` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.shadowOpacity` | `0.18` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.resetOnDoubleClick` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.environmentIntensity` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.autoRotateDelay` | `2` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.turntable` | `false` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.intro` | `"rise"` | select | "rise" / "spin" / "fade" / "none" | 调节结束后重建 |
+| `t0.startAngle` | `-30` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.tilt` | `10` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.offsetX` | `0` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.offsetY` | `0` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.fit` | `0.8` | number | 不限 ~ 不限 | 调节结束后重建 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. Agent Wan 皮肤
 
 - 容器、状态色、边界与焦点使用 Agent Wan 规范；交互命中区不随视觉形变缩小。
-- 优先通过组件真实 Props 设置颜色和强度；使用主题提供的茶绿、沙米、象牙白及墨色映射。
+- 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 
 ## 5. 加载、动效与降级
@@ -69,7 +162,7 @@ onModelLoaded={() => setStatus('本地GLTF模型已加载；拖动旋转，双�
 - 运行类型：本例预览入口声明需 WebGL；这是当前示例的运行配置，不是仅凭源码关键词推断。此说明不等于浏览器运行证明。
 - 动效策略：按需启用的持续 / 高运动效果。
 - 示例库降级：动态偏好或能力检查不满足时先不挂载本项，显示原因；减少运动时可明确选择仅播放本次。
-- 业务接入的静态降级要求：保留等价的列表、图片、链接或原生控制器；真实功能不能依赖动效。
+- 业务接入的静态降级要求：保留可读内容与原生交互，并提供当前组件的静态状态
 - 卸载时释放本例监听、计时、动画帧及拥有的渲染资源；不以隐藏 CSS 代替停止循环。
 
 仅当前需求涉及高级运行、资源或设备权限时再读 [效果与降级策略](../effects-policy.md)。
@@ -79,8 +172,8 @@ onModelLoaded={() => setStatus('本地GLTF模型已加载；拖动旋转，双�
 1. 参数与对应源码真实 API 一致，构建可导入，安装失败可恢复。
 2. 能观察到第 1 节的核心机制，而不只是相同名称的占位卡片。
 3. 真实状态 / 事件 / 键盘与必要的触屏等价操作可用。
-4. 低饱和配色、文字对比、阅读面、稳定命中范围与基础规范一致。
+4. 画布保留本例的效果对比度和原版配色；外壳、阅读面与基础规范一致。
 5. 只激活本项；切换或卸载后停止其持续工作。
 6. 减少运动与不可用情形保留本节所述等价内容或功能。
 
-只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [组合组件](../categories/components.md)；否则直接完成当前组件。
+只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [媒体与轮播](../categories/media.md)；否则直接完成当前组件。

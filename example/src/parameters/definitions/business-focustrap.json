@@ -1,0 +1,920 @@
+{
+  "version": 1,
+  "id": "business-focustrap",
+  "name": "FocusTrap",
+  "sourcePath": "src/business/components/FocusRegion.tsx",
+  "demoPath": "src/business/demos/overlay/business-focustrap.tsx",
+  "fields": [
+    {
+      "key": "t2.label",
+      "name": "label",
+      "label": "标签 · t2",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "示例名称",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.control",
+      "name": "control",
+      "label": "control · t2",
+      "description": "是否控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "control"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.defaultValue",
+      "name": "defaultValue",
+      "label": "defaultValue · t3",
+      "description": "非受控模式的初始值；挂载后更新通常通过内部状态或受控 value 完成。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "defaultValue"
+        }
+      ],
+      "type": "string | number | readonly string[] | undefined",
+      "defaultValue": "资料助理",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "string"
+            }
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t4.variant",
+      "name": "variant",
+      "label": "外观 · t4",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t4",
+      "bindings": [
+        {
+          "target": "t4",
+          "name": "variant"
+        }
+      ],
+      "type": "'primary' | 'secondary' | 'danger'",
+      "defaultValue": "secondary",
+      "upstreamDefault": "'primary'",
+      "control": "select",
+      "options": [
+        {
+          "label": "primary",
+          "value": "primary"
+        },
+        {
+          "label": "secondary",
+          "value": "secondary"
+        },
+        {
+          "label": "danger",
+          "value": "danger"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t4.type",
+      "name": "type",
+      "label": "类型 · t4",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t4",
+      "bindings": [
+        {
+          "target": "t4",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "upstreamDefault": "'button'",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.active",
+      "name": "active",
+      "label": "active",
+      "description": "示例的受控状态 active；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "boolean",
+      "defaultValue": false,
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pressed"
+        },
+        {
+          "target": "t1",
+          "name": "active"
+        },
+        {
+          "target": "t5",
+          "name": "pressed"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "active",
+      "type": "boolean",
+      "required": true,
+      "description": "是否启用当前交互或焦点约束。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/FocusRegion.tsx",
+        "line": 7
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "active={active}",
+      "usageExamples": [
+        "active={active}"
+      ]
+    },
+    {
+      "name": "onExit",
+      "type": "() => void",
+      "required": false,
+      "description": "用户退出焦点区域或按下退出键时调用。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/FocusRegion.tsx",
+        "line": 7
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onExit={() => setActive(false)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onExit={() => setActive(false)}"
+      ]
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": true,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/FocusRegion.tsx",
+        "line": 7
+      },
+      "codeExample": "children={<><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">焦点约束：{active ? '已开启' : '未开启'}</p><Field label=\"示例名称\"><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} defaultValue=\"资料助理\" /></Field><div data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}><Button variant=\"secondary\">查看资料</Button><ToggleButton pressed={active} disabled={!active} onPressedChange={setActive}>结束约束</ToggleButton></div></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">焦点约束：{active ? '已开启' : '未开启'}</p><Field label=\"示例名称\"><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} defaultValue=\"资料助理\" /></Field><div data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}><Button variant=\"secondary\">查看资料</Button><ToggleButton pressed={active} disabled={!active} onPressedChange={setActive}>结束约束</ToggleButton></div></>}"
+      ]
+    },
+    {
+      "name": "returnFocusRef",
+      "type": "RefObject<HTMLElement | null>",
+      "required": false,
+      "description": "焦点约束退出后要返回的 DOM 元素 ref。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/FocusRegion.tsx",
+        "line": 7
+      },
+      "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: returnFocusRef={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+      "usageExamples": [
+        "returnFocusRef={trigger}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport ownedStyles1 from '../../components/Input.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useRef, useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { Field } from '../../components/Field';\nimport { ToggleButton } from '../../components/ToggleButton';\nimport { FocusRegion } from '../../components/FocusRegion';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessFocusTrapDemo() {\n  const [active, setActive] = useState(/*__AW_STATE_state.active__*/);\n  const trigger = useRef<HTMLButtonElement>(null);\n  return <BusinessDemo title=\"FocusTrap\" description=\"开启后 Tab 在示例内循环，Escape 或结束按钮退出，并返回开启按钮。\">\n    <div data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}><ToggleButton ref={trigger} pressed={active} disabled={active} onPressedChange={setActive}>{active ? '焦点约束已开启' : '开启焦点约束'}</ToggleButton></div>\n    <FocusRegion active={active} onExit={() => setActive(false)} returnFocusRef={trigger}>\n      <p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">焦点约束：{active ? '已开启' : '未开启'}</p>\n      <Field  /*__AW_PROPS_t2__*/ ><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")}  /*__AW_PROPS_t3__*/  /></Field>\n      <div data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}><Button  /*__AW_PROPS_t4__*/ >查看资料</Button><ToggleButton pressed={active} disabled={!active} onPressedChange={setActive}>结束约束</ToggleButton></div>\n    </FocusRegion>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ToggleButton · t0",
+      "sourcePath": "src/business/components/ToggleButton.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>",
+          "codeExample": "children={<>{active ? '焦点约束已开启' : '开启焦点约束'}</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>{active ? '焦点约束已开启' : '开启焦点约束'}</>}",
+            "children={<>结束约束</>}"
+          ]
+        },
+        {
+          "name": "pressed",
+          "type": "boolean",
+          "required": true,
+          "description": "按钮的当前切换选中状态。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pressed={active}",
+          "usageExamples": [
+            "pressed={active}"
+          ]
+        },
+        {
+          "name": "onPressedChange",
+          "type": "(pressed: boolean) => void",
+          "required": true,
+          "description": "切换按钮改变选中状态时回调，参数为新的布尔状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(pressed: boolean) => void"
+          },
+          "codeExample": "onPressedChange={setActive}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onPressedChange={setActive}"
+          ]
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "ref={trigger}"
+          ]
+        }
+      ],
+      "inherited": [
+        {
+          "type": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "FocusRegion",
+      "sourcePath": "src/business/components/FocusRegion.tsx",
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "required": true,
+          "description": "是否启用当前交互或焦点约束。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/FocusRegion.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "active={active}",
+          "usageExamples": [
+            "active={active}"
+          ]
+        },
+        {
+          "name": "onExit",
+          "type": "() => void",
+          "required": false,
+          "description": "用户退出焦点区域或按下退出键时调用。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/FocusRegion.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onExit={() => setActive(false)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onExit={() => setActive(false)}"
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/FocusRegion.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">焦点约束：{active ? '已开启' : '未开启'}</p><Field label=\"示例名称\"><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} defaultValue=\"资料助理\" /></Field><div data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}><Button variant=\"secondary\">查看资料</Button><ToggleButton pressed={active} disabled={!active} onPressedChange={setActive}>结束约束</ToggleButton></div></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">焦点约束：{active ? '已开启' : '未开启'}</p><Field label=\"示例名称\"><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} defaultValue=\"资料助理\" /></Field><div data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}><Button variant=\"secondary\">查看资料</Button><ToggleButton pressed={active} disabled={!active} onPressedChange={setActive}>结束约束</ToggleButton></div></>}"
+          ]
+        },
+        {
+          "name": "returnFocusRef",
+          "type": "RefObject<HTMLElement | null>",
+          "required": false,
+          "description": "焦点约束退出后要返回的 DOM 元素 ref。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/FocusRegion.tsx",
+            "line": 7
+          },
+          "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: returnFocusRef={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "returnFocusRef={trigger}"
+          ]
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t2",
+      "name": "Field",
+      "sourcePath": "src/business/components/Field.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "label=\"示例名称\"",
+          "usageExamples": [
+            "label=\"示例名称\""
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} defaultValue=\"资料助理\" /></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} defaultValue=\"资料助理\" /></>}"
+          ]
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "required": false,
+          "description": "与字段一起显示的帮助文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "hint={\"示例\"}"
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "(isControl ? children.props.id : undefined)",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "htmlFor={\"示例\"}"
+        },
+        {
+          "name": "control",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "control={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t3",
+      "name": "input",
+      "props": [
+        {
+          "name": "data-ui",
+          "type": "any",
+          "required": false,
+          "description": "示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。",
+          "usageExamples": [
+            "data-ui=\"aw-business-input\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn(\"aw-business-input\")}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "非受控模式的初始值；挂载后更新通常通过内部状态或受控 value 完成。",
+          "usageExamples": [
+            "defaultValue=\"资料助理\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2692
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "name": "Button",
+      "sourcePath": "src/business/components/Button.tsx",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "defaultExpression": "'button'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "button",
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "button",
+            "reset",
+            "submit"
+          ],
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              "button",
+              "reset",
+              "submit"
+            ]
+          },
+          "codeExample": "type={\"button\"}"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "children={<>查看资料</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>查看资料</>}"
+          ]
+        },
+        {
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'danger'",
+          "required": false,
+          "defaultExpression": "'primary'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "primary",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "primary",
+            "secondary",
+            "danger"
+          ],
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "primary",
+              "secondary",
+              "danger"
+            ]
+          },
+          "codeExample": "variant=\"secondary\"",
+          "usageExamples": [
+            "variant=\"secondary\""
+          ]
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t5",
+      "name": "ToggleButton · t5",
+      "sourcePath": "src/business/components/ToggleButton.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>",
+          "codeExample": "children={<>{active ? '焦点约束已开启' : '开启焦点约束'}</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>{active ? '焦点约束已开启' : '开启焦点约束'}</>}",
+            "children={<>结束约束</>}"
+          ]
+        },
+        {
+          "name": "pressed",
+          "type": "boolean",
+          "required": true,
+          "description": "按钮的当前切换选中状态。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pressed={active}",
+          "usageExamples": [
+            "pressed={active}"
+          ]
+        },
+        {
+          "name": "onPressedChange",
+          "type": "(pressed: boolean) => void",
+          "required": true,
+          "description": "切换按钮改变选中状态时回调，参数为新的布尔状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(pressed: boolean) => void"
+          },
+          "codeExample": "onPressedChange={setActive}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onPressedChange={setActive}"
+          ]
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/ToggleButton.tsx",
+            "line": 11
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "ref={trigger}"
+          ]
+        }
+      ],
+      "inherited": [
+        {
+          "type": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

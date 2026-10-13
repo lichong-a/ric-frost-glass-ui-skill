@@ -1,0 +1,962 @@
+{
+  "version": 1,
+  "id": "business-datepicker",
+  "name": "DatePicker",
+  "sourcePath": "src/business/components/DatePicker.tsx",
+  "demoPath": "src/business/demos/form/business-datepicker.tsx",
+  "fields": [
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "开始日期",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.control",
+      "name": "control",
+      "label": "control · t0",
+      "description": "是否控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "control"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.label",
+      "name": "label",
+      "label": "标签 · t1",
+      "description": "日期控件的可读名称，同时用于触发器与日历的无障碍说明。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "开始日期",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.label",
+      "name": "label",
+      "label": "标签 · t2",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "结束日期",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.control",
+      "name": "control",
+      "label": "control · t2",
+      "description": "是否控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "control"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.label",
+      "name": "label",
+      "label": "标签 · t3",
+      "description": "日期控件的可读名称，同时用于触发器与日历的无障碍说明。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "结束日期",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.date",
+      "name": "date",
+      "label": "日期",
+      "description": "示例的受控状态 date；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "2026-10-12",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "state.end",
+      "name": "end",
+      "label": "end",
+      "description": "示例的受控状态 end；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "2026-10-19",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "generatedId",
+      "defaultSource": {
+        "path": "src/business/components/DatePicker.tsx",
+        "line": 100,
+        "kind": "implementation-fallback"
+      },
+      "defaultResolvedExpression": "useId()",
+      "defaultCondition": "nullish",
+      "description": "原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/DatePicker.tsx",
+        "line": 96
+      },
+      "codeExample": "id={id}",
+      "usageExamples": [
+        "id={id}",
+        "id={`${id}-end`}"
+      ]
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": true,
+      "defaultExpression": "'未选择'",
+      "defaultSource": {
+        "path": "src/business/components/DatePicker.tsx",
+        "line": 106,
+        "kind": "implementation-fallback"
+      },
+      "defaultValue": "未选择",
+      "defaultCondition": "falsy",
+      "description": "当前选中的本地日历日期，按 YYYY-MM-DD 保存；空字符串表示尚未选择。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/DatePicker.tsx",
+        "line": 96
+      },
+      "codeExample": "value={date}",
+      "usageExamples": [
+        "value={date}",
+        "value={end}"
+      ]
+    },
+    {
+      "name": "onChange",
+      "type": "(value: string) => void",
+      "required": true,
+      "description": "选中、清除或选择今天时回调，参数为 YYYY-MM-DD 日期或空字符串，调用方更新 value。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/DatePicker.tsx",
+        "line": 96
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(value: string) => void"
+      },
+      "codeExample": "onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }}",
+        "onChange={setEnd}"
+      ]
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "日期控件的可读名称，同时用于触发器与日历的无障碍说明。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/DatePicker.tsx",
+        "line": 96
+      },
+      "codeExample": "label=\"开始日期\"",
+      "usageExamples": [
+        "label=\"开始日期\"",
+        "label=\"结束日期\""
+      ]
+    },
+    {
+      "name": "min",
+      "type": "string",
+      "required": false,
+      "description": "可选日期的下界，按本地日历日期 YYYY-MM-DD 传入。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/DatePicker.tsx",
+        "line": 97
+      },
+      "codeExample": "min={date || undefined}",
+      "usageExamples": [
+        "min={date || undefined}"
+      ]
+    },
+    {
+      "name": "max",
+      "type": "string",
+      "required": false,
+      "description": "可选日期的上界，按本地日历日期 YYYY-MM-DD 传入。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/DatePicker.tsx",
+        "line": 97
+      },
+      "codeExample": "max={\"示例\"}"
+    },
+    {
+      "name": "rangeStart",
+      "type": "string",
+      "required": false,
+      "description": "日期范围起点，按本地日历日期 YYYY-MM-DD 传入。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/DatePicker.tsx",
+        "line": 97
+      },
+      "codeExample": "rangeStart={date}",
+      "usageExamples": [
+        "rangeStart={date}"
+      ]
+    },
+    {
+      "name": "rangeEnd",
+      "type": "string",
+      "required": false,
+      "description": "日期范围终点，按本地日历日期 YYYY-MM-DD 传入。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/DatePicker.tsx",
+        "line": 97
+      },
+      "codeExample": "rangeEnd={end}",
+      "usageExamples": [
+        "rangeEnd={end}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useId, useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Field } from '../../components/Field';\nimport { DatePicker } from '../../components/DatePicker';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function DatePickerDemo() {\n  const id = useId();\n  const [date, setDate] = useState(/*__AW_STATE_state.date__*/);\n  const [end, setEnd] = useState(/*__AW_STATE_state.end__*/);\n  return <BusinessDemo title=\"DatePicker · 日期选择\" description=\"定制自然色日历，支持月份过渡、键盘选日和起止区间；日期保存为 YYYY-MM-DD。\">\n    <div data-ui=\"aw-business-grid\" className={cn(\"aw-business-grid\")}>\n      <Field  htmlFor={id} /*__AW_PROPS_t0__*/ ><DatePicker id={id}  value={date} rangeStart={date} rangeEnd={end} onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }} /*__AW_PROPS_t1__*/  /></Field>\n      <Field  htmlFor={`${id}-end`} /*__AW_PROPS_t2__*/ ><DatePicker id={`${id}-end`}  value={end} min={date || undefined} rangeStart={date} rangeEnd={end} onChange={setEnd} /*__AW_PROPS_t3__*/  /></Field>\n    </div><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">区间：{date || '未选'} 至 {end || '未选'}</p>\n    <p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")}>方向键移动日期 · Page Up / Down 切换月份 · Enter 选择 · Esc 关闭</p>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Field · t0",
+      "sourcePath": "src/business/components/Field.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "label=\"开始日期\"",
+          "usageExamples": [
+            "label=\"开始日期\"",
+            "label=\"结束日期\""
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><DatePicker id={id} label=\"开始日期\" value={date} rangeStart={date} rangeEnd={end} onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }} /></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><DatePicker id={id} label=\"开始日期\" value={date} rangeStart={date} rangeEnd={end} onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }} /></>}",
+            "children={<><DatePicker id={`${id}-end`} label=\"结束日期\" value={end} min={date || undefined} rangeStart={date} rangeEnd={end} onChange={setEnd} /></>}"
+          ]
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "required": false,
+          "description": "与字段一起显示的帮助文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "hint={\"示例\"}"
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "(isControl ? children.props.id : undefined)",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "htmlFor={id}",
+          "usageExamples": [
+            "htmlFor={id}",
+            "htmlFor={`${id}-end`}"
+          ]
+        },
+        {
+          "name": "control",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "control={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "DatePicker · t1",
+      "sourcePath": "src/business/components/DatePicker.tsx",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "generatedId",
+          "defaultSource": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 100,
+            "kind": "implementation-fallback"
+          },
+          "defaultResolvedExpression": "useId()",
+          "defaultCondition": "nullish",
+          "description": "原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 96
+          },
+          "codeExample": "id={id}",
+          "usageExamples": [
+            "id={id}",
+            "id={`${id}-end`}"
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": true,
+          "defaultExpression": "'未选择'",
+          "defaultSource": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 106,
+            "kind": "implementation-fallback"
+          },
+          "defaultValue": "未选择",
+          "defaultCondition": "falsy",
+          "description": "当前选中的本地日历日期，按 YYYY-MM-DD 保存；空字符串表示尚未选择。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 96
+          },
+          "codeExample": "value={date}",
+          "usageExamples": [
+            "value={date}",
+            "value={end}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "required": true,
+          "description": "选中、清除或选择今天时回调，参数为 YYYY-MM-DD 日期或空字符串，调用方更新 value。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 96
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(value: string) => void"
+          },
+          "codeExample": "onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }}",
+            "onChange={setEnd}"
+          ]
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "日期控件的可读名称，同时用于触发器与日历的无障碍说明。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 96
+          },
+          "codeExample": "label=\"开始日期\"",
+          "usageExamples": [
+            "label=\"开始日期\"",
+            "label=\"结束日期\""
+          ]
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "required": false,
+          "description": "可选日期的下界，按本地日历日期 YYYY-MM-DD 传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 97
+          },
+          "codeExample": "min={date || undefined}",
+          "usageExamples": [
+            "min={date || undefined}"
+          ]
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "required": false,
+          "description": "可选日期的上界，按本地日历日期 YYYY-MM-DD 传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 97
+          },
+          "codeExample": "max={\"示例\"}"
+        },
+        {
+          "name": "rangeStart",
+          "type": "string",
+          "required": false,
+          "description": "日期范围起点，按本地日历日期 YYYY-MM-DD 传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 97
+          },
+          "codeExample": "rangeStart={date}",
+          "usageExamples": [
+            "rangeStart={date}"
+          ]
+        },
+        {
+          "name": "rangeEnd",
+          "type": "string",
+          "required": false,
+          "description": "日期范围终点，按本地日历日期 YYYY-MM-DD 传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 97
+          },
+          "codeExample": "rangeEnd={end}",
+          "usageExamples": [
+            "rangeEnd={end}"
+          ]
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t2",
+      "name": "Field · t2",
+      "sourcePath": "src/business/components/Field.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "label=\"开始日期\"",
+          "usageExamples": [
+            "label=\"开始日期\"",
+            "label=\"结束日期\""
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><DatePicker id={id} label=\"开始日期\" value={date} rangeStart={date} rangeEnd={end} onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }} /></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><DatePicker id={id} label=\"开始日期\" value={date} rangeStart={date} rangeEnd={end} onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }} /></>}",
+            "children={<><DatePicker id={`${id}-end`} label=\"结束日期\" value={end} min={date || undefined} rangeStart={date} rangeEnd={end} onChange={setEnd} /></>}"
+          ]
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "required": false,
+          "description": "与字段一起显示的帮助文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "hint={\"示例\"}"
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "(isControl ? children.props.id : undefined)",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "htmlFor={id}",
+          "usageExamples": [
+            "htmlFor={id}",
+            "htmlFor={`${id}-end`}"
+          ]
+        },
+        {
+          "name": "control",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "control={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t3",
+      "name": "DatePicker · t3",
+      "sourcePath": "src/business/components/DatePicker.tsx",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "generatedId",
+          "defaultSource": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 100,
+            "kind": "implementation-fallback"
+          },
+          "defaultResolvedExpression": "useId()",
+          "defaultCondition": "nullish",
+          "description": "原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 96
+          },
+          "codeExample": "id={id}",
+          "usageExamples": [
+            "id={id}",
+            "id={`${id}-end`}"
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": true,
+          "defaultExpression": "'未选择'",
+          "defaultSource": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 106,
+            "kind": "implementation-fallback"
+          },
+          "defaultValue": "未选择",
+          "defaultCondition": "falsy",
+          "description": "当前选中的本地日历日期，按 YYYY-MM-DD 保存；空字符串表示尚未选择。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 96
+          },
+          "codeExample": "value={date}",
+          "usageExamples": [
+            "value={date}",
+            "value={end}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "required": true,
+          "description": "选中、清除或选择今天时回调，参数为 YYYY-MM-DD 日期或空字符串，调用方更新 value。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 96
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(value: string) => void"
+          },
+          "codeExample": "onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={value => { setDate(value); if (value && end && value > end) setEnd(value); }}",
+            "onChange={setEnd}"
+          ]
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "日期控件的可读名称，同时用于触发器与日历的无障碍说明。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 96
+          },
+          "codeExample": "label=\"开始日期\"",
+          "usageExamples": [
+            "label=\"开始日期\"",
+            "label=\"结束日期\""
+          ]
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "required": false,
+          "description": "可选日期的下界，按本地日历日期 YYYY-MM-DD 传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 97
+          },
+          "codeExample": "min={date || undefined}",
+          "usageExamples": [
+            "min={date || undefined}"
+          ]
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "required": false,
+          "description": "可选日期的上界，按本地日历日期 YYYY-MM-DD 传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 97
+          },
+          "codeExample": "max={\"示例\"}"
+        },
+        {
+          "name": "rangeStart",
+          "type": "string",
+          "required": false,
+          "description": "日期范围起点，按本地日历日期 YYYY-MM-DD 传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 97
+          },
+          "codeExample": "rangeStart={date}",
+          "usageExamples": [
+            "rangeStart={date}"
+          ]
+        },
+        {
+          "name": "rangeEnd",
+          "type": "string",
+          "required": false,
+          "description": "日期范围终点，按本地日历日期 YYYY-MM-DD 传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/DatePicker.tsx",
+            "line": 97
+          },
+          "codeExample": "rangeEnd={end}",
+          "usageExamples": [
+            "rangeEnd={end}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

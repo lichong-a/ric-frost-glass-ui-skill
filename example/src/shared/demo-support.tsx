@@ -1,3 +1,4 @@
+import panelStyles from './DemoPanel.module.css';
 import type { CSSProperties, ReactNode } from 'react';
 
 // Canvas/WebGL color props consume resolved strings generated from the UI tokens.
@@ -8,7 +9,7 @@ export const LOGO = `${import.meta.env.BASE_URL}media/agent-wan-mark.svg`;
 export const LABELS = ['山雾', '茶庭', '沙洲', '静水', '林间', '岩纹'];
 
 export function DemoPanel({ children, title, style, className = '' }: { children?: ReactNode; title?: string; style?: CSSProperties; className?: string }) {
-  return <section className={`aw-demo-panel ${className}`} style={style}>{title ? <h2>{title}</h2> : null}{children}</section>;
+  return <section data-demo-panel className={`${panelStyles.panel} ${className}`} style={style}>{title ? <h2 className={panelStyles.heading}>{title}</h2> : null}{children}</section>;
 }
 
 export function DemoNotice({ children }: { children: ReactNode }) {

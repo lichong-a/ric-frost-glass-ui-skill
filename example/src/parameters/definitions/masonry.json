@@ -1,0 +1,990 @@
+{
+  "version": 1,
+  "id": "masonry",
+  "name": "Masonry",
+  "sourcePath": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+  "demoPath": "src/demos/media/masonry.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "Item[]",
+      "defaultValue": [
+        {
+          "id": "art-0",
+          "img": "@asset/restoration/chromatic-bloom.svg",
+          "url": "#art-0",
+          "height": 420
+        },
+        {
+          "id": "art-1",
+          "img": "@asset/restoration/prismatic-canopy.svg",
+          "url": "#art-1",
+          "height": 600
+        },
+        {
+          "id": "art-2",
+          "img": "@asset/restoration/mineral-tide.svg",
+          "url": "#art-2",
+          "height": 360
+        },
+        {
+          "id": "art-3",
+          "img": "@asset/restoration/solar-dunes.svg",
+          "url": "#art-3",
+          "height": 500
+        },
+        {
+          "id": "art-4",
+          "img": "@asset/restoration/nocturne-orbit.svg",
+          "url": "#art-4",
+          "height": 640
+        },
+        {
+          "id": "art-5",
+          "img": "@asset/restoration/vermilion-fold.svg",
+          "url": "#art-5",
+          "height": 440
+        },
+        {
+          "id": "art-6",
+          "img": "@asset/restoration/chromatic-bloom.svg",
+          "url": "#art-6",
+          "height": 420
+        },
+        {
+          "id": "art-7",
+          "img": "@asset/restoration/prismatic-canopy.svg",
+          "url": "#art-7",
+          "height": 600
+        },
+        {
+          "id": "art-8",
+          "img": "@asset/restoration/mineral-tide.svg",
+          "url": "#art-8",
+          "height": 360
+        },
+        {
+          "id": "art-9",
+          "img": "@asset/restoration/solar-dunes.svg",
+          "url": "#art-9",
+          "height": 500
+        },
+        {
+          "id": "art-10",
+          "img": "@asset/restoration/nocturne-orbit.svg",
+          "url": "#art-10",
+          "height": 640
+        },
+        {
+          "id": "art-11",
+          "img": "@asset/restoration/vermilion-fold.svg",
+          "url": "#art-11",
+          "height": 440
+        }
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "id": {
+              "kind": "string"
+            },
+            "img": {
+              "kind": "string"
+            },
+            "url": {
+              "kind": "string"
+            },
+            "height": {
+              "kind": "number"
+            }
+          },
+          "required": [
+            "id",
+            "img",
+            "url",
+            "height"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ease",
+      "name": "ease",
+      "label": "ease · t0",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ease"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "power3.out",
+      "upstreamDefault": "'power3.out'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.duration",
+      "name": "duration",
+      "label": "持续时间 · t0",
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。 以下范围仅限制此演示面板，不改变上游 API。GSAP 卡片位置动画时长。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "duration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.1,
+      "max": 2,
+      "step": 0.1,
+      "unit": "s"
+    },
+    {
+      "key": "t0.stagger",
+      "name": "stagger",
+      "label": "错峰间隔 · t0",
+      "description": "错开，控制 masonry 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。卡片入场的错峰间隔。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stagger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.06,
+      "upstreamDefault": "0.05",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 0.3,
+      "step": 0.01,
+      "unit": "s"
+    },
+    {
+      "key": "t0.animateFrom",
+      "name": "animateFrom",
+      "label": "animateFrom · t0",
+      "description": "动画起始，控制 masonry 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animateFrom"
+        }
+      ],
+      "type": "'bottom' | 'top' | 'left' | 'right' | 'center' | 'random'",
+      "defaultValue": "bottom",
+      "upstreamDefault": "'bottom'",
+      "control": "select",
+      "options": [
+        {
+          "label": "bottom",
+          "value": "bottom"
+        },
+        {
+          "label": "top",
+          "value": "top"
+        },
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        },
+        {
+          "label": "center",
+          "value": "center"
+        },
+        {
+          "label": "random",
+          "value": "random"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scaleOnHover",
+      "name": "scaleOnHover",
+      "label": "scaleOnHover · t0",
+      "description": "是否缩放悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scaleOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverScale",
+      "name": "hoverScale",
+      "label": "hoverScale · t0",
+      "description": "悬停缩放，控制 masonry 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。悬停卡片的缩放值。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.97,
+      "upstreamDefault": "0.95",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.7,
+      "max": 1.3,
+      "step": 0.01,
+      "unit": "倍率"
+    },
+    {
+      "key": "t0.blurToFocus",
+      "name": "blurToFocus",
+      "label": "blurToFocus · t0",
+      "description": "是否模糊目标焦点，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "blurToFocus"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.colorShiftOnHover",
+      "name": "colorShiftOnHover",
+      "label": "colorShiftOnHover · t0",
+      "description": "是否颜色偏移悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colorShiftOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "Item[]",
+      "required": true,
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 71
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "Item",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "img",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "url",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "height",
+                "type": "number",
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={items}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={items}"
+      ]
+    },
+    {
+      "name": "ease",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'power3.out'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 84,
+        "kind": "parameter"
+      },
+      "defaultValue": "power3.out",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 72
+      },
+      "codeExample": "ease=\"power3.out\"",
+      "usageExamples": [
+        "ease=\"power3.out\""
+      ]
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 85,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 73
+      },
+      "codeExample": "duration={0.6}",
+      "usageExamples": [
+        "duration={0.6}"
+      ]
+    },
+    {
+      "name": "stagger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 86,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "错开，控制 masonry 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 74
+      },
+      "codeExample": "stagger={0.06}",
+      "usageExamples": [
+        "stagger={0.06}"
+      ]
+    },
+    {
+      "name": "animateFrom",
+      "type": "'bottom' | 'top' | 'left' | 'right' | 'center' | 'random'",
+      "required": false,
+      "defaultExpression": "'bottom'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 87,
+        "kind": "parameter"
+      },
+      "defaultValue": "bottom",
+      "description": "动画起始，控制 masonry 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "bottom",
+        "top",
+        "left",
+        "right",
+        "center",
+        "random"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 75
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "bottom",
+          "top",
+          "left",
+          "right",
+          "center",
+          "random"
+        ]
+      },
+      "codeExample": "animateFrom=\"bottom\"",
+      "usageExamples": [
+        "animateFrom=\"bottom\""
+      ]
+    },
+    {
+      "name": "scaleOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 88,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否缩放悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 76
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "scaleOnHover",
+      "usageExamples": [
+        "scaleOnHover"
+      ]
+    },
+    {
+      "name": "hoverScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.95",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 89,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.95,
+      "description": "悬停缩放，控制 masonry 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 77
+      },
+      "codeExample": "hoverScale={0.97}",
+      "usageExamples": [
+        "hoverScale={0.97}"
+      ]
+    },
+    {
+      "name": "blurToFocus",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 90,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否模糊目标焦点，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 78
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "blurToFocus",
+      "usageExamples": [
+        "blurToFocus"
+      ]
+    },
+    {
+      "name": "colorShiftOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 91,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否颜色偏移悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+        "line": 79
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "colorShiftOnHover={false}",
+      "usageExamples": [
+        "colorShiftOnHover={false}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/Components/Masonry/Masonry';\n\n\n\n\n\n\nimport styles from './masonry.module.css';\n\n\nconst labels = ['色彩绽放', '棱镜树冠', '矿物潮汐', '太阳沙丘', '夜间轨道', '朱红折叠'];\n\n\nexport default function MasonryDemo() {\n  const [selected, setSelected] = useState('点击素材卡片选择作品；调整预览宽度可观察重排。');\n  return (\n    <section className={styles.stage} data-visual-demo=\"masonry\">\n      <header className={styles.header}><span className={styles.eyebrow}>COLOR STUDIES</span><h2 className={styles.title}>色彩的不同形态</h2><p className={styles.status} role=\"status\" aria-live=\"polite\">{selected}</p></header>\n      <div className={styles.grid} onClickCapture={event => {\n        const item = (event.target as Element).closest('[data-key]');\n        if (item) {\n          event.preventDefault(); event.stopPropagation();\n          const index = Number(item.getAttribute('data-key')?.replace('art-', ''));\n          setSelected('已选择：' + labels[index % labels.length]);\n        }\n      }}>\n        <Component\n               /*__AW_PROPS_t0__*/  />\n      </div>\n    </section>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Masonry",
+      "sourcePath": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "Item[]",
+          "required": true,
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 71
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "Item",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "id",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "img",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "url",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "height",
+                    "type": "number",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={items}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={items}"
+          ]
+        },
+        {
+          "name": "ease",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'power3.out'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 84,
+            "kind": "parameter"
+          },
+          "defaultValue": "power3.out",
+          "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 72
+          },
+          "codeExample": "ease=\"power3.out\"",
+          "usageExamples": [
+            "ease=\"power3.out\""
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 85,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 73
+          },
+          "codeExample": "duration={0.6}",
+          "usageExamples": [
+            "duration={0.6}"
+          ]
+        },
+        {
+          "name": "stagger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 86,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "错开，控制 masonry 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 74
+          },
+          "codeExample": "stagger={0.06}",
+          "usageExamples": [
+            "stagger={0.06}"
+          ]
+        },
+        {
+          "name": "animateFrom",
+          "type": "'bottom' | 'top' | 'left' | 'right' | 'center' | 'random'",
+          "required": false,
+          "defaultExpression": "'bottom'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 87,
+            "kind": "parameter"
+          },
+          "defaultValue": "bottom",
+          "description": "动画起始，控制 masonry 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "bottom",
+            "top",
+            "left",
+            "right",
+            "center",
+            "random"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 75
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "bottom",
+              "top",
+              "left",
+              "right",
+              "center",
+              "random"
+            ]
+          },
+          "codeExample": "animateFrom=\"bottom\"",
+          "usageExamples": [
+            "animateFrom=\"bottom\""
+          ]
+        },
+        {
+          "name": "scaleOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 88,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否缩放悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 76
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "scaleOnHover",
+          "usageExamples": [
+            "scaleOnHover"
+          ]
+        },
+        {
+          "name": "hoverScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.95",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 89,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.95,
+          "description": "悬停缩放，控制 masonry 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 77
+          },
+          "codeExample": "hoverScale={0.97}",
+          "usageExamples": [
+            "hoverScale={0.97}"
+          ]
+        },
+        {
+          "name": "blurToFocus",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 90,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否模糊目标焦点，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 78
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "blurToFocus",
+          "usageExamples": [
+            "blurToFocus"
+          ]
+        },
+        {
+          "name": "colorShiftOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 91,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否颜色偏移悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Masonry/Masonry.tsx",
+            "line": 79
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "colorShiftOnHover={false}",
+          "usageExamples": [
+            "colorShiftOnHover={false}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,1499 @@
+{
+  "version": 1,
+  "id": "crystalized-ball",
+  "name": "Crystalized Ball",
+  "sourcePath": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+  "demoPath": "src/demos/background/crystalized-ball.tsx",
+  "fields": [
+    {
+      "key": "t0.preset",
+      "name": "preset",
+      "label": "preset · t0",
+      "description": "预设，控制 crystalized ball 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "preset"
+        }
+      ],
+      "type": "Preset",
+      "defaultValue": "frost",
+      "upstreamDefault": "'plasma'",
+      "control": "select",
+      "options": [
+        {
+          "label": "plasma",
+          "value": "plasma"
+        },
+        {
+          "label": "aurora",
+          "value": "aurora"
+        },
+        {
+          "label": "nebula",
+          "value": "nebula"
+        },
+        {
+          "label": "ember",
+          "value": "ember"
+        },
+        {
+          "label": "frost",
+          "value": "frost"
+        },
+        {
+          "label": "solar",
+          "value": "solar"
+        },
+        {
+          "label": "eclipse",
+          "value": "eclipse"
+        },
+        {
+          "label": "abyss",
+          "value": "abyss"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 crystalized ball 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "Theme",
+      "defaultValue": "light",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.68,
+      "upstreamDefault": "0.7",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.crackle",
+      "name": "crackle",
+      "label": "crackle · t0",
+      "description": "闪电噼啪，控制 crystalized ball 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "crackle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 crystalized ball 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.particleCount",
+      "name": "particleCount",
+      "label": "particleCount · t0",
+      "description": "粒子数量，控制 crystalized ball 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "particleCount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3500,
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fill",
+      "name": "fill",
+      "label": "fill · t0",
+      "description": "填充，控制 crystalized ball 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fill"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interactive",
+      "name": "interactive",
+      "label": "interactive · t0",
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interactive"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverStrength",
+      "name": "hoverStrength",
+      "label": "hoverStrength · t0",
+      "description": "悬停强度，控制 crystalized ball 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.7",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "preset",
+      "type": "Preset",
+      "required": false,
+      "defaultExpression": "'plasma'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 904,
+        "kind": "parameter"
+      },
+      "defaultValue": "plasma",
+      "description": "预设，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "plasma",
+        "aurora",
+        "nebula",
+        "ember",
+        "frost",
+        "solar",
+        "eclipse",
+        "abyss"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "plasma",
+          "aurora",
+          "nebula",
+          "ember",
+          "frost",
+          "solar",
+          "eclipse",
+          "abyss"
+        ]
+      },
+      "codeExample": "preset=\"frost\"",
+      "usageExamples": [
+        "preset=\"frost\""
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "Theme",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 906,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"light\"",
+      "usageExamples": [
+        "theme=\"light\""
+      ]
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 907,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.7,
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 36
+      },
+      "codeExample": "size={0.68}",
+      "usageExamples": [
+        "size={0.68}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 921,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 37
+      },
+      "codeExample": "speed={0.4}",
+      "usageExamples": [
+        "speed={0.4}"
+      ]
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 923,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 38
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "interactive",
+      "usageExamples": [
+        "interactive"
+      ]
+    },
+    {
+      "name": "hoverStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 924,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.7,
+      "description": "悬停强度，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 39
+      },
+      "codeExample": "hoverStrength={0.4}",
+      "usageExamples": [
+        "hoverStrength={0.4}"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 925,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 40
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 926,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 41
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 927,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 42
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 43
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 16
+      },
+      "codeExample": "color={palette.primary}",
+      "usageExamples": [
+        "color={palette.primary}"
+      ]
+    },
+    {
+      "name": "strands",
+      "type": "number",
+      "required": false,
+      "description": "丝线组，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 17
+      },
+      "codeExample": "strands={1}"
+    },
+    {
+      "name": "crackle",
+      "type": "number",
+      "required": false,
+      "description": "闪电噼啪，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 18
+      },
+      "codeExample": "crackle={0.45}",
+      "usageExamples": [
+        "crackle={0.45}"
+      ]
+    },
+    {
+      "name": "flares",
+      "type": "number",
+      "required": false,
+      "description": "耀斑组，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 19
+      },
+      "codeExample": "flares={1}"
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "description": "辉光，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 20
+      },
+      "codeExample": "glow={0.45}",
+      "usageExamples": [
+        "glow={0.45}"
+      ]
+    },
+    {
+      "name": "sparks",
+      "type": "number",
+      "required": false,
+      "description": "火花组，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 21
+      },
+      "codeExample": "sparks={1}"
+    },
+    {
+      "name": "particleCount",
+      "type": "number",
+      "required": false,
+      "description": "粒子数量，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 22
+      },
+      "codeExample": "particleCount={3500}",
+      "usageExamples": [
+        "particleCount={3500}"
+      ]
+    },
+    {
+      "name": "fill",
+      "type": "number",
+      "required": false,
+      "description": "填充，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 23
+      },
+      "codeExample": "fill={0.3}",
+      "usageExamples": [
+        "fill={0.3}"
+      ]
+    },
+    {
+      "name": "motion",
+      "type": "Motion",
+      "required": false,
+      "description": "动效，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "rise",
+        "fall",
+        "drift",
+        "orbit"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "rise",
+          "fall",
+          "drift",
+          "orbit"
+        ]
+      },
+      "codeExample": "motion={\"rise\"}"
+    },
+    {
+      "name": "particleShape",
+      "type": "ParticleShape",
+      "required": false,
+      "description": "粒子形状，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "square",
+        "round"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "square",
+          "round"
+        ]
+      },
+      "codeExample": "particleShape={\"round\"}"
+    },
+    {
+      "name": "depth",
+      "type": "number",
+      "required": false,
+      "description": "深度，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 26
+      },
+      "codeExample": "depth={1}"
+    },
+    {
+      "name": "sway",
+      "type": "number",
+      "required": false,
+      "description": "摇摆，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 27
+      },
+      "codeExample": "sway={1}"
+    },
+    {
+      "name": "twinkle",
+      "type": "number",
+      "required": false,
+      "description": "闪烁，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 28
+      },
+      "codeExample": "twinkle={1}"
+    },
+    {
+      "name": "haze",
+      "type": "number",
+      "required": false,
+      "description": "薄雾，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 29
+      },
+      "codeExample": "haze={1}"
+    },
+    {
+      "name": "dustSpeed",
+      "type": "number",
+      "required": false,
+      "description": "尘点速度，控制 crystalized ball 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+        "line": 30
+      },
+      "codeExample": "dustSpeed={1}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall';\nimport { palette } from '../../shared/demo-support';\n\n// 保留真实WebGL玻璃球、边缘电弧和内部粒子，控制粒子量与亮度。\n// 此演示需要可用的WebGL上下文；上下文创建失败时应显示能力提示，不能声称效果已经运行。\n\nexport default function CrystalizedBallDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n  /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "CrystalizedBall",
+      "sourcePath": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+      "props": [
+        {
+          "name": "preset",
+          "type": "Preset",
+          "required": false,
+          "defaultExpression": "'plasma'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 904,
+            "kind": "parameter"
+          },
+          "defaultValue": "plasma",
+          "description": "预设，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "plasma",
+            "aurora",
+            "nebula",
+            "ember",
+            "frost",
+            "solar",
+            "eclipse",
+            "abyss"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "plasma",
+              "aurora",
+              "nebula",
+              "ember",
+              "frost",
+              "solar",
+              "eclipse",
+              "abyss"
+            ]
+          },
+          "codeExample": "preset=\"frost\"",
+          "usageExamples": [
+            "preset=\"frost\""
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "Theme",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 906,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"light\"",
+          "usageExamples": [
+            "theme=\"light\""
+          ]
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 907,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.7,
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 36
+          },
+          "codeExample": "size={0.68}",
+          "usageExamples": [
+            "size={0.68}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 921,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 37
+          },
+          "codeExample": "speed={0.4}",
+          "usageExamples": [
+            "speed={0.4}"
+          ]
+        },
+        {
+          "name": "interactive",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 923,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 38
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "interactive",
+          "usageExamples": [
+            "interactive"
+          ]
+        },
+        {
+          "name": "hoverStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 924,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.7,
+          "description": "悬停强度，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 39
+          },
+          "codeExample": "hoverStrength={0.4}",
+          "usageExamples": [
+            "hoverStrength={0.4}"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 925,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 40
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 926,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 41
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 927,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 42
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 43
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 16
+          },
+          "codeExample": "color={palette.primary}",
+          "usageExamples": [
+            "color={palette.primary}"
+          ]
+        },
+        {
+          "name": "strands",
+          "type": "number",
+          "required": false,
+          "description": "丝线组，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 17
+          },
+          "codeExample": "strands={1}"
+        },
+        {
+          "name": "crackle",
+          "type": "number",
+          "required": false,
+          "description": "闪电噼啪，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 18
+          },
+          "codeExample": "crackle={0.45}",
+          "usageExamples": [
+            "crackle={0.45}"
+          ]
+        },
+        {
+          "name": "flares",
+          "type": "number",
+          "required": false,
+          "description": "耀斑组，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 19
+          },
+          "codeExample": "flares={1}"
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "description": "辉光，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 20
+          },
+          "codeExample": "glow={0.45}",
+          "usageExamples": [
+            "glow={0.45}"
+          ]
+        },
+        {
+          "name": "sparks",
+          "type": "number",
+          "required": false,
+          "description": "火花组，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 21
+          },
+          "codeExample": "sparks={1}"
+        },
+        {
+          "name": "particleCount",
+          "type": "number",
+          "required": false,
+          "description": "粒子数量，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 22
+          },
+          "codeExample": "particleCount={3500}",
+          "usageExamples": [
+            "particleCount={3500}"
+          ]
+        },
+        {
+          "name": "fill",
+          "type": "number",
+          "required": false,
+          "description": "填充，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 23
+          },
+          "codeExample": "fill={0.3}",
+          "usageExamples": [
+            "fill={0.3}"
+          ]
+        },
+        {
+          "name": "motion",
+          "type": "Motion",
+          "required": false,
+          "description": "动效，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "rise",
+            "fall",
+            "drift",
+            "orbit"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "rise",
+              "fall",
+              "drift",
+              "orbit"
+            ]
+          },
+          "codeExample": "motion={\"rise\"}"
+        },
+        {
+          "name": "particleShape",
+          "type": "ParticleShape",
+          "required": false,
+          "description": "粒子形状，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "square",
+            "round"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "square",
+              "round"
+            ]
+          },
+          "codeExample": "particleShape={\"round\"}"
+        },
+        {
+          "name": "depth",
+          "type": "number",
+          "required": false,
+          "description": "深度，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 26
+          },
+          "codeExample": "depth={1}"
+        },
+        {
+          "name": "sway",
+          "type": "number",
+          "required": false,
+          "description": "摇摆，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 27
+          },
+          "codeExample": "sway={1}"
+        },
+        {
+          "name": "twinkle",
+          "type": "number",
+          "required": false,
+          "description": "闪烁，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 28
+          },
+          "codeExample": "twinkle={1}"
+        },
+        {
+          "name": "haze",
+          "type": "number",
+          "required": false,
+          "description": "薄雾，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 29
+          },
+          "codeExample": "haze={1}"
+        },
+        {
+          "name": "dustSpeed",
+          "type": "number",
+          "required": false,
+          "description": "尘点速度，控制 crystalized ball 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/CrystalizedBall/CrystalizedBall.tsx",
+            "line": 30
+          },
+          "codeExample": "dustSpeed={1}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

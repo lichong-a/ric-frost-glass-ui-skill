@@ -1,0 +1,1737 @@
+{
+  "version": 1,
+  "id": "micro-slats",
+  "name": "Micro Slats",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+  "demoPath": "src/demos/background/micro-slats.tsx",
+  "fields": [
+    {
+      "key": "t0.preset",
+      "name": "preset",
+      "label": "preset · t0",
+      "description": "预设，控制 micro slats 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "preset"
+        }
+      ],
+      "type": "SwellPreset",
+      "defaultValue": "swell",
+      "upstreamDefault": "'swell'",
+      "control": "select",
+      "options": [
+        {
+          "label": "swell",
+          "value": "swell"
+        },
+        {
+          "label": "tide",
+          "value": "tide"
+        },
+        {
+          "label": "storm",
+          "value": "storm"
+        },
+        {
+          "label": "signal",
+          "value": "signal"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#A855F7'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glintColor",
+      "name": "glintColor",
+      "label": "glintColor · t0",
+      "description": "微光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glintColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#000000'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.slatWidth",
+      "name": "slatWidth",
+      "label": "slatWidth · t0",
+      "description": "条板宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "slatWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.slatHeight",
+      "name": "slatHeight",
+      "label": "slatHeight · t0",
+      "description": "条板高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "slatHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 24,
+      "upstreamDefault": "25",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.roundness",
+      "name": "roundness",
+      "label": "roundness · t0",
+      "description": "圆润程度，控制 micro slats 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "roundness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "0.75",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interactive",
+      "name": "interactive",
+      "label": "interactive · t0",
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interactive"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cursorStrength",
+      "name": "cursorStrength",
+      "label": "cursorStrength · t0",
+      "description": "指针强度，控制 micro slats 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cursorStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cursorSize",
+      "name": "cursorSize",
+      "label": "cursorSize · t0",
+      "description": "指针尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cursorSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 40,
+      "upstreamDefault": "40",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.swirl",
+      "name": "swirl",
+      "label": "swirl · t0",
+      "description": "旋涡，控制 micro slats 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "swirl"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trail",
+      "name": "trail",
+      "label": "trail · t0",
+      "description": "轨迹，控制 micro slats 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trail"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.4,
+      "upstreamDefault": "1.4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lean",
+      "name": "lean",
+      "label": "lean · t0",
+      "description": "倾斜，控制 micro slats 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lean"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.introDuration",
+      "name": "introDuration",
+      "label": "introDuration · t0",
+      "description": "入场时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "introDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "preset",
+      "type": "SwellPreset",
+      "required": false,
+      "defaultExpression": "'swell'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 436,
+        "kind": "parameter"
+      },
+      "defaultValue": "swell",
+      "description": "预设，控制 micro slats 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "swell",
+        "tide",
+        "storm",
+        "signal"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "swell",
+          "tide",
+          "storm",
+          "signal"
+        ]
+      },
+      "codeExample": "preset=\"swell\"",
+      "usageExamples": [
+        "preset=\"swell\""
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#A855F7'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 437,
+        "kind": "parameter"
+      },
+      "defaultValue": "#A855F7",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 26
+      },
+      "codeExample": "color={palette.sage}",
+      "usageExamples": [
+        "color={palette.sage}"
+      ]
+    },
+    {
+      "name": "glintColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 438,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "微光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 27
+      },
+      "codeExample": "glintColor={palette.ivory}",
+      "usageExamples": [
+        "glintColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#000000'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 439,
+        "kind": "parameter"
+      },
+      "defaultValue": "#000000",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 28
+      },
+      "codeExample": "backgroundColor={palette.ink}",
+      "usageExamples": [
+        "backgroundColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "slatWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 440,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "条板宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 29
+      },
+      "codeExample": "slatWidth={8}",
+      "usageExamples": [
+        "slatWidth={8}"
+      ]
+    },
+    {
+      "name": "slatHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 441,
+        "kind": "parameter"
+      },
+      "defaultValue": 25,
+      "description": "条板高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 30
+      },
+      "codeExample": "slatHeight={24}",
+      "usageExamples": [
+        "slatHeight={24}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 442,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 31
+      },
+      "codeExample": "gap={4}",
+      "usageExamples": [
+        "gap={4}"
+      ]
+    },
+    {
+      "name": "roundness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.75",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 443,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.75,
+      "description": "圆润程度，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 32
+      },
+      "codeExample": "roundness={0.65}",
+      "usageExamples": [
+        "roundness={0.65}"
+      ]
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 453,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "interactive",
+      "usageExamples": [
+        "interactive"
+      ]
+    },
+    {
+      "name": "cursorStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 454,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "指针强度，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 34
+      },
+      "codeExample": "cursorStrength={0.6}",
+      "usageExamples": [
+        "cursorStrength={0.6}"
+      ]
+    },
+    {
+      "name": "cursorSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "40",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 455,
+        "kind": "parameter"
+      },
+      "defaultValue": 40,
+      "description": "指针尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 35
+      },
+      "codeExample": "cursorSize={40}"
+    },
+    {
+      "name": "swirl",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 456,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "旋涡，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 36
+      },
+      "codeExample": "swirl={0}"
+    },
+    {
+      "name": "trail",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 457,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.4,
+      "description": "轨迹，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 37
+      },
+      "codeExample": "trail={1.4}"
+    },
+    {
+      "name": "lean",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 458,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "倾斜，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 38
+      },
+      "codeExample": "lean={0}"
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 459,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 39
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "introDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 460,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "入场时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 40
+      },
+      "codeExample": "introDuration={1.5}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 461,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 41
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 462,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 42
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 43
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "scale",
+      "type": "number",
+      "required": false,
+      "description": "缩放，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 13
+      },
+      "codeExample": "scale={1}"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 14
+      },
+      "codeExample": "speed={0.45}",
+      "usageExamples": [
+        "speed={0.45}"
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "number",
+      "required": false,
+      "description": "方向，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 15
+      },
+      "codeExample": "direction={1}"
+    },
+    {
+      "name": "chop",
+      "type": "number",
+      "required": false,
+      "description": "分割，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 16
+      },
+      "codeExample": "chop={1}"
+    },
+    {
+      "name": "stretch",
+      "type": "number",
+      "required": false,
+      "description": "拉伸，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 17
+      },
+      "codeExample": "stretch={1}"
+    },
+    {
+      "name": "glint",
+      "type": "number",
+      "required": false,
+      "description": "微光，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 18
+      },
+      "codeExample": "glint={1}"
+    },
+    {
+      "name": "contrast",
+      "type": "number",
+      "required": false,
+      "description": "对比度，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 19
+      },
+      "codeExample": "contrast={1}"
+    },
+    {
+      "name": "perspective",
+      "type": "number",
+      "required": false,
+      "description": "透视，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 20
+      },
+      "codeExample": "perspective={1}"
+    },
+    {
+      "name": "fog",
+      "type": "number",
+      "required": false,
+      "description": "雾，控制 micro slats 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+        "line": 21
+      },
+      "codeExample": "fog={1}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats';\n\n\n/** Agent Wan natural-tone preset for the real Micro Slats component. */\nexport default function MicroSlatsDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "MicroSlats",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+      "props": [
+        {
+          "name": "preset",
+          "type": "SwellPreset",
+          "required": false,
+          "defaultExpression": "'swell'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 436,
+            "kind": "parameter"
+          },
+          "defaultValue": "swell",
+          "description": "预设，控制 micro slats 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "swell",
+            "tide",
+            "storm",
+            "signal"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "swell",
+              "tide",
+              "storm",
+              "signal"
+            ]
+          },
+          "codeExample": "preset=\"swell\"",
+          "usageExamples": [
+            "preset=\"swell\""
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#A855F7'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 437,
+            "kind": "parameter"
+          },
+          "defaultValue": "#A855F7",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 26
+          },
+          "codeExample": "color={palette.sage}",
+          "usageExamples": [
+            "color={palette.sage}"
+          ]
+        },
+        {
+          "name": "glintColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 438,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "微光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 27
+          },
+          "codeExample": "glintColor={palette.ivory}",
+          "usageExamples": [
+            "glintColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#000000'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 439,
+            "kind": "parameter"
+          },
+          "defaultValue": "#000000",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 28
+          },
+          "codeExample": "backgroundColor={palette.ink}",
+          "usageExamples": [
+            "backgroundColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "slatWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 440,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "条板宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 29
+          },
+          "codeExample": "slatWidth={8}",
+          "usageExamples": [
+            "slatWidth={8}"
+          ]
+        },
+        {
+          "name": "slatHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 441,
+            "kind": "parameter"
+          },
+          "defaultValue": 25,
+          "description": "条板高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 30
+          },
+          "codeExample": "slatHeight={24}",
+          "usageExamples": [
+            "slatHeight={24}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 442,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 31
+          },
+          "codeExample": "gap={4}",
+          "usageExamples": [
+            "gap={4}"
+          ]
+        },
+        {
+          "name": "roundness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.75",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 443,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.75,
+          "description": "圆润程度，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 32
+          },
+          "codeExample": "roundness={0.65}",
+          "usageExamples": [
+            "roundness={0.65}"
+          ]
+        },
+        {
+          "name": "interactive",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 453,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "interactive",
+          "usageExamples": [
+            "interactive"
+          ]
+        },
+        {
+          "name": "cursorStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 454,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "指针强度，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 34
+          },
+          "codeExample": "cursorStrength={0.6}",
+          "usageExamples": [
+            "cursorStrength={0.6}"
+          ]
+        },
+        {
+          "name": "cursorSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "40",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 455,
+            "kind": "parameter"
+          },
+          "defaultValue": 40,
+          "description": "指针尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 35
+          },
+          "codeExample": "cursorSize={40}"
+        },
+        {
+          "name": "swirl",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 456,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "旋涡，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 36
+          },
+          "codeExample": "swirl={0}"
+        },
+        {
+          "name": "trail",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 457,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.4,
+          "description": "轨迹，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 37
+          },
+          "codeExample": "trail={1.4}"
+        },
+        {
+          "name": "lean",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 458,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "倾斜，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 38
+          },
+          "codeExample": "lean={0}"
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 459,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 39
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "introDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 460,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "入场时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 40
+          },
+          "codeExample": "introDuration={1.5}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 461,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 41
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 462,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 42
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 43
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "scale",
+          "type": "number",
+          "required": false,
+          "description": "缩放，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 13
+          },
+          "codeExample": "scale={1}"
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 14
+          },
+          "codeExample": "speed={0.45}",
+          "usageExamples": [
+            "speed={0.45}"
+          ]
+        },
+        {
+          "name": "direction",
+          "type": "number",
+          "required": false,
+          "description": "方向，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 15
+          },
+          "codeExample": "direction={1}"
+        },
+        {
+          "name": "chop",
+          "type": "number",
+          "required": false,
+          "description": "分割，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 16
+          },
+          "codeExample": "chop={1}"
+        },
+        {
+          "name": "stretch",
+          "type": "number",
+          "required": false,
+          "description": "拉伸，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 17
+          },
+          "codeExample": "stretch={1}"
+        },
+        {
+          "name": "glint",
+          "type": "number",
+          "required": false,
+          "description": "微光，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 18
+          },
+          "codeExample": "glint={1}"
+        },
+        {
+          "name": "contrast",
+          "type": "number",
+          "required": false,
+          "description": "对比度，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 19
+          },
+          "codeExample": "contrast={1}"
+        },
+        {
+          "name": "perspective",
+          "type": "number",
+          "required": false,
+          "description": "透视，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 20
+          },
+          "codeExample": "perspective={1}"
+        },
+        {
+          "name": "fog",
+          "type": "number",
+          "required": false,
+          "description": "雾，控制 micro slats 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/MicroSlats/MicroSlats.tsx",
+            "line": 21
+          },
+          "codeExample": "fog={1}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

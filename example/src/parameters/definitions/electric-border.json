@@ -1,0 +1,517 @@
+{
+  "version": 1,
+  "id": "electric-border",
+  "name": "Electric Border",
+  "sourcePath": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+  "demoPath": "src/demos/cards/electric-border.tsx",
+  "fields": [
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#7df3c8",
+      "upstreamDefault": "'#5227FF'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "电流速度",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。 以下范围仅限制此演示面板，不改变上游 API。按每帧经过的秒数乘以 speed 推进噪声时间。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.1,
+      "max": 4,
+      "step": 0.1,
+      "unit": "倍率"
+    },
+    {
+      "key": "t0.chaos",
+      "name": "chaos",
+      "label": "电流扰动",
+      "description": "混乱，控制 electric border 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。边框噪声的扰动幅度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "chaos"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0.12",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 0.5,
+      "step": 0.01,
+      "unit": "幅度"
+    },
+    {
+      "key": "t0.borderRadius",
+      "name": "borderRadius",
+      "label": "borderRadius · t0",
+      "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。Canvas 圆角边框半径。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "borderRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 24,
+      "upstreamDefault": "24",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "CSSProperties",
+      "defaultValue": {
+        "width": "min(100%, 380px)",
+        "borderRadius": 24
+      },
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "width": {
+            "kind": "string"
+          },
+          "borderRadius": {
+            "kind": "number"
+          }
+        },
+        "required": [
+          "width",
+          "borderRadius"
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 7
+      },
+      "codeExample": "children={<><article className={styles.card}>\n          <span className={styles.tag}>LIVE CONNECTION</span>\n          <h3 className={styles.title}>连接已建立</h3>\n          <p className={styles.description}>细密的电弧沿圆角边缘流动，外侧保留完整的柔光。</p>\n          <span className={styles.state}><span className={styles.dot} /> 系统在线</span>\n        </article></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><article className={styles.card}>\n          <span className={styles.tag}>LIVE CONNECTION</span>\n          <h3 className={styles.title}>连接已建立</h3>\n          <p className={styles.description}>细密的电弧沿圆角边缘流动，外侧保留完整的柔光。</p>\n          <span className={styles.state}><span className={styles.dot} /> 系统在线</span>\n        </article></>}"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#5227FF'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 18,
+        "kind": "parameter"
+      },
+      "defaultValue": "#5227FF",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 8
+      },
+      "codeExample": "color=\"#7df3c8\"",
+      "usageExamples": [
+        "color=\"#7df3c8\""
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 19,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 9
+      },
+      "codeExample": "speed={1}",
+      "usageExamples": [
+        "speed={1}"
+      ]
+    },
+    {
+      "name": "chaos",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 20,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.12,
+      "description": "混乱，控制 electric border 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 10
+      },
+      "codeExample": "chaos={0.12}",
+      "usageExamples": [
+        "chaos={0.12}"
+      ]
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "24",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 21,
+        "kind": "parameter"
+      },
+      "defaultValue": 24,
+      "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 11
+      },
+      "codeExample": "borderRadius={24}",
+      "usageExamples": [
+        "borderRadius={24}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 301,
+        "kind": "implementation-fallback"
+      },
+      "defaultValue": "",
+      "defaultCondition": "nullish",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 12
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+        "line": 13
+      },
+      "codeExample": "style={{ width: 'min(100%, 380px)', borderRadius: 24 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "style={{ width: 'min(100%, 380px)', borderRadius: 24 }}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder';\nimport styles from './electric-border.module.css';\n\nexport default function ElectricBorderDemo() {\n  return (\n    <div className={styles.stage} data-visual-demo=\"electric-border\">\n      <Component\n         /*__AW_PROPS_t0__*/ >\n        <article className={styles.card}>\n          <span className={styles.tag}>LIVE CONNECTION</span>\n          <h3 className={styles.title}>连接已建立</h3>\n          <p className={styles.description}>细密的电弧沿圆角边缘流动，外侧保留完整的柔光。</p>\n          <span className={styles.state}><span className={styles.dot} /> 系统在线</span>\n        </article>\n      </Component>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ElectricBorder",
+      "sourcePath": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><article className={styles.card}>\n          <span className={styles.tag}>LIVE CONNECTION</span>\n          <h3 className={styles.title}>连接已建立</h3>\n          <p className={styles.description}>细密的电弧沿圆角边缘流动，外侧保留完整的柔光。</p>\n          <span className={styles.state}><span className={styles.dot} /> 系统在线</span>\n        </article></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><article className={styles.card}>\n          <span className={styles.tag}>LIVE CONNECTION</span>\n          <h3 className={styles.title}>连接已建立</h3>\n          <p className={styles.description}>细密的电弧沿圆角边缘流动，外侧保留完整的柔光。</p>\n          <span className={styles.state}><span className={styles.dot} /> 系统在线</span>\n        </article></>}"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#5227FF'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 18,
+            "kind": "parameter"
+          },
+          "defaultValue": "#5227FF",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 8
+          },
+          "codeExample": "color=\"#7df3c8\"",
+          "usageExamples": [
+            "color=\"#7df3c8\""
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 19,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 9
+          },
+          "codeExample": "speed={1}",
+          "usageExamples": [
+            "speed={1}"
+          ]
+        },
+        {
+          "name": "chaos",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 20,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.12,
+          "description": "混乱，控制 electric border 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 10
+          },
+          "codeExample": "chaos={0.12}",
+          "usageExamples": [
+            "chaos={0.12}"
+          ]
+        },
+        {
+          "name": "borderRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "24",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 21,
+            "kind": "parameter"
+          },
+          "defaultValue": 24,
+          "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 11
+          },
+          "codeExample": "borderRadius={24}",
+          "usageExamples": [
+            "borderRadius={24}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 301,
+            "kind": "implementation-fallback"
+          },
+          "defaultValue": "",
+          "defaultCondition": "nullish",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 12
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/ElectricBorder/ElectricBorder.tsx",
+            "line": 13
+          },
+          "codeExample": "style={{ width: 'min(100%, 380px)', borderRadius: 24 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "style={{ width: 'min(100%, 380px)', borderRadius: 24 }}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

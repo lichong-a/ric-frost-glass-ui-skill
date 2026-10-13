@@ -1,0 +1,1977 @@
+{
+  "version": 1,
+  "id": "bell-toggle",
+  "name": "Bell Toggle",
+  "sourcePath": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+  "demoPath": "src/demos/actions/bell-toggle.tsx",
+  "fields": [
+    {
+      "key": "t0.offLabel",
+      "name": "offLabel",
+      "label": "offLabel · t0",
+      "description": "关闭时标签，控制 bell toggle 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "offLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "开启通知",
+      "upstreamDefault": "'Notify me'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.background",
+      "name": "background",
+      "label": "background · t0",
+      "description": "背景，控制 bell toggle 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "background"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "rgb(250 247 240 / 0.82)",
+      "upstreamDefault": "'#27272a'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.badge",
+      "name": "badge",
+      "label": "badge · t0",
+      "description": "是否标记，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "badge"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.count",
+      "name": "count",
+      "label": "count · t0",
+      "description": "数量，控制 bell toggle 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "count"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "0",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 128,
+      "step": 1
+    },
+    {
+      "key": "t0.badgeColor",
+      "name": "badgeColor",
+      "label": "badgeColor · t0",
+      "description": "标记颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "badgeColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#9c6d56",
+      "upstreamDefault": "'#ef4444'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.badgeTextColor",
+      "name": "badgeTextColor",
+      "label": "badgeTextColor · t0",
+      "description": "标记文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "badgeTextColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 12,
+      "upstreamDefault": "22",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "BellToggleSize",
+      "defaultValue": "md",
+      "upstreamDefault": "'md'",
+      "control": "select",
+      "options": [
+        {
+          "label": "sm",
+          "value": "sm"
+        },
+        {
+          "label": "md",
+          "value": "md"
+        },
+        {
+          "label": "lg",
+          "value": "lg"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ringAmplitude",
+      "name": "ringAmplitude",
+      "label": "ringAmplitude · t0",
+      "description": "圆环振幅，控制 bell toggle 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ringAmplitude"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 17,
+      "upstreamDefault": "17",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ringPasses",
+      "name": "ringPasses",
+      "label": "ringPasses · t0",
+      "description": "圆环扫描次数，控制 bell toggle 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ringPasses"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 5,
+      "upstreamDefault": "5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ringDecay",
+      "name": "ringDecay",
+      "label": "ringDecay · t0",
+      "description": "圆环衰减，控制 bell toggle 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ringDecay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ringDuration",
+      "name": "ringDuration",
+      "label": "ringDuration · t0",
+      "description": "圆环时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ringDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 820,
+      "upstreamDefault": "820",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ringPivot",
+      "name": "ringPivot",
+      "label": "ringPivot · t0",
+      "description": "圆环支点，控制 bell toggle 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ringPivot"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 16,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.crossfadeMs",
+      "name": "crossfadeMs",
+      "label": "crossfadeMs · t0",
+      "description": "交叉淡变毫秒，控制 bell toggle 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "crossfadeMs"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 200,
+      "upstreamDefault": "200",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.revealBounce",
+      "name": "revealBounce",
+      "label": "revealBounce · t0",
+      "description": "显现回弹，控制 bell toggle 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "revealBounce"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.waves",
+      "name": "waves",
+      "label": "waves · t0",
+      "description": "是否波组，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "waves"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clapper",
+      "name": "clapper",
+      "label": "clapper · t0",
+      "description": "是否显示铃铛内部的钟锤及其摆动。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clapper"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.pressed",
+      "name": "pressed",
+      "label": "按下状态",
+      "description": "示例的受控状态 pressed；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "boolean",
+      "defaultValue": false,
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pressed"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "offLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Notify me'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": "Notify me",
+      "description": "关闭时标签，控制 bell toggle 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 20
+      },
+      "codeExample": "offLabel=\"开启通知\"",
+      "usageExamples": [
+        "offLabel=\"开启通知\""
+      ]
+    },
+    {
+      "name": "onLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "\"You'll be notified\"",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": "You'll be notified",
+      "description": "标签时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 21
+      },
+      "codeExample": "onLabel=\"通知已开启\"",
+      "usageExamples": [
+        "onLabel=\"通知已开启\""
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false,
+      "defaultExpression": "<HugeiconsIcon icon={Notification03Icon} size={iconSize} strokeWidth={2} />",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 263,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "图标，控制 bell toggle 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 22
+      },
+      "codeExample": "icon={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "offLabel",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 239,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 23
+      },
+      "codeExample": "label={\"示例\"}"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 83,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 24
+      },
+      "codeExample": "color={palette.ink}",
+      "usageExamples": [
+        "color={palette.ink}"
+      ]
+    },
+    {
+      "name": "background",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#27272a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 84,
+        "kind": "parameter"
+      },
+      "defaultValue": "#27272a",
+      "description": "背景，控制 bell toggle 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 25
+      },
+      "codeExample": "background={palette.surface}",
+      "usageExamples": [
+        "background={palette.surface}"
+      ]
+    },
+    {
+      "name": "onColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#18181b'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 85,
+        "kind": "parameter"
+      },
+      "defaultValue": "#18181b",
+      "description": "用户选择颜色时通知调用方，参数为新颜色。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 26
+      },
+      "codeExample": "onColor={palette.ivory}",
+      "usageExamples": [
+        "onColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "onBackground",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 86,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "用户选择背景设置时通知调用方。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 27
+      },
+      "codeExample": "onBackground={palette.primary}",
+      "usageExamples": [
+        "onBackground={palette.primary}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "BellToggleSize",
+      "required": false,
+      "defaultExpression": "'md'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 87,
+        "kind": "parameter"
+      },
+      "defaultValue": "md",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "codeExample": "size={\"md\"}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "22",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 88,
+        "kind": "parameter"
+      },
+      "defaultValue": 22,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 29
+      },
+      "codeExample": "radius={12}",
+      "usageExamples": [
+        "radius={12}"
+      ]
+    },
+    {
+      "name": "ringAmplitude",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "17",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 89,
+        "kind": "parameter"
+      },
+      "defaultValue": 17,
+      "description": "圆环振幅，控制 bell toggle 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 30
+      },
+      "codeExample": "ringAmplitude={17}"
+    },
+    {
+      "name": "ringPasses",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 90,
+        "kind": "parameter"
+      },
+      "defaultValue": 5,
+      "description": "圆环扫描次数，控制 bell toggle 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 31
+      },
+      "codeExample": "ringPasses={5}"
+    },
+    {
+      "name": "ringDecay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 91,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "圆环衰减，控制 bell toggle 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 32
+      },
+      "codeExample": "ringDecay={1}"
+    },
+    {
+      "name": "ringDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "820",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 92,
+        "kind": "parameter"
+      },
+      "defaultValue": 820,
+      "description": "圆环时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 33
+      },
+      "codeExample": "ringDuration={820}"
+    },
+    {
+      "name": "ringPivot",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 93,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "圆环支点，控制 bell toggle 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 34
+      },
+      "codeExample": "ringPivot={16}"
+    },
+    {
+      "name": "crossfadeMs",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 94,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "交叉淡变毫秒，控制 bell toggle 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 35
+      },
+      "codeExample": "crossfadeMs={200}"
+    },
+    {
+      "name": "revealBounce",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 95,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "显现回弹，控制 bell toggle 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 36
+      },
+      "codeExample": "revealBounce={0}"
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 96,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "数量，控制 bell toggle 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 37
+      },
+      "codeExample": "count={3}",
+      "usageExamples": [
+        "count={3}"
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 97,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否标记，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 38
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "badge",
+      "usageExamples": [
+        "badge"
+      ]
+    },
+    {
+      "name": "badgeColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ef4444'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 98,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ef4444",
+      "description": "标记颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 39
+      },
+      "codeExample": "badgeColor={palette.terra}",
+      "usageExamples": [
+        "badgeColor={palette.terra}"
+      ]
+    },
+    {
+      "name": "badgeTextColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 99,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "标记文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 40
+      },
+      "codeExample": "badgeTextColor={palette.ivory}",
+      "usageExamples": [
+        "badgeTextColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "waves",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 100,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否波组，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 41
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "waves={true}"
+    },
+    {
+      "name": "clapper",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 101,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否显示铃铛内部的钟锤及其摆动。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 42
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clapper={false}"
+    },
+    {
+      "name": "pressed",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "inner",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 109,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "按钮的当前切换选中状态。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "pressed={pressed}",
+      "usageExamples": [
+        "pressed={pressed}"
+      ]
+    },
+    {
+      "name": "defaultPressed",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 103,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否非受控初始按下选中状态，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 44
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "defaultPressed={false}"
+    },
+    {
+      "name": "onChange",
+      "type": "(pressed: boolean) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 45
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((pressed: boolean) => void) | undefined"
+      },
+      "codeExample": "onChange={setPressed}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={setPressed}"
+      ]
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 105,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 46
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 106,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+        "line": 47
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport BellToggle from '../../../.upstream/src/ts-default/Micro/BellToggle/BellToggle';\nimport { palette, DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nexport default function BellToggleDemo() {\n  const [pressed, setPressed] = useState(/*__AW_STATE_state.pressed__*/);\n  return <DemoPanel title=\"Bell Toggle · 通知开关\"><div className={cn(\"aw-micro-stack\")}>\n    <BellToggle pressed={pressed} onChange={setPressed}  onLabel=\"通知已开启\"   onColor={palette.ivory} onBackground={palette.primary}      /*__AW_PROPS_t0__*/  />\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">演示通知：{pressed ? '已开启' : '已关闭'}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "BellToggle",
+      "sourcePath": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+      "props": [
+        {
+          "name": "offLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Notify me'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": "Notify me",
+          "description": "关闭时标签，控制 bell toggle 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 20
+          },
+          "codeExample": "offLabel=\"开启通知\"",
+          "usageExamples": [
+            "offLabel=\"开启通知\""
+          ]
+        },
+        {
+          "name": "onLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "\"You'll be notified\"",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": "You'll be notified",
+          "description": "标签时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 21
+          },
+          "codeExample": "onLabel=\"通知已开启\"",
+          "usageExamples": [
+            "onLabel=\"通知已开启\""
+          ]
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "required": false,
+          "defaultExpression": "<HugeiconsIcon icon={Notification03Icon} size={iconSize} strokeWidth={2} />",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 263,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "图标，控制 bell toggle 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 22
+          },
+          "codeExample": "icon={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "offLabel",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 239,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 23
+          },
+          "codeExample": "label={\"示例\"}"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 83,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 24
+          },
+          "codeExample": "color={palette.ink}",
+          "usageExamples": [
+            "color={palette.ink}"
+          ]
+        },
+        {
+          "name": "background",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#27272a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 84,
+            "kind": "parameter"
+          },
+          "defaultValue": "#27272a",
+          "description": "背景，控制 bell toggle 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 25
+          },
+          "codeExample": "background={palette.surface}",
+          "usageExamples": [
+            "background={palette.surface}"
+          ]
+        },
+        {
+          "name": "onColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#18181b'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 85,
+            "kind": "parameter"
+          },
+          "defaultValue": "#18181b",
+          "description": "用户选择颜色时通知调用方，参数为新颜色。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 26
+          },
+          "codeExample": "onColor={palette.ivory}",
+          "usageExamples": [
+            "onColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "onBackground",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 86,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "用户选择背景设置时通知调用方。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 27
+          },
+          "codeExample": "onBackground={palette.primary}",
+          "usageExamples": [
+            "onBackground={palette.primary}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "BellToggleSize",
+          "required": false,
+          "defaultExpression": "'md'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 87,
+            "kind": "parameter"
+          },
+          "defaultValue": "md",
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "codeExample": "size={\"md\"}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "22",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 88,
+            "kind": "parameter"
+          },
+          "defaultValue": 22,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 29
+          },
+          "codeExample": "radius={12}",
+          "usageExamples": [
+            "radius={12}"
+          ]
+        },
+        {
+          "name": "ringAmplitude",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "17",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 89,
+            "kind": "parameter"
+          },
+          "defaultValue": 17,
+          "description": "圆环振幅，控制 bell toggle 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 30
+          },
+          "codeExample": "ringAmplitude={17}"
+        },
+        {
+          "name": "ringPasses",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 90,
+            "kind": "parameter"
+          },
+          "defaultValue": 5,
+          "description": "圆环扫描次数，控制 bell toggle 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 31
+          },
+          "codeExample": "ringPasses={5}"
+        },
+        {
+          "name": "ringDecay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 91,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "圆环衰减，控制 bell toggle 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 32
+          },
+          "codeExample": "ringDecay={1}"
+        },
+        {
+          "name": "ringDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "820",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 92,
+            "kind": "parameter"
+          },
+          "defaultValue": 820,
+          "description": "圆环时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 33
+          },
+          "codeExample": "ringDuration={820}"
+        },
+        {
+          "name": "ringPivot",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 93,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "圆环支点，控制 bell toggle 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 34
+          },
+          "codeExample": "ringPivot={16}"
+        },
+        {
+          "name": "crossfadeMs",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 94,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "交叉淡变毫秒，控制 bell toggle 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 35
+          },
+          "codeExample": "crossfadeMs={200}"
+        },
+        {
+          "name": "revealBounce",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 95,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "显现回弹，控制 bell toggle 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 36
+          },
+          "codeExample": "revealBounce={0}"
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 96,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "数量，控制 bell toggle 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 37
+          },
+          "codeExample": "count={3}",
+          "usageExamples": [
+            "count={3}"
+          ]
+        },
+        {
+          "name": "badge",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 97,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否标记，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 38
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "badge",
+          "usageExamples": [
+            "badge"
+          ]
+        },
+        {
+          "name": "badgeColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ef4444'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 98,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ef4444",
+          "description": "标记颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 39
+          },
+          "codeExample": "badgeColor={palette.terra}",
+          "usageExamples": [
+            "badgeColor={palette.terra}"
+          ]
+        },
+        {
+          "name": "badgeTextColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 99,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "标记文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 40
+          },
+          "codeExample": "badgeTextColor={palette.ivory}",
+          "usageExamples": [
+            "badgeTextColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "waves",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 100,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否波组，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 41
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "waves={true}"
+        },
+        {
+          "name": "clapper",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 101,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否显示铃铛内部的钟锤及其摆动。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 42
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clapper={false}"
+        },
+        {
+          "name": "pressed",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "inner",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 109,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "按钮的当前切换选中状态。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pressed={pressed}",
+          "usageExamples": [
+            "pressed={pressed}"
+          ]
+        },
+        {
+          "name": "defaultPressed",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 103,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否非受控初始按下选中状态，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 44
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "defaultPressed={false}"
+        },
+        {
+          "name": "onChange",
+          "type": "(pressed: boolean) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 45
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((pressed: boolean) => void) | undefined"
+          },
+          "codeExample": "onChange={setPressed}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={setPressed}"
+          ]
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 105,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 46
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 106,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BellToggle/BellToggle.tsx",
+            "line": 47
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

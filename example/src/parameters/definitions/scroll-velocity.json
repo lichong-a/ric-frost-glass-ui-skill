@@ -1,0 +1,938 @@
+{
+  "version": 1,
+  "id": "scroll-velocity",
+  "name": "Scroll Velocity",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+  "demoPath": "src/demos/scroll/scroll-velocity.tsx",
+  "fields": [
+    {
+      "key": "t0.type",
+      "name": "type",
+      "label": "类型 · t0",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.velocity",
+      "name": "velocity",
+      "label": "文字循环速度",
+      "description": "速度矢量，控制 scroll velocity 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。Motion 每秒推进的循环位移量；正负值会改变方向。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "velocity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 100,
+      "upstreamDefault": "100",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": -200,
+      "max": 200,
+      "step": 5,
+      "unit": "px/s"
+    },
+    {
+      "key": "t1.numCopies",
+      "name": "numCopies",
+      "label": "numCopies · t1",
+      "description": "数量副本，控制 scroll velocity 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。循环行中的文字副本数量。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "numCopies"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "upstreamDefault": "6",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "unit": "份"
+    },
+    {
+      "key": "t1.damping",
+      "name": "damping",
+      "label": "damping · t1",
+      "description": "阻尼，控制 scroll velocity 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。滚动速度平滑弹簧的阻尼。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "damping"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 50,
+      "upstreamDefault": "50",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 10,
+      "max": 120,
+      "step": 5
+    },
+    {
+      "key": "t1.stiffness",
+      "name": "stiffness",
+      "label": "stiffness · t1",
+      "description": "弹簧刚度，控制 scroll velocity 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。滚动速度平滑弹簧的刚度。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "stiffness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 400,
+      "upstreamDefault": "400",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 50,
+      "max": 800,
+      "step": 25
+    },
+    {
+      "key": "t1.velocityMapping",
+      "name": "velocityMapping",
+      "label": "velocityMapping · t1",
+      "description": "速度矢量映射的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "velocityMapping"
+        }
+      ],
+      "type": "VelocityMapping",
+      "defaultValue": {
+        "input": [
+          0,
+          1000
+        ],
+        "output": [
+          0,
+          5
+        ]
+      },
+      "upstreamDefault": "{ input: [0, 1000], output: [0, 5] }",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {},
+        "required": [
+          "input",
+          "output"
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "scrollContainerRef",
+      "type": "React.RefObject<HTMLElement>",
+      "required": false,
+      "description": "滚动容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 36
+      },
+      "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: scrollContainerRef={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+      "usageExamples": [
+        "scrollContainerRef={scrollRef}"
+      ]
+    },
+    {
+      "name": "texts",
+      "type": "React.ReactNode[]",
+      "required": true,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "按顺序切换的文字列表。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 37
+      },
+      "codeExample": "texts={['AGENT WAN ·', 'QUIET FLOW ·']}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "texts={['AGENT WAN ·', 'QUIET FLOW ·']}"
+      ]
+    },
+    {
+      "name": "velocity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "速度矢量，控制 scroll velocity 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 38
+      },
+      "codeExample": "velocity={100}",
+      "usageExamples": [
+        "velocity={100}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 39
+      },
+      "codeExample": "className={styles.copy}",
+      "usageExamples": [
+        "className={styles.copy}"
+      ]
+    },
+    {
+      "name": "damping",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "50",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": 50,
+      "description": "阻尼，控制 scroll velocity 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 40
+      },
+      "codeExample": "damping={50}",
+      "usageExamples": [
+        "damping={50}"
+      ]
+    },
+    {
+      "name": "stiffness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "弹簧刚度，控制 scroll velocity 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 41
+      },
+      "codeExample": "stiffness={400}",
+      "usageExamples": [
+        "stiffness={400}"
+      ]
+    },
+    {
+      "name": "numCopies",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": 6,
+      "description": "数量副本，控制 scroll velocity 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 42
+      },
+      "codeExample": "numCopies={6}",
+      "usageExamples": [
+        "numCopies={6}"
+      ]
+    },
+    {
+      "name": "velocityMapping",
+      "type": "VelocityMapping",
+      "required": false,
+      "defaultExpression": "{ input: [0, 1000], output: [0, 5] }",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": {
+        "input": [
+          0,
+          1000
+        ],
+        "output": [
+          0,
+          5
+        ]
+      },
+      "description": "速度矢量映射的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "object",
+        "fields": [
+          {
+            "name": "input",
+            "type": "[number, number]",
+            "required": true,
+            "kind": "tuple",
+            "items": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "output",
+            "type": "[number, number]",
+            "required": true,
+            "kind": "tuple",
+            "items": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "velocityMapping={{ input: [0, 1000], output: [0, 5] }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "velocityMapping={{ input: [0, 1000], output: [0, 5] }}"
+      ]
+    },
+    {
+      "name": "parallaxClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'parallax'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": "parallax",
+      "description": "视差类名名称，控制 scroll velocity 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 44
+      },
+      "codeExample": "parallaxClassName={styles.parallax}",
+      "usageExamples": [
+        "parallaxClassName={styles.parallax}"
+      ]
+    },
+    {
+      "name": "scrollerClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'scroller'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": "scroller",
+      "description": "滚动容器类名名称，控制 scroll velocity 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 45
+      },
+      "codeExample": "scrollerClassName={styles.textScroller}",
+      "usageExamples": [
+        "scrollerClassName={styles.textScroller}"
+      ]
+    },
+    {
+      "name": "parallaxStyle",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "视差样式的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 46
+      },
+      "codeExample": "parallaxStyle={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "scrollerStyle",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "滚动容器样式的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+        "line": 47
+      },
+      "codeExample": "scrollerStyle={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport { useLayoutEffect, useRef, useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity';\nimport styles from './scroll-velocity.module.css';\n\nexport default function ScrollVelocityDemo() {\n  const scrollRef = useRef<HTMLDivElement>(null!);\n  const contentRef = useRef<HTMLElement>(null);\n  const [viewportHeight, setViewportHeight] = useState(0);\n\n  useLayoutEffect(() => {\n    const scroller = scrollRef.current;\n    const measure = () => setViewportHeight(scroller.clientHeight);\n    measure();\n    const observer = new ResizeObserver(measure);\n    observer.observe(scroller);\n    return () => observer.disconnect();\n  }, []);\n\n  const startScrolling = () => {\n    scrollRef.current.scrollTo({\n      top: viewportHeight,\n      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'\n    });\n    contentRef.current?.focus({ preventScroll: true });\n  };\n\n  return (\n    <div className={styles.stage}>\n      <div ref={scrollRef} className={styles.scroller} role=\"region\" aria-label=\"Scroll Velocity 滚动演示\" tabIndex={0}>\n        <section className={styles.intro} style={{ height: viewportHeight }} data-scroll-screen=\"intro\">\n          <p className={styles.eyebrow}>SCROLL VELOCITY</p>\n          <h2 className={styles.heading}>用滚动速度推动文字</h2>\n          <p className={styles.guide}>在预览区域内向下滚动。下一屏的两行文字会随滚动加速，反向滚动时改变方向。</p>\n          <button className={styles.startButton}  onClick={startScrolling} /*__AW_PROPS_t0__*/ >开始滚动 ↓</button>\n        </section>\n        <section ref={contentRef} className={styles.content} style={{ minHeight: viewportHeight }} tabIndex={-1} aria-label=\"滚动速度文字效果\" data-scroll-screen=\"content\">\n          {viewportHeight > 0 ? <Component\n            scrollContainerRef={scrollRef}\n            texts={['AGENT WAN ·', 'QUIET FLOW ·']}\n\n\n\n\n\n            parallaxClassName={styles.parallax}\n            scrollerClassName={styles.textScroller}\n            className={styles.copy} /*__AW_PROPS_t1__*/\n          /> : null}\n        </section>\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles.startButton}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={startScrolling}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>开始滚动 ↓</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "ScrollVelocity",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+      "props": [
+        {
+          "name": "scrollContainerRef",
+          "type": "React.RefObject<HTMLElement>",
+          "required": false,
+          "description": "滚动容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 36
+          },
+          "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: scrollContainerRef={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "scrollContainerRef={scrollRef}"
+          ]
+        },
+        {
+          "name": "texts",
+          "type": "React.ReactNode[]",
+          "required": true,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "按顺序切换的文字列表。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 37
+          },
+          "codeExample": "texts={['AGENT WAN ·', 'QUIET FLOW ·']}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "texts={['AGENT WAN ·', 'QUIET FLOW ·']}"
+          ]
+        },
+        {
+          "name": "velocity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "速度矢量，控制 scroll velocity 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 38
+          },
+          "codeExample": "velocity={100}",
+          "usageExamples": [
+            "velocity={100}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 39
+          },
+          "codeExample": "className={styles.copy}",
+          "usageExamples": [
+            "className={styles.copy}"
+          ]
+        },
+        {
+          "name": "damping",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "50",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": 50,
+          "description": "阻尼，控制 scroll velocity 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 40
+          },
+          "codeExample": "damping={50}",
+          "usageExamples": [
+            "damping={50}"
+          ]
+        },
+        {
+          "name": "stiffness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "弹簧刚度，控制 scroll velocity 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 41
+          },
+          "codeExample": "stiffness={400}",
+          "usageExamples": [
+            "stiffness={400}"
+          ]
+        },
+        {
+          "name": "numCopies",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": 6,
+          "description": "数量副本，控制 scroll velocity 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 42
+          },
+          "codeExample": "numCopies={6}",
+          "usageExamples": [
+            "numCopies={6}"
+          ]
+        },
+        {
+          "name": "velocityMapping",
+          "type": "VelocityMapping",
+          "required": false,
+          "defaultExpression": "{ input: [0, 1000], output: [0, 5] }",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": {
+            "input": [
+              0,
+              1000
+            ],
+            "output": [
+              0,
+              5
+            ]
+          },
+          "description": "速度矢量映射的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "object",
+            "fields": [
+              {
+                "name": "input",
+                "type": "[number, number]",
+                "required": true,
+                "kind": "tuple",
+                "items": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
+              },
+              {
+                "name": "output",
+                "type": "[number, number]",
+                "required": true,
+                "kind": "tuple",
+                "items": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "velocityMapping={{ input: [0, 1000], output: [0, 5] }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "velocityMapping={{ input: [0, 1000], output: [0, 5] }}"
+          ]
+        },
+        {
+          "name": "parallaxClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'parallax'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": "parallax",
+          "description": "视差类名名称，控制 scroll velocity 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 44
+          },
+          "codeExample": "parallaxClassName={styles.parallax}",
+          "usageExamples": [
+            "parallaxClassName={styles.parallax}"
+          ]
+        },
+        {
+          "name": "scrollerClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'scroller'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": "scroller",
+          "description": "滚动容器类名名称，控制 scroll velocity 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 45
+          },
+          "codeExample": "scrollerClassName={styles.textScroller}",
+          "usageExamples": [
+            "scrollerClassName={styles.textScroller}"
+          ]
+        },
+        {
+          "name": "parallaxStyle",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "视差样式的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 46
+          },
+          "codeExample": "parallaxStyle={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "scrollerStyle",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "滚动容器样式的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+            "line": 47
+          },
+          "codeExample": "scrollerStyle={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

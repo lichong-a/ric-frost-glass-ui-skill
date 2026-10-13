@@ -1,0 +1,1813 @@
+{
+  "version": 1,
+  "id": "dock",
+  "name": "Dock",
+  "sourcePath": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+  "demoPath": "src/demos/navigation/dock.tsx",
+  "fields": [
+    {
+      "key": "t0.position",
+      "name": "position",
+      "label": "位置 · t0",
+      "description": "位置，控制 dock 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "position"
+        }
+      ],
+      "type": "DockSide",
+      "defaultValue": "bottom",
+      "upstreamDefault": "'bottom'",
+      "control": "select",
+      "options": [
+        {
+          "label": "bottom",
+          "value": "bottom"
+        },
+        {
+          "label": "top",
+          "value": "top"
+        },
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 dock 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "light",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.baseItemSize",
+      "name": "baseItemSize",
+      "label": "baseItemSize · t0",
+      "description": "基础条目尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "baseItemSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 48,
+      "upstreamDefault": "50",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.magnification",
+      "name": "magnification",
+      "label": "magnification · t0",
+      "description": "放大，控制 dock 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "magnification"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 66,
+      "upstreamDefault": "70",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.distance",
+      "name": "distance",
+      "label": "distance · t0",
+      "description": "距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "distance"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 140,
+      "upstreamDefault": "200",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.panelHeight",
+      "name": "panelHeight",
+      "label": "panelHeight · t0",
+      "description": "面板高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "panelHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 66,
+      "upstreamDefault": "68",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.roundness",
+      "name": "roundness",
+      "label": "roundness · t0",
+      "description": "圆润程度，控制 dock 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "roundness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bounce",
+      "name": "bounce",
+      "label": "bounce · t0",
+      "description": "是否回弹，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bounce"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tiles",
+      "name": "tiles",
+      "label": "tiles · t0",
+      "description": "是否字符格组，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tiles"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showLabels",
+      "name": "showLabels",
+      "label": "showLabels · t0",
+      "description": "是否显示标签，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showLabels"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showIndicators",
+      "name": "showIndicators",
+      "label": "showIndicators · t0",
+      "description": "是否显示指示器，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showIndicators"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showBadges",
+      "name": "showBadges",
+      "label": "showBadges · t0",
+      "description": "是否显示标记，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showBadges"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.badgeColor",
+      "name": "badgeColor",
+      "label": "badgeColor · t0",
+      "description": "标记颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "badgeColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#ff453a'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#0a84ff'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spring",
+      "name": "spring",
+      "label": "spring · t0",
+      "description": "弹簧的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spring"
+        }
+      ],
+      "type": "DockSpring",
+      "defaultValue": {
+        "mass": 0.1,
+        "stiffness": 150,
+        "damping": 12
+      },
+      "upstreamDefault": "{ mass: 0.1, stiffness: 150, damping: 12 }",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "mass": {
+            "kind": "number"
+          },
+          "stiffness": {
+            "kind": "number"
+          },
+          "damping": {
+            "kind": "number"
+          }
+        },
+        "required": []
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoHide",
+      "name": "autoHide",
+      "label": "autoHide · t0",
+      "description": "是否自动隐藏，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoHide"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "DockItemData[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 551,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 39
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "DockItemData",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "icon",
+                "type": "React.ReactNode",
+                "required": false
+              },
+              {
+                "name": "label",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "onClick",
+                "type": "() => void",
+                "required": false,
+                "kind": "callback",
+                "signature": "(() => void) | undefined"
+              },
+              {
+                "name": "className",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "active",
+                "type": "boolean",
+                "required": false,
+                "kind": "enum",
+                "options": [
+                  false,
+                  true
+                ]
+              },
+              {
+                "name": "badge",
+                "type": "React.ReactNode",
+                "required": false
+              },
+              {
+                "name": "menu",
+                "type": "DockMenuItem[]",
+                "required": false,
+                "kind": "array",
+                "items": [
+                  {
+                    "type": "DockMenuItem"
+                  }
+                ]
+              },
+              {
+                "name": "separator",
+                "type": "boolean",
+                "required": false,
+                "kind": "enum",
+                "options": [
+                  false,
+                  true
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={[{ icon: <Home size={23} />, label: '工作台', active: true, onClick: () => setStatus('打开工作台'), menu: [{ label: '新建视图', onClick: () => setStatus('已选择新建视图') }, { separator: true }, { label: '固定到Dock', checked: true, onClick: () => setStatus('固定状态示例已点击') }] }, { icon: <Layers size={23} />, label: '智能体', badge: 3, onClick: () => setStatus('打开智能体') }, { icon: <Folder size={23} />, label: '资料', onClick: () => setStatus('打开资料') }, { separator: true }, { icon: <Settings size={23} />, label: '设置', onClick: () => setStatus('打开设置') }]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={[{ icon: <Home size={23} />, label: '工作台', active: true, onClick: () => setStatus('打开工作台'), menu: [{ label: '新建视图', onClick: () => setStatus('已选择新建视图') }, { separator: true }, { label: '固定到Dock', checked: true, onClick: () => setStatus('固定状态示例已点击') }] }, { icon: <Layers size={23} />, label: '智能体', badge: 3, onClick: () => setStatus('打开智能体') }, { icon: <Folder size={23} />, label: '资料', onClick: () => setStatus('打开资料') }, { separator: true }, { icon: <Settings size={23} />, label: '设置', onClick: () => setStatus('打开设置') }]}"
+      ]
+    },
+    {
+      "name": "position",
+      "type": "DockSide",
+      "required": false,
+      "defaultExpression": "'bottom'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 552,
+        "kind": "parameter"
+      },
+      "defaultValue": "bottom",
+      "description": "位置，控制 dock 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "bottom",
+        "top",
+        "left",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 40
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "bottom",
+          "top",
+          "left",
+          "right"
+        ]
+      },
+      "codeExample": "position=\"bottom\"",
+      "usageExamples": [
+        "position=\"bottom\""
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 553,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 dock 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 41
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"light\"",
+      "usageExamples": [
+        "theme=\"light\""
+      ]
+    },
+    {
+      "name": "baseItemSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "50",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 554,
+        "kind": "parameter"
+      },
+      "defaultValue": 50,
+      "description": "基础条目尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 42
+      },
+      "codeExample": "baseItemSize={48}",
+      "usageExamples": [
+        "baseItemSize={48}"
+      ]
+    },
+    {
+      "name": "magnification",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "70",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 555,
+        "kind": "parameter"
+      },
+      "defaultValue": 70,
+      "description": "放大，控制 dock 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 43
+      },
+      "codeExample": "magnification={66}",
+      "usageExamples": [
+        "magnification={66}"
+      ]
+    },
+    {
+      "name": "distance",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 556,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 44
+      },
+      "codeExample": "distance={140}",
+      "usageExamples": [
+        "distance={140}"
+      ]
+    },
+    {
+      "name": "panelHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "68",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 557,
+        "kind": "parameter"
+      },
+      "defaultValue": 68,
+      "description": "面板高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 45
+      },
+      "codeExample": "panelHeight={66}",
+      "usageExamples": [
+        "panelHeight={66}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 558,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 46
+      },
+      "codeExample": "gap={10}",
+      "usageExamples": [
+        "gap={10}"
+      ]
+    },
+    {
+      "name": "roundness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 559,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "圆润程度，控制 dock 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 47
+      },
+      "codeExample": "roundness={0.4}",
+      "usageExamples": [
+        "roundness={0.4}"
+      ]
+    },
+    {
+      "name": "spring",
+      "type": "DockSpring",
+      "required": false,
+      "defaultExpression": "{ mass: 0.1, stiffness: 150, damping: 12 }",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 560,
+        "kind": "parameter"
+      },
+      "defaultValue": {
+        "mass": 0.1,
+        "stiffness": 150,
+        "damping": 12
+      },
+      "description": "弹簧的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 48
+      },
+      "details": {
+        "kind": "object",
+        "fields": [
+          {
+            "name": "mass",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "stiffness",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "damping",
+            "type": "number",
+            "required": false
+          }
+        ]
+      },
+      "codeExample": "spring={{\"mass\":0.1,\"stiffness\":150,\"damping\":12}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "bounce",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 561,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否回弹，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 49
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "bounce",
+      "usageExamples": [
+        "bounce"
+      ]
+    },
+    {
+      "name": "autoHide",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 562,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否自动隐藏，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 50
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "autoHide={false}"
+    },
+    {
+      "name": "tiles",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 563,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否字符格组，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 51
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "tiles",
+      "usageExamples": [
+        "tiles"
+      ]
+    },
+    {
+      "name": "showLabels",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 564,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示标签，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 52
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showLabels",
+      "usageExamples": [
+        "showLabels"
+      ]
+    },
+    {
+      "name": "showIndicators",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 565,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示指示器，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 53
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showIndicators",
+      "usageExamples": [
+        "showIndicators"
+      ]
+    },
+    {
+      "name": "showBadges",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 566,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示标记，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 54
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showBadges",
+      "usageExamples": [
+        "showBadges"
+      ]
+    },
+    {
+      "name": "badgeColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ff453a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 567,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ff453a",
+      "description": "标记颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 55
+      },
+      "codeExample": "badgeColor={palette.primary}",
+      "usageExamples": [
+        "badgeColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#0a84ff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 568,
+        "kind": "parameter"
+      },
+      "defaultValue": "#0a84ff",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 56
+      },
+      "codeExample": "accentColor={palette.primary}",
+      "usageExamples": [
+        "accentColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 569,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 57
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+        "line": 58
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/Dock/Dock';\nimport { palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\nimport { Home, Layers, Folder, Settings } from \"lucide-react\";\n// 真实Dock放大、弹跳、计数徽标与菜单均有对应数据和回调。\n\nexport default function DockDemo() {\n  const [status, setStatus] = useState(\"悬停放大，点击图标，右键工作台打开菜单\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ position: 'relative', height: 330, minHeight: 0, width: '100%' }}><Component items={[{ icon: <Home size={23} />, label: '工作台', active: true, onClick: () => setStatus('打开工作台'), menu: [{ label: '新建视图', onClick: () => setStatus('已选择新建视图') }, { separator: true }, { label: '固定到Dock', checked: true, onClick: () => setStatus('固定状态示例已点击') }] }, { icon: <Layers size={23} />, label: '智能体', badge: 3, onClick: () => setStatus('打开智能体') }, { icon: <Folder size={23} />, label: '资料', onClick: () => setStatus('打开资料') }, { separator: true }, { icon: <Settings size={23} />, label: '设置', onClick: () => setStatus('打开设置') }]}\n\n\n\n /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Dock",
+      "sourcePath": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "DockItemData[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 551,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 39
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "DockItemData",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "icon",
+                    "type": "React.ReactNode",
+                    "required": false
+                  },
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "onClick",
+                    "type": "() => void",
+                    "required": false,
+                    "kind": "callback",
+                    "signature": "(() => void) | undefined"
+                  },
+                  {
+                    "name": "className",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "active",
+                    "type": "boolean",
+                    "required": false,
+                    "kind": "enum",
+                    "options": [
+                      false,
+                      true
+                    ]
+                  },
+                  {
+                    "name": "badge",
+                    "type": "React.ReactNode",
+                    "required": false
+                  },
+                  {
+                    "name": "menu",
+                    "type": "DockMenuItem[]",
+                    "required": false,
+                    "kind": "array",
+                    "items": [
+                      {
+                        "type": "DockMenuItem"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "separator",
+                    "type": "boolean",
+                    "required": false,
+                    "kind": "enum",
+                    "options": [
+                      false,
+                      true
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={[{ icon: <Home size={23} />, label: '工作台', active: true, onClick: () => setStatus('打开工作台'), menu: [{ label: '新建视图', onClick: () => setStatus('已选择新建视图') }, { separator: true }, { label: '固定到Dock', checked: true, onClick: () => setStatus('固定状态示例已点击') }] }, { icon: <Layers size={23} />, label: '智能体', badge: 3, onClick: () => setStatus('打开智能体') }, { icon: <Folder size={23} />, label: '资料', onClick: () => setStatus('打开资料') }, { separator: true }, { icon: <Settings size={23} />, label: '设置', onClick: () => setStatus('打开设置') }]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={[{ icon: <Home size={23} />, label: '工作台', active: true, onClick: () => setStatus('打开工作台'), menu: [{ label: '新建视图', onClick: () => setStatus('已选择新建视图') }, { separator: true }, { label: '固定到Dock', checked: true, onClick: () => setStatus('固定状态示例已点击') }] }, { icon: <Layers size={23} />, label: '智能体', badge: 3, onClick: () => setStatus('打开智能体') }, { icon: <Folder size={23} />, label: '资料', onClick: () => setStatus('打开资料') }, { separator: true }, { icon: <Settings size={23} />, label: '设置', onClick: () => setStatus('打开设置') }]}"
+          ]
+        },
+        {
+          "name": "position",
+          "type": "DockSide",
+          "required": false,
+          "defaultExpression": "'bottom'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 552,
+            "kind": "parameter"
+          },
+          "defaultValue": "bottom",
+          "description": "位置，控制 dock 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "bottom",
+            "top",
+            "left",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 40
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "bottom",
+              "top",
+              "left",
+              "right"
+            ]
+          },
+          "codeExample": "position=\"bottom\"",
+          "usageExamples": [
+            "position=\"bottom\""
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 553,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 dock 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 41
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"light\"",
+          "usageExamples": [
+            "theme=\"light\""
+          ]
+        },
+        {
+          "name": "baseItemSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "50",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 554,
+            "kind": "parameter"
+          },
+          "defaultValue": 50,
+          "description": "基础条目尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 42
+          },
+          "codeExample": "baseItemSize={48}",
+          "usageExamples": [
+            "baseItemSize={48}"
+          ]
+        },
+        {
+          "name": "magnification",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "70",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 555,
+            "kind": "parameter"
+          },
+          "defaultValue": 70,
+          "description": "放大，控制 dock 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 43
+          },
+          "codeExample": "magnification={66}",
+          "usageExamples": [
+            "magnification={66}"
+          ]
+        },
+        {
+          "name": "distance",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 556,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "距离，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 44
+          },
+          "codeExample": "distance={140}",
+          "usageExamples": [
+            "distance={140}"
+          ]
+        },
+        {
+          "name": "panelHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "68",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 557,
+            "kind": "parameter"
+          },
+          "defaultValue": 68,
+          "description": "面板高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 45
+          },
+          "codeExample": "panelHeight={66}",
+          "usageExamples": [
+            "panelHeight={66}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 558,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 46
+          },
+          "codeExample": "gap={10}",
+          "usageExamples": [
+            "gap={10}"
+          ]
+        },
+        {
+          "name": "roundness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 559,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "圆润程度，控制 dock 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 47
+          },
+          "codeExample": "roundness={0.4}",
+          "usageExamples": [
+            "roundness={0.4}"
+          ]
+        },
+        {
+          "name": "spring",
+          "type": "DockSpring",
+          "required": false,
+          "defaultExpression": "{ mass: 0.1, stiffness: 150, damping: 12 }",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 560,
+            "kind": "parameter"
+          },
+          "defaultValue": {
+            "mass": 0.1,
+            "stiffness": 150,
+            "damping": 12
+          },
+          "description": "弹簧的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 48
+          },
+          "details": {
+            "kind": "object",
+            "fields": [
+              {
+                "name": "mass",
+                "type": "number",
+                "required": false
+              },
+              {
+                "name": "stiffness",
+                "type": "number",
+                "required": false
+              },
+              {
+                "name": "damping",
+                "type": "number",
+                "required": false
+              }
+            ]
+          },
+          "codeExample": "spring={{\"mass\":0.1,\"stiffness\":150,\"damping\":12}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "bounce",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 561,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否回弹，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 49
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "bounce",
+          "usageExamples": [
+            "bounce"
+          ]
+        },
+        {
+          "name": "autoHide",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 562,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否自动隐藏，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 50
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "autoHide={false}"
+        },
+        {
+          "name": "tiles",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 563,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否字符格组，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 51
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "tiles",
+          "usageExamples": [
+            "tiles"
+          ]
+        },
+        {
+          "name": "showLabels",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 564,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示标签，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 52
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showLabels",
+          "usageExamples": [
+            "showLabels"
+          ]
+        },
+        {
+          "name": "showIndicators",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 565,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示指示器，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 53
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showIndicators",
+          "usageExamples": [
+            "showIndicators"
+          ]
+        },
+        {
+          "name": "showBadges",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 566,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示标记，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 54
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showBadges",
+          "usageExamples": [
+            "showBadges"
+          ]
+        },
+        {
+          "name": "badgeColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ff453a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 567,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ff453a",
+          "description": "标记颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 55
+          },
+          "codeExample": "badgeColor={palette.primary}",
+          "usageExamples": [
+            "badgeColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#0a84ff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 568,
+            "kind": "parameter"
+          },
+          "defaultValue": "#0a84ff",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 56
+          },
+          "codeExample": "accentColor={palette.primary}",
+          "usageExamples": [
+            "accentColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 569,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 57
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Dock/Dock.tsx",
+            "line": 58
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

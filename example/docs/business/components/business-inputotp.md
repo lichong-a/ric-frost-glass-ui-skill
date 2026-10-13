@@ -1,6 +1,6 @@
 # InputOtp
 
-业务表单 · `business-inputotp` · 中文意图：验证码 / 分段输入 / 一次粘贴验证码
+表单与选择 · `business-inputotp` · 中文意图：验证码 / 分段输入 / 一次粘贴验证码
 
 ## 1. 什么场景使用
 
@@ -13,28 +13,77 @@
 ## 2. 只加载这一项
 
 1. 只读本指南，确认用途与边界。
-2. 只读 [src/business/demos/business-inputotp.tsx](../../../src/business/demos/business-inputotp.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
-3. 本例若导入 primitives，再定位该文件中被使用的符号，不加载其它示例。样式按需检索 [业务 Token 皮肤](../../../src/business/business.css) 中的对应类。
+2. 只读 [src/business/demos/form/business-inputotp.tsx](../../../src/business/demos/form/business-inputotp.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
+3. 本例从 components 按需导入独立控件；只读实际导入的 .tsx 及同名 .module.css。布局工具类也显式使用 CSS Modules，不给整块区域的 button/input 套统一动效。
 4. 涉及业务错误、权限、数据或异步行为时才追加对应契约：[05-input](../../contracts/05-input.md)。
 5. 预览库使用本项独立 import() 入口；复制到目标项目时也只接入所需组件和直接依赖。
 
-所有实现使用本项目已有 React、原生 HTML 和 CSS。完整交互、类型与回调以当前示例代码为准。
+所有实现使用本项目已有 React、原生语义控件、Motion 和 CSS。完整交互、类型与回调以当前示例代码为准；局部弹性、下拉、媒体与日历效果见 [交互动效指南](../motion-guide.md)。
 
 ## 3. 本例真实用法
 
 下面来自当前独立示例。默认导出是一个可运行实例；复制后把本地选项、数据与回调接到目标项目已有业务层，不把演示结果当作后端成功。
 
 ```tsx
+// 当前 InputOtp 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
+import ownedStyles0 from '../../components/DemoLayout.module.css';
+import ownedStyles1 from '../../components/Input.module.css';
+import { componentClasses } from '../../class-names';
 import { useState, useId, useRef } from 'react';
-import { BusinessDemo } from '../support';
+import { BusinessDemo } from '../../components/BusinessDemo';
 
+const ownedStyles={...ownedStyles0,...ownedStyles1};
+const cn=(names:string)=>componentClasses(ownedStyles,names);
 // 场景：分段录入短验证码，支持粘贴、方向键与退格；验证码校验由业务服务完成。
 export default function InputOtpDemo() {
   const id = useId(); const [value, setValue] = useState<string[]>(Array(6).fill('')); const refs = useRef<Array<HTMLInputElement | null>>([]);
   function update(index: number, text: string) { const digits = text.replace(/\D/g,'').slice(0,6-index); setValue(current => { const next = [...current]; next[index] = ''; digits.split('').forEach((digit,offset) => next[index+offset] = digit); return next; }); if (digits.length) refs.current[Math.min(5,index + digits.length)]?.focus(); }
-  return <BusinessDemo title="InputOtp · 分段验证码" description="输入或一次粘贴 6 位数字，方向键和退格移动焦点。"><fieldset><legend>本地验证码输入</legend><div className="aw-business-otp">{value.map((digit,index) => <input key={index} id={`${id}-${index}`} ref={element => { refs.current[index] = element; }} aria-label={`验证码第 ${index+1} 位`} onFocus={event => event.currentTarget.select()} inputMode="numeric" value={digit} maxLength={6} onChange={event => update(index,event.target.value)} onPaste={event => { event.preventDefault(); update(index,event.clipboardData.getData('text')); }} onKeyDown={event => { if (event.key === 'Backspace' && !digit && index) { event.preventDefault(); refs.current[index-1]?.focus(); } else if (event.key === 'ArrowLeft') refs.current[Math.max(0,index-1)]?.focus(); else if (event.key === 'ArrowRight') refs.current[Math.min(5,index+1)]?.focus(); }} />)}</div></fieldset><p className="aw-business-status" role="status">已输入 {value.filter(Boolean).length}/6 位；当前仅演示输入，不请求验证服务。</p></BusinessDemo>;
+  return <BusinessDemo title="InputOtp · 分段验证码" description="输入或一次粘贴 6 位数字，方向键和退格移动焦点。"><fieldset className={cn('aw-business-fieldset')}><legend>本地验证码输入</legend><div data-ui="aw-business-otp" className={cn("aw-business-otp")}>{value.map((digit,index) => <input className={cn('aw-business-input')} key={index} id={`${id}-${index}`} ref={element => { refs.current[index] = element; }} aria-label={`验证码第 ${index+1} 位`} onFocus={event => event.currentTarget.select()}  value={digit}  onChange={event => update(index,event.target.value)} onPaste={event => { event.preventDefault(); update(index,event.clipboardData.getData('text')); }} onKeyDown={event => { if (event.key === 'Backspace' && !digit && index) { event.preventDefault(); refs.current[index-1]?.focus(); } else if (event.key === 'ArrowLeft') refs.current[Math.max(0,index-1)]?.focus(); else if (event.key === 'ArrowRight') refs.current[Math.min(5,index+1)]?.focus(); }} inputMode={"numeric"} maxLength={6}  />)}</div></fieldset><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">已输入 {value.filter(Boolean).length}/6 位；当前仅演示输入，不请求验证服务。</p></BusinessDemo>;
 }
 ```
+
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `input.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `input.key` | `Key \| null \| undefined` | 否 | `未指定` | React 列表项身份，用于更新时保持对应节点。 |
+| `input.id` | `string \| undefined` | 否 | `未指定` | 原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。 |
+| `input.ref` | `Ref<HTMLInputElement> \| undefined` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+| `input.aria-label` | `string \| undefined` | 否 | `未指定` | 辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。 |
+| `input.onFocus` | `FocusEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | 焦点时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。 |
+| `input.inputMode` | `"search" \| "text" \| "none" \| "url" \| "numeric" \| "tel" \| "email" \| "decimal" \| undefined` | 否 | `未指定` | 提示触屏设备使用适合内容的键盘布局。 |
+| `input.value` | `string \| number \| readonly string[] \| undefined` | 否 | `未指定` | 当前受控值，由调用方维护并随交互回调更新。 |
+| `input.maxLength` | `number \| undefined` | 否 | `未指定` | 允许输入的最大字符数。 |
+| `input.onChange` | `ChangeEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | 用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。 |
+| `input.onPaste` | `ClipboardEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | paste时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。 |
+| `input.onKeyDown` | `KeyboardEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | 身份标识down时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。 |
+
+本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
+
+**继承的原生属性：**
+
+- `DetailedHTMLProps<FieldsetHTMLAttributes<HTMLFieldSetElement>, HTMLFieldSetElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLLegendElement>, HTMLLegendElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.inputMode` | `"numeric"` | select | "search" / "text" / "none" / "url" / "numeric" / "tel" / "email" / "decimal" | 即时应用 |
+| `t0.maxLength` | `6` | number | 不限 ~ 不限 | 即时应用 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. 接入约束
 

@@ -1,0 +1,1657 @@
+{
+  "version": 1,
+  "id": "liquid-ether",
+  "name": "Liquid Ether",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+  "demoPath": "src/demos/background/liquid-ether.tsx",
+  "fields": [
+    {
+      "key": "t0.colors",
+      "name": "colors",
+      "label": "颜色列表 · t0",
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colors"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#a6b39a",
+        "#c3ae88",
+        "#faf7f0"
+      ],
+      "upstreamDefault": "defaultColors",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#FFFFFF'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.resolution",
+      "name": "resolution",
+      "label": "resolution · t0",
+      "description": "分辨率，控制 liquid ether 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "resolution"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.iterationsPoisson",
+      "name": "iterationsPoisson",
+      "label": "iterationsPoisson · t0",
+      "description": "迭代次数泊松求解，控制 liquid ether 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "iterationsPoisson"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 24,
+      "upstreamDefault": "32",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.iterationsViscous",
+      "name": "iterationsViscous",
+      "label": "iterationsViscous · t0",
+      "description": "迭代次数粘性，控制 liquid ether 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "iterationsViscous"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 24,
+      "upstreamDefault": "32",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseForce",
+      "name": "mouseForce",
+      "label": "mouseForce · t0",
+      "description": "鼠标作用力，控制 liquid ether 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseForce"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 14,
+      "upstreamDefault": "20",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cursorSize",
+      "name": "cursorSize",
+      "label": "cursorSize · t0",
+      "description": "指针尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cursorSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 90,
+      "upstreamDefault": "100",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoDemo",
+      "name": "autoDemo",
+      "label": "autoDemo · t0",
+      "description": "是否自动演示，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoDemo"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoSpeed",
+      "name": "autoSpeed",
+      "label": "autoSpeed · t0",
+      "description": "是否自动速度，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoIntensity",
+      "name": "autoIntensity",
+      "label": "autoIntensity · t0",
+      "description": "是否自动强度，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.4,
+      "upstreamDefault": "2.2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.isViscous",
+      "name": "isViscous",
+      "label": "isViscous · t0",
+      "description": "是否粘性，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "isViscous"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.viscous",
+      "name": "viscous",
+      "label": "viscous · t0",
+      "description": "粘性，控制 liquid ether 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "viscous"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 30,
+      "upstreamDefault": "30",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dt",
+      "name": "dt",
+      "label": "dt · t0",
+      "description": "模拟更新使用的时间步长。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.014,
+      "upstreamDefault": "0.014",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.BFECC",
+      "name": "BFECC",
+      "label": "BFECC · t0",
+      "description": "是否启用双向误差补偿的流体输运求解。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "BFECC"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.isBounce",
+      "name": "isBounce",
+      "label": "isBounce · t0",
+      "description": "是否回弹，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "isBounce"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "React.CSSProperties",
+      "defaultValue": {},
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {},
+        "required": []
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.takeoverDuration",
+      "name": "takeoverDuration",
+      "label": "takeoverDuration · t0",
+      "description": "接管时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "takeoverDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.25",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoResumeDelay",
+      "name": "autoResumeDelay",
+      "label": "autoResumeDelay · t0",
+      "description": "是否自动恢复播放延迟，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoResumeDelay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1000,
+      "upstreamDefault": "1000",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoRampDuration",
+      "name": "autoRampDuration",
+      "label": "autoRampDuration · t0",
+      "description": "是否自动逐渐增加时长，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoRampDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "mouseForce",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "20",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": 20,
+      "description": "鼠标作用力，控制 liquid ether 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 8
+      },
+      "codeExample": "mouseForce={14}",
+      "usageExamples": [
+        "mouseForce={14}"
+      ]
+    },
+    {
+      "name": "cursorSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "指针尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 9
+      },
+      "codeExample": "cursorSize={90}",
+      "usageExamples": [
+        "cursorSize={90}"
+      ]
+    },
+    {
+      "name": "isViscous",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否粘性，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "isViscous={false}"
+    },
+    {
+      "name": "viscous",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "30",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": 30,
+      "description": "粘性，控制 liquid ether 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 11
+      },
+      "codeExample": "viscous={30}"
+    },
+    {
+      "name": "iterationsViscous",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "32",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 32,
+      "description": "迭代次数粘性，控制 liquid ether 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 12
+      },
+      "codeExample": "iterationsViscous={24}",
+      "usageExamples": [
+        "iterationsViscous={24}"
+      ]
+    },
+    {
+      "name": "iterationsPoisson",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "32",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": 32,
+      "description": "迭代次数泊松求解，控制 liquid ether 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 13
+      },
+      "codeExample": "iterationsPoisson={24}",
+      "usageExamples": [
+        "iterationsPoisson={24}"
+      ]
+    },
+    {
+      "name": "dt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.014",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.014,
+      "description": "模拟更新使用的时间步长。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 14
+      },
+      "codeExample": "dt={0.014}"
+    },
+    {
+      "name": "BFECC",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否启用双向误差补偿的流体输运求解。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "BFECC={true}"
+    },
+    {
+      "name": "resolution",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "分辨率，控制 liquid ether 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 16
+      },
+      "codeExample": "resolution={0.5}",
+      "usageExamples": [
+        "resolution={0.5}"
+      ]
+    },
+    {
+      "name": "isBounce",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否回弹，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "isBounce={false}"
+    },
+    {
+      "name": "colors",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "defaultColors",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "#5227FF",
+        "#FF9FFC",
+        "#B497CF"
+      ],
+      "defaultResolvedExpression": "['#5227FF', '#FF9FFC', '#B497CF']",
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "colors={[palette.sage, palette.sand, palette.ivory]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "colors={[palette.sage, palette.sand, palette.ivory]}"
+      ]
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 19
+      },
+      "codeExample": "style={{}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 20
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "autoDemo",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否自动演示，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "autoDemo",
+      "usageExamples": [
+        "autoDemo"
+      ]
+    },
+    {
+      "name": "autoSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "是否自动速度，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 22
+      },
+      "codeExample": "autoSpeed={0.25}",
+      "usageExamples": [
+        "autoSpeed={0.25}"
+      ]
+    },
+    {
+      "name": "autoIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultValue": 2.2,
+      "description": "是否自动强度，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 23
+      },
+      "codeExample": "autoIntensity={1.4}",
+      "usageExamples": [
+        "autoIntensity={1.4}"
+      ]
+    },
+    {
+      "name": "takeoverDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.25,
+      "description": "接管时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 24
+      },
+      "codeExample": "takeoverDuration={0.25}"
+    },
+    {
+      "name": "autoResumeDelay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1000",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": 1000,
+      "description": "是否自动恢复播放延迟，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 25
+      },
+      "codeExample": "autoResumeDelay={1000}"
+    },
+    {
+      "name": "autoRampDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 81,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "是否自动逐渐增加时长，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 26
+      },
+      "codeExample": "autoRampDuration={0.6}"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#FFFFFF'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 82,
+        "kind": "parameter"
+      },
+      "defaultValue": "#FFFFFF",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 27
+      },
+      "codeExample": "backgroundColor={palette.ink}",
+      "usageExamples": [
+        "backgroundColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 83,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode={false}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther';\n\n\n/** Agent Wan natural-tone preset for the real Liquid Ether component. */\nexport default function LiquidEtherDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "LiquidEther",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+      "props": [
+        {
+          "name": "mouseForce",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "20",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": 20,
+          "description": "鼠标作用力，控制 liquid ether 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 8
+          },
+          "codeExample": "mouseForce={14}",
+          "usageExamples": [
+            "mouseForce={14}"
+          ]
+        },
+        {
+          "name": "cursorSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "指针尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 9
+          },
+          "codeExample": "cursorSize={90}",
+          "usageExamples": [
+            "cursorSize={90}"
+          ]
+        },
+        {
+          "name": "isViscous",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否粘性，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "isViscous={false}"
+        },
+        {
+          "name": "viscous",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "30",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": 30,
+          "description": "粘性，控制 liquid ether 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 11
+          },
+          "codeExample": "viscous={30}"
+        },
+        {
+          "name": "iterationsViscous",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "32",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 32,
+          "description": "迭代次数粘性，控制 liquid ether 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 12
+          },
+          "codeExample": "iterationsViscous={24}",
+          "usageExamples": [
+            "iterationsViscous={24}"
+          ]
+        },
+        {
+          "name": "iterationsPoisson",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "32",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": 32,
+          "description": "迭代次数泊松求解，控制 liquid ether 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 13
+          },
+          "codeExample": "iterationsPoisson={24}",
+          "usageExamples": [
+            "iterationsPoisson={24}"
+          ]
+        },
+        {
+          "name": "dt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.014",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.014,
+          "description": "模拟更新使用的时间步长。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 14
+          },
+          "codeExample": "dt={0.014}"
+        },
+        {
+          "name": "BFECC",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否启用双向误差补偿的流体输运求解。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "BFECC={true}"
+        },
+        {
+          "name": "resolution",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "分辨率，控制 liquid ether 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 16
+          },
+          "codeExample": "resolution={0.5}",
+          "usageExamples": [
+            "resolution={0.5}"
+          ]
+        },
+        {
+          "name": "isBounce",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否回弹，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "isBounce={false}"
+        },
+        {
+          "name": "colors",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "defaultColors",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "#5227FF",
+            "#FF9FFC",
+            "#B497CF"
+          ],
+          "defaultResolvedExpression": "['#5227FF', '#FF9FFC', '#B497CF']",
+          "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "colors={[palette.sage, palette.sand, palette.ivory]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "colors={[palette.sage, palette.sand, palette.ivory]}"
+          ]
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 19
+          },
+          "codeExample": "style={{}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 20
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "autoDemo",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否自动演示，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "autoDemo",
+          "usageExamples": [
+            "autoDemo"
+          ]
+        },
+        {
+          "name": "autoSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "是否自动速度，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 22
+          },
+          "codeExample": "autoSpeed={0.25}",
+          "usageExamples": [
+            "autoSpeed={0.25}"
+          ]
+        },
+        {
+          "name": "autoIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultValue": 2.2,
+          "description": "是否自动强度，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 23
+          },
+          "codeExample": "autoIntensity={1.4}",
+          "usageExamples": [
+            "autoIntensity={1.4}"
+          ]
+        },
+        {
+          "name": "takeoverDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.25,
+          "description": "接管时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 24
+          },
+          "codeExample": "takeoverDuration={0.25}"
+        },
+        {
+          "name": "autoResumeDelay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1000",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": 1000,
+          "description": "是否自动恢复播放延迟，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 25
+          },
+          "codeExample": "autoResumeDelay={1000}"
+        },
+        {
+          "name": "autoRampDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 81,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "是否自动逐渐增加时长，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 26
+          },
+          "codeExample": "autoRampDuration={0.6}"
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#FFFFFF'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 82,
+            "kind": "parameter"
+          },
+          "defaultValue": "#FFFFFF",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 27
+          },
+          "codeExample": "backgroundColor={palette.ink}",
+          "usageExamples": [
+            "backgroundColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 83,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LiquidEther/LiquidEther.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode={false}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,1909 @@
+{
+  "version": 1,
+  "id": "plasma-wave",
+  "name": "Plasma Wave",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+  "demoPath": "src/demos/background/plasma-wave.tsx",
+  "fields": [
+    {
+      "key": "t0.colors",
+      "name": "colors",
+      "label": "颜色列表 · t0",
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colors"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#a6b39a",
+        "#c3ae88"
+      ],
+      "upstreamDefault": "['#A855F7', '#06B6D4']",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.55,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.thickness",
+      "name": "thickness",
+      "label": "thickness · t0",
+      "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "thickness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.26,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.brightness",
+      "name": "brightness",
+      "label": "亮度 · t0",
+      "description": "亮度，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "brightness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.core",
+      "name": "core",
+      "label": "core · t0",
+      "description": "核心，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "core"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grain",
+      "name": "grain",
+      "label": "grain · t0",
+      "description": "颗粒，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grain"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.02,
+      "upstreamDefault": "0.03",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseInteraction",
+      "name": "mouseInteraction",
+      "label": "指针响应 · t0",
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseInteraction"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed1",
+      "name": "speed1",
+      "label": "speed1 · t0",
+      "description": "第一速度，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed1"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.05,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed2",
+      "name": "speed2",
+      "label": "speed2 · t0",
+      "description": "第二速度，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed2"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.05,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dir2",
+      "name": "dir2",
+      "label": "dir2 · t0",
+      "description": "第二方向，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dir2"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bend1",
+      "name": "bend1",
+      "label": "bend1 · t0",
+      "description": "第一弯曲，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bend1"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bend2",
+      "name": "bend2",
+      "label": "bend2 · t0",
+      "description": "第二弯曲，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bend2"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.focalLength",
+      "name": "focalLength",
+      "label": "focalLength · t0",
+      "description": "焦点长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "focalLength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.25,
+      "upstreamDefault": "1.25",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rotationDeg",
+      "name": "rotationDeg",
+      "label": "rotationDeg · t0",
+      "description": "旋转角度角度，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rotationDeg"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.xOffset",
+      "name": "xOffset",
+      "label": "xOffset · t0",
+      "description": "X轴偏移，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "xOffset"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.yOffset",
+      "name": "yOffset",
+      "label": "yOffset · t0",
+      "description": "Y轴偏移，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "yOffset"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.quality",
+      "name": "quality",
+      "label": "quality · t0",
+      "description": "渲染质量，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "quality"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 plasma wave 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 plasma wave 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "colors",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "['#A855F7', '#06B6D4']",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 307,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "#A855F7",
+        "#06B6D4"
+      ],
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 8
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "colors={[palette.sage, palette.sand]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "colors={[palette.sage, palette.sand]}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 308,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 9
+      },
+      "codeExample": "speed={0.55}",
+      "usageExamples": [
+        "speed={0.55}"
+      ]
+    },
+    {
+      "name": "speed1",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 309,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "第一速度，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 10
+      },
+      "codeExample": "speed1={0.05}"
+    },
+    {
+      "name": "speed2",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 310,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "第二速度，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 11
+      },
+      "codeExample": "speed2={0.05}"
+    },
+    {
+      "name": "dir2",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 311,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "第二方向，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 12
+      },
+      "codeExample": "dir2={1}"
+    },
+    {
+      "name": "bend1",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 312,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "第一弯曲，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 13
+      },
+      "codeExample": "bend1={1}"
+    },
+    {
+      "name": "bend2",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 313,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "第二弯曲，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 14
+      },
+      "codeExample": "bend2={0.5}"
+    },
+    {
+      "name": "thickness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 314,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 15
+      },
+      "codeExample": "thickness={0.26}",
+      "usageExamples": [
+        "thickness={0.26}"
+      ]
+    },
+    {
+      "name": "focalLength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 315,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.25,
+      "description": "焦点长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 16
+      },
+      "codeExample": "focalLength={1.25}"
+    },
+    {
+      "name": "rotationDeg",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 316,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "旋转角度角度，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 17
+      },
+      "codeExample": "rotationDeg={0}"
+    },
+    {
+      "name": "xOffset",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 317,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "X轴偏移，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 18
+      },
+      "codeExample": "xOffset={0}"
+    },
+    {
+      "name": "yOffset",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 318,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "Y轴偏移，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 19
+      },
+      "codeExample": "yOffset={0}"
+    },
+    {
+      "name": "brightness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 319,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "亮度，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 20
+      },
+      "codeExample": "brightness={1}",
+      "usageExamples": [
+        "brightness={1}"
+      ]
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 320,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "辉光，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 21
+      },
+      "codeExample": "glow={0.45}",
+      "usageExamples": [
+        "glow={0.45}"
+      ]
+    },
+    {
+      "name": "core",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 321,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "核心，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 22
+      },
+      "codeExample": "core={0.4}",
+      "usageExamples": [
+        "core={0.4}"
+      ]
+    },
+    {
+      "name": "grain",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.03",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 322,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.03,
+      "description": "颗粒，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 23
+      },
+      "codeExample": "grain={0.02}",
+      "usageExamples": [
+        "grain={0.02}"
+      ]
+    },
+    {
+      "name": "quality",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 323,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "渲染质量，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 24
+      },
+      "codeExample": "quality={1}"
+    },
+    {
+      "name": "mouseInteraction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 324,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "mouseInteraction",
+      "usageExamples": [
+        "mouseInteraction"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 325,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否入场，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 326,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "淡出，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 27
+      },
+      "codeExample": "fade={0}"
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 327,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 plasma wave 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 28
+      },
+      "codeExample": "opacity={1}"
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 328,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode={false}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 329,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 31
+      },
+      "codeExample": "dpr={1}"
+    },
+    {
+      "name": "className",
+      "type": "string | undefined",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+        "line": 331,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2700
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "children={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "HTMLAttributes<HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave';\n\n\n/** Agent Wan natural-tone preset for the real Plasma Wave component. */\nexport default function PlasmaWaveDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "PlasmaWave",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+      "props": [
+        {
+          "name": "colors",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "['#A855F7', '#06B6D4']",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 307,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "#A855F7",
+            "#06B6D4"
+          ],
+          "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "colors={[palette.sage, palette.sand]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "colors={[palette.sage, palette.sand]}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 308,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 9
+          },
+          "codeExample": "speed={0.55}",
+          "usageExamples": [
+            "speed={0.55}"
+          ]
+        },
+        {
+          "name": "speed1",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 309,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "第一速度，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 10
+          },
+          "codeExample": "speed1={0.05}"
+        },
+        {
+          "name": "speed2",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 310,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "第二速度，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 11
+          },
+          "codeExample": "speed2={0.05}"
+        },
+        {
+          "name": "dir2",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 311,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "第二方向，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 12
+          },
+          "codeExample": "dir2={1}"
+        },
+        {
+          "name": "bend1",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 312,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "第一弯曲，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 13
+          },
+          "codeExample": "bend1={1}"
+        },
+        {
+          "name": "bend2",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 313,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "第二弯曲，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 14
+          },
+          "codeExample": "bend2={0.5}"
+        },
+        {
+          "name": "thickness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 314,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 15
+          },
+          "codeExample": "thickness={0.26}",
+          "usageExamples": [
+            "thickness={0.26}"
+          ]
+        },
+        {
+          "name": "focalLength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 315,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.25,
+          "description": "焦点长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 16
+          },
+          "codeExample": "focalLength={1.25}"
+        },
+        {
+          "name": "rotationDeg",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 316,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "旋转角度角度，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 17
+          },
+          "codeExample": "rotationDeg={0}"
+        },
+        {
+          "name": "xOffset",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 317,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "X轴偏移，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 18
+          },
+          "codeExample": "xOffset={0}"
+        },
+        {
+          "name": "yOffset",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 318,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "Y轴偏移，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 19
+          },
+          "codeExample": "yOffset={0}"
+        },
+        {
+          "name": "brightness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 319,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "亮度，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 20
+          },
+          "codeExample": "brightness={1}",
+          "usageExamples": [
+            "brightness={1}"
+          ]
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 320,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "辉光，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 21
+          },
+          "codeExample": "glow={0.45}",
+          "usageExamples": [
+            "glow={0.45}"
+          ]
+        },
+        {
+          "name": "core",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 321,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "核心，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 22
+          },
+          "codeExample": "core={0.4}",
+          "usageExamples": [
+            "core={0.4}"
+          ]
+        },
+        {
+          "name": "grain",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.03",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 322,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.03,
+          "description": "颗粒，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 23
+          },
+          "codeExample": "grain={0.02}",
+          "usageExamples": [
+            "grain={0.02}"
+          ]
+        },
+        {
+          "name": "quality",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 323,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "渲染质量，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 24
+          },
+          "codeExample": "quality={1}"
+        },
+        {
+          "name": "mouseInteraction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 324,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "mouseInteraction",
+          "usageExamples": [
+            "mouseInteraction"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 325,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否入场，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 326,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "淡出，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 27
+          },
+          "codeExample": "fade={0}"
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 327,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 plasma wave 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 28
+          },
+          "codeExample": "opacity={1}"
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 328,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode={false}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 329,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 31
+          },
+          "codeExample": "dpr={1}"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/PlasmaWave/PlasmaWave.tsx",
+            "line": 331,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "HTMLAttributes<HTMLDivElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

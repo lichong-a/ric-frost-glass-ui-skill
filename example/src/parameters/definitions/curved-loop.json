@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "id": "curved-loop",
+  "name": "Curved Loop",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+  "demoPath": "src/demos/text/curved-loop.tsx",
+  "fields": [
+    {
+      "key": "t0.marqueeText",
+      "name": "marqueeText",
+      "label": "marqueeText · t0",
+      "description": "跑马灯文字，控制 curved loop 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "marqueeText"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "AGENT WAN · QUIET CRAFT ·",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.4,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.curveAmount",
+      "name": "curveAmount",
+      "label": "curveAmount · t0",
+      "description": "曲线幅度，控制 curved loop 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "curveAmount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 160,
+      "upstreamDefault": "400",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 curved loop 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "'left' | 'right'",
+      "defaultValue": "right",
+      "upstreamDefault": "'left'",
+      "control": "select",
+      "options": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interactive",
+      "name": "interactive",
+      "label": "interactive · t0",
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interactive"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "marqueeText",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 16,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "跑马灯文字，控制 curved loop 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 7
+      },
+      "codeExample": "marqueeText=\"AGENT WAN · QUIET CRAFT ·\"",
+      "usageExamples": [
+        "marqueeText=\"AGENT WAN · QUIET CRAFT ·\""
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 17,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 8
+      },
+      "codeExample": "speed={1.4}",
+      "usageExamples": [
+        "speed={1.4}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 9
+      },
+      "codeExample": "className=\"aw-rb-curved\"",
+      "usageExamples": [
+        "className=\"aw-rb-curved\""
+      ]
+    },
+    {
+      "name": "curveAmount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 19,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "曲线幅度，控制 curved loop 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 10
+      },
+      "codeExample": "curveAmount={160}",
+      "usageExamples": [
+        "curveAmount={160}"
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "'left' | 'right'",
+      "required": false,
+      "defaultExpression": "'left'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 20,
+        "kind": "parameter"
+      },
+      "defaultValue": "left",
+      "description": "方向，控制 curved loop 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "left",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "left",
+          "right"
+        ]
+      },
+      "codeExample": "direction=\"right\"",
+      "usageExamples": [
+        "direction=\"right\""
+      ]
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 21,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+        "line": 12
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "interactive",
+      "usageExamples": [
+        "interactive"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop';\nimport { palette } from '../../shared/demo-support';\n\n// 真实拖动曲线跑马灯；演示高度覆盖上游100vh默认值，避免撑大预览。\n\nexport default function CurvedLoopDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <><style>{`.curved-loop-jacket { min-height: 300px; }.aw-rb-curved { fill: #52604e; font-size: 5rem; }`}</style><Component      className=\"aw-rb-curved\" /*__AW_PROPS_t0__*/  /></>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "CurvedLoop",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+      "props": [
+        {
+          "name": "marqueeText",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 16,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "跑马灯文字，控制 curved loop 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 7
+          },
+          "codeExample": "marqueeText=\"AGENT WAN · QUIET CRAFT ·\"",
+          "usageExamples": [
+            "marqueeText=\"AGENT WAN · QUIET CRAFT ·\""
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 17,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 8
+          },
+          "codeExample": "speed={1.4}",
+          "usageExamples": [
+            "speed={1.4}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 9
+          },
+          "codeExample": "className=\"aw-rb-curved\"",
+          "usageExamples": [
+            "className=\"aw-rb-curved\""
+          ]
+        },
+        {
+          "name": "curveAmount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 19,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "曲线幅度，控制 curved loop 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 10
+          },
+          "codeExample": "curveAmount={160}",
+          "usageExamples": [
+            "curveAmount={160}"
+          ]
+        },
+        {
+          "name": "direction",
+          "type": "'left' | 'right'",
+          "required": false,
+          "defaultExpression": "'left'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 20,
+            "kind": "parameter"
+          },
+          "defaultValue": "left",
+          "description": "方向，控制 curved loop 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "left",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "left",
+              "right"
+            ]
+          },
+          "codeExample": "direction=\"right\"",
+          "usageExamples": [
+            "direction=\"right\""
+          ]
+        },
+        {
+          "name": "interactive",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 21,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/CurvedLoop/CurvedLoop.tsx",
+            "line": 12
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "interactive",
+          "usageExamples": [
+            "interactive"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,16 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-input, .aw-business-color-input, .aw-business-input-group { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-input { width:100%; min-height:44px; padding:10px 12px; color:var(--aw-color-text-primary); background:var(--aw-surface-control); border:1px solid var(--aw-color-border-control); border-radius:var(--aw-radius-control); box-shadow:var(--aw-shadow-control); font:inherit }
+.aw-business-input[aria-invalid=true] { border-color:var(--aw-palette-effect-terra) }
+.aw-business-color-input { width:60px; height:44px; padding:3px; border:1px solid var(--aw-color-border-control); border-radius:var(--aw-radius-control); background:var(--aw-surface-control) }
+.aw-business-input-group { display:flex; align-items:stretch }
+.aw-business-input-group > span { display:grid; align-items:center; padding:10px; background:var(--aw-surface-control); border:1px solid var(--aw-color-border-control); border-radius:10px 0 0 10px; font-size:13px }
+.aw-business-input-group input { border-radius:0!important; min-width:0 }
+.aw-business-input-group > span:last-child { border-radius:0 10px 10px 0 }
+.aw-business-input { transition:border-color 180ms ease,box-shadow 220ms ease,background-color 180ms ease }
+.aw-business-input:focus { border-color:var(--aw-color-action-primary); box-shadow:0 0 0 4px color-mix(in srgb,var(--aw-color-action-primary) 10%,transparent) }
+.aw-business-input { font:inherit; }
+.aw-business-input:focus-visible { outline:2px solid var(--aw-color-action-primary); outline-offset:3px; }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-input, .aw-business-input::before, .aw-business-input::after, .aw-business-color-input, .aw-business-color-input::before, .aw-business-color-input::after, .aw-business-input-group, .aw-business-input-group::before, .aw-business-input-group::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-input, [data-motion=reduce] .aw-business-input::before, [data-motion=reduce] .aw-business-input::after, [data-motion=reduce] .aw-business-color-input, [data-motion=reduce] .aw-business-color-input::before, [data-motion=reduce] .aw-business-color-input::after, [data-motion=reduce] .aw-business-input-group, [data-motion=reduce] .aw-business-input-group::before, [data-motion=reduce] .aw-business-input-group::after { transition:none; animation:none; scroll-behavior:auto; }

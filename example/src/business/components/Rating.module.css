@@ -1,0 +1,9 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-rating { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-rating button { width:40px; height:40px; padding:0; border:0; color:var(--aw-color-text-secondary); background:none; font-size:28px; cursor:pointer }
+.aw-business-rating button[data-filled=true] { color:var(--aw-color-action-primary) }
+.aw-business-rating button { transition:color 160ms ease,scale 280ms var(--aw-business-spring) }
+.aw-business-rating button[data-filled=true] { animation:aw-business-star 320ms var(--aw-business-spring) }
+@keyframes aw-business-star { 0% { scale:.8; } 60% { scale:1.22; } 100% { scale:1; } }
+@media (prefers-reduced-motion:reduce) { .aw-business-rating, .aw-business-rating::before, .aw-business-rating::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-rating, [data-motion=reduce] .aw-business-rating::before, [data-motion=reduce] .aw-business-rating::after { transition:none; animation:none; scroll-behavior:auto; }

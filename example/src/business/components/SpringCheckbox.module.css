@@ -1,0 +1,12 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-spring-check, .aw-business-check-box, .aw-business-check-fill { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-spring-check { position:relative; display:inline-flex; flex:0 0 24px; width:24px; height:24px; vertical-align:middle }
+.aw-business-spring-check input { position:absolute; inset:0; width:100%; height:100%; margin:0; padding:0; opacity:0; z-index:2; cursor:pointer }
+.aw-business-check-box { position:relative; display:grid; place-items:center; width:24px; height:24px; border:1.5px solid var(--aw-color-border-control); border-radius:7px; background:var(--aw-surface-control) }
+.aw-business-check-fill { position:absolute; inset:-1.5px; border-radius:7px; background:var(--aw-color-action-primary) }
+.aw-business-check-box svg { position:relative; width:20px; height:20px; color:var(--aw-palette-ivory) }
+.aw-business-spring-check input:focus-visible + span { outline:2px solid var(--aw-color-action-primary); outline-offset:4px }
+.aw-business-spring-check input:disabled + span { opacity:.45 }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-spring-check, .aw-business-spring-check::before, .aw-business-spring-check::after, .aw-business-check-box, .aw-business-check-box::before, .aw-business-check-box::after, .aw-business-check-fill, .aw-business-check-fill::before, .aw-business-check-fill::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-spring-check, [data-motion=reduce] .aw-business-spring-check::before, [data-motion=reduce] .aw-business-spring-check::after, [data-motion=reduce] .aw-business-check-box, [data-motion=reduce] .aw-business-check-box::before, [data-motion=reduce] .aw-business-check-box::after, [data-motion=reduce] .aw-business-check-fill, [data-motion=reduce] .aw-business-check-fill::before, [data-motion=reduce] .aw-business-check-fill::after { transition:none; animation:none; scroll-behavior:auto; }

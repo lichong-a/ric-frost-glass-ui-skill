@@ -1,0 +1,1480 @@
+{
+  "version": 1,
+  "id": "pulse-heart",
+  "name": "Pulse Heart",
+  "sourcePath": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+  "demoPath": "src/demos/actions/pulse-heart.tsx",
+  "fields": [
+    {
+      "key": "t0.likedColor",
+      "name": "likedColor",
+      "label": "likedColor · t0",
+      "description": "点赞状态颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "likedColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#9c6d56",
+      "upstreamDefault": "'#ff4d6d'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pillColor",
+      "name": "pillColor",
+      "label": "pillColor · t0",
+      "description": "胶囊颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pillColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "rgb(250 247 240 / 0.82)",
+      "upstreamDefault": "'#232326'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 28,
+      "upstreamDefault": "40",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "喜欢这个示例",
+      "upstreamDefault": "'Like'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showCount",
+      "name": "showCount",
+      "label": "showCount · t0",
+      "description": "是否显示数量，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showCount"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.corner",
+      "name": "corner",
+      "label": "corner · t0",
+      "description": "角，控制 pulse heart 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "corner"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 32,
+      "upstreamDefault": "32",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.duration",
+      "name": "duration",
+      "label": "持续时间 · t0",
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "duration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 560,
+      "upstreamDefault": "560",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dotSize",
+      "name": "dotSize",
+      "label": "dotSize · t0",
+      "description": "圆点尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dotSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.overshoot",
+      "name": "overshoot",
+      "label": "overshoot · t0",
+      "description": "过冲，控制 pulse heart 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "overshoot"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.7,
+      "upstreamDefault": "1.7",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.beat",
+      "name": "beat",
+      "label": "beat · t0",
+      "description": "拍动，控制 pulse heart 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "beat"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rollDuration",
+      "name": "rollDuration",
+      "label": "rollDuration · t0",
+      "description": "滚动翻转时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rollDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 350,
+      "upstreamDefault": "350",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "liked",
+      "type": "boolean",
+      "required": false,
+      "description": "是否点赞状态，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "liked={liked}",
+      "usageExamples": [
+        "liked={liked}"
+      ]
+    },
+    {
+      "name": "defaultLiked",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 53,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否非受控初始点赞状态，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 12
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "defaultLiked={false}"
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 54,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "数量，控制 pulse heart 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 13
+      },
+      "codeExample": "count={count}",
+      "usageExamples": [
+        "count={count}"
+      ]
+    },
+    {
+      "name": "onChange",
+      "type": "(liked: boolean, count: number) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((liked: boolean, count: number) => void) | undefined"
+      },
+      "codeExample": "onChange={(next, total) => { setLiked(next); setCount(total); }}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={(next, total) => { setLiked(next); setCount(total); }}"
+      ]
+    },
+    {
+      "name": "showCount",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 56,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示数量，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showCount",
+      "usageExamples": [
+        "showCount"
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "PulseHeartIcon | ReactNode",
+      "required": false,
+      "defaultExpression": "'heart'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 57,
+        "kind": "parameter"
+      },
+      "defaultValue": "heart",
+      "description": "图标，控制 pulse heart 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "bigint"
+          },
+          {
+            "type": "false",
+            "kind": "enum",
+            "options": [
+              false
+            ]
+          },
+          {
+            "type": "true",
+            "kind": "enum",
+            "options": [
+              true
+            ]
+          },
+          {
+            "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>>"
+          },
+          {
+            "type": "Iterable<React.ReactNode>"
+          },
+          {
+            "type": "React.ReactPortal"
+          },
+          {
+            "type": "Promise<AwaitedReactNode>"
+          }
+        ]
+      },
+      "codeExample": "icon={\"heart\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    },
+    {
+      "name": "idleOutline",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 58,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否静止轮廓，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "idleOutline={true}"
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "40",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 59,
+        "kind": "parameter"
+      },
+      "defaultValue": 40,
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 18
+      },
+      "codeExample": "size={28}",
+      "usageExamples": [
+        "size={28}"
+      ]
+    },
+    {
+      "name": "corner",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "32",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 60,
+        "kind": "parameter"
+      },
+      "defaultValue": 32,
+      "description": "角，控制 pulse heart 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 19
+      },
+      "codeExample": "corner={32}"
+    },
+    {
+      "name": "likedColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ff4d6d'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 61,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ff4d6d",
+      "description": "点赞状态颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 20
+      },
+      "codeExample": "likedColor={palette.terra}",
+      "usageExamples": [
+        "likedColor={palette.terra}"
+      ]
+    },
+    {
+      "name": "idleColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#8b8b93'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 62,
+        "kind": "parameter"
+      },
+      "defaultValue": "#8b8b93",
+      "description": "静止颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 21
+      },
+      "codeExample": "idleColor={palette.primary}",
+      "usageExamples": [
+        "idleColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "pillColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#232326'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": "#232326",
+      "description": "胶囊颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 22
+      },
+      "codeExample": "pillColor={palette.surface}",
+      "usageExamples": [
+        "pillColor={palette.surface}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 23
+      },
+      "codeExample": "textColor={palette.ink}",
+      "usageExamples": [
+        "textColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "560",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": 560,
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 24
+      },
+      "codeExample": "duration={560}"
+    },
+    {
+      "name": "dotSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "圆点尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 25
+      },
+      "codeExample": "dotSize={0.3}"
+    },
+    {
+      "name": "overshoot",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.7,
+      "description": "过冲，控制 pulse heart 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 26
+      },
+      "codeExample": "overshoot={1.7}"
+    },
+    {
+      "name": "beat",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "拍动，控制 pulse heart 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 27
+      },
+      "codeExample": "beat={3}"
+    },
+    {
+      "name": "rollDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "350",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": 350,
+      "description": "滚动翻转时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 28
+      },
+      "codeExample": "rollDuration={350}"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Like'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": "Like",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 30
+      },
+      "codeExample": "label=\"喜欢这个示例\"",
+      "usageExamples": [
+        "label=\"喜欢这个示例\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+        "line": 31
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport PulseHeart from '../../../.upstream/src/ts-default/Micro/PulseHeart/PulseHeart';\nimport { palette, DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nexport default function PulseHeartDemo() {\n  const [liked, setLiked] = useState(false);\n  const [count, setCount] = useState(24);\n  return <DemoPanel title=\"Pulse Heart · 喜欢反馈\"><div className={cn(\"aw-micro-stack\")}>\n    <PulseHeart liked={liked} count={count} onChange={(next, total) => { setLiked(next); setCount(total); }}  idleColor={palette.primary}      /*__AW_PROPS_t0__*/  />\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">{liked ? '已喜欢' : '未喜欢'} · 本地示例计数 {count}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "PulseHeart",
+      "sourcePath": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+      "props": [
+        {
+          "name": "liked",
+          "type": "boolean",
+          "required": false,
+          "description": "是否点赞状态，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "liked={liked}",
+          "usageExamples": [
+            "liked={liked}"
+          ]
+        },
+        {
+          "name": "defaultLiked",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 53,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否非受控初始点赞状态，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 12
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "defaultLiked={false}"
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 54,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "数量，控制 pulse heart 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 13
+          },
+          "codeExample": "count={count}",
+          "usageExamples": [
+            "count={count}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(liked: boolean, count: number) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((liked: boolean, count: number) => void) | undefined"
+          },
+          "codeExample": "onChange={(next, total) => { setLiked(next); setCount(total); }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={(next, total) => { setLiked(next); setCount(total); }}"
+          ]
+        },
+        {
+          "name": "showCount",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 56,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示数量，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showCount",
+          "usageExamples": [
+            "showCount"
+          ]
+        },
+        {
+          "name": "icon",
+          "type": "PulseHeartIcon | ReactNode",
+          "required": false,
+          "defaultExpression": "'heart'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 57,
+            "kind": "parameter"
+          },
+          "defaultValue": "heart",
+          "description": "图标，控制 pulse heart 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "bigint"
+              },
+              {
+                "type": "false",
+                "kind": "enum",
+                "options": [
+                  false
+                ]
+              },
+              {
+                "type": "true",
+                "kind": "enum",
+                "options": [
+                  true
+                ]
+              },
+              {
+                "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>>"
+              },
+              {
+                "type": "Iterable<React.ReactNode>"
+              },
+              {
+                "type": "React.ReactPortal"
+              },
+              {
+                "type": "Promise<AwaitedReactNode>"
+              }
+            ]
+          },
+          "codeExample": "icon={\"heart\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        },
+        {
+          "name": "idleOutline",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 58,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否静止轮廓，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "idleOutline={true}"
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "40",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 59,
+            "kind": "parameter"
+          },
+          "defaultValue": 40,
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 18
+          },
+          "codeExample": "size={28}",
+          "usageExamples": [
+            "size={28}"
+          ]
+        },
+        {
+          "name": "corner",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "32",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 60,
+            "kind": "parameter"
+          },
+          "defaultValue": 32,
+          "description": "角，控制 pulse heart 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 19
+          },
+          "codeExample": "corner={32}"
+        },
+        {
+          "name": "likedColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ff4d6d'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 61,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ff4d6d",
+          "description": "点赞状态颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 20
+          },
+          "codeExample": "likedColor={palette.terra}",
+          "usageExamples": [
+            "likedColor={palette.terra}"
+          ]
+        },
+        {
+          "name": "idleColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#8b8b93'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 62,
+            "kind": "parameter"
+          },
+          "defaultValue": "#8b8b93",
+          "description": "静止颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 21
+          },
+          "codeExample": "idleColor={palette.primary}",
+          "usageExamples": [
+            "idleColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "pillColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#232326'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": "#232326",
+          "description": "胶囊颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 22
+          },
+          "codeExample": "pillColor={palette.surface}",
+          "usageExamples": [
+            "pillColor={palette.surface}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 23
+          },
+          "codeExample": "textColor={palette.ink}",
+          "usageExamples": [
+            "textColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "560",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": 560,
+          "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 24
+          },
+          "codeExample": "duration={560}"
+        },
+        {
+          "name": "dotSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "圆点尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 25
+          },
+          "codeExample": "dotSize={0.3}"
+        },
+        {
+          "name": "overshoot",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.7,
+          "description": "过冲，控制 pulse heart 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 26
+          },
+          "codeExample": "overshoot={1.7}"
+        },
+        {
+          "name": "beat",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "拍动，控制 pulse heart 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 27
+          },
+          "codeExample": "beat={3}"
+        },
+        {
+          "name": "rollDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "350",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": 350,
+          "description": "滚动翻转时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 28
+          },
+          "codeExample": "rollDuration={350}"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Like'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": "Like",
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 30
+          },
+          "codeExample": "label=\"喜欢这个示例\"",
+          "usageExamples": [
+            "label=\"喜欢这个示例\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/PulseHeart/PulseHeart.tsx",
+            "line": 31
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

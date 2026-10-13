@@ -1,0 +1,928 @@
+{
+  "version": 1,
+  "id": "border-glow",
+  "name": "Border Glow",
+  "sourcePath": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+  "demoPath": "src/demos/cards/border-glow.tsx",
+  "fields": [
+    {
+      "key": "t0.edgeSensitivity",
+      "name": "edgeSensitivity",
+      "label": "edgeSensitivity · t0",
+      "description": "边缘灵敏度，控制 border glow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeSensitivity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 26,
+      "upstreamDefault": "30",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glowColor",
+      "name": "glowColor",
+      "label": "glowColor · t0",
+      "description": "辉光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glowColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "82 96 78",
+      "upstreamDefault": "'40 80 80'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#120F17'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.borderRadius",
+      "name": "borderRadius",
+      "label": "borderRadius · t0",
+      "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "borderRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "28",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glowRadius",
+      "name": "glowRadius",
+      "label": "glowRadius · t0",
+      "description": "辉光半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glowRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 24,
+      "upstreamDefault": "40",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glowIntensity",
+      "name": "glowIntensity",
+      "label": "glowIntensity · t0",
+      "description": "辉光强度，控制 border glow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glowIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.55,
+      "upstreamDefault": "1.0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.coneSpread",
+      "name": "coneSpread",
+      "label": "coneSpread · t0",
+      "description": "锥形展开间距，控制 border glow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "coneSpread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 22,
+      "upstreamDefault": "25",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animated",
+      "name": "animated",
+      "label": "animated · t0",
+      "description": "是否播放动画，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animated"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.colors",
+      "name": "colors",
+      "label": "颜色列表 · t0",
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colors"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#52604e",
+        "#a6b39a",
+        "#c3ae88"
+      ],
+      "upstreamDefault": "['#c084fc', '#f472b6', '#38bdf8']",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fillOpacity",
+      "name": "fillOpacity",
+      "label": "fillOpacity · t0",
+      "description": "填充不透明度，控制 border glow 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fillOpacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.05,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 7
+      },
+      "codeExample": "children={<><div style={{ padding: 32, color: palette.ink }}><h3>安静的轮廓</h3><p>将指针靠近边缘，观察光沿轮廓移动。</p></div></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><div style={{ padding: 32, color: palette.ink }}><h3>安静的轮廓</h3><p>将指针靠近边缘，观察光沿轮廓移动。</p></div></>}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 85,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 8
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "edgeSensitivity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "30",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 86,
+        "kind": "parameter"
+      },
+      "defaultValue": 30,
+      "description": "边缘灵敏度，控制 border glow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 9
+      },
+      "codeExample": "edgeSensitivity={26}",
+      "usageExamples": [
+        "edgeSensitivity={26}"
+      ]
+    },
+    {
+      "name": "glowColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'40 80 80'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 87,
+        "kind": "parameter"
+      },
+      "defaultValue": "40 80 80",
+      "description": "辉光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 10
+      },
+      "codeExample": "glowColor=\"82 96 78\"",
+      "usageExamples": [
+        "glowColor=\"82 96 78\""
+      ]
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#120F17'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 88,
+        "kind": "parameter"
+      },
+      "defaultValue": "#120F17",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 11
+      },
+      "codeExample": "backgroundColor={palette.ivory}",
+      "usageExamples": [
+        "backgroundColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "28",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 89,
+        "kind": "parameter"
+      },
+      "defaultValue": 28,
+      "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 12
+      },
+      "codeExample": "borderRadius={20}",
+      "usageExamples": [
+        "borderRadius={20}"
+      ]
+    },
+    {
+      "name": "glowRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "40",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 90,
+        "kind": "parameter"
+      },
+      "defaultValue": 40,
+      "description": "辉光半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 13
+      },
+      "codeExample": "glowRadius={24}",
+      "usageExamples": [
+        "glowRadius={24}"
+      ]
+    },
+    {
+      "name": "glowIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 91,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "辉光强度，控制 border glow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 14
+      },
+      "codeExample": "glowIntensity={0.55}",
+      "usageExamples": [
+        "glowIntensity={0.55}"
+      ]
+    },
+    {
+      "name": "coneSpread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 92,
+        "kind": "parameter"
+      },
+      "defaultValue": 25,
+      "description": "锥形展开间距，控制 border glow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 15
+      },
+      "codeExample": "coneSpread={22}",
+      "usageExamples": [
+        "coneSpread={22}"
+      ]
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 93,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否播放动画，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "animated={false}",
+      "usageExamples": [
+        "animated={false}"
+      ]
+    },
+    {
+      "name": "colors",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "['#c084fc', '#f472b6', '#38bdf8']",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 94,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "#c084fc",
+        "#f472b6",
+        "#38bdf8"
+      ],
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "colors={[palette.primary, palette.sage, palette.sand]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "colors={[palette.primary, palette.sage, palette.sand]}"
+      ]
+    },
+    {
+      "name": "fillOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 95,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "填充不透明度，控制 border glow 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+        "line": 18
+      },
+      "codeExample": "fillOpacity={0.05}",
+      "usageExamples": [
+        "fillOpacity={0.05}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/BorderGlow/BorderGlow';\nimport { palette } from '../../shared/demo-support';\n\n// 注意glowColor使用空格分隔RGB值；颜色数组均为规范自然色。\n// 此演示需要可用WebGL上下文；不支持时应显示能力提示，不声称效果已运行。\n\nexport default function BorderGlowDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 340, position: 'relative', display: 'grid', placeItems: 'center', padding: 24, color: palette.ink }}>\n      <Component\n\n   /*__AW_PROPS_t0__*/ ><div style={{ padding: 32, color: palette.ink }}><h3>安静的轮廓</h3><p>将指针靠近边缘，观察光沿轮廓移动。</p></div></Component>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "BorderGlow",
+      "sourcePath": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><div style={{ padding: 32, color: palette.ink }}><h3>安静的轮廓</h3><p>将指针靠近边缘，观察光沿轮廓移动。</p></div></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><div style={{ padding: 32, color: palette.ink }}><h3>安静的轮廓</h3><p>将指针靠近边缘，观察光沿轮廓移动。</p></div></>}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 85,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 8
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "edgeSensitivity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "30",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 86,
+            "kind": "parameter"
+          },
+          "defaultValue": 30,
+          "description": "边缘灵敏度，控制 border glow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 9
+          },
+          "codeExample": "edgeSensitivity={26}",
+          "usageExamples": [
+            "edgeSensitivity={26}"
+          ]
+        },
+        {
+          "name": "glowColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'40 80 80'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 87,
+            "kind": "parameter"
+          },
+          "defaultValue": "40 80 80",
+          "description": "辉光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 10
+          },
+          "codeExample": "glowColor=\"82 96 78\"",
+          "usageExamples": [
+            "glowColor=\"82 96 78\""
+          ]
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#120F17'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 88,
+            "kind": "parameter"
+          },
+          "defaultValue": "#120F17",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 11
+          },
+          "codeExample": "backgroundColor={palette.ivory}",
+          "usageExamples": [
+            "backgroundColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "borderRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "28",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 89,
+            "kind": "parameter"
+          },
+          "defaultValue": 28,
+          "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 12
+          },
+          "codeExample": "borderRadius={20}",
+          "usageExamples": [
+            "borderRadius={20}"
+          ]
+        },
+        {
+          "name": "glowRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "40",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 90,
+            "kind": "parameter"
+          },
+          "defaultValue": 40,
+          "description": "辉光半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 13
+          },
+          "codeExample": "glowRadius={24}",
+          "usageExamples": [
+            "glowRadius={24}"
+          ]
+        },
+        {
+          "name": "glowIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 91,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "辉光强度，控制 border glow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 14
+          },
+          "codeExample": "glowIntensity={0.55}",
+          "usageExamples": [
+            "glowIntensity={0.55}"
+          ]
+        },
+        {
+          "name": "coneSpread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 92,
+            "kind": "parameter"
+          },
+          "defaultValue": 25,
+          "description": "锥形展开间距，控制 border glow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 15
+          },
+          "codeExample": "coneSpread={22}",
+          "usageExamples": [
+            "coneSpread={22}"
+          ]
+        },
+        {
+          "name": "animated",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 93,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否播放动画，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "animated={false}",
+          "usageExamples": [
+            "animated={false}"
+          ]
+        },
+        {
+          "name": "colors",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "['#c084fc', '#f472b6', '#38bdf8']",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 94,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "#c084fc",
+            "#f472b6",
+            "#38bdf8"
+          ],
+          "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "colors={[palette.primary, palette.sage, palette.sand]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "colors={[palette.primary, palette.sage, palette.sand]}"
+          ]
+        },
+        {
+          "name": "fillOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 95,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "填充不透明度，控制 border glow 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/BorderGlow/BorderGlow.tsx",
+            "line": 18
+          },
+          "codeExample": "fillOpacity={0.05}",
+          "usageExamples": [
+            "fillOpacity={0.05}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

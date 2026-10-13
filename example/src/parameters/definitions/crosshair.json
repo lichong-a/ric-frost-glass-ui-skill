@@ -1,0 +1,1405 @@
+{
+  "version": 1,
+  "id": "crosshair",
+  "name": "Crosshair",
+  "sourcePath": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+  "demoPath": "src/demos/pointer/crosshair.tsx",
+  "fields": [
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.targetEffect",
+      "name": "targetEffect",
+      "label": "targetEffect · t0",
+      "description": "目标效果，控制 crosshair 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "targetEffect"
+        }
+      ],
+      "type": "CrosshairTargetEffect",
+      "defaultValue": "lock",
+      "upstreamDefault": "'lock'",
+      "control": "select",
+      "options": [
+        {
+          "label": "lock",
+          "value": "lock"
+        },
+        {
+          "label": "glitch",
+          "value": "glitch"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.targetSelector",
+      "name": "targetSelector",
+      "label": "targetSelector · t0",
+      "description": "目标选择器，控制 crosshair 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "targetSelector"
+        }
+      ],
+      "type": "string",
+      "defaultValue": ".aw-crosshair-target",
+      "upstreamDefault": "'a, button, [data-crosshair-target]'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.thickness",
+      "name": "thickness",
+      "label": "thickness · t0",
+      "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "thickness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 crosshair 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.7,
+      "upstreamDefault": "0.85",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.smoothing",
+      "name": "smoothing",
+      "label": "smoothing · t0",
+      "description": "平滑，控制 crosshair 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "smoothing"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.35",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showCoordinates",
+      "name": "showCoordinates",
+      "label": "showCoordinates · t0",
+      "description": "是否显示坐标，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showCoordinates"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hideCursor",
+      "name": "hideCursor",
+      "label": "hideCursor · t0",
+      "description": "是否隐藏指针，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hideCursor"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.blendMode",
+      "name": "blendMode",
+      "label": "blendMode · t0",
+      "description": "混合模式，控制 crosshair 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "blendMode"
+        }
+      ],
+      "type": "'normal' | 'difference'",
+      "defaultValue": "normal",
+      "upstreamDefault": "'normal'",
+      "control": "select",
+      "options": [
+        {
+          "label": "normal",
+          "value": "normal"
+        },
+        {
+          "label": "difference",
+          "value": "difference"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineStyle",
+      "name": "lineStyle",
+      "label": "lineStyle · t0",
+      "description": "线条样式，控制 crosshair 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineStyle"
+        }
+      ],
+      "type": "CrosshairLineStyle",
+      "defaultValue": "solid",
+      "upstreamDefault": "'solid'",
+      "control": "select",
+      "options": [
+        {
+          "label": "solid",
+          "value": "solid"
+        },
+        {
+          "label": "dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "dotted",
+          "value": "dotted"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 crosshair 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.clickPulse",
+      "name": "clickPulse",
+      "label": "clickPulse · t0",
+      "description": "是否点击脉冲，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "clickPulse"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 10
+      },
+      "codeExample": "color={palette.primary}",
+      "usageExamples": [
+        "color={palette.primary}"
+      ]
+    },
+    {
+      "name": "containerRef",
+      "type": "React.RefObject<HTMLElement | null> | null",
+      "required": false,
+      "defaultExpression": "null",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": null,
+      "description": "容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 11
+      },
+      "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: containerRef={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+      "usageExamples": [
+        "containerRef={scopeRef}"
+      ]
+    },
+    {
+      "name": "thickness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 12
+      },
+      "codeExample": "thickness={1}",
+      "usageExamples": [
+        "thickness={1}"
+      ]
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.85",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.85,
+      "description": "不透明度，控制 crosshair 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 13
+      },
+      "codeExample": "opacity={0.7}",
+      "usageExamples": [
+        "opacity={0.7}"
+      ]
+    },
+    {
+      "name": "lineStyle",
+      "type": "CrosshairLineStyle",
+      "required": false,
+      "defaultExpression": "'solid'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": "solid",
+      "description": "线条样式，控制 crosshair 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "solid",
+        "dashed",
+        "dotted"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "solid",
+          "dashed",
+          "dotted"
+        ]
+      },
+      "codeExample": "lineStyle={\"solid\"}"
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 15
+      },
+      "codeExample": "gap={0}"
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "淡出，控制 crosshair 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 16
+      },
+      "codeExample": "fade={0}"
+    },
+    {
+      "name": "smoothing",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.35",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.35,
+      "description": "平滑，控制 crosshair 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 17
+      },
+      "codeExample": "smoothing={0.3}",
+      "usageExamples": [
+        "smoothing={0.3}"
+      ]
+    },
+    {
+      "name": "showCoordinates",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示坐标，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showCoordinates",
+      "usageExamples": [
+        "showCoordinates"
+      ]
+    },
+    {
+      "name": "targetEffect",
+      "type": "CrosshairTargetEffect",
+      "required": false,
+      "defaultExpression": "'lock'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultValue": "lock",
+      "description": "目标效果，控制 crosshair 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "lock",
+        "glitch",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "lock",
+          "glitch",
+          "none"
+        ]
+      },
+      "codeExample": "targetEffect=\"lock\"",
+      "usageExamples": [
+        "targetEffect=\"lock\""
+      ]
+    },
+    {
+      "name": "targetSelector",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'a, button, [data-crosshair-target]'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": "a, button, [data-crosshair-target]",
+      "description": "目标选择器，控制 crosshair 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 20
+      },
+      "codeExample": "targetSelector=\".aw-crosshair-target\"",
+      "usageExamples": [
+        "targetSelector=\".aw-crosshair-target\""
+      ]
+    },
+    {
+      "name": "clickPulse",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否点击脉冲，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickPulse={true}"
+    },
+    {
+      "name": "hideCursor",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 81,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否隐藏指针，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 22
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "hideCursor={false}",
+      "usageExamples": [
+        "hideCursor={false}"
+      ]
+    },
+    {
+      "name": "blendMode",
+      "type": "'normal' | 'difference'",
+      "required": false,
+      "defaultExpression": "'normal'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 82,
+        "kind": "parameter"
+      },
+      "defaultValue": "normal",
+      "description": "混合模式，控制 crosshair 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "normal",
+        "difference"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "normal",
+          "difference"
+        ]
+      },
+      "codeExample": "blendMode=\"normal\"",
+      "usageExamples": [
+        "blendMode=\"normal\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 83,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 24
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+        "line": 25
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/Crosshair/Crosshair';\nimport { palette } from '../../shared/demo-support';\nimport { useRef, useState } from \"react\";\n// 十字线与实时坐标绑定到局部容器，目标按钮保持可操作。\n// 此演示使用Canvas；确保容器拥有非零宽高。\n\nexport default function CrosshairDemo() {\n  const scopeRef = useRef<HTMLDivElement>(null!); const [count, setCount] = useState(0);\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div ref={scopeRef} style={{ position: 'relative', height: 340, display: 'grid', placeItems: 'center' }}><Component containerRef={scopeRef}          /*__AW_PROPS_t0__*/  /><button className=\"aw-button aw-crosshair-target\" data-variant=\"secondary\"  onClick={() => setCount(value => value + 1)} /*__AW_PROPS_t1__*/ >锁定目标 · {count}</button></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Crosshair",
+      "sourcePath": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+      "props": [
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 10
+          },
+          "codeExample": "color={palette.primary}",
+          "usageExamples": [
+            "color={palette.primary}"
+          ]
+        },
+        {
+          "name": "containerRef",
+          "type": "React.RefObject<HTMLElement | null> | null",
+          "required": false,
+          "defaultExpression": "null",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": null,
+          "description": "容器引用的实际 DOM 或组件句柄引用，用于定位、聚焦或命令调用。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 11
+          },
+          "codeExample": "const elementRef = useRef<HTMLElement | null>(null);\n// JSX: containerRef={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "containerRef={scopeRef}"
+          ]
+        },
+        {
+          "name": "thickness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 12
+          },
+          "codeExample": "thickness={1}",
+          "usageExamples": [
+            "thickness={1}"
+          ]
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.85",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.85,
+          "description": "不透明度，控制 crosshair 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 13
+          },
+          "codeExample": "opacity={0.7}",
+          "usageExamples": [
+            "opacity={0.7}"
+          ]
+        },
+        {
+          "name": "lineStyle",
+          "type": "CrosshairLineStyle",
+          "required": false,
+          "defaultExpression": "'solid'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": "solid",
+          "description": "线条样式，控制 crosshair 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "solid",
+            "dashed",
+            "dotted"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "solid",
+              "dashed",
+              "dotted"
+            ]
+          },
+          "codeExample": "lineStyle={\"solid\"}"
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 15
+          },
+          "codeExample": "gap={0}"
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "淡出，控制 crosshair 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 16
+          },
+          "codeExample": "fade={0}"
+        },
+        {
+          "name": "smoothing",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.35",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.35,
+          "description": "平滑，控制 crosshair 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 17
+          },
+          "codeExample": "smoothing={0.3}",
+          "usageExamples": [
+            "smoothing={0.3}"
+          ]
+        },
+        {
+          "name": "showCoordinates",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示坐标，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showCoordinates",
+          "usageExamples": [
+            "showCoordinates"
+          ]
+        },
+        {
+          "name": "targetEffect",
+          "type": "CrosshairTargetEffect",
+          "required": false,
+          "defaultExpression": "'lock'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultValue": "lock",
+          "description": "目标效果，控制 crosshair 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "lock",
+            "glitch",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "lock",
+              "glitch",
+              "none"
+            ]
+          },
+          "codeExample": "targetEffect=\"lock\"",
+          "usageExamples": [
+            "targetEffect=\"lock\""
+          ]
+        },
+        {
+          "name": "targetSelector",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'a, button, [data-crosshair-target]'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": "a, button, [data-crosshair-target]",
+          "description": "目标选择器，控制 crosshair 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 20
+          },
+          "codeExample": "targetSelector=\".aw-crosshair-target\"",
+          "usageExamples": [
+            "targetSelector=\".aw-crosshair-target\""
+          ]
+        },
+        {
+          "name": "clickPulse",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否点击脉冲，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickPulse={true}"
+        },
+        {
+          "name": "hideCursor",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 81,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否隐藏指针，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 22
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "hideCursor={false}",
+          "usageExamples": [
+            "hideCursor={false}"
+          ]
+        },
+        {
+          "name": "blendMode",
+          "type": "'normal' | 'difference'",
+          "required": false,
+          "defaultExpression": "'normal'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 82,
+            "kind": "parameter"
+          },
+          "defaultValue": "normal",
+          "description": "混合模式，控制 crosshair 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "normal",
+            "difference"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "normal",
+              "difference"
+            ]
+          },
+          "codeExample": "blendMode=\"normal\"",
+          "usageExamples": [
+            "blendMode=\"normal\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 83,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 24
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Crosshair/Crosshair.tsx",
+            "line": 25
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className=\"aw-button aw-crosshair-target\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "data-variant",
+          "type": "any",
+          "required": false,
+          "description": "示例在 DOM 上使用的 variant 数据标记，供局部样式或状态定位读取。",
+          "usageExamples": [
+            "data-variant=\"secondary\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>"
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setCount(value => value + 1)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>锁定目标 · {count}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

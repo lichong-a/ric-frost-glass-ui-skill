@@ -1,0 +1,19 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-media-viewer, .aw-business-media-controls, .aw-business-media-dots, .aw-business-media-thumbnails, .aw-business-media-position { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-media-viewer { display:grid; gap:17px; min-width:0 }
+.aw-business-media-controls { display:flex; align-items:center; justify-content:space-between; gap:10px }
+.aw-business-media-control { display:flex; align-items:center; justify-content:center; gap:8px; padding-inline:13px }
+.aw-business-media-dots { display:flex; align-items:center; gap:2px }
+.aw-business-media-dots button { display:grid; place-items:center; min-width:22px; height:36px; padding:6px; border:0; border-radius:8px; background:transparent }
+.aw-business-media-dots button > span { display:block; height:7px; border-radius:999px; background:var(--aw-color-border-control) }
+.aw-business-media-dots button[aria-pressed=true] > span { background:var(--aw-color-action-primary) }
+.aw-business-media-thumbnails { display:flex; gap:8px; max-width:100%; overflow-x:auto; padding:4px }
+.aw-business-media-thumbnails button { position:relative; isolation:isolate; flex:1 0 64px; max-width:110px; padding:4px; border:1px solid var(--aw-color-border-control); border-radius:12px; background:var(--aw-surface-control) }
+.aw-business-media-thumbnails button[aria-pressed=true] { border-color:var(--aw-color-action-primary) }
+.aw-business-media-thumbnails img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px }
+.aw-business-media-position { text-align:center; font-variant-numeric:tabular-nums }
+@media (width < 600px) { .aw-business-media-controls { flex-wrap:wrap } }
+@media (width < 600px) { .aw-business-media-dots { justify-content:center; order:3; width:100% } }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-media-viewer, .aw-business-media-viewer::before, .aw-business-media-viewer::after, .aw-business-media-controls, .aw-business-media-controls::before, .aw-business-media-controls::after, .aw-business-media-dots, .aw-business-media-dots::before, .aw-business-media-dots::after, .aw-business-media-thumbnails, .aw-business-media-thumbnails::before, .aw-business-media-thumbnails::after, .aw-business-media-position, .aw-business-media-position::before, .aw-business-media-position::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-media-viewer, [data-motion=reduce] .aw-business-media-viewer::before, [data-motion=reduce] .aw-business-media-viewer::after, [data-motion=reduce] .aw-business-media-controls, [data-motion=reduce] .aw-business-media-controls::before, [data-motion=reduce] .aw-business-media-controls::after, [data-motion=reduce] .aw-business-media-dots, [data-motion=reduce] .aw-business-media-dots::before, [data-motion=reduce] .aw-business-media-dots::after, [data-motion=reduce] .aw-business-media-thumbnails, [data-motion=reduce] .aw-business-media-thumbnails::before, [data-motion=reduce] .aw-business-media-thumbnails::after, [data-motion=reduce] .aw-business-media-position, [data-motion=reduce] .aw-business-media-position::before, [data-motion=reduce] .aw-business-media-position::after { transition:none; animation:none; scroll-behavior:auto; }

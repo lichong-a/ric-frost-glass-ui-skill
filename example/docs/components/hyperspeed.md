@@ -1,6 +1,6 @@
 # Hyperspeed
 
-背景效果 · `hyperspeed` · 中文意图：极速公路 / 高速穿梭
+背景与光效 · `hyperspeed` · 中文意图：极速公路 / 高速穿梭
 
 目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
@@ -14,9 +14,10 @@
 
 | 资源 | 位置与用途 |
 |---|---|
-| 自有示例（随包） | [example/src/demos/hyperspeed.tsx](../../src/demos/hyperspeed.tsx) |
+| 自有示例（随包） | [example/src/demos/background/hyperspeed.tsx](../../src/demos/background/hyperspeed.tsx) |
 | 组件实现（准备后存在） | [example/.upstream/src/ts-default/Backgrounds/Hyperspeed/Hyperspeed.tsx](../../.upstream/src/ts-default/Backgrounds/Hyperspeed/Hyperspeed.tsx) |
 | 组件 CSS（准备后存在） | [example/.upstream/src/ts-default/Backgrounds/Hyperspeed/Hyperspeed.css](../../.upstream/src/ts-default/Backgrounds/Hyperspeed/Hyperspeed.css) |
+| 单独 Props 记录 | [example/src/parameters/definitions/hyperspeed.json](../../src/parameters/definitions/hyperspeed.json) |
 | 固定版本 | `2139cb3098d4fedc6264f13e50dcb4694224ba7c` |
 
 先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在包根运行：
@@ -32,9 +33,11 @@ node scripts/example.mjs setup --component hyperspeed
 以下来自本包自有示例的实际用法；它只表示本例参数，不代表上游所有 Props。
 
 ```tsx
+// 当前 Hyperspeed 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
 import { useState } from 'react';
-import Component from '../../.upstream/src/ts-default/Backgrounds/Hyperspeed/Hyperspeed';
-import { palette } from '../shared/demo-support';
+import Component from '../../../.upstream/src/ts-default/Backgrounds/Hyperspeed/Hyperspeed';
+import { palette } from '../../shared/demo-support';
 
 /** Agent Wan natural-tone preset for the real Hyperspeed component. */
 export default function HyperspeedDemo() {
@@ -43,37 +46,149 @@ export default function HyperspeedDemo() {
     <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
       <div style={{ width: '100%', height: 560, position: 'relative' }}>
         <Component
-          tailColors={[palette.terra, palette.sand]}
-          headColors={[palette.ivory, palette.sage]}
-          poleColors={[palette.sage]}
-          roadColor={palette.primary}
-          background={palette.ink}
-          lineColor={palette.muted}
-          speed={0.5}
-          boost={1.6}
-          density={24}
-          poles={12}
-          dust={30}
-          glow={0.25}
+
+
+
+
+
+
+
+
+
+
+
+
           reflections={0.25}
-          curvature={0.65}
-          interactive
+
+
           onBoostStart={() => setBoosting(true)}
-          onBoostEnd={() => setBoosting(false)}
+          onBoostEnd={() => setBoosting(false)} tailColors={["#9c6d56", "#c3ae88"]} headColors={["#faf7f0", "#a6b39a"]} poleColors={["#a6b39a"]} roadColor={"#52604e"} background={"#1f2d26"} lineColor={"#64695f"} speed={0.5} boost={1.6} density={24} poles={12} dust={30} glow={0.25} curvature={0.65} interactive={true} curve={"winding"} fov={90} boostFov={130} lanes={3} roadWidth={10} medianWidth={2} trailLength={1} lightSize={1} poleHeight={1} steer={0.35} roadOpacity={0.1} theme={"dark"} boosting={false}
         />
         <p role="status" aria-live="polite" style={{ position: 'absolute', bottom: 18, left: 18, margin: 0, padding: '8px 12px', borderRadius: 10, background: palette.surface, color: palette.ink, pointerEvents: 'none', fontSize: 13 }}>{boosting ? '正在演示加速' : '按住画布体验加速，松开恢复'}</p>
       </div>
     </div>
   );
 }
+
 ```
 
-完整 Props、类型、回调和默认值以安装后的对应 TSX 源码为准。先读取本例使用的参数，再沿类型定义补充当前任务需要的选项；不要根据通用模板假定所有组件都有 color / speed / children。
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `curve` | `HyperspeedCurve` | 否 | `'winding'` | 曲线，控制 hyperspeed 的对应渲染或交互参数。 |
+| `curvature` | `number` | 否 | `1` | 曲率，控制 hyperspeed 的对应渲染或交互参数。 |
+| `speed` | `number` | 否 | `1` | 动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。 |
+| `boost` | `number` | 否 | `3` | 加速，控制 hyperspeed 的对应渲染或交互参数。 |
+| `fov` | `number` | 否 | `90` | 视场角，控制 hyperspeed 的对应渲染或交互参数。 |
+| `boostFov` | `number` | 否 | `130` | 加速视场角，控制 hyperspeed 的对应渲染或交互参数。 |
+| `lanes` | `number` | 否 | `3` | 车道，控制 hyperspeed 的对应渲染或交互参数。 |
+| `roadWidth` | `number` | 否 | `10` | 道路宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `medianWidth` | `number` | 否 | `2` | 中部宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `density` | `number` | 否 | `40` | 密度，控制 hyperspeed 的对应渲染或交互参数。 |
+| `trailLength` | `number` | 否 | `1` | 轨迹长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `lightSize` | `number` | 否 | `1` | 光照尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `poles` | `number` | 否 | `20` | 立柱组，控制 hyperspeed 的对应渲染或交互参数。 |
+| `poleHeight` | `number` | 否 | `1` | 立柱高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `dust` | `number` | 否 | `100` | 尘点，控制 hyperspeed 的对应渲染或交互参数。 |
+| `glow` | `number` | 否 | `0.6` | 辉光，控制 hyperspeed 的对应渲染或交互参数。 |
+| `reflections` | `number` | 否 | `0.5` | 反射，控制 hyperspeed 的对应渲染或交互参数。 |
+| `steer` | `number` | 否 | `0.35` | 转向，控制 hyperspeed 的对应渲染或交互参数。 |
+| `tailColors` | `string[]` | 否 | `未指定` | 尾迹颜色组的有序数据集合；每一项按数组元素类型配置。 |
+| `headColors` | `string[]` | 否 | `未指定` | 头部颜色组的有序数据集合；每一项按数组元素类型配置。 |
+| `poleColors` | `string[]` | 否 | `未指定` | 立柱颜色组的有序数据集合；每一项按数组元素类型配置。 |
+| `roadColor` | `string` | 否 | `palette.road` | 道路颜色，传入组件支持的 CSS 或着色器颜色格式。 |
+| `roadOpacity` | `number` | 否 | `0.1` | 道路不透明度，控制 hyperspeed 的对应渲染或交互参数。 |
+| `lineColor` | `string` | 否 | `palette.lines` | 线条颜色，传入组件支持的 CSS 或着色器颜色格式。 |
+| `background` | `string` | 否 | `palette.background` | 背景，控制 hyperspeed 的对应渲染或交互参数。 |
+| `theme` | `'dark' \| 'light'` | 否 | `'dark'` | 主题，控制 hyperspeed 的对应渲染或交互参数。 |
+| `interactive` | `boolean` | 否 | `true` | 是否交互，决定该分支的展示或交互行为。 |
+| `boosting` | `boolean` | 否 | `false` | 是否加速时，决定该分支的展示或交互行为。 |
+| `onBoostStart` | `() => void` | 否 | `未指定` | 加速开始时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。 |
+| `onBoostEnd` | `() => void` | 否 | `未指定` | 加速结束时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。 |
+| `className` | `string` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `style` | `React.CSSProperties` | 否 | `未指定` | 容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。 |
+
+**tailColors 的真实接入：**
+
+```tsx
+tailColors={[palette.terra, palette.sand]}
+```
+
+**headColors 的真实接入：**
+
+```tsx
+headColors={[palette.ivory, palette.sage]}
+```
+
+**poleColors 的真实接入：**
+
+```tsx
+poleColors={[palette.sage]}
+```
+
+**onBoostStart 的真实接入：**
+
+```tsx
+onBoostStart={() => setBoosting(true)}
+```
+
+**onBoostEnd 的真实接入：**
+
+```tsx
+onBoostEnd={() => setBoosting(false)}
+```
+
+**style 的真实接入：**
+
+```tsx
+style={{ width: "100%", minHeight: 240 }}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.tailColors` | `["#9c6d56","#c3ae88"]` | json | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.headColors` | `["#faf7f0","#a6b39a"]` | json | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.poleColors` | `["#a6b39a"]` | json | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.roadColor` | `"#52604e"` | color | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.background` | `"#1f2d26"` | color | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.lineColor` | `"#64695f"` | color | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.speed` | `0.5` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.boost` | `1.6` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.density` | `24` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.poles` | `12` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.dust` | `30` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.glow` | `0.25` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.curvature` | `0.65` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.interactive` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.curve` | `"winding"` | select | "straight" / "gentle" / "winding" / "hills" / "racing" / "deep" | 调节结束后重建 |
+| `t0.fov` | `90` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.boostFov` | `130` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.lanes` | `3` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.roadWidth` | `10` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.medianWidth` | `2` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.trailLength` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.lightSize` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.poleHeight` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.steer` | `0.35` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.roadOpacity` | `0.1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.theme` | `"dark"` | select | "dark" / "light" | 调节结束后重建 |
+| `t0.boosting` | `false` | switch | 不限 ~ 不限 | 调节结束后重建 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. Agent Wan 皮肤
 
-- 背景降低饱和度和亮度跨度，舞台单独限界；业务正文仍放在稳定阅读面上。
-- 优先通过组件真实 Props 设置颜色和强度；使用主题提供的茶绿、沙米、象牙白及墨色映射。
+- 画布优先保留 React Bits 的原版配色与可观察强度，背景有独立边界并为光晕预留空间；业务正文使用稳定阅读面。
+- 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 
 ## 5. 加载、动效与降级
@@ -84,7 +199,7 @@ export default function HyperspeedDemo() {
 - 运行类型：本例预览入口声明需 WebGL；这是当前示例的运行配置，不是仅凭源码关键词推断。此说明不等于浏览器运行证明。
 - 动效策略：按需启用的持续 / 高运动效果。
 - 示例库降级：动态偏好或能力检查不满足时先不挂载本项，显示原因；减少运动时可明确选择仅播放本次。
-- 业务接入的静态降级要求：使用 Agent Wan 静态茶绿 / 沙米环境渐变，主体内容和交互不变。
+- 业务接入的静态降级要求：保留可读内容与原生交互，并提供当前组件的静态状态
 - 卸载时释放本例监听、计时、动画帧及拥有的渲染资源；不以隐藏 CSS 代替停止循环。
 
 仅当前需求涉及高级运行、资源或设备权限时再读 [效果与降级策略](../effects-policy.md)。
@@ -94,8 +209,8 @@ export default function HyperspeedDemo() {
 1. 参数与对应源码真实 API 一致，构建可导入，安装失败可恢复。
 2. 能观察到第 1 节的核心机制，而不只是相同名称的占位卡片。
 3. 真实状态 / 事件 / 键盘与必要的触屏等价操作可用。
-4. 低饱和配色、文字对比、阅读面、稳定命中范围与基础规范一致。
+4. 画布保留本例的效果对比度和原版配色；外壳、阅读面与基础规范一致。
 5. 只激活本项；切换或卸载后停止其持续工作。
 6. 减少运动与不可用情形保留本节所述等价内容或功能。
 
-只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [背景效果](../categories/backgrounds.md)；否则直接完成当前组件。
+只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [背景与光效](../categories/background.md)；否则直接完成当前组件。

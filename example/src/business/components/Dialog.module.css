@@ -1,0 +1,24 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-overlay, .aw-business-dialog, .aw-business-dialog-content { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-overlay { color:var(--aw-color-text-primary); background:var(--aw-surface-panel); border:1px solid var(--aw-color-border-control); border-radius:var(--aw-radius-panel); box-shadow:var(--aw-shadow-popover); backdrop-filter:blur(var(--aw-blur-popover)) }
+.aw-business-dialog { width:min(560px,calc(100vw - 32px)); max-height:calc(100dvh - 32px); padding:24px }
+.aw-business-dialog::backdrop { background:var(--aw-surface-scrim) }
+.aw-business-dialog > header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding-bottom:20px }
+.aw-business-dialog h2 { margin:0; font-size:20px; line-height:1.4 }
+.aw-business-dialog-content { display:grid; gap:16px }
+.aw-business-dialog[data-side] { position:fixed; margin:0; inset:0 0 0 auto; height:100dvh; max-height:100dvh; width:min(420px,100vw); border-radius:var(--aw-radius-panel) 0 0 var(--aw-radius-panel) }
+.aw-business-dialog[data-side=left] { inset:0 auto 0 0; border-radius:0 var(--aw-radius-panel) var(--aw-radius-panel) 0 }
+.aw-business-dialog[data-side=top] { inset:0 0 auto; width:100vw; max-width:100vw; height:auto; max-height:var(--aw-drawer-max-block-size); border-radius:0 0 var(--aw-radius-panel) var(--aw-radius-panel) }
+.aw-business-dialog[data-side=bottom] { inset:auto 0 0; width:100vw; max-width:100vw; height:auto; max-height:var(--aw-drawer-max-block-size); border-radius:var(--aw-radius-panel) var(--aw-radius-panel) 0 0; padding-bottom:max(var(--aw-drawer-padding),env(safe-area-inset-bottom)) }
+.aw-business-dialog[open] { animation:aw-business-dialog-in 280ms var(--aw-business-ease) both }
+.aw-business-dialog[open][data-side=right] { animation-name:aw-business-drawer-right }
+.aw-business-dialog[open][data-side=left] { animation-name:aw-business-drawer-left }
+.aw-business-dialog[open][data-side=top] { animation-name:aw-business-drawer-top }
+.aw-business-dialog[open][data-side=bottom] { animation-name:aw-business-drawer-bottom }
+@keyframes aw-business-dialog-in { from { transform:translateY(12px) scale(.98); } to { transform:translateY(0) scale(1); } }
+@keyframes aw-business-drawer-right { from { transform:translateX(100%); } to { transform:translateX(0); } }
+@keyframes aw-business-drawer-left { from { transform:translateX(-100%); } to { transform:translateX(0); } }
+@keyframes aw-business-drawer-top { from { transform:translateY(-100%); } to { transform:translateY(0); } }
+@keyframes aw-business-drawer-bottom { from { transform:translateY(100%); } to { transform:translateY(0); } }
+@media (prefers-reduced-motion:reduce) { .aw-business-overlay, .aw-business-overlay::before, .aw-business-overlay::after, .aw-business-dialog, .aw-business-dialog::before, .aw-business-dialog::after, .aw-business-dialog-content, .aw-business-dialog-content::before, .aw-business-dialog-content::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-overlay, [data-motion=reduce] .aw-business-overlay::before, [data-motion=reduce] .aw-business-overlay::after, [data-motion=reduce] .aw-business-dialog, [data-motion=reduce] .aw-business-dialog::before, [data-motion=reduce] .aw-business-dialog::after, [data-motion=reduce] .aw-business-dialog-content, [data-motion=reduce] .aw-business-dialog-content::before, [data-motion=reduce] .aw-business-dialog-content::after { transition:none; animation:none; scroll-behavior:auto; }

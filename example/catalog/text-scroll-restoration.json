@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "upstreamCommit": "2139cb3098d4fedc6264f13e50dcb4694224ba7c",
+  "scrollLayout": {
+    "screens": 2,
+    "introScreen": "Guide and keyboard-accessible scroll action only",
+    "effectScreen": "The animated content starts after the intro screen",
+    "leadHeight": "The actual scroll container clientHeight, measured with ResizeObserver",
+    "animationScroller": "The same element referenced by scrollContainerRef",
+    "replay": "External demo remount resets scroll position and upstream animation"
+  },
+  "demos": [
+    {
+      "slug": "scroll-float",
+      "officialReference": "https://reactbits.dev/text-animations/scroll-float",
+      "source": "src/ts-default/TextAnimations/ScrollFloat/ScrollFloat.tsx",
+      "defaultProps": {
+        "animationDuration": 1,
+        "ease": "back.inOut(2)",
+        "scrollStart": "top bottom",
+        "scrollEnd": "center center",
+        "stagger": 0.03
+      },
+      "restoration": "Preserve the upstream stretched, staggered letter movement while restricting its trigger to the second screen"
+    },
+    {
+      "slug": "scroll-velocity",
+      "officialReference": "https://reactbits.dev/text-animations/scroll-velocity",
+      "source": "src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
+      "defaultProps": {
+        "texts": [
+          "AGENT WAN ·",
+          "QUIET FLOW ·"
+        ],
+        "velocity": 100,
+        "numCopies": 6,
+        "damping": 50,
+        "stiffness": 400,
+        "velocityMapping": {
+          "input": [
+            0,
+            1000
+          ],
+          "output": [
+            0,
+            5
+          ]
+        }
+      },
+      "restoration": "Restore a visible base marquee speed and the upstream scroll velocity response on the two opposing rows"
+    },
+    {
+      "slug": "scroll-reveal",
+      "officialReference": "https://reactbits.dev/text-animations/scroll-reveal",
+      "source": "src/ts-default/TextAnimations/ScrollReveal/ScrollReveal.tsx",
+      "defaultProps": {
+        "baseOpacity": 0.1,
+        "enableBlur": true,
+        "baseRotation": 3,
+        "blurStrength": 4,
+        "rotationEnd": "center center+=10%",
+        "wordAnimationEnd": "center center+=10%"
+      },
+      "restoration": "Retain blur, opacity and rotation; the 10 percent endpoint allowance ensures every word resolves within the second screen despite rotated trigger geometry"
+    },
+    {
+      "slug": "scrambled-text",
+      "officialReference": "https://reactbits.dev/text-animations/scrambled-text",
+      "source": "src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+      "defaultProps": {
+        "radius": 200,
+        "duration": 1.4,
+        "speed": 0.5,
+        "scrambleChars": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*"
+      },
+      "restoration": "Use a stronger demonstration preset with recognizable random letters, digits and symbols, while preserving pointer proximity and exact text recovery"
+    },
+    {
+      "slug": "rotating-text",
+      "officialReference": "https://reactbits.dev/text-animations/rotating-text",
+      "source": "src/ts-default/TextAnimations/RotatingText/RotatingText.tsx",
+      "defaultProps": {
+        "texts": [
+          "thinking",
+          "coding",
+          "components!"
+        ],
+        "initial": {
+          "y": "100%",
+          "opacity": 0
+        },
+        "animate": {
+          "y": 0,
+          "opacity": 1
+        },
+        "exit": {
+          "y": "-120%",
+          "opacity": 0
+        },
+        "staggerDuration": 0.025,
+        "staggerFrom": "last",
+        "transition": {
+          "type": "spring",
+          "damping": 30,
+          "stiffness": 400
+        },
+        "rotationInterval": 2000,
+        "splitBy": "characters",
+        "animatePresenceMode": "wait",
+        "auto": true,
+        "loop": true
+      },
+      "restoration": "Restore the official Creative phrase examples and word-level clipping around the upstream staggered vertical transitions"
+    },
+    {
+      "slug": "glitch-text",
+      "officialReference": "https://reactbits.dev/text-animations/glitch-text",
+      "source": "src/ts-default/TextAnimations/GlitchText/GlitchText.tsx",
+      "defaultProps": {
+        "speed": 1,
+        "enableShadows": true,
+        "enableOnHover": false
+      },
+      "restoration": "Remove injected suppression; preserve the original white glyphs, cyan and red shadows and dark pseudo-element surface"
+    }
+  ]
+}

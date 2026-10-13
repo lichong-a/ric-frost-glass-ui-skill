@@ -1,0 +1,673 @@
+{
+  "version": 1,
+  "id": "flowing-menu",
+  "name": "Flowing Menu",
+  "sourcePath": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+  "demoPath": "src/demos/navigation/flowing-menu.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "MenuItemData[]",
+      "defaultValue": [
+        {
+          "link": "#canopy",
+          "text": "林间漫游",
+          "image": "@asset/restoration/prismatic-canopy.svg"
+        },
+        {
+          "link": "#mineral",
+          "text": "矿物色谱",
+          "image": "@asset/restoration/mineral-tide.svg"
+        },
+        {
+          "link": "#orbit",
+          "text": "星际轨道",
+          "image": "@asset/restoration/nocturne-orbit.svg"
+        },
+        {
+          "link": "#solar",
+          "text": "太阳之境",
+          "image": "@asset/restoration/solar-dunes.svg"
+        }
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "link": {
+              "kind": "string"
+            },
+            "text": {
+              "kind": "string"
+            },
+            "image": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "link",
+            "text",
+            "image"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "跑马灯循环时长",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。 以下范围仅限制此演示面板，不改变上游 API。GSAP 跑马灯循环的 duration；值越大，循环越慢。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 18,
+      "upstreamDefault": "15",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 3,
+      "max": 40,
+      "step": 1,
+      "unit": "s"
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#e9f1ea",
+      "upstreamDefault": "'#fff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bgColor",
+      "name": "bgColor",
+      "label": "bgColor · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bgColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#10251d",
+      "upstreamDefault": "'#120F17'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.marqueeBgColor",
+      "name": "marqueeBgColor",
+      "label": "marqueeBgColor · t0",
+      "description": "跑马灯背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "marqueeBgColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#dce9d7",
+      "upstreamDefault": "'#fff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.marqueeTextColor",
+      "name": "marqueeTextColor",
+      "label": "marqueeTextColor · t0",
+      "description": "跑马灯文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "marqueeTextColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#10251d",
+      "upstreamDefault": "'#120F17'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.borderColor",
+      "name": "borderColor",
+      "label": "边框颜色 · t0",
+      "description": "边框颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "borderColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#ffffff26",
+      "upstreamDefault": "'#fff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "MenuItemData[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 34,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "MenuItemData",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "link",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "text",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "image",
+                "type": "string",
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={items}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={items}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 35,
+        "kind": "parameter"
+      },
+      "defaultValue": 15,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 16
+      },
+      "codeExample": "speed={18}",
+      "usageExamples": [
+        "speed={18}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#fff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 36,
+        "kind": "parameter"
+      },
+      "defaultValue": "#fff",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 17
+      },
+      "codeExample": "textColor=\"#e9f1ea\"",
+      "usageExamples": [
+        "textColor=\"#e9f1ea\""
+      ]
+    },
+    {
+      "name": "bgColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#120F17'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 37,
+        "kind": "parameter"
+      },
+      "defaultValue": "#120F17",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 18
+      },
+      "codeExample": "bgColor=\"#10251d\"",
+      "usageExamples": [
+        "bgColor=\"#10251d\""
+      ]
+    },
+    {
+      "name": "marqueeBgColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#fff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 38,
+        "kind": "parameter"
+      },
+      "defaultValue": "#fff",
+      "description": "跑马灯背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 19
+      },
+      "codeExample": "marqueeBgColor=\"#dce9d7\"",
+      "usageExamples": [
+        "marqueeBgColor=\"#dce9d7\""
+      ]
+    },
+    {
+      "name": "marqueeTextColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#120F17'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 39,
+        "kind": "parameter"
+      },
+      "defaultValue": "#120F17",
+      "description": "跑马灯文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 20
+      },
+      "codeExample": "marqueeTextColor=\"#10251d\"",
+      "usageExamples": [
+        "marqueeTextColor=\"#10251d\""
+      ]
+    },
+    {
+      "name": "borderColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#fff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 40,
+        "kind": "parameter"
+      },
+      "defaultValue": "#fff",
+      "description": "边框颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+        "line": 21
+      },
+      "codeExample": "borderColor=\"#ffffff26\"",
+      "usageExamples": [
+        "borderColor=\"#ffffff26\""
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/Components/FlowingMenu/FlowingMenu';\n\n\n\n\nimport styles from './flowing-menu.module.css';\n\n\n\nexport default function FlowingMenuDemo() {\n  const [status, setStatus] = useState('悬停菜单项，展开图文流动；点击选择。');\n  return (\n    <section className={styles.stage} data-visual-demo=\"flowing-menu\" onClickCapture={event => {\n      const link = (event.target as Element).closest('a');\n      if (link) { event.preventDefault(); setStatus('已选择：' + link.textContent?.trim()); }\n    }}>\n      <div className={styles.menu}>\n        <Component\n             /*__AW_PROPS_t0__*/  />\n      </div>\n      <p className={styles.status} role=\"status\" aria-live=\"polite\">{status}</p>\n    </section>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "FlowingMenu",
+      "sourcePath": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "MenuItemData[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 34,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "MenuItemData",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "link",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "text",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "image",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={items}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={items}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 35,
+            "kind": "parameter"
+          },
+          "defaultValue": 15,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 16
+          },
+          "codeExample": "speed={18}",
+          "usageExamples": [
+            "speed={18}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#fff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 36,
+            "kind": "parameter"
+          },
+          "defaultValue": "#fff",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 17
+          },
+          "codeExample": "textColor=\"#e9f1ea\"",
+          "usageExamples": [
+            "textColor=\"#e9f1ea\""
+          ]
+        },
+        {
+          "name": "bgColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#120F17'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 37,
+            "kind": "parameter"
+          },
+          "defaultValue": "#120F17",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 18
+          },
+          "codeExample": "bgColor=\"#10251d\"",
+          "usageExamples": [
+            "bgColor=\"#10251d\""
+          ]
+        },
+        {
+          "name": "marqueeBgColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#fff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 38,
+            "kind": "parameter"
+          },
+          "defaultValue": "#fff",
+          "description": "跑马灯背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 19
+          },
+          "codeExample": "marqueeBgColor=\"#dce9d7\"",
+          "usageExamples": [
+            "marqueeBgColor=\"#dce9d7\""
+          ]
+        },
+        {
+          "name": "marqueeTextColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#120F17'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 39,
+            "kind": "parameter"
+          },
+          "defaultValue": "#120F17",
+          "description": "跑马灯文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 20
+          },
+          "codeExample": "marqueeTextColor=\"#10251d\"",
+          "usageExamples": [
+            "marqueeTextColor=\"#10251d\""
+          ]
+        },
+        {
+          "name": "borderColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#fff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 40,
+            "kind": "parameter"
+          },
+          "defaultValue": "#fff",
+          "description": "边框颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlowingMenu/FlowingMenu.tsx",
+            "line": 21
+          },
+          "codeExample": "borderColor=\"#ffffff26\"",
+          "usageExamples": [
+            "borderColor=\"#ffffff26\""
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

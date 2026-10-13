@@ -1,0 +1,1837 @@
+{
+  "version": 1,
+  "id": "pixel-transition",
+  "name": "Pixel Transition",
+  "sourcePath": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+  "demoPath": "src/demos/scroll/pixel-transition.tsx",
+  "fields": [
+    {
+      "key": "t0.pixelColor",
+      "name": "pixelColor",
+      "label": "pixelColor · t0",
+      "description": "像素颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pixelColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gridSize",
+      "name": "gridSize",
+      "label": "gridSize · t0",
+      "description": "网格每边的单元数量或单元尺寸，按该组件的数值契约设置。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gridSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 12,
+      "upstreamDefault": "10",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 128,
+      "step": 1
+    },
+    {
+      "key": "t0.pixelShape",
+      "name": "pixelShape",
+      "label": "pixelShape · t0",
+      "description": "像素形状，控制 pixel transition 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pixelShape"
+        }
+      ],
+      "type": "PixelTransitionShape",
+      "defaultValue": "square",
+      "upstreamDefault": "'square'",
+      "control": "select",
+      "options": [
+        {
+          "label": "square",
+          "value": "square"
+        },
+        {
+          "label": "rounded",
+          "value": "rounded"
+        },
+        {
+          "label": "circle",
+          "value": "circle"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pattern",
+      "name": "pattern",
+      "label": "pattern · t0",
+      "description": "原生表单验证使用的正则模式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pattern"
+        }
+      ],
+      "type": "PixelTransitionPattern",
+      "defaultValue": "random",
+      "upstreamDefault": "'random'",
+      "control": "select",
+      "options": [
+        {
+          "label": "random",
+          "value": "random"
+        },
+        {
+          "label": "dither",
+          "value": "dither"
+        },
+        {
+          "label": "ripple",
+          "value": "ripple"
+        },
+        {
+          "label": "wipe",
+          "value": "wipe"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pixelAnimation",
+      "name": "pixelAnimation",
+      "label": "pixelAnimation · t0",
+      "description": "像素动画，控制 pixel transition 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pixelAnimation"
+        }
+      ],
+      "type": "PixelTransitionAnimation",
+      "defaultValue": "pop",
+      "upstreamDefault": "'pop'",
+      "control": "select",
+      "options": [
+        {
+          "label": "pop",
+          "value": "pop"
+        },
+        {
+          "label": "grow",
+          "value": "grow"
+        },
+        {
+          "label": "fade",
+          "value": "fade"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.randomness",
+      "name": "randomness",
+      "label": "randomness · t0",
+      "description": "随机差异，控制 pixel transition 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "randomness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animationStepDuration",
+      "name": "animationStepDuration",
+      "label": "animationStepDuration · t0",
+      "description": "动画步进时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animationStepDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.35,
+      "upstreamDefault": "0.4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trigger",
+      "name": "trigger",
+      "label": "trigger · t0",
+      "description": "触发方式，控制 pixel transition 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trigger"
+        }
+      ],
+      "type": "'hover' | 'click'",
+      "defaultValue": "hover",
+      "upstreamDefault": "'hover'",
+      "control": "select",
+      "options": [
+        {
+          "label": "hover",
+          "value": "hover"
+        },
+        {
+          "label": "click",
+          "value": "click"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.aspectRatio",
+      "name": "aspectRatio",
+      "label": "aspectRatio · t0",
+      "description": "宽高比例，控制 pixel transition 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aspectRatio"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "62.5%",
+      "upstreamDefault": "'100%'",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mosaic",
+      "name": "mosaic",
+      "label": "mosaic · t0",
+      "description": "马赛克，控制 pixel transition 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mosaic"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fps",
+      "name": "fps",
+      "label": "fps · t0",
+      "description": "每秒帧数，控制 pixel transition 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fps"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.once",
+      "name": "once",
+      "label": "once · t0",
+      "description": "仅一次时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "once"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.src",
+      "name": "src",
+      "label": "资源地址 · t1",
+      "description": "加载图像、视频或纹理的资源地址。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "src"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "@media/scene-2.svg",
+      "control": "resource",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "options": [
+        {
+          "label": "纹理 · 色彩绽放",
+          "value": "@asset/restoration/chromatic-bloom.svg"
+        },
+        {
+          "label": "纹理 · 矿石潮汐",
+          "value": "@asset/restoration/mineral-tide.svg"
+        },
+        {
+          "label": "纹理 · 夜色轨道",
+          "value": "@asset/restoration/nocturne-orbit.svg"
+        },
+        {
+          "label": "纹理 · 棱彩林冠",
+          "value": "@asset/restoration/prismatic-canopy.svg"
+        },
+        {
+          "label": "纹理 · 日光沙丘",
+          "value": "@asset/restoration/solar-dunes.svg"
+        },
+        {
+          "label": "纹理 · 朱红折页",
+          "value": "@asset/restoration/vermilion-fold.svg"
+        },
+        {
+          "label": "场景 · 山雾",
+          "value": "@media/scene-1.svg"
+        },
+        {
+          "label": "场景 · 茶庭",
+          "value": "@media/scene-2.svg"
+        },
+        {
+          "label": "场景 · 沙洲",
+          "value": "@media/scene-3.svg"
+        },
+        {
+          "label": "场景 · 静水",
+          "value": "@media/scene-4.svg"
+        },
+        {
+          "label": "场景 · 林间",
+          "value": "@media/scene-5.svg"
+        },
+        {
+          "label": "场景 · 岩纹",
+          "value": "@media/scene-6.svg"
+        }
+      ]
+    },
+    {
+      "key": "t1.alt",
+      "name": "alt",
+      "label": "替代文字 · t1",
+      "description": "图像无法显示及辅助技术读取时的替代文字。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "alt"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "切换前的示意图",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.style",
+      "name": "style",
+      "label": "style · t1",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "style"
+        }
+      ],
+      "type": "CSSProperties | undefined",
+      "defaultValue": {
+        "width": "100%",
+        "height": "100%",
+        "objectFit": "cover"
+      },
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "width": {
+            "kind": "string"
+          },
+          "height": {
+            "kind": "string"
+          },
+          "objectFit": {
+            "kind": "string"
+          }
+        },
+        "required": [
+          "width",
+          "height",
+          "objectFit"
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.src",
+      "name": "src",
+      "label": "资源地址 · t2",
+      "description": "加载图像、视频或纹理的资源地址。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "src"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "@media/scene-5.svg",
+      "control": "resource",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "options": [
+        {
+          "label": "纹理 · 色彩绽放",
+          "value": "@asset/restoration/chromatic-bloom.svg"
+        },
+        {
+          "label": "纹理 · 矿石潮汐",
+          "value": "@asset/restoration/mineral-tide.svg"
+        },
+        {
+          "label": "纹理 · 夜色轨道",
+          "value": "@asset/restoration/nocturne-orbit.svg"
+        },
+        {
+          "label": "纹理 · 棱彩林冠",
+          "value": "@asset/restoration/prismatic-canopy.svg"
+        },
+        {
+          "label": "纹理 · 日光沙丘",
+          "value": "@asset/restoration/solar-dunes.svg"
+        },
+        {
+          "label": "纹理 · 朱红折页",
+          "value": "@asset/restoration/vermilion-fold.svg"
+        },
+        {
+          "label": "场景 · 山雾",
+          "value": "@media/scene-1.svg"
+        },
+        {
+          "label": "场景 · 茶庭",
+          "value": "@media/scene-2.svg"
+        },
+        {
+          "label": "场景 · 沙洲",
+          "value": "@media/scene-3.svg"
+        },
+        {
+          "label": "场景 · 静水",
+          "value": "@media/scene-4.svg"
+        },
+        {
+          "label": "场景 · 林间",
+          "value": "@media/scene-5.svg"
+        },
+        {
+          "label": "场景 · 岩纹",
+          "value": "@media/scene-6.svg"
+        }
+      ]
+    },
+    {
+      "key": "t2.alt",
+      "name": "alt",
+      "label": "替代文字 · t2",
+      "description": "图像无法显示及辅助技术读取时的替代文字。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "alt"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "切换后的示意图",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.style",
+      "name": "style",
+      "label": "style · t2",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "style"
+        }
+      ],
+      "type": "CSSProperties | undefined",
+      "defaultValue": {
+        "width": "100%",
+        "height": "100%",
+        "objectFit": "cover"
+      },
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "width": {
+            "kind": "string"
+          },
+          "height": {
+            "kind": "string"
+          },
+          "objectFit": {
+            "kind": "string"
+          }
+        },
+        "required": [
+          "width",
+          "height",
+          "objectFit"
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "firstContent",
+      "type": "React.ReactNode",
+      "required": true,
+      "description": "第一内容，控制 pixel transition 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 12
+      },
+      "codeExample": "firstContent={<img src={MEDIA[1]} alt=\"切换前的示意图\" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "firstContent={<img src={MEDIA[1]} alt=\"切换前的示意图\" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}"
+      ]
+    },
+    {
+      "name": "secondContent",
+      "type": "React.ReactNode",
+      "required": true,
+      "description": "第二内容，控制 pixel transition 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 13
+      },
+      "codeExample": "secondContent={<img src={MEDIA[4]} alt=\"切换后的示意图\" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "secondContent={<img src={MEDIA[4]} alt=\"切换后的示意图\" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}"
+      ]
+    },
+    {
+      "name": "gridSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 59,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "网格每边的单元数量或单元尺寸，按该组件的数值契约设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 14
+      },
+      "codeExample": "gridSize={12}",
+      "usageExamples": [
+        "gridSize={12}"
+      ]
+    },
+    {
+      "name": "pixelColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 60,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "像素颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 15
+      },
+      "codeExample": "pixelColor={palette.sage}",
+      "usageExamples": [
+        "pixelColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "mosaic",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 61,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "马赛克，控制 pixel transition 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 16
+      },
+      "codeExample": "mosaic={0}"
+    },
+    {
+      "name": "animationStepDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 62,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.4,
+      "description": "动画步进时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 17
+      },
+      "codeExample": "animationStepDuration={0.35}",
+      "usageExamples": [
+        "animationStepDuration={0.35}"
+      ]
+    },
+    {
+      "name": "pattern",
+      "type": "PixelTransitionPattern",
+      "required": false,
+      "defaultExpression": "'random'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": "random",
+      "description": "原生表单验证使用的正则模式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "random",
+        "dither",
+        "ripple",
+        "wipe"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "random",
+          "dither",
+          "ripple",
+          "wipe"
+        ]
+      },
+      "codeExample": "pattern=\"random\"",
+      "usageExamples": [
+        "pattern=\"random\""
+      ]
+    },
+    {
+      "name": "randomness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "随机差异，控制 pixel transition 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 19
+      },
+      "codeExample": "randomness={0.25}",
+      "usageExamples": [
+        "randomness={0.25}"
+      ]
+    },
+    {
+      "name": "pixelAnimation",
+      "type": "PixelTransitionAnimation",
+      "required": false,
+      "defaultExpression": "'pop'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": "pop",
+      "description": "像素动画，控制 pixel transition 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "pop",
+        "grow",
+        "fade"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "pop",
+          "grow",
+          "fade"
+        ]
+      },
+      "codeExample": "pixelAnimation=\"pop\"",
+      "usageExamples": [
+        "pixelAnimation=\"pop\""
+      ]
+    },
+    {
+      "name": "pixelShape",
+      "type": "PixelTransitionShape",
+      "required": false,
+      "defaultExpression": "'square'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": "square",
+      "description": "像素形状，控制 pixel transition 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "square",
+        "rounded",
+        "circle"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "square",
+          "rounded",
+          "circle"
+        ]
+      },
+      "codeExample": "pixelShape=\"square\"",
+      "usageExamples": [
+        "pixelShape=\"square\""
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 22
+      },
+      "codeExample": "gap={1}",
+      "usageExamples": [
+        "gap={1}"
+      ]
+    },
+    {
+      "name": "fps",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "每秒帧数，控制 pixel transition 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 23
+      },
+      "codeExample": "fps={0}"
+    },
+    {
+      "name": "trigger",
+      "type": "'hover' | 'click'",
+      "required": false,
+      "defaultExpression": "'hover'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": "hover",
+      "description": "触发方式，控制 pixel transition 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "hover",
+        "click"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "hover",
+          "click"
+        ]
+      },
+      "codeExample": "trigger=\"hover\"",
+      "usageExamples": [
+        "trigger=\"hover\""
+      ]
+    },
+    {
+      "name": "active",
+      "type": "boolean",
+      "required": false,
+      "description": "是否启用当前交互或焦点约束。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "active={false}"
+    },
+    {
+      "name": "once",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "仅一次时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "once={false}"
+    },
+    {
+      "name": "onActiveChange",
+      "type": "(active: boolean) => void",
+      "required": false,
+      "description": "激活改变时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 27
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((active: boolean) => void) | undefined"
+      },
+      "codeExample": "onActiveChange={(active) => {}}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "aspectRatio",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'100%'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": "100%",
+      "description": "宽高比例，控制 pixel transition 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 28
+      },
+      "codeExample": "aspectRatio=\"62.5%\"",
+      "usageExamples": [
+        "aspectRatio=\"62.5%\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 29
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+        "line": 30
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/PixelTransition/PixelTransition';\nimport { palette } from '../../shared/demo-support';\n\n// 悬停通过网格遮罩完成图像替换；与Pixel Swap的碎片交换分别实现。\n// 此演示使用Canvas；确保容器拥有非零宽高。\n\nexport default function PixelTransitionDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component firstContent={<img    /*__AW_PROPS_t1__*/  />}\nsecondContent={<img    /*__AW_PROPS_t2__*/  />}\n\n\n   /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "PixelTransition",
+      "sourcePath": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+      "props": [
+        {
+          "name": "firstContent",
+          "type": "React.ReactNode",
+          "required": true,
+          "description": "第一内容，控制 pixel transition 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 12
+          },
+          "codeExample": "firstContent={<img src={MEDIA[1]} alt=\"切换前的示意图\" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "firstContent={<img src={MEDIA[1]} alt=\"切换前的示意图\" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}"
+          ]
+        },
+        {
+          "name": "secondContent",
+          "type": "React.ReactNode",
+          "required": true,
+          "description": "第二内容，控制 pixel transition 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 13
+          },
+          "codeExample": "secondContent={<img src={MEDIA[4]} alt=\"切换后的示意图\" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "secondContent={<img src={MEDIA[4]} alt=\"切换后的示意图\" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}"
+          ]
+        },
+        {
+          "name": "gridSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 59,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "网格每边的单元数量或单元尺寸，按该组件的数值契约设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 14
+          },
+          "codeExample": "gridSize={12}",
+          "usageExamples": [
+            "gridSize={12}"
+          ]
+        },
+        {
+          "name": "pixelColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 60,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "像素颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 15
+          },
+          "codeExample": "pixelColor={palette.sage}",
+          "usageExamples": [
+            "pixelColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "mosaic",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 61,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "马赛克，控制 pixel transition 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 16
+          },
+          "codeExample": "mosaic={0}"
+        },
+        {
+          "name": "animationStepDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 62,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.4,
+          "description": "动画步进时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 17
+          },
+          "codeExample": "animationStepDuration={0.35}",
+          "usageExamples": [
+            "animationStepDuration={0.35}"
+          ]
+        },
+        {
+          "name": "pattern",
+          "type": "PixelTransitionPattern",
+          "required": false,
+          "defaultExpression": "'random'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": "random",
+          "description": "原生表单验证使用的正则模式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "random",
+            "dither",
+            "ripple",
+            "wipe"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "random",
+              "dither",
+              "ripple",
+              "wipe"
+            ]
+          },
+          "codeExample": "pattern=\"random\"",
+          "usageExamples": [
+            "pattern=\"random\""
+          ]
+        },
+        {
+          "name": "randomness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "随机差异，控制 pixel transition 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 19
+          },
+          "codeExample": "randomness={0.25}",
+          "usageExamples": [
+            "randomness={0.25}"
+          ]
+        },
+        {
+          "name": "pixelAnimation",
+          "type": "PixelTransitionAnimation",
+          "required": false,
+          "defaultExpression": "'pop'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": "pop",
+          "description": "像素动画，控制 pixel transition 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "pop",
+            "grow",
+            "fade"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "pop",
+              "grow",
+              "fade"
+            ]
+          },
+          "codeExample": "pixelAnimation=\"pop\"",
+          "usageExamples": [
+            "pixelAnimation=\"pop\""
+          ]
+        },
+        {
+          "name": "pixelShape",
+          "type": "PixelTransitionShape",
+          "required": false,
+          "defaultExpression": "'square'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": "square",
+          "description": "像素形状，控制 pixel transition 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "square",
+            "rounded",
+            "circle"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "square",
+              "rounded",
+              "circle"
+            ]
+          },
+          "codeExample": "pixelShape=\"square\"",
+          "usageExamples": [
+            "pixelShape=\"square\""
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 22
+          },
+          "codeExample": "gap={1}",
+          "usageExamples": [
+            "gap={1}"
+          ]
+        },
+        {
+          "name": "fps",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "每秒帧数，控制 pixel transition 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 23
+          },
+          "codeExample": "fps={0}"
+        },
+        {
+          "name": "trigger",
+          "type": "'hover' | 'click'",
+          "required": false,
+          "defaultExpression": "'hover'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": "hover",
+          "description": "触发方式，控制 pixel transition 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "hover",
+            "click"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "hover",
+              "click"
+            ]
+          },
+          "codeExample": "trigger=\"hover\"",
+          "usageExamples": [
+            "trigger=\"hover\""
+          ]
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "required": false,
+          "description": "是否启用当前交互或焦点约束。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "active={false}"
+        },
+        {
+          "name": "once",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "仅一次时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "once={false}"
+        },
+        {
+          "name": "onActiveChange",
+          "type": "(active: boolean) => void",
+          "required": false,
+          "description": "激活改变时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 27
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((active: boolean) => void) | undefined"
+          },
+          "codeExample": "onActiveChange={(active) => {}}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "aspectRatio",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'100%'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": "100%",
+          "description": "宽高比例，控制 pixel transition 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 28
+          },
+          "codeExample": "aspectRatio=\"62.5%\"",
+          "usageExamples": [
+            "aspectRatio=\"62.5%\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 29
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/PixelTransition/PixelTransition.tsx",
+            "line": 30
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "img · t1",
+      "props": [
+        {
+          "name": "src",
+          "type": "string | undefined",
+          "required": false,
+          "description": "加载图像、视频或纹理的资源地址。",
+          "usageExamples": [
+            "src={MEDIA[1]}",
+            "src={MEDIA[4]}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3077
+          }
+        },
+        {
+          "name": "alt",
+          "type": "string | undefined",
+          "required": false,
+          "description": "图像无法显示及辅助技术读取时的替代文字。",
+          "usageExamples": [
+            "alt=\"切换前的示意图\"",
+            "alt=\"切换后的示意图\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3069
+          }
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties | undefined",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "usageExamples": [
+            "style={{ width: '100%', height: '100%', objectFit: 'cover' }}",
+            "style={{ width: '100%', height: '100%', objectFit: 'cover' }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2712
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "img · t2",
+      "props": [
+        {
+          "name": "src",
+          "type": "string | undefined",
+          "required": false,
+          "description": "加载图像、视频或纹理的资源地址。",
+          "usageExamples": [
+            "src={MEDIA[1]}",
+            "src={MEDIA[4]}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3077
+          }
+        },
+        {
+          "name": "alt",
+          "type": "string | undefined",
+          "required": false,
+          "description": "图像无法显示及辅助技术读取时的替代文字。",
+          "usageExamples": [
+            "alt=\"切换前的示意图\"",
+            "alt=\"切换后的示意图\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3069
+          }
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties | undefined",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "usageExamples": [
+            "style={{ width: '100%', height: '100%', objectFit: 'cover' }}",
+            "style={{ width: '100%', height: '100%', objectFit: 'cover' }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2712
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

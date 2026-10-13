@@ -1,0 +1,2023 @@
+{
+  "version": 1,
+  "id": "animated-list",
+  "name": "Animated List",
+  "sourcePath": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+  "demoPath": "src/demos/data/animated-list.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "AnimatedListItem[]",
+      "defaultValue": [
+        {
+          "title": "工作流 1",
+          "description": "资料检索",
+          "meta": "1 项步骤"
+        },
+        {
+          "title": "工作流 2",
+          "description": "代码审查",
+          "meta": "2 项步骤"
+        },
+        {
+          "title": "工作流 3",
+          "description": "报告整理",
+          "meta": "3 项步骤"
+        },
+        {
+          "title": "工作流 4",
+          "description": "资料检索",
+          "meta": "4 项步骤"
+        },
+        {
+          "title": "工作流 5",
+          "description": "代码审查",
+          "meta": "5 项步骤"
+        },
+        {
+          "title": "工作流 6",
+          "description": "报告整理",
+          "meta": "6 项步骤"
+        },
+        {
+          "title": "工作流 7",
+          "description": "资料检索",
+          "meta": "7 项步骤"
+        },
+        {
+          "title": "工作流 8",
+          "description": "代码审查",
+          "meta": "8 项步骤"
+        },
+        {
+          "title": "工作流 9",
+          "description": "报告整理",
+          "meta": "9 项步骤"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "string"
+            },
+            {
+              "kind": "object",
+              "properties": {
+                "id": {
+                  "kind": "union",
+                  "variants": [
+                    {
+                      "kind": "string"
+                    },
+                    {
+                      "kind": "number"
+                    }
+                  ]
+                },
+                "image": {
+                  "kind": "string"
+                }
+              },
+              "required": [
+                "title"
+              ]
+            }
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 animated list 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "light",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animation",
+      "name": "animation",
+      "label": "animation · t0",
+      "description": "动画，控制 animated list 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animation"
+        }
+      ],
+      "type": "Animation | 'none'",
+      "defaultValue": "pop",
+      "upstreamDefault": "'pop'",
+      "control": "select",
+      "options": [
+        {
+          "label": "pop",
+          "value": "pop"
+        },
+        {
+          "label": "slide",
+          "value": "slide"
+        },
+        {
+          "label": "fade",
+          "value": "fade"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'var(--al-ink)'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 16,
+      "upstreamDefault": "14",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "8",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.width",
+      "name": "width",
+      "label": "宽度 · t0",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "width"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": "100%",
+      "upstreamDefault": "420",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.maxHeight",
+      "name": "maxHeight",
+      "label": "maxHeight · t0",
+      "description": "最大高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "maxHeight"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 300,
+      "upstreamDefault": "440",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showGradients",
+      "name": "showGradients",
+      "label": "showGradients · t0",
+      "description": "是否显示渐变组，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showGradients"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.displayScrollbar",
+      "name": "displayScrollbar",
+      "label": "displayScrollbar · t0",
+      "description": "是否显示滚动条，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "displayScrollbar"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.frame",
+      "name": "frame",
+      "label": "frame · t0",
+      "description": "是否外框，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "frame"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.enableArrowNavigation",
+      "name": "enableArrowNavigation",
+      "label": "enableArrowNavigation · t0",
+      "description": "是否启用箭头导航，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "enableArrowNavigation"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.initialSelectedIndex",
+      "name": "initialSelectedIndex",
+      "label": "initialSelectedIndex · t0",
+      "description": "初始选中索引，控制 animated list 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "initialSelectedIndex"
+        }
+      ],
+      "type": "number",
+      "defaultValue": -1,
+      "upstreamDefault": "-1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.selectOnHover",
+      "name": "selectOnHover",
+      "label": "selectOnHover · t0",
+      "description": "是否选择悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "selectOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.loop",
+      "name": "loop",
+      "label": "循环 · t0",
+      "description": "是否循环，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "loop"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animateOnce",
+      "name": "animateOnce",
+      "label": "animateOnce · t0",
+      "description": "是否动画仅一次，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animateOnce"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stagger",
+      "name": "stagger",
+      "label": "错峰间隔 · t0",
+      "description": "错开，控制 animated list 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stagger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.05,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeSize",
+      "name": "fadeSize",
+      "label": "fadeSize · t0",
+      "description": "淡出尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 56,
+      "upstreamDefault": "56",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.itemClassName",
+      "name": "itemClassName",
+      "label": "itemClassName · t0",
+      "description": "条目类名名称，控制 animated list 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "itemClassName"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "AnimatedListItem[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 155,
+        "kind": "parameter"
+      },
+      "defaultResolvedExpression": "[\n  { icon: glyph(Folder01Icon), title: 'Brand assets', description: '24 files', meta: '2m' },\n  { icon: glyph(Image01Icon), title: 'Launch hero.png', description: '2.4 MB', meta: '18m' },\n  { icon: glyph(Video01Icon), title: 'Product tour.mp4', description: '148 MB', meta: '1h' },\n  { icon: glyph(Note01Icon), title: 'Pricing notes', description: '1,240 words', meta: '3h' },\n  { icon: glyph(CodeIcon), title: 'landing-page.tsx', description: '12 KB', meta: '5h' },\n  { icon: glyph(FigmaIcon), title: 'Onboarding flow', description: '38 frames', meta: '8h' },\n  { icon: glyph(MusicNote01Icon), title: 'Ambient loop.wav', description: '9.1 MB', meta: '1d' },\n  { icon: glyph(Table01Icon), title: 'Q3 forecast', description: '4 sheets', meta: '1d' },\n  { icon: glyph(Pdf01Icon), title: 'Brand guidelines.pdf', description: '6.8 MB', meta: '2d' },\n  { icon: glyph(Presentation01Icon), title: 'Investor update', description: '22 slides', meta: '3d' },\n  { icon: glyph(FileZipIcon), title: 'Icon set.zip', description: '1.2 MB', meta: '4d' },\n  { icon: glyph(Image01Icon), title: 'Moodboard.jpg', description: '3.6 MB', meta: '5d' },\n  { icon: glyph(File01Icon), title: 'Release notes', description: 'Version 2.4', meta: '1w' },\n  { icon: glyph(Folder01Icon), title: 'Archive', description: '118 files', meta: '2w' },\n  { icon: glyph(Video01Icon), title: 'Teaser cut.mov', description: '86 MB', meta: '3w' }\n]",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 39
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "AnimatedListItem",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "AnimatedListEntry",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "id",
+                    "type": "string | number",
+                    "required": false
+                  },
+                  {
+                    "name": "icon",
+                    "type": "ReactNode",
+                    "required": false
+                  },
+                  {
+                    "name": "image",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "title",
+                    "type": "ReactNode",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "type": "ReactNode",
+                    "required": false
+                  },
+                  {
+                    "name": "meta",
+                    "type": "ReactNode",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={Array.from({ length: 9 }, (_, index) => ({ title: '工作流 ' + (index + 1), description: ['资料检索', '代码审查', '报告整理'][index % 3], meta: (index + 1) + ' 项步骤' }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={Array.from({ length: 9 }, (_, index) => ({ title: '工作流 ' + (index + 1), description: ['资料检索', '代码审查', '报告整理'][index % 3], meta: (index + 1) + ' 项步骤' }))}"
+      ]
+    },
+    {
+      "name": "onItemSelect",
+      "type": "(item: AnimatedListItem, index: number) => void",
+      "required": false,
+      "description": "用户选择候选项时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 40
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((item: AnimatedListItem, index: number) => void) | undefined"
+      },
+      "codeExample": "onItemSelect={(_item, index) => setStatus('选中工作流 ' + (index + 1))}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onItemSelect={(_item, index) => setStatus('选中工作流 ' + (index + 1))}"
+      ]
+    },
+    {
+      "name": "renderItem",
+      "type": "(item: AnimatedListItem, index: number, isSelected: boolean) => ReactNode",
+      "required": false,
+      "description": "自定义每一项内容的渲染函数，接收条目及索引等参数并返回 ReactNode。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 41
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((item: AnimatedListItem, index: number, isSelected: boolean) => ReactNode) | undefined"
+      },
+      "codeExample": "renderItem={(item, index, isSelected) => (\"示例\")}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "initialSelectedIndex",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "-1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 158,
+        "kind": "parameter"
+      },
+      "defaultValue": -1,
+      "description": "初始选中索引，控制 animated list 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 42
+      },
+      "codeExample": "initialSelectedIndex={-1}"
+    },
+    {
+      "name": "selectOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 159,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否选择悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "selectOnHover={true}"
+    },
+    {
+      "name": "enableArrowNavigation",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 160,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否启用箭头导航，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 44
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "enableArrowNavigation",
+      "usageExamples": [
+        "enableArrowNavigation"
+      ]
+    },
+    {
+      "name": "loop",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 161,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否循环，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 45
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "loop={false}"
+    },
+    {
+      "name": "animation",
+      "type": "Animation | 'none'",
+      "required": false,
+      "defaultExpression": "'pop'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 162,
+        "kind": "parameter"
+      },
+      "defaultValue": "pop",
+      "description": "动画，控制 animated list 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "pop",
+        "slide",
+        "fade",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 46
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "pop",
+          "slide",
+          "fade",
+          "none"
+        ]
+      },
+      "codeExample": "animation=\"pop\"",
+      "usageExamples": [
+        "animation=\"pop\""
+      ]
+    },
+    {
+      "name": "animateOnce",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 163,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否动画仅一次，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 47
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "animateOnce={false}"
+    },
+    {
+      "name": "stagger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 164,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "错开，控制 animated list 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 48
+      },
+      "codeExample": "stagger={0.05}"
+    },
+    {
+      "name": "showGradients",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 165,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示渐变组，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 49
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showGradients",
+      "usageExamples": [
+        "showGradients"
+      ]
+    },
+    {
+      "name": "fadeSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "56",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 166,
+        "kind": "parameter"
+      },
+      "defaultValue": 56,
+      "description": "淡出尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 50
+      },
+      "codeExample": "fadeSize={56}"
+    },
+    {
+      "name": "displayScrollbar",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 167,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示滚动条，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 51
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "displayScrollbar",
+      "usageExamples": [
+        "displayScrollbar"
+      ]
+    },
+    {
+      "name": "frame",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 168,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否外框，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 52
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "frame",
+      "usageExamples": [
+        "frame"
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 169,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 animated list 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 53
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"light\"",
+      "usageExamples": [
+        "theme=\"light\""
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'var(--al-ink)'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 533,
+        "kind": "implementation-fallback"
+      },
+      "defaultValue": "var(--al-ink)",
+      "defaultCondition": "falsy",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 54
+      },
+      "codeExample": "accentColor={palette.primary}",
+      "usageExamples": [
+        "accentColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "14",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 171,
+        "kind": "parameter"
+      },
+      "defaultValue": 14,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 55
+      },
+      "codeExample": "radius={16}",
+      "usageExamples": [
+        "radius={16}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 172,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 56
+      },
+      "codeExample": "gap={8}",
+      "usageExamples": [
+        "gap={8}"
+      ]
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "420",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 173,
+        "kind": "parameter"
+      },
+      "defaultValue": 420,
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 57
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "width=\"100%\"",
+      "usageExamples": [
+        "width=\"100%\""
+      ]
+    },
+    {
+      "name": "maxHeight",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "440",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 174,
+        "kind": "parameter"
+      },
+      "defaultValue": 440,
+      "description": "最大高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 58
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "maxHeight={300}",
+      "usageExamples": [
+        "maxHeight={300}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 175,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 59
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "itemClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 176,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "条目类名名称，控制 animated list 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 60
+      },
+      "codeExample": "itemClassName={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+        "line": 61
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/AnimatedList/AnimatedList';\nimport { palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 列表数量超过容器可视区，可验证入场、滚动与选择。\n\nexport default function AnimatedListDemo() {\n  const [status, setStatus] = useState(\"滚动列表，点击或使用方向键选择\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ height: 330, width: 'min(100%, 460px)', margin: '0 auto', padding: 16 }}><Component\n\n\n onItemSelect={(_item, index) => setStatus('选中工作流 ' + (index + 1))} /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "AnimatedList",
+      "sourcePath": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "AnimatedListItem[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 155,
+            "kind": "parameter"
+          },
+          "defaultResolvedExpression": "[\n  { icon: glyph(Folder01Icon), title: 'Brand assets', description: '24 files', meta: '2m' },\n  { icon: glyph(Image01Icon), title: 'Launch hero.png', description: '2.4 MB', meta: '18m' },\n  { icon: glyph(Video01Icon), title: 'Product tour.mp4', description: '148 MB', meta: '1h' },\n  { icon: glyph(Note01Icon), title: 'Pricing notes', description: '1,240 words', meta: '3h' },\n  { icon: glyph(CodeIcon), title: 'landing-page.tsx', description: '12 KB', meta: '5h' },\n  { icon: glyph(FigmaIcon), title: 'Onboarding flow', description: '38 frames', meta: '8h' },\n  { icon: glyph(MusicNote01Icon), title: 'Ambient loop.wav', description: '9.1 MB', meta: '1d' },\n  { icon: glyph(Table01Icon), title: 'Q3 forecast', description: '4 sheets', meta: '1d' },\n  { icon: glyph(Pdf01Icon), title: 'Brand guidelines.pdf', description: '6.8 MB', meta: '2d' },\n  { icon: glyph(Presentation01Icon), title: 'Investor update', description: '22 slides', meta: '3d' },\n  { icon: glyph(FileZipIcon), title: 'Icon set.zip', description: '1.2 MB', meta: '4d' },\n  { icon: glyph(Image01Icon), title: 'Moodboard.jpg', description: '3.6 MB', meta: '5d' },\n  { icon: glyph(File01Icon), title: 'Release notes', description: 'Version 2.4', meta: '1w' },\n  { icon: glyph(Folder01Icon), title: 'Archive', description: '118 files', meta: '2w' },\n  { icon: glyph(Video01Icon), title: 'Teaser cut.mov', description: '86 MB', meta: '3w' }\n]",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 39
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "AnimatedListItem",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "AnimatedListEntry",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "id",
+                        "type": "string | number",
+                        "required": false
+                      },
+                      {
+                        "name": "icon",
+                        "type": "ReactNode",
+                        "required": false
+                      },
+                      {
+                        "name": "image",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "title",
+                        "type": "ReactNode",
+                        "required": true
+                      },
+                      {
+                        "name": "description",
+                        "type": "ReactNode",
+                        "required": false
+                      },
+                      {
+                        "name": "meta",
+                        "type": "ReactNode",
+                        "required": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={Array.from({ length: 9 }, (_, index) => ({ title: '工作流 ' + (index + 1), description: ['资料检索', '代码审查', '报告整理'][index % 3], meta: (index + 1) + ' 项步骤' }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={Array.from({ length: 9 }, (_, index) => ({ title: '工作流 ' + (index + 1), description: ['资料检索', '代码审查', '报告整理'][index % 3], meta: (index + 1) + ' 项步骤' }))}"
+          ]
+        },
+        {
+          "name": "onItemSelect",
+          "type": "(item: AnimatedListItem, index: number) => void",
+          "required": false,
+          "description": "用户选择候选项时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 40
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((item: AnimatedListItem, index: number) => void) | undefined"
+          },
+          "codeExample": "onItemSelect={(_item, index) => setStatus('选中工作流 ' + (index + 1))}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onItemSelect={(_item, index) => setStatus('选中工作流 ' + (index + 1))}"
+          ]
+        },
+        {
+          "name": "renderItem",
+          "type": "(item: AnimatedListItem, index: number, isSelected: boolean) => ReactNode",
+          "required": false,
+          "description": "自定义每一项内容的渲染函数，接收条目及索引等参数并返回 ReactNode。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 41
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((item: AnimatedListItem, index: number, isSelected: boolean) => ReactNode) | undefined"
+          },
+          "codeExample": "renderItem={(item, index, isSelected) => (\"示例\")}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "initialSelectedIndex",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "-1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 158,
+            "kind": "parameter"
+          },
+          "defaultValue": -1,
+          "description": "初始选中索引，控制 animated list 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 42
+          },
+          "codeExample": "initialSelectedIndex={-1}"
+        },
+        {
+          "name": "selectOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 159,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否选择悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "selectOnHover={true}"
+        },
+        {
+          "name": "enableArrowNavigation",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 160,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否启用箭头导航，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 44
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "enableArrowNavigation",
+          "usageExamples": [
+            "enableArrowNavigation"
+          ]
+        },
+        {
+          "name": "loop",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 161,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否循环，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 45
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "loop={false}"
+        },
+        {
+          "name": "animation",
+          "type": "Animation | 'none'",
+          "required": false,
+          "defaultExpression": "'pop'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 162,
+            "kind": "parameter"
+          },
+          "defaultValue": "pop",
+          "description": "动画，控制 animated list 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "pop",
+            "slide",
+            "fade",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 46
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "pop",
+              "slide",
+              "fade",
+              "none"
+            ]
+          },
+          "codeExample": "animation=\"pop\"",
+          "usageExamples": [
+            "animation=\"pop\""
+          ]
+        },
+        {
+          "name": "animateOnce",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 163,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否动画仅一次，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 47
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "animateOnce={false}"
+        },
+        {
+          "name": "stagger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 164,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "错开，控制 animated list 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 48
+          },
+          "codeExample": "stagger={0.05}"
+        },
+        {
+          "name": "showGradients",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 165,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示渐变组，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 49
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showGradients",
+          "usageExamples": [
+            "showGradients"
+          ]
+        },
+        {
+          "name": "fadeSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "56",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 166,
+            "kind": "parameter"
+          },
+          "defaultValue": 56,
+          "description": "淡出尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 50
+          },
+          "codeExample": "fadeSize={56}"
+        },
+        {
+          "name": "displayScrollbar",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 167,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示滚动条，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 51
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "displayScrollbar",
+          "usageExamples": [
+            "displayScrollbar"
+          ]
+        },
+        {
+          "name": "frame",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 168,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否外框，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 52
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "frame",
+          "usageExamples": [
+            "frame"
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 169,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 animated list 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 53
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"light\"",
+          "usageExamples": [
+            "theme=\"light\""
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'var(--al-ink)'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 533,
+            "kind": "implementation-fallback"
+          },
+          "defaultValue": "var(--al-ink)",
+          "defaultCondition": "falsy",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 54
+          },
+          "codeExample": "accentColor={palette.primary}",
+          "usageExamples": [
+            "accentColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "14",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 171,
+            "kind": "parameter"
+          },
+          "defaultValue": 14,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 55
+          },
+          "codeExample": "radius={16}",
+          "usageExamples": [
+            "radius={16}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 172,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 56
+          },
+          "codeExample": "gap={8}",
+          "usageExamples": [
+            "gap={8}"
+          ]
+        },
+        {
+          "name": "width",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "420",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 173,
+            "kind": "parameter"
+          },
+          "defaultValue": 420,
+          "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 57
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "width=\"100%\"",
+          "usageExamples": [
+            "width=\"100%\""
+          ]
+        },
+        {
+          "name": "maxHeight",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "440",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 174,
+            "kind": "parameter"
+          },
+          "defaultValue": 440,
+          "description": "最大高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 58
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "maxHeight={300}",
+          "usageExamples": [
+            "maxHeight={300}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 175,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 59
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "itemClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 176,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "条目类名名称，控制 animated list 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 60
+          },
+          "codeExample": "itemClassName={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/AnimatedList/AnimatedList.tsx",
+            "line": 61
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

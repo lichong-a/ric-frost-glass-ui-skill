@@ -2,7 +2,7 @@
 
 **303 个独立入口，按场景选型、逐项预览、渐进读取。**
 
-示例库包含 88 个业务基础能力和 215 个交互效果。每项都有实际演示、参数用法、具体中文说明与接入指南。视觉遵循 Agent Wan 的自然色霜玻璃规范，组件行为由真实状态与回调驱动。
+示例库包含 88 个业务基础能力和 215 个交互效果。每项都有实际演示、参数用法、具体中文说明与接入指南。外壳沿用 Agent Wan 自然色霜玻璃规范；效果画布保留 React Bits 的配色、对比度与机制。组件行为由真实状态与回调驱动。
 
 ## 开始使用
 
@@ -30,29 +30,32 @@ node scripts/example.mjs preview
 
 ## 能力范围
 
-| 业务类别 | 数量 | 适用场景 |
+| 用途分类 | 数量 | 适用场景 |
 | --- | ---: | --- |
-| 业务表单 | 29 | 输入、选择、日期、校验与标签 |
-| 业务动作 | 4 | 提交、动作分组与确认 |
-| 数据与文件 | 10 | 表格、树、分页、文件选择与移动 |
-| 布局与流程 | 12 | 内容分区、折叠、分栏与步骤 |
-| 弹层与焦点 | 6 | 临时输入、侧边详情与就地说明 |
-| 业务导航 | 6 | 主导航、路径与动作菜单 |
-| 状态反馈 | 10 | 消息、进度、标签与占位 |
-| 媒体浏览 | 3 | 图片、轮播与对比 |
-| 基础辅助 | 8 | 焦点、挂载与辅助语义 |
-| **业务合计** | **88** | [按场景选型](docs/business/task-router.md) |
+| [文字动效](docs/categories/text.md) | 28 | 标题、正文、字符与字形的动态表达 |
+| [背景与光效](docs/categories/background.md) | 66 | 页面背景、纹理、粒子与空间光效 |
+| [指针与轨迹](docs/categories/pointer.md) | 16 | 指针形态、悬停响应与移动轨迹 |
+| [滚动与转场](docs/categories/scroll.md) | 12 | 滚动触发、进入视口与状态转场 |
+| [媒体与轮播](docs/categories/media.md) | 31 | 图片、图集、轮播、模型与媒体比较 |
+| [卡片与面板](docs/categories/cards.md) | 24 | 对象卡片、阅读面与内容面板 |
+| [表单与选择](docs/categories/form.md) | 45 | 文本输入、数值调整、选项与字段语义 |
+| [按钮与操作](docs/categories/actions.md) | 13 | 动作入口、提交、快捷操作与撤销 |
+| [导航与菜单](docs/categories/navigation.md) | 17 | 页面导航、命令查找与菜单选择 |
+| [数据与文件](docs/categories/data.md) | 18 | 记录、层级、列表、文件与结果浏览 |
+| [布局与流程](docs/categories/layout.md) | 7 | 工作区分隔、内容布局与顺序流程 |
+| [状态与反馈](docs/categories/feedback.md) | 16 | 等待、进度、通知与结果状态 |
+| [弹层与辅助](docs/categories/overlay.md) | 10 | 对话框、提示、浮层与焦点辅助 |
+| **合计** | **303** | 215 个 React Bits 效果与 88 个业务能力 |
 
-| 交互效果 | 数量 | 可观察特征 |
-| --- | ---: | --- |
-| 文字效果 | 33 | 字符入场、打字、翻牌、描边、轮换与计数 |
-| 交互动效 | 41 | 过渡、悬停、指针、点击、图像扰动与边框 |
-| 组合组件 | 48 | 导航、卡片、画廊、轮播与选择器 |
-| 微交互 | 34 | 任务状态、聊天输入、表单、按钮与反馈 |
-| 背景效果 | 59 | 粒子、网格、光束、流体与三维背景 |
-| **效果合计** | **215** | [按效果选型](docs/task-router.md) |
+每个组件只有一个主分类。微交互、组合组件、业务基础及原来源保留为搜索标签；全部轮播、画廊、Masonry 与图片对比集中在媒体分类，菜单集中在导航分类。`Carousel · React Bits` 与 `Carousel · 基础轮播` 保留独立能力，原组件 ID 和 `#组件ID` 链接继续可用。上一项／下一项遵从当前分类和搜索结果。
 
-一项对应一个独立示例，不重复统计语言或样式变体。[业务能力清单](docs/business/coverage.md) 说明现有相邻项、具体用途与优先替代方案。
+## 调节与复制
+
+参数面板位于预览下方，常用参数展开，高级参数折叠。支持数字、范围、开关、枚举、颜色、文本、本地资源和适合编辑的 JSON 数据。参数类型、完整 API、源码默认值、本例配置与容器设置分别记录；回调、ref、React 节点通过实际 TSX 接入。
+
+普通参数即时更新，构造阶段与图形参数在结束调节后重建。错误输入保留最后有效预览；受控值通过原组件回调同步。切换组件会记住各自修改，刷新恢复默认。提供“恢复默认”“重播”“复制当前用法／配置”；用法源码默认显示当前配置的可复制 TSX，另有完整示例源码入口。
+
+Scroll Float、Scroll Velocity、Scroll Reveal 在预览框内使用两屏：完整引导屏之后才出现动画正文，支持原生滚轮、键盘启动和回到起点的重播。24 项还原默认配置见 `catalog/text-scroll-restoration.json`、`catalog/visual-restoration.json`。本地纹理素材来源与许可见 [素材说明](src/assets/restoration/README.md)。
 
 ## 交给 Agent
 
@@ -74,12 +77,17 @@ node scripts/find-component.mjs "标题逐字出现" --provider effects --limit 
 | 路径 | 用途 |
 | --- | --- |
 | `src/Gallery.tsx` | 目录、搜索、详情和预览操作 |
-| `src/demos/<slug>.tsx` | 215 个效果的独立演示与真实参数 |
-| `src/business/demos/<id>.tsx` | 88 个业务示例，各项独立延迟导入 |
-| `src/business/support.tsx` | 业务模块内实际复用的字段、按钮与浮层 |
+| `src/demos/<用途>/<slug>.tsx` | 215 个效果的独立演示与真实参数 |
+| `src/business/demos/<用途>/<id>.tsx` | 88 个业务示例，各项独立延迟导入 |
+| `src/business/components/` | 按需导入的业务控件与其独立 CSS Modules |
+| `src/business/support.tsx` | 兼容入口；示例优先直接导入所需控件 |
 | `src/shared/` | 主题映射、媒体路径与共用样式 |
 | `src/runtime/` | 延迟加载、偏好同步、隔离与错误恢复 |
 | `catalog/business-catalog.json` | 业务身份、中文子标题、适用场景与替代边界 |
+| `catalog/use-categories.json` | 全库唯一用途分类、来源标签和目录路径 |
+| `src/parameters/definitions/<id>.json` | 当前组件完整 API、DIY 配置和用法模板；按需加载 |
+| `catalog/parameter-api.json` | 从锁定源码与业务实现提取的真实类型及默认值 |
+| `catalog/demo-source-templates.json` | 作者示例源，保留还原布局、回调及私有样式导入 |
 | `catalog/intent-metadata.json` | 效果示例与指南共用的中文意图 |
 | `catalog/` | 固定资源清单、依赖、版本与散列 |
 | `docs/components/` | 逐项效果机制、参数、资源与降级说明 |
@@ -100,9 +108,21 @@ node scripts/find-component.mjs "标题逐字出现" --provider effects --limit 
 
 ## 维护方式
 
-视觉数值以项目根 `tokens.json` 为准，修改后重建 Token。业务能力维护实际 demo 与 `business-catalog.json`；效果参数配方维护在 `catalog/demo-recipes.json`，对应 wrapper 通过 `scripts/build-demos.mjs` 生成。其余独立效果源文件直接维护。
+外壳与业务控件的视觉数值来自根 `tokens.json`。`catalog/use-categories.json` 决定全库分类、名称、目录与加载路径；业务与 React Bits 示例仍各自在自己的根目录下。新效果使用私有 CSS Modules，不在共享文件覆盖上游组件。锁定上游源码不手改，已有适配器只对明确组件和锁定内容做变换并配套回归验证。
 
-只重建一项效果时，在示例目录执行 `node scripts/build-demos.mjs --component count-up`。数字展示如用于组件总数，读取页面共用的 `gallery-catalog.ts`，避免在配方与示例中写死数量。滚动条和浮层外观入口见 [CSS API](../CSS_API.md)，类型、方向、关闭与通知规则按主规范对应章节读取。
+参数提取、编辑器和源码生成共用定义。`catalog/demo-source-templates.json` 保存作者示例；常规生成以此为准，保留本轮效果还原、CSS Modules、回调和素材。旧 `demo-recipes.json` 仅作为首次构造的历史输入；已有作者模板时，`build-demos.mjs` 使用当前模板和参数生成器。修改作者示例时同步更新模板，再提取 API、生成参数与文档。`--capture` 只允许未插桩的作者源，避免把生成结果当成新的事实源。
+
+在示例目录执行：
+
+```bash
+npm run catalog:build
+node scripts/extract-parameters.mjs
+npm run parameters:build
+npm run docs:build
+npm run check:parameters
+```
+
+单项效果重新生成使用 `node scripts/build-demos.mjs --component cubes`；全部模板验证使用 `node scripts/build-parameters.mjs --check`。完整用法另外接受 TypeScript 检查，检查器在内存中替换成可复制源，不覆盖实际示例文件。
 
 修改示例、场景或生成器后，在项目根同步文档：
 
@@ -112,7 +132,7 @@ node scripts/example.mjs docs
 
 该入口同步单项指南、路由、检索索引、业务加载入口、根 Skill 与交接说明。不要手改生成目录作为第二套事实源。
 
-维护检查在示例目录使用现有 `check:coverage`、`check:types`、`test`、`build` 和 `check:build`；只报告实际执行过的项目。历史记录见 [验证报告](../VALIDATION_REPORT.md)，类型与运行条件分别见 `UPSTREAM_TYPE_COMPATIBILITY.md`、`UPSTREAM_RUNTIME_AUDIT.md`、`RESOURCE_AUDIT.md`。
+维护检查在示例目录使用现有 `check:coverage`、`check:parameters`、`check:types`、`test`、`build` 和 `check:build`；只报告实际执行过的项目。历史记录见 [验证报告](../VALIDATION_REPORT.md)，类型与运行条件分别见 `UPSTREAM_TYPE_COMPATIBILITY.md`、`UPSTREAM_RUNTIME_AUDIT.md`、`RESOURCE_AUDIT.md`。
 
 子路径构建时设置同一资源 base：
 

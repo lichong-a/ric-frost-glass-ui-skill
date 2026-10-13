@@ -1,0 +1,754 @@
+{
+  "version": 1,
+  "id": "business-paginator",
+  "name": "Paginator",
+  "sourcePath": "src/business/components/Pager.tsx",
+  "demoPath": "src/business/demos/data/business-paginator.tsx",
+  "fields": [
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "每页数量",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.control",
+      "name": "control",
+      "label": "control · t0",
+      "description": "是否控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "control"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.label",
+      "name": "label",
+      "label": "标签 · t1",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "每页数量",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.options",
+      "name": "options",
+      "label": "选项 · t1",
+      "description": "可选择的候选项，显示标签与提交值按选项类型定义。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "options"
+        }
+      ],
+      "type": "readonly (string | { value: string; label: string })[]",
+      "defaultValue": [
+        {
+          "value": "2",
+          "label": "2 项"
+        },
+        {
+          "value": "3",
+          "label": "3 项"
+        }
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "string"
+            },
+            {
+              "kind": "object",
+              "properties": {
+                "value": {
+                  "kind": "string"
+                },
+                "label": {
+                  "kind": "string"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ]
+            }
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.placeholder",
+      "name": "placeholder",
+      "label": "占位文字 · t1",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "placeholder"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "请选择",
+      "upstreamDefault": "'请选择'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.disabled",
+      "name": "disabled",
+      "label": "禁用 · t1",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.total",
+      "name": "total",
+      "label": "总数 · t2",
+      "description": "参与分页的记录总数。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "total"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 6,
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.page",
+      "name": "page",
+      "label": "当前页",
+      "description": "示例的受控状态 page；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "number",
+      "defaultValue": 0,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "page"
+        }
+      ]
+    },
+    {
+      "key": "state.size",
+      "name": "size",
+      "label": "尺寸",
+      "description": "示例的受控状态 size；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "number",
+      "defaultValue": 2,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "page",
+      "type": "number",
+      "required": true,
+      "description": "当前分页页码。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/Pager.tsx",
+        "line": 7
+      },
+      "codeExample": "page={page}",
+      "usageExamples": [
+        "page={page}"
+      ]
+    },
+    {
+      "name": "pageSize",
+      "type": "number",
+      "required": true,
+      "description": "每页显示的条目数量。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/Pager.tsx",
+        "line": 7
+      },
+      "codeExample": "pageSize={size}",
+      "usageExamples": [
+        "pageSize={size}"
+      ]
+    },
+    {
+      "name": "total",
+      "type": "number",
+      "required": true,
+      "description": "参与分页的记录总数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/Pager.tsx",
+        "line": 7
+      },
+      "codeExample": "total={workItems.length}",
+      "usageExamples": [
+        "total={workItems.length}"
+      ]
+    },
+    {
+      "name": "onChange",
+      "type": "(page: number) => void",
+      "required": true,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/Pager.tsx",
+        "line": 7
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(page: number) => void"
+      },
+      "codeExample": "onChange={setPage}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={setPage}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Field } from '../../components/Field';\nimport { workItems } from '../../data';\nimport { Pager } from '../../components/Pager';\nimport { AnimatedSelect } from '../../components/AnimatedSelect';\n\nconst ownedStyles={};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessPaginatorDemo() {\n  const [page,setPage]=useState(/*__AW_STATE_state.page__*/); const [size,setSize]=useState(/*__AW_STATE_state.size__*/);\n  return <BusinessDemo title=\"Paginator\" description=\"分页浏览本地记录，页容量改变时回到第一页。\">\n    <Field  /*__AW_PROPS_t0__*/ ><AnimatedSelect  value={String(size)} onChange={value=>{setSize(Number(value));setPage(0);}}  /*__AW_PROPS_t1__*/  /></Field><ul>{workItems.slice(page*size,page*size+size).map(item=><li key={item.id}>{item.title}</li>)}</ul><Pager page={page} pageSize={size}  onChange={setPage} /*__AW_PROPS_t2__*/  />\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Field",
+      "sourcePath": "src/business/components/Field.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "label=\"每页数量\"",
+          "usageExamples": [
+            "label=\"每页数量\""
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><AnimatedSelect label=\"每页数量\" value={String(size)} onChange={value=>{setSize(Number(value));setPage(0);}} options={[{value:\"2\",label:\"2 项\"},{value:\"3\",label:\"3 项\"}]} /></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><AnimatedSelect label=\"每页数量\" value={String(size)} onChange={value=>{setSize(Number(value));setPage(0);}} options={[{value:\"2\",label:\"2 项\"},{value:\"3\",label:\"3 项\"}]} /></>}"
+          ]
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "required": false,
+          "description": "与字段一起显示的帮助文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "hint={\"示例\"}"
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "(isControl ? children.props.id : undefined)",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "htmlFor={\"示例\"}"
+        },
+        {
+          "name": "control",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "control={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "AnimatedSelect",
+      "sourcePath": "src/business/components/AnimatedSelect.tsx",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "generatedId",
+          "defaultSource": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 18,
+            "kind": "implementation-fallback"
+          },
+          "defaultResolvedExpression": "useId()",
+          "defaultCondition": "nullish",
+          "description": "原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 14
+          },
+          "codeExample": "id={\"示例\"}"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": true,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 14
+          },
+          "codeExample": "value={String(size)}",
+          "usageExamples": [
+            "value={String(size)}"
+          ]
+        },
+        {
+          "name": "options",
+          "type": "readonly (string | { value: string; label: string })[]",
+          "required": true,
+          "description": "可选择的候选项，显示标签与提交值按选项类型定义。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string | { value: string; label: string; }",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "{ value: string; label: string; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "label",
+                        "type": "string",
+                        "required": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "options={[{value:\"2\",label:\"2 项\"},{value:\"3\",label:\"3 项\"}]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "options={[{value:\"2\",label:\"2 项\"},{value:\"3\",label:\"3 项\"}]}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "required": true,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(value: string) => void"
+          },
+          "codeExample": "onChange={value=>{setSize(Number(value));setPage(0);}}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={value=>{setSize(Number(value));setPage(0);}}"
+          ]
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "codeExample": "label=\"每页数量\"",
+          "usageExamples": [
+            "label=\"每页数量\""
+          ]
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'请选择'",
+          "defaultSource": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 13,
+            "kind": "parameter"
+          },
+          "defaultValue": "请选择",
+          "description": "尚未填写或选择时显示的提示文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "codeExample": "placeholder={\"请选择\"}"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 13,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t2",
+      "name": "Pager",
+      "sourcePath": "src/business/components/Pager.tsx",
+      "props": [
+        {
+          "name": "page",
+          "type": "number",
+          "required": true,
+          "description": "当前分页页码。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Pager.tsx",
+            "line": 7
+          },
+          "codeExample": "page={page}",
+          "usageExamples": [
+            "page={page}"
+          ]
+        },
+        {
+          "name": "pageSize",
+          "type": "number",
+          "required": true,
+          "description": "每页显示的条目数量。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Pager.tsx",
+            "line": 7
+          },
+          "codeExample": "pageSize={size}",
+          "usageExamples": [
+            "pageSize={size}"
+          ]
+        },
+        {
+          "name": "total",
+          "type": "number",
+          "required": true,
+          "description": "参与分页的记录总数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Pager.tsx",
+            "line": 7
+          },
+          "codeExample": "total={workItems.length}",
+          "usageExamples": [
+            "total={workItems.length}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(page: number) => void",
+          "required": true,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Pager.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(page: number) => void"
+          },
+          "codeExample": "onChange={setPage}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={setPage}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

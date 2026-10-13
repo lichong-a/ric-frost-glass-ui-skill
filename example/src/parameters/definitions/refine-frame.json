@@ -1,0 +1,1355 @@
+{
+  "version": 1,
+  "id": "refine-frame",
+  "name": "Refine Frame",
+  "sourcePath": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+  "demoPath": "src/demos/media/refine-frame.tsx",
+  "fields": [
+    {
+      "key": "t0.aspectRatio",
+      "name": "aspectRatio",
+      "label": "aspectRatio · t0",
+      "description": "宽高比例，控制 refine frame 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aspectRatio"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "4/3",
+      "upstreamDefault": "'4 / 3'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.width",
+      "name": "width",
+      "label": "宽度 · t0",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "width"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 380,
+      "upstreamDefault": "320",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.background",
+      "name": "background",
+      "label": "background · t0",
+      "description": "背景，控制 refine frame 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "background"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "rgb(250 247 240 / 0.82)",
+      "upstreamDefault": "'#27272a'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.labels",
+      "name": "labels",
+      "label": "labels · t0",
+      "description": "标签的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "labels"
+        }
+      ],
+      "type": "Partial<Record<RefineFrameStatus, string>>",
+      "defaultValue": {
+        "queued": "等待中",
+        "generating": "正在生成",
+        "refining": "正在精修",
+        "complete": "完成",
+        "error": "生成失败"
+      },
+      "upstreamDefault": "DEFAULT_LABELS",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "queued": {
+            "kind": "string"
+          },
+          "generating": {
+            "kind": "string"
+          },
+          "refining": {
+            "kind": "string"
+          },
+          "complete": {
+            "kind": "string"
+          },
+          "error": {
+            "kind": "string"
+          }
+        },
+        "required": [
+          "queued",
+          "generating",
+          "refining",
+          "complete",
+          "error"
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.retryLabel",
+      "name": "retryLabel",
+      "label": "retryLabel · t0",
+      "description": "重试标签，控制 refine frame 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "retryLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "重试示例",
+      "upstreamDefault": "'Retry'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stageDuration",
+      "name": "stageDuration",
+      "label": "stageDuration · t0",
+      "description": "阶段时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stageDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 400,
+      "upstreamDefault": "400",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sweep",
+      "name": "sweep",
+      "label": "sweep · t0",
+      "description": "是否扫掠，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sweep"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showStatus",
+      "name": "showStatus",
+      "label": "showStatus · t0",
+      "description": "是否显示状态，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showStatus"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hideAfter",
+      "name": "hideAfter",
+      "label": "hideAfter · t0",
+      "description": "是否隐藏之后，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hideAfter"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1200,
+      "upstreamDefault": "1200",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.alt",
+      "name": "alt",
+      "label": "替代文字 · t1",
+      "description": "图像无法显示及辅助技术读取时的替代文字。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "alt"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "本地自然色示例图",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.type",
+      "name": "type",
+      "label": "类型 · t2",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 640,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "status",
+      "type": "RefineFrameStatus",
+      "required": false,
+      "defaultExpression": "'generating'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 130,
+        "kind": "parameter"
+      },
+      "defaultValue": "generating",
+      "description": "状态，控制 refine frame 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "queued",
+        "generating",
+        "refining",
+        "complete",
+        "error"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "queued",
+          "generating",
+          "refining",
+          "complete",
+          "error"
+        ]
+      },
+      "codeExample": "status={status}",
+      "usageExamples": [
+        "status={status}"
+      ]
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 12
+      },
+      "codeExample": "children={<><img src={microPaperArtwork} alt=\"本地自然色示例图\" className={cn(\"aw-micro-image\")} /></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><img src={microPaperArtwork} alt=\"本地自然色示例图\" className={cn(\"aw-micro-image\")} /></>}"
+      ]
+    },
+    {
+      "name": "aspectRatio",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'4 / 3'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 132,
+        "kind": "parameter"
+      },
+      "defaultValue": "4 / 3",
+      "description": "宽高比例，控制 refine frame 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 13
+      },
+      "codeExample": "aspectRatio=\"4/3\"",
+      "usageExamples": [
+        "aspectRatio=\"4/3\""
+      ]
+    },
+    {
+      "name": "width",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "320",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 133,
+        "kind": "parameter"
+      },
+      "defaultValue": 320,
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 14
+      },
+      "codeExample": "width={380}",
+      "usageExamples": [
+        "width={380}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 134,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 15
+      },
+      "codeExample": "radius={20}",
+      "usageExamples": [
+        "radius={20}"
+      ]
+    },
+    {
+      "name": "background",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#27272a'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 135,
+        "kind": "parameter"
+      },
+      "defaultValue": "#27272a",
+      "description": "背景，控制 refine frame 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 16
+      },
+      "codeExample": "background={palette.surface}",
+      "usageExamples": [
+        "background={palette.surface}"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 136,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 17
+      },
+      "codeExample": "color={palette.ink}",
+      "usageExamples": [
+        "color={palette.ink}"
+      ]
+    },
+    {
+      "name": "stageDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 137,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "阶段时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 18
+      },
+      "codeExample": "stageDuration={400}"
+    },
+    {
+      "name": "sweep",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 138,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否扫掠，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "sweep={true}"
+    },
+    {
+      "name": "showStatus",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 139,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示状态，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showStatus={true}"
+    },
+    {
+      "name": "hideAfter",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 140,
+        "kind": "parameter"
+      },
+      "defaultValue": 1200,
+      "description": "是否隐藏之后，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 21
+      },
+      "codeExample": "hideAfter={1200}"
+    },
+    {
+      "name": "labels",
+      "type": "Partial<Record<RefineFrameStatus, string>>",
+      "required": false,
+      "defaultExpression": "DEFAULT_LABELS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 141,
+        "kind": "parameter"
+      },
+      "defaultValue": {
+        "queued": "Queued",
+        "generating": "Generating",
+        "refining": "Refining",
+        "complete": "Ready",
+        "error": "Failed"
+      },
+      "defaultResolvedExpression": "{\n  queued: 'Queued',\n  generating: 'Generating',\n  refining: 'Refining',\n  complete: 'Ready',\n  error: 'Failed'\n}",
+      "description": "标签的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 22
+      },
+      "codeExample": "labels={labels}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "labels={labels}"
+      ]
+    },
+    {
+      "name": "retryLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Retry'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 142,
+        "kind": "parameter"
+      },
+      "defaultValue": "Retry",
+      "description": "重试标签，控制 refine frame 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 23
+      },
+      "codeExample": "retryLabel=\"重试示例\"",
+      "usageExamples": [
+        "retryLabel=\"重试示例\""
+      ]
+    },
+    {
+      "name": "onRetry",
+      "type": "() => void",
+      "required": false,
+      "description": "用户请求重试失败操作时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onRetry={() => setStatus('generating')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onRetry={() => setStatus('generating')}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 144,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+        "line": 25
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport RefineFrame, { type RefineFrameStatus } from '../../../.upstream/src/ts-default/Micro/RefineFrame/RefineFrame';\nimport { DemoPanel } from '../../shared/demo-support';\nimport { microPaperArtwork } from '../../shared/micro-assets';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nconst labels: Record<RefineFrameStatus, string> = { queued: '等待中', generating: '正在生成', refining: '正在精修', complete: '完成', error: '生成失败' };\nconst states: RefineFrameStatus[] = ['queued', 'generating', 'refining', 'complete', 'error'];\nexport default function RefineFrameDemo() {\n  const [status, setStatus] = useState<RefineFrameStatus>('generating');\n  return <DemoPanel title=\"Refine Frame · 渐进生成框\"><div className={cn(\"aw-micro-stack\")}>\n    <RefineFrame status={status}        onRetry={() => setStatus('generating')} /*__AW_PROPS_t0__*/ ><img src={microPaperArtwork}  className={cn(\"aw-micro-image\")} /*__AW_PROPS_t1__*/  /></RefineFrame>\n    <div className={cn(\"aw-micro-controls\")}>{states.map(value => <button className={styles['aw-micro-action']} key={value}  aria-pressed={status === value} onClick={() => setStatus(value)} /*__AW_PROPS_t2__*/ >{labels[value]}</button>)}</div>\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">当前仅模拟生成阶段：{labels[status]}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "RefineFrame",
+      "sourcePath": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+      "props": [
+        {
+          "name": "status",
+          "type": "RefineFrameStatus",
+          "required": false,
+          "defaultExpression": "'generating'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 130,
+            "kind": "parameter"
+          },
+          "defaultValue": "generating",
+          "description": "状态，控制 refine frame 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "queued",
+            "generating",
+            "refining",
+            "complete",
+            "error"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "queued",
+              "generating",
+              "refining",
+              "complete",
+              "error"
+            ]
+          },
+          "codeExample": "status={status}",
+          "usageExamples": [
+            "status={status}"
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 12
+          },
+          "codeExample": "children={<><img src={microPaperArtwork} alt=\"本地自然色示例图\" className={cn(\"aw-micro-image\")} /></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><img src={microPaperArtwork} alt=\"本地自然色示例图\" className={cn(\"aw-micro-image\")} /></>}"
+          ]
+        },
+        {
+          "name": "aspectRatio",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'4 / 3'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 132,
+            "kind": "parameter"
+          },
+          "defaultValue": "4 / 3",
+          "description": "宽高比例，控制 refine frame 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 13
+          },
+          "codeExample": "aspectRatio=\"4/3\"",
+          "usageExamples": [
+            "aspectRatio=\"4/3\""
+          ]
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "320",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 133,
+            "kind": "parameter"
+          },
+          "defaultValue": 320,
+          "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 14
+          },
+          "codeExample": "width={380}",
+          "usageExamples": [
+            "width={380}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 134,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 15
+          },
+          "codeExample": "radius={20}",
+          "usageExamples": [
+            "radius={20}"
+          ]
+        },
+        {
+          "name": "background",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#27272a'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 135,
+            "kind": "parameter"
+          },
+          "defaultValue": "#27272a",
+          "description": "背景，控制 refine frame 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 16
+          },
+          "codeExample": "background={palette.surface}",
+          "usageExamples": [
+            "background={palette.surface}"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 136,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 17
+          },
+          "codeExample": "color={palette.ink}",
+          "usageExamples": [
+            "color={palette.ink}"
+          ]
+        },
+        {
+          "name": "stageDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 137,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "阶段时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 18
+          },
+          "codeExample": "stageDuration={400}"
+        },
+        {
+          "name": "sweep",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 138,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否扫掠，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "sweep={true}"
+        },
+        {
+          "name": "showStatus",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 139,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示状态，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showStatus={true}"
+        },
+        {
+          "name": "hideAfter",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 140,
+            "kind": "parameter"
+          },
+          "defaultValue": 1200,
+          "description": "是否隐藏之后，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 21
+          },
+          "codeExample": "hideAfter={1200}"
+        },
+        {
+          "name": "labels",
+          "type": "Partial<Record<RefineFrameStatus, string>>",
+          "required": false,
+          "defaultExpression": "DEFAULT_LABELS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 141,
+            "kind": "parameter"
+          },
+          "defaultValue": {
+            "queued": "Queued",
+            "generating": "Generating",
+            "refining": "Refining",
+            "complete": "Ready",
+            "error": "Failed"
+          },
+          "defaultResolvedExpression": "{\n  queued: 'Queued',\n  generating: 'Generating',\n  refining: 'Refining',\n  complete: 'Ready',\n  error: 'Failed'\n}",
+          "description": "标签的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 22
+          },
+          "codeExample": "labels={labels}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "labels={labels}"
+          ]
+        },
+        {
+          "name": "retryLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Retry'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 142,
+            "kind": "parameter"
+          },
+          "defaultValue": "Retry",
+          "description": "重试标签，控制 refine frame 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 23
+          },
+          "codeExample": "retryLabel=\"重试示例\"",
+          "usageExamples": [
+            "retryLabel=\"重试示例\""
+          ]
+        },
+        {
+          "name": "onRetry",
+          "type": "() => void",
+          "required": false,
+          "description": "用户请求重试失败操作时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onRetry={() => setStatus('generating')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onRetry={() => setStatus('generating')}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 144,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/RefineFrame/RefineFrame.tsx",
+            "line": 25
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "img",
+      "props": [
+        {
+          "name": "src",
+          "type": "string | undefined",
+          "required": false,
+          "description": "加载图像、视频或纹理的资源地址。",
+          "usageExamples": [
+            "src={microPaperArtwork}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3077
+          }
+        },
+        {
+          "name": "alt",
+          "type": "string | undefined",
+          "required": false,
+          "description": "图像无法显示及辅助技术读取时的替代文字。",
+          "usageExamples": [
+            "alt=\"本地自然色示例图\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3069
+          }
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn(\"aw-micro-image\")}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles['aw-micro-action']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "key",
+          "type": "Key | null | undefined",
+          "required": false,
+          "description": "React 列表项身份，用于更新时保持对应节点。",
+          "usageExamples": [
+            "key={value}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 250
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "aria-pressed",
+          "type": "boolean | \"true\" | \"false\" | \"mixed\" | undefined",
+          "required": false,
+          "description": "辅助技术的 pressed 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-pressed={status === value}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2545
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setStatus(value)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>{labels[value]}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

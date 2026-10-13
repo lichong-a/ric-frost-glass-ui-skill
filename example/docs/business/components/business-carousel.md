@@ -1,6 +1,6 @@
-# Carousel
+# Carousel · 基础轮播
 
-媒体浏览 · `business-carousel` · 中文意图：内容轮播 / 媒体前后切换 / 有限项目
+媒体与轮播 · `business-carousel` · 中文意图：内容轮播 / 媒体前后切换 / 有限项目
 
 ## 1. 什么场景使用
 
@@ -13,31 +13,74 @@
 ## 2. 只加载这一项
 
 1. 只读本指南，确认用途与边界。
-2. 只读 [src/business/demos/business-carousel.tsx](../../../src/business/demos/business-carousel.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
-3. 本例若导入 primitives，再定位该文件中被使用的符号，不加载其它示例。样式按需检索 [业务 Token 皮肤](../../../src/business/business.css) 中的对应类。
+2. 只读 [src/business/demos/media/business-carousel.tsx](../../../src/business/demos/media/business-carousel.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
+3. 本例从 components 按需导入独立控件；只读实际导入的 .tsx 及同名 .module.css。布局工具类也显式使用 CSS Modules，不给整块区域的 button/input 套统一动效。
 4. 涉及业务错误、权限、数据或异步行为时才追加对应契约：[18-auxiliary](../../contracts/18-auxiliary.md)。
 5. 预览库使用本项独立 import() 入口；复制到目标项目时也只接入所需组件和直接依赖。
 
-所有实现使用本项目已有 React、原生 HTML 和 CSS。完整交互、类型与回调以当前示例代码为准。
+所有实现使用本项目已有 React、原生语义控件、Motion 和 CSS。完整交互、类型与回调以当前示例代码为准；局部弹性、下拉、媒体与日历效果见 [交互动效指南](../motion-guide.md)。
 
 ## 3. 本例真实用法
 
 下面来自当前独立示例。默认导出是一个可运行实例；复制后把本地选项、数据与回调接到目标项目已有业务层，不把演示结果当作后端成功。
 
 ```tsx
-// Original Agent Wan demonstration using React and native browser controls.
+// 当前 Carousel · 基础轮播 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
+import { componentClasses } from '../../class-names';
 import { useState } from 'react';
-import { BusinessDemo, Button } from '../support';
-import { MEDIA } from '../../shared/demo-support';
+import { BusinessDemo } from '../../components/BusinessDemo';
+import { MediaViewer } from '../../components/MediaViewer';
 
 
+const ownedStyles={};
+const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function BusinessCarouselDemo() {
-  const [index,setIndex]=useState(0);
-  return <BusinessDemo title="Carousel" description="通过前后按钮浏览本地图片，支持左右方向键并提供图片位置。">
-    <section tabIndex={0} aria-label="本地自然色图片轮播" aria-roledescription="轮播" onKeyDown={event=>{if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();setIndex(value=>(value+(event.key==='ArrowLeft'?-1:1)+MEDIA.length)%MEDIA.length);}}}><img className="aw-business-media" src={MEDIA[index]} alt={`自然色示意图${index+1}`} /><div className="aw-business-row"><Button variant="secondary" onClick={()=>setIndex(value=>(value-1+MEDIA.length)%MEDIA.length)}>上一张</Button><span role="status">{index+1} / {MEDIA.length}</span><Button variant="secondary" onClick={()=>setIndex(value=>(value+1)%MEDIA.length)}>下一张</Button></div></section>
+  const [index, setIndex] = useState(0);
+  return <BusinessDemo title="Carousel" description="参考 Morph Slider 的形状揭示与位移转场，按钮、位置指示和键盘浏览保持同步。">
+    <MediaViewer  index={index} onChange={setIndex}  sources={[import.meta.env.BASE_URL + "media/scene-1.svg", import.meta.env.BASE_URL + "media/scene-2.svg", import.meta.env.BASE_URL + "media/scene-3.svg", import.meta.env.BASE_URL + "media/scene-4.svg", import.meta.env.BASE_URL + "media/scene-5.svg", import.meta.env.BASE_URL + "media/scene-6.svg"]} label={"本地自然色图片轮播"} thumbnails={false}  />
   </BusinessDemo>;
 }
 ```
+
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `sources` | `readonly string[]` | 是 | `未指定` | 按顺序展示的媒体资源地址列表。 |
+| `index` | `number` | 是 | `未指定` | 当前展示条目的索引。 |
+| `onChange` | `(index: number) => void` | 是 | `未指定` | 用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。 |
+| `label` | `string` | 是 | `未指定` | 向用户或辅助技术说明控件的名称。 |
+| `thumbnails` | `boolean` | 否 | `false` | 是否显示可点击切换的缩略图列表。 |
+
+**sources 的真实接入：**
+
+```tsx
+sources={MEDIA}
+```
+
+**onChange 的真实接入：**
+
+```tsx
+onChange={setIndex}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.sources` | `["@media/scene-1.svg","@media/scene-2.svg","@media/scene-3.svg","@media/scene-4.svg","@media/scene-5.svg","@media/scene-6.svg"]` | json | 不限 ~ 不限 | 即时应用 |
+| `t0.label` | `"本地自然色图片轮播"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.thumbnails` | `false` | switch | 不限 ~ 不限 | 即时应用 |
+| `state.index` | `0` | number | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. 接入约束
 

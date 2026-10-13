@@ -1,0 +1,1563 @@
+{
+  "version": 1,
+  "id": "line-sidebar",
+  "name": "Line Sidebar",
+  "sourcePath": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+  "demoPath": "src/demos/navigation/line-sidebar.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "工作台",
+        "智能体",
+        "技能",
+        "工作流",
+        "设置"
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#A855F7'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#64695f",
+      "upstreamDefault": "'#c4c4c4'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.markerColor",
+      "name": "markerColor",
+      "label": "markerColor · t0",
+      "description": "标记颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "markerColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#6c6c6c'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showIndex",
+      "name": "showIndex",
+      "label": "showIndex · t0",
+      "description": "是否显示索引，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showIndex"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showMarker",
+      "name": "showMarker",
+      "label": "showMarker · t0",
+      "description": "是否显示标记，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showMarker"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.proximityRadius",
+      "name": "proximityRadius",
+      "label": "proximityRadius · t0",
+      "description": "邻近程度半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "proximityRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 100,
+      "upstreamDefault": "100",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.maxShift",
+      "name": "maxShift",
+      "label": "maxShift · t0",
+      "description": "最大偏移，控制 line sidebar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "maxShift"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 16,
+      "upstreamDefault": "30",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.markerLength",
+      "name": "markerLength",
+      "label": "markerLength · t0",
+      "description": "标记长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "markerLength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 42,
+      "upstreamDefault": "60",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.markerGap",
+      "name": "markerGap",
+      "label": "markerGap · t0",
+      "description": "标记间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "markerGap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tickScale",
+      "name": "tickScale",
+      "label": "tickScale · t0",
+      "description": "刻度缩放，控制 line sidebar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tickScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scaleTick",
+      "name": "scaleTick",
+      "label": "scaleTick · t0",
+      "description": "是否缩放刻度，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scaleTick"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.itemGap",
+      "name": "itemGap",
+      "label": "itemGap · t0",
+      "description": "条目间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "itemGap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 16,
+      "upstreamDefault": "20",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.1,
+      "upstreamDefault": "1.1",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.smoothing",
+      "name": "smoothing",
+      "label": "smoothing · t0",
+      "description": "平滑，控制 line sidebar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "smoothing"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 120,
+      "upstreamDefault": "100",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.defaultActive",
+      "name": "defaultActive",
+      "label": "defaultActive · t0",
+      "description": "非受控初始激活，控制 line sidebar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "defaultActive"
+        }
+      ],
+      "type": "number | null",
+      "defaultValue": 0,
+      "upstreamDefault": "null",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "null"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.falloff",
+      "name": "falloff",
+      "label": "falloff · t0",
+      "description": "衰减，控制 line sidebar 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "falloff"
+        }
+      ],
+      "type": "Falloff",
+      "defaultValue": "smooth",
+      "upstreamDefault": "'smooth'",
+      "control": "select",
+      "options": [
+        {
+          "label": "linear",
+          "value": "linear"
+        },
+        {
+          "label": "smooth",
+          "value": "smooth"
+        },
+        {
+          "label": "sharp",
+          "value": "sharp"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 52,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "Overview",
+        "Components",
+        "Animations",
+        "Backgrounds",
+        "Showcase",
+        "Playground",
+        "Templates",
+        "Changelog",
+        "Community",
+        "Resources",
+        "Documentation",
+        "Support"
+      ],
+      "defaultResolvedExpression": "[\n  'Overview',\n  'Components',\n  'Animations',\n  'Backgrounds',\n  'Showcase',\n  'Playground',\n  'Templates',\n  'Changelog',\n  'Community',\n  'Resources',\n  'Documentation',\n  'Support'\n]",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 9
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "items={['工作台', '智能体', '技能', '工作流', '设置']}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={['工作台', '智能体', '技能', '工作流', '设置']}"
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#A855F7'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 53,
+        "kind": "parameter"
+      },
+      "defaultValue": "#A855F7",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 10
+      },
+      "codeExample": "accentColor={palette.primary}",
+      "usageExamples": [
+        "accentColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#c4c4c4'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 54,
+        "kind": "parameter"
+      },
+      "defaultValue": "#c4c4c4",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 11
+      },
+      "codeExample": "textColor={palette.muted}",
+      "usageExamples": [
+        "textColor={palette.muted}"
+      ]
+    },
+    {
+      "name": "markerColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#6c6c6c'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 55,
+        "kind": "parameter"
+      },
+      "defaultValue": "#6c6c6c",
+      "description": "标记颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 12
+      },
+      "codeExample": "markerColor={palette.sage}",
+      "usageExamples": [
+        "markerColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "showIndex",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 56,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示索引，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 13
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showIndex",
+      "usageExamples": [
+        "showIndex"
+      ]
+    },
+    {
+      "name": "showMarker",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 57,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示标记，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showMarker",
+      "usageExamples": [
+        "showMarker"
+      ]
+    },
+    {
+      "name": "proximityRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 58,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "邻近程度半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 15
+      },
+      "codeExample": "proximityRadius={100}",
+      "usageExamples": [
+        "proximityRadius={100}"
+      ]
+    },
+    {
+      "name": "maxShift",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "30",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 59,
+        "kind": "parameter"
+      },
+      "defaultValue": 30,
+      "description": "最大偏移，控制 line sidebar 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 16
+      },
+      "codeExample": "maxShift={16}",
+      "usageExamples": [
+        "maxShift={16}"
+      ]
+    },
+    {
+      "name": "falloff",
+      "type": "Falloff",
+      "required": false,
+      "defaultExpression": "'smooth'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 60,
+        "kind": "parameter"
+      },
+      "defaultValue": "smooth",
+      "description": "衰减，控制 line sidebar 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "linear",
+        "smooth",
+        "sharp"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "linear",
+          "smooth",
+          "sharp"
+        ]
+      },
+      "codeExample": "falloff={\"smooth\"}"
+    },
+    {
+      "name": "markerLength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "60",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 61,
+        "kind": "parameter"
+      },
+      "defaultValue": 60,
+      "description": "标记长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 18
+      },
+      "codeExample": "markerLength={42}",
+      "usageExamples": [
+        "markerLength={42}"
+      ]
+    },
+    {
+      "name": "markerGap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 62,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "标记间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 19
+      },
+      "codeExample": "markerGap={8}",
+      "usageExamples": [
+        "markerGap={8}"
+      ]
+    },
+    {
+      "name": "tickScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "刻度缩放，控制 line sidebar 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 20
+      },
+      "codeExample": "tickScale={0.6}",
+      "usageExamples": [
+        "tickScale={0.6}"
+      ]
+    },
+    {
+      "name": "scaleTick",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否缩放刻度，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "scaleTick",
+      "usageExamples": [
+        "scaleTick"
+      ]
+    },
+    {
+      "name": "itemGap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "20",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": 20,
+      "description": "条目间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 22
+      },
+      "codeExample": "itemGap={16}",
+      "usageExamples": [
+        "itemGap={16}"
+      ]
+    },
+    {
+      "name": "fontSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.1,
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 23
+      },
+      "codeExample": "fontSize={1.1}",
+      "usageExamples": [
+        "fontSize={1.1}"
+      ]
+    },
+    {
+      "name": "smoothing",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "平滑，控制 line sidebar 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 24
+      },
+      "codeExample": "smoothing={120}",
+      "usageExamples": [
+        "smoothing={120}"
+      ]
+    },
+    {
+      "name": "defaultActive",
+      "type": "number | null",
+      "required": false,
+      "defaultExpression": "null",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": null,
+      "description": "非受控初始激活，控制 line sidebar 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 25
+      },
+      "codeExample": "defaultActive={0}",
+      "usageExamples": [
+        "defaultActive={0}"
+      ]
+    },
+    {
+      "name": "onItemClick",
+      "type": "(index: number, label: string) => void",
+      "required": false,
+      "description": "用户点击列表或菜单项时通知调用方，参数为条目及索引。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((index: number, label: string) => void) | undefined"
+      },
+      "codeExample": "onItemClick={(_index, label) => setStatus('已选择：' + label)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onItemClick={(_index, label) => setStatus('已选择：' + label)}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+        "line": 27
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/LineSidebar/LineSidebar';\nimport { palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 静态菜单结构与指针距离位移分别保留，不替换后台主导航。\n\nexport default function LineSidebarDemo() {\n  const [status, setStatus] = useState(\"悬停查看距离效果，点击选择导航项\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ minHeight: 320, width: 'min(100%, 360px)', margin: '0 auto', padding: 24 }}><Component\n\n\n\n\nonItemClick={(_index, label) => setStatus('已选择：' + label)} /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "LineSidebar",
+      "sourcePath": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 52,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "Overview",
+            "Components",
+            "Animations",
+            "Backgrounds",
+            "Showcase",
+            "Playground",
+            "Templates",
+            "Changelog",
+            "Community",
+            "Resources",
+            "Documentation",
+            "Support"
+          ],
+          "defaultResolvedExpression": "[\n  'Overview',\n  'Components',\n  'Animations',\n  'Backgrounds',\n  'Showcase',\n  'Playground',\n  'Templates',\n  'Changelog',\n  'Community',\n  'Resources',\n  'Documentation',\n  'Support'\n]",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 9
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "items={['工作台', '智能体', '技能', '工作流', '设置']}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={['工作台', '智能体', '技能', '工作流', '设置']}"
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#A855F7'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 53,
+            "kind": "parameter"
+          },
+          "defaultValue": "#A855F7",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 10
+          },
+          "codeExample": "accentColor={palette.primary}",
+          "usageExamples": [
+            "accentColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#c4c4c4'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 54,
+            "kind": "parameter"
+          },
+          "defaultValue": "#c4c4c4",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 11
+          },
+          "codeExample": "textColor={palette.muted}",
+          "usageExamples": [
+            "textColor={palette.muted}"
+          ]
+        },
+        {
+          "name": "markerColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#6c6c6c'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 55,
+            "kind": "parameter"
+          },
+          "defaultValue": "#6c6c6c",
+          "description": "标记颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 12
+          },
+          "codeExample": "markerColor={palette.sage}",
+          "usageExamples": [
+            "markerColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "showIndex",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 56,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示索引，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 13
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showIndex",
+          "usageExamples": [
+            "showIndex"
+          ]
+        },
+        {
+          "name": "showMarker",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 57,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示标记，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showMarker",
+          "usageExamples": [
+            "showMarker"
+          ]
+        },
+        {
+          "name": "proximityRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 58,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "邻近程度半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 15
+          },
+          "codeExample": "proximityRadius={100}",
+          "usageExamples": [
+            "proximityRadius={100}"
+          ]
+        },
+        {
+          "name": "maxShift",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "30",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 59,
+            "kind": "parameter"
+          },
+          "defaultValue": 30,
+          "description": "最大偏移，控制 line sidebar 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 16
+          },
+          "codeExample": "maxShift={16}",
+          "usageExamples": [
+            "maxShift={16}"
+          ]
+        },
+        {
+          "name": "falloff",
+          "type": "Falloff",
+          "required": false,
+          "defaultExpression": "'smooth'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 60,
+            "kind": "parameter"
+          },
+          "defaultValue": "smooth",
+          "description": "衰减，控制 line sidebar 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "linear",
+            "smooth",
+            "sharp"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "linear",
+              "smooth",
+              "sharp"
+            ]
+          },
+          "codeExample": "falloff={\"smooth\"}"
+        },
+        {
+          "name": "markerLength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "60",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 61,
+            "kind": "parameter"
+          },
+          "defaultValue": 60,
+          "description": "标记长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 18
+          },
+          "codeExample": "markerLength={42}",
+          "usageExamples": [
+            "markerLength={42}"
+          ]
+        },
+        {
+          "name": "markerGap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 62,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "标记间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 19
+          },
+          "codeExample": "markerGap={8}",
+          "usageExamples": [
+            "markerGap={8}"
+          ]
+        },
+        {
+          "name": "tickScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "刻度缩放，控制 line sidebar 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 20
+          },
+          "codeExample": "tickScale={0.6}",
+          "usageExamples": [
+            "tickScale={0.6}"
+          ]
+        },
+        {
+          "name": "scaleTick",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否缩放刻度，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "scaleTick",
+          "usageExamples": [
+            "scaleTick"
+          ]
+        },
+        {
+          "name": "itemGap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "20",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": 20,
+          "description": "条目间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 22
+          },
+          "codeExample": "itemGap={16}",
+          "usageExamples": [
+            "itemGap={16}"
+          ]
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.1,
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 23
+          },
+          "codeExample": "fontSize={1.1}",
+          "usageExamples": [
+            "fontSize={1.1}"
+          ]
+        },
+        {
+          "name": "smoothing",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "平滑，控制 line sidebar 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 24
+          },
+          "codeExample": "smoothing={120}",
+          "usageExamples": [
+            "smoothing={120}"
+          ]
+        },
+        {
+          "name": "defaultActive",
+          "type": "number | null",
+          "required": false,
+          "defaultExpression": "null",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": null,
+          "description": "非受控初始激活，控制 line sidebar 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 25
+          },
+          "codeExample": "defaultActive={0}",
+          "usageExamples": [
+            "defaultActive={0}"
+          ]
+        },
+        {
+          "name": "onItemClick",
+          "type": "(index: number, label: string) => void",
+          "required": false,
+          "description": "用户点击列表或菜单项时通知调用方，参数为条目及索引。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((index: number, label: string) => void) | undefined"
+          },
+          "codeExample": "onItemClick={(_index, label) => setStatus('已选择：' + label)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onItemClick={(_index, label) => setStatus('已选择：' + label)}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/LineSidebar/LineSidebar.tsx",
+            "line": 27
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

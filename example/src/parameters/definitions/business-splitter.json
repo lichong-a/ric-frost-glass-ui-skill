@@ -1,0 +1,470 @@
+{
+  "version": 1,
+  "id": "business-splitter",
+  "name": "Splitter",
+  "sourcePath": "src/business/demos/layout/business-splitter.tsx",
+  "demoPath": "src/business/demos/layout/business-splitter.tsx",
+  "fields": [
+    {
+      "key": "t0.aria-label",
+      "name": "aria-label",
+      "label": "aria-label · t0",
+      "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aria-label"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "调整工作区宽度",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tabIndex",
+      "name": "tabIndex",
+      "label": "tabIndex · t0",
+      "description": "键盘 Tab 导航的焦点顺序。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tabIndex"
+        }
+      ],
+      "type": "number | undefined",
+      "defaultValue": 0,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "CSSProperties | undefined",
+      "defaultValue": {
+        "cursor": "col-resize",
+        "background": "var(--aw-color-border-control)",
+        "touchAction": "none"
+      },
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "cursor": {
+            "kind": "string"
+          },
+          "background": {
+            "kind": "string"
+          },
+          "touchAction": {
+            "kind": "string"
+          }
+        },
+        "required": [
+          "cursor",
+          "background",
+          "touchAction"
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.ratio",
+      "name": "ratio",
+      "label": "左侧工作区宽度",
+      "description": "示例的受控状态 ratio；面板与组件的原有回调同步更新。 以下范围仅限制此演示面板，不改变上游 API。与原有拖动和键盘边界一致。 数值边界与示例中原生控件的 min/max 属性一致。",
+      "scope": "state",
+      "type": "number",
+      "defaultValue": 50,
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aria-valuenow"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [],
+  "inherited": [
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "div",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "section",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "h3",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "p",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport ownedStyles1 from '../../components/Splitter.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState, useRef } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessSplitterDemo() {\n  const [ratio,setRatio]=useState(/*__AW_STATE_state.ratio__*/); const container=useRef<HTMLDivElement>(null); const dragging=useRef(false); const [isDragging,setIsDragging]=useState(false);\n  return <BusinessDemo title=\"Splitter\" description=\"拖动分隔条或用键盘调整两个工作区的宽度，限制在20%到80%。\">\n    <div data-ui=\"aw-business-splitter\" ref={container} className={cn(\"aw-business-splitter\")} data-dragging={isDragging} style={{display:'grid',gridTemplateColumns:`minmax(0, ${ratio}fr) 16px minmax(0, ${100-ratio}fr)`,minHeight:180}}><section data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>资料</h3><p>左侧工作区</p></section><div role=\"separator\"  aria-orientation=\"vertical\" aria-valuemin={20} aria-valuemax={80} aria-valuenow={ratio}   onPointerDown={event=>{dragging.current=true;setIsDragging(true);event.currentTarget.setPointerCapture(event.pointerId);}} onPointerMove={event=>{if(!dragging.current||!container.current)return;const box=container.current.getBoundingClientRect();setRatio(Math.min(80,Math.max(20,Math.round((event.clientX-box.left)/box.width*100))));}} onPointerUp={()=>{dragging.current=false;setIsDragging(false);}} onPointerCancel={()=>{dragging.current=false;setIsDragging(false);}} onLostPointerCapture={()=>{dragging.current=false;setIsDragging(false);}} onKeyDown={event=>{if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();setRatio(value=>Math.min(80,Math.max(20,value+(event.key==='ArrowLeft'?-5:5))));}}} /*__AW_PROPS_t0__*/  /><section data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>结果</h3><p>右侧工作区</p></section></div><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">左侧 {ratio}% · 右侧 {100-ratio}%</p>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "div",
+      "props": [
+        {
+          "name": "data-ui",
+          "type": "any",
+          "required": false,
+          "description": "示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。",
+          "usageExamples": [
+            "data-ui=\"aw-business-splitter\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>"
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLDivElement> | undefined",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "usageExamples": [
+            "ref={container}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 292
+          }
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn(\"aw-business-splitter\")}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "data-dragging",
+          "type": "boolean",
+          "required": false,
+          "description": "示例在 DOM 上使用的 dragging 数据标记，供局部样式或状态定位读取。",
+          "usageExamples": [
+            "data-dragging={isDragging}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties | undefined",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "usageExamples": [
+            "style={{display:'grid',gridTemplateColumns:`minmax(0, ${ratio}fr) 16px minmax(0, ${100-ratio}fr)`,minHeight:180}}",
+            "style={{cursor:'col-resize',background:'var(--aw-color-border-control)',touchAction:'none'}}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2712
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<><section data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>资料</h3><p>左侧工作区</p></section><div role=\"separator\" aria-label=\"调整工作区宽度\" aria-orientation=\"vertical\" aria-valuemin={20} aria-valuemax={80} aria-valuenow={ratio} tabIndex={0} style={{cursor:'col-resize',background:'var(--aw-color-border-control)',touchAction:'none'}} onPointerDown={event=>{dragging.current=true;setIsDragging(true);event.currentTarget.setPointerCapture(event.pointerId);}} onPointerMove={event=>{if(!dragging.current||!container.current)return;const box=container.current.getBoundingClientRect();setRatio(Math.min(80,Math.max(20,Math.round((event.clientX-box.left)/box.width*100))));}} onPointerUp={()=>{dragging.current=false;setIsDragging(false);}} onPointerCancel={()=>{dragging.current=false;setIsDragging(false);}} onLostPointerCapture={()=>{dragging.current=false;setIsDragging(false);}} onKeyDown={event=>{if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();setRatio(value=>Math.min(80,Math.max(20,value+(event.key==='ArrowLeft'?-5:5))));}}} /><section data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>结果</h3><p>右侧工作区</p></section></>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        },
+        {
+          "name": "role",
+          "type": "AriaRole | undefined",
+          "required": false,
+          "description": "辅助技术使用的元素角色，须与实际键盘和交互行为相匹配。",
+          "usageExamples": [
+            "role=\"separator\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2721
+          }
+        },
+        {
+          "name": "aria-label",
+          "type": "string | undefined",
+          "required": false,
+          "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-label=\"调整工作区宽度\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2507
+          }
+        },
+        {
+          "name": "aria-orientation",
+          "type": "\"horizontal\" | \"vertical\" | undefined",
+          "required": false,
+          "description": "辅助技术的 orientation 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-orientation=\"vertical\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2524
+          }
+        },
+        {
+          "name": "aria-valuemin",
+          "type": "number | undefined",
+          "required": false,
+          "description": "辅助技术的 valuemin 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-valuemin={20}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2606
+          }
+        },
+        {
+          "name": "aria-valuemax",
+          "type": "number | undefined",
+          "required": false,
+          "description": "辅助技术的 valuemax 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-valuemax={80}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2604
+          }
+        },
+        {
+          "name": "aria-valuenow",
+          "type": "number | undefined",
+          "required": false,
+          "description": "辅助技术的 valuenow 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-valuenow={ratio}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2611
+          }
+        },
+        {
+          "name": "tabIndex",
+          "type": "number | undefined",
+          "required": false,
+          "description": "键盘 Tab 导航的焦点顺序。",
+          "usageExamples": [
+            "tabIndex={0}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2713
+          }
+        },
+        {
+          "name": "onPointerDown",
+          "type": "PointerEventHandler<HTMLDivElement> | undefined",
+          "required": false,
+          "description": "指针down时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onPointerDown={event=>{dragging.current=true;setIsDragging(true);event.currentTarget.setPointerCapture(event.pointerId);}}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2329
+          }
+        },
+        {
+          "name": "onPointerMove",
+          "type": "PointerEventHandler<HTMLDivElement> | undefined",
+          "required": false,
+          "description": "指针移动时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onPointerMove={event=>{if(!dragging.current||!container.current)return;const box=container.current.getBoundingClientRect();setRatio(Math.min(80,Math.max(20,Math.round((event.clientX-box.left)/box.width*100))));}}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2331
+          }
+        },
+        {
+          "name": "onPointerUp",
+          "type": "PointerEventHandler<HTMLDivElement> | undefined",
+          "required": false,
+          "description": "指针up时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onPointerUp={()=>{dragging.current=false;setIsDragging(false);}}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2333
+          }
+        },
+        {
+          "name": "onPointerCancel",
+          "type": "PointerEventHandler<HTMLDivElement> | undefined",
+          "required": false,
+          "description": "指针取消时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onPointerCancel={()=>{dragging.current=false;setIsDragging(false);}}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2335
+          }
+        },
+        {
+          "name": "onLostPointerCapture",
+          "type": "PointerEventHandler<HTMLDivElement> | undefined",
+          "required": false,
+          "description": "lost指针采样时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onLostPointerCapture={()=>{dragging.current=false;setIsDragging(false);}}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2345
+          }
+        },
+        {
+          "name": "onKeyDown",
+          "type": "KeyboardEventHandler<HTMLDivElement> | undefined",
+          "required": false,
+          "description": "身份标识down时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onKeyDown={event=>{if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();setRatio(value=>Math.min(80,Math.max(20,value+(event.key==='ArrowLeft'?-5:5))));}}}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2221
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "native-composition",
+  "notes": [
+    "该业务能力由示例函数组合原生元素与下面的叶组件；示例函数没有接收公开 Props。原生属性按元素列出，演示内部 useState 配置不作为公开 Props 或组件默认值。"
+  ]
+}

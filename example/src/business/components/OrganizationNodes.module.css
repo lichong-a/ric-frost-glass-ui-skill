@@ -1,0 +1,11 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-org-branches, .aw-business-org-card { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-org-branches { display:flex; justify-content:center; align-items:flex-start; gap:16px; list-style:none; margin:0; padding:20px 0 0 }
+.aw-business-org-branches li { display:flex; align-items:center; flex-direction:column; gap:12px }
+.aw-business-org-card { display:flex; gap:4px; padding:10px; border:1px solid var(--aw-color-border-control); border-radius:12px; background:var(--aw-surface-control) }
+.aw-business-org-card button { padding:8px; border:0; border-radius:8px; color:var(--aw-color-text-primary); background:none; cursor:pointer; white-space:nowrap }
+.aw-business-org-card button[aria-pressed='true'] { background:var(--aw-color-action-primary); color:var(--aw-palette-ivory) }
+.aw-business-org-branches .aw-business-org-branches { border-top:1px solid var(--aw-color-border-control) }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-org-branches, .aw-business-org-branches::before, .aw-business-org-branches::after, .aw-business-org-card, .aw-business-org-card::before, .aw-business-org-card::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-org-branches, [data-motion=reduce] .aw-business-org-branches::before, [data-motion=reduce] .aw-business-org-branches::after, [data-motion=reduce] .aw-business-org-card, [data-motion=reduce] .aw-business-org-card::before, [data-motion=reduce] .aw-business-org-card::after { transition:none; animation:none; scroll-behavior:auto; }

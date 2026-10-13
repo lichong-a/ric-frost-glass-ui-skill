@@ -1,0 +1,12 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-splitter { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-splitter > section { min-width:0; overflow:auto }
+.aw-business-splitter { gap:6px; transition:grid-template-columns 220ms var(--aw-business-ease) }
+.aw-business-splitter[data-dragging=true] { transition:none }
+.aw-business-splitter [role=separator] { position:relative; display:grid; place-items:center; border-radius:8px; background:var(--aw-surface-control)!important; transition:background 180ms ease,box-shadow 180ms ease }
+.aw-business-splitter [role=separator]::after { content:''; width:3px; height:32px; border-radius:999px; background:var(--aw-color-border-control) }
+.aw-business-splitter [role=separator]:is(:hover,:focus-visible) { box-shadow:0 0 0 2px var(--aw-color-action-primary) }
+.aw-business-splitter [role=separator]:is(:hover,:focus-visible)::after { background:var(--aw-color-action-primary) }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-splitter, .aw-business-splitter::before, .aw-business-splitter::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-splitter, [data-motion=reduce] .aw-business-splitter::before, [data-motion=reduce] .aw-business-splitter::after { transition:none; animation:none; scroll-behavior:auto; }

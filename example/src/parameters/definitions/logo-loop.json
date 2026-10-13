@@ -1,0 +1,1231 @@
+{
+  "version": 1,
+  "id": "logo-loop",
+  "name": "Logo Loop",
+  "sourcePath": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+  "demoPath": "src/demos/media/logo-loop.tsx",
+  "fields": [
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。 以下范围仅限制此演示面板，不改变上游 API。循环位移使用每秒像素；负值会反转方向。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 100,
+      "upstreamDefault": "120",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": -240,
+      "max": 240,
+      "step": 5,
+      "unit": "px/s"
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 logo loop 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "'left' | 'right' | 'up' | 'down'",
+      "defaultValue": "left",
+      "upstreamDefault": "'left'",
+      "control": "select",
+      "options": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        },
+        {
+          "label": "up",
+          "value": "up"
+        },
+        {
+          "label": "down",
+          "value": "down"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.width",
+      "name": "width",
+      "label": "宽度 · t0",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "width"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": "100%",
+      "upstreamDefault": "'100%'",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.logoHeight",
+      "name": "logoHeight",
+      "label": "logoHeight · t0",
+      "description": "标志高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。标志图形的显示高度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "logoHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 56,
+      "upstreamDefault": "28",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 16,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。 以下范围仅限制此演示面板，不改变上游 API。相邻标志之间的空间。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 64,
+      "upstreamDefault": "32",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "key": "t0.hoverSpeed",
+      "name": "hoverSpeed",
+      "label": "hoverSpeed · t0",
+      "description": "悬停速度，控制 logo loop 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scaleOnHover",
+      "name": "scaleOnHover",
+      "label": "scaleOnHover · t0",
+      "description": "是否缩放悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scaleOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeOut",
+      "name": "fadeOut",
+      "label": "fadeOut · t0",
+      "description": "是否淡出退出，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeOut"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeOutColor",
+      "name": "fadeOutColor",
+      "label": "fadeOutColor · t0",
+      "description": "淡出退出颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeOutColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ariaLabel",
+      "name": "ariaLabel",
+      "label": "ariaLabel · t0",
+      "description": "无障碍标签，控制 logo loop 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ariaLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "React、TypeScript、Vite、GitHub、Figma 和 Tailwind CSS 图标循环展示",
+      "upstreamDefault": "'Partner logos'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "logos",
+      "type": "LogoItem[]",
+      "required": true,
+      "description": "标志列表的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "LogoItem",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "{ node: React.ReactNode; href?: string; title?: string; ariaLabel?: string; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "node",
+                    "type": "React.ReactNode",
+                    "required": true
+                  },
+                  {
+                    "name": "href",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "title",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "ariaLabel",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              },
+              {
+                "type": "{ src: string; alt?: string; href?: string; title?: string; srcSet?: string; sizes?: string; width?: number; height?: number; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "src",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "href",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "title",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "srcSet",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "sizes",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "width",
+                    "type": "number",
+                    "required": false
+                  },
+                  {
+                    "name": "height",
+                    "type": "number",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "logos={logos}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "logos={logos}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "120",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 189,
+        "kind": "parameter"
+      },
+      "defaultValue": 120,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 26
+      },
+      "codeExample": "speed={100}",
+      "usageExamples": [
+        "speed={100}"
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "'left' | 'right' | 'up' | 'down'",
+      "required": false,
+      "defaultExpression": "'left'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 190,
+        "kind": "parameter"
+      },
+      "defaultValue": "left",
+      "description": "方向，控制 logo loop 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "left",
+        "right",
+        "up",
+        "down"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 27
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "left",
+          "right",
+          "up",
+          "down"
+        ]
+      },
+      "codeExample": "direction=\"left\"",
+      "usageExamples": [
+        "direction=\"left\""
+      ]
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "'100%'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 191,
+        "kind": "parameter"
+      },
+      "defaultValue": "100%",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "control": "text",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "width=\"100%\"",
+      "usageExamples": [
+        "width=\"100%\""
+      ]
+    },
+    {
+      "name": "logoHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "28",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 192,
+        "kind": "parameter"
+      },
+      "defaultValue": 28,
+      "description": "标志高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 29
+      },
+      "codeExample": "logoHeight={56}",
+      "usageExamples": [
+        "logoHeight={56}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "32",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 193,
+        "kind": "parameter"
+      },
+      "defaultValue": 32,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 30
+      },
+      "codeExample": "gap={64}",
+      "usageExamples": [
+        "gap={64}"
+      ]
+    },
+    {
+      "name": "pauseOnHover",
+      "type": "boolean",
+      "required": false,
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "pauseOnHover={false}"
+    },
+    {
+      "name": "hoverSpeed",
+      "type": "number",
+      "required": false,
+      "description": "悬停速度，控制 logo loop 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 32
+      },
+      "codeExample": "hoverSpeed={0}",
+      "usageExamples": [
+        "hoverSpeed={0}"
+      ]
+    },
+    {
+      "name": "fadeOut",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 196,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否淡出退出，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "fadeOut",
+      "usageExamples": [
+        "fadeOut"
+      ]
+    },
+    {
+      "name": "fadeOutColor",
+      "type": "string",
+      "required": false,
+      "description": "淡出退出颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 34
+      },
+      "codeExample": "fadeOutColor=\"#faf7f0\"",
+      "usageExamples": [
+        "fadeOutColor=\"#faf7f0\""
+      ]
+    },
+    {
+      "name": "scaleOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 198,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否缩放悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "scaleOnHover",
+      "usageExamples": [
+        "scaleOnHover"
+      ]
+    },
+    {
+      "name": "renderItem",
+      "type": "(item: LogoItem, key: React.Key) => React.ReactNode",
+      "required": false,
+      "description": "自定义每一项内容的渲染函数，接收条目及索引等参数并返回 ReactNode。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((item: LogoItem, key: React.Key) => React.ReactNode) | undefined"
+      },
+      "codeExample": "renderItem={(item, key) => (\"示例\")}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Partner logos'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 200,
+        "kind": "parameter"
+      },
+      "defaultValue": "Partner logos",
+      "description": "无障碍标签，控制 logo loop 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 37
+      },
+      "codeExample": "ariaLabel=\"React、TypeScript、Vite、GitHub、Figma 和 Tailwind CSS 图标循环展示\"",
+      "usageExamples": [
+        "ariaLabel=\"React、TypeScript、Vite、GitHub、Figma 和 Tailwind CSS 图标循环展示\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 38
+      },
+      "codeExample": "className={\"示例\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+        "line": 39
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { SiReact, SiTypescript, SiVite, SiGithub, SiFigma, SiTailwindcss } from 'react-icons/si';\nimport Component from '../../../.upstream/src/ts-default/Animations/LogoLoop/LogoLoop';\nimport styles from './logo-loop.module.css';\n\nconst logos = [\n  { node: <SiReact aria-hidden=\"true\" />, title: 'React', ariaLabel: 'React' },\n  { node: <SiTypescript aria-hidden=\"true\" />, title: 'TypeScript', ariaLabel: 'TypeScript' },\n  { node: <SiVite aria-hidden=\"true\" />, title: 'Vite', ariaLabel: 'Vite' },\n  { node: <SiGithub aria-hidden=\"true\" />, title: 'GitHub', ariaLabel: 'GitHub' },\n  { node: <SiFigma aria-hidden=\"true\" />, title: 'Figma', ariaLabel: 'Figma' },\n  { node: <SiTailwindcss aria-hidden=\"true\" />, title: 'Tailwind CSS', ariaLabel: 'Tailwind CSS' },\n];\n\nexport default function LogoLoopDemo() {\n  return (\n    <section className={styles.stage} data-visual-demo=\"logo-loop\">\n      <span className={styles.eyebrow}>CREATIVE TOOLBOX</span>\n      <h2 className={styles.title}>构建灵感的工具</h2>\n      <div className={styles.loop}>\n        <Component logos={logos}\n\n             /*__AW_PROPS_t0__*/  />\n      </div>\n      <p className={styles.hint}>悬停暂停，移开继续无缝循环。</p>\n    </section>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "LogoLoop",
+      "sourcePath": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+      "props": [
+        {
+          "name": "logos",
+          "type": "LogoItem[]",
+          "required": true,
+          "description": "标志列表的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "LogoItem",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "{ node: React.ReactNode; href?: string; title?: string; ariaLabel?: string; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "node",
+                        "type": "React.ReactNode",
+                        "required": true
+                      },
+                      {
+                        "name": "href",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "title",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "ariaLabel",
+                        "type": "string",
+                        "required": false
+                      }
+                    ]
+                  },
+                  {
+                    "type": "{ src: string; alt?: string; href?: string; title?: string; srcSet?: string; sizes?: string; width?: number; height?: number; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "src",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "alt",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "href",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "title",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "srcSet",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "sizes",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "width",
+                        "type": "number",
+                        "required": false
+                      },
+                      {
+                        "name": "height",
+                        "type": "number",
+                        "required": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "logos={logos}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "logos={logos}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "120",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 189,
+            "kind": "parameter"
+          },
+          "defaultValue": 120,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 26
+          },
+          "codeExample": "speed={100}",
+          "usageExamples": [
+            "speed={100}"
+          ]
+        },
+        {
+          "name": "direction",
+          "type": "'left' | 'right' | 'up' | 'down'",
+          "required": false,
+          "defaultExpression": "'left'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 190,
+            "kind": "parameter"
+          },
+          "defaultValue": "left",
+          "description": "方向，控制 logo loop 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "left",
+            "right",
+            "up",
+            "down"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 27
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "left",
+              "right",
+              "up",
+              "down"
+            ]
+          },
+          "codeExample": "direction=\"left\"",
+          "usageExamples": [
+            "direction=\"left\""
+          ]
+        },
+        {
+          "name": "width",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "'100%'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 191,
+            "kind": "parameter"
+          },
+          "defaultValue": "100%",
+          "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+          "control": "text",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "width=\"100%\"",
+          "usageExamples": [
+            "width=\"100%\""
+          ]
+        },
+        {
+          "name": "logoHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "28",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 192,
+            "kind": "parameter"
+          },
+          "defaultValue": 28,
+          "description": "标志高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 29
+          },
+          "codeExample": "logoHeight={56}",
+          "usageExamples": [
+            "logoHeight={56}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "32",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 193,
+            "kind": "parameter"
+          },
+          "defaultValue": 32,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 30
+          },
+          "codeExample": "gap={64}",
+          "usageExamples": [
+            "gap={64}"
+          ]
+        },
+        {
+          "name": "pauseOnHover",
+          "type": "boolean",
+          "required": false,
+          "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pauseOnHover={false}"
+        },
+        {
+          "name": "hoverSpeed",
+          "type": "number",
+          "required": false,
+          "description": "悬停速度，控制 logo loop 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 32
+          },
+          "codeExample": "hoverSpeed={0}",
+          "usageExamples": [
+            "hoverSpeed={0}"
+          ]
+        },
+        {
+          "name": "fadeOut",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 196,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否淡出退出，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "fadeOut",
+          "usageExamples": [
+            "fadeOut"
+          ]
+        },
+        {
+          "name": "fadeOutColor",
+          "type": "string",
+          "required": false,
+          "description": "淡出退出颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 34
+          },
+          "codeExample": "fadeOutColor=\"#faf7f0\"",
+          "usageExamples": [
+            "fadeOutColor=\"#faf7f0\""
+          ]
+        },
+        {
+          "name": "scaleOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 198,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否缩放悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "scaleOnHover",
+          "usageExamples": [
+            "scaleOnHover"
+          ]
+        },
+        {
+          "name": "renderItem",
+          "type": "(item: LogoItem, key: React.Key) => React.ReactNode",
+          "required": false,
+          "description": "自定义每一项内容的渲染函数，接收条目及索引等参数并返回 ReactNode。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((item: LogoItem, key: React.Key) => React.ReactNode) | undefined"
+          },
+          "codeExample": "renderItem={(item, key) => (\"示例\")}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Partner logos'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 200,
+            "kind": "parameter"
+          },
+          "defaultValue": "Partner logos",
+          "description": "无障碍标签，控制 logo loop 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 37
+          },
+          "codeExample": "ariaLabel=\"React、TypeScript、Vite、GitHub、Figma 和 Tailwind CSS 图标循环展示\"",
+          "usageExamples": [
+            "ariaLabel=\"React、TypeScript、Vite、GitHub、Figma 和 Tailwind CSS 图标循环展示\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 38
+          },
+          "codeExample": "className={\"示例\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/LogoLoop/LogoLoop.tsx",
+            "line": 39
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

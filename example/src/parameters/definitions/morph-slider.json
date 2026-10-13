@@ -1,0 +1,1600 @@
+{
+  "version": 1,
+  "id": "morph-slider",
+  "name": "Morph Slider",
+  "sourcePath": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+  "demoPath": "src/demos/media/morph-slider.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "MorphItem[]",
+      "defaultValue": [
+        {
+          "image": "@media/scene-1.svg",
+          "caption": "山雾"
+        },
+        {
+          "image": "@media/scene-2.svg",
+          "caption": "茶庭"
+        },
+        {
+          "image": "@media/scene-3.svg",
+          "caption": "沙洲"
+        },
+        {
+          "image": "@media/scene-4.svg",
+          "caption": "静水"
+        },
+        {
+          "image": "@media/scene-5.svg",
+          "caption": "林间"
+        },
+        {
+          "image": "@media/scene-6.svg",
+          "caption": "岩纹"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "image": {
+              "kind": "string"
+            },
+            "caption": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "image"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.transition",
+      "name": "transition",
+      "label": "transition · t0",
+      "description": "动画的过渡配置对象，如 spring 的 stiffness、damping 或 duration。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "transition"
+        }
+      ],
+      "type": "MorphTransition",
+      "defaultValue": "melt",
+      "upstreamDefault": "'melt'",
+      "control": "select",
+      "options": [
+        {
+          "label": "melt",
+          "value": "melt"
+        },
+        {
+          "label": "ripple",
+          "value": "ripple"
+        },
+        {
+          "label": "shear",
+          "value": "shear"
+        },
+        {
+          "label": "swirl",
+          "value": "swirl"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.duration",
+      "name": "duration",
+      "label": "持续时间 · t0",
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "duration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "1.1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intensity",
+      "name": "intensity",
+      "label": "intensity · t0",
+      "description": "强度，控制 morph slider 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.55",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.aberration",
+      "name": "aberration",
+      "label": "aberration · t0",
+      "description": "色散，控制 morph slider 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aberration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.04,
+      "upstreamDefault": "0.35",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.drift",
+      "name": "drift",
+      "label": "drift · t0",
+      "description": "漂移，控制 morph slider 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "drift"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0.4",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoplay",
+      "name": "autoplay",
+      "label": "自动播放 · t0",
+      "description": "是否自动播放，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoplay"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.loop",
+      "name": "loop",
+      "label": "循环 · t0",
+      "description": "是否循环，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "loop"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.overlayColor",
+      "name": "overlayColor",
+      "label": "overlayColor · t0",
+      "description": "覆盖层颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "overlayColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#000000'",
+      "control": "color",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showCaptions",
+      "name": "showCaptions",
+      "label": "showCaptions · t0",
+      "description": "是否显示图注，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showCaptions"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showControls",
+      "name": "showControls",
+      "label": "showControls · t0",
+      "description": "是否显示控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showControls"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showIndicators",
+      "name": "showIndicators",
+      "label": "showIndicators · t0",
+      "description": "是否显示指示器，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showIndicators"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.startIndex",
+      "name": "startIndex",
+      "label": "startIndex · t0",
+      "description": "开始索引，控制 morph slider 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "startIndex"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.ease",
+      "name": "ease",
+      "label": "ease · t0",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "ease"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "power2.inOut",
+      "upstreamDefault": "'power2.inOut'",
+      "control": "text",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scale",
+      "name": "scale",
+      "label": "缩放 · t0",
+      "description": "缩放，控制 morph slider 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2.4,
+      "upstreamDefault": "2.4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoplayDelay",
+      "name": "autoplayDelay",
+      "label": "autoplayDelay · t0",
+      "description": "是否自动播放延迟，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoplayDelay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "4",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "MorphItem[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 552,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        {
+          "image": "https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=1600&auto=format&fit=crop",
+          "caption": "One"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1781499455083-6ccc3beb20cd?q=80&w=1600&auto=format&fit=crop",
+          "caption": "Two"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1776394254711-4a0d7345269a?q=80&w=1600&auto=format&fit=crop",
+          "caption": "Three"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1781242629922-6f39cc3671cd?q=80&w=1600&auto=format&fit=crop",
+          "caption": "Four"
+        }
+      ],
+      "defaultResolvedExpression": "[\n  {\n    image: 'https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=1600&auto=format&fit=crop',\n    caption: 'One'\n  },\n  {\n    image: 'https://images.unsplash.com/photo-1781499455083-6ccc3beb20cd?q=80&w=1600&auto=format&fit=crop',\n    caption: 'Two'\n  },\n  {\n    image: 'https://images.unsplash.com/photo-1776394254711-4a0d7345269a?q=80&w=1600&auto=format&fit=crop',\n    caption: 'Three'\n  },\n  {\n    image: 'https://images.unsplash.com/photo-1781242629922-6f39cc3671cd?q=80&w=1600&auto=format&fit=crop',\n    caption: 'Four'\n  }\n]",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "MorphItem",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "image",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "caption",
+                "type": "string",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={MEDIA.map((image, index) => ({ image, caption: LABELS[index] }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={MEDIA.map((image, index) => ({ image, caption: LABELS[index] }))}"
+      ]
+    },
+    {
+      "name": "startIndex",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 553,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "开始索引，控制 morph slider 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 19
+      },
+      "codeExample": "startIndex={0}"
+    },
+    {
+      "name": "transition",
+      "type": "MorphTransition",
+      "required": false,
+      "defaultExpression": "'melt'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 554,
+        "kind": "parameter"
+      },
+      "defaultValue": "melt",
+      "description": "动画的过渡配置对象，如 spring 的 stiffness、damping 或 duration。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "melt",
+        "ripple",
+        "shear",
+        "swirl"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "melt",
+          "ripple",
+          "shear",
+          "swirl"
+        ]
+      },
+      "codeExample": "transition=\"melt\"",
+      "usageExamples": [
+        "transition=\"melt\""
+      ]
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 555,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.1,
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 21
+      },
+      "codeExample": "duration={0.8}",
+      "usageExamples": [
+        "duration={0.8}"
+      ]
+    },
+    {
+      "name": "ease",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'power2.inOut'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 556,
+        "kind": "parameter"
+      },
+      "defaultValue": "power2.inOut",
+      "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 22
+      },
+      "codeExample": "ease={\"power2.inOut\"}"
+    },
+    {
+      "name": "intensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.55",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 557,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.55,
+      "description": "强度，控制 morph slider 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 23
+      },
+      "codeExample": "intensity={0.3}",
+      "usageExamples": [
+        "intensity={0.3}"
+      ]
+    },
+    {
+      "name": "scale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 558,
+        "kind": "parameter"
+      },
+      "defaultValue": 2.4,
+      "description": "缩放，控制 morph slider 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 24
+      },
+      "codeExample": "scale={2.4}"
+    },
+    {
+      "name": "aberration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.35",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 559,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.35,
+      "description": "色散，控制 morph slider 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 25
+      },
+      "codeExample": "aberration={0.04}",
+      "usageExamples": [
+        "aberration={0.04}"
+      ]
+    },
+    {
+      "name": "drift",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 560,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.4,
+      "description": "漂移，控制 morph slider 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 26
+      },
+      "codeExample": "drift={0.12}",
+      "usageExamples": [
+        "drift={0.12}"
+      ]
+    },
+    {
+      "name": "autoplay",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 561,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否自动播放，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 27
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "autoplay={false}",
+      "usageExamples": [
+        "autoplay={false}"
+      ]
+    },
+    {
+      "name": "autoplayDelay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 562,
+        "kind": "parameter"
+      },
+      "defaultValue": 4,
+      "description": "是否自动播放延迟，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 28
+      },
+      "codeExample": "autoplayDelay={4}"
+    },
+    {
+      "name": "loop",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 563,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否循环，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "loop",
+      "usageExamples": [
+        "loop"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 564,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 30
+      },
+      "codeExample": "radius={20}",
+      "usageExamples": [
+        "radius={20}"
+      ]
+    },
+    {
+      "name": "overlayColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#000000'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 565,
+        "kind": "parameter"
+      },
+      "defaultValue": "#000000",
+      "description": "覆盖层颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 31
+      },
+      "codeExample": "overlayColor={palette.primary}",
+      "usageExamples": [
+        "overlayColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "showCaptions",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 566,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示图注，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showCaptions",
+      "usageExamples": [
+        "showCaptions"
+      ]
+    },
+    {
+      "name": "showControls",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 567,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示控制，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showControls",
+      "usageExamples": [
+        "showControls"
+      ]
+    },
+    {
+      "name": "showIndicators",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 568,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示指示器，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showIndicators",
+      "usageExamples": [
+        "showIndicators"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 569,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+        "line": 35
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/MorphSlider/MorphSlider';\nimport { palette } from '../../shared/demo-support';\n\n// 使用内置上一张、下一张和指示器，展示真实WebGL图片位移过渡。\n// 此演示需要可用WebGL上下文；不支持时应显示能力提示，不声称效果已运行。\n\nexport default function MorphSliderDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n\n   /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "MorphSlider",
+      "sourcePath": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "MorphItem[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 552,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            {
+              "image": "https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=1600&auto=format&fit=crop",
+              "caption": "One"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1781499455083-6ccc3beb20cd?q=80&w=1600&auto=format&fit=crop",
+              "caption": "Two"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1776394254711-4a0d7345269a?q=80&w=1600&auto=format&fit=crop",
+              "caption": "Three"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1781242629922-6f39cc3671cd?q=80&w=1600&auto=format&fit=crop",
+              "caption": "Four"
+            }
+          ],
+          "defaultResolvedExpression": "[\n  {\n    image: 'https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=1600&auto=format&fit=crop',\n    caption: 'One'\n  },\n  {\n    image: 'https://images.unsplash.com/photo-1781499455083-6ccc3beb20cd?q=80&w=1600&auto=format&fit=crop',\n    caption: 'Two'\n  },\n  {\n    image: 'https://images.unsplash.com/photo-1776394254711-4a0d7345269a?q=80&w=1600&auto=format&fit=crop',\n    caption: 'Three'\n  },\n  {\n    image: 'https://images.unsplash.com/photo-1781242629922-6f39cc3671cd?q=80&w=1600&auto=format&fit=crop',\n    caption: 'Four'\n  }\n]",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "MorphItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "image",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "caption",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={MEDIA.map((image, index) => ({ image, caption: LABELS[index] }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={MEDIA.map((image, index) => ({ image, caption: LABELS[index] }))}"
+          ]
+        },
+        {
+          "name": "startIndex",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 553,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "开始索引，控制 morph slider 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 19
+          },
+          "codeExample": "startIndex={0}"
+        },
+        {
+          "name": "transition",
+          "type": "MorphTransition",
+          "required": false,
+          "defaultExpression": "'melt'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 554,
+            "kind": "parameter"
+          },
+          "defaultValue": "melt",
+          "description": "动画的过渡配置对象，如 spring 的 stiffness、damping 或 duration。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "melt",
+            "ripple",
+            "shear",
+            "swirl"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "melt",
+              "ripple",
+              "shear",
+              "swirl"
+            ]
+          },
+          "codeExample": "transition=\"melt\"",
+          "usageExamples": [
+            "transition=\"melt\""
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 555,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.1,
+          "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 21
+          },
+          "codeExample": "duration={0.8}",
+          "usageExamples": [
+            "duration={0.8}"
+          ]
+        },
+        {
+          "name": "ease",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'power2.inOut'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 556,
+            "kind": "parameter"
+          },
+          "defaultValue": "power2.inOut",
+          "description": "动画缓动名称或配置，按所用动画库的类型传入。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 22
+          },
+          "codeExample": "ease={\"power2.inOut\"}"
+        },
+        {
+          "name": "intensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.55",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 557,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.55,
+          "description": "强度，控制 morph slider 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 23
+          },
+          "codeExample": "intensity={0.3}",
+          "usageExamples": [
+            "intensity={0.3}"
+          ]
+        },
+        {
+          "name": "scale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 558,
+            "kind": "parameter"
+          },
+          "defaultValue": 2.4,
+          "description": "缩放，控制 morph slider 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 24
+          },
+          "codeExample": "scale={2.4}"
+        },
+        {
+          "name": "aberration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.35",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 559,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.35,
+          "description": "色散，控制 morph slider 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 25
+          },
+          "codeExample": "aberration={0.04}",
+          "usageExamples": [
+            "aberration={0.04}"
+          ]
+        },
+        {
+          "name": "drift",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 560,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.4,
+          "description": "漂移，控制 morph slider 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 26
+          },
+          "codeExample": "drift={0.12}",
+          "usageExamples": [
+            "drift={0.12}"
+          ]
+        },
+        {
+          "name": "autoplay",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 561,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否自动播放，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 27
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "autoplay={false}",
+          "usageExamples": [
+            "autoplay={false}"
+          ]
+        },
+        {
+          "name": "autoplayDelay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 562,
+            "kind": "parameter"
+          },
+          "defaultValue": 4,
+          "description": "是否自动播放延迟，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 28
+          },
+          "codeExample": "autoplayDelay={4}"
+        },
+        {
+          "name": "loop",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 563,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否循环，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "loop",
+          "usageExamples": [
+            "loop"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 564,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 30
+          },
+          "codeExample": "radius={20}",
+          "usageExamples": [
+            "radius={20}"
+          ]
+        },
+        {
+          "name": "overlayColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#000000'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 565,
+            "kind": "parameter"
+          },
+          "defaultValue": "#000000",
+          "description": "覆盖层颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 31
+          },
+          "codeExample": "overlayColor={palette.primary}",
+          "usageExamples": [
+            "overlayColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "showCaptions",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 566,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示图注，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showCaptions",
+          "usageExamples": [
+            "showCaptions"
+          ]
+        },
+        {
+          "name": "showControls",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 567,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showControls",
+          "usageExamples": [
+            "showControls"
+          ]
+        },
+        {
+          "name": "showIndicators",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 568,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示指示器，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showIndicators",
+          "usageExamples": [
+            "showIndicators"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 569,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/MorphSlider/MorphSlider.tsx",
+            "line": 35
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props",
+  "indexSignatures": [
+    {
+      "keyType": "string",
+      "valueType": "unknown",
+      "readonly": false
+    }
+  ],
+  "notes": [
+    "源码包含开放索引签名；未声明字段保持开放配置，不将内部辅助接口推断为公开 Props。"
+  ]
+}

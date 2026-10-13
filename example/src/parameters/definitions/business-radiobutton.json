@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "id": "business-radiobutton",
+  "name": "RadioButton",
+  "sourcePath": "src/business/components/SpringRadio.tsx",
+  "demoPath": "src/business/demos/form/business-radiobutton.tsx",
+  "fields": [
+    {
+      "key": "state.value",
+      "name": "value",
+      "label": "当前值",
+      "description": "示例的受控状态 value；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "仅当前空间",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "checked"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "Omit<InputHTMLAttributes<HTMLInputElement>, 'checked' | 'defaultChecked'>",
+      "codeExample": "children={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    },
+    {
+      "name": "onChange",
+      "type": "ChangeEventHandler<HTMLInputElement> | undefined",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 3218
+      },
+      "inheritedFrom": "Omit<InputHTMLAttributes<HTMLInputElement>, 'checked' | 'defaultChecked'>",
+      "details": {
+        "kind": "callback",
+        "signature": "ChangeEventHandler<HTMLInputElement> | undefined"
+      },
+      "codeExample": "onChange={() => setValue(item)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={() => setValue(item)}"
+      ]
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "required": true,
+      "description": "当前受控勾选状态，调用方在变更回调中写回。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/SpringRadio.tsx",
+        "line": 9
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "checked={value === item}",
+      "usageExamples": [
+        "checked={value === item}"
+      ]
+    }
+  ],
+  "inherited": [
+    {
+      "type": "Omit<InputHTMLAttributes<HTMLInputElement>, 'checked' | 'defaultChecked'>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { SpringRadio } from '../../components/SpringRadio';\nimport { useState, useId } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\n// 场景：少量互斥选项且需要同时看到候选项时使用单选组。\nexport default function RadioButtonDemo() {\n  const options = ['仅当前空间','所有参与空间','全部空间']; const [value, setValue] = useState(/*__AW_STATE_state.value__*/); const id = useId();\n  return <BusinessDemo title=\"RadioButton · 单选组\" description=\"选项互斥，用同一 name 保留原生方向键操作。\"><fieldset className={cn('aw-business-fieldset')}><legend>查看范围</legend>{options.map(item => <label data-ui=\"aw-business-choice\" key={item} className={cn(\"aw-business-choice\")}><SpringRadio name={id} value={item} checked={value === item} onChange={() => setValue(item)} />{item}</label>)}</fieldset><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">范围：{value}</p></BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "SpringRadio",
+      "sourcePath": "src/business/components/SpringRadio.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "Omit<InputHTMLAttributes<HTMLInputElement>, 'checked' | 'defaultChecked'>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        },
+        {
+          "name": "onChange",
+          "type": "ChangeEventHandler<HTMLInputElement> | undefined",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3218
+          },
+          "inheritedFrom": "Omit<InputHTMLAttributes<HTMLInputElement>, 'checked' | 'defaultChecked'>",
+          "details": {
+            "kind": "callback",
+            "signature": "ChangeEventHandler<HTMLInputElement> | undefined"
+          },
+          "codeExample": "onChange={() => setValue(item)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={() => setValue(item)}"
+          ]
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "required": true,
+          "description": "当前受控勾选状态，调用方在变更回调中写回。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/SpringRadio.tsx",
+            "line": 9
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "checked={value === item}",
+          "usageExamples": [
+            "checked={value === item}"
+          ]
+        }
+      ],
+      "inherited": [
+        {
+          "type": "Omit<InputHTMLAttributes<HTMLInputElement>, 'checked' | 'defaultChecked'>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

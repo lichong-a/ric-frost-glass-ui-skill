@@ -1,0 +1,1858 @@
+{
+  "version": 1,
+  "id": "drift-wall",
+  "name": "Drift Wall",
+  "sourcePath": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+  "demoPath": "src/demos/media/drift-wall.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "DriftWallItem[]",
+      "defaultValue": [
+        {
+          "image": "@media/scene-1.svg",
+          "title": "山雾"
+        },
+        {
+          "image": "@media/scene-2.svg",
+          "title": "茶庭"
+        },
+        {
+          "image": "@media/scene-3.svg",
+          "title": "沙洲"
+        },
+        {
+          "image": "@media/scene-4.svg",
+          "title": "静水"
+        },
+        {
+          "image": "@media/scene-5.svg",
+          "title": "林间"
+        },
+        {
+          "image": "@media/scene-6.svg",
+          "title": "岩纹"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "image": {
+              "kind": "string"
+            },
+            "title": {
+              "kind": "string"
+            },
+            "href": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "image"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.columns",
+      "name": "columns",
+      "label": "columns · t0",
+      "description": "列数，控制 drift wall 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "columns"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "5",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 128,
+      "step": 1
+    },
+    {
+      "key": "t0.tileWidth",
+      "name": "tileWidth",
+      "label": "tileWidth · t0",
+      "description": "字符格宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tileWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 150,
+      "upstreamDefault": "200",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tileHeight",
+      "name": "tileHeight",
+      "label": "tileHeight · t0",
+      "description": "字符格高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tileHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 108,
+      "upstreamDefault": "132",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 14,
+      "upstreamDefault": "18",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 16,
+      "upstreamDefault": "14",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tilt",
+      "name": "tilt",
+      "label": "tilt · t0",
+      "description": "倾斜，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 12,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.turn",
+      "name": "turn",
+      "label": "turn · t0",
+      "description": "转动，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "turn"
+        }
+      ],
+      "type": "number",
+      "defaultValue": -8,
+      "upstreamDefault": "-14",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.perspective",
+      "name": "perspective",
+      "label": "perspective · t0",
+      "description": "透视，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "perspective"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1200,
+      "upstreamDefault": "1200",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.depth",
+      "name": "depth",
+      "label": "depth · t0",
+      "description": "深度，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "depth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 70,
+      "upstreamDefault": "120",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "42",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "'up' | 'down'",
+      "defaultValue": "up",
+      "upstreamDefault": "'up'",
+      "control": "select",
+      "options": [
+        {
+          "label": "up",
+          "value": "up"
+        },
+        {
+          "label": "down",
+          "value": "down"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.variance",
+      "name": "variance",
+      "label": "variance · t0",
+      "description": "差异，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "variance"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.45",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.parallax",
+      "name": "parallax",
+      "label": "parallax · t0",
+      "description": "视差，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "parallax"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lift",
+      "name": "lift",
+      "label": "lift · t0",
+      "description": "抬起，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lift"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 30,
+      "upstreamDefault": "64",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.35,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dim",
+      "name": "dim",
+      "label": "dim · t0",
+      "description": "暗化，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dim"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.55",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.overlayColor",
+      "name": "overlayColor",
+      "label": "overlayColor · t0",
+      "description": "覆盖层颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "overlayColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#e8e4d7",
+      "upstreamDefault": "'#060010'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pauseOnHover",
+      "name": "pauseOnHover",
+      "label": "pauseOnHover · t0",
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pauseOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.roll",
+      "name": "roll",
+      "label": "roll · t0",
+      "description": "滚动翻转，控制 drift wall 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "roll"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grayscale",
+      "name": "grayscale",
+      "label": "grayscale · t0",
+      "description": "是否灰度，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grayscale"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "DriftWallItem[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 61,
+        "kind": "parameter"
+      },
+      "defaultResolvedExpression": "Array.from({ length: 15 }, (_, i) => {\n  const ids = [1015, 1025, 1039, 1043, 1044, 1050, 1062, 1069, 1074, 1080, 1084, 106, 110, 133, 164];\n  return {\n    image: `https://picsum.photos/id/${ids[i % ids.length]}/600/400`,\n    title: `Tile ${i + 1}`,\n    href: undefined\n  };\n})",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 13
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "DriftWallItem",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "image",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "href",
+                "type": "string",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={MEDIA.map((image, index) => ({ image, title: LABELS[index] }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={MEDIA.map((image, index) => ({ image, title: LABELS[index] }))}"
+      ]
+    },
+    {
+      "name": "columns",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 62,
+        "kind": "parameter"
+      },
+      "defaultValue": 5,
+      "description": "列数，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 14
+      },
+      "codeExample": "columns={4}",
+      "usageExamples": [
+        "columns={4}"
+      ]
+    },
+    {
+      "name": "tileWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "字符格宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 15
+      },
+      "codeExample": "tileWidth={150}",
+      "usageExamples": [
+        "tileWidth={150}"
+      ]
+    },
+    {
+      "name": "tileHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "132",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": 132,
+      "description": "字符格高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 16
+      },
+      "codeExample": "tileHeight={108}",
+      "usageExamples": [
+        "tileHeight={108}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "18",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": 18,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 17
+      },
+      "codeExample": "gap={14}",
+      "usageExamples": [
+        "gap={14}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "14",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": 14,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 18
+      },
+      "codeExample": "radius={16}",
+      "usageExamples": [
+        "radius={16}"
+      ]
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "倾斜，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 19
+      },
+      "codeExample": "tilt={12}",
+      "usageExamples": [
+        "tilt={12}"
+      ]
+    },
+    {
+      "name": "turn",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "-14",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 68,
+        "kind": "parameter"
+      },
+      "defaultValue": -14,
+      "description": "转动，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 20
+      },
+      "codeExample": "turn={-8}",
+      "usageExamples": [
+        "turn={-8}"
+      ]
+    },
+    {
+      "name": "roll",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 69,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "滚动翻转，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 21
+      },
+      "codeExample": "roll={0}"
+    },
+    {
+      "name": "perspective",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 70,
+        "kind": "parameter"
+      },
+      "defaultValue": 1200,
+      "description": "透视，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 22
+      },
+      "codeExample": "perspective={1200}",
+      "usageExamples": [
+        "perspective={1200}"
+      ]
+    },
+    {
+      "name": "depth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "120",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 71,
+        "kind": "parameter"
+      },
+      "defaultValue": 120,
+      "description": "深度，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 23
+      },
+      "codeExample": "depth={70}",
+      "usageExamples": [
+        "depth={70}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "42",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": 42,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 24
+      },
+      "codeExample": "speed={20}",
+      "usageExamples": [
+        "speed={20}"
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "'up' | 'down'",
+      "required": false,
+      "defaultExpression": "'up'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": "up",
+      "description": "方向，控制 drift wall 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "up",
+        "down"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "up",
+          "down"
+        ]
+      },
+      "codeExample": "direction=\"up\"",
+      "usageExamples": [
+        "direction=\"up\""
+      ]
+    },
+    {
+      "name": "variance",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.45",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.45,
+      "description": "差异，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 26
+      },
+      "codeExample": "variance={0.2}",
+      "usageExamples": [
+        "variance={0.2}"
+      ]
+    },
+    {
+      "name": "parallax",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "视差，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 27
+      },
+      "codeExample": "parallax={0.3}",
+      "usageExamples": [
+        "parallax={0.3}"
+      ]
+    },
+    {
+      "name": "pauseOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "pauseOnHover",
+      "usageExamples": [
+        "pauseOnHover"
+      ]
+    },
+    {
+      "name": "lift",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "64",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": 64,
+      "description": "抬起，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 29
+      },
+      "codeExample": "lift={30}",
+      "usageExamples": [
+        "lift={30}"
+      ]
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "淡出，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 30
+      },
+      "codeExample": "fade={0.35}",
+      "usageExamples": [
+        "fade={0.35}"
+      ]
+    },
+    {
+      "name": "dim",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.55",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.55,
+      "description": "暗化，控制 drift wall 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 31
+      },
+      "codeExample": "dim={0.2}",
+      "usageExamples": [
+        "dim={0.2}"
+      ]
+    },
+    {
+      "name": "grayscale",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否灰度，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "grayscale={false}"
+    },
+    {
+      "name": "overlayColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#060010'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 81,
+        "kind": "parameter"
+      },
+      "defaultValue": "#060010",
+      "description": "覆盖层颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 33
+      },
+      "codeExample": "overlayColor={palette.canvas}",
+      "usageExamples": [
+        "overlayColor={palette.canvas}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 82,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 34
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+        "line": 35
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/DriftWall/DriftWall';\nimport { palette } from '../../shared/demo-support';\n\n// 真实透视素材墙缓慢流动，悬停暂停并抬起图片。\n\nexport default function DriftWallDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n\n\n   /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "DriftWall",
+      "sourcePath": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "DriftWallItem[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 61,
+            "kind": "parameter"
+          },
+          "defaultResolvedExpression": "Array.from({ length: 15 }, (_, i) => {\n  const ids = [1015, 1025, 1039, 1043, 1044, 1050, 1062, 1069, 1074, 1080, 1084, 106, 110, 133, 164];\n  return {\n    image: `https://picsum.photos/id/${ids[i % ids.length]}/600/400`,\n    title: `Tile ${i + 1}`,\n    href: undefined\n  };\n})",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 13
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "DriftWallItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "image",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "title",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "href",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={MEDIA.map((image, index) => ({ image, title: LABELS[index] }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={MEDIA.map((image, index) => ({ image, title: LABELS[index] }))}"
+          ]
+        },
+        {
+          "name": "columns",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 62,
+            "kind": "parameter"
+          },
+          "defaultValue": 5,
+          "description": "列数，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 14
+          },
+          "codeExample": "columns={4}",
+          "usageExamples": [
+            "columns={4}"
+          ]
+        },
+        {
+          "name": "tileWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "字符格宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 15
+          },
+          "codeExample": "tileWidth={150}",
+          "usageExamples": [
+            "tileWidth={150}"
+          ]
+        },
+        {
+          "name": "tileHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "132",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": 132,
+          "description": "字符格高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 16
+          },
+          "codeExample": "tileHeight={108}",
+          "usageExamples": [
+            "tileHeight={108}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "18",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": 18,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 17
+          },
+          "codeExample": "gap={14}",
+          "usageExamples": [
+            "gap={14}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "14",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": 14,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 18
+          },
+          "codeExample": "radius={16}",
+          "usageExamples": [
+            "radius={16}"
+          ]
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "倾斜，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 19
+          },
+          "codeExample": "tilt={12}",
+          "usageExamples": [
+            "tilt={12}"
+          ]
+        },
+        {
+          "name": "turn",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "-14",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 68,
+            "kind": "parameter"
+          },
+          "defaultValue": -14,
+          "description": "转动，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 20
+          },
+          "codeExample": "turn={-8}",
+          "usageExamples": [
+            "turn={-8}"
+          ]
+        },
+        {
+          "name": "roll",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 69,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "滚动翻转，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 21
+          },
+          "codeExample": "roll={0}"
+        },
+        {
+          "name": "perspective",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 70,
+            "kind": "parameter"
+          },
+          "defaultValue": 1200,
+          "description": "透视，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 22
+          },
+          "codeExample": "perspective={1200}",
+          "usageExamples": [
+            "perspective={1200}"
+          ]
+        },
+        {
+          "name": "depth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "120",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 71,
+            "kind": "parameter"
+          },
+          "defaultValue": 120,
+          "description": "深度，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 23
+          },
+          "codeExample": "depth={70}",
+          "usageExamples": [
+            "depth={70}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "42",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": 42,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 24
+          },
+          "codeExample": "speed={20}",
+          "usageExamples": [
+            "speed={20}"
+          ]
+        },
+        {
+          "name": "direction",
+          "type": "'up' | 'down'",
+          "required": false,
+          "defaultExpression": "'up'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": "up",
+          "description": "方向，控制 drift wall 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "up",
+            "down"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "up",
+              "down"
+            ]
+          },
+          "codeExample": "direction=\"up\"",
+          "usageExamples": [
+            "direction=\"up\""
+          ]
+        },
+        {
+          "name": "variance",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.45",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.45,
+          "description": "差异，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 26
+          },
+          "codeExample": "variance={0.2}",
+          "usageExamples": [
+            "variance={0.2}"
+          ]
+        },
+        {
+          "name": "parallax",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "视差，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 27
+          },
+          "codeExample": "parallax={0.3}",
+          "usageExamples": [
+            "parallax={0.3}"
+          ]
+        },
+        {
+          "name": "pauseOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pauseOnHover",
+          "usageExamples": [
+            "pauseOnHover"
+          ]
+        },
+        {
+          "name": "lift",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "64",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": 64,
+          "description": "抬起，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 29
+          },
+          "codeExample": "lift={30}",
+          "usageExamples": [
+            "lift={30}"
+          ]
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "淡出，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 30
+          },
+          "codeExample": "fade={0.35}",
+          "usageExamples": [
+            "fade={0.35}"
+          ]
+        },
+        {
+          "name": "dim",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.55",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.55,
+          "description": "暗化，控制 drift wall 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 31
+          },
+          "codeExample": "dim={0.2}",
+          "usageExamples": [
+            "dim={0.2}"
+          ]
+        },
+        {
+          "name": "grayscale",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否灰度，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "grayscale={false}"
+        },
+        {
+          "name": "overlayColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#060010'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 81,
+            "kind": "parameter"
+          },
+          "defaultValue": "#060010",
+          "description": "覆盖层颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 33
+          },
+          "codeExample": "overlayColor={palette.canvas}",
+          "usageExamples": [
+            "overlayColor={palette.canvas}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 82,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 34
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/DriftWall/DriftWall.tsx",
+            "line": 35
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

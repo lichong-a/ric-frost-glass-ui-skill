@@ -1,6 +1,6 @@
 # Dodge Field
 
-微交互 · `dodge-field` · 中文意图：躲避指针 / 避让元素
+指针与轨迹 · `dodge-field` · 中文意图：躲避指针 / 避让元素
 
 目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
@@ -14,9 +14,10 @@
 
 | 资源 | 位置与用途 |
 |---|---|
-| 自有示例（随包） | [example/src/demos/dodge-field.tsx](../../src/demos/dodge-field.tsx) |
+| 自有示例（随包） | [example/src/demos/pointer/dodge-field.tsx](../../src/demos/pointer/dodge-field.tsx) |
 | 组件实现（准备后存在） | [example/.upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx](../../.upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx) |
 | 组件 CSS（准备后存在） | [example/.upstream/src/ts-default/Micro/DodgeField/DodgeField.css](../../.upstream/src/ts-default/Micro/DodgeField/DodgeField.css) |
+| 单独 Props 记录 | [example/src/parameters/definitions/dodge-field.json](../../src/parameters/definitions/dodge-field.json) |
 | 固定版本 | `2139cb3098d4fedc6264f13e50dcb4694224ba7c` |
 
 先打开随包示例，确认它如何组合 props、状态与资源。官方源码不随本包再分发；若上表安装路径不存在，在包根运行：
@@ -32,29 +33,132 @@ node scripts/example.mjs setup --component dodge-field
 以下来自本包自有示例的实际用法；它只表示本例参数，不代表上游所有 Props。
 
 ```tsx
+// 当前 Dodge Field 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
 import { useState } from 'react';
-import DodgeField from '../../.upstream/src/ts-default/Micro/DodgeField/DodgeField';
-import { palette, DemoPanel } from '../shared/demo-support';
-import '../shared/micro-demos.css';
+import DodgeField from '../../../.upstream/src/ts-default/Micro/DodgeField/DodgeField';
+import { DemoPanel } from '../../shared/demo-support';
+import styles from '../../shared/micro-demos.module.css';
+import {componentClasses} from '../../shared/class-names';
+const cn=(names:string)=>componentClasses(styles,names);
 
 export default function DodgeFieldDemo() {
   const [message, setMessage] = useState('试着移动到按钮附近。');
   const [revision, setRevision] = useState(0);
-  return <DemoPanel title="Dodge Field · 避让微交互"><div className="aw-micro-stack">
-    <div className="aw-micro-wide"><DodgeField key={revision} inkColor={palette.ink} contrastColor={palette.ivory} fieldHeight={280} patience={4} taunts={['再近一点', '向左试试', '就要到了']} notice="可以抓住了" onDodge={count => setMessage(`已避让 ${count} 次`)} onRelent={() => setMessage('按钮已停止避让，可直接点击。')} onCatch={() => setMessage('已抓住演示按钮。')}><button className="aw-micro-action" type="button">试着抓住我</button></DodgeField></div>
-    <div className="aw-micro-controls"><button type="button" onClick={() => { setRevision(value => value + 1); setMessage('演示已重置。'); }}>重置</button></div>
-    <p className="aw-micro-status" role="status" aria-live="polite">{message}</p>
-    <p className="aw-micro-hint">用于趣味展示，不用于提交、取消或其他关键业务操作。</p>
+  return <DemoPanel title="Dodge Field · 避让微交互"><div className={cn("aw-micro-stack")}>
+    <div className={cn("aw-micro-wide")}><DodgeField key={revision}       onDodge={count => setMessage(`已避让 ${count} 次`)} onRelent={() => setMessage('按钮已停止避让，可直接点击。')} onCatch={() => setMessage('已抓住演示按钮。')} inkColor={"#1f2d26"} contrastColor={"#faf7f0"} fieldHeight={280} patience={4} taunts={["再近一点", "向左试试", "就要到了"]} notice={"可以抓住了"} reach={72} radius={120} falloff={2} fleeDuration={130} returnDuration={620} returnBounce={0.1} axis={"both"} wall={"clamp"} disabled={false} ><button className={cn("aw-micro-action")}  type={"button"} >试着抓住我</button></DodgeField></div>
+    <div className={cn("aw-micro-controls")}><button className={styles['aw-micro-action']}  onClick={() => { setRevision(value => value + 1); setMessage('演示已重置。'); }} type={"button"} >重置</button></div>
+    <p className={cn("aw-micro-status")} role="status" aria-live="polite">{message}</p>
+    <p className={cn("aw-micro-hint")}>用于趣味展示，不用于提交、取消或其他关键业务操作。</p>
   </div></DemoPanel>;
 }
+
 ```
 
-完整 Props、类型、回调和默认值以安装后的对应 TSX 源码为准。先读取本例使用的参数，再沿类型定义补充当前任务需要的选项；不要根据通用模板假定所有组件都有 color / speed / children。
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `children` | `ReactNode \| ((state: DodgeFieldState) => ReactNode)` | 否 | `(<br>          <button type="button" className="dodge-field__pill" aria-label={taunts[0]}><br>            <span className="dodge-field__labels"><br>              {taunts.map((taunt, i) => (<br>                <span<br>                  key={`${taunt}-${i}`}<br>                  className="dodge-field__label"<br>                  data-active={i === index ? 'true' : 'false'}<br>                  aria-hidden="true"<br>                ><br>                  {taunt}<br>                </span><br>              ))}<br>            </span><br>          </button><br>        )` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `taunts` | `string[]` | 否 | `DEFAULT_TAUNTS` | 提示短句的有序数据集合；每一项按数组元素类型配置。 |
+| `notice` | `string` | 否 | `''` | 提示，控制 dodge field 的对应渲染或交互参数。 |
+| `inkColor` | `string` | 否 | `'#f5f5f5'` | 墨色颜色，传入组件支持的 CSS 或着色器颜色格式。 |
+| `contrastColor` | `string` | 否 | `'#18181b'` | 对比度颜色，传入组件支持的 CSS 或着色器颜色格式。 |
+| `fieldHeight` | `number` | 否 | `240` | 场高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `reach` | `number` | 否 | `72` | 作用距离，控制 dodge field 的对应渲染或交互参数。 |
+| `radius` | `number` | 否 | `120` | 半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
+| `falloff` | `number` | 否 | `2` | 衰减，控制 dodge field 的对应渲染或交互参数。 |
+| `fleeDuration` | `number` | 否 | `130` | 逃离时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。 |
+| `returnDuration` | `number` | 否 | `620` | 返回时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。 |
+| `returnBounce` | `number` | 否 | `0.1` | 返回回弹，控制 dodge field 的对应渲染或交互参数。 |
+| `axis` | `DodgeAxis` | 否 | `'both'` | 坐标轴，控制 dodge field 的对应渲染或交互参数。 |
+| `wall` | `DodgeWall` | 否 | `'clamp'` | 墙面，控制 dodge field 的对应渲染或交互参数。 |
+| `patience` | `number` | 否 | `4` | 等待耐心，控制 dodge field 的对应渲染或交互参数。 |
+| `disabled` | `boolean` | 否 | `false` | 是否禁用控件的用户交互。 |
+| `onDodge` | `(count: number) => void` | 否 | `未指定` | 躲避时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。 |
+| `onRelent` | `() => void` | 否 | `未指定` | 缓和时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。 |
+| `onCatch` | `() => void` | 否 | `未指定` | 捕获时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。 |
+| `className` | `string` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `style` | `CSSProperties` | 否 | `未指定` | 容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。 |
+| `button · t1.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `button · t1.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `未指定` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `button · t1.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `button · t1.onClick` | `MouseEventHandler<HTMLButtonElement> \| undefined` | 否 | `未指定` | 用户点击或通过键盘激活时触发的事件处理函数。 |
+
+**继承的原生属性：**
+
+- `DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+
+**children 的真实接入：**
+
+```tsx
+children={<><button className={cn("aw-micro-action")} type="button">试着抓住我</button></>}
+```
+
+**taunts 的真实接入：**
+
+```tsx
+taunts={['再近一点', '向左试试', '就要到了']}
+```
+
+**onDodge 的真实接入：**
+
+```tsx
+onDodge={count => setMessage(`已避让 ${count} 次`)}
+```
+
+**onRelent 的真实接入：**
+
+```tsx
+onRelent={() => setMessage('按钮已停止避让，可直接点击。')}
+```
+
+**onCatch 的真实接入：**
+
+```tsx
+onCatch={() => setMessage('已抓住演示按钮。')}
+```
+
+**style 的真实接入：**
+
+```tsx
+style={{ width: "100%", minHeight: 240 }}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.inkColor` | `"#1f2d26"` | color | 不限 ~ 不限 | 即时应用 |
+| `t0.contrastColor` | `"#faf7f0"` | color | 不限 ~ 不限 | 即时应用 |
+| `t0.fieldHeight` | `280` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.patience` | `4` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.taunts` | `["再近一点","向左试试","就要到了"]` | json | 不限 ~ 不限 | 即时应用 |
+| `t0.notice` | `"可以抓住了"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.reach` | `72` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.radius` | `120` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.falloff` | `2` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.fleeDuration` | `130` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.returnDuration` | `620` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.returnBounce` | `0.1` | number | 不限 ~ 不限 | 即时应用 |
+| `t0.axis` | `"both"` | select | "both" / "x" / "y" | 即时应用 |
+| `t0.wall` | `"clamp"` | select | "clamp" / "bounce" | 即时应用 |
+| `t0.disabled` | `false` | switch | 不限 ~ 不限 | 即时应用 |
+| `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `t2.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. Agent Wan 皮肤
 
 - 容器、状态色、边界与焦点使用 Agent Wan 规范；交互命中区不随视觉形变缩小。
-- 优先通过组件真实 Props 设置颜色和强度；使用主题提供的茶绿、沙米、象牙白及墨色映射。
+- 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 
 ## 5. 加载、动效与降级
@@ -63,9 +167,9 @@ export default function DodgeFieldDemo() {
 
 - 依赖清单：`motion`、`react`。安装前复用目标项目的兼容版本，不重复加载。
 - 运行类型：本例预览入口不要求预先通过图形接口检查；实际组件内部的可选渲染分支由源码和本例 Props 决定。此说明不等于浏览器运行证明。
-- 动效策略：真实状态驱动的短动效；计时以任务事实为准。
+- 动效策略：遵从系统减少动效偏好，功能交互保持可用。
 - 示例库降级：动态偏好或能力检查不满足时先不挂载本项，显示原因；减少运动时可明确选择仅播放本次。
-- 业务接入的静态降级要求：使用原生或规范内控件表达同一状态和操作，保留键盘与可访问名称。
+- 业务接入的静态降级要求：保留可读内容与原生交互，并提供当前组件的静态状态
 - 卸载时释放本例监听、计时、动画帧及拥有的渲染资源；不以隐藏 CSS 代替停止循环。
 
 仅当前需求涉及高级运行、资源或设备权限时再读 [效果与降级策略](../effects-policy.md)。
@@ -75,8 +179,8 @@ export default function DodgeFieldDemo() {
 1. 参数与对应源码真实 API 一致，构建可导入，安装失败可恢复。
 2. 能观察到第 1 节的核心机制，而不只是相同名称的占位卡片。
 3. 真实状态 / 事件 / 键盘与必要的触屏等价操作可用。
-4. 低饱和配色、文字对比、阅读面、稳定命中范围与基础规范一致。
+4. 画布保留本例的效果对比度和原版配色；外壳、阅读面与基础规范一致。
 5. 只激活本项；切换或卸载后停止其持续工作。
 6. 减少运动与不可用情形保留本节所述等价内容或功能。
 
-只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [微交互](../categories/micro.md)；否则直接完成当前组件。
+只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [指针与轨迹](../categories/pointer.md)；否则直接完成当前组件。

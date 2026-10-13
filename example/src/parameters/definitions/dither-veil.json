@@ -1,0 +1,1930 @@
+{
+  "version": 1,
+  "id": "dither-veil",
+  "name": "Dither Veil",
+  "sourcePath": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+  "demoPath": "src/demos/background/dither-veil.tsx",
+  "fields": [
+    {
+      "key": "t0.alt",
+      "name": "alt",
+      "label": "替代文字 · t0",
+      "description": "图像无法显示及辅助技术读取时的替代文字。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "alt"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.src",
+      "name": "src",
+      "label": "资源地址 · t1",
+      "description": "加载图像、视频或纹理的资源地址。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "src"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "@asset/restoration/chromatic-bloom.svg",
+      "upstreamDefault": "DEFAULT_SRC",
+      "control": "resource",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "options": [
+        {
+          "label": "纹理 · 色彩绽放",
+          "value": "@asset/restoration/chromatic-bloom.svg"
+        },
+        {
+          "label": "纹理 · 矿石潮汐",
+          "value": "@asset/restoration/mineral-tide.svg"
+        },
+        {
+          "label": "纹理 · 夜色轨道",
+          "value": "@asset/restoration/nocturne-orbit.svg"
+        },
+        {
+          "label": "纹理 · 棱彩林冠",
+          "value": "@asset/restoration/prismatic-canopy.svg"
+        },
+        {
+          "label": "纹理 · 日光沙丘",
+          "value": "@asset/restoration/solar-dunes.svg"
+        },
+        {
+          "label": "纹理 · 朱红折页",
+          "value": "@asset/restoration/vermilion-fold.svg"
+        },
+        {
+          "label": "场景 · 山雾",
+          "value": "@media/scene-1.svg"
+        },
+        {
+          "label": "场景 · 茶庭",
+          "value": "@media/scene-2.svg"
+        },
+        {
+          "label": "场景 · 沙洲",
+          "value": "@media/scene-3.svg"
+        },
+        {
+          "label": "场景 · 静水",
+          "value": "@media/scene-4.svg"
+        },
+        {
+          "label": "场景 · 林间",
+          "value": "@media/scene-5.svg"
+        },
+        {
+          "label": "场景 · 岩纹",
+          "value": "@media/scene-6.svg"
+        }
+      ]
+    },
+    {
+      "key": "t1.fit",
+      "name": "fit",
+      "label": "fit · t1",
+      "description": "适配，控制 dither veil 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "fit"
+        }
+      ],
+      "type": "Fit",
+      "defaultValue": "cover",
+      "upstreamDefault": "'contain'",
+      "control": "select",
+      "options": [
+        {
+          "label": "contain",
+          "value": "contain"
+        },
+        {
+          "label": "cover",
+          "value": "cover"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.pattern",
+      "name": "pattern",
+      "label": "pattern · t1",
+      "description": "原生表单验证使用的正则模式。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "pattern"
+        }
+      ],
+      "type": "Pattern",
+      "defaultValue": "floyd",
+      "upstreamDefault": "'floyd'",
+      "control": "select",
+      "options": [
+        {
+          "label": "bayer",
+          "value": "bayer"
+        },
+        {
+          "label": "noise",
+          "value": "noise"
+        },
+        {
+          "label": "atkinson",
+          "value": "atkinson"
+        },
+        {
+          "label": "floyd",
+          "value": "floyd"
+        },
+        {
+          "label": "lines",
+          "value": "lines"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.pixelSize",
+      "name": "pixelSize",
+      "label": "抖色网点尺寸",
+      "description": "像素尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。网点/抖色的绘制单元尺寸。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "pixelSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "key": "t1.inkColor",
+      "name": "inkColor",
+      "label": "inkColor · t1",
+      "description": "墨色颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "inkColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#172a24",
+      "upstreamDefault": "'#120f17'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.paperColor",
+      "name": "paperColor",
+      "label": "paperColor · t1",
+      "description": "纸张颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "paperColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#f6f3eb",
+      "upstreamDefault": "'#f4f1ea'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.contrast",
+      "name": "contrast",
+      "label": "contrast · t1",
+      "description": "对比度，控制 dither veil 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "contrast"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.15,
+      "upstreamDefault": "1.15",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.revealRadius",
+      "name": "revealRadius",
+      "label": "revealRadius · t1",
+      "description": "显现半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。指针揭示色彩的半径。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "revealRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 180,
+      "upstreamDefault": "200",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 40,
+      "max": 360,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "key": "t1.softness",
+      "name": "softness",
+      "label": "softness · t1",
+      "description": "柔和度，控制 dither veil 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。指针遮罩边缘的柔和度。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "softness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t1.linger",
+      "name": "linger",
+      "label": "linger · t1",
+      "description": "停留，控制 dither veil 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。离开后的遮罩衰减时长。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "linger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 3,
+      "step": 0.1,
+      "unit": "s"
+    },
+    {
+      "key": "t1.rimColor",
+      "name": "rimColor",
+      "label": "rimColor · t1",
+      "description": "轮缘颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "rimColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#7fd7b9",
+      "upstreamDefault": "'#a78bfa'",
+      "control": "color",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.rim",
+      "name": "rim",
+      "label": "rim · t1",
+      "description": "轮缘，控制 dither veil 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "rim"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.clickBurst",
+      "name": "clickBurst",
+      "label": "clickBurst · t1",
+      "description": "是否点击爆发，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "clickBurst"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.levels",
+      "name": "levels",
+      "label": "levels · t1",
+      "description": "层数，控制 dither veil 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "levels"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.palette",
+      "name": "palette",
+      "label": "palette · t1",
+      "description": "调色板，控制 dither veil 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "palette"
+        }
+      ],
+      "type": "Palette",
+      "defaultValue": "duotone",
+      "upstreamDefault": "'duotone'",
+      "control": "select",
+      "options": [
+        {
+          "label": "duotone",
+          "value": "duotone"
+        },
+        {
+          "label": "rgb",
+          "value": "rgb"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.brightness",
+      "name": "brightness",
+      "label": "亮度 · t1",
+      "description": "亮度，控制 dither veil 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "brightness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.reverse",
+      "name": "reverse",
+      "label": "reverse · t1",
+      "description": "是否反向，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "reverse"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.wander",
+      "name": "wander",
+      "label": "wander · t1",
+      "description": "是否游走，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "wander"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.type",
+      "name": "type",
+      "label": "类型 · t2",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "src",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "DEFAULT_SRC",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 412,
+        "kind": "parameter"
+      },
+      "defaultValue": "https://images.unsplash.com/photo-1737071371043-761e02b1ef95?q=80&w=1400&auto=format&fit=crop",
+      "defaultResolvedExpression": "'https://images.unsplash.com/photo-1737071371043-761e02b1ef95?q=80&w=1400&auto=format&fit=crop'",
+      "description": "加载图像、视频或纹理的资源地址。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 16
+      },
+      "codeExample": "src={artwork}",
+      "usageExamples": [
+        "src={artwork}"
+      ]
+    },
+    {
+      "name": "fit",
+      "type": "Fit",
+      "required": false,
+      "defaultExpression": "'contain'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 413,
+        "kind": "parameter"
+      },
+      "defaultValue": "contain",
+      "description": "适配，控制 dither veil 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "contain",
+        "cover"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "contain",
+          "cover"
+        ]
+      },
+      "codeExample": "fit=\"cover\"",
+      "usageExamples": [
+        "fit=\"cover\""
+      ]
+    },
+    {
+      "name": "pattern",
+      "type": "Pattern",
+      "required": false,
+      "defaultExpression": "'floyd'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 414,
+        "kind": "parameter"
+      },
+      "defaultValue": "floyd",
+      "description": "原生表单验证使用的正则模式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "bayer",
+        "noise",
+        "atkinson",
+        "floyd",
+        "lines"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "bayer",
+          "noise",
+          "atkinson",
+          "floyd",
+          "lines"
+        ]
+      },
+      "codeExample": "pattern=\"floyd\"",
+      "usageExamples": [
+        "pattern=\"floyd\""
+      ]
+    },
+    {
+      "name": "pixelSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 415,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "像素尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 19
+      },
+      "codeExample": "pixelSize={2}",
+      "usageExamples": [
+        "pixelSize={2}"
+      ]
+    },
+    {
+      "name": "levels",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 416,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "层数，控制 dither veil 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 20
+      },
+      "codeExample": "levels={2}"
+    },
+    {
+      "name": "palette",
+      "type": "Palette",
+      "required": false,
+      "defaultExpression": "'duotone'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 417,
+        "kind": "parameter"
+      },
+      "defaultValue": "duotone",
+      "description": "调色板，控制 dither veil 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "duotone",
+        "rgb"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "duotone",
+          "rgb"
+        ]
+      },
+      "codeExample": "palette={\"duotone\"}"
+    },
+    {
+      "name": "inkColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#120f17'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 418,
+        "kind": "parameter"
+      },
+      "defaultValue": "#120f17",
+      "description": "墨色颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 22
+      },
+      "codeExample": "inkColor=\"#172a24\"",
+      "usageExamples": [
+        "inkColor=\"#172a24\""
+      ]
+    },
+    {
+      "name": "paperColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f4f1ea'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 419,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f4f1ea",
+      "description": "纸张颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 23
+      },
+      "codeExample": "paperColor=\"#f6f3eb\"",
+      "usageExamples": [
+        "paperColor=\"#f6f3eb\""
+      ]
+    },
+    {
+      "name": "contrast",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 420,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.15,
+      "description": "对比度，控制 dither veil 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 24
+      },
+      "codeExample": "contrast={1.15}",
+      "usageExamples": [
+        "contrast={1.15}"
+      ]
+    },
+    {
+      "name": "brightness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 421,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "亮度，控制 dither veil 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 25
+      },
+      "codeExample": "brightness={0}"
+    },
+    {
+      "name": "revealRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 422,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "显现半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 26
+      },
+      "codeExample": "revealRadius={180}",
+      "usageExamples": [
+        "revealRadius={180}"
+      ]
+    },
+    {
+      "name": "softness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 423,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "柔和度，控制 dither veil 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 27
+      },
+      "codeExample": "softness={0.6}",
+      "usageExamples": [
+        "softness={0.6}"
+      ]
+    },
+    {
+      "name": "linger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 424,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "停留，控制 dither veil 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 28
+      },
+      "codeExample": "linger={1}",
+      "usageExamples": [
+        "linger={1}"
+      ]
+    },
+    {
+      "name": "rimColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#a78bfa'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 425,
+        "kind": "parameter"
+      },
+      "defaultValue": "#a78bfa",
+      "description": "轮缘颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 29
+      },
+      "codeExample": "rimColor=\"#7fd7b9\"",
+      "usageExamples": [
+        "rimColor=\"#7fd7b9\""
+      ]
+    },
+    {
+      "name": "rim",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 426,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "轮缘，控制 dither veil 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 30
+      },
+      "codeExample": "rim={0.2}",
+      "usageExamples": [
+        "rim={0.2}"
+      ]
+    },
+    {
+      "name": "reverse",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 427,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否反向，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "reverse={false}"
+    },
+    {
+      "name": "wander",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 428,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否游走，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "wander={false}"
+    },
+    {
+      "name": "clickBurst",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 429,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否点击爆发，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "clickBurst",
+      "usageExamples": [
+        "clickBurst"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 430,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 34
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+        "line": 35
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/Animations/DitherVeil/DitherVeil';\n\nimport styles from './dither-veil.module.css';\n\nexport default function DitherVeilDemo() {\n  const [imageState, setImageState] = useState<'loading' | 'ready' | 'error'>('loading');\n  const [attempt, setAttempt] = useState(0);\n  return (\n    <div className={styles.stage} data-visual-demo=\"dither-veil\">\n      <img key={attempt} className={styles.probe} src={/*__AW_VALUE_t1.src__*/}  aria-hidden=\"true\"\n        onLoad={() => setImageState('ready')} onError={() => setImageState('error')} /*__AW_PROPS_t0__*/  />\n      {imageState === 'ready' ? <Component\n\n             /*__AW_PROPS_t1__*/  /> :\n        <div className={styles.fallback} role=\"status\" aria-live=\"polite\">\n          <p>{imageState === 'error' ? '纹理图加载失败，请重试。' : '正在加载纹理图…'}</p>\n          {imageState === 'error' && <button className={styles.retry}  onClick={() => { setImageState('loading'); setAttempt(value => value + 1); }} /*__AW_PROPS_t2__*/ >重新加载图片</button>}\n        </div>}\n      <p className={styles.hint}>移动指针揭示色彩 · 点击扩散 · 离开后网点重新织合</p>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "img",
+      "props": [
+        {
+          "name": "key",
+          "type": "Key | null | undefined",
+          "required": false,
+          "description": "React 列表项身份，用于更新时保持对应节点。",
+          "usageExamples": [
+            "key={attempt}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 250
+          }
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles.probe}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "src",
+          "type": "string | undefined",
+          "required": false,
+          "description": "加载图像、视频或纹理的资源地址。",
+          "usageExamples": [
+            "src={artwork}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3077
+          }
+        },
+        {
+          "name": "alt",
+          "type": "string | undefined",
+          "required": false,
+          "description": "图像无法显示及辅助技术读取时的替代文字。",
+          "usageExamples": [
+            "alt=\"\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3069
+          }
+        },
+        {
+          "name": "aria-hidden",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "description": "辅助技术的 hidden 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-hidden=\"true\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2495
+          }
+        },
+        {
+          "name": "onLoad",
+          "type": "ReactEventHandler<HTMLImageElement> | undefined",
+          "required": false,
+          "description": "加载时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onLoad={() => setImageState('ready')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2215
+          }
+        },
+        {
+          "name": "onError",
+          "type": "ReactEventHandler<HTMLImageElement> | undefined",
+          "required": false,
+          "description": "错误时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "usageExamples": [
+            "onError={() => setImageState('error')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2217
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "DitherVeil",
+      "sourcePath": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+      "props": [
+        {
+          "name": "src",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "DEFAULT_SRC",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 412,
+            "kind": "parameter"
+          },
+          "defaultValue": "https://images.unsplash.com/photo-1737071371043-761e02b1ef95?q=80&w=1400&auto=format&fit=crop",
+          "defaultResolvedExpression": "'https://images.unsplash.com/photo-1737071371043-761e02b1ef95?q=80&w=1400&auto=format&fit=crop'",
+          "description": "加载图像、视频或纹理的资源地址。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 16
+          },
+          "codeExample": "src={artwork}",
+          "usageExamples": [
+            "src={artwork}"
+          ]
+        },
+        {
+          "name": "fit",
+          "type": "Fit",
+          "required": false,
+          "defaultExpression": "'contain'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 413,
+            "kind": "parameter"
+          },
+          "defaultValue": "contain",
+          "description": "适配，控制 dither veil 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "contain",
+            "cover"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "contain",
+              "cover"
+            ]
+          },
+          "codeExample": "fit=\"cover\"",
+          "usageExamples": [
+            "fit=\"cover\""
+          ]
+        },
+        {
+          "name": "pattern",
+          "type": "Pattern",
+          "required": false,
+          "defaultExpression": "'floyd'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 414,
+            "kind": "parameter"
+          },
+          "defaultValue": "floyd",
+          "description": "原生表单验证使用的正则模式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "bayer",
+            "noise",
+            "atkinson",
+            "floyd",
+            "lines"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "bayer",
+              "noise",
+              "atkinson",
+              "floyd",
+              "lines"
+            ]
+          },
+          "codeExample": "pattern=\"floyd\"",
+          "usageExamples": [
+            "pattern=\"floyd\""
+          ]
+        },
+        {
+          "name": "pixelSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 415,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "像素尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 19
+          },
+          "codeExample": "pixelSize={2}",
+          "usageExamples": [
+            "pixelSize={2}"
+          ]
+        },
+        {
+          "name": "levels",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 416,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "层数，控制 dither veil 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 20
+          },
+          "codeExample": "levels={2}"
+        },
+        {
+          "name": "palette",
+          "type": "Palette",
+          "required": false,
+          "defaultExpression": "'duotone'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 417,
+            "kind": "parameter"
+          },
+          "defaultValue": "duotone",
+          "description": "调色板，控制 dither veil 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "duotone",
+            "rgb"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "duotone",
+              "rgb"
+            ]
+          },
+          "codeExample": "palette={\"duotone\"}"
+        },
+        {
+          "name": "inkColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#120f17'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 418,
+            "kind": "parameter"
+          },
+          "defaultValue": "#120f17",
+          "description": "墨色颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 22
+          },
+          "codeExample": "inkColor=\"#172a24\"",
+          "usageExamples": [
+            "inkColor=\"#172a24\""
+          ]
+        },
+        {
+          "name": "paperColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f4f1ea'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 419,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f4f1ea",
+          "description": "纸张颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 23
+          },
+          "codeExample": "paperColor=\"#f6f3eb\"",
+          "usageExamples": [
+            "paperColor=\"#f6f3eb\""
+          ]
+        },
+        {
+          "name": "contrast",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 420,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.15,
+          "description": "对比度，控制 dither veil 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 24
+          },
+          "codeExample": "contrast={1.15}",
+          "usageExamples": [
+            "contrast={1.15}"
+          ]
+        },
+        {
+          "name": "brightness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 421,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "亮度，控制 dither veil 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 25
+          },
+          "codeExample": "brightness={0}"
+        },
+        {
+          "name": "revealRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 422,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "显现半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 26
+          },
+          "codeExample": "revealRadius={180}",
+          "usageExamples": [
+            "revealRadius={180}"
+          ]
+        },
+        {
+          "name": "softness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 423,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "柔和度，控制 dither veil 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 27
+          },
+          "codeExample": "softness={0.6}",
+          "usageExamples": [
+            "softness={0.6}"
+          ]
+        },
+        {
+          "name": "linger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 424,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "停留，控制 dither veil 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 28
+          },
+          "codeExample": "linger={1}",
+          "usageExamples": [
+            "linger={1}"
+          ]
+        },
+        {
+          "name": "rimColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#a78bfa'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 425,
+            "kind": "parameter"
+          },
+          "defaultValue": "#a78bfa",
+          "description": "轮缘颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 29
+          },
+          "codeExample": "rimColor=\"#7fd7b9\"",
+          "usageExamples": [
+            "rimColor=\"#7fd7b9\""
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 426,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "轮缘，控制 dither veil 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 30
+          },
+          "codeExample": "rim={0.2}",
+          "usageExamples": [
+            "rim={0.2}"
+          ]
+        },
+        {
+          "name": "reverse",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 427,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否反向，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "reverse={false}"
+        },
+        {
+          "name": "wander",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 428,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否游走，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "wander={false}"
+        },
+        {
+          "name": "clickBurst",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 429,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否点击爆发，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "clickBurst",
+          "usageExamples": [
+            "clickBurst"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 430,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 34
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/DitherVeil/DitherVeil.tsx",
+            "line": 35
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t2",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles.retry}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => { setImageState('loading'); setAttempt(value => value + 1); }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>重新加载图片</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

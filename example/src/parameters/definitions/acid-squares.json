@@ -1,0 +1,2054 @@
+{
+  "version": 1,
+  "id": "acid-squares",
+  "name": "Acid Squares",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+  "demoPath": "src/demos/background/acid-squares.tsx",
+  "fields": [
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#120f17'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#c6ff3d'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shape",
+      "name": "shape",
+      "label": "shape · t0",
+      "description": "形状，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shape"
+        }
+      ],
+      "type": "AcidSquaresShape",
+      "defaultValue": "square",
+      "upstreamDefault": "'square'",
+      "control": "select",
+      "options": [
+        {
+          "label": "square",
+          "value": "square"
+        },
+        {
+          "label": "round",
+          "value": "round"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.35,
+      "upstreamDefault": "0.7",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulse",
+      "name": "pulse",
+      "label": "pulse · t0",
+      "description": "脉冲，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulse"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulseSpeed",
+      "name": "pulseSpeed",
+      "label": "pulseSpeed · t0",
+      "description": "脉冲速度，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulseSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.45",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.twist",
+      "name": "twist",
+      "label": "twist · t0",
+      "description": "扭转，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "twist"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.05,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sparkle",
+      "name": "sparkle",
+      "label": "sparkle · t0",
+      "description": "星屑闪烁，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sparkle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.01,
+      "upstreamDefault": "0.04",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.brightness",
+      "name": "brightness",
+      "label": "亮度 · t0",
+      "description": "亮度，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "brightness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grain",
+      "name": "grain",
+      "label": "grain · t0",
+      "description": "颗粒，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grain"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.02,
+      "upstreamDefault": "0.03",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseInteraction",
+      "name": "mouseInteraction",
+      "label": "指针响应 · t0",
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseInteraction"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseStrength",
+      "name": "mouseStrength",
+      "label": "mouseStrength · t0",
+      "description": "鼠标强度，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulseSpacing",
+      "name": "pulseSpacing",
+      "label": "pulseSpacing · t0",
+      "description": "脉冲间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulseSpacing"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulseWidth",
+      "name": "pulseWidth",
+      "label": "pulseWidth · t0",
+      "description": "脉冲宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulseWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.breathe",
+      "name": "breathe",
+      "label": "breathe · t0",
+      "description": "呼吸，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "breathe"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.zoom",
+      "name": "zoom",
+      "label": "zoom · t0",
+      "description": "缩放，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "zoom"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.3,
+      "upstreamDefault": "1.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.depth",
+      "name": "depth",
+      "label": "depth · t0",
+      "description": "深度，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "depth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edges",
+      "name": "edges",
+      "label": "edges · t0",
+      "description": "边缘组，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edges"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.45,
+      "upstreamDefault": "0.45",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.roll",
+      "name": "roll",
+      "label": "roll · t0",
+      "description": "滚动翻转，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "roll"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseRadius",
+      "name": "mouseRadius",
+      "label": "mouseRadius · t0",
+      "description": "鼠标半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.35,
+      "upstreamDefault": "0.35",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.detail",
+      "name": "detail",
+      "label": "detail · t0",
+      "description": "细节，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "detail"
+        }
+      ],
+      "type": "AcidSquaresDetail",
+      "defaultValue": "medium",
+      "upstreamDefault": "'medium'",
+      "control": "select",
+      "options": [
+        {
+          "label": "low",
+          "value": "low"
+        },
+        {
+          "label": "medium",
+          "value": "medium"
+        },
+        {
+          "label": "high",
+          "value": "high"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 acid squares 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 acid squares 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停持续动画或模拟更新。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#120f17'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 274,
+        "kind": "parameter"
+      },
+      "defaultValue": "#120f17",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 12
+      },
+      "codeExample": "color={palette.ink}",
+      "usageExamples": [
+        "color={palette.ink}"
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#c6ff3d'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 275,
+        "kind": "parameter"
+      },
+      "defaultValue": "#c6ff3d",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 13
+      },
+      "codeExample": "accentColor={palette.sage}",
+      "usageExamples": [
+        "accentColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "AcidSquaresShape",
+      "required": false,
+      "defaultExpression": "'square'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 276,
+        "kind": "parameter"
+      },
+      "defaultValue": "square",
+      "description": "形状，控制 acid squares 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "square",
+        "round"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "square",
+          "round"
+        ]
+      },
+      "codeExample": "shape=\"square\"",
+      "usageExamples": [
+        "shape=\"square\""
+      ]
+    },
+    {
+      "name": "pulse",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 277,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "脉冲，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 15
+      },
+      "codeExample": "pulse={0.6}",
+      "usageExamples": [
+        "pulse={0.6}"
+      ]
+    },
+    {
+      "name": "pulseSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.45",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 278,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.45,
+      "description": "脉冲速度，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 16
+      },
+      "codeExample": "pulseSpeed={0.3}",
+      "usageExamples": [
+        "pulseSpeed={0.3}"
+      ]
+    },
+    {
+      "name": "pulseSpacing",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 279,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "脉冲间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 17
+      },
+      "codeExample": "pulseSpacing={1}"
+    },
+    {
+      "name": "pulseWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 280,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "脉冲宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 18
+      },
+      "codeExample": "pulseWidth={1}"
+    },
+    {
+      "name": "sparkle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.04",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 281,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.04,
+      "description": "星屑闪烁，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 19
+      },
+      "codeExample": "sparkle={0.01}",
+      "usageExamples": [
+        "sparkle={0.01}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 282,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.7,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 20
+      },
+      "codeExample": "speed={0.35}",
+      "usageExamples": [
+        "speed={0.35}"
+      ]
+    },
+    {
+      "name": "breathe",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 283,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "呼吸，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 21
+      },
+      "codeExample": "breathe={1}"
+    },
+    {
+      "name": "zoom",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 284,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.3,
+      "description": "缩放，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 22
+      },
+      "codeExample": "zoom={1.3}"
+    },
+    {
+      "name": "depth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 285,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "深度，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 23
+      },
+      "codeExample": "depth={10}"
+    },
+    {
+      "name": "edges",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.45",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 286,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.45,
+      "description": "边缘组，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 24
+      },
+      "codeExample": "edges={0.45}"
+    },
+    {
+      "name": "twist",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 287,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "扭转，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 25
+      },
+      "codeExample": "twist={0.05}",
+      "usageExamples": [
+        "twist={0.05}"
+      ]
+    },
+    {
+      "name": "roll",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 288,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "滚动翻转，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 26
+      },
+      "codeExample": "roll={0}"
+    },
+    {
+      "name": "brightness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 289,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "亮度，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 27
+      },
+      "codeExample": "brightness={1}",
+      "usageExamples": [
+        "brightness={1}"
+      ]
+    },
+    {
+      "name": "mouseInteraction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 290,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "mouseInteraction",
+      "usageExamples": [
+        "mouseInteraction"
+      ]
+    },
+    {
+      "name": "mouseStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 291,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "鼠标强度，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 29
+      },
+      "codeExample": "mouseStrength={0.5}",
+      "usageExamples": [
+        "mouseStrength={0.5}"
+      ]
+    },
+    {
+      "name": "mouseRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.35",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 292,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.35,
+      "description": "鼠标半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 30
+      },
+      "codeExample": "mouseRadius={0.35}"
+    },
+    {
+      "name": "detail",
+      "type": "AcidSquaresDetail",
+      "required": false,
+      "defaultExpression": "'medium'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 293,
+        "kind": "parameter"
+      },
+      "defaultValue": "medium",
+      "description": "细节，控制 acid squares 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "codeExample": "detail={\"medium\"}"
+    },
+    {
+      "name": "grain",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.03",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 294,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.03,
+      "description": "颗粒，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 32
+      },
+      "codeExample": "grain={0.02}",
+      "usageExamples": [
+        "grain={0.02}"
+      ]
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 295,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "淡出，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 33
+      },
+      "codeExample": "fade={0}"
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 296,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 acid squares 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 34
+      },
+      "codeExample": "opacity={1}"
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 297,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode={false}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 298,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停持续动画或模拟更新。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+        "line": 37
+      },
+      "codeExample": "dpr={1}"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "children={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "HTMLAttributes<HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares';\n\n\n/** Agent Wan natural-tone preset for the real Acid Squares component. */\nexport default function AcidSquaresDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "AcidSquares",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+      "props": [
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#120f17'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 274,
+            "kind": "parameter"
+          },
+          "defaultValue": "#120f17",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 12
+          },
+          "codeExample": "color={palette.ink}",
+          "usageExamples": [
+            "color={palette.ink}"
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#c6ff3d'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 275,
+            "kind": "parameter"
+          },
+          "defaultValue": "#c6ff3d",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 13
+          },
+          "codeExample": "accentColor={palette.sage}",
+          "usageExamples": [
+            "accentColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "shape",
+          "type": "AcidSquaresShape",
+          "required": false,
+          "defaultExpression": "'square'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 276,
+            "kind": "parameter"
+          },
+          "defaultValue": "square",
+          "description": "形状，控制 acid squares 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "square",
+            "round"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "square",
+              "round"
+            ]
+          },
+          "codeExample": "shape=\"square\"",
+          "usageExamples": [
+            "shape=\"square\""
+          ]
+        },
+        {
+          "name": "pulse",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 277,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "脉冲，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 15
+          },
+          "codeExample": "pulse={0.6}",
+          "usageExamples": [
+            "pulse={0.6}"
+          ]
+        },
+        {
+          "name": "pulseSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.45",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 278,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.45,
+          "description": "脉冲速度，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 16
+          },
+          "codeExample": "pulseSpeed={0.3}",
+          "usageExamples": [
+            "pulseSpeed={0.3}"
+          ]
+        },
+        {
+          "name": "pulseSpacing",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 279,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "脉冲间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 17
+          },
+          "codeExample": "pulseSpacing={1}"
+        },
+        {
+          "name": "pulseWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 280,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "脉冲宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 18
+          },
+          "codeExample": "pulseWidth={1}"
+        },
+        {
+          "name": "sparkle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.04",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 281,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.04,
+          "description": "星屑闪烁，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 19
+          },
+          "codeExample": "sparkle={0.01}",
+          "usageExamples": [
+            "sparkle={0.01}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 282,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.7,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 20
+          },
+          "codeExample": "speed={0.35}",
+          "usageExamples": [
+            "speed={0.35}"
+          ]
+        },
+        {
+          "name": "breathe",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 283,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "呼吸，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 21
+          },
+          "codeExample": "breathe={1}"
+        },
+        {
+          "name": "zoom",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 284,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.3,
+          "description": "缩放，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 22
+          },
+          "codeExample": "zoom={1.3}"
+        },
+        {
+          "name": "depth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 285,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "深度，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 23
+          },
+          "codeExample": "depth={10}"
+        },
+        {
+          "name": "edges",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.45",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 286,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.45,
+          "description": "边缘组，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 24
+          },
+          "codeExample": "edges={0.45}"
+        },
+        {
+          "name": "twist",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 287,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "扭转，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 25
+          },
+          "codeExample": "twist={0.05}",
+          "usageExamples": [
+            "twist={0.05}"
+          ]
+        },
+        {
+          "name": "roll",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 288,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "滚动翻转，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 26
+          },
+          "codeExample": "roll={0}"
+        },
+        {
+          "name": "brightness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 289,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "亮度，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 27
+          },
+          "codeExample": "brightness={1}",
+          "usageExamples": [
+            "brightness={1}"
+          ]
+        },
+        {
+          "name": "mouseInteraction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 290,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "mouseInteraction",
+          "usageExamples": [
+            "mouseInteraction"
+          ]
+        },
+        {
+          "name": "mouseStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 291,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "鼠标强度，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 29
+          },
+          "codeExample": "mouseStrength={0.5}",
+          "usageExamples": [
+            "mouseStrength={0.5}"
+          ]
+        },
+        {
+          "name": "mouseRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.35",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 292,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.35,
+          "description": "鼠标半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 30
+          },
+          "codeExample": "mouseRadius={0.35}"
+        },
+        {
+          "name": "detail",
+          "type": "AcidSquaresDetail",
+          "required": false,
+          "defaultExpression": "'medium'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 293,
+            "kind": "parameter"
+          },
+          "defaultValue": "medium",
+          "description": "细节，控制 acid squares 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "codeExample": "detail={\"medium\"}"
+        },
+        {
+          "name": "grain",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.03",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 294,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.03,
+          "description": "颗粒，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 32
+          },
+          "codeExample": "grain={0.02}",
+          "usageExamples": [
+            "grain={0.02}"
+          ]
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 295,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "淡出，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 33
+          },
+          "codeExample": "fade={0}"
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 296,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 acid squares 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 34
+          },
+          "codeExample": "opacity={1}"
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 297,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode={false}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 298,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停持续动画或模拟更新。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "渲染像素比；影响 Canvas/WebGL 的清晰度与绘制成本。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/AcidSquares/AcidSquares.tsx",
+            "line": 37
+          },
+          "codeExample": "dpr={1}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "HTMLAttributes<HTMLDivElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

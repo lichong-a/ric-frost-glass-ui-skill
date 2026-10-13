@@ -1,6 +1,6 @@
 # Listbox
 
-业务表单 · `business-listbox` · 中文意图：列表选择 / 候选常显 / 阶段选择
+表单与选择 · `business-listbox` · 中文意图：列表选择 / 候选常显 / 阶段选择
 
 ## 1. 什么场景使用
 
@@ -13,27 +13,118 @@
 ## 2. 只加载这一项
 
 1. 只读本指南，确认用途与边界。
-2. 只读 [src/business/demos/business-listbox.tsx](../../../src/business/demos/business-listbox.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
-3. 本例若导入 primitives，再定位该文件中被使用的符号，不加载其它示例。样式按需检索 [业务 Token 皮肤](../../../src/business/business.css) 中的对应类。
+2. 只读 [src/business/demos/form/business-listbox.tsx](../../../src/business/demos/form/business-listbox.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
+3. 本例从 components 按需导入独立控件；只读实际导入的 .tsx 及同名 .module.css。布局工具类也显式使用 CSS Modules，不给整块区域的 button/input 套统一动效。
 4. 涉及业务错误、权限、数据或异步行为时才追加对应契约：[06-select](../../contracts/06-select.md)。
 5. 预览库使用本项独立 import() 入口；复制到目标项目时也只接入所需组件和直接依赖。
 
-所有实现使用本项目已有 React、原生 HTML 和 CSS。完整交互、类型与回调以当前示例代码为准。
+所有实现使用本项目已有 React、原生语义控件、Motion 和 CSS。完整交互、类型与回调以当前示例代码为准；局部弹性、下拉、媒体与日历效果见 [交互动效指南](../motion-guide.md)。
 
 ## 3. 本例真实用法
 
 下面来自当前独立示例。默认导出是一个可运行实例；复制后把本地选项、数据与回调接到目标项目已有业务层，不把演示结果当作后端成功。
 
 ```tsx
-import { useState, useId } from 'react';
-import { BusinessDemo, Field } from '../support';
+// 当前 Listbox 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
+import ownedStyles0 from '../../components/Button.module.css';
+import ownedStyles1 from '../../components/DemoLayout.module.css';
+import ownedStyles2 from '../../components/Listbox.module.css';
+import { componentClasses } from '../../class-names';
+import { useId, useState } from 'react';
+import { LayoutGroup } from 'motion/react';
+import { Check } from 'lucide-react';
+import { BusinessDemo } from '../../components/BusinessDemo';
+import { Field } from '../../components/Field';
+import { SelectionIndicator } from '../../components/SelectionIndicator';
 
-// 场景：候选项需要持续可见时使用列表选择，不必展开下拉框。
+const ownedStyles={...ownedStyles0,...ownedStyles1,...ownedStyles2};
+const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function ListboxDemo() {
-  const id = useId(); const options = ['待处理','设计中','实现中','待验收','已完成']; const [value, setValue] = useState('待处理');
-  return <BusinessDemo title="Listbox · 列表选择" description="候选项持续可见，支持原生键盘选择。"><Field label="任务阶段" htmlFor={id}><select id={id} size={5} value={value} onChange={event => setValue(event.target.value)}>{options.map(item => <option key={item}>{item}</option>)}</select></Field><p className="aw-business-status" role="status">阶段：{value}</p></BusinessDemo>;
+  const id = useId();
+  const options = ['待处理', '设计中', '实现中', '待验收', '已完成'];
+  const [value, setValue] = useState('待处理');
+  return <BusinessDemo title="Listbox · 列表选择" description="持续展示候选项，选中背景弹性移动，方向键选择。">
+    <Field  label={"任务阶段"} control={false} ><LayoutGroup id={id}><div data-ui="aw-business-styled-listbox" className={cn("aw-business-styled-listbox")} role="listbox"  aria-label={"任务阶段"} >
+      {options.map((item, index) => <button className={cn('aw-business-button-feedback')}  key={item} role="option" aria-selected={value === item} tabIndex={value === item ? 0 : -1}
+        onClick={() => setValue(item)} onKeyDown={event => {
+          if (!['ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? options.length - 1 : (index + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length;
+          setValue(options[next]);
+          event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>('button')[next]?.focus();
+        }} type={"button"} >{value === item ? <SelectionIndicator identity={`${id}-selected`} /> : null}<span>{item}</span>{value === item ? <Check size={16} aria-hidden="true" /> : null}</button>)}
+    </div></LayoutGroup></Field><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">阶段：{value}</p>
+  </BusinessDemo>;
 }
 ```
+
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `Field.label` | `string` | 是 | `未指定` | 向用户或辅助技术说明控件的名称。 |
+| `Field.children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Field.hint` | `string` | 否 | `未指定` | 与字段一起显示的帮助文字。 |
+| `Field.htmlFor` | `string` | 否 | `(isControl ? children.props.id : undefined)` | 关联控件的 id，让标签点击与辅助技术定位到该控件。 |
+| `Field.control` | `boolean` | 否 | `false` | 是否控制，决定该分支的展示或交互行为。 |
+| `div.data-ui` | `any` | 否 | `未指定` | 示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。 |
+| `div.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `div.role` | `AriaRole \| undefined` | 否 | `未指定` | 辅助技术使用的元素角色，须与实际键盘和交互行为相匹配。 |
+| `div.aria-label` | `string \| undefined` | 否 | `未指定` | 辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。 |
+| `div.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `button.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `未指定` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `button.key` | `Key \| null \| undefined` | 否 | `未指定` | React 列表项身份，用于更新时保持对应节点。 |
+| `button.role` | `AriaRole \| undefined` | 否 | `未指定` | 辅助技术使用的元素角色，须与实际键盘和交互行为相匹配。 |
+| `button.aria-selected` | `Booleanish \| undefined` | 否 | `未指定` | 辅助技术的 selected 状态或说明；值须与控件当前可观察行为一致。 |
+| `button.tabIndex` | `number \| undefined` | 否 | `未指定` | 键盘 Tab 导航的焦点顺序。 |
+| `button.onClick` | `MouseEventHandler<HTMLButtonElement> \| undefined` | 否 | `未指定` | 用户点击或通过键盘激活时触发的事件处理函数。 |
+| `button.onKeyDown` | `KeyboardEventHandler<HTMLButtonElement> \| undefined` | 否 | `未指定` | 身份标识down时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。 |
+| `button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `SelectionIndicator.identity` | `string` | 是 | `未指定` | 区分本次内容或动效节点的身份，改变后用于切换和布局过渡。 |
+| `SelectionIndicator.className` | `string` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+
+本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
+
+**继承的原生属性：**
+
+- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+
+**children 的真实接入：**
+
+```tsx
+children={<><LayoutGroup id={id}><div data-ui="aw-business-styled-listbox" className={cn("aw-business-styled-listbox")} role="listbox" aria-label="任务阶段">
+      {options.map((item, index) => <button className={cn('aw-business-button-feedback')} type="button" key={item} role="option" aria-selected={value === item} tabIndex={value === item ? 0 : -1}
+        onClick={() => setValue(item)} onKeyDown={event => {
+          if (!['ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? options.length - 1 : (index + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length;
+          setValue(options[next]);
+          event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>('button')[next]?.focus();
+        }}>{value === item ? <SelectionIndicator identity={`${id}-selected`} /> : null}<span>{item}</span>{value === item ? <Check size={16} aria-hidden="true" /> : null}</button>)}
+    </div></LayoutGroup></>}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.label` | `"任务阶段"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.control` | `false` | switch | 不限 ~ 不限 | 即时应用 |
+| `t1.aria-label` | `"任务阶段"` | text | 不限 ~ 不限 | 即时应用 |
+| `t2.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. 接入约束
 

@@ -1,0 +1,2357 @@
+{
+  "version": 1,
+  "id": "lattice-loader",
+  "name": "Lattice Loader",
+  "sourcePath": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+  "demoPath": "src/demos/feedback/lattice-loader.tsx",
+  "fields": [
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "正在整理示例资料",
+      "upstreamDefault": "'Thinking'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.doneLabel",
+      "name": "doneLabel",
+      "label": "doneLabel · t0",
+      "description": "完成标签，控制 lattice loader 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "doneLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "整理完成",
+      "upstreamDefault": "'Done in'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.errorLabel",
+      "name": "errorLabel",
+      "label": "errorLabel · t0",
+      "description": "错误标签，控制 lattice loader 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "errorLabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "加载失败",
+      "upstreamDefault": "'Failed after'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grid",
+      "name": "grid",
+      "label": "grid · t0",
+      "description": "网格，控制 lattice loader 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grid"
+        }
+      ],
+      "type": "LatticeGrid",
+      "defaultValue": 4,
+      "upstreamDefault": "3",
+      "control": "select",
+      "options": [
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4",
+          "value": 4
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'currentColor'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.doneColor",
+      "name": "doneColor",
+      "label": "doneColor · t0",
+      "description": "完成颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "doneColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#22c55e'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.errorColor",
+      "name": "errorColor",
+      "label": "errorColor · t0",
+      "description": "错误颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "errorColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#9c6d56",
+      "upstreamDefault": "'#ef4444'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cellSize",
+      "name": "cellSize",
+      "label": "cellSize · t0",
+      "description": "单元尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cellSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 7,
+      "upstreamDefault": "6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "是否辉光，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shape",
+      "name": "shape",
+      "label": "shape · t0",
+      "description": "形状，控制 lattice loader 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shape"
+        }
+      ],
+      "type": "'square' | 'round'",
+      "defaultValue": "round",
+      "upstreamDefault": "'round'",
+      "control": "select",
+      "options": [
+        {
+          "label": "square",
+          "value": "square"
+        },
+        {
+          "label": "round",
+          "value": "round"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 14,
+      "upstreamDefault": "14",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.step",
+      "name": "step",
+      "label": "步长 · t0",
+      "description": "每次调整的步进间隔或当前步骤，具体含义取决于组件。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "step"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 90,
+      "upstreamDefault": "90",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glowColor",
+      "name": "glowColor",
+      "label": "glowColor · t0",
+      "description": "辉光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glowColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showTimer",
+      "name": "showTimer",
+      "label": "showTimer · t0",
+      "description": "是否显示计时器，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showTimer"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.value",
+      "name": "value",
+      "label": "当前值 · t3",
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "value"
+        }
+      ],
+      "type": "string | number | readonly string[] | undefined",
+      "defaultValue": "sweep",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "string"
+            }
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t4.value",
+      "name": "value",
+      "label": "当前值 · t4",
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "scope": "prop",
+      "target": "t4",
+      "bindings": [
+        {
+          "target": "t4",
+          "name": "value"
+        }
+      ],
+      "type": "string | number | readonly string[] | undefined",
+      "defaultValue": "orbit",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "string"
+            }
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t5.value",
+      "name": "value",
+      "label": "当前值 · t5",
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "scope": "prop",
+      "target": "t5",
+      "bindings": [
+        {
+          "target": "t5",
+          "name": "value"
+        }
+      ],
+      "type": "string | number | readonly string[] | undefined",
+      "defaultValue": "snake",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "string"
+            }
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t6.value",
+      "name": "value",
+      "label": "当前值 · t6",
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "scope": "prop",
+      "target": "t6",
+      "bindings": [
+        {
+          "target": "t6",
+          "name": "value"
+        }
+      ],
+      "type": "string | number | readonly string[] | undefined",
+      "defaultValue": "pulse",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "string"
+          },
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "string"
+            }
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.pattern",
+      "name": "pattern",
+      "label": "pattern",
+      "description": "示例的受控状态 pattern；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "LatticePatternName",
+      "defaultValue": "sweep",
+      "control": "select",
+      "options": [
+        {
+          "label": "扫过",
+          "value": "sweep"
+        },
+        {
+          "label": "环绕",
+          "value": "orbit"
+        },
+        {
+          "label": "蛇形",
+          "value": "snake"
+        },
+        {
+          "label": "脉冲",
+          "value": "pulse"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Thinking'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 95,
+        "kind": "parameter"
+      },
+      "defaultValue": "Thinking",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 29
+      },
+      "codeExample": "label=\"正在整理示例资料\"",
+      "usageExamples": [
+        "label=\"正在整理示例资料\""
+      ]
+    },
+    {
+      "name": "doneLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Done in'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 96,
+        "kind": "parameter"
+      },
+      "defaultValue": "Done in",
+      "description": "完成标签，控制 lattice loader 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 30
+      },
+      "codeExample": "doneLabel=\"整理完成\"",
+      "usageExamples": [
+        "doneLabel=\"整理完成\""
+      ]
+    },
+    {
+      "name": "errorLabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Failed after'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 97,
+        "kind": "parameter"
+      },
+      "defaultValue": "Failed after",
+      "description": "错误标签，控制 lattice loader 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 31
+      },
+      "codeExample": "errorLabel=\"加载失败\"",
+      "usageExamples": [
+        "errorLabel=\"加载失败\""
+      ]
+    },
+    {
+      "name": "status",
+      "type": "LatticeStatus",
+      "required": false,
+      "defaultExpression": "'working'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 98,
+        "kind": "parameter"
+      },
+      "defaultValue": "working",
+      "description": "状态，控制 lattice loader 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "working",
+        "done",
+        "error"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "working",
+          "done",
+          "error"
+        ]
+      },
+      "codeExample": "status={status}",
+      "usageExamples": [
+        "status={status}"
+      ]
+    },
+    {
+      "name": "pattern",
+      "type": "LatticePatternName | LatticePattern",
+      "required": false,
+      "defaultExpression": "'orbit'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 99,
+        "kind": "parameter"
+      },
+      "defaultValue": "orbit",
+      "description": "原生表单验证使用的正则模式。",
+      "control": "code",
+      "valueKind": "union",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "\"sweep\"",
+            "kind": "enum",
+            "options": [
+              "sweep"
+            ]
+          },
+          {
+            "type": "\"ripple\"",
+            "kind": "enum",
+            "options": [
+              "ripple"
+            ]
+          },
+          {
+            "type": "\"orbit\"",
+            "kind": "enum",
+            "options": [
+              "orbit"
+            ]
+          },
+          {
+            "type": "\"spiral\"",
+            "kind": "enum",
+            "options": [
+              "spiral"
+            ]
+          },
+          {
+            "type": "\"dots\"",
+            "kind": "enum",
+            "options": [
+              "dots"
+            ]
+          },
+          {
+            "type": "\"pulse\"",
+            "kind": "enum",
+            "options": [
+              "pulse"
+            ]
+          },
+          {
+            "type": "\"spin\"",
+            "kind": "enum",
+            "options": [
+              "spin"
+            ]
+          },
+          {
+            "type": "\"arrow\"",
+            "kind": "enum",
+            "options": [
+              "arrow"
+            ]
+          },
+          {
+            "type": "\"snake\"",
+            "kind": "enum",
+            "options": [
+              "snake"
+            ]
+          },
+          {
+            "type": "\"rain\"",
+            "kind": "enum",
+            "options": [
+              "rain"
+            ]
+          },
+          {
+            "type": "LatticePattern",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "cells",
+                "type": "(number | null)[]",
+                "required": true,
+                "kind": "array",
+                "items": [
+                  {
+                    "type": "number | null"
+                  }
+                ]
+              },
+              {
+                "name": "loop",
+                "type": "number",
+                "required": false
+              },
+              {
+                "name": "scale",
+                "type": "number",
+                "required": false
+              },
+              {
+                "name": "lit",
+                "type": "0.25 | 0.35 | 0.45 | 0.62",
+                "required": false,
+                "kind": "enum",
+                "options": [
+                  0.25,
+                  0.35,
+                  0.45,
+                  0.62
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "pattern={pattern}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "pattern={pattern}"
+      ]
+    },
+    {
+      "name": "grid",
+      "type": "LatticeGrid",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 100,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "网格，控制 lattice loader 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        3,
+        4
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          3,
+          4
+        ]
+      },
+      "codeExample": "grid={4}",
+      "usageExamples": [
+        "grid={4}"
+      ]
+    },
+    {
+      "name": "shape",
+      "type": "'square' | 'round'",
+      "required": false,
+      "defaultExpression": "'round'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 101,
+        "kind": "parameter"
+      },
+      "defaultValue": "round",
+      "description": "形状，控制 lattice loader 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "square",
+        "round"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 35
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "square",
+          "round"
+        ]
+      },
+      "codeExample": "shape={\"round\"}"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'currentColor'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 102,
+        "kind": "parameter"
+      },
+      "defaultValue": "currentColor",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 36
+      },
+      "codeExample": "color={palette.primary}",
+      "usageExamples": [
+        "color={palette.primary}"
+      ]
+    },
+    {
+      "name": "doneColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#22c55e'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 103,
+        "kind": "parameter"
+      },
+      "defaultValue": "#22c55e",
+      "description": "完成颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 37
+      },
+      "codeExample": "doneColor={palette.primary}",
+      "usageExamples": [
+        "doneColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "errorColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ef4444'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 104,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ef4444",
+      "description": "错误颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 38
+      },
+      "codeExample": "errorColor={palette.terra}",
+      "usageExamples": [
+        "errorColor={palette.terra}"
+      ]
+    },
+    {
+      "name": "cellSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 105,
+        "kind": "parameter"
+      },
+      "defaultValue": 6,
+      "description": "单元尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 39
+      },
+      "codeExample": "cellSize={7}",
+      "usageExamples": [
+        "cellSize={7}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 106,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 40
+      },
+      "codeExample": "gap={3}",
+      "usageExamples": [
+        "gap={3}"
+      ]
+    },
+    {
+      "name": "fontSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "14",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 107,
+        "kind": "parameter"
+      },
+      "defaultValue": 14,
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 41
+      },
+      "codeExample": "fontSize={14}"
+    },
+    {
+      "name": "step",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "90",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 108,
+        "kind": "parameter"
+      },
+      "defaultValue": 90,
+      "description": "每次调整的步进间隔或当前步骤，具体含义取决于组件。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 42
+      },
+      "codeExample": "step={90}"
+    },
+    {
+      "name": "idleOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 109,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.15,
+      "description": "静止不透明度，控制 lattice loader 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 43
+      },
+      "codeExample": "idleOpacity={0.15}"
+    },
+    {
+      "name": "glow",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 110,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否辉光，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 44
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "glow={false}",
+      "usageExamples": [
+        "glow={false}"
+      ]
+    },
+    {
+      "name": "glowColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 111,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "辉光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 45
+      },
+      "codeExample": "glowColor={\"\"}"
+    },
+    {
+      "name": "showTimer",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 112,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示计时器，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 46
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showTimer={true}"
+    },
+    {
+      "name": "elapsed",
+      "type": "number",
+      "required": false,
+      "description": "已过时间，控制 lattice loader 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 47
+      },
+      "codeExample": "elapsed={1}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 114,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 48
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+        "line": 49
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport LatticeLoader, { type LatticeStatus, type LatticePatternName } from '../../../.upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nconst states: { value: LatticeStatus; label: string }[] = [{ value: 'working', label: '加载中' }, { value: 'done', label: '完成' }, { value: 'error', label: '失败' }];\nexport default function LatticeLoaderDemo() {\n  const [status, setStatus] = useState<LatticeStatus>('working');\n  const [pattern, setPattern] = useState<LatticePatternName>(/*__AW_STATE_state.pattern__*/);\n  return <DemoPanel title=\"Lattice Loader · 点阵加载\"><div className={cn(\"aw-micro-stack\")}>\n    <LatticeLoader    status={status} pattern={pattern}        /*__AW_PROPS_t0__*/  />\n    <div className={cn(\"aw-micro-controls\")}>{states.map(item => <button className={styles['aw-micro-action']} key={item.value}  aria-pressed={status === item.value} onClick={() => setStatus(item.value)} /*__AW_PROPS_t1__*/ >{item.label}</button>)}<label className={styles['aw-micro-label']}>点阵形态<select className={styles['aw-micro-select']} value={pattern} onChange={event => setPattern(event.target.value as LatticePatternName)}><option  /*__AW_PROPS_t3__*/ >扫过</option><option  /*__AW_PROPS_t4__*/ >环绕</option><option  /*__AW_PROPS_t5__*/ >蛇形</option><option  /*__AW_PROPS_t6__*/ >脉冲</option></select></label></div>\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">模拟任务状态：{states.find(item => item.value === status)?.label}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "LatticeLoader",
+      "sourcePath": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Thinking'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 95,
+            "kind": "parameter"
+          },
+          "defaultValue": "Thinking",
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 29
+          },
+          "codeExample": "label=\"正在整理示例资料\"",
+          "usageExamples": [
+            "label=\"正在整理示例资料\""
+          ]
+        },
+        {
+          "name": "doneLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Done in'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 96,
+            "kind": "parameter"
+          },
+          "defaultValue": "Done in",
+          "description": "完成标签，控制 lattice loader 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 30
+          },
+          "codeExample": "doneLabel=\"整理完成\"",
+          "usageExamples": [
+            "doneLabel=\"整理完成\""
+          ]
+        },
+        {
+          "name": "errorLabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Failed after'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 97,
+            "kind": "parameter"
+          },
+          "defaultValue": "Failed after",
+          "description": "错误标签，控制 lattice loader 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 31
+          },
+          "codeExample": "errorLabel=\"加载失败\"",
+          "usageExamples": [
+            "errorLabel=\"加载失败\""
+          ]
+        },
+        {
+          "name": "status",
+          "type": "LatticeStatus",
+          "required": false,
+          "defaultExpression": "'working'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 98,
+            "kind": "parameter"
+          },
+          "defaultValue": "working",
+          "description": "状态，控制 lattice loader 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "working",
+            "done",
+            "error"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "working",
+              "done",
+              "error"
+            ]
+          },
+          "codeExample": "status={status}",
+          "usageExamples": [
+            "status={status}"
+          ]
+        },
+        {
+          "name": "pattern",
+          "type": "LatticePatternName | LatticePattern",
+          "required": false,
+          "defaultExpression": "'orbit'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 99,
+            "kind": "parameter"
+          },
+          "defaultValue": "orbit",
+          "description": "原生表单验证使用的正则模式。",
+          "control": "code",
+          "valueKind": "union",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "\"sweep\"",
+                "kind": "enum",
+                "options": [
+                  "sweep"
+                ]
+              },
+              {
+                "type": "\"ripple\"",
+                "kind": "enum",
+                "options": [
+                  "ripple"
+                ]
+              },
+              {
+                "type": "\"orbit\"",
+                "kind": "enum",
+                "options": [
+                  "orbit"
+                ]
+              },
+              {
+                "type": "\"spiral\"",
+                "kind": "enum",
+                "options": [
+                  "spiral"
+                ]
+              },
+              {
+                "type": "\"dots\"",
+                "kind": "enum",
+                "options": [
+                  "dots"
+                ]
+              },
+              {
+                "type": "\"pulse\"",
+                "kind": "enum",
+                "options": [
+                  "pulse"
+                ]
+              },
+              {
+                "type": "\"spin\"",
+                "kind": "enum",
+                "options": [
+                  "spin"
+                ]
+              },
+              {
+                "type": "\"arrow\"",
+                "kind": "enum",
+                "options": [
+                  "arrow"
+                ]
+              },
+              {
+                "type": "\"snake\"",
+                "kind": "enum",
+                "options": [
+                  "snake"
+                ]
+              },
+              {
+                "type": "\"rain\"",
+                "kind": "enum",
+                "options": [
+                  "rain"
+                ]
+              },
+              {
+                "type": "LatticePattern",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "cells",
+                    "type": "(number | null)[]",
+                    "required": true,
+                    "kind": "array",
+                    "items": [
+                      {
+                        "type": "number | null"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "loop",
+                    "type": "number",
+                    "required": false
+                  },
+                  {
+                    "name": "scale",
+                    "type": "number",
+                    "required": false
+                  },
+                  {
+                    "name": "lit",
+                    "type": "0.25 | 0.35 | 0.45 | 0.62",
+                    "required": false,
+                    "kind": "enum",
+                    "options": [
+                      0.25,
+                      0.35,
+                      0.45,
+                      0.62
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "pattern={pattern}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "pattern={pattern}"
+          ]
+        },
+        {
+          "name": "grid",
+          "type": "LatticeGrid",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 100,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "网格，控制 lattice loader 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            3,
+            4
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              3,
+              4
+            ]
+          },
+          "codeExample": "grid={4}",
+          "usageExamples": [
+            "grid={4}"
+          ]
+        },
+        {
+          "name": "shape",
+          "type": "'square' | 'round'",
+          "required": false,
+          "defaultExpression": "'round'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 101,
+            "kind": "parameter"
+          },
+          "defaultValue": "round",
+          "description": "形状，控制 lattice loader 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "square",
+            "round"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 35
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "square",
+              "round"
+            ]
+          },
+          "codeExample": "shape={\"round\"}"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'currentColor'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 102,
+            "kind": "parameter"
+          },
+          "defaultValue": "currentColor",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 36
+          },
+          "codeExample": "color={palette.primary}",
+          "usageExamples": [
+            "color={palette.primary}"
+          ]
+        },
+        {
+          "name": "doneColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#22c55e'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 103,
+            "kind": "parameter"
+          },
+          "defaultValue": "#22c55e",
+          "description": "完成颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 37
+          },
+          "codeExample": "doneColor={palette.primary}",
+          "usageExamples": [
+            "doneColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "errorColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ef4444'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 104,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ef4444",
+          "description": "错误颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 38
+          },
+          "codeExample": "errorColor={palette.terra}",
+          "usageExamples": [
+            "errorColor={palette.terra}"
+          ]
+        },
+        {
+          "name": "cellSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 105,
+            "kind": "parameter"
+          },
+          "defaultValue": 6,
+          "description": "单元尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 39
+          },
+          "codeExample": "cellSize={7}",
+          "usageExamples": [
+            "cellSize={7}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 106,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 40
+          },
+          "codeExample": "gap={3}",
+          "usageExamples": [
+            "gap={3}"
+          ]
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "14",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 107,
+            "kind": "parameter"
+          },
+          "defaultValue": 14,
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 41
+          },
+          "codeExample": "fontSize={14}"
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "90",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 108,
+            "kind": "parameter"
+          },
+          "defaultValue": 90,
+          "description": "每次调整的步进间隔或当前步骤，具体含义取决于组件。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 42
+          },
+          "codeExample": "step={90}"
+        },
+        {
+          "name": "idleOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 109,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.15,
+          "description": "静止不透明度，控制 lattice loader 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 43
+          },
+          "codeExample": "idleOpacity={0.15}"
+        },
+        {
+          "name": "glow",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 110,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否辉光，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 44
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "glow={false}",
+          "usageExamples": [
+            "glow={false}"
+          ]
+        },
+        {
+          "name": "glowColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 111,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "辉光颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 45
+          },
+          "codeExample": "glowColor={\"\"}"
+        },
+        {
+          "name": "showTimer",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 112,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示计时器，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 46
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showTimer={true}"
+        },
+        {
+          "name": "elapsed",
+          "type": "number",
+          "required": false,
+          "description": "已过时间，控制 lattice loader 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 47
+          },
+          "codeExample": "elapsed={1}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 114,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 48
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/LatticeLoader/LatticeLoader.tsx",
+            "line": 49
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "button",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles['aw-micro-action']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "key",
+          "type": "Key | null | undefined",
+          "required": false,
+          "description": "React 列表项身份，用于更新时保持对应节点。",
+          "usageExamples": [
+            "key={item.value}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 250
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "aria-pressed",
+          "type": "boolean | \"true\" | \"false\" | \"mixed\" | undefined",
+          "required": false,
+          "description": "辅助技术的 pressed 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-pressed={status === item.value}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2545
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setStatus(item.value)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>{item.label}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "select",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles['aw-micro-select']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value={pattern}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3382
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "ChangeEventHandler<HTMLSelectElement> | undefined",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "usageExamples": [
+            "onChange={event => setPattern(event.target.value as LatticePatternName)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3383
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<><option value=\"sweep\">扫过</option><option value=\"orbit\">环绕</option><option value=\"snake\">蛇形</option><option value=\"pulse\">脉冲</option></>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "name": "option · t3",
+      "props": [
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value=\"sweep\"",
+            "value=\"orbit\"",
+            "value=\"snake\"",
+            "value=\"pulse\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3336
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>扫过</>}",
+            "children={<>环绕</>}",
+            "children={<>蛇形</>}",
+            "children={<>脉冲</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "name": "option · t4",
+      "props": [
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value=\"sweep\"",
+            "value=\"orbit\"",
+            "value=\"snake\"",
+            "value=\"pulse\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3336
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>扫过</>}",
+            "children={<>环绕</>}",
+            "children={<>蛇形</>}",
+            "children={<>脉冲</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t5",
+      "name": "option · t5",
+      "props": [
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value=\"sweep\"",
+            "value=\"orbit\"",
+            "value=\"snake\"",
+            "value=\"pulse\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3336
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>扫过</>}",
+            "children={<>环绕</>}",
+            "children={<>蛇形</>}",
+            "children={<>脉冲</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t6",
+      "name": "option · t6",
+      "props": [
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value=\"sweep\"",
+            "value=\"orbit\"",
+            "value=\"snake\"",
+            "value=\"pulse\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3336
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>扫过</>}",
+            "children={<>环绕</>}",
+            "children={<>蛇形</>}",
+            "children={<>脉冲</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

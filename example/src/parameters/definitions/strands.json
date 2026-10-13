@@ -1,0 +1,1505 @@
+{
+  "version": 1,
+  "id": "strands",
+  "name": "Strands",
+  "sourcePath": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+  "demoPath": "src/demos/background/strands.tsx",
+  "fields": [
+    {
+      "key": "t0.colors",
+      "name": "colors",
+      "label": "颜色列表 · t0",
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colors"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#52604e",
+        "#a6b39a",
+        "#c3ae88"
+      ],
+      "upstreamDefault": "['#FF4242', '#7C3AED', '#06B6D4', '#EAB308']",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.count",
+      "name": "count",
+      "label": "count · t0",
+      "description": "数量，控制 strands 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "count"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 128,
+      "step": 1
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.amplitude",
+      "name": "amplitude",
+      "label": "振幅 · t0",
+      "description": "振幅，控制 strands 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "amplitude"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.waviness",
+      "name": "waviness",
+      "label": "waviness · t0",
+      "description": "波动程度，控制 strands 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "waviness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.7,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.thickness",
+      "name": "thickness",
+      "label": "thickness · t0",
+      "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "thickness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.7",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 strands 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "2.6",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.taper",
+      "name": "taper",
+      "label": "taper · t0",
+      "description": "渐缩，控制 strands 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "taper"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spread",
+      "name": "spread",
+      "label": "展开距离 · t0",
+      "description": "展开间距，控制 strands 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.9,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intensity",
+      "name": "intensity",
+      "label": "intensity · t0",
+      "description": "强度，控制 strands 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.saturation",
+      "name": "saturation",
+      "label": "saturation · t0",
+      "description": "饱和度，控制 strands 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "saturation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.65,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hueShift",
+      "name": "hueShift",
+      "label": "hueShift · t0",
+      "description": "色相偏移，控制 strands 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hueShift"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 strands 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.scale",
+      "name": "scale",
+      "label": "缩放 · t0",
+      "description": "缩放，控制 strands 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.1,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glass",
+      "name": "glass",
+      "label": "glass · t0",
+      "description": "是否玻璃，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glass"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dispersion",
+      "name": "dispersion",
+      "label": "dispersion · t0",
+      "description": "色散，控制 strands 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dispersion"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glassSize",
+      "name": "glassSize",
+      "label": "glassSize · t0",
+      "description": "玻璃尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glassSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "colors",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "['#FF4242', '#7C3AED', '#06B6D4', '#EAB308']",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 211,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "#FF4242",
+        "#7C3AED",
+        "#06B6D4",
+        "#EAB308"
+      ],
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 177
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "colors={[palette.primary, palette.sage, palette.sand]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "colors={[palette.primary, palette.sage, palette.sand]}"
+      ]
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 212,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "数量，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 178
+      },
+      "codeExample": "count={3}",
+      "usageExamples": [
+        "count={3}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 213,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 179
+      },
+      "codeExample": "speed={0.3}",
+      "usageExamples": [
+        "speed={0.3}"
+      ]
+    },
+    {
+      "name": "amplitude",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 214,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "振幅，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 180
+      },
+      "codeExample": "amplitude={0.6}",
+      "usageExamples": [
+        "amplitude={0.6}"
+      ]
+    },
+    {
+      "name": "waviness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 215,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "波动程度，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 181
+      },
+      "codeExample": "waviness={0.7}",
+      "usageExamples": [
+        "waviness={0.7}"
+      ]
+    },
+    {
+      "name": "thickness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 216,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.7,
+      "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 182
+      },
+      "codeExample": "thickness={0.6}",
+      "usageExamples": [
+        "thickness={0.6}"
+      ]
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 217,
+        "kind": "parameter"
+      },
+      "defaultValue": 2.6,
+      "description": "辉光，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 183
+      },
+      "codeExample": "glow={0.6}",
+      "usageExamples": [
+        "glow={0.6}"
+      ]
+    },
+    {
+      "name": "taper",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 218,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "渐缩，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 184
+      },
+      "codeExample": "taper={3}",
+      "usageExamples": [
+        "taper={3}"
+      ]
+    },
+    {
+      "name": "spread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 219,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "展开间距，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 185
+      },
+      "codeExample": "spread={0.9}",
+      "usageExamples": [
+        "spread={0.9}"
+      ]
+    },
+    {
+      "name": "hueShift",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 220,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "色相偏移，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 186
+      },
+      "codeExample": "hueShift={0}",
+      "usageExamples": [
+        "hueShift={0}"
+      ]
+    },
+    {
+      "name": "intensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 221,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "强度，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 187
+      },
+      "codeExample": "intensity={0.5}",
+      "usageExamples": [
+        "intensity={0.5}"
+      ]
+    },
+    {
+      "name": "saturation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 222,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "饱和度，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 188
+      },
+      "codeExample": "saturation={0.65}",
+      "usageExamples": [
+        "saturation={0.65}"
+      ]
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 223,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 189
+      },
+      "codeExample": "opacity={0.8}",
+      "usageExamples": [
+        "opacity={0.8}"
+      ]
+    },
+    {
+      "name": "scale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 224,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "缩放，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 190
+      },
+      "codeExample": "scale={1.1}",
+      "usageExamples": [
+        "scale={1.1}"
+      ]
+    },
+    {
+      "name": "glass",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 225,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否玻璃，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 191
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "glass",
+      "usageExamples": [
+        "glass"
+      ]
+    },
+    {
+      "name": "refraction",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 226,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "折射，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 192
+      },
+      "codeExample": "refraction={0.4}",
+      "usageExamples": [
+        "refraction={0.4}"
+      ]
+    },
+    {
+      "name": "dispersion",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 227,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "色散，控制 strands 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 193
+      },
+      "codeExample": "dispersion={0.1}",
+      "usageExamples": [
+        "dispersion={0.1}"
+      ]
+    },
+    {
+      "name": "glassSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 228,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "玻璃尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 194
+      },
+      "codeExample": "glassSize={1}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 229,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 195
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+        "line": 196
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Animations/Strands/Strands';\nimport { palette } from '../../shared/demo-support';\n\n// 保留真实波动条带与玻璃折射，色彩仅来自规范的自然色系。\n// 此演示需要可用的WebGL上下文；上下文创建失败时应显示能力提示，不能声称效果已经运行。\n\nexport default function StrandsDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n\n  refraction={0.4}  /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Strands",
+      "sourcePath": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+      "props": [
+        {
+          "name": "colors",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "['#FF4242', '#7C3AED', '#06B6D4', '#EAB308']",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 211,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "#FF4242",
+            "#7C3AED",
+            "#06B6D4",
+            "#EAB308"
+          ],
+          "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 177
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "colors={[palette.primary, palette.sage, palette.sand]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "colors={[palette.primary, palette.sage, palette.sand]}"
+          ]
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 212,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "数量，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 178
+          },
+          "codeExample": "count={3}",
+          "usageExamples": [
+            "count={3}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 213,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 179
+          },
+          "codeExample": "speed={0.3}",
+          "usageExamples": [
+            "speed={0.3}"
+          ]
+        },
+        {
+          "name": "amplitude",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 214,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "振幅，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 180
+          },
+          "codeExample": "amplitude={0.6}",
+          "usageExamples": [
+            "amplitude={0.6}"
+          ]
+        },
+        {
+          "name": "waviness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 215,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "波动程度，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 181
+          },
+          "codeExample": "waviness={0.7}",
+          "usageExamples": [
+            "waviness={0.7}"
+          ]
+        },
+        {
+          "name": "thickness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 216,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.7,
+          "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 182
+          },
+          "codeExample": "thickness={0.6}",
+          "usageExamples": [
+            "thickness={0.6}"
+          ]
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 217,
+            "kind": "parameter"
+          },
+          "defaultValue": 2.6,
+          "description": "辉光，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 183
+          },
+          "codeExample": "glow={0.6}",
+          "usageExamples": [
+            "glow={0.6}"
+          ]
+        },
+        {
+          "name": "taper",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 218,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "渐缩，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 184
+          },
+          "codeExample": "taper={3}",
+          "usageExamples": [
+            "taper={3}"
+          ]
+        },
+        {
+          "name": "spread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 219,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "展开间距，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 185
+          },
+          "codeExample": "spread={0.9}",
+          "usageExamples": [
+            "spread={0.9}"
+          ]
+        },
+        {
+          "name": "hueShift",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 220,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "色相偏移，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 186
+          },
+          "codeExample": "hueShift={0}",
+          "usageExamples": [
+            "hueShift={0}"
+          ]
+        },
+        {
+          "name": "intensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 221,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "强度，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 187
+          },
+          "codeExample": "intensity={0.5}",
+          "usageExamples": [
+            "intensity={0.5}"
+          ]
+        },
+        {
+          "name": "saturation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 222,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "饱和度，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 188
+          },
+          "codeExample": "saturation={0.65}",
+          "usageExamples": [
+            "saturation={0.65}"
+          ]
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 223,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 189
+          },
+          "codeExample": "opacity={0.8}",
+          "usageExamples": [
+            "opacity={0.8}"
+          ]
+        },
+        {
+          "name": "scale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 224,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "缩放，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 190
+          },
+          "codeExample": "scale={1.1}",
+          "usageExamples": [
+            "scale={1.1}"
+          ]
+        },
+        {
+          "name": "glass",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 225,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否玻璃，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 191
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "glass",
+          "usageExamples": [
+            "glass"
+          ]
+        },
+        {
+          "name": "refraction",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 226,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "折射，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 192
+          },
+          "codeExample": "refraction={0.4}",
+          "usageExamples": [
+            "refraction={0.4}"
+          ]
+        },
+        {
+          "name": "dispersion",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 227,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "色散，控制 strands 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 193
+          },
+          "codeExample": "dispersion={0.1}",
+          "usageExamples": [
+            "dispersion={0.1}"
+          ]
+        },
+        {
+          "name": "glassSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 228,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "玻璃尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 194
+          },
+          "codeExample": "glassSize={1}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 229,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 195
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Strands/Strands.tsx",
+            "line": 196
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,2276 @@
+{
+  "version": 1,
+  "id": "light-tunnel",
+  "name": "Light Tunnel",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+  "demoPath": "src/demos/background/light-tunnel.tsx",
+  "fields": [
+    {
+      "key": "t0.cableColor",
+      "name": "cableColor",
+      "label": "cableColor · t0",
+      "description": "电缆颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cableColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#A855F7'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulseColor",
+      "name": "pulseColor",
+      "label": "pulseColor · t0",
+      "description": "脉冲颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulseColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#A855F7'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tunnelColor",
+      "name": "tunnelColor",
+      "label": "tunnelColor · t0",
+      "description": "隧道颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tunnelColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#5227FF'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tunnelOpacity",
+      "name": "tunnelOpacity",
+      "label": "tunnelOpacity · t0",
+      "description": "隧道不透明度，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tunnelOpacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.06,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulseSpeed",
+      "name": "pulseSpeed",
+      "label": "pulseSpeed · t0",
+      "description": "脉冲速度，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulseSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cableCount",
+      "name": "cableCount",
+      "label": "cableCount · t0",
+      "description": "电缆数量，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cableCount"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "20",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1.0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.thickness",
+      "name": "thickness",
+      "label": "thickness · t0",
+      "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "thickness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.35,
+      "upstreamDefault": "0.35",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.colorVariance",
+      "name": "colorVariance",
+      "label": "colorVariance · t0",
+      "description": "是否颜色差异，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colorVariance"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grainIntensity",
+      "name": "grainIntensity",
+      "label": "grainIntensity · t0",
+      "description": "颗粒强度，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grainIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.02,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseInteraction",
+      "name": "mouseInteraction",
+      "label": "指针响应 · t0",
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseInteraction"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.flowDirection",
+      "name": "flowDirection",
+      "label": "flowDirection · t0",
+      "description": "流动方向，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "flowDirection"
+        }
+      ],
+      "type": "FlowDirection",
+      "defaultValue": "outward",
+      "upstreamDefault": "'outward'",
+      "control": "select",
+      "options": [
+        {
+          "label": "inward",
+          "value": "inward"
+        },
+        {
+          "label": "outward",
+          "value": "outward"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulseLength",
+      "name": "pulseLength",
+      "label": "pulseLength · t0",
+      "description": "脉冲长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulseLength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.28,
+      "upstreamDefault": "0.28",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulseBlend",
+      "name": "pulseBlend",
+      "label": "pulseBlend · t0",
+      "description": "脉冲混合，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulseBlend"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pulseWidth",
+      "name": "pulseWidth",
+      "label": "pulseWidth · t0",
+      "description": "脉冲宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pulseWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rimWidth",
+      "name": "rimWidth",
+      "label": "rimWidth · t0",
+      "description": "轮缘宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rimWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.15",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.waviness",
+      "name": "waviness",
+      "label": "waviness · t0",
+      "description": "波动程度，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "waviness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sway",
+      "name": "sway",
+      "label": "sway · t0",
+      "description": "摇摆，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sway"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1.0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.centerX",
+      "name": "centerX",
+      "label": "centerX · t0",
+      "description": "中心X轴，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "centerX"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0.0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.centerY",
+      "name": "centerY",
+      "label": "centerY · t0",
+      "description": "中心Y轴，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "centerY"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0.0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeNear",
+      "name": "fadeNear",
+      "label": "fadeNear · t0",
+      "description": "淡出近端，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeNear"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fadeFar",
+      "name": "fadeFar",
+      "label": "fadeFar · t0",
+      "description": "淡出远端，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fadeFar"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.brightness",
+      "name": "brightness",
+      "label": "亮度 · t0",
+      "description": "亮度，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "brightness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1.0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grain",
+      "name": "grain",
+      "label": "grain · t0",
+      "description": "是否颗粒，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grain"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 light tunnel 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1.0",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.mouseStrength",
+      "name": "mouseStrength",
+      "label": "mouseStrength · t0",
+      "description": "鼠标强度，控制 light tunnel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "cableColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#A855F7'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 185,
+        "kind": "parameter"
+      },
+      "defaultValue": "#A855F7",
+      "description": "电缆颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 10
+      },
+      "codeExample": "cableColor={palette.sage}",
+      "usageExamples": [
+        "cableColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "pulseColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#A855F7'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 186,
+        "kind": "parameter"
+      },
+      "defaultValue": "#A855F7",
+      "description": "脉冲颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 11
+      },
+      "codeExample": "pulseColor={palette.ivory}",
+      "usageExamples": [
+        "pulseColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "tunnelColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#5227FF'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 187,
+        "kind": "parameter"
+      },
+      "defaultValue": "#5227FF",
+      "description": "隧道颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 12
+      },
+      "codeExample": "tunnelColor={palette.primary}",
+      "usageExamples": [
+        "tunnelColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "tunnelOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 188,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "隧道不透明度，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 13
+      },
+      "codeExample": "tunnelOpacity={0.12}",
+      "usageExamples": [
+        "tunnelOpacity={0.12}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 189,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 14
+      },
+      "codeExample": "speed={0.06}",
+      "usageExamples": [
+        "speed={0.06}"
+      ]
+    },
+    {
+      "name": "flowDirection",
+      "type": "FlowDirection",
+      "required": false,
+      "defaultExpression": "'outward'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 190,
+        "kind": "parameter"
+      },
+      "defaultValue": "outward",
+      "description": "流动方向，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "inward",
+        "outward"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "inward",
+          "outward"
+        ]
+      },
+      "codeExample": "flowDirection={\"outward\"}"
+    },
+    {
+      "name": "pulseSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 191,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "脉冲速度，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 16
+      },
+      "codeExample": "pulseSpeed={0.8}",
+      "usageExamples": [
+        "pulseSpeed={0.8}"
+      ]
+    },
+    {
+      "name": "pulseLength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.28",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 192,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.28,
+      "description": "脉冲长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 17
+      },
+      "codeExample": "pulseLength={0.28}"
+    },
+    {
+      "name": "pulseBlend",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 193,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "脉冲混合，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 18
+      },
+      "codeExample": "pulseBlend={1}"
+    },
+    {
+      "name": "pulseWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 194,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "脉冲宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 19
+      },
+      "codeExample": "pulseWidth={1}"
+    },
+    {
+      "name": "cableCount",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "20",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 195,
+        "kind": "parameter"
+      },
+      "defaultValue": 20,
+      "description": "电缆数量，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 20
+      },
+      "codeExample": "cableCount={20}",
+      "usageExamples": [
+        "cableCount={20}"
+      ]
+    },
+    {
+      "name": "thickness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.35",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 196,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.35,
+      "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 21
+      },
+      "codeExample": "thickness={0.35}",
+      "usageExamples": [
+        "thickness={0.35}"
+      ]
+    },
+    {
+      "name": "rimWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 197,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.15,
+      "description": "轮缘宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 22
+      },
+      "codeExample": "rimWidth={0.15}"
+    },
+    {
+      "name": "waviness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 198,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "波动程度，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 23
+      },
+      "codeExample": "waviness={0.3}"
+    },
+    {
+      "name": "sway",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 199,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "摇摆，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 24
+      },
+      "codeExample": "sway={0.5}"
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 200,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 25
+      },
+      "codeExample": "size={1}"
+    },
+    {
+      "name": "centerX",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 201,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "中心X轴，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 26
+      },
+      "codeExample": "centerX={0}"
+    },
+    {
+      "name": "centerY",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 202,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "中心Y轴，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 27
+      },
+      "codeExample": "centerY={0}"
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 203,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "辉光，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 28
+      },
+      "codeExample": "glow={0.6}",
+      "usageExamples": [
+        "glow={0.6}"
+      ]
+    },
+    {
+      "name": "fadeNear",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 204,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "淡出近端，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 29
+      },
+      "codeExample": "fadeNear={0.5}"
+    },
+    {
+      "name": "fadeFar",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 205,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "淡出远端，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 30
+      },
+      "codeExample": "fadeFar={2}"
+    },
+    {
+      "name": "brightness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 206,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "亮度，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 31
+      },
+      "codeExample": "brightness={1}"
+    },
+    {
+      "name": "colorVariance",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 207,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否颜色差异，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "colorVariance={false}",
+      "usageExamples": [
+        "colorVariance={false}"
+      ]
+    },
+    {
+      "name": "grain",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 208,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否颗粒，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "grain={true}"
+    },
+    {
+      "name": "grainIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 209,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "颗粒强度，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 34
+      },
+      "codeExample": "grainIntensity={0.02}",
+      "usageExamples": [
+        "grainIntensity={0.02}"
+      ]
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 210,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 35
+      },
+      "codeExample": "opacity={1}"
+    },
+    {
+      "name": "mouseInteraction",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 211,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 36
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "mouseInteraction",
+      "usageExamples": [
+        "mouseInteraction"
+      ]
+    },
+    {
+      "name": "mouseStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 212,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "鼠标强度，控制 light tunnel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 37
+      },
+      "codeExample": "mouseStrength={0.1}"
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 213,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 38
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode={false}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 214,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+        "line": 39
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel';\n\n\n/** Agent Wan natural-tone preset for the real Light Tunnel component. */\nexport default function LightTunnelDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "LightTunnel",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+      "props": [
+        {
+          "name": "cableColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#A855F7'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 185,
+            "kind": "parameter"
+          },
+          "defaultValue": "#A855F7",
+          "description": "电缆颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 10
+          },
+          "codeExample": "cableColor={palette.sage}",
+          "usageExamples": [
+            "cableColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "pulseColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#A855F7'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 186,
+            "kind": "parameter"
+          },
+          "defaultValue": "#A855F7",
+          "description": "脉冲颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 11
+          },
+          "codeExample": "pulseColor={palette.ivory}",
+          "usageExamples": [
+            "pulseColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "tunnelColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#5227FF'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 187,
+            "kind": "parameter"
+          },
+          "defaultValue": "#5227FF",
+          "description": "隧道颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 12
+          },
+          "codeExample": "tunnelColor={palette.primary}",
+          "usageExamples": [
+            "tunnelColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "tunnelOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 188,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "隧道不透明度，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 13
+          },
+          "codeExample": "tunnelOpacity={0.12}",
+          "usageExamples": [
+            "tunnelOpacity={0.12}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 189,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 14
+          },
+          "codeExample": "speed={0.06}",
+          "usageExamples": [
+            "speed={0.06}"
+          ]
+        },
+        {
+          "name": "flowDirection",
+          "type": "FlowDirection",
+          "required": false,
+          "defaultExpression": "'outward'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 190,
+            "kind": "parameter"
+          },
+          "defaultValue": "outward",
+          "description": "流动方向，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "inward",
+            "outward"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "inward",
+              "outward"
+            ]
+          },
+          "codeExample": "flowDirection={\"outward\"}"
+        },
+        {
+          "name": "pulseSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 191,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "脉冲速度，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 16
+          },
+          "codeExample": "pulseSpeed={0.8}",
+          "usageExamples": [
+            "pulseSpeed={0.8}"
+          ]
+        },
+        {
+          "name": "pulseLength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.28",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 192,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.28,
+          "description": "脉冲长度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 17
+          },
+          "codeExample": "pulseLength={0.28}"
+        },
+        {
+          "name": "pulseBlend",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 193,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "脉冲混合，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 18
+          },
+          "codeExample": "pulseBlend={1}"
+        },
+        {
+          "name": "pulseWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 194,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "脉冲宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 19
+          },
+          "codeExample": "pulseWidth={1}"
+        },
+        {
+          "name": "cableCount",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "20",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 195,
+            "kind": "parameter"
+          },
+          "defaultValue": 20,
+          "description": "电缆数量，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 20
+          },
+          "codeExample": "cableCount={20}",
+          "usageExamples": [
+            "cableCount={20}"
+          ]
+        },
+        {
+          "name": "thickness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.35",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 196,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.35,
+          "description": "厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 21
+          },
+          "codeExample": "thickness={0.35}",
+          "usageExamples": [
+            "thickness={0.35}"
+          ]
+        },
+        {
+          "name": "rimWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 197,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.15,
+          "description": "轮缘宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 22
+          },
+          "codeExample": "rimWidth={0.15}"
+        },
+        {
+          "name": "waviness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 198,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "波动程度，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 23
+          },
+          "codeExample": "waviness={0.3}"
+        },
+        {
+          "name": "sway",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 199,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "摇摆，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 24
+          },
+          "codeExample": "sway={0.5}"
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 200,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 25
+          },
+          "codeExample": "size={1}"
+        },
+        {
+          "name": "centerX",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 201,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "中心X轴，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 26
+          },
+          "codeExample": "centerX={0}"
+        },
+        {
+          "name": "centerY",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 202,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "中心Y轴，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 27
+          },
+          "codeExample": "centerY={0}"
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 203,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "辉光，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 28
+          },
+          "codeExample": "glow={0.6}",
+          "usageExamples": [
+            "glow={0.6}"
+          ]
+        },
+        {
+          "name": "fadeNear",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 204,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "淡出近端，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 29
+          },
+          "codeExample": "fadeNear={0.5}"
+        },
+        {
+          "name": "fadeFar",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 205,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "淡出远端，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 30
+          },
+          "codeExample": "fadeFar={2}"
+        },
+        {
+          "name": "brightness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 206,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "亮度，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 31
+          },
+          "codeExample": "brightness={1}"
+        },
+        {
+          "name": "colorVariance",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 207,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否颜色差异，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "colorVariance={false}",
+          "usageExamples": [
+            "colorVariance={false}"
+          ]
+        },
+        {
+          "name": "grain",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 208,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否颗粒，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "grain={true}"
+        },
+        {
+          "name": "grainIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 209,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "颗粒强度，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 34
+          },
+          "codeExample": "grainIntensity={0.02}",
+          "usageExamples": [
+            "grainIntensity={0.02}"
+          ]
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 210,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 35
+          },
+          "codeExample": "opacity={1}"
+        },
+        {
+          "name": "mouseInteraction",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 211,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否鼠标交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 36
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "mouseInteraction",
+          "usageExamples": [
+            "mouseInteraction"
+          ]
+        },
+        {
+          "name": "mouseStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 212,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "鼠标强度，控制 light tunnel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 37
+          },
+          "codeExample": "mouseStrength={0.1}"
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 213,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 38
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode={false}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 214,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel.tsx",
+            "line": 39
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

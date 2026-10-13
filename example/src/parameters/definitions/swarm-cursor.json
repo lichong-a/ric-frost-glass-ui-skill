@@ -1,0 +1,1545 @@
+{
+  "version": 1,
+  "id": "swarm-cursor",
+  "name": "Swarm Cursor",
+  "sourcePath": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+  "demoPath": "src/demos/pointer/swarm-cursor.tsx",
+  "fields": [
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#c5efd9",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#ffffff",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.count",
+      "name": "count",
+      "label": "粒子数量",
+      "description": "数量，控制 swarm cursor 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。粒子数量；源码取整并限制在 1–120。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "count"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 12,
+      "upstreamDefault": "10",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 120,
+      "step": 1,
+      "unit": "个"
+    },
+    {
+      "key": "t0.size",
+      "name": "size",
+      "label": "尺寸 · t0",
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。粒子的基本绘制尺寸。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "size"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 12,
+      "upstreamDefault": "10",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 2,
+      "max": 36,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。 以下范围仅限制此演示面板，不改变上游 API。运动速度和转向响应系数，单位不是秒。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2.5,
+      "upstreamDefault": "2.5",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.1,
+      "max": 5,
+      "step": 0.1,
+      "unit": "倍率"
+    },
+    {
+      "key": "t0.spread",
+      "name": "spread",
+      "label": "展开距离 · t0",
+      "description": "展开间距，控制 swarm cursor 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。粒子群的分布与分离距离。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 90,
+      "upstreamDefault": "100",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 20,
+      "max": 240,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "key": "t0.wander",
+      "name": "wander",
+      "label": "wander · t0",
+      "description": "游走，控制 swarm cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "wander"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.25",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trail",
+      "name": "trail",
+      "label": "trail · t0",
+      "description": "轨迹，控制 swarm cursor 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。轨迹历史长度约为 trail×0.85 秒。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trail"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "0.75",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 2,
+      "step": 0.05,
+      "unit": "系数"
+    },
+    {
+      "key": "t0.glow",
+      "name": "glow",
+      "label": "辉光 · t0",
+      "description": "辉光，控制 swarm cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "glow"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "0.75",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 swarm cursor 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.scatterOnClick",
+      "name": "scatterOnClick",
+      "label": "scatterOnClick · t0",
+      "description": "是否散开点击，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scatterOnClick"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "React.CSSProperties | undefined",
+      "defaultValue": {
+        "width": "100%",
+        "height": "100%"
+      },
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "width": {
+            "kind": "string"
+          },
+          "height": {
+            "kind": "string"
+          }
+        },
+        "required": [
+          "width",
+          "height"
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.merge",
+      "name": "merge",
+      "label": "merge · t0",
+      "description": "合并，控制 swarm cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "merge"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.77,
+      "upstreamDefault": "0.77",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.separation",
+      "name": "separation",
+      "label": "separation · t0",
+      "description": "分离，控制 swarm cursor 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "separation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.15",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.enabled",
+      "name": "enabled",
+      "label": "enabled · t0",
+      "description": "是否启用，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "enabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.type",
+      "name": "type",
+      "label": "类型 · t2",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 184,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 146
+      },
+      "codeExample": "color=\"#c5efd9\"",
+      "usageExamples": [
+        "color=\"#c5efd9\""
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 185,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 147
+      },
+      "codeExample": "accentColor=\"#ffffff\"",
+      "usageExamples": [
+        "accentColor=\"#ffffff\""
+      ]
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 186,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "数量，控制 swarm cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 148
+      },
+      "codeExample": "count={12}",
+      "usageExamples": [
+        "count={12}"
+      ]
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 187,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 149
+      },
+      "codeExample": "size={12}",
+      "usageExamples": [
+        "size={12}"
+      ]
+    },
+    {
+      "name": "merge",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.77",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 188,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.77,
+      "description": "合并，控制 swarm cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 150
+      },
+      "codeExample": "merge={0.77}"
+    },
+    {
+      "name": "glow",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.75",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 189,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.75,
+      "description": "辉光，控制 swarm cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 151
+      },
+      "codeExample": "glow={0.8}",
+      "usageExamples": [
+        "glow={0.8}"
+      ]
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 190,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 swarm cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 152
+      },
+      "codeExample": "opacity={1}",
+      "usageExamples": [
+        "opacity={1}"
+      ]
+    },
+    {
+      "name": "spread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 191,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "展开间距，控制 swarm cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 153
+      },
+      "codeExample": "spread={90}",
+      "usageExamples": [
+        "spread={90}"
+      ]
+    },
+    {
+      "name": "separation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 192,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.15,
+      "description": "分离，控制 swarm cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 154
+      },
+      "codeExample": "separation={0.15}"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 193,
+        "kind": "parameter"
+      },
+      "defaultValue": 2.5,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 155
+      },
+      "codeExample": "speed={2.5}",
+      "usageExamples": [
+        "speed={2.5}"
+      ]
+    },
+    {
+      "name": "wander",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 194,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.25,
+      "description": "游走，控制 swarm cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 156
+      },
+      "codeExample": "wander={0.25}",
+      "usageExamples": [
+        "wander={0.25}"
+      ]
+    },
+    {
+      "name": "trail",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.75",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 195,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.75,
+      "description": "轨迹，控制 swarm cursor 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 157
+      },
+      "codeExample": "trail={0.8}",
+      "usageExamples": [
+        "trail={0.8}"
+      ]
+    },
+    {
+      "name": "scatterOnClick",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 196,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否散开点击，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 158
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "scatterOnClick",
+      "usageExamples": [
+        "scatterOnClick"
+      ]
+    },
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 197,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否启用，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 159
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "enabled={true}"
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 160
+      },
+      "codeExample": "children={<><div className={styles.content}>\n          <span className={styles.eyebrow}>SWARM CURSOR</span>\n          <h2 className={styles.title}>随指针流动</h2>\n          <p className={styles.description}>粒子围绕按钮流动，点击后重新聚拢。</p>\n          <div className={styles.actions}>\n            <button type=\"button\" className={styles.action} onClick={() => setStatus('粒子已散开，移动指针继续探索。')}>探索粒子</button>\n            <button type=\"button\" className={styles.secondary} onClick={() => setStatus('再次点击会释放粒子。')}>再次散开 ↗</button>\n          </div>\n        </div><p className={styles.hint} role=\"status\" aria-live=\"polite\">{status}</p></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><div className={styles.content}>\n          <span className={styles.eyebrow}>SWARM CURSOR</span>\n          <h2 className={styles.title}>随指针流动</h2>\n          <p className={styles.description}>粒子围绕按钮流动，点击后重新聚拢。</p>\n          <div className={styles.actions}>\n            <button type=\"button\" className={styles.action} onClick={() => setStatus('粒子已散开，移动指针继续探索。')}>探索粒子</button>\n            <button type=\"button\" className={styles.secondary} onClick={() => setStatus('再次点击会释放粒子。')}>再次散开 ↗</button>\n          </div>\n        </div><p className={styles.hint} role=\"status\" aria-live=\"polite\">{status}</p></>}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string | undefined",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+        "line": 199,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2700
+      },
+      "inheritedFrom": "React.HTMLAttributes<HTMLDivElement>",
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties | undefined",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2712
+      },
+      "inheritedFrom": "React.HTMLAttributes<HTMLDivElement>",
+      "codeExample": "style={{ width: '100%', height: '100%' }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "style={{ width: '100%', height: '100%' }}"
+      ]
+    }
+  ],
+  "inherited": [
+    {
+      "type": "React.HTMLAttributes<HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import { useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor';\nimport styles from './swarm-cursor.module.css';\n\nexport default function SwarmCursorDemo() {\n  const [status, setStatus] = useState('移动指针聚集粒子，点击使它们散开。');\n  return (\n    <div className={styles.stage} data-visual-demo=\"swarm-cursor\">\n      <Component\n\n          /*__AW_PROPS_t0__*/ >\n        <div className={styles.content}>\n          <span className={styles.eyebrow}>SWARM CURSOR</span>\n          <h2 className={styles.title}>随指针流动</h2>\n          <p className={styles.description}>粒子围绕按钮流动，点击后重新聚拢。</p>\n          <div className={styles.actions}>\n            <button  className={styles.action} onClick={() => setStatus('粒子已散开，移动指针继续探索。')} /*__AW_PROPS_t1__*/ >探索粒子</button>\n            <button  className={styles.secondary} onClick={() => setStatus('再次点击会释放粒子。')} /*__AW_PROPS_t2__*/ >再次散开 ↗</button>\n          </div>\n        </div>\n        <p className={styles.hint} role=\"status\" aria-live=\"polite\">{status}</p>\n      </Component>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "SwarmCursor",
+      "sourcePath": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+      "props": [
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 184,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 146
+          },
+          "codeExample": "color=\"#c5efd9\"",
+          "usageExamples": [
+            "color=\"#c5efd9\""
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 185,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 147
+          },
+          "codeExample": "accentColor=\"#ffffff\"",
+          "usageExamples": [
+            "accentColor=\"#ffffff\""
+          ]
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 186,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "数量，控制 swarm cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 148
+          },
+          "codeExample": "count={12}",
+          "usageExamples": [
+            "count={12}"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 187,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 149
+          },
+          "codeExample": "size={12}",
+          "usageExamples": [
+            "size={12}"
+          ]
+        },
+        {
+          "name": "merge",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.77",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 188,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.77,
+          "description": "合并，控制 swarm cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 150
+          },
+          "codeExample": "merge={0.77}"
+        },
+        {
+          "name": "glow",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.75",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 189,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.75,
+          "description": "辉光，控制 swarm cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 151
+          },
+          "codeExample": "glow={0.8}",
+          "usageExamples": [
+            "glow={0.8}"
+          ]
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 190,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 swarm cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 152
+          },
+          "codeExample": "opacity={1}",
+          "usageExamples": [
+            "opacity={1}"
+          ]
+        },
+        {
+          "name": "spread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 191,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "展开间距，控制 swarm cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 153
+          },
+          "codeExample": "spread={90}",
+          "usageExamples": [
+            "spread={90}"
+          ]
+        },
+        {
+          "name": "separation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 192,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.15,
+          "description": "分离，控制 swarm cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 154
+          },
+          "codeExample": "separation={0.15}"
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 193,
+            "kind": "parameter"
+          },
+          "defaultValue": 2.5,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 155
+          },
+          "codeExample": "speed={2.5}",
+          "usageExamples": [
+            "speed={2.5}"
+          ]
+        },
+        {
+          "name": "wander",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 194,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.25,
+          "description": "游走，控制 swarm cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 156
+          },
+          "codeExample": "wander={0.25}",
+          "usageExamples": [
+            "wander={0.25}"
+          ]
+        },
+        {
+          "name": "trail",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.75",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 195,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.75,
+          "description": "轨迹，控制 swarm cursor 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 157
+          },
+          "codeExample": "trail={0.8}",
+          "usageExamples": [
+            "trail={0.8}"
+          ]
+        },
+        {
+          "name": "scatterOnClick",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 196,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否散开点击，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 158
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "scatterOnClick",
+          "usageExamples": [
+            "scatterOnClick"
+          ]
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 197,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否启用，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 159
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "enabled={true}"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 160
+          },
+          "codeExample": "children={<><div className={styles.content}>\n          <span className={styles.eyebrow}>SWARM CURSOR</span>\n          <h2 className={styles.title}>随指针流动</h2>\n          <p className={styles.description}>粒子围绕按钮流动，点击后重新聚拢。</p>\n          <div className={styles.actions}>\n            <button type=\"button\" className={styles.action} onClick={() => setStatus('粒子已散开，移动指针继续探索。')}>探索粒子</button>\n            <button type=\"button\" className={styles.secondary} onClick={() => setStatus('再次点击会释放粒子。')}>再次散开 ↗</button>\n          </div>\n        </div><p className={styles.hint} role=\"status\" aria-live=\"polite\">{status}</p></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><div className={styles.content}>\n          <span className={styles.eyebrow}>SWARM CURSOR</span>\n          <h2 className={styles.title}>随指针流动</h2>\n          <p className={styles.description}>粒子围绕按钮流动，点击后重新聚拢。</p>\n          <div className={styles.actions}>\n            <button type=\"button\" className={styles.action} onClick={() => setStatus('粒子已散开，移动指针继续探索。')}>探索粒子</button>\n            <button type=\"button\" className={styles.secondary} onClick={() => setStatus('再次点击会释放粒子。')}>再次散开 ↗</button>\n          </div>\n        </div><p className={styles.hint} role=\"status\" aria-live=\"polite\">{status}</p></>}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/SwarmCursor/SwarmCursor.tsx",
+            "line": 199,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "React.HTMLAttributes<HTMLDivElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties | undefined",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2712
+          },
+          "inheritedFrom": "React.HTMLAttributes<HTMLDivElement>",
+          "codeExample": "style={{ width: '100%', height: '100%' }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "style={{ width: '100%', height: '100%' }}"
+          ]
+        }
+      ],
+      "inherited": [
+        {
+          "type": "React.HTMLAttributes<HTMLDivElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "button · t1",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\"",
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles.action}",
+            "className={styles.secondary}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setStatus('粒子已散开，移动指针继续探索。')}",
+            "onClick={() => setStatus('再次点击会释放粒子。')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>探索粒子</>}",
+            "children={<>再次散开 ↗</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "button · t2",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\"",
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles.action}",
+            "className={styles.secondary}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => setStatus('粒子已散开，移动指针继续探索。')}",
+            "onClick={() => setStatus('再次点击会释放粒子。')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>探索粒子</>}",
+            "children={<>再次散开 ↗</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,1811 @@
+{
+  "version": 1,
+  "id": "cubes",
+  "name": "Cubes",
+  "sourcePath": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+  "demoPath": "src/demos/background/cubes.tsx",
+  "fields": [
+    {
+      "key": "t0.gridSize",
+      "name": "gridSize",
+      "label": "网格数量",
+      "description": "每边立方体的数量，组成方形网格。 以下范围仅限制此演示面板，不改变上游 API。每边立方体数量，源码取整并限制在 1–40。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gridSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "10",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "unit": "个/边"
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "立方体间隙",
+      "description": "每个网格单元中保留为空隙的比例；立方体面宽为 1 - gap，源码限制在 0 至 0.9。 以下范围仅限制此演示面板，不改变上游 API。面宽是 1-gap；是网格单元比例，单位不是 px。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.18,
+      "upstreamDefault": "0.18",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 0.9,
+      "step": 0.01,
+      "unit": "单元比例"
+    },
+    {
+      "key": "t0.faceColor",
+      "name": "faceColor",
+      "label": "faceColor · t0",
+      "description": "立方体各面的基础颜色。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "faceColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#10171a",
+      "upstreamDefault": "'#120F17'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edgeColor",
+      "name": "edgeColor",
+      "label": "edgeColor · t0",
+      "description": "立方体边线的颜色。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#e2f1eb",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edgeWidth",
+      "name": "edgeWidth",
+      "label": "edgeWidth · t0",
+      "description": "边线绘制的宽度。 以下范围仅限制此演示面板，不改变上游 API。边线绘制宽度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.25,
+      "max": 4,
+      "step": 0.25,
+      "unit": "px"
+    },
+    {
+      "key": "t0.faceOpacity",
+      "name": "faceOpacity",
+      "label": "faceOpacity · t0",
+      "description": "立方体面的不透明度，边线单独绘制。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "faceOpacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.shading",
+      "name": "shading",
+      "label": "shading · t0",
+      "description": "侧面和正面之间的明暗变化强度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shading"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "0.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.maxAngle",
+      "name": "maxAngle",
+      "label": "maxAngle · t0",
+      "description": "立方体响应指针时允许旋转的最大角度。 以下范围仅限制此演示面板，不改变上游 API。指针响应允许的最大旋转角度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "maxAngle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 45,
+      "upstreamDefault": "45",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 75,
+      "step": 1,
+      "unit": "°"
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "指针影响周边立方体的半径，以网格坐标计算。 以下范围仅限制此演示面板，不改变上游 API。指针影响半径以网格坐标计算。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.5,
+      "max": 10,
+      "step": 0.1,
+      "unit": "网格单元"
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "旋转响应",
+      "description": "立方体旋转响应的速度系数，通过弹簧刚度影响趋近目标的快慢。 以下范围仅限制此演示面板，不改变上游 API。弹簧响应系数；刚度为 160×speed²，单位不是秒。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.05,
+      "max": 4,
+      "step": 0.05,
+      "unit": "倍率"
+    },
+    {
+      "key": "t0.bounce",
+      "name": "bounce",
+      "label": "bounce · t0",
+      "description": "立方体旋转的回弹程度，源码限制在 0 至 1。 以下范围仅限制此演示面板，不改变上游 API。回弹程度；源码限制在 0–1。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bounce"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.4",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.autoAnimate",
+      "name": "autoAnimate",
+      "label": "autoAnimate · t0",
+      "description": "是否在没有用户指针输入时自动更新动画目标。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoAnimate"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleOnClick",
+      "name": "rippleOnClick",
+      "label": "rippleOnClick · t0",
+      "description": "点击时是否从点击位置发出波纹。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleOnClick"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleColor",
+      "name": "rippleColor",
+      "label": "rippleColor · t0",
+      "description": "点击波纹经过立方体时的颜色。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#90e7c6",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dpr",
+      "name": "dpr",
+      "label": "像素比 · t0",
+      "description": "WebGL 绘图缓冲使用的像素比；未传入时由设备像素比决定。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dpr"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edgeStyle",
+      "name": "edgeStyle",
+      "label": "edgeStyle · t0",
+      "description": "边线采用实线、虚线、点线或隐藏的样式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeStyle"
+        }
+      ],
+      "type": "CubesEdgeStyle",
+      "defaultValue": "solid",
+      "upstreamDefault": "'solid'",
+      "control": "select",
+      "options": [
+        {
+          "label": "solid",
+          "value": "solid"
+        },
+        {
+          "label": "dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "dotted",
+          "value": "dotted"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.brush",
+      "name": "brush",
+      "label": "brush · t0",
+      "description": "指针笔刷作用的强度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "brush"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.perspective",
+      "name": "perspective",
+      "label": "perspective · t0",
+      "description": "观察立方体阵列的透视参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "perspective"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleSpeed",
+      "name": "rippleSpeed",
+      "label": "rippleSpeed · t0",
+      "description": "点击波纹沿网格传播的速度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "首次挂载时是否播放立方体阵列的入场动画。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paused",
+      "name": "paused",
+      "label": "暂停 · t0",
+      "description": "是否暂停立方体模拟与绘制循环。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paused"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "gridSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 268,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "每边立方体的数量，组成方形网格。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 10
+      },
+      "codeExample": "gridSize={8}",
+      "usageExamples": [
+        "gridSize={8}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.18",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 269,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.18,
+      "description": "每个网格单元中保留为空隙的比例；立方体面宽为 1 - gap，源码限制在 0 至 0.9。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 11
+      },
+      "codeExample": "gap={0.18}",
+      "usageExamples": [
+        "gap={0.18}"
+      ]
+    },
+    {
+      "name": "faceColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#120F17'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 270,
+        "kind": "parameter"
+      },
+      "defaultValue": "#120F17",
+      "description": "立方体各面的基础颜色。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 12
+      },
+      "codeExample": "faceColor=\"#10171a\"",
+      "usageExamples": [
+        "faceColor=\"#10171a\""
+      ]
+    },
+    {
+      "name": "edgeColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 271,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "立方体边线的颜色。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 13
+      },
+      "codeExample": "edgeColor=\"#e2f1eb\"",
+      "usageExamples": [
+        "edgeColor=\"#e2f1eb\""
+      ]
+    },
+    {
+      "name": "edgeWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 272,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "边线绘制的宽度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 14
+      },
+      "codeExample": "edgeWidth={1}",
+      "usageExamples": [
+        "edgeWidth={1}"
+      ]
+    },
+    {
+      "name": "edgeStyle",
+      "type": "CubesEdgeStyle",
+      "required": false,
+      "defaultExpression": "'solid'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 273,
+        "kind": "parameter"
+      },
+      "defaultValue": "solid",
+      "description": "边线采用实线、虚线、点线或隐藏的样式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "solid",
+        "dashed",
+        "dotted",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "solid",
+          "dashed",
+          "dotted",
+          "none"
+        ]
+      },
+      "codeExample": "edgeStyle={\"solid\"}"
+    },
+    {
+      "name": "faceOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 274,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "立方体面的不透明度，边线单独绘制。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 16
+      },
+      "codeExample": "faceOpacity={1}",
+      "usageExamples": [
+        "faceOpacity={1}"
+      ]
+    },
+    {
+      "name": "shading",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 275,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.6,
+      "description": "侧面和正面之间的明暗变化强度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 17
+      },
+      "codeExample": "shading={0.6}",
+      "usageExamples": [
+        "shading={0.6}"
+      ]
+    },
+    {
+      "name": "maxAngle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "45",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 276,
+        "kind": "parameter"
+      },
+      "defaultValue": 45,
+      "description": "立方体响应指针时允许旋转的最大角度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 18
+      },
+      "codeExample": "maxAngle={45}",
+      "usageExamples": [
+        "maxAngle={45}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 277,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "指针影响周边立方体的半径，以网格坐标计算。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 19
+      },
+      "codeExample": "radius={3}",
+      "usageExamples": [
+        "radius={3}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 278,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "立方体旋转响应的速度系数，通过弹簧刚度影响趋近目标的快慢。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 20
+      },
+      "codeExample": "speed={1}",
+      "usageExamples": [
+        "speed={1}"
+      ]
+    },
+    {
+      "name": "bounce",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 279,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.4,
+      "description": "立方体旋转的回弹程度，源码限制在 0 至 1。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 21
+      },
+      "codeExample": "bounce={0.4}",
+      "usageExamples": [
+        "bounce={0.4}"
+      ]
+    },
+    {
+      "name": "brush",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 280,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "指针笔刷作用的强度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 22
+      },
+      "codeExample": "brush={1}"
+    },
+    {
+      "name": "perspective",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 281,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "观察立方体阵列的透视参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 23
+      },
+      "codeExample": "perspective={0}"
+    },
+    {
+      "name": "autoAnimate",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 282,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否在没有用户指针输入时自动更新动画目标。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "autoAnimate",
+      "usageExamples": [
+        "autoAnimate"
+      ]
+    },
+    {
+      "name": "rippleOnClick",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 283,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "点击时是否从点击位置发出波纹。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "rippleOnClick",
+      "usageExamples": [
+        "rippleOnClick"
+      ]
+    },
+    {
+      "name": "rippleColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 284,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "点击波纹经过立方体时的颜色。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 26
+      },
+      "codeExample": "rippleColor=\"#90e7c6\"",
+      "usageExamples": [
+        "rippleColor=\"#90e7c6\""
+      ]
+    },
+    {
+      "name": "rippleSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 285,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "点击波纹沿网格传播的速度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 27
+      },
+      "codeExample": "rippleSpeed={1}"
+    },
+    {
+      "name": "intro",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 286,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "首次挂载时是否播放立方体阵列的入场动画。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "intro={true}"
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 287,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停立方体模拟与绘制循环。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "paused={false}"
+    },
+    {
+      "name": "dpr",
+      "type": "number",
+      "required": false,
+      "description": "WebGL 绘图缓冲使用的像素比；未传入时由设备像素比决定。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 30
+      },
+      "codeExample": "dpr={1.5}",
+      "usageExamples": [
+        "dpr={1.5}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string | undefined",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+        "line": 289,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2700
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "node_modules/@types/react/index.d.ts",
+        "line": 2171
+      },
+      "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+      "codeExample": "children={\"示例\"}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "HTMLAttributes<HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Animations/Cubes/Cubes';\nimport styles from './cubes.module.css';\n\nexport default function CubesDemo() {\n  return (\n    <div className={styles.stage} data-visual-demo=\"cubes\">\n      <div className={styles.field}>\n        <Component\n\n\n            /*__AW_PROPS_t0__*/  />\n      </div>\n      <p className={styles.hint}>移动指针翻转立方体 · 点击扩散涟漪</p>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Cubes",
+      "sourcePath": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+      "props": [
+        {
+          "name": "gridSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 268,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "每边立方体的数量，组成方形网格。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 10
+          },
+          "codeExample": "gridSize={8}",
+          "usageExamples": [
+            "gridSize={8}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.18",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 269,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.18,
+          "description": "每个网格单元中保留为空隙的比例；立方体面宽为 1 - gap，源码限制在 0 至 0.9。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 11
+          },
+          "codeExample": "gap={0.18}",
+          "usageExamples": [
+            "gap={0.18}"
+          ]
+        },
+        {
+          "name": "faceColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#120F17'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 270,
+            "kind": "parameter"
+          },
+          "defaultValue": "#120F17",
+          "description": "立方体各面的基础颜色。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 12
+          },
+          "codeExample": "faceColor=\"#10171a\"",
+          "usageExamples": [
+            "faceColor=\"#10171a\""
+          ]
+        },
+        {
+          "name": "edgeColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 271,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "立方体边线的颜色。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 13
+          },
+          "codeExample": "edgeColor=\"#e2f1eb\"",
+          "usageExamples": [
+            "edgeColor=\"#e2f1eb\""
+          ]
+        },
+        {
+          "name": "edgeWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 272,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "边线绘制的宽度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 14
+          },
+          "codeExample": "edgeWidth={1}",
+          "usageExamples": [
+            "edgeWidth={1}"
+          ]
+        },
+        {
+          "name": "edgeStyle",
+          "type": "CubesEdgeStyle",
+          "required": false,
+          "defaultExpression": "'solid'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 273,
+            "kind": "parameter"
+          },
+          "defaultValue": "solid",
+          "description": "边线采用实线、虚线、点线或隐藏的样式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "solid",
+            "dashed",
+            "dotted",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "solid",
+              "dashed",
+              "dotted",
+              "none"
+            ]
+          },
+          "codeExample": "edgeStyle={\"solid\"}"
+        },
+        {
+          "name": "faceOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 274,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "立方体面的不透明度，边线单独绘制。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 16
+          },
+          "codeExample": "faceOpacity={1}",
+          "usageExamples": [
+            "faceOpacity={1}"
+          ]
+        },
+        {
+          "name": "shading",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 275,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.6,
+          "description": "侧面和正面之间的明暗变化强度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 17
+          },
+          "codeExample": "shading={0.6}",
+          "usageExamples": [
+            "shading={0.6}"
+          ]
+        },
+        {
+          "name": "maxAngle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "45",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 276,
+            "kind": "parameter"
+          },
+          "defaultValue": 45,
+          "description": "立方体响应指针时允许旋转的最大角度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 18
+          },
+          "codeExample": "maxAngle={45}",
+          "usageExamples": [
+            "maxAngle={45}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 277,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "指针影响周边立方体的半径，以网格坐标计算。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 19
+          },
+          "codeExample": "radius={3}",
+          "usageExamples": [
+            "radius={3}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 278,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "立方体旋转响应的速度系数，通过弹簧刚度影响趋近目标的快慢。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 20
+          },
+          "codeExample": "speed={1}",
+          "usageExamples": [
+            "speed={1}"
+          ]
+        },
+        {
+          "name": "bounce",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 279,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.4,
+          "description": "立方体旋转的回弹程度，源码限制在 0 至 1。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 21
+          },
+          "codeExample": "bounce={0.4}",
+          "usageExamples": [
+            "bounce={0.4}"
+          ]
+        },
+        {
+          "name": "brush",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 280,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "指针笔刷作用的强度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 22
+          },
+          "codeExample": "brush={1}"
+        },
+        {
+          "name": "perspective",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 281,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "观察立方体阵列的透视参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 23
+          },
+          "codeExample": "perspective={0}"
+        },
+        {
+          "name": "autoAnimate",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 282,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否在没有用户指针输入时自动更新动画目标。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "autoAnimate",
+          "usageExamples": [
+            "autoAnimate"
+          ]
+        },
+        {
+          "name": "rippleOnClick",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 283,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "点击时是否从点击位置发出波纹。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "rippleOnClick",
+          "usageExamples": [
+            "rippleOnClick"
+          ]
+        },
+        {
+          "name": "rippleColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 284,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "点击波纹经过立方体时的颜色。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 26
+          },
+          "codeExample": "rippleColor=\"#90e7c6\"",
+          "usageExamples": [
+            "rippleColor=\"#90e7c6\""
+          ]
+        },
+        {
+          "name": "rippleSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 285,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "点击波纹沿网格传播的速度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 27
+          },
+          "codeExample": "rippleSpeed={1}"
+        },
+        {
+          "name": "intro",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 286,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "首次挂载时是否播放立方体阵列的入场动画。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "intro={true}"
+        },
+        {
+          "name": "paused",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 287,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停立方体模拟与绘制循环。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "paused={false}"
+        },
+        {
+          "name": "dpr",
+          "type": "number",
+          "required": false,
+          "description": "WebGL 绘图缓冲使用的像素比；未传入时由设备像素比决定。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 30
+          },
+          "codeExample": "dpr={1.5}",
+          "usageExamples": [
+            "dpr={1.5}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Animations/Cubes/Cubes.tsx",
+            "line": 289,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "HTMLAttributes<HTMLDivElement>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "HTMLAttributes<HTMLDivElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

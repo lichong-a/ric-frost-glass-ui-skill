@@ -1,0 +1,1909 @@
+{
+  "version": 1,
+  "id": "carousel",
+  "name": "Carousel · React Bits",
+  "sourcePath": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+  "demoPath": "src/demos/media/carousel.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "CarouselEntry[]",
+      "defaultValue": [
+        {
+          "image": "@media/scene-1.svg",
+          "title": "山雾",
+          "description": "自有自然色图形 · 1",
+          "alt": "山雾"
+        },
+        {
+          "image": "@media/scene-2.svg",
+          "title": "茶庭",
+          "description": "自有自然色图形 · 2",
+          "alt": "茶庭"
+        },
+        {
+          "image": "@media/scene-3.svg",
+          "title": "沙洲",
+          "description": "自有自然色图形 · 3",
+          "alt": "沙洲"
+        },
+        {
+          "image": "@media/scene-4.svg",
+          "title": "静水",
+          "description": "自有自然色图形 · 4",
+          "alt": "静水"
+        },
+        {
+          "image": "@media/scene-5.svg",
+          "title": "林间",
+          "description": "自有自然色图形 · 5",
+          "alt": "林间"
+        },
+        {
+          "image": "@media/scene-6.svg",
+          "title": "岩纹",
+          "description": "自有自然色图形 · 6",
+          "alt": "岩纹"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array"
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.baseWidth",
+      "name": "baseWidth",
+      "label": "baseWidth · t0",
+      "description": "基础宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "baseWidth"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 300,
+      "upstreamDefault": "300",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.aspectRatio",
+      "name": "aspectRatio",
+      "label": "aspectRatio · t0",
+      "description": "宽高比例，控制 carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aspectRatio"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.35,
+      "upstreamDefault": "1.25",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 18,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "12",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.frame",
+      "name": "frame",
+      "label": "frame · t0",
+      "description": "是否外框，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "frame"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.effect",
+      "name": "effect",
+      "label": "effect · t0",
+      "description": "效果，控制 carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "effect"
+        }
+      ],
+      "type": "'tilt' | 'slide' | 'scale' | 'fade' | 'cube'",
+      "defaultValue": "tilt",
+      "upstreamDefault": "'tilt'",
+      "control": "select",
+      "options": [
+        {
+          "label": "tilt",
+          "value": "tilt"
+        },
+        {
+          "label": "slide",
+          "value": "slide"
+        },
+        {
+          "label": "scale",
+          "value": "scale"
+        },
+        {
+          "label": "fade",
+          "value": "fade"
+        },
+        {
+          "label": "cube",
+          "value": "cube"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.indicator",
+      "name": "indicator",
+      "label": "indicator · t0",
+      "description": "指示器，控制 carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "indicator"
+        }
+      ],
+      "type": "'dots' | 'bars' | 'counter' | 'none'",
+      "defaultValue": "counter",
+      "upstreamDefault": "'dots'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dots",
+          "value": "dots"
+        },
+        {
+          "label": "bars",
+          "value": "bars"
+        },
+        {
+          "label": "counter",
+          "value": "counter"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.arrows",
+      "name": "arrows",
+      "label": "arrows · t0",
+      "description": "是否箭头，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "arrows"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.loop",
+      "name": "loop",
+      "label": "循环 · t0",
+      "description": "是否循环，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "loop"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.draggable",
+      "name": "draggable",
+      "label": "draggable · t0",
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "draggable"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoplay",
+      "name": "autoplay",
+      "label": "自动播放 · t0",
+      "description": "是否自动播放，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoplay"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "light",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.peek",
+      "name": "peek",
+      "label": "peek · t0",
+      "description": "预露出，控制 carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "peek"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoplayDelay",
+      "name": "autoplayDelay",
+      "label": "autoplayDelay · t0",
+      "description": "是否自动播放延迟，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoplayDelay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3000,
+      "upstreamDefault": "3000",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pauseOnHover",
+      "name": "pauseOnHover",
+      "label": "pauseOnHover · t0",
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pauseOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.round",
+      "name": "round",
+      "label": "round · t0",
+      "description": "是否圆角，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "round"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.initialIndex",
+      "name": "initialIndex",
+      "label": "initialIndex · t0",
+      "description": "初始索引，控制 carousel 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "initialIndex"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "CarouselEntry[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 277,
+        "kind": "parameter"
+      },
+      "defaultResolvedExpression": "[\n  {\n    id: 1,\n    title: 'Swipe with momentum',\n    description: 'Fling the cards and they glide into place.',\n    icon: <HugeiconsIcon icon={Drag04Icon} size={16} strokeWidth={1.8} />\n  },\n  {\n    id: 2,\n    title: 'Autoplay with a timer',\n    description: 'The indicator fills up so people know what comes next.',\n    icon: <HugeiconsIcon icon={Timer02Icon} size={16} strokeWidth={1.8} />\n  },\n  {\n    id: 3,\n    title: 'Five transitions',\n    description: 'Tilt, slide, scale, fade or turn the cards like a cube.',\n    icon: <HugeiconsIcon icon={Layers01Icon} size={16} strokeWidth={1.8} />\n  },\n  {\n    id: 4,\n    title: 'Keyboard friendly',\n    description: 'Arrow keys, Home and End move between the cards.',\n    icon: <HugeiconsIcon icon={CommandIcon} size={16} strokeWidth={1.8} />\n  },\n  {\n    id: 5,\n    title: 'Bring any content',\n    description: 'Pass text, images or your own components as cards.',\n    icon: <HugeiconsIcon icon={Image01Icon} size={16} strokeWidth={1.8} />\n  }\n]",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 38
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "CarouselEntry",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "CarouselItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "id",
+                    "type": "string | number",
+                    "required": false
+                  },
+                  {
+                    "name": "title",
+                    "type": "ReactNode",
+                    "required": false
+                  },
+                  {
+                    "name": "description",
+                    "type": "ReactNode",
+                    "required": false
+                  },
+                  {
+                    "name": "icon",
+                    "type": "ReactNode",
+                    "required": false
+                  },
+                  {
+                    "name": "image",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              },
+              {
+                "type": "ReactElement<unknown, string | JSXElementConstructor<any>>"
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={MEDIA.map((image, index) => ({ image, title: LABELS[index], description: '自有自然色图形 · ' + (index + 1), alt: LABELS[index] }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={MEDIA.map((image, index) => ({ image, title: LABELS[index], description: '自有自然色图形 · ' + (index + 1), alt: LABELS[index] }))}"
+      ]
+    },
+    {
+      "name": "baseWidth",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "300",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 278,
+        "kind": "parameter"
+      },
+      "defaultValue": 300,
+      "description": "基础宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 39
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "baseWidth={300}",
+      "usageExamples": [
+        "baseWidth={300}"
+      ]
+    },
+    {
+      "name": "aspectRatio",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.25",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 279,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.25,
+      "description": "宽高比例，控制 carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 40
+      },
+      "codeExample": "aspectRatio={1.35}",
+      "usageExamples": [
+        "aspectRatio={1.35}"
+      ]
+    },
+    {
+      "name": "peek",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 280,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "预露出，控制 carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 41
+      },
+      "codeExample": "peek={0}"
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 281,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 42
+      },
+      "codeExample": "gap={18}",
+      "usageExamples": [
+        "gap={18}"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "12",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 282,
+        "kind": "parameter"
+      },
+      "defaultValue": 12,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 43
+      },
+      "codeExample": "radius={20}",
+      "usageExamples": [
+        "radius={20}"
+      ]
+    },
+    {
+      "name": "frame",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 283,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否外框，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 44
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "frame",
+      "usageExamples": [
+        "frame"
+      ]
+    },
+    {
+      "name": "effect",
+      "type": "'tilt' | 'slide' | 'scale' | 'fade' | 'cube'",
+      "required": false,
+      "defaultExpression": "'tilt'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 284,
+        "kind": "parameter"
+      },
+      "defaultValue": "tilt",
+      "description": "效果，控制 carousel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "tilt",
+        "slide",
+        "scale",
+        "fade",
+        "cube"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 45
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "tilt",
+          "slide",
+          "scale",
+          "fade",
+          "cube"
+        ]
+      },
+      "codeExample": "effect=\"tilt\"",
+      "usageExamples": [
+        "effect=\"tilt\""
+      ]
+    },
+    {
+      "name": "indicator",
+      "type": "'dots' | 'bars' | 'counter' | 'none'",
+      "required": false,
+      "defaultExpression": "'dots'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 285,
+        "kind": "parameter"
+      },
+      "defaultValue": "dots",
+      "description": "指示器，控制 carousel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dots",
+        "bars",
+        "counter",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 46
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dots",
+          "bars",
+          "counter",
+          "none"
+        ]
+      },
+      "codeExample": "indicator=\"counter\"",
+      "usageExamples": [
+        "indicator=\"counter\""
+      ]
+    },
+    {
+      "name": "arrows",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 286,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否箭头，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 47
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "arrows",
+      "usageExamples": [
+        "arrows"
+      ]
+    },
+    {
+      "name": "autoplay",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 287,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否自动播放，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 48
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "autoplay={false}",
+      "usageExamples": [
+        "autoplay={false}"
+      ]
+    },
+    {
+      "name": "autoplayDelay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3000",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 288,
+        "kind": "parameter"
+      },
+      "defaultValue": 3000,
+      "description": "是否自动播放延迟，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 49
+      },
+      "codeExample": "autoplayDelay={3000}"
+    },
+    {
+      "name": "pauseOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 289,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 50
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "pauseOnHover={false}"
+    },
+    {
+      "name": "loop",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 290,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否循环，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 51
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "loop",
+      "usageExamples": [
+        "loop"
+      ]
+    },
+    {
+      "name": "draggable",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 291,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 52
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "draggable",
+      "usageExamples": [
+        "draggable"
+      ]
+    },
+    {
+      "name": "round",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 292,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否圆角，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 53
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "round={false}"
+    },
+    {
+      "name": "initialIndex",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 293,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "初始索引，控制 carousel 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 54
+      },
+      "codeExample": "initialIndex={0}"
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 294,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 carousel 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 55
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"light\"",
+      "usageExamples": [
+        "theme=\"light\""
+      ]
+    },
+    {
+      "name": "onChange",
+      "type": "(index: number) => void",
+      "required": false,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 56
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((index: number) => void) | undefined"
+      },
+      "codeExample": "onChange={index => setStatus('当前素材：' + LABELS[index % LABELS.length])}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={index => setStatus('当前素材：' + LABELS[index % LABELS.length])}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 296,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 57
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+        "line": 58
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/Carousel/Carousel';\nimport { LABELS, palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 真实卡片轮播、箭头与页码反馈，样例避免自动播放干扰。\n\nexport default function CarouselDemo() {\n  const [status, setStatus] = useState(\"点击箭头或拖动轮播卡片\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ position: 'relative', height: 330, minHeight: 0, width: '100%' }}><Component\n\n\n onChange={index => setStatus('当前素材：' + LABELS[index % LABELS.length])} /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Carousel",
+      "sourcePath": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "CarouselEntry[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 277,
+            "kind": "parameter"
+          },
+          "defaultResolvedExpression": "[\n  {\n    id: 1,\n    title: 'Swipe with momentum',\n    description: 'Fling the cards and they glide into place.',\n    icon: <HugeiconsIcon icon={Drag04Icon} size={16} strokeWidth={1.8} />\n  },\n  {\n    id: 2,\n    title: 'Autoplay with a timer',\n    description: 'The indicator fills up so people know what comes next.',\n    icon: <HugeiconsIcon icon={Timer02Icon} size={16} strokeWidth={1.8} />\n  },\n  {\n    id: 3,\n    title: 'Five transitions',\n    description: 'Tilt, slide, scale, fade or turn the cards like a cube.',\n    icon: <HugeiconsIcon icon={Layers01Icon} size={16} strokeWidth={1.8} />\n  },\n  {\n    id: 4,\n    title: 'Keyboard friendly',\n    description: 'Arrow keys, Home and End move between the cards.',\n    icon: <HugeiconsIcon icon={CommandIcon} size={16} strokeWidth={1.8} />\n  },\n  {\n    id: 5,\n    title: 'Bring any content',\n    description: 'Pass text, images or your own components as cards.',\n    icon: <HugeiconsIcon icon={Image01Icon} size={16} strokeWidth={1.8} />\n  }\n]",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 38
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "CarouselEntry",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "CarouselItem",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "id",
+                        "type": "string | number",
+                        "required": false
+                      },
+                      {
+                        "name": "title",
+                        "type": "ReactNode",
+                        "required": false
+                      },
+                      {
+                        "name": "description",
+                        "type": "ReactNode",
+                        "required": false
+                      },
+                      {
+                        "name": "icon",
+                        "type": "ReactNode",
+                        "required": false
+                      },
+                      {
+                        "name": "image",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "alt",
+                        "type": "string",
+                        "required": false
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ReactElement<unknown, string | JSXElementConstructor<any>>"
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={MEDIA.map((image, index) => ({ image, title: LABELS[index], description: '自有自然色图形 · ' + (index + 1), alt: LABELS[index] }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={MEDIA.map((image, index) => ({ image, title: LABELS[index], description: '自有自然色图形 · ' + (index + 1), alt: LABELS[index] }))}"
+          ]
+        },
+        {
+          "name": "baseWidth",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "300",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 278,
+            "kind": "parameter"
+          },
+          "defaultValue": 300,
+          "description": "基础宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 39
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "baseWidth={300}",
+          "usageExamples": [
+            "baseWidth={300}"
+          ]
+        },
+        {
+          "name": "aspectRatio",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.25",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 279,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.25,
+          "description": "宽高比例，控制 carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 40
+          },
+          "codeExample": "aspectRatio={1.35}",
+          "usageExamples": [
+            "aspectRatio={1.35}"
+          ]
+        },
+        {
+          "name": "peek",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 280,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "预露出，控制 carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 41
+          },
+          "codeExample": "peek={0}"
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 281,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 42
+          },
+          "codeExample": "gap={18}",
+          "usageExamples": [
+            "gap={18}"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "12",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 282,
+            "kind": "parameter"
+          },
+          "defaultValue": 12,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 43
+          },
+          "codeExample": "radius={20}",
+          "usageExamples": [
+            "radius={20}"
+          ]
+        },
+        {
+          "name": "frame",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 283,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否外框，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 44
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "frame",
+          "usageExamples": [
+            "frame"
+          ]
+        },
+        {
+          "name": "effect",
+          "type": "'tilt' | 'slide' | 'scale' | 'fade' | 'cube'",
+          "required": false,
+          "defaultExpression": "'tilt'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 284,
+            "kind": "parameter"
+          },
+          "defaultValue": "tilt",
+          "description": "效果，控制 carousel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "tilt",
+            "slide",
+            "scale",
+            "fade",
+            "cube"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 45
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "tilt",
+              "slide",
+              "scale",
+              "fade",
+              "cube"
+            ]
+          },
+          "codeExample": "effect=\"tilt\"",
+          "usageExamples": [
+            "effect=\"tilt\""
+          ]
+        },
+        {
+          "name": "indicator",
+          "type": "'dots' | 'bars' | 'counter' | 'none'",
+          "required": false,
+          "defaultExpression": "'dots'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 285,
+            "kind": "parameter"
+          },
+          "defaultValue": "dots",
+          "description": "指示器，控制 carousel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dots",
+            "bars",
+            "counter",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 46
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dots",
+              "bars",
+              "counter",
+              "none"
+            ]
+          },
+          "codeExample": "indicator=\"counter\"",
+          "usageExamples": [
+            "indicator=\"counter\""
+          ]
+        },
+        {
+          "name": "arrows",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 286,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否箭头，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 47
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "arrows",
+          "usageExamples": [
+            "arrows"
+          ]
+        },
+        {
+          "name": "autoplay",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 287,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否自动播放，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 48
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "autoplay={false}",
+          "usageExamples": [
+            "autoplay={false}"
+          ]
+        },
+        {
+          "name": "autoplayDelay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3000",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 288,
+            "kind": "parameter"
+          },
+          "defaultValue": 3000,
+          "description": "是否自动播放延迟，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 49
+          },
+          "codeExample": "autoplayDelay={3000}"
+        },
+        {
+          "name": "pauseOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 289,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 50
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pauseOnHover={false}"
+        },
+        {
+          "name": "loop",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 290,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否循环，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 51
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "loop",
+          "usageExamples": [
+            "loop"
+          ]
+        },
+        {
+          "name": "draggable",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 291,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否可拖动，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 52
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "draggable",
+          "usageExamples": [
+            "draggable"
+          ]
+        },
+        {
+          "name": "round",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 292,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否圆角，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 53
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "round={false}"
+        },
+        {
+          "name": "initialIndex",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 293,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "初始索引，控制 carousel 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 54
+          },
+          "codeExample": "initialIndex={0}"
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 294,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 carousel 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 55
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"light\"",
+          "usageExamples": [
+            "theme=\"light\""
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(index: number) => void",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 56
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((index: number) => void) | undefined"
+          },
+          "codeExample": "onChange={index => setStatus('当前素材：' + LABELS[index % LABELS.length])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={index => setStatus('当前素材：' + LABELS[index % LABELS.length])}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 296,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 57
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Carousel/Carousel.tsx",
+            "line": 58
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

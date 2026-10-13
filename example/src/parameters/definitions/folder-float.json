@@ -1,0 +1,2173 @@
+{
+  "version": 1,
+  "id": "folder-float",
+  "name": "Folder Float",
+  "sourcePath": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+  "demoPath": "src/demos/data/folder-float.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "FolderFloatItem[]",
+      "defaultValue": [
+        {
+          "label": "UI 规范",
+          "value": "spec"
+        },
+        {
+          "label": "设计变量",
+          "value": "tokens"
+        },
+        {
+          "label": "组件契约",
+          "value": "contracts"
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "string"
+            },
+            {
+              "kind": "object",
+              "properties": {
+                "label": {
+                  "kind": "string"
+                },
+                "value": {
+                  "kind": "string"
+                }
+              },
+              "required": [
+                "label",
+                "value"
+              ]
+            }
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "设计资源",
+      "upstreamDefault": "'Design feedback'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.sublabel",
+      "name": "sublabel",
+      "label": "sublabel · t0",
+      "description": "副标签，控制 folder float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "sublabel"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "3 份本地示例文档",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trigger",
+      "name": "trigger",
+      "label": "trigger · t0",
+      "description": "触发方式，控制 folder float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trigger"
+        }
+      ],
+      "type": "FolderFloatTrigger",
+      "defaultValue": "click",
+      "upstreamDefault": "'hover'",
+      "control": "select",
+      "options": [
+        {
+          "label": "hover",
+          "value": "hover"
+        },
+        {
+          "label": "click",
+          "value": "click"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.folderColor",
+      "name": "folderColor",
+      "label": "folderColor · t0",
+      "description": "文件夹颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "folderColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#3f3f46'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.frontColor",
+      "name": "frontColor",
+      "label": "frontColor · t0",
+      "description": "正面颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "frontColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#52525b'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.paperColor",
+      "name": "paperColor",
+      "label": "paperColor · t0",
+      "description": "纸张颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "paperColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.itemColor",
+      "name": "itemColor",
+      "label": "itemColor · t0",
+      "description": "条目颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "itemColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "rgb(250 247 240 / 0.82)",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.itemTextColor",
+      "name": "itemTextColor",
+      "label": "itemTextColor · t0",
+      "description": "条目文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "itemTextColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#18181b'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.labelColor",
+      "name": "labelColor",
+      "label": "labelColor · t0",
+      "description": "标签颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "labelColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.physics",
+      "name": "physics",
+      "label": "physics · t0",
+      "description": "是否物理模拟，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "physics"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.defaultOpen",
+      "name": "defaultOpen",
+      "label": "defaultOpen · t0",
+      "description": "是否非受控初始打开，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "defaultOpen"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.closeOnSelect",
+      "name": "closeOnSelect",
+      "label": "closeOnSelect · t0",
+      "description": "是否关闭选择，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "closeOnSelect"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.drift",
+      "name": "drift",
+      "label": "drift · t0",
+      "description": "漂移，控制 folder float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "drift"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.width",
+      "name": "width",
+      "label": "宽度 · t0",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "width"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 200,
+      "upstreamDefault": "200",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.height",
+      "name": "height",
+      "label": "高度 · t0",
+      "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "height"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 148,
+      "upstreamDefault": "148",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 14,
+      "upstreamDefault": "14",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spread",
+      "name": "spread",
+      "label": "展开距离 · t0",
+      "description": "展开间距，控制 folder float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 180,
+      "upstreamDefault": "180",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lift",
+      "name": "lift",
+      "label": "lift · t0",
+      "description": "抬起，控制 folder float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lift"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 26,
+      "upstreamDefault": "26",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tilt",
+      "name": "tilt",
+      "label": "tilt · t0",
+      "description": "倾斜，控制 folder float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 8,
+      "upstreamDefault": "8",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.flapAngle",
+      "name": "flapAngle",
+      "label": "flapAngle · t0",
+      "description": "翻片角度，控制 folder float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "flapAngle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 34,
+      "upstreamDefault": "34",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.restAngle",
+      "name": "restAngle",
+      "label": "restAngle · t0",
+      "description": "静止角度，控制 folder float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "restAngle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 16,
+      "upstreamDefault": "16",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.openDuration",
+      "name": "openDuration",
+      "label": "openDuration · t0",
+      "description": "打开时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "openDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 520,
+      "upstreamDefault": "520",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stagger",
+      "name": "stagger",
+      "label": "错峰间隔 · t0",
+      "description": "错开，控制 folder float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stagger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 45,
+      "upstreamDefault": "45",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bounce",
+      "name": "bounce",
+      "label": "bounce · t0",
+      "description": "回弹，控制 folder float 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bounce"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 640,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "FolderFloatItem[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 120,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "Try a warmer palette",
+        "Tighten the spacing",
+        "Logo feels small",
+        "Love the new hero"
+      ],
+      "defaultResolvedExpression": "[\n  'Try a warmer palette',\n  'Tighten the spacing',\n  'Logo feels small',\n  'Love the new hero'\n]",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "FolderFloatItem",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "{ label: string; value: string; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={items}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={items}"
+      ]
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Design feedback'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 121,
+        "kind": "parameter"
+      },
+      "defaultValue": "Design feedback",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 22
+      },
+      "codeExample": "label=\"设计资源\"",
+      "usageExamples": [
+        "label=\"设计资源\""
+      ]
+    },
+    {
+      "name": "sublabel",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 122,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "副标签，控制 folder float 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 23
+      },
+      "codeExample": "sublabel=\"3 份本地示例文档\"",
+      "usageExamples": [
+        "sublabel=\"3 份本地示例文档\""
+      ]
+    },
+    {
+      "name": "trigger",
+      "type": "FolderFloatTrigger",
+      "required": false,
+      "defaultExpression": "'hover'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 123,
+        "kind": "parameter"
+      },
+      "defaultValue": "hover",
+      "description": "触发方式，控制 folder float 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "hover",
+        "click"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "hover",
+          "click"
+        ]
+      },
+      "codeExample": "trigger=\"click\"",
+      "usageExamples": [
+        "trigger=\"click\""
+      ]
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 124,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否非受控初始打开，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "defaultOpen={false}"
+    },
+    {
+      "name": "closeOnSelect",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 125,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否关闭选择，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "closeOnSelect={true}"
+    },
+    {
+      "name": "physics",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 126,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否物理模拟，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 27
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "physics",
+      "usageExamples": [
+        "physics"
+      ]
+    },
+    {
+      "name": "drift",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 127,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "漂移，控制 folder float 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 28
+      },
+      "codeExample": "drift={0.5}"
+    },
+    {
+      "name": "onSelect",
+      "type": "(value: string, index: number) => void",
+      "required": false,
+      "description": "用户选择条目时通知调用方，参数为选中项的标识或数据。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((value: string, index: number) => void) | undefined"
+      },
+      "codeExample": "onSelect={value => setMessage(`已选择：${items.find(item => item.value === value)?.label}`)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onSelect={value => setMessage(`已选择：${items.find(item => item.value === value)?.label}`)}"
+      ]
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false,
+      "description": "展开状态改变时通知调用方，参数为新的布尔状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((open: boolean) => void) | undefined"
+      },
+      "codeExample": "onOpenChange={open => setMessage(open ? '文件夹已展开。' : '文件夹已收起。')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onOpenChange={open => setMessage(open ? '文件夹已展开。' : '文件夹已收起。')}"
+      ]
+    },
+    {
+      "name": "folderColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#3f3f46'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 130,
+        "kind": "parameter"
+      },
+      "defaultValue": "#3f3f46",
+      "description": "文件夹颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 31
+      },
+      "codeExample": "folderColor={palette.primary}",
+      "usageExamples": [
+        "folderColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "frontColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#52525b'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 131,
+        "kind": "parameter"
+      },
+      "defaultValue": "#52525b",
+      "description": "正面颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 32
+      },
+      "codeExample": "frontColor={palette.sage}",
+      "usageExamples": [
+        "frontColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "paperColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 132,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "纸张颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 33
+      },
+      "codeExample": "paperColor={palette.ivory}",
+      "usageExamples": [
+        "paperColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "itemColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 133,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "条目颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 34
+      },
+      "codeExample": "itemColor={palette.surface}",
+      "usageExamples": [
+        "itemColor={palette.surface}"
+      ]
+    },
+    {
+      "name": "itemTextColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#18181b'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 134,
+        "kind": "parameter"
+      },
+      "defaultValue": "#18181b",
+      "description": "条目文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 35
+      },
+      "codeExample": "itemTextColor={palette.ink}",
+      "usageExamples": [
+        "itemTextColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "labelColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 135,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "标签颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 36
+      },
+      "codeExample": "labelColor={palette.ink}",
+      "usageExamples": [
+        "labelColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "width",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 136,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 37
+      },
+      "codeExample": "width={200}"
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "148",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 137,
+        "kind": "parameter"
+      },
+      "defaultValue": 148,
+      "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 38
+      },
+      "codeExample": "height={148}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "14",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 138,
+        "kind": "parameter"
+      },
+      "defaultValue": 14,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 39
+      },
+      "codeExample": "radius={14}"
+    },
+    {
+      "name": "spread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "180",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 139,
+        "kind": "parameter"
+      },
+      "defaultValue": 180,
+      "description": "展开间距，控制 folder float 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 40
+      },
+      "codeExample": "spread={180}"
+    },
+    {
+      "name": "lift",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "26",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 140,
+        "kind": "parameter"
+      },
+      "defaultValue": 26,
+      "description": "抬起，控制 folder float 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 41
+      },
+      "codeExample": "lift={26}"
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 141,
+        "kind": "parameter"
+      },
+      "defaultValue": 8,
+      "description": "倾斜，控制 folder float 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 42
+      },
+      "codeExample": "tilt={8}"
+    },
+    {
+      "name": "flapAngle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "34",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 142,
+        "kind": "parameter"
+      },
+      "defaultValue": 34,
+      "description": "翻片角度，控制 folder float 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 43
+      },
+      "codeExample": "flapAngle={34}"
+    },
+    {
+      "name": "restAngle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "16",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 143,
+        "kind": "parameter"
+      },
+      "defaultValue": 16,
+      "description": "静止角度，控制 folder float 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 44
+      },
+      "codeExample": "restAngle={16}"
+    },
+    {
+      "name": "openDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "520",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 144,
+        "kind": "parameter"
+      },
+      "defaultValue": 520,
+      "description": "打开时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 45
+      },
+      "codeExample": "openDuration={520}"
+    },
+    {
+      "name": "stagger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "45",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 145,
+        "kind": "parameter"
+      },
+      "defaultValue": 45,
+      "description": "错开，控制 folder float 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 46
+      },
+      "codeExample": "stagger={45}"
+    },
+    {
+      "name": "bounce",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 146,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "回弹，控制 folder float 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 47
+      },
+      "codeExample": "bounce={0.3}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 147,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+        "line": 48
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport FolderFloat from '../../../.upstream/src/ts-default/Micro/FolderFloat/FolderFloat';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nconst items = [{ label: 'UI 规范', value: 'spec' }, { label: '设计变量', value: 'tokens' }, { label: '组件契约', value: 'contracts' }];\nexport default function FolderFloatDemo() {\n  const [message, setMessage] = useState('点击文件夹展开文档。');\n  return <DemoPanel title=\"Folder Float · 浮动文件夹\"><div className={cn(\"aw-micro-stack\")}>\n    <div style={{ padding: '100px 20px 20px' }}><FolderFloat            onOpenChange={open => setMessage(open ? '文件夹已展开。' : '文件夹已收起。')} onSelect={value => setMessage(`已选择：${items.find(item => item.value === value)?.label}`)} /*__AW_PROPS_t0__*/  /></div>\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">{message}</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "FolderFloat",
+      "sourcePath": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "FolderFloatItem[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 120,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "Try a warmer palette",
+            "Tighten the spacing",
+            "Logo feels small",
+            "Love the new hero"
+          ],
+          "defaultResolvedExpression": "[\n  'Try a warmer palette',\n  'Tighten the spacing',\n  'Logo feels small',\n  'Love the new hero'\n]",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "FolderFloatItem",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "{ label: string; value: string; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "label",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "required": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={items}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={items}"
+          ]
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Design feedback'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 121,
+            "kind": "parameter"
+          },
+          "defaultValue": "Design feedback",
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 22
+          },
+          "codeExample": "label=\"设计资源\"",
+          "usageExamples": [
+            "label=\"设计资源\""
+          ]
+        },
+        {
+          "name": "sublabel",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 122,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "副标签，控制 folder float 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 23
+          },
+          "codeExample": "sublabel=\"3 份本地示例文档\"",
+          "usageExamples": [
+            "sublabel=\"3 份本地示例文档\""
+          ]
+        },
+        {
+          "name": "trigger",
+          "type": "FolderFloatTrigger",
+          "required": false,
+          "defaultExpression": "'hover'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 123,
+            "kind": "parameter"
+          },
+          "defaultValue": "hover",
+          "description": "触发方式，控制 folder float 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "hover",
+            "click"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "hover",
+              "click"
+            ]
+          },
+          "codeExample": "trigger=\"click\"",
+          "usageExamples": [
+            "trigger=\"click\""
+          ]
+        },
+        {
+          "name": "defaultOpen",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 124,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否非受控初始打开，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "defaultOpen={false}"
+        },
+        {
+          "name": "closeOnSelect",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 125,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否关闭选择，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "closeOnSelect={true}"
+        },
+        {
+          "name": "physics",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 126,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否物理模拟，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 27
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "physics",
+          "usageExamples": [
+            "physics"
+          ]
+        },
+        {
+          "name": "drift",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 127,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "漂移，控制 folder float 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 28
+          },
+          "codeExample": "drift={0.5}"
+        },
+        {
+          "name": "onSelect",
+          "type": "(value: string, index: number) => void",
+          "required": false,
+          "description": "用户选择条目时通知调用方，参数为选中项的标识或数据。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((value: string, index: number) => void) | undefined"
+          },
+          "codeExample": "onSelect={value => setMessage(`已选择：${items.find(item => item.value === value)?.label}`)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onSelect={value => setMessage(`已选择：${items.find(item => item.value === value)?.label}`)}"
+          ]
+        },
+        {
+          "name": "onOpenChange",
+          "type": "(open: boolean) => void",
+          "required": false,
+          "description": "展开状态改变时通知调用方，参数为新的布尔状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((open: boolean) => void) | undefined"
+          },
+          "codeExample": "onOpenChange={open => setMessage(open ? '文件夹已展开。' : '文件夹已收起。')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onOpenChange={open => setMessage(open ? '文件夹已展开。' : '文件夹已收起。')}"
+          ]
+        },
+        {
+          "name": "folderColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#3f3f46'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 130,
+            "kind": "parameter"
+          },
+          "defaultValue": "#3f3f46",
+          "description": "文件夹颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 31
+          },
+          "codeExample": "folderColor={palette.primary}",
+          "usageExamples": [
+            "folderColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "frontColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#52525b'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 131,
+            "kind": "parameter"
+          },
+          "defaultValue": "#52525b",
+          "description": "正面颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 32
+          },
+          "codeExample": "frontColor={palette.sage}",
+          "usageExamples": [
+            "frontColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "paperColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 132,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "纸张颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 33
+          },
+          "codeExample": "paperColor={palette.ivory}",
+          "usageExamples": [
+            "paperColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "itemColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 133,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "条目颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 34
+          },
+          "codeExample": "itemColor={palette.surface}",
+          "usageExamples": [
+            "itemColor={palette.surface}"
+          ]
+        },
+        {
+          "name": "itemTextColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#18181b'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 134,
+            "kind": "parameter"
+          },
+          "defaultValue": "#18181b",
+          "description": "条目文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 35
+          },
+          "codeExample": "itemTextColor={palette.ink}",
+          "usageExamples": [
+            "itemTextColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "labelColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 135,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "标签颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 36
+          },
+          "codeExample": "labelColor={palette.ink}",
+          "usageExamples": [
+            "labelColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 136,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 37
+          },
+          "codeExample": "width={200}"
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "148",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 137,
+            "kind": "parameter"
+          },
+          "defaultValue": 148,
+          "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 38
+          },
+          "codeExample": "height={148}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "14",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 138,
+            "kind": "parameter"
+          },
+          "defaultValue": 14,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 39
+          },
+          "codeExample": "radius={14}"
+        },
+        {
+          "name": "spread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "180",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 139,
+            "kind": "parameter"
+          },
+          "defaultValue": 180,
+          "description": "展开间距，控制 folder float 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 40
+          },
+          "codeExample": "spread={180}"
+        },
+        {
+          "name": "lift",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "26",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 140,
+            "kind": "parameter"
+          },
+          "defaultValue": 26,
+          "description": "抬起，控制 folder float 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 41
+          },
+          "codeExample": "lift={26}"
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 141,
+            "kind": "parameter"
+          },
+          "defaultValue": 8,
+          "description": "倾斜，控制 folder float 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 42
+          },
+          "codeExample": "tilt={8}"
+        },
+        {
+          "name": "flapAngle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "34",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 142,
+            "kind": "parameter"
+          },
+          "defaultValue": 34,
+          "description": "翻片角度，控制 folder float 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 43
+          },
+          "codeExample": "flapAngle={34}"
+        },
+        {
+          "name": "restAngle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "16",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 143,
+            "kind": "parameter"
+          },
+          "defaultValue": 16,
+          "description": "静止角度，控制 folder float 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 44
+          },
+          "codeExample": "restAngle={16}"
+        },
+        {
+          "name": "openDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "520",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 144,
+            "kind": "parameter"
+          },
+          "defaultValue": 520,
+          "description": "打开时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 45
+          },
+          "codeExample": "openDuration={520}"
+        },
+        {
+          "name": "stagger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "45",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 145,
+            "kind": "parameter"
+          },
+          "defaultValue": 45,
+          "description": "错开，控制 folder float 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 46
+          },
+          "codeExample": "stagger={45}"
+        },
+        {
+          "name": "bounce",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 146,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "回弹，控制 folder float 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 47
+          },
+          "codeExample": "bounce={0.3}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 147,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/FolderFloat/FolderFloat.tsx",
+            "line": 48
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

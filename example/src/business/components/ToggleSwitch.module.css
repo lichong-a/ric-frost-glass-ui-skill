@@ -1,0 +1,12 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-switch { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-switch { appearance:none; width:48px!important; height:28px!important; padding:3px; border-radius:999px; border:1px solid var(--aw-color-border-control); background:var(--aw-color-border-decorative); cursor:pointer; transition:background .15s }
+.aw-business-switch::before { content:''; display:block; width:20px; height:20px; border-radius:50%; background:var(--aw-palette-ivory); box-shadow:var(--aw-shadow-control); transition:transform .15s }
+.aw-business-switch:checked { background:var(--aw-color-action-primary) }
+.aw-business-switch:checked::before { transform:translateX(20px) }
+.aw-business-switch { transition:background 200ms ease!important }
+.aw-business-switch::before { transition:transform 340ms var(--aw-business-spring)!important }
+.aw-business-switch:active::before { width:24px }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-switch, .aw-business-switch::before, .aw-business-switch::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-switch, [data-motion=reduce] .aw-business-switch::before, [data-motion=reduce] .aw-business-switch::after { transition:none; animation:none; scroll-behavior:auto; }

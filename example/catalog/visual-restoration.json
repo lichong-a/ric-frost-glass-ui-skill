@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-13",
+  "scope": "18 scoped React Bits visual fidelity demonstrations",
+  "implementationSource": {
+    "manifest": "catalog/upstream-manifest.json",
+    "commit": "2139cb3098d4fedc6264f13e50dcb4694224ba7c",
+    "frozenSourceModified": false
+  },
+  "parameterSource": "The demo TSX and locked component API are authoritative. restorationBaseline describes the restored default preview and is not a second generator recipe.",
+  "styleBoundary": "Every demo owns one CSS Module. No :global, shared skin overrides or upstream transform overrides.",
+  "assetProvenance": "src/assets/restoration/README.md",
+  "intentionalDifference": "Original local CC0 textured illustrations replace official remote photography while preserving the actual effect algorithm. Logo Loop uses installed react-icons brand SVGs.",
+  "imageRecovery": "Dither Veil and Halftone Reveal gate their effect on successful intrinsic image load and show error/retry states on failure.",
+  "components": [
+    {
+      "slug": "dither-veil",
+      "referenceUrl": "https://reactbits.dev/animations/dither-veil",
+      "lockedSource": "src/ts-default/Animations/DitherVeil",
+      "demo": "src/demos/background/dither-veil.tsx",
+      "styles": "src/demos/background/dither-veil.module.css",
+      "visibleBehavior": "Monochrome dithered texture burns through to the saturated source under the pointer, then closes cell by cell.",
+      "restorationBaseline": {
+        "fit": "cover",
+        "pattern": "floyd",
+        "pixelSize": 2,
+        "revealRadius": 180
+      },
+      "assets": [
+        "src/assets/restoration/chromatic-bloom.svg"
+      ]
+    },
+    {
+      "slug": "swarm-cursor",
+      "referenceUrl": "https://reactbits.dev/animations/swarm-cursor",
+      "lockedSource": "src/ts-default/Animations/SwarmCursor",
+      "demo": "src/demos/pointer/swarm-cursor.tsx",
+      "styles": "src/demos/pointer/swarm-cursor.module.css",
+      "visibleBehavior": "A visible liquid swarm follows the pointer, flows around controls and scatters on click.",
+      "restorationBaseline": {
+        "count": 12,
+        "size": 12,
+        "glow": 0.8,
+        "opacity": 1
+      },
+      "assets": []
+    },
+    {
+      "slug": "halftone-reveal",
+      "referenceUrl": "https://reactbits.dev/animations/halftone-reveal",
+      "lockedSource": "src/ts-default/Animations/HalftoneReveal",
+      "demo": "src/demos/scroll/halftone-reveal.tsx",
+      "styles": "src/demos/scroll/halftone-reveal.module.css",
+      "visibleBehavior": "Visible angled print dots expand into saturated source color near the pointer.",
+      "restorationBaseline": {
+        "fit": "cover",
+        "mode": "mono",
+        "cellSize": 6,
+        "revealRadius": 175
+      },
+      "assets": [
+        "src/assets/restoration/prismatic-canopy.svg"
+      ]
+    },
+    {
+      "slug": "electric-border",
+      "referenceUrl": "https://reactbits.dev/animations/electric-border",
+      "lockedSource": "src/ts-default/Animations/ElectricBorder",
+      "demo": "src/demos/cards/electric-border.tsx",
+      "styles": "src/demos/cards/electric-border.module.css",
+      "visibleBehavior": "One normal-sized content card is surrounded by fine animated current strands and an unclipped outer glow.",
+      "restorationBaseline": {
+        "speed": 1,
+        "chaos": 0.12,
+        "borderRadius": 24,
+        "titleFontPx": 22,
+        "bodyFontPx": 14
+      },
+      "assets": []
+    },
+    {
+      "slug": "logo-loop",
+      "referenceUrl": "https://reactbits.dev/animations/logo-loop",
+      "lockedSource": "src/ts-default/Animations/LogoLoop",
+      "demo": "src/demos/media/logo-loop.tsx",
+      "styles": "src/demos/media/logo-loop.module.css",
+      "visibleBehavior": "Real technology logo icons loop continuously across the full width and pause on hover.",
+      "restorationBaseline": {
+        "speed": 100,
+        "logoHeight": 56,
+        "gap": 64,
+        "hoverSpeed": 0
+      },
+      "assets": []
+    },
+    {
+      "slug": "pixel-trail",
+      "referenceUrl": "https://reactbits.dev/animations/pixel-trail",
+      "lockedSource": "src/ts-default/Animations/PixelTrail",
+      "demo": "src/demos/pointer/pixel-trail.tsx",
+      "styles": "src/demos/pointer/pixel-trail.module.css",
+      "visibleBehavior": "Glossy visible pixel fragments flow and shrink behind the pointer; click releases a burst.",
+      "restorationBaseline": {
+        "gridSize": 40,
+        "trailSize": 0.16,
+        "gap": 0.08,
+        "maxAge": 900
+      },
+      "assets": []
+    },
+    {
+      "slug": "cubes",
+      "referenceUrl": "https://reactbits.dev/animations/cubes",
+      "lockedSource": "src/ts-default/Animations/Cubes",
+      "demo": "src/demos/background/cubes.tsx",
+      "styles": "src/demos/background/cubes.module.css",
+      "visibleBehavior": "An outlined three-dimensional grid responds to the pointer and propagates a click ripple.",
+      "restorationBaseline": {
+        "gridSize": 8,
+        "gap": 0.18,
+        "faceOpacity": 1,
+        "maxAngle": 45
+      },
+      "assets": []
+    },
+    {
+      "slug": "bubble-menu",
+      "referenceUrl": "https://reactbits.dev/components/bubble-menu",
+      "lockedSource": "src/ts-default/Components/BubbleMenu",
+      "demo": "src/demos/navigation/bubble-menu.tsx",
+      "styles": "src/demos/navigation/bubble-menu.module.css",
+      "visibleBehavior": "The complete positioning area contains the navigation toggle and all four animated expanding pills.",
+      "restorationBaseline": {
+        "useFixedPosition": false,
+        "animationDuration": 0.6,
+        "staggerDelay": 0.12
+      },
+      "assets": []
+    },
+    {
+      "slug": "masonry",
+      "referenceUrl": "https://reactbits.dev/components/masonry",
+      "lockedSource": "src/ts-default/Components/Masonry",
+      "demo": "src/demos/media/masonry.tsx",
+      "styles": "src/demos/media/masonry.module.css",
+      "visibleBehavior": "Twelve varied-height image tiles use the whole stage width and animate their responsive reflow.",
+      "restorationBaseline": {
+        "itemCount": 12,
+        "duration": 0.6,
+        "hoverScale": 0.97
+      },
+      "assets": [
+        "src/assets/restoration/chromatic-bloom.svg",
+        "src/assets/restoration/prismatic-canopy.svg",
+        "src/assets/restoration/mineral-tide.svg",
+        "src/assets/restoration/solar-dunes.svg",
+        "src/assets/restoration/nocturne-orbit.svg",
+        "src/assets/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "slug": "staggered-menu",
+      "referenceUrl": "https://reactbits.dev/components/staggered-menu",
+      "lockedSource": "src/ts-default/Components/StaggeredMenu",
+      "demo": "src/demos/navigation/staggered-menu.tsx",
+      "styles": "src/demos/navigation/staggered-menu.module.css",
+      "visibleBehavior": "Closed panels are clipped by the demo boundary; layered overlays and numbered items enter in sequence on open.",
+      "restorationBaseline": {
+        "position": "right",
+        "isFixed": false,
+        "displayItemNumbering": true
+      },
+      "assets": []
+    },
+    {
+      "slug": "spotlight-card",
+      "referenceUrl": "https://reactbits.dev/components/spotlight-card",
+      "lockedSource": "src/ts-default/Components/SpotlightCard",
+      "demo": "src/demos/cards/spotlight-card.tsx",
+      "styles": "src/demos/cards/spotlight-card.module.css",
+      "visibleBehavior": "A light patch travels across a dark card surface and visibly catches the edge, while the action button stays usable.",
+      "restorationBaseline": {
+        "theme": "dark",
+        "intensity": 0.28,
+        "spotlightSize": 280,
+        "borderGlow": 0.8
+      },
+      "assets": []
+    },
+    {
+      "slug": "flying-posters",
+      "referenceUrl": "https://reactbits.dev/components/flying-posters",
+      "lockedSource": "src/ts-default/Components/FlyingPosters",
+      "demo": "src/demos/media/flying-posters.tsx",
+      "styles": "src/demos/media/flying-posters.module.css",
+      "visibleBehavior": "A wheel- and drag-controlled endless column twists and flips textured 3D posters; instructions remain visible.",
+      "restorationBaseline": {
+        "wheel": true,
+        "drag": true,
+        "distortion": 3,
+        "gap": 48,
+        "rotation": 180
+      },
+      "assets": [
+        "src/assets/restoration/chromatic-bloom.svg",
+        "src/assets/restoration/prismatic-canopy.svg",
+        "src/assets/restoration/mineral-tide.svg",
+        "src/assets/restoration/solar-dunes.svg",
+        "src/assets/restoration/nocturne-orbit.svg",
+        "src/assets/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "slug": "decay-card",
+      "referenceUrl": "https://reactbits.dev/components/decay-card",
+      "lockedSource": "src/ts-default/Components/DecayCard",
+      "demo": "src/demos/cards/decay-card.tsx",
+      "styles": "src/demos/cards/decay-card.module.css",
+      "visibleBehavior": "Pointer motion visibly tears the textured image edge, with enough surrounding contrast and room for recovery.",
+      "restorationBaseline": {
+        "intensity": 0.85,
+        "sensitivity": 0.7,
+        "hoverDecay": 0.18,
+        "recovery": 0.75,
+        "scope": "card"
+      },
+      "assets": [
+        "src/assets/restoration/mineral-tide.svg"
+      ]
+    },
+    {
+      "slug": "flowing-menu",
+      "referenceUrl": "https://reactbits.dev/components/flowing-menu",
+      "lockedSource": "src/ts-default/Components/FlowingMenu",
+      "demo": "src/demos/navigation/flowing-menu.tsx",
+      "styles": "src/demos/navigation/flowing-menu.module.css",
+      "visibleBehavior": "Full-width rows reveal image-and-text marquees from the pointer entry edge and report the selected item.",
+      "restorationBaseline": {
+        "speed": 18
+      },
+      "assets": [
+        "src/assets/restoration/prismatic-canopy.svg",
+        "src/assets/restoration/mineral-tide.svg",
+        "src/assets/restoration/nocturne-orbit.svg",
+        "src/assets/restoration/solar-dunes.svg"
+      ]
+    },
+    {
+      "slug": "magic-rings",
+      "referenceUrl": "https://reactbits.dev/backgrounds/magic-rings",
+      "lockedSource": "src/ts-default/Animations/MagicRings",
+      "demo": "src/demos/background/magic-rings.tsx",
+      "styles": "src/demos/background/magic-rings.module.css",
+      "visibleBehavior": "Bright continuous rings pulse across a dark stage and respond to pointer movement and clicks.",
+      "restorationBaseline": {
+        "ringCount": 6,
+        "speed": 1,
+        "lineThickness": 2,
+        "opacity": 1
+      },
+      "assets": []
+    },
+    {
+      "slug": "laser-flow",
+      "referenceUrl": "https://reactbits.dev/animations/laser-flow",
+      "lockedSource": "src/ts-default/Animations/LaserFlow",
+      "demo": "src/demos/background/laser-flow.tsx",
+      "styles": "src/demos/background/laser-flow.module.css",
+      "visibleBehavior": "A bright beam contacts the top of a real DOM card and visibly spills along its rounded surface edges.",
+      "restorationBaseline": {
+        "theme": "dark",
+        "intensity": 1.8,
+        "beamPosition": 0.52,
+        "flare": 1.5,
+        "spread": 1.5,
+        "spill": 1.1
+      },
+      "assets": []
+    },
+    {
+      "slug": "ghost-cursor",
+      "referenceUrl": "https://reactbits.dev/animations/ghost-cursor",
+      "lockedSource": "src/ts-default/Animations/GhostCursor",
+      "demo": "src/demos/pointer/ghost-cursor.tsx",
+      "styles": "src/demos/pointer/ghost-cursor.module.css",
+      "visibleBehavior": "A luminous smoky ghost curls behind pointer movement against a dark stage and fades gradually.",
+      "restorationBaseline": {
+        "brightness": 1.15,
+        "trailLength": 50,
+        "inertia": 0.5,
+        "bloomStrength": 0.22
+      },
+      "assets": []
+    },
+    {
+      "slug": "gradual-blur",
+      "referenceUrl": "https://reactbits.dev/animations/gradual-blur",
+      "lockedSource": "src/ts-default/Animations/GradualBlur",
+      "demo": "src/demos/scroll/gradual-blur.tsx",
+      "styles": "src/demos/scroll/gradual-blur.module.css",
+      "visibleBehavior": "Scrollable image and text content starts at the top, spans the stage and passes through a layered bottom blur.",
+      "restorationBaseline": {
+        "target": "parent",
+        "position": "bottom",
+        "height": "8rem",
+        "strength": 2,
+        "divCount": 8
+      },
+      "assets": [
+        "src/assets/restoration/nocturne-orbit.svg",
+        "src/assets/restoration/mineral-tide.svg"
+      ]
+    }
+  ]
+}

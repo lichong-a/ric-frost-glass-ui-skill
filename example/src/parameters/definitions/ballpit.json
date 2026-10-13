@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "id": "ballpit",
+  "name": "Ballpit",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
+  "demoPath": "src/demos/background/ballpit.tsx",
+  "fields": [
+    {
+      "key": "t0.followCursor",
+      "name": "followCursor",
+      "label": "followCursor · t0",
+      "description": "是否跟随指针，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "followCursor"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
+        "line": 877,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
+        "line": 872
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "followCursor",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
+        "line": 877,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否跟随指针，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
+        "line": 873
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "followCursor",
+      "usageExamples": [
+        "followCursor"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/Ballpit/Ballpit';\nimport { palette } from '../../shared/demo-support';\n\nconst ballColors = [palette.primary, palette.sage, palette.sand, palette.ivory].map(color => Number.parseInt(color.slice(1), 16));\n\n/** Agent Wan natural-tone preset for the real Ballpit component. */\nexport default function BallpitDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n          colors={ballColors}\n          count={60}\n          gravity={0.4}\n          friction={0.996}\n          minSize={0.35}\n          maxSize={0.75}\n          ambientColor={Number.parseInt(palette.ivory.slice(1), 16)}\n          ambientIntensity={1}\n          lightIntensity={80}\n          materialParams={{ metalness: 0.15, roughness: 0.65, clearcoat: 0.35, clearcoatRoughness: 0.6 }}\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Ballpit",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
+            "line": 877,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
+            "line": 872
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "followCursor",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
+            "line": 877,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否跟随指针，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/Ballpit/Ballpit.tsx",
+            "line": 873
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "followCursor",
+          "usageExamples": [
+            "followCursor"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props",
+  "indexSignatures": [
+    {
+      "keyType": "string",
+      "valueType": "any",
+      "readonly": false
+    }
+  ],
+  "notes": [
+    "源码包含开放索引签名；未声明字段保持开放配置，不将内部辅助接口推断为公开 Props。"
+  ]
+}

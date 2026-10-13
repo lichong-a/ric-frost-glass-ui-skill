@@ -1,0 +1,1878 @@
+{
+  "version": 1,
+  "id": "infinite-spiral",
+  "name": "Infinite Spiral",
+  "sourcePath": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+  "demoPath": "src/demos/media/infinite-spiral.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "Array<string | InfiniteSpiralItem>",
+      "defaultValue": [
+        {
+          "src": "@media/scene-1.svg",
+          "alt": "山雾",
+          "label": "山雾"
+        },
+        {
+          "src": "@media/scene-2.svg",
+          "alt": "茶庭",
+          "label": "茶庭"
+        },
+        {
+          "src": "@media/scene-3.svg",
+          "alt": "沙洲",
+          "label": "沙洲"
+        },
+        {
+          "src": "@media/scene-4.svg",
+          "alt": "静水",
+          "label": "静水"
+        },
+        {
+          "src": "@media/scene-5.svg",
+          "alt": "林间",
+          "label": "林间"
+        },
+        {
+          "src": "@media/scene-6.svg",
+          "alt": "岩纹",
+          "label": "岩纹"
+        }
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "string"
+            },
+            {
+              "kind": "object",
+              "properties": {
+                "id": {
+                  "kind": "union",
+                  "variants": [
+                    {
+                      "kind": "string"
+                    },
+                    {
+                      "kind": "number"
+                    }
+                  ]
+                },
+                "src": {
+                  "kind": "string"
+                },
+                "alt": {
+                  "kind": "string"
+                },
+                "href": {
+                  "kind": "string"
+                },
+                "target": {
+                  "kind": "string"
+                },
+                "label": {
+                  "kind": "string"
+                }
+              },
+              "required": [
+                "src"
+              ]
+            }
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animationMode",
+      "name": "animationMode",
+      "label": "animationMode · t0",
+      "description": "动画模式，控制 infinite spiral 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animationMode"
+        }
+      ],
+      "type": "'auto' | 'drag' | 'scroll' | 'all'",
+      "defaultValue": "all",
+      "upstreamDefault": "'auto'",
+      "control": "select",
+      "options": [
+        {
+          "label": "auto",
+          "value": "auto"
+        },
+        {
+          "label": "drag",
+          "value": "drag"
+        },
+        {
+          "label": "scroll",
+          "value": "scroll"
+        },
+        {
+          "label": "all",
+          "value": "all"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.55",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 140,
+      "upstreamDefault": "170",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cardWidth",
+      "name": "cardWidth",
+      "label": "cardWidth · t0",
+      "description": "卡片宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cardWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 100,
+      "upstreamDefault": "100",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cardHeight",
+      "name": "cardHeight",
+      "label": "cardHeight · t0",
+      "description": "卡片高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cardHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 84,
+      "upstreamDefault": "100",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.verticalSpacing",
+      "name": "verticalSpacing",
+      "label": "verticalSpacing · t0",
+      "description": "垂直间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "verticalSpacing"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 60,
+      "upstreamDefault": "60",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.perspective",
+      "name": "perspective",
+      "label": "perspective · t0",
+      "description": "透视，控制 infinite spiral 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "perspective"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1000,
+      "upstreamDefault": "1000",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cardsPerTurn",
+      "name": "cardsPerTurn",
+      "label": "cardsPerTurn · t0",
+      "description": "卡片每个转动，控制 infinite spiral 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cardsPerTurn"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 7,
+      "upstreamDefault": "7",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cardRadius",
+      "name": "cardRadius",
+      "label": "cardRadius · t0",
+      "description": "卡片半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cardRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 12,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.centerScale",
+      "name": "centerScale",
+      "label": "centerScale · t0",
+      "description": "中心缩放，控制 infinite spiral 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "centerScale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.05,
+      "upstreamDefault": "1.2",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edgeFade",
+      "name": "edgeFade",
+      "label": "edgeFade · t0",
+      "description": "边缘淡出，控制 infinite spiral 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeFade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edgeBlur",
+      "name": "edgeBlur",
+      "label": "edgeBlur · t0",
+      "description": "边缘模糊，控制 infinite spiral 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeBlur"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "6",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pauseOnHover",
+      "name": "pauseOnHover",
+      "label": "pauseOnHover · t0",
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pauseOnHover"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.grayscale",
+      "name": "grayscale",
+      "label": "grayscale · t0",
+      "description": "灰度，控制 infinite spiral 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "grayscale"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 infinite spiral 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "'up' | 'down'",
+      "defaultValue": "up",
+      "upstreamDefault": "'up'",
+      "control": "select",
+      "options": [
+        {
+          "label": "up",
+          "value": "up"
+        },
+        {
+          "label": "down",
+          "value": "down"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rotation",
+      "name": "rotation",
+      "label": "旋转 · t0",
+      "description": "旋转角度，控制 infinite spiral 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rotation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cardTilt",
+      "name": "cardTilt",
+      "label": "cardTilt · t0",
+      "description": "卡片倾斜，控制 infinite spiral 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cardTilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.imageFit",
+      "name": "imageFit",
+      "label": "imageFit · t0",
+      "description": "图像适配的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "imageFit"
+        }
+      ],
+      "type": "CSSProperties['objectFit']",
+      "defaultValue": "cover",
+      "upstreamDefault": "'cover'",
+      "control": "select",
+      "options": [
+        {
+          "label": "fill",
+          "value": "fill"
+        },
+        {
+          "label": "-moz-initial",
+          "value": "-moz-initial"
+        },
+        {
+          "label": "inherit",
+          "value": "inherit"
+        },
+        {
+          "label": "initial",
+          "value": "initial"
+        },
+        {
+          "label": "revert",
+          "value": "revert"
+        },
+        {
+          "label": "revert-layer",
+          "value": "revert-layer"
+        },
+        {
+          "label": "unset",
+          "value": "unset"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        },
+        {
+          "label": "contain",
+          "value": "contain"
+        },
+        {
+          "label": "cover",
+          "value": "cover"
+        },
+        {
+          "label": "scale-down",
+          "value": "scale-down"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "Array<string | InfiniteSpiralItem>",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 48,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string | InfiniteSpiralItem",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "InfiniteSpiralItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "id",
+                    "type": "string | number",
+                    "required": false
+                  },
+                  {
+                    "name": "src",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "href",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "target",
+                    "type": "'_blank' | '_self' | '_parent' | '_top'",
+                    "required": false
+                  },
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], label: LABELS[index] }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], label: LABELS[index] }))}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.55",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 49,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.55,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 17
+      },
+      "codeExample": "speed={0.3}",
+      "usageExamples": [
+        "speed={0.3}"
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "'up' | 'down'",
+      "required": false,
+      "defaultExpression": "'up'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 50,
+        "kind": "parameter"
+      },
+      "defaultValue": "up",
+      "description": "方向，控制 infinite spiral 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "up",
+        "down"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 18
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "up",
+          "down"
+        ]
+      },
+      "codeExample": "direction={\"up\"}"
+    },
+    {
+      "name": "animationMode",
+      "type": "'auto' | 'drag' | 'scroll' | 'all'",
+      "required": false,
+      "defaultExpression": "'auto'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 51,
+        "kind": "parameter"
+      },
+      "defaultValue": "auto",
+      "description": "动画模式，控制 infinite spiral 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "auto",
+        "drag",
+        "scroll",
+        "all"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "auto",
+          "drag",
+          "scroll",
+          "all"
+        ]
+      },
+      "codeExample": "animationMode=\"all\"",
+      "usageExamples": [
+        "animationMode=\"all\""
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "170",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 52,
+        "kind": "parameter"
+      },
+      "defaultValue": 170,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 20
+      },
+      "codeExample": "radius={140}",
+      "usageExamples": [
+        "radius={140}"
+      ]
+    },
+    {
+      "name": "cardWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 53,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "卡片宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 21
+      },
+      "codeExample": "cardWidth={100}",
+      "usageExamples": [
+        "cardWidth={100}"
+      ]
+    },
+    {
+      "name": "cardHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 54,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "卡片高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 22
+      },
+      "codeExample": "cardHeight={84}",
+      "usageExamples": [
+        "cardHeight={84}"
+      ]
+    },
+    {
+      "name": "verticalSpacing",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "60",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 55,
+        "kind": "parameter"
+      },
+      "defaultValue": 60,
+      "description": "垂直间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 23
+      },
+      "codeExample": "verticalSpacing={60}",
+      "usageExamples": [
+        "verticalSpacing={60}"
+      ]
+    },
+    {
+      "name": "perspective",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1000",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 56,
+        "kind": "parameter"
+      },
+      "defaultValue": 1000,
+      "description": "透视，控制 infinite spiral 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 24
+      },
+      "codeExample": "perspective={1000}",
+      "usageExamples": [
+        "perspective={1000}"
+      ]
+    },
+    {
+      "name": "cardsPerTurn",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 57,
+        "kind": "parameter"
+      },
+      "defaultValue": 7,
+      "description": "卡片每个转动，控制 infinite spiral 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 25
+      },
+      "codeExample": "cardsPerTurn={7}",
+      "usageExamples": [
+        "cardsPerTurn={7}"
+      ]
+    },
+    {
+      "name": "rotation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 58,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "旋转角度，控制 infinite spiral 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 26
+      },
+      "codeExample": "rotation={0}"
+    },
+    {
+      "name": "cardTilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 59,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "卡片倾斜，控制 infinite spiral 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 27
+      },
+      "codeExample": "cardTilt={0}"
+    },
+    {
+      "name": "cardRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 60,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "卡片半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 28
+      },
+      "codeExample": "cardRadius={12}",
+      "usageExamples": [
+        "cardRadius={12}"
+      ]
+    },
+    {
+      "name": "centerScale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 61,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.2,
+      "description": "中心缩放，控制 infinite spiral 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 29
+      },
+      "codeExample": "centerScale={1.05}",
+      "usageExamples": [
+        "centerScale={1.05}"
+      ]
+    },
+    {
+      "name": "edgeFade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 62,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "边缘淡出，控制 infinite spiral 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 30
+      },
+      "codeExample": "edgeFade={0.25}",
+      "usageExamples": [
+        "edgeFade={0.25}"
+      ]
+    },
+    {
+      "name": "edgeBlur",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 63,
+        "kind": "parameter"
+      },
+      "defaultValue": 6,
+      "description": "边缘模糊，控制 infinite spiral 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 31
+      },
+      "codeExample": "edgeBlur={2}",
+      "usageExamples": [
+        "edgeBlur={2}"
+      ]
+    },
+    {
+      "name": "pauseOnHover",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 64,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "pauseOnHover",
+      "usageExamples": [
+        "pauseOnHover"
+      ]
+    },
+    {
+      "name": "imageFit",
+      "type": "CSSProperties['objectFit']",
+      "required": false,
+      "defaultExpression": "'cover'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 65,
+        "kind": "parameter"
+      },
+      "defaultValue": "cover",
+      "description": "图像适配的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "fill",
+        "-moz-initial",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset",
+        "none",
+        "contain",
+        "cover",
+        "scale-down"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "fill",
+          "-moz-initial",
+          "inherit",
+          "initial",
+          "revert",
+          "revert-layer",
+          "unset",
+          "none",
+          "contain",
+          "cover",
+          "scale-down"
+        ]
+      },
+      "codeExample": "imageFit={\"cover\"}"
+    },
+    {
+      "name": "grayscale",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 66,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "灰度，控制 infinite spiral 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 34
+      },
+      "codeExample": "grayscale={0.1}",
+      "usageExamples": [
+        "grayscale={0.1}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 67,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+        "line": 35
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral';\n\n\n// 图片在真实3D螺旋上循环，可拖动或滚动改变进度。\n\nexport default function InfiniteSpiralDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 440, position: 'relative', overflow: 'hidden' }}>\n      <Component\n\n\n     /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "InfiniteSpiral",
+      "sourcePath": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "Array<string | InfiniteSpiralItem>",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 48,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string | InfiniteSpiralItem",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "InfiniteSpiralItem",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "id",
+                        "type": "string | number",
+                        "required": false
+                      },
+                      {
+                        "name": "src",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "alt",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "href",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "target",
+                        "type": "'_blank' | '_self' | '_parent' | '_top'",
+                        "required": false
+                      },
+                      {
+                        "name": "label",
+                        "type": "string",
+                        "required": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], label: LABELS[index] }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={MEDIA.map((src, index) => ({ src, alt: LABELS[index], label: LABELS[index] }))}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.55",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 49,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.55,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 17
+          },
+          "codeExample": "speed={0.3}",
+          "usageExamples": [
+            "speed={0.3}"
+          ]
+        },
+        {
+          "name": "direction",
+          "type": "'up' | 'down'",
+          "required": false,
+          "defaultExpression": "'up'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 50,
+            "kind": "parameter"
+          },
+          "defaultValue": "up",
+          "description": "方向，控制 infinite spiral 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "up",
+            "down"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 18
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "up",
+              "down"
+            ]
+          },
+          "codeExample": "direction={\"up\"}"
+        },
+        {
+          "name": "animationMode",
+          "type": "'auto' | 'drag' | 'scroll' | 'all'",
+          "required": false,
+          "defaultExpression": "'auto'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 51,
+            "kind": "parameter"
+          },
+          "defaultValue": "auto",
+          "description": "动画模式，控制 infinite spiral 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "auto",
+            "drag",
+            "scroll",
+            "all"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "auto",
+              "drag",
+              "scroll",
+              "all"
+            ]
+          },
+          "codeExample": "animationMode=\"all\"",
+          "usageExamples": [
+            "animationMode=\"all\""
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "170",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 52,
+            "kind": "parameter"
+          },
+          "defaultValue": 170,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 20
+          },
+          "codeExample": "radius={140}",
+          "usageExamples": [
+            "radius={140}"
+          ]
+        },
+        {
+          "name": "cardWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 53,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "卡片宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 21
+          },
+          "codeExample": "cardWidth={100}",
+          "usageExamples": [
+            "cardWidth={100}"
+          ]
+        },
+        {
+          "name": "cardHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 54,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "卡片高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 22
+          },
+          "codeExample": "cardHeight={84}",
+          "usageExamples": [
+            "cardHeight={84}"
+          ]
+        },
+        {
+          "name": "verticalSpacing",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "60",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 55,
+            "kind": "parameter"
+          },
+          "defaultValue": 60,
+          "description": "垂直间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 23
+          },
+          "codeExample": "verticalSpacing={60}",
+          "usageExamples": [
+            "verticalSpacing={60}"
+          ]
+        },
+        {
+          "name": "perspective",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1000",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 56,
+            "kind": "parameter"
+          },
+          "defaultValue": 1000,
+          "description": "透视，控制 infinite spiral 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 24
+          },
+          "codeExample": "perspective={1000}",
+          "usageExamples": [
+            "perspective={1000}"
+          ]
+        },
+        {
+          "name": "cardsPerTurn",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 57,
+            "kind": "parameter"
+          },
+          "defaultValue": 7,
+          "description": "卡片每个转动，控制 infinite spiral 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 25
+          },
+          "codeExample": "cardsPerTurn={7}",
+          "usageExamples": [
+            "cardsPerTurn={7}"
+          ]
+        },
+        {
+          "name": "rotation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 58,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "旋转角度，控制 infinite spiral 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 26
+          },
+          "codeExample": "rotation={0}"
+        },
+        {
+          "name": "cardTilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 59,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "卡片倾斜，控制 infinite spiral 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 27
+          },
+          "codeExample": "cardTilt={0}"
+        },
+        {
+          "name": "cardRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 60,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "卡片半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 28
+          },
+          "codeExample": "cardRadius={12}",
+          "usageExamples": [
+            "cardRadius={12}"
+          ]
+        },
+        {
+          "name": "centerScale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 61,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.2,
+          "description": "中心缩放，控制 infinite spiral 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 29
+          },
+          "codeExample": "centerScale={1.05}",
+          "usageExamples": [
+            "centerScale={1.05}"
+          ]
+        },
+        {
+          "name": "edgeFade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 62,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "边缘淡出，控制 infinite spiral 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 30
+          },
+          "codeExample": "edgeFade={0.25}",
+          "usageExamples": [
+            "edgeFade={0.25}"
+          ]
+        },
+        {
+          "name": "edgeBlur",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 63,
+            "kind": "parameter"
+          },
+          "defaultValue": 6,
+          "description": "边缘模糊，控制 infinite spiral 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 31
+          },
+          "codeExample": "edgeBlur={2}",
+          "usageExamples": [
+            "edgeBlur={2}"
+          ]
+        },
+        {
+          "name": "pauseOnHover",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 64,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否暂停悬停，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "pauseOnHover",
+          "usageExamples": [
+            "pauseOnHover"
+          ]
+        },
+        {
+          "name": "imageFit",
+          "type": "CSSProperties['objectFit']",
+          "required": false,
+          "defaultExpression": "'cover'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 65,
+            "kind": "parameter"
+          },
+          "defaultValue": "cover",
+          "description": "图像适配的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "fill",
+            "-moz-initial",
+            "inherit",
+            "initial",
+            "revert",
+            "revert-layer",
+            "unset",
+            "none",
+            "contain",
+            "cover",
+            "scale-down"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "fill",
+              "-moz-initial",
+              "inherit",
+              "initial",
+              "revert",
+              "revert-layer",
+              "unset",
+              "none",
+              "contain",
+              "cover",
+              "scale-down"
+            ]
+          },
+          "codeExample": "imageFit={\"cover\"}"
+        },
+        {
+          "name": "grayscale",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 66,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "灰度，控制 infinite spiral 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 34
+          },
+          "codeExample": "grayscale={0.1}",
+          "usageExamples": [
+            "grayscale={0.1}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 67,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/InfiniteSpiral/InfiniteSpiral.tsx",
+            "line": 35
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

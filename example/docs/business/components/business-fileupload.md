@@ -13,30 +13,111 @@
 ## 2. 只加载这一项
 
 1. 只读本指南，确认用途与边界。
-2. 只读 [src/business/demos/business-fileupload.tsx](../../../src/business/demos/business-fileupload.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
-3. 本例若导入 primitives，再定位该文件中被使用的符号，不加载其它示例。样式按需检索 [业务 Token 皮肤](../../../src/business/business.css) 中的对应类。
+2. 只读 [src/business/demos/data/business-fileupload.tsx](../../../src/business/demos/data/business-fileupload.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
+3. 本例从 components 按需导入独立控件；只读实际导入的 .tsx 及同名 .module.css。布局工具类也显式使用 CSS Modules，不给整块区域的 button/input 套统一动效。
 4. 涉及业务错误、权限、数据或异步行为时才追加对应契约：[13-import-dialog](../../contracts/13-import-dialog.md)。
 5. 预览库使用本项独立 import() 入口；复制到目标项目时也只接入所需组件和直接依赖。
 
-所有实现使用本项目已有 React、原生 HTML 和 CSS。完整交互、类型与回调以当前示例代码为准。
+所有实现使用本项目已有 React、原生语义控件、Motion 和 CSS。完整交互、类型与回调以当前示例代码为准；局部弹性、下拉、媒体与日历效果见 [交互动效指南](../motion-guide.md)。
 
 ## 3. 本例真实用法
 
 下面来自当前独立示例。默认导出是一个可运行实例；复制后把本地选项、数据与回调接到目标项目已有业务层，不把演示结果当作后端成功。
 
 ```tsx
-// Original Agent Wan demonstration using React and native browser controls.
+// 当前 FileUpload 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：680px（宿主设置，不是组件 Props）。
+import ownedStyles0 from '../../components/DemoLayout.module.css';
+import ownedStyles1 from '../../components/Input.module.css';
+import { componentClasses } from '../../class-names';
 import { useState } from 'react';
-import { BusinessDemo, Button, Field } from '../support';
+import { BusinessDemo } from '../../components/BusinessDemo';
+import { Button } from '../../components/Button';
+import { Field } from '../../components/Field';
 
-
+const ownedStyles={...ownedStyles0,...ownedStyles1};
+const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function BusinessFileUploadDemo() {
   const [files,setFiles]=useState<File[]>([]); const [message,setMessage]=useState('请选择文件，每项最多1MiB、总数最多5项。'); function select(incoming:File[]){const allowed=incoming.filter(file=>file.size<=1048576&&(file.type.startsWith('image/')||/\.(txt|csv)$/i.test(file.name)));const unique=[...files];allowed.forEach(file=>{if(!unique.some(current=>current.name===file.name&&current.size===file.size&&current.lastModified===file.lastModified))unique.push(file);});setFiles(unique.slice(0,5));setMessage(`${allowed.length}项符合类型和大小限制，${incoming.length-allowed.length}项未加入。仅保留前5项，尚未发送文件。`);}
   return <BusinessDemo title="FileUpload" description="真实选择本地图片、文本或CSV文件，验证大小和类型，支持移除；文件保留在浏览器内。">
-    <Field label="选择本地文件" hint="支持图片、TXT、CSV。"><input type="file" accept="image/*,.txt,.csv" multiple onChange={event=>{select(Array.from(event.target.files??[]));event.target.value='';}} /></Field><div className="aw-business-item" onDragOver={event=>event.preventDefault()} onDrop={event=>{event.preventDefault();select(Array.from(event.dataTransfer.files));}}><p>也可将文件拖到这里。</p><ul>{files.map(file=><li key={`${file.name}-${file.size}-${file.lastModified}`} className="aw-business-row"><span>{file.name} · {Math.ceil(file.size/1024)} KiB</span><Button variant="secondary" aria-label={'移除'+file.name} onClick={()=>setFiles(current=>current.filter(item=>item!==file))}>移除</Button></li>)}</ul>{!files.length?<p>尚未选择文件。</p>:null}</div><Button variant="secondary" disabled={!files.length} onClick={()=>{setFiles([]);setMessage('本地选择已清空。');}}>移除全部</Button><p className="aw-business-status" role="status">{message}</p>
+    <Field   label={"选择本地文件"} hint={"支持图片、TXT、CSV。"} control={false} ><input className={cn('aw-business-input')}    onChange={event=>{select(Array.from(event.target.files??[]));event.target.value='';}} type={"file"} accept={"image/*,.txt,.csv"} multiple={true}  /></Field><div data-ui="aw-business-item" className={cn("aw-business-item")} onDragOver={event=>event.preventDefault()} onDrop={event=>{event.preventDefault();select(Array.from(event.dataTransfer.files));}}><p>也可将文件拖到这里。</p><ul>{files.map(file=><li data-ui="aw-business-row" key={`${file.name}-${file.size}-${file.lastModified}`} className={cn("aw-business-row")}><span>{file.name} · {Math.ceil(file.size/1024)} KiB</span><Button  aria-label={'移除'+file.name} onClick={()=>setFiles(current=>current.filter(item=>item!==file))} variant={"secondary"} type={"button"} >移除</Button></li>)}</ul>{!files.length?<p>尚未选择文件。</p>:null}</div><Button  disabled={!files.length} onClick={()=>{setFiles([]);setMessage('本地选择已清空。');}} variant={"secondary"} type={"button"} >移除全部</Button><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">{message}</p>
   </BusinessDemo>;
 }
 ```
+
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `Field.label` | `string` | 是 | `未指定` | 向用户或辅助技术说明控件的名称。 |
+| `Field.children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Field.hint` | `string` | 否 | `未指定` | 与字段一起显示的帮助文字。 |
+| `Field.htmlFor` | `string` | 否 | `(isControl ? children.props.id : undefined)` | 关联控件的 id，让标签点击与辅助技术定位到该控件。 |
+| `Field.control` | `boolean` | 否 | `false` | 是否控制，决定该分支的展示或交互行为。 |
+| `input.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `input.type` | `HTMLInputTypeAttribute \| undefined` | 否 | `未指定` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `input.accept` | `string \| undefined` | 否 | `未指定` | accept，控制 input 的对应渲染或交互参数。 |
+| `input.multiple` | `boolean \| undefined` | 否 | `未指定` | multiple，控制 input 的对应渲染或交互参数。 |
+| `input.onChange` | `ChangeEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | 用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。 |
+| `Button · t2.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `Button · t2.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `Button · t2.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Button · t2.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t2.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+
+本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
+
+**继承的原生属性：**
+
+- `DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+
+**children 的真实接入：**
+
+```tsx
+children={<><input className={cn('aw-business-input')} type="file" accept="image/*,.txt,.csv" multiple onChange={event=>{select(Array.from(event.target.files??[]));event.target.value='';}} /></>}
+```
+
+**children 的真实接入：**
+
+```tsx
+children={<>移除</>}
+```
+
+**ref 的真实接入：**
+
+```tsx
+const elementRef = useRef<HTMLButtonElement | null>(null);
+// JSX: ref={elementRef}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.label` | `"选择本地文件"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.hint` | `"支持图片、TXT、CSV。"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.control` | `false` | switch | 不限 ~ 不限 | 即时应用 |
+| `t1.type` | `"file"` | text | 不限 ~ 不限 | 即时应用 |
+| `t1.accept` | `"image/*,.txt,.csv"` | text | 不限 ~ 不限 | 即时应用 |
+| `t1.multiple` | `true` | switch | 不限 ~ 不限 | 即时应用 |
+| `t2.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t2.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `t3.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t3.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `680`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. 接入约束
 

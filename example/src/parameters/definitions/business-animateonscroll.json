@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "id": "business-animateonscroll",
+  "name": "AnimateOnScroll",
+  "sourcePath": "src/business/components/MotionSurface.tsx",
+  "demoPath": "src/business/demos/scroll/business-animateonscroll.tsx",
+  "fields": [
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": true,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/MotionSurface.tsx",
+        "line": 7
+      },
+      "codeExample": "children={<><article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>资料已进入视野</h3><p>动画由实际可见性驱动。</p></article></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>资料已进入视野</h3><p>动画由实际可见性驱动。</p></article></>}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState, useEffect, useRef } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { MotionSurface } from '../../components/MotionSurface';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessAnimateOnScrollDemo() {\n  const scroller=useRef<HTMLDivElement>(null); const target=useRef<HTMLDivElement>(null); const [visible,setVisible]=useState(false); useEffect(()=>{if(!target.current||!scroller.current)return;const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{root:scroller.current,threshold:0.25});observer.observe(target.current);return()=>observer.disconnect();},[]);\n  return <BusinessDemo title=\"AnimateOnScroll\" description=\"滚动到资料卡后触发真实入场动画，离开时恢复；减少运动偏好使用静态显示。\">\n    <div data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")} ref={scroller} tabIndex={0} aria-label=\"滚动触发动画的资料区\" style={{height:260,overflow:'auto'}}><p style={{height:280}}>向下滚动查看入场资料卡。</p><div ref={target} style={{minHeight:100}}>{visible?<MotionSurface><article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>资料已进入视野</h3><p>动画由实际可见性驱动。</p></article></MotionSurface>:<p>资料卡将在进入视野时显示。</p>}</div><p style={{height:180}}>向上滚动可再次触发。</p></div>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "MotionSurface",
+      "sourcePath": "src/business/components/MotionSurface.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/MotionSurface.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>资料已进入视野</h3><p>动画由实际可见性驱动。</p></article></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><article data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")}><h3>资料已进入视野</h3><p>动画由实际可见性驱动。</p></article></>}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

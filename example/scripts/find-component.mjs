@@ -35,7 +35,7 @@ const index = JSON.parse(await readFile(indexPath, 'utf8'));
 const entries = index.components || index;
 const rank = component => {
   if (options.provider && (component.provider === 'reactbits' ? 'effects' : component.provider || 'effects') !== options.provider) return 0;
-  if (options.category && ![component.category, component.categoryLabel].some(v => normalize(v) === normalize(options.category))) return 0;
+  if (options.category && ![component.category, component.categoryLabel, component.sourceCategory, ...(component.tags || [])].some(v => normalize(v) === normalize(options.category))) return 0;
   if (!queryKey) return 1;
   const canonical = [component.id, component.name].map(normalize);
   const aliases = (component.aliases || []).map(normalize);

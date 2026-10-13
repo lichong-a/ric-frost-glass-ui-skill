@@ -1,0 +1,1837 @@
+{
+  "version": 1,
+  "id": "falling-text",
+  "name": "Falling Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+  "demoPath": "src/demos/text/falling-text.tsx",
+  "fields": [
+    {
+      "key": "t0.text",
+      "name": "text",
+      "label": "文字内容 · t0",
+      "description": "显示或生成效果的文字内容。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "text"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "Good ideas need room to fall and rise again",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.highlightWords",
+      "name": "highlightWords",
+      "label": "highlightWords · t0",
+      "description": "高亮短句列表的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "highlightWords"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "ideas",
+        "rise"
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trigger",
+      "name": "trigger",
+      "label": "trigger · t0",
+      "description": "触发方式，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trigger"
+        }
+      ],
+      "type": "'auto' | 'hover' | 'click' | 'scroll'",
+      "defaultValue": "click",
+      "upstreamDefault": "'auto'",
+      "control": "select",
+      "options": [
+        {
+          "label": "auto",
+          "value": "auto"
+        },
+        {
+          "label": "hover",
+          "value": "hover"
+        },
+        {
+          "label": "click",
+          "value": "click"
+        },
+        {
+          "label": "scroll",
+          "value": "scroll"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.split",
+      "name": "split",
+      "label": "split · t0",
+      "description": "拆分，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "split"
+        }
+      ],
+      "type": "'words' | 'letters'",
+      "defaultValue": "words",
+      "upstreamDefault": "'words'",
+      "control": "select",
+      "options": [
+        {
+          "label": "words",
+          "value": "words"
+        },
+        {
+          "label": "letters",
+          "value": "letters"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gravity",
+      "name": "gravity",
+      "label": "gravity · t0",
+      "description": "重力，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gravity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.7,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bounciness",
+      "name": "bounciness",
+      "label": "bounciness · t0",
+      "description": "弹性，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bounciness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.2",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scatter",
+      "name": "scatter",
+      "label": "scatter · t0",
+      "description": "散开，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scatter"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.4,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.draggable",
+      "name": "draggable",
+      "label": "draggable · t0",
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "draggable"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.restoreDelay",
+      "name": "restoreDelay",
+      "label": "restoreDelay · t0",
+      "description": "恢复延迟，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "restoreDelay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "1.7rem",
+      "upstreamDefault": "'1rem'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#5b8cff'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "light",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'transparent'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.highlightClass",
+      "name": "highlightClass",
+      "label": "highlightClass · t0",
+      "description": "高亮类名，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "highlightClass"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "highlighted",
+      "upstreamDefault": "'highlighted'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.variant",
+      "name": "variant",
+      "label": "外观 · t0",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "variant"
+        }
+      ],
+      "type": "'text' | 'tiles'",
+      "defaultValue": "text",
+      "upstreamDefault": "'text'",
+      "control": "select",
+      "options": [
+        {
+          "label": "text",
+          "value": "text"
+        },
+        {
+          "label": "tiles",
+          "value": "tiles"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stagger",
+      "name": "stagger",
+      "label": "错峰间隔 · t0",
+      "description": "错开，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stagger"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.03,
+      "upstreamDefault": "0.03",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.order",
+      "name": "order",
+      "label": "order · t0",
+      "description": "顺序，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "order"
+        }
+      ],
+      "type": "'random' | 'sequence' | 'center' | 'together'",
+      "defaultValue": "random",
+      "upstreamDefault": "'random'",
+      "control": "select",
+      "options": [
+        {
+          "label": "random",
+          "value": "random"
+        },
+        {
+          "label": "sequence",
+          "value": "sequence"
+        },
+        {
+          "label": "center",
+          "value": "center"
+        },
+        {
+          "label": "together",
+          "value": "together"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseConstraintStiffness",
+      "name": "mouseConstraintStiffness",
+      "label": "mouseConstraintStiffness · t0",
+      "description": "鼠标约束弹簧刚度，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseConstraintStiffness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0.2",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cursorPush",
+      "name": "cursorPush",
+      "label": "cursorPush · t0",
+      "description": "指针推移，控制 falling text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cursorPush"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.wireframes",
+      "name": "wireframes",
+      "label": "wireframes · t0",
+      "description": "是否线框，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "wireframes"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 95,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 9
+      },
+      "codeExample": "text=\"Good ideas need room to fall and rise again\"",
+      "usageExamples": [
+        "text=\"Good ideas need room to fall and rise again\""
+      ]
+    },
+    {
+      "name": "highlightWords",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 96,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "高亮短句列表的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "highlightWords={['ideas', 'rise']}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "highlightWords={['ideas', 'rise']}"
+      ]
+    },
+    {
+      "name": "highlightClass",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'highlighted'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 97,
+        "kind": "parameter"
+      },
+      "defaultValue": "highlighted",
+      "description": "高亮类名，控制 falling text 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 11
+      },
+      "codeExample": "highlightClass={\"highlighted\"}"
+    },
+    {
+      "name": "trigger",
+      "type": "'auto' | 'hover' | 'click' | 'scroll'",
+      "required": false,
+      "defaultExpression": "'auto'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 98,
+        "kind": "parameter"
+      },
+      "defaultValue": "auto",
+      "description": "触发方式，控制 falling text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "auto",
+        "hover",
+        "click",
+        "scroll"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 12
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "auto",
+          "hover",
+          "click",
+          "scroll"
+        ]
+      },
+      "codeExample": "trigger=\"click\"",
+      "usageExamples": [
+        "trigger=\"click\""
+      ]
+    },
+    {
+      "name": "variant",
+      "type": "'text' | 'tiles'",
+      "required": false,
+      "defaultExpression": "'text'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 99,
+        "kind": "parameter"
+      },
+      "defaultValue": "text",
+      "description": "选择组件内置的外观或效果变体。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "text",
+        "tiles"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 13
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "text",
+          "tiles"
+        ]
+      },
+      "codeExample": "variant={\"text\"}"
+    },
+    {
+      "name": "split",
+      "type": "'words' | 'letters'",
+      "required": false,
+      "defaultExpression": "'words'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 100,
+        "kind": "parameter"
+      },
+      "defaultValue": "words",
+      "description": "拆分，控制 falling text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "words",
+        "letters"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "words",
+          "letters"
+        ]
+      },
+      "codeExample": "split=\"words\"",
+      "usageExamples": [
+        "split=\"words\""
+      ]
+    },
+    {
+      "name": "gravity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 101,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "重力，控制 falling text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 15
+      },
+      "codeExample": "gravity={0.7}",
+      "usageExamples": [
+        "gravity={0.7}"
+      ]
+    },
+    {
+      "name": "bounciness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 102,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "弹性，控制 falling text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 16
+      },
+      "codeExample": "bounciness={0.4}",
+      "usageExamples": [
+        "bounciness={0.4}"
+      ]
+    },
+    {
+      "name": "scatter",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 103,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "散开，控制 falling text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 17
+      },
+      "codeExample": "scatter={0.4}",
+      "usageExamples": [
+        "scatter={0.4}"
+      ]
+    },
+    {
+      "name": "stagger",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.03",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 104,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.03,
+      "description": "错开，控制 falling text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 18
+      },
+      "codeExample": "stagger={0.03}"
+    },
+    {
+      "name": "order",
+      "type": "'random' | 'sequence' | 'center' | 'together'",
+      "required": false,
+      "defaultExpression": "'random'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 105,
+        "kind": "parameter"
+      },
+      "defaultValue": "random",
+      "description": "顺序，控制 falling text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "random",
+        "sequence",
+        "center",
+        "together"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "random",
+          "sequence",
+          "center",
+          "together"
+        ]
+      },
+      "codeExample": "order={\"random\"}"
+    },
+    {
+      "name": "draggable",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 106,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否可拖动，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "draggable",
+      "usageExamples": [
+        "draggable"
+      ]
+    },
+    {
+      "name": "mouseConstraintStiffness",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 107,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "鼠标约束弹簧刚度，控制 falling text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 21
+      },
+      "codeExample": "mouseConstraintStiffness={0.2}"
+    },
+    {
+      "name": "cursorPush",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 108,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "指针推移，控制 falling text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 22
+      },
+      "codeExample": "cursorPush={0.5}"
+    },
+    {
+      "name": "restoreDelay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 109,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "恢复延迟，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 23
+      },
+      "codeExample": "restoreDelay={3}",
+      "usageExamples": [
+        "restoreDelay={3}"
+      ]
+    },
+    {
+      "name": "fontSize",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'1rem'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 110,
+        "kind": "parameter"
+      },
+      "defaultValue": "1rem",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 24
+      },
+      "codeExample": "fontSize=\"1.7rem\"",
+      "usageExamples": [
+        "fontSize=\"1.7rem\""
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#5b8cff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 111,
+        "kind": "parameter"
+      },
+      "defaultValue": "#5b8cff",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 25
+      },
+      "codeExample": "accentColor={palette.primary}",
+      "usageExamples": [
+        "accentColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 112,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 falling text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"light\"",
+      "usageExamples": [
+        "theme=\"light\""
+      ]
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'transparent'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 113,
+        "kind": "parameter"
+      },
+      "defaultValue": "transparent",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 27
+      },
+      "codeExample": "backgroundColor={palette.ivory}",
+      "usageExamples": [
+        "backgroundColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "wireframes",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 114,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否线框，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "wireframes={false}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 115,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 29
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+        "line": 30
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/FallingText/FallingText';\nimport { palette } from '../../shared/demo-support';\n\n// 点击让单词进入物理模拟；拖动单词后等待恢复。\n\nexport default function FallingTextDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n\n\n /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "FallingText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 95,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 9
+          },
+          "codeExample": "text=\"Good ideas need room to fall and rise again\"",
+          "usageExamples": [
+            "text=\"Good ideas need room to fall and rise again\""
+          ]
+        },
+        {
+          "name": "highlightWords",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 96,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "高亮短句列表的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "highlightWords={['ideas', 'rise']}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "highlightWords={['ideas', 'rise']}"
+          ]
+        },
+        {
+          "name": "highlightClass",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'highlighted'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 97,
+            "kind": "parameter"
+          },
+          "defaultValue": "highlighted",
+          "description": "高亮类名，控制 falling text 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 11
+          },
+          "codeExample": "highlightClass={\"highlighted\"}"
+        },
+        {
+          "name": "trigger",
+          "type": "'auto' | 'hover' | 'click' | 'scroll'",
+          "required": false,
+          "defaultExpression": "'auto'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 98,
+            "kind": "parameter"
+          },
+          "defaultValue": "auto",
+          "description": "触发方式，控制 falling text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "auto",
+            "hover",
+            "click",
+            "scroll"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 12
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "auto",
+              "hover",
+              "click",
+              "scroll"
+            ]
+          },
+          "codeExample": "trigger=\"click\"",
+          "usageExamples": [
+            "trigger=\"click\""
+          ]
+        },
+        {
+          "name": "variant",
+          "type": "'text' | 'tiles'",
+          "required": false,
+          "defaultExpression": "'text'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 99,
+            "kind": "parameter"
+          },
+          "defaultValue": "text",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "text",
+            "tiles"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 13
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "text",
+              "tiles"
+            ]
+          },
+          "codeExample": "variant={\"text\"}"
+        },
+        {
+          "name": "split",
+          "type": "'words' | 'letters'",
+          "required": false,
+          "defaultExpression": "'words'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 100,
+            "kind": "parameter"
+          },
+          "defaultValue": "words",
+          "description": "拆分，控制 falling text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "words",
+            "letters"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "words",
+              "letters"
+            ]
+          },
+          "codeExample": "split=\"words\"",
+          "usageExamples": [
+            "split=\"words\""
+          ]
+        },
+        {
+          "name": "gravity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 101,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "重力，控制 falling text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 15
+          },
+          "codeExample": "gravity={0.7}",
+          "usageExamples": [
+            "gravity={0.7}"
+          ]
+        },
+        {
+          "name": "bounciness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 102,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "弹性，控制 falling text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 16
+          },
+          "codeExample": "bounciness={0.4}",
+          "usageExamples": [
+            "bounciness={0.4}"
+          ]
+        },
+        {
+          "name": "scatter",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 103,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "散开，控制 falling text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 17
+          },
+          "codeExample": "scatter={0.4}",
+          "usageExamples": [
+            "scatter={0.4}"
+          ]
+        },
+        {
+          "name": "stagger",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.03",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 104,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.03,
+          "description": "错开，控制 falling text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 18
+          },
+          "codeExample": "stagger={0.03}"
+        },
+        {
+          "name": "order",
+          "type": "'random' | 'sequence' | 'center' | 'together'",
+          "required": false,
+          "defaultExpression": "'random'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 105,
+            "kind": "parameter"
+          },
+          "defaultValue": "random",
+          "description": "顺序，控制 falling text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "random",
+            "sequence",
+            "center",
+            "together"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "random",
+              "sequence",
+              "center",
+              "together"
+            ]
+          },
+          "codeExample": "order={\"random\"}"
+        },
+        {
+          "name": "draggable",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 106,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否可拖动，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "draggable",
+          "usageExamples": [
+            "draggable"
+          ]
+        },
+        {
+          "name": "mouseConstraintStiffness",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 107,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "鼠标约束弹簧刚度，控制 falling text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 21
+          },
+          "codeExample": "mouseConstraintStiffness={0.2}"
+        },
+        {
+          "name": "cursorPush",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 108,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "指针推移，控制 falling text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 22
+          },
+          "codeExample": "cursorPush={0.5}"
+        },
+        {
+          "name": "restoreDelay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 109,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "恢复延迟，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 23
+          },
+          "codeExample": "restoreDelay={3}",
+          "usageExamples": [
+            "restoreDelay={3}"
+          ]
+        },
+        {
+          "name": "fontSize",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'1rem'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 110,
+            "kind": "parameter"
+          },
+          "defaultValue": "1rem",
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 24
+          },
+          "codeExample": "fontSize=\"1.7rem\"",
+          "usageExamples": [
+            "fontSize=\"1.7rem\""
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#5b8cff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 111,
+            "kind": "parameter"
+          },
+          "defaultValue": "#5b8cff",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 25
+          },
+          "codeExample": "accentColor={palette.primary}",
+          "usageExamples": [
+            "accentColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 112,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 falling text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"light\"",
+          "usageExamples": [
+            "theme=\"light\""
+          ]
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'transparent'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 113,
+            "kind": "parameter"
+          },
+          "defaultValue": "transparent",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 27
+          },
+          "codeExample": "backgroundColor={palette.ivory}",
+          "usageExamples": [
+            "backgroundColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "wireframes",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 114,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否线框，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "wireframes={false}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 115,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 29
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/FallingText/FallingText.tsx",
+            "line": 30
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

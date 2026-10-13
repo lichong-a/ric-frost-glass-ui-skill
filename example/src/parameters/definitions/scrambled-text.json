@@ -1,0 +1,517 @@
+{
+  "version": 1,
+  "id": "scrambled-text",
+  "name": "Scrambled Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+  "demoPath": "src/demos/text/scrambled-text.tsx",
+  "fields": [
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。指针到字符中心的触发距离。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 200,
+      "upstreamDefault": "100",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 20,
+      "max": 240,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "key": "t0.duration",
+      "name": "duration",
+      "label": "持续时间 · t0",
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。 以下范围仅限制此演示面板，不改变上游 API。GSAP 字符还原动画时长。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "duration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.4,
+      "upstreamDefault": "1.2",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.1,
+      "max": 3,
+      "step": 0.1,
+      "unit": "s"
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。 以下范围仅限制此演示面板，不改变上游 API。ScrambleTextPlugin 的扰乱速度系数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "0.5",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.1,
+      "max": 2,
+      "step": 0.05,
+      "unit": "倍率"
+    },
+    {
+      "key": "t0.scrambleChars",
+      "name": "scrambleChars",
+      "label": "scrambleChars · t0",
+      "description": "打乱字符，控制 scrambled text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scrambleChars"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*",
+      "upstreamDefault": "'.:'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.style",
+      "name": "style",
+      "label": "style · t0",
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "style"
+        }
+      ],
+      "type": "React.CSSProperties",
+      "defaultValue": {},
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {},
+        "required": []
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "100",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 23,
+        "kind": "parameter"
+      },
+      "defaultValue": 100,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 13
+      },
+      "codeExample": "radius={200}",
+      "usageExamples": [
+        "radius={200}"
+      ]
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 24,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.2,
+      "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 14
+      },
+      "codeExample": "duration={1.4}",
+      "usageExamples": [
+        "duration={1.4}"
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 25,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.5,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 15
+      },
+      "codeExample": "speed={0.5}",
+      "usageExamples": [
+        "speed={0.5}"
+      ]
+    },
+    {
+      "name": "scrambleChars",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'.:'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 26,
+        "kind": "parameter"
+      },
+      "defaultValue": ".:",
+      "description": "打乱字符，控制 scrambled text 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 16
+      },
+      "codeExample": "scrambleChars=\"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*\"",
+      "usageExamples": [
+        "scrambleChars=\"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 27,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 17
+      },
+      "codeExample": "className={styles.text}",
+      "usageExamples": [
+        "className={styles.text}"
+      ]
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 28,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 18
+      },
+      "codeExample": "style={{}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "required": true,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+        "line": 19
+      },
+      "codeExample": "children={<>Move through the words. A quiet signal becomes clear.</>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<>Move through the words. A quiet signal becomes clear.</>}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText';\nimport styles from './scrambled-text.module.css';\n\nexport default function ScrambledTextDemo() {\n  return (\n    <div className={styles.stage}>\n      <Component\n        className={styles.text}\n\n\n\n         /*__AW_PROPS_t0__*/\n      >Move through the words. A quiet signal becomes clear.</Component>\n      <p className={styles.guide}>在文字上移动指针，观察字母、数字与符号扰动后恢复原文。</p>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ScrambledText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+      "props": [
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "100",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 23,
+            "kind": "parameter"
+          },
+          "defaultValue": 100,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 13
+          },
+          "codeExample": "radius={200}",
+          "usageExamples": [
+            "radius={200}"
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 24,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.2,
+          "description": "一次动画或过渡的持续时长，时间单位以组件实现和示例为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 14
+          },
+          "codeExample": "duration={1.4}",
+          "usageExamples": [
+            "duration={1.4}"
+          ]
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 25,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.5,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 15
+          },
+          "codeExample": "speed={0.5}",
+          "usageExamples": [
+            "speed={0.5}"
+          ]
+        },
+        {
+          "name": "scrambleChars",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'.:'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 26,
+            "kind": "parameter"
+          },
+          "defaultValue": ".:",
+          "description": "打乱字符，控制 scrambled text 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 16
+          },
+          "codeExample": "scrambleChars=\"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*\"",
+          "usageExamples": [
+            "scrambleChars=\"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 27,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 17
+          },
+          "codeExample": "className={styles.text}",
+          "usageExamples": [
+            "className={styles.text}"
+          ]
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 28,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 18
+          },
+          "codeExample": "style={{}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/ScrambledText/ScrambledText.tsx",
+            "line": 19
+          },
+          "codeExample": "children={<>Move through the words. A quiet signal becomes clear.</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>Move through the words. A quiet signal becomes clear.</>}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

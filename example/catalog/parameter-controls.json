@@ -1,0 +1,1325 @@
+{
+  "schemaVersion": 1,
+  "description": "Explicit demonstration panel annotations. Ranges here constrain this demo and do not redefine the upstream API. Unitless numeric props remain numeric inputs unless their actual contract supplies a unit. Native controlled min/max/step are copied from authored JSX.",
+  "components": {
+    "cubes": {
+      "prop.gridSize": {
+        "control": "range",
+        "min": 1,
+        "max": 40,
+        "step": 1,
+        "unit": "个/边",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。每边立方体数量，源码取整并限制在 1–40。",
+        "label": "网格数量",
+        "commonPriority": 0
+      },
+      "prop.gap": {
+        "control": "range",
+        "min": 0,
+        "max": 0.9,
+        "step": 0.01,
+        "unit": "单元比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。面宽是 1-gap；是网格单元比例，单位不是 px。",
+        "label": "立方体间隙",
+        "commonPriority": 0
+      },
+      "prop.maxAngle": {
+        "control": "range",
+        "min": 0,
+        "max": 75,
+        "step": 1,
+        "unit": "°",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。指针响应允许的最大旋转角度。"
+      },
+      "prop.radius": {
+        "control": "range",
+        "min": 0.5,
+        "max": 10,
+        "step": 0.1,
+        "unit": "网格单元",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。指针影响半径以网格坐标计算。"
+      },
+      "prop.speed": {
+        "control": "range",
+        "min": 0.05,
+        "max": 4,
+        "step": 0.05,
+        "unit": "倍率",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。弹簧响应系数；刚度为 160×speed²，单位不是秒。",
+        "label": "旋转响应",
+        "commonPriority": 0
+      },
+      "prop.bounce": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。回弹程度；源码限制在 0–1。"
+      },
+      "prop.faceColor": {
+        "commonPriority": 0
+      },
+      "prop.edgeColor": {
+        "commonPriority": 0
+      },
+      "prop.edgeWidth": {
+        "control": "range",
+        "min": 0.25,
+        "max": 4,
+        "step": 0.25,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。边线绘制宽度。"
+      },
+      "prop.faceOpacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "electric-border": {
+      "prop.speed": {
+        "control": "range",
+        "min": 0.1,
+        "max": 4,
+        "step": 0.1,
+        "unit": "倍率",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。按每帧经过的秒数乘以 speed 推进噪声时间。",
+        "label": "电流速度",
+        "commonPriority": 0
+      },
+      "prop.chaos": {
+        "control": "range",
+        "min": 0,
+        "max": 0.5,
+        "step": 0.01,
+        "unit": "幅度",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。边框噪声的扰动幅度。",
+        "label": "电流扰动",
+        "commonPriority": 0
+      },
+      "prop.borderRadius": {
+        "control": "range",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。Canvas 圆角边框半径。"
+      },
+      "prop.color": {
+        "commonPriority": 0
+      }
+    },
+    "pixel-trail": {
+      "prop.gridSize": {
+        "control": "range",
+        "min": 4,
+        "max": 120,
+        "step": 1,
+        "unit": "个/边",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。网格每边的单元数量；渲染时取整。",
+        "label": "像素网格",
+        "commonPriority": 0
+      },
+      "prop.maxAge": {
+        "control": "range",
+        "min": 50,
+        "max": 3000,
+        "step": 50,
+        "unit": "ms",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。轨迹点按毫秒年龄衰减；停止移动后会消失。",
+        "label": "轨迹存活时间",
+        "commonPriority": 0
+      },
+      "prop.trailSize": {
+        "control": "range",
+        "min": 0.01,
+        "max": 0.6,
+        "step": 0.01,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。相对画布的轨迹笔刷尺度。"
+      },
+      "prop.gap": {
+        "control": "range",
+        "min": 0,
+        "max": 0.9,
+        "step": 0.01,
+        "unit": "单元比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。像素格中的空隙比例，源码限制在 0–0.9。"
+      },
+      "prop.flow": {
+        "control": "range",
+        "min": -2,
+        "max": 2,
+        "step": 0.05,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。轨迹流动系数。"
+      },
+      "prop.gravity": {
+        "control": "range",
+        "min": -2,
+        "max": 2,
+        "step": 0.05,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。轨迹纵向运动系数。"
+      },
+      "prop.color": {
+        "commonPriority": 0
+      }
+    },
+    "swarm-cursor": {
+      "prop.count": {
+        "control": "range",
+        "min": 1,
+        "max": 120,
+        "step": 1,
+        "unit": "个",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。粒子数量；源码取整并限制在 1–120。",
+        "label": "粒子数量",
+        "commonPriority": 0
+      },
+      "prop.size": {
+        "control": "range",
+        "min": 2,
+        "max": 36,
+        "step": 1,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。粒子的基本绘制尺寸。"
+      },
+      "prop.spread": {
+        "control": "range",
+        "min": 20,
+        "max": 240,
+        "step": 5,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。粒子群的分布与分离距离。"
+      },
+      "prop.speed": {
+        "control": "range",
+        "min": 0.1,
+        "max": 5,
+        "step": 0.1,
+        "unit": "倍率",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。运动速度和转向响应系数，单位不是秒。"
+      },
+      "prop.trail": {
+        "control": "range",
+        "min": 0,
+        "max": 2,
+        "step": 0.05,
+        "unit": "系数",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。轨迹历史长度约为 trail×0.85 秒。"
+      },
+      "prop.color": {
+        "commonPriority": 0
+      },
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "dither-veil": {
+      "prop.src": {
+        "commonPriority": 0,
+        "apply": "rebuild"
+      },
+      "prop.pixelSize": {
+        "control": "range",
+        "min": 1,
+        "max": 12,
+        "step": 1,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。网点/抖色的绘制单元尺寸。",
+        "label": "抖色网点尺寸",
+        "commonPriority": 0
+      },
+      "prop.revealRadius": {
+        "control": "range",
+        "min": 40,
+        "max": 360,
+        "step": 10,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。指针揭示色彩的半径。"
+      },
+      "prop.softness": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。指针遮罩边缘的柔和度。"
+      },
+      "prop.linger": {
+        "control": "range",
+        "min": 0,
+        "max": 3,
+        "step": 0.1,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。离开后的遮罩衰减时长。"
+      },
+      "prop.pattern": {
+        "commonPriority": 0
+      }
+    },
+    "halftone-reveal": {
+      "prop.src": {
+        "commonPriority": 0,
+        "apply": "rebuild"
+      },
+      "prop.cellSize": {
+        "control": "range",
+        "min": 2,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。网点单元尺寸；源码允许 2–80，此面板限制到 40。",
+        "label": "印刷网点尺寸",
+        "commonPriority": 0
+      },
+      "prop.angle": {
+        "control": "range",
+        "min": 0,
+        "max": 180,
+        "step": 1,
+        "unit": "°",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。网点印刷角度。"
+      },
+      "prop.revealRadius": {
+        "control": "range",
+        "min": 40,
+        "max": 360,
+        "step": 10,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。指针揭示原图的半径。"
+      },
+      "prop.softness": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。指针遮罩边缘柔和度，源码限制在 0–1。"
+      },
+      "prop.linger": {
+        "control": "range",
+        "min": 0,
+        "max": 3,
+        "step": 0.1,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。离开后的遮罩衰减时长。"
+      },
+      "prop.mode": {
+        "commonPriority": 0
+      },
+      "prop.shape": {
+        "commonPriority": 0
+      }
+    },
+    "logo-loop": {
+      "prop.speed": {
+        "control": "range",
+        "min": -240,
+        "max": 240,
+        "step": 5,
+        "unit": "px/s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。循环位移使用每秒像素；负值会反转方向。"
+      },
+      "prop.logoHeight": {
+        "control": "range",
+        "min": 16,
+        "max": 80,
+        "step": 1,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。标志图形的显示高度。"
+      },
+      "prop.gap": {
+        "control": "range",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。相邻标志之间的空间。"
+      }
+    },
+    "rotating-text": {
+      "prop.rotationInterval": {
+        "control": "range",
+        "min": 500,
+        "max": 6000,
+        "step": 100,
+        "unit": "ms",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。setInterval 的文字轮换间隔。",
+        "label": "文字轮换间隔",
+        "commonPriority": 0
+      },
+      "prop.staggerDuration": {
+        "control": "range",
+        "min": 0,
+        "max": 0.2,
+        "step": 0.01,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。Motion 字符过渡的延迟错峰。"
+      },
+      "prop.texts": {
+        "commonPriority": 0
+      }
+    },
+    "scrambled-text": {
+      "prop.radius": {
+        "control": "range",
+        "min": 20,
+        "max": 240,
+        "step": 5,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。指针到字符中心的触发距离。"
+      },
+      "prop.duration": {
+        "control": "range",
+        "min": 0.1,
+        "max": 3,
+        "step": 0.1,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。GSAP 字符还原动画时长。"
+      },
+      "prop.speed": {
+        "control": "range",
+        "min": 0.1,
+        "max": 2,
+        "step": 0.05,
+        "unit": "倍率",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。ScrambleTextPlugin 的扰乱速度系数。"
+      },
+      "prop.scrambleChars": {
+        "commonPriority": 0
+      }
+    },
+    "scroll-float": {
+      "prop.*": {
+        "apply": "rebuild"
+      },
+      "prop.animationDuration": {
+        "control": "range",
+        "min": 0.1,
+        "max": 3,
+        "step": 0.1,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。GSAP 的动画时长；更改会重建示例，释放滚动触发器。"
+      },
+      "prop.stagger": {
+        "control": "range",
+        "min": 0,
+        "max": 0.2,
+        "step": 0.01,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。每个字符的错峰间隔。"
+      },
+      "prop.scrollStart": {
+        "commonPriority": 0
+      },
+      "prop.scrollEnd": {
+        "commonPriority": 0
+      }
+    },
+    "scroll-reveal": {
+      "prop.*": {
+        "apply": "rebuild"
+      },
+      "prop.baseOpacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。文字进入可视区域前的不透明度。"
+      },
+      "prop.baseRotation": {
+        "control": "range",
+        "min": -12,
+        "max": 12,
+        "step": 1,
+        "unit": "°",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。进入前文字容器的旋转角度。"
+      },
+      "prop.blurStrength": {
+        "control": "range",
+        "min": 0,
+        "max": 12,
+        "step": 0.5,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。进入前的文字模糊半径。"
+      },
+      "prop.rotationEnd": {
+        "commonPriority": 0
+      },
+      "prop.wordAnimationEnd": {
+        "commonPriority": 0
+      }
+    },
+    "scroll-velocity": {
+      "prop.velocity": {
+        "control": "range",
+        "min": -200,
+        "max": 200,
+        "step": 5,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。Motion 每秒推进的循环位移量；正负值会改变方向。",
+        "label": "文字循环速度",
+        "commonPriority": 0,
+        "unit": "px/s"
+      },
+      "prop.numCopies": {
+        "control": "range",
+        "min": 2,
+        "max": 12,
+        "step": 1,
+        "unit": "份",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。循环行中的文字副本数量。",
+        "apply": "rebuild"
+      },
+      "prop.damping": {
+        "control": "range",
+        "min": 10,
+        "max": 120,
+        "step": 5,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。滚动速度平滑弹簧的阻尼。"
+      },
+      "prop.stiffness": {
+        "control": "range",
+        "min": 50,
+        "max": 800,
+        "step": 25,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。滚动速度平滑弹簧的刚度。"
+      },
+      "prop.texts": {
+        "commonPriority": 0
+      }
+    },
+    "bubble-menu": {
+      "prop.animationDuration": {
+        "control": "range",
+        "min": 0.1,
+        "max": 1.5,
+        "step": 0.05,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。GSAP 菜单打开和关闭的过渡时长。"
+      },
+      "prop.staggerDelay": {
+        "control": "range",
+        "min": 0,
+        "max": 0.3,
+        "step": 0.01,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。菜单项之间的错峰时间。"
+      },
+      "prop.items": {
+        "commonPriority": 0
+      }
+    },
+    "masonry": {
+      "prop.duration": {
+        "control": "range",
+        "min": 0.1,
+        "max": 2,
+        "step": 0.1,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。GSAP 卡片位置动画时长。"
+      },
+      "prop.stagger": {
+        "control": "range",
+        "min": 0,
+        "max": 0.3,
+        "step": 0.01,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。卡片入场的错峰间隔。"
+      },
+      "prop.hoverScale": {
+        "control": "range",
+        "min": 0.7,
+        "max": 1.3,
+        "step": 0.01,
+        "unit": "倍率",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。悬停卡片的缩放值。"
+      },
+      "prop.items": {
+        "commonPriority": 0
+      }
+    },
+    "spotlight-card": {
+      "prop.spotlightSize": {
+        "control": "range",
+        "min": 80,
+        "max": 480,
+        "step": 10,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。CSS 光斑直径。"
+      },
+      "prop.proximity": {
+        "control": "range",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。指针接近卡片时开始出现光斑的外延距离。"
+      },
+      "prop.softness": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。光斑边缘柔和度。"
+      },
+      "prop.spotlightColor": {
+        "commonPriority": 0
+      }
+    },
+    "flying-posters": {
+      "prop.planeWidth": {
+        "control": "range",
+        "min": 120,
+        "max": 640,
+        "step": 10,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。海报平面的布局宽度。"
+      },
+      "prop.planeHeight": {
+        "control": "range",
+        "min": 120,
+        "max": 800,
+        "step": 10,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。海报平面的布局高度。"
+      },
+      "prop.columns": {
+        "control": "range",
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "unit": "列",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。海报列数量。"
+      },
+      "prop.cameraFov": {
+        "control": "range",
+        "min": 20,
+        "max": 100,
+        "step": 1,
+        "unit": "°",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。相机的视场角。"
+      },
+      "prop.items": {
+        "commonPriority": 0
+      }
+    },
+    "decay-card": {
+      "prop.width": {
+        "control": "range",
+        "min": 180,
+        "max": 560,
+        "step": 10,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。卡片显示宽度。"
+      },
+      "prop.height": {
+        "control": "range",
+        "min": 220,
+        "max": 700,
+        "step": 10,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。卡片显示高度。"
+      },
+      "prop.image": {
+        "commonPriority": 0,
+        "apply": "rebuild"
+      },
+      "prop.intensity": {
+        "control": "range",
+        "min": 0,
+        "max": 2,
+        "step": 0.05,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。图像破碎的强度系数。"
+      }
+    },
+    "magic-rings": {
+      "prop.ringCount": {
+        "control": "range",
+        "min": 1,
+        "max": 16,
+        "step": 1,
+        "unit": "个",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。绘制的圆环数量。"
+      },
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。圆环的不透明度。"
+      },
+      "prop.color": {
+        "commonPriority": 0
+      }
+    },
+    "laser-flow": {
+      "prop.seed": {
+        "control": "range",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。稳定的随机种子。"
+      },
+      "prop.revealRadius": {
+        "control": "range",
+        "min": 40,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。指针揭示区域的半径。"
+      },
+      "prop.revealOpacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。指针揭示区域的不透明度。"
+      },
+      "prop.color": {
+        "commonPriority": 0
+      }
+    },
+    "ghost-cursor": {
+      "prop.trailLength": {
+        "control": "range",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "点",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。保存用于轨迹绘制的历史点数量。"
+      },
+      "prop.maxDevicePixelRatio": {
+        "control": "range",
+        "min": 0.25,
+        "max": 2,
+        "step": 0.25,
+        "unit": "倍率",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。限制绘图缓冲的设备像素比。"
+      },
+      "prop.fadeDelayMs": {
+        "control": "range",
+        "min": 0,
+        "max": 2000,
+        "step": 50,
+        "unit": "ms",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。停止移动后的淡出等待时间。"
+      },
+      "prop.fadeDurationMs": {
+        "control": "range",
+        "min": 50,
+        "max": 2000,
+        "step": 50,
+        "unit": "ms",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。停止移动后的淡出持续时间。"
+      }
+    },
+    "gradual-blur": {
+      "prop.divCount": {
+        "control": "range",
+        "min": 1,
+        "max": 12,
+        "step": 1,
+        "unit": "层",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。渐进模糊的叠层数量。"
+      },
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。渐进模糊层的不透明度。"
+      }
+    },
+    "blur-text": {
+      "prop.delay": {
+        "control": "range",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "ms",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。每个文字单元开始的延迟。"
+      },
+      "prop.stepDuration": {
+        "control": "range",
+        "min": 0.05,
+        "max": 1,
+        "step": 0.01,
+        "unit": "s",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。Motion 单步过渡时长。"
+      },
+      "prop.threshold": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。IntersectionObserver 的可见比例阈值。"
+      }
+    },
+    "business-splitter": {
+      "state.ratio": {
+        "control": "range",
+        "min": 20,
+        "max": 80,
+        "step": 5,
+        "unit": "%",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。与原有拖动和键盘边界一致。",
+        "label": "左侧工作区宽度"
+      }
+    },
+    "glow-cursor": {
+      "prop.maxDevicePixelRatio": {
+        "control": "range",
+        "min": 0.25,
+        "max": 2,
+        "step": 0.25,
+        "unit": "倍率",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。限制预览绘图缓冲的像素比。"
+      }
+    },
+    "pixel-transition": {
+      "prop.gridSize": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "magnet-lines": {
+      "prop.rows": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      },
+      "prop.columns": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "strands": {
+      "prop.count": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      },
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "noise": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "crosshair": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "ribbons": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "star-border": {},
+    "drift-wall": {
+      "prop.columns": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "magic-bento": {
+      "prop.particleCount": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "glass-surface": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "chroma-grid": {
+      "prop.columns": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "gooey-nav": {
+      "prop.particleCount": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "pixel-card": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "glass-icons": {
+      "prop.columns": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "infinite-menu": {
+      "prop.count": {
+        "control": "range",
+        "min": 1,
+        "max": 160,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "bell-toggle": {
+      "prop.count": {
+        "control": "range",
+        "min": 0,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "pulse-heart": {
+      "prop.count": {
+        "control": "range",
+        "min": 0,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "peek-rating": {
+      "prop.count": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "flux-lines": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "pattern-waves": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "crt-warp": {
+      "prop.dpr": {
+        "control": "range",
+        "min": 0.25,
+        "max": 2,
+        "step": 0.25,
+        "unit": "倍率",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。限制预览绘图缓冲的像素比。"
+      }
+    },
+    "molten-metal": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "gradient-waves": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "web-threads": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "topography": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "light-tunnel": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "sliced-waves": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "acid-squares": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "scanner": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "ferrofluid": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "lightfall": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "dark-veil": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "side-rays": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "radar": {
+      "prop.ringCount": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      },
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "aurora": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "plasma": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "plasma-wave": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "particles": {
+      "prop.particleCount": {
+        "control": "range",
+        "min": 1,
+        "max": 200,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      },
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "beams": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "pixel-snow": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "lightning": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "galaxy": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "ripple-grid": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "dot-grid": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "threads": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "hyperspeed": {},
+    "iridescence": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "waves": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "orb": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "grid-motion": {
+      "prop.rows": {
+        "control": "range",
+        "min": 1,
+        "max": 128,
+        "step": 1,
+        "description": "以下范围仅限制此演示面板，不改变上游 API。只提供有界整数数量，限制预览资源开销。"
+      }
+    },
+    "shape-grid": {
+      "prop.opacity": {
+        "control": "range",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "unit": "比例",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。"
+      }
+    },
+    "glitch-text": {
+      "prop.speed": {
+        "control": "range",
+        "min": 0.1,
+        "max": 2,
+        "step": 0.05,
+        "unit": "s",
+        "label": "切片周期系数",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。两层 CSS 动画周期分别是 speed×3 秒和 speed×2 秒；值越大，循环越慢。"
+      }
+    },
+    "flowing-menu": {
+      "prop.speed": {
+        "control": "range",
+        "min": 3,
+        "max": 40,
+        "step": 1,
+        "unit": "s",
+        "label": "跑马灯循环时长",
+        "description": "以下范围仅限制此演示面板，不改变上游 API。GSAP 跑马灯循环的 duration；值越大，循环越慢。"
+      }
+    }
+  }
+}

@@ -1,0 +1,1936 @@
+{
+  "version": 1,
+  "id": "flying-posters",
+  "name": "Flying Posters",
+  "sourcePath": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+  "demoPath": "src/demos/media/flying-posters.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "FlyingPostersItem[]",
+      "defaultValue": [
+        {
+          "image": "@asset/restoration/chromatic-bloom.svg",
+          "alt": "色彩绽放"
+        },
+        {
+          "image": "@asset/restoration/prismatic-canopy.svg",
+          "alt": "棱镜树冠"
+        },
+        {
+          "image": "@asset/restoration/mineral-tide.svg",
+          "alt": "矿物潮汐"
+        },
+        {
+          "image": "@asset/restoration/solar-dunes.svg",
+          "alt": "太阳沙丘"
+        },
+        {
+          "image": "@asset/restoration/nocturne-orbit.svg",
+          "alt": "夜间轨道"
+        },
+        {
+          "image": "@asset/restoration/vermilion-fold.svg",
+          "alt": "朱红折叠"
+        }
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "string"
+            },
+            {
+              "kind": "object",
+              "properties": {
+                "image": {
+                  "kind": "string"
+                },
+                "link": {
+                  "kind": "string"
+                },
+                "alt": {
+                  "kind": "string"
+                }
+              },
+              "required": [
+                "image"
+              ]
+            }
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.planeWidth",
+      "name": "planeWidth",
+      "label": "planeWidth · t0",
+      "description": "平面宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。海报平面的布局宽度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "planeWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 300,
+      "upstreamDefault": "320",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 120,
+      "max": 640,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "key": "t0.planeHeight",
+      "name": "planeHeight",
+      "label": "planeHeight · t0",
+      "description": "平面高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 以下范围仅限制此演示面板，不改变上游 API。海报平面的布局高度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "planeHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 330,
+      "upstreamDefault": "320",
+      "control": "range",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 120,
+      "max": 800,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "key": "t0.distortion",
+      "name": "distortion",
+      "label": "distortion · t0",
+      "description": "扭曲，控制 flying posters 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "distortion"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 3,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scrollEase",
+      "name": "scrollEase",
+      "label": "scrollEase · t0",
+      "description": "滚动缓动，控制 flying posters 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scrollEase"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.025,
+      "upstreamDefault": "0.01",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.cameraFov",
+      "name": "cameraFov",
+      "label": "cameraFov · t0",
+      "description": "相机视场角，控制 flying posters 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。相机的视场角。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cameraFov"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 45,
+      "upstreamDefault": "45",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "°"
+    },
+    {
+      "key": "t0.cameraZ",
+      "name": "cameraZ",
+      "label": "cameraZ · t0",
+      "description": "相机Z轴，控制 flying posters 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "cameraZ"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "20",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.gap",
+      "name": "gap",
+      "label": "间距 · t0",
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "gap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 48,
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.columns",
+      "name": "columns",
+      "label": "columns · t0",
+      "description": "列数，控制 flying posters 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。海报列数量。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "columns"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": "列"
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.06,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rotation",
+      "name": "rotation",
+      "label": "旋转 · t0",
+      "description": "旋转角度，控制 flying posters 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rotation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 180,
+      "upstreamDefault": "180",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lean",
+      "name": "lean",
+      "label": "lean · t0",
+      "description": "倾斜，控制 flying posters 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lean"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.2,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fade",
+      "name": "fade",
+      "label": "fade · t0",
+      "description": "淡出，控制 flying posters 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shading",
+      "name": "shading",
+      "label": "shading · t0",
+      "description": "面部明暗，控制 flying posters 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shading"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.25,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.wheel",
+      "name": "wheel",
+      "label": "wheel · t0",
+      "description": "是否滚轮，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "wheel"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.drag",
+      "name": "drag",
+      "label": "drag · t0",
+      "description": "是否拖动，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "drag"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.columnGap",
+      "name": "columnGap",
+      "label": "columnGap · t0",
+      "description": "列间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "columnGap"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 40,
+      "upstreamDefault": "40",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.alternate",
+      "name": "alternate",
+      "label": "alternate · t0",
+      "description": "是否交替，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "alternate"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.axis",
+      "name": "axis",
+      "label": "axis · t0",
+      "description": "坐标轴，控制 flying posters 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "axis"
+        }
+      ],
+      "type": "'vertical' | 'horizontal' | 'diagonal'",
+      "defaultValue": "vertical",
+      "upstreamDefault": "'vertical'",
+      "control": "select",
+      "options": [
+        {
+          "label": "vertical",
+          "value": "vertical"
+        },
+        {
+          "label": "horizontal",
+          "value": "horizontal"
+        },
+        {
+          "label": "diagonal",
+          "value": "diagonal"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.pageScroll",
+      "name": "pageScroll",
+      "label": "pageScroll · t0",
+      "description": "页码滚动，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "pageScroll"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "FlyingPostersItem[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 165,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "FlyingPostersItem",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "{ image: string; link?: string; alt?: string; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "image",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "link",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={items}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={items}"
+      ]
+    },
+    {
+      "name": "planeWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "320",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 166,
+        "kind": "parameter"
+      },
+      "defaultValue": 320,
+      "description": "平面宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 11
+      },
+      "codeExample": "planeWidth={300}",
+      "usageExamples": [
+        "planeWidth={300}"
+      ]
+    },
+    {
+      "name": "planeHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "320",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 167,
+        "kind": "parameter"
+      },
+      "defaultValue": 320,
+      "description": "平面高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 12
+      },
+      "codeExample": "planeHeight={330}",
+      "usageExamples": [
+        "planeHeight={330}"
+      ]
+    },
+    {
+      "name": "distortion",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 168,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "扭曲，控制 flying posters 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 13
+      },
+      "codeExample": "distortion={3}",
+      "usageExamples": [
+        "distortion={3}"
+      ]
+    },
+    {
+      "name": "scrollEase",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.01",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 169,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.01,
+      "description": "滚动缓动，控制 flying posters 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 14
+      },
+      "codeExample": "scrollEase={0.025}",
+      "usageExamples": [
+        "scrollEase={0.025}"
+      ]
+    },
+    {
+      "name": "cameraFov",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "45",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 170,
+        "kind": "parameter"
+      },
+      "defaultValue": 45,
+      "description": "相机视场角，控制 flying posters 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 15
+      },
+      "codeExample": "cameraFov={45}",
+      "usageExamples": [
+        "cameraFov={45}"
+      ]
+    },
+    {
+      "name": "cameraZ",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "20",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 171,
+        "kind": "parameter"
+      },
+      "defaultValue": 20,
+      "description": "相机Z轴，控制 flying posters 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 16
+      },
+      "codeExample": "cameraZ={20}",
+      "usageExamples": [
+        "cameraZ={20}"
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "number",
+      "required": false,
+      "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 17
+      },
+      "codeExample": "gap={48}",
+      "usageExamples": [
+        "gap={48}"
+      ]
+    },
+    {
+      "name": "columns",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 173,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "列数，控制 flying posters 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 18
+      },
+      "codeExample": "columns={1}",
+      "usageExamples": [
+        "columns={1}"
+      ]
+    },
+    {
+      "name": "columnGap",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "40",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 174,
+        "kind": "parameter"
+      },
+      "defaultValue": 40,
+      "description": "列间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 19
+      },
+      "codeExample": "columnGap={40}"
+    },
+    {
+      "name": "alternate",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 175,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否交替，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "alternate={true}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 176,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 21
+      },
+      "codeExample": "radius={0.06}",
+      "usageExamples": [
+        "radius={0.06}"
+      ]
+    },
+    {
+      "name": "rotation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "180",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 177,
+        "kind": "parameter"
+      },
+      "defaultValue": 180,
+      "description": "旋转角度，控制 flying posters 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 22
+      },
+      "codeExample": "rotation={180}",
+      "usageExamples": [
+        "rotation={180}"
+      ]
+    },
+    {
+      "name": "axis",
+      "type": "'vertical' | 'horizontal' | 'diagonal'",
+      "required": false,
+      "defaultExpression": "'vertical'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 178,
+        "kind": "parameter"
+      },
+      "defaultValue": "vertical",
+      "description": "坐标轴，控制 flying posters 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "vertical",
+        "horizontal",
+        "diagonal"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "vertical",
+          "horizontal",
+          "diagonal"
+        ]
+      },
+      "codeExample": "axis={\"vertical\"}"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 179,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 24
+      },
+      "codeExample": "speed={0}",
+      "usageExamples": [
+        "speed={0}"
+      ]
+    },
+    {
+      "name": "lean",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 180,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "倾斜，控制 flying posters 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 25
+      },
+      "codeExample": "lean={0.2}",
+      "usageExamples": [
+        "lean={0.2}"
+      ]
+    },
+    {
+      "name": "fade",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 181,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "淡出，控制 flying posters 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 26
+      },
+      "codeExample": "fade={0.15}",
+      "usageExamples": [
+        "fade={0.15}"
+      ]
+    },
+    {
+      "name": "shading",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 182,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "面部明暗，控制 flying posters 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 27
+      },
+      "codeExample": "shading={0.25}",
+      "usageExamples": [
+        "shading={0.25}"
+      ]
+    },
+    {
+      "name": "wheel",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 183,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否滚轮，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "wheel",
+      "usageExamples": [
+        "wheel"
+      ]
+    },
+    {
+      "name": "drag",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 184,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否拖动，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "drag",
+      "usageExamples": [
+        "drag"
+      ]
+    },
+    {
+      "name": "pageScroll",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 185,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "页码滚动，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 30
+      },
+      "codeExample": "pageScroll={0}"
+    },
+    {
+      "name": "onItemClick",
+      "type": "(item: { image: string; link?: string; alt?: string }, index: number) => void",
+      "required": false,
+      "description": "用户点击列表或菜单项时通知调用方，参数为条目及索引。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((item: { image: string; link?: string; alt?: string; }, index: number) => void) | undefined"
+      },
+      "codeExample": "onItemClick={(_item, index) => setStatus('已选择：' + labels[index % labels.length])}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onItemClick={(_item, index) => setStatus('已选择：' + labels[index % labels.length])}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 187,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 32
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+        "line": 33
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/Components/FlyingPosters/FlyingPosters';\n\n\n\n\n\n\nimport styles from './flying-posters.module.css';\n\n\nconst labels = ['色彩绽放', '棱镜树冠', '矿物潮汐', '太阳沙丘', '夜间轨道', '朱红折叠'];\n\n\nexport default function FlyingPostersDemo() {\n  const [status, setStatus] = useState('点击海报选择作品。');\n  return (\n    <div className={styles.stage} data-visual-demo=\"flying-posters\">\n      <div className={styles.field}>\n        <Component\n\n\n            onItemClick={(_item, index) => setStatus('已选择：' + labels[index % labels.length])} /*__AW_PROPS_t0__*/  />\n      </div>\n      <div className={styles.caption}><p className={styles.hint}>滚动鼠标或按住拖动，浏览翻转的 3D 海报</p><p className={styles.status} role=\"status\" aria-live=\"polite\">{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "FlyingPosters",
+      "sourcePath": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "FlyingPostersItem[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 165,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "FlyingPostersItem",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "{ image: string; link?: string; alt?: string; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "image",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "link",
+                        "type": "string",
+                        "required": false
+                      },
+                      {
+                        "name": "alt",
+                        "type": "string",
+                        "required": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={items}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={items}"
+          ]
+        },
+        {
+          "name": "planeWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "320",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 166,
+            "kind": "parameter"
+          },
+          "defaultValue": 320,
+          "description": "平面宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 11
+          },
+          "codeExample": "planeWidth={300}",
+          "usageExamples": [
+            "planeWidth={300}"
+          ]
+        },
+        {
+          "name": "planeHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "320",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 167,
+            "kind": "parameter"
+          },
+          "defaultValue": 320,
+          "description": "平面高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 12
+          },
+          "codeExample": "planeHeight={330}",
+          "usageExamples": [
+            "planeHeight={330}"
+          ]
+        },
+        {
+          "name": "distortion",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 168,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "扭曲，控制 flying posters 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 13
+          },
+          "codeExample": "distortion={3}",
+          "usageExamples": [
+            "distortion={3}"
+          ]
+        },
+        {
+          "name": "scrollEase",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.01",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 169,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.01,
+          "description": "滚动缓动，控制 flying posters 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 14
+          },
+          "codeExample": "scrollEase={0.025}",
+          "usageExamples": [
+            "scrollEase={0.025}"
+          ]
+        },
+        {
+          "name": "cameraFov",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "45",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 170,
+            "kind": "parameter"
+          },
+          "defaultValue": 45,
+          "description": "相机视场角，控制 flying posters 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 15
+          },
+          "codeExample": "cameraFov={45}",
+          "usageExamples": [
+            "cameraFov={45}"
+          ]
+        },
+        {
+          "name": "cameraZ",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "20",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 171,
+            "kind": "parameter"
+          },
+          "defaultValue": 20,
+          "description": "相机Z轴，控制 flying posters 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 16
+          },
+          "codeExample": "cameraZ={20}",
+          "usageExamples": [
+            "cameraZ={20}"
+          ]
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "description": "相邻单元、卡片或字符之间的间距；单位由组件实现定义。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 17
+          },
+          "codeExample": "gap={48}",
+          "usageExamples": [
+            "gap={48}"
+          ]
+        },
+        {
+          "name": "columns",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 173,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "列数，控制 flying posters 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 18
+          },
+          "codeExample": "columns={1}",
+          "usageExamples": [
+            "columns={1}"
+          ]
+        },
+        {
+          "name": "columnGap",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "40",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 174,
+            "kind": "parameter"
+          },
+          "defaultValue": 40,
+          "description": "列间距，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 19
+          },
+          "codeExample": "columnGap={40}"
+        },
+        {
+          "name": "alternate",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 175,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否交替，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "alternate={true}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 176,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 21
+          },
+          "codeExample": "radius={0.06}",
+          "usageExamples": [
+            "radius={0.06}"
+          ]
+        },
+        {
+          "name": "rotation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "180",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 177,
+            "kind": "parameter"
+          },
+          "defaultValue": 180,
+          "description": "旋转角度，控制 flying posters 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 22
+          },
+          "codeExample": "rotation={180}",
+          "usageExamples": [
+            "rotation={180}"
+          ]
+        },
+        {
+          "name": "axis",
+          "type": "'vertical' | 'horizontal' | 'diagonal'",
+          "required": false,
+          "defaultExpression": "'vertical'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 178,
+            "kind": "parameter"
+          },
+          "defaultValue": "vertical",
+          "description": "坐标轴，控制 flying posters 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "vertical",
+            "horizontal",
+            "diagonal"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "vertical",
+              "horizontal",
+              "diagonal"
+            ]
+          },
+          "codeExample": "axis={\"vertical\"}"
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 179,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 24
+          },
+          "codeExample": "speed={0}",
+          "usageExamples": [
+            "speed={0}"
+          ]
+        },
+        {
+          "name": "lean",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 180,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "倾斜，控制 flying posters 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 25
+          },
+          "codeExample": "lean={0.2}",
+          "usageExamples": [
+            "lean={0.2}"
+          ]
+        },
+        {
+          "name": "fade",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 181,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "淡出，控制 flying posters 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 26
+          },
+          "codeExample": "fade={0.15}",
+          "usageExamples": [
+            "fade={0.15}"
+          ]
+        },
+        {
+          "name": "shading",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 182,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "面部明暗，控制 flying posters 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 27
+          },
+          "codeExample": "shading={0.25}",
+          "usageExamples": [
+            "shading={0.25}"
+          ]
+        },
+        {
+          "name": "wheel",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 183,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否滚轮，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "wheel",
+          "usageExamples": [
+            "wheel"
+          ]
+        },
+        {
+          "name": "drag",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 184,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否拖动，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "drag",
+          "usageExamples": [
+            "drag"
+          ]
+        },
+        {
+          "name": "pageScroll",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 185,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "页码滚动，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 30
+          },
+          "codeExample": "pageScroll={0}"
+        },
+        {
+          "name": "onItemClick",
+          "type": "(item: { image: string; link?: string; alt?: string }, index: number) => void",
+          "required": false,
+          "description": "用户点击列表或菜单项时通知调用方，参数为条目及索引。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((item: { image: string; link?: string; alt?: string; }, index: number) => void) | undefined"
+          },
+          "codeExample": "onItemClick={(_item, index) => setStatus('已选择：' + labels[index % labels.length])}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onItemClick={(_item, index) => setStatus('已选择：' + labels[index % labels.length])}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 187,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 32
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/FlyingPosters/FlyingPosters.tsx",
+            "line": 33
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

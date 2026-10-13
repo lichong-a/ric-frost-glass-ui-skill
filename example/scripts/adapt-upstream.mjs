@@ -10,6 +10,18 @@ export function adaptUpstream(code, id, { base = '/' } = {}) {
   if (!file.includes('/.upstream/')) return null;
   const assetUrl = relative => `${base.endsWith('/') ? base : base + '/'}${relative.replace(/^\/+/, '')}`;
   let changed = code;
+  if (file.endsWith('/LogoLoop/LogoLoop.css')) {
+    // The official site supplies a list preflight. Supply that missing base
+    // only to this component's own list instead of resetting every gallery ul.
+    changed = replaceLocked(changed, '.logoloop__list {\n  display: flex;',
+      '.logoloop__list {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  display: flex;', 'LogoLoop');
+  }
+  if (file.endsWith('/ScrambledText/ScrambledText.tsx')) {
+    // Keep word boundaries when SplitText creates individually animated chars.
+    // The character refs and scrambling algorithm retain their original API.
+    changed = replaceLocked(changed, "type: 'chars',\n      charsClass: 'char'",
+      "type: 'words,chars',\n      charsClass: 'char'", 'ScrambledText');
+  }
   if (file.endsWith('/GridScan/GridScan.tsx')) {
     const before = 'useEffect(() => {\n    let canceled = false;\n    const load = async () => {';
     changed = replaceLocked(changed, before, 'useEffect(() => {\n    if (!enableWebcam) return;\n    let canceled = false;\n    const load = async () => {', 'GridScan');

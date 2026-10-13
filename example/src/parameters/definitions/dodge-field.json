@@ -1,0 +1,1736 @@
+{
+  "version": 1,
+  "id": "dodge-field",
+  "name": "Dodge Field",
+  "sourcePath": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+  "demoPath": "src/demos/pointer/dodge-field.tsx",
+  "fields": [
+    {
+      "key": "t0.inkColor",
+      "name": "inkColor",
+      "label": "inkColor · t0",
+      "description": "墨色颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "inkColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.contrastColor",
+      "name": "contrastColor",
+      "label": "contrastColor · t0",
+      "description": "对比度颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "contrastColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#faf7f0",
+      "upstreamDefault": "'#18181b'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fieldHeight",
+      "name": "fieldHeight",
+      "label": "fieldHeight · t0",
+      "description": "场高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fieldHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 280,
+      "upstreamDefault": "240",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.patience",
+      "name": "patience",
+      "label": "patience · t0",
+      "description": "等待耐心，控制 dodge field 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "patience"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 4,
+      "upstreamDefault": "4",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.taunts",
+      "name": "taunts",
+      "label": "taunts · t0",
+      "description": "提示短句的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "taunts"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "再近一点",
+        "向左试试",
+        "就要到了"
+      ],
+      "upstreamDefault": "DEFAULT_TAUNTS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.notice",
+      "name": "notice",
+      "label": "notice · t0",
+      "description": "提示，控制 dodge field 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "notice"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "可以抓住了",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.reach",
+      "name": "reach",
+      "label": "reach · t0",
+      "description": "作用距离，控制 dodge field 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "reach"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 72,
+      "upstreamDefault": "72",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 120,
+      "upstreamDefault": "120",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.falloff",
+      "name": "falloff",
+      "label": "falloff · t0",
+      "description": "衰减，控制 dodge field 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "falloff"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fleeDuration",
+      "name": "fleeDuration",
+      "label": "fleeDuration · t0",
+      "description": "逃离时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fleeDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 130,
+      "upstreamDefault": "130",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.returnDuration",
+      "name": "returnDuration",
+      "label": "returnDuration · t0",
+      "description": "返回时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "returnDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 620,
+      "upstreamDefault": "620",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.returnBounce",
+      "name": "returnBounce",
+      "label": "returnBounce · t0",
+      "description": "返回回弹，控制 dodge field 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "returnBounce"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.axis",
+      "name": "axis",
+      "label": "axis · t0",
+      "description": "坐标轴，控制 dodge field 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "axis"
+        }
+      ],
+      "type": "DodgeAxis",
+      "defaultValue": "both",
+      "upstreamDefault": "'both'",
+      "control": "select",
+      "options": [
+        {
+          "label": "both",
+          "value": "both"
+        },
+        {
+          "label": "x",
+          "value": "x"
+        },
+        {
+          "label": "y",
+          "value": "y"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.wall",
+      "name": "wall",
+      "label": "wall · t0",
+      "description": "墙面，控制 dodge field 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "wall"
+        }
+      ],
+      "type": "DodgeWall",
+      "defaultValue": "clamp",
+      "upstreamDefault": "'clamp'",
+      "control": "select",
+      "options": [
+        {
+          "label": "clamp",
+          "value": "clamp"
+        },
+        {
+          "label": "bounce",
+          "value": "bounce"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disabled",
+      "name": "disabled",
+      "label": "禁用 · t0",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.type",
+      "name": "type",
+      "label": "类型 · t1",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.type",
+      "name": "type",
+      "label": "类型 · t2",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "type"
+        }
+      ],
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode | ((state: DodgeFieldState) => ReactNode)",
+      "required": false,
+      "defaultExpression": "(\n          <button type=\"button\" className=\"dodge-field__pill\" aria-label={taunts[0]}>\n            <span className=\"dodge-field__labels\">\n              {taunts.map((taunt, i) => (\n                <span\n                  key={`${taunt}-${i}`}\n                  className=\"dodge-field__label\"\n                  data-active={i === index ? 'true' : 'false'}\n                  aria-hidden=\"true\"\n                >\n                  {taunt}\n                </span>\n              ))}\n            </span>\n          </button>\n        )",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 247,
+        "kind": "implementation-fallback"
+      },
+      "defaultCondition": "nullish",
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 13
+      },
+      "codeExample": "children={<><button className={cn(\"aw-micro-action\")} type=\"button\">试着抓住我</button></>}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><button className={cn(\"aw-micro-action\")} type=\"button\">试着抓住我</button></>}"
+      ]
+    },
+    {
+      "name": "taunts",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_TAUNTS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 72,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "Catch me",
+        "Nope",
+        "Too slow",
+        "Almost",
+        "Okay, okay"
+      ],
+      "defaultResolvedExpression": "['Catch me', 'Nope', 'Too slow', 'Almost', 'Okay, okay']",
+      "description": "提示短句的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "taunts={['再近一点', '向左试试', '就要到了']}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "taunts={['再近一点', '向左试试', '就要到了']}"
+      ]
+    },
+    {
+      "name": "notice",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 73,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "提示，控制 dodge field 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 15
+      },
+      "codeExample": "notice=\"可以抓住了\"",
+      "usageExamples": [
+        "notice=\"可以抓住了\""
+      ]
+    },
+    {
+      "name": "inkColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 74,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "墨色颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 16
+      },
+      "codeExample": "inkColor={palette.ink}",
+      "usageExamples": [
+        "inkColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "contrastColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#18181b'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 75,
+        "kind": "parameter"
+      },
+      "defaultValue": "#18181b",
+      "description": "对比度颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 17
+      },
+      "codeExample": "contrastColor={palette.ivory}",
+      "usageExamples": [
+        "contrastColor={palette.ivory}"
+      ]
+    },
+    {
+      "name": "fieldHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "240",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 76,
+        "kind": "parameter"
+      },
+      "defaultValue": 240,
+      "description": "场高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 18
+      },
+      "codeExample": "fieldHeight={280}",
+      "usageExamples": [
+        "fieldHeight={280}"
+      ]
+    },
+    {
+      "name": "reach",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "72",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 77,
+        "kind": "parameter"
+      },
+      "defaultValue": 72,
+      "description": "作用距离，控制 dodge field 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 19
+      },
+      "codeExample": "reach={72}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "120",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultValue": 120,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 20
+      },
+      "codeExample": "radius={120}"
+    },
+    {
+      "name": "falloff",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "衰减，控制 dodge field 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 21
+      },
+      "codeExample": "falloff={2}"
+    },
+    {
+      "name": "fleeDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "130",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": 130,
+      "description": "逃离时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 22
+      },
+      "codeExample": "fleeDuration={130}"
+    },
+    {
+      "name": "returnDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "620",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 81,
+        "kind": "parameter"
+      },
+      "defaultValue": 620,
+      "description": "返回时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 23
+      },
+      "codeExample": "returnDuration={620}"
+    },
+    {
+      "name": "returnBounce",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 82,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "返回回弹，控制 dodge field 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 24
+      },
+      "codeExample": "returnBounce={0.1}"
+    },
+    {
+      "name": "axis",
+      "type": "DodgeAxis",
+      "required": false,
+      "defaultExpression": "'both'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 83,
+        "kind": "parameter"
+      },
+      "defaultValue": "both",
+      "description": "坐标轴，控制 dodge field 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "both",
+        "x",
+        "y"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 25
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "both",
+          "x",
+          "y"
+        ]
+      },
+      "codeExample": "axis={\"both\"}"
+    },
+    {
+      "name": "wall",
+      "type": "DodgeWall",
+      "required": false,
+      "defaultExpression": "'clamp'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 84,
+        "kind": "parameter"
+      },
+      "defaultValue": "clamp",
+      "description": "墙面，控制 dodge field 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "clamp",
+        "bounce"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 26
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "clamp",
+          "bounce"
+        ]
+      },
+      "codeExample": "wall={\"clamp\"}"
+    },
+    {
+      "name": "patience",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 85,
+        "kind": "parameter"
+      },
+      "defaultValue": 4,
+      "description": "等待耐心，控制 dodge field 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 27
+      },
+      "codeExample": "patience={4}",
+      "usageExamples": [
+        "patience={4}"
+      ]
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 86,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 28
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    },
+    {
+      "name": "onDodge",
+      "type": "(count: number) => void",
+      "required": false,
+      "description": "躲避时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 29
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((count: number) => void) | undefined"
+      },
+      "codeExample": "onDodge={count => setMessage(`已避让 ${count} 次`)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onDodge={count => setMessage(`已避让 ${count} 次`)}"
+      ]
+    },
+    {
+      "name": "onRelent",
+      "type": "() => void",
+      "required": false,
+      "description": "缓和时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onRelent={() => setMessage('按钮已停止避让，可直接点击。')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onRelent={() => setMessage('按钮已停止避让，可直接点击。')}"
+      ]
+    },
+    {
+      "name": "onCatch",
+      "type": "() => void",
+      "required": false,
+      "description": "捕获时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onCatch={() => setMessage('已抓住演示按钮。')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onCatch={() => setMessage('已抓住演示按钮。')}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 90,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 32
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+        "line": 33
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport DodgeField from '../../../.upstream/src/ts-default/Micro/DodgeField/DodgeField';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nexport default function DodgeFieldDemo() {\n  const [message, setMessage] = useState('试着移动到按钮附近。');\n  const [revision, setRevision] = useState(0);\n  return <DemoPanel title=\"Dodge Field · 避让微交互\"><div className={cn(\"aw-micro-stack\")}>\n    <div className={cn(\"aw-micro-wide\")}><DodgeField key={revision}       onDodge={count => setMessage(`已避让 ${count} 次`)} onRelent={() => setMessage('按钮已停止避让，可直接点击。')} onCatch={() => setMessage('已抓住演示按钮。')} /*__AW_PROPS_t0__*/ ><button className={cn(\"aw-micro-action\")}  /*__AW_PROPS_t1__*/ >试着抓住我</button></DodgeField></div>\n    <div className={cn(\"aw-micro-controls\")}><button className={styles['aw-micro-action']}  onClick={() => { setRevision(value => value + 1); setMessage('演示已重置。'); }} /*__AW_PROPS_t2__*/ >重置</button></div>\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">{message}</p>\n    <p className={cn(\"aw-micro-hint\")}>用于趣味展示，不用于提交、取消或其他关键业务操作。</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "DodgeField",
+      "sourcePath": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode | ((state: DodgeFieldState) => ReactNode)",
+          "required": false,
+          "defaultExpression": "(\n          <button type=\"button\" className=\"dodge-field__pill\" aria-label={taunts[0]}>\n            <span className=\"dodge-field__labels\">\n              {taunts.map((taunt, i) => (\n                <span\n                  key={`${taunt}-${i}`}\n                  className=\"dodge-field__label\"\n                  data-active={i === index ? 'true' : 'false'}\n                  aria-hidden=\"true\"\n                >\n                  {taunt}\n                </span>\n              ))}\n            </span>\n          </button>\n        )",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 247,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 13
+          },
+          "codeExample": "children={<><button className={cn(\"aw-micro-action\")} type=\"button\">试着抓住我</button></>}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><button className={cn(\"aw-micro-action\")} type=\"button\">试着抓住我</button></>}"
+          ]
+        },
+        {
+          "name": "taunts",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_TAUNTS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 72,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "Catch me",
+            "Nope",
+            "Too slow",
+            "Almost",
+            "Okay, okay"
+          ],
+          "defaultResolvedExpression": "['Catch me', 'Nope', 'Too slow', 'Almost', 'Okay, okay']",
+          "description": "提示短句的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "taunts={['再近一点', '向左试试', '就要到了']}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "taunts={['再近一点', '向左试试', '就要到了']}"
+          ]
+        },
+        {
+          "name": "notice",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 73,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "提示，控制 dodge field 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 15
+          },
+          "codeExample": "notice=\"可以抓住了\"",
+          "usageExamples": [
+            "notice=\"可以抓住了\""
+          ]
+        },
+        {
+          "name": "inkColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 74,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "墨色颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 16
+          },
+          "codeExample": "inkColor={palette.ink}",
+          "usageExamples": [
+            "inkColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "contrastColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#18181b'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 75,
+            "kind": "parameter"
+          },
+          "defaultValue": "#18181b",
+          "description": "对比度颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 17
+          },
+          "codeExample": "contrastColor={palette.ivory}",
+          "usageExamples": [
+            "contrastColor={palette.ivory}"
+          ]
+        },
+        {
+          "name": "fieldHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "240",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 76,
+            "kind": "parameter"
+          },
+          "defaultValue": 240,
+          "description": "场高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 18
+          },
+          "codeExample": "fieldHeight={280}",
+          "usageExamples": [
+            "fieldHeight={280}"
+          ]
+        },
+        {
+          "name": "reach",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "72",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 77,
+            "kind": "parameter"
+          },
+          "defaultValue": 72,
+          "description": "作用距离，控制 dodge field 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 19
+          },
+          "codeExample": "reach={72}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "120",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultValue": 120,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 20
+          },
+          "codeExample": "radius={120}"
+        },
+        {
+          "name": "falloff",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "衰减，控制 dodge field 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 21
+          },
+          "codeExample": "falloff={2}"
+        },
+        {
+          "name": "fleeDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "130",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": 130,
+          "description": "逃离时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 22
+          },
+          "codeExample": "fleeDuration={130}"
+        },
+        {
+          "name": "returnDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "620",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 81,
+            "kind": "parameter"
+          },
+          "defaultValue": 620,
+          "description": "返回时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 23
+          },
+          "codeExample": "returnDuration={620}"
+        },
+        {
+          "name": "returnBounce",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 82,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "返回回弹，控制 dodge field 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 24
+          },
+          "codeExample": "returnBounce={0.1}"
+        },
+        {
+          "name": "axis",
+          "type": "DodgeAxis",
+          "required": false,
+          "defaultExpression": "'both'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 83,
+            "kind": "parameter"
+          },
+          "defaultValue": "both",
+          "description": "坐标轴，控制 dodge field 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "both",
+            "x",
+            "y"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 25
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "both",
+              "x",
+              "y"
+            ]
+          },
+          "codeExample": "axis={\"both\"}"
+        },
+        {
+          "name": "wall",
+          "type": "DodgeWall",
+          "required": false,
+          "defaultExpression": "'clamp'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 84,
+            "kind": "parameter"
+          },
+          "defaultValue": "clamp",
+          "description": "墙面，控制 dodge field 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "clamp",
+            "bounce"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 26
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "clamp",
+              "bounce"
+            ]
+          },
+          "codeExample": "wall={\"clamp\"}"
+        },
+        {
+          "name": "patience",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 85,
+            "kind": "parameter"
+          },
+          "defaultValue": 4,
+          "description": "等待耐心，控制 dodge field 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 27
+          },
+          "codeExample": "patience={4}",
+          "usageExamples": [
+            "patience={4}"
+          ]
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 86,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 28
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        },
+        {
+          "name": "onDodge",
+          "type": "(count: number) => void",
+          "required": false,
+          "description": "躲避时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 29
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((count: number) => void) | undefined"
+          },
+          "codeExample": "onDodge={count => setMessage(`已避让 ${count} 次`)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onDodge={count => setMessage(`已避让 ${count} 次`)}"
+          ]
+        },
+        {
+          "name": "onRelent",
+          "type": "() => void",
+          "required": false,
+          "description": "缓和时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onRelent={() => setMessage('按钮已停止避让，可直接点击。')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onRelent={() => setMessage('按钮已停止避让，可直接点击。')}"
+          ]
+        },
+        {
+          "name": "onCatch",
+          "type": "() => void",
+          "required": false,
+          "description": "捕获时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onCatch={() => setMessage('已抓住演示按钮。')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onCatch={() => setMessage('已抓住演示按钮。')}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 90,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 32
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/DodgeField/DodgeField.tsx",
+            "line": 33
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "button · t1",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn(\"aw-micro-action\")}",
+            "className={styles['aw-micro-action']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\"",
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>试着抓住我</>}",
+            "children={<>重置</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => { setRevision(value => value + 1); setMessage('演示已重置。'); }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "button · t2",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={cn(\"aw-micro-action\")}",
+            "className={styles['aw-micro-action']}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\"",
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>试着抓住我</>}",
+            "children={<>重置</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => { setRevision(value => value + 1); setMessage('演示已重置。'); }}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

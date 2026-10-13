@@ -1,0 +1,2532 @@
+{
+  "version": 1,
+  "id": "stepper",
+  "name": "Stepper",
+  "sourcePath": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+  "demoPath": "src/demos/layout/stepper.tsx",
+  "fields": [
+    {
+      "key": "t0.initialStep",
+      "name": "initialStep",
+      "label": "initialStep · t0",
+      "description": "初始步进，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "initialStep"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backButtonText",
+      "name": "backButtonText",
+      "label": "backButtonText · t0",
+      "description": "背面按钮文字，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backButtonText"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "上一步",
+      "upstreamDefault": "'Back'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.nextButtonText",
+      "name": "nextButtonText",
+      "label": "nextButtonText · t0",
+      "description": "下一步按钮文字，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "nextButtonText"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "继续",
+      "upstreamDefault": "'Continue'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.completeButtonText",
+      "name": "completeButtonText",
+      "label": "completeButtonText · t0",
+      "description": "完成按钮文字，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "completeButtonText"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "完成",
+      "upstreamDefault": "'Complete'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.theme",
+      "name": "theme",
+      "label": "theme · t0",
+      "description": "主题，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "theme"
+        }
+      ],
+      "type": "'dark' | 'light'",
+      "defaultValue": "light",
+      "upstreamDefault": "'dark'",
+      "control": "select",
+      "options": [
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.frame",
+      "name": "frame",
+      "label": "frame · t0",
+      "description": "是否外框，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "frame"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 20,
+      "upstreamDefault": "24",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.width",
+      "name": "width",
+      "label": "宽度 · t0",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "width"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": "100%",
+      "upstreamDefault": "440",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.transition",
+      "name": "transition",
+      "label": "transition · t0",
+      "description": "动画的过渡配置对象，如 spring 的 stiffness、damping 或 duration。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "transition"
+        }
+      ],
+      "type": "'slide' | 'fade' | 'none'",
+      "defaultValue": "slide",
+      "upstreamDefault": "'slide'",
+      "control": "select",
+      "options": [
+        {
+          "label": "slide",
+          "value": "slide"
+        },
+        {
+          "label": "fade",
+          "value": "fade"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.linear",
+      "name": "linear",
+      "label": "linear · t0",
+      "description": "是否线性，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "linear"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.indicator",
+      "name": "indicator",
+      "label": "indicator · t0",
+      "description": "指示器，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "indicator"
+        }
+      ],
+      "type": "'numbers' | 'dots' | 'bars'",
+      "defaultValue": "numbers",
+      "upstreamDefault": "'numbers'",
+      "control": "select",
+      "options": [
+        {
+          "label": "numbers",
+          "value": "numbers"
+        },
+        {
+          "label": "dots",
+          "value": "dots"
+        },
+        {
+          "label": "bars",
+          "value": "bars"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.orientation",
+      "name": "orientation",
+      "label": "方向 · t0",
+      "description": "方向，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "orientation"
+        }
+      ],
+      "type": "'horizontal' | 'vertical'",
+      "defaultValue": "horizontal",
+      "upstreamDefault": "'horizontal'",
+      "control": "select",
+      "options": [
+        {
+          "label": "horizontal",
+          "value": "horizontal"
+        },
+        {
+          "label": "vertical",
+          "value": "vertical"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.disableStepIndicators",
+      "name": "disableStepIndicators",
+      "label": "disableStepIndicators · t0",
+      "description": "是否禁用步进指示器，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "disableStepIndicators"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.showFooter",
+      "name": "showFooter",
+      "label": "showFooter · t0",
+      "description": "是否显示底部栏，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "showFooter"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backButtonProps",
+      "name": "backButtonProps",
+      "label": "backButtonProps · t0",
+      "description": "背面按钮属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backButtonProps"
+        }
+      ],
+      "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+      "defaultValue": {},
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {},
+        "required": []
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.nextButtonProps",
+      "name": "nextButtonProps",
+      "label": "nextButtonProps · t0",
+      "description": "下一步按钮属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "nextButtonProps"
+        }
+      ],
+      "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+      "defaultValue": {},
+      "upstreamDefault": "{}",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {},
+        "required": []
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stepCircleContainerClassName",
+      "name": "stepCircleContainerClassName",
+      "label": "stepCircleContainerClassName · t0",
+      "description": "步进圆形容器类名名称，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stepCircleContainerClassName"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stepContainerClassName",
+      "name": "stepContainerClassName",
+      "label": "stepContainerClassName · t0",
+      "description": "步进容器类名名称，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stepContainerClassName"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.contentClassName",
+      "name": "contentClassName",
+      "label": "contentClassName · t0",
+      "description": "内容类名名称，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "contentClassName"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.footerClassName",
+      "name": "footerClassName",
+      "label": "footerClassName · t0",
+      "description": "底部栏类名名称，控制 stepper 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "footerClassName"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.placeholder",
+      "name": "placeholder",
+      "label": "占位文字 · t3",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "placeholder"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "例如：资料整理",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.name",
+      "name": "name",
+      "label": "name",
+      "description": "示例的受控状态 name；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "资料整理",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 37
+      },
+      "codeExample": "children={<><Step title=\"选择目标\" description=\"定义任务\"><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></Step><Step title=\"填写名称\" description=\"方便识别\"><label>工作流名称<input className=\"aw-input\" value={name} onChange={event => setName(event.target.value)} placeholder=\"例如：资料整理\" /></label></Step><Step title=\"确认\" description=\"检查内容\"><h3>{name || '未命名工作流'}</h3><p>点击完成结束本地演示。</p></Step></>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "children={<><Step title=\"选择目标\" description=\"定义任务\"><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></Step><Step title=\"填写名称\" description=\"方便识别\"><label>工作流名称<input className=\"aw-input\" value={name} onChange={event => setName(event.target.value)} placeholder=\"例如：资料整理\" /></label></Step><Step title=\"确认\" description=\"检查内容\"><h3>{name || '未命名工作流'}</h3><p>点击完成结束本地演示。</p></Step></>}"
+      ]
+    },
+    {
+      "name": "step",
+      "type": "number",
+      "required": false,
+      "description": "每次调整的步进间隔或当前步骤，具体含义取决于组件。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 38
+      },
+      "codeExample": "step={1}"
+    },
+    {
+      "name": "initialStep",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 175,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "初始步进，控制 stepper 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 39
+      },
+      "codeExample": "initialStep={1}",
+      "usageExamples": [
+        "initialStep={1}"
+      ]
+    },
+    {
+      "name": "onStepChange",
+      "type": "(step: number) => void",
+      "required": false,
+      "defaultExpression": "() => {}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 176,
+        "kind": "parameter"
+      },
+      "description": "当前步骤改变时通知调用方，参数为新的步骤编号。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 40
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((step: number) => void) | undefined"
+      },
+      "codeExample": "onStepChange={step => setStatus('当前步骤：' + step)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onStepChange={step => setStatus('当前步骤：' + step)}"
+      ]
+    },
+    {
+      "name": "onFinalStepCompleted",
+      "type": "() => void",
+      "required": false,
+      "defaultExpression": "() => {}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 177,
+        "kind": "parameter"
+      },
+      "description": "最后一步确认完成时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 41
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onFinalStepCompleted={() => setStatus('已完成示例配置')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onFinalStepCompleted={() => setStatus('已完成示例配置')}"
+      ]
+    },
+    {
+      "name": "indicator",
+      "type": "'numbers' | 'dots' | 'bars'",
+      "required": false,
+      "defaultExpression": "'numbers'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 178,
+        "kind": "parameter"
+      },
+      "defaultValue": "numbers",
+      "description": "指示器，控制 stepper 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "numbers",
+        "dots",
+        "bars"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 42
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "numbers",
+          "dots",
+          "bars"
+        ]
+      },
+      "codeExample": "indicator={\"numbers\"}"
+    },
+    {
+      "name": "orientation",
+      "type": "'horizontal' | 'vertical'",
+      "required": false,
+      "defaultExpression": "'horizontal'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 179,
+        "kind": "parameter"
+      },
+      "defaultValue": "horizontal",
+      "description": "方向，控制 stepper 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "horizontal",
+        "vertical"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "horizontal",
+          "vertical"
+        ]
+      },
+      "codeExample": "orientation={\"horizontal\"}"
+    },
+    {
+      "name": "transition",
+      "type": "'slide' | 'fade' | 'none'",
+      "required": false,
+      "defaultExpression": "'slide'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 180,
+        "kind": "parameter"
+      },
+      "defaultValue": "slide",
+      "description": "动画的过渡配置对象，如 spring 的 stiffness、damping 或 duration。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "slide",
+        "fade",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 44
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "slide",
+          "fade",
+          "none"
+        ]
+      },
+      "codeExample": "transition=\"slide\"",
+      "usageExamples": [
+        "transition=\"slide\""
+      ]
+    },
+    {
+      "name": "linear",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 181,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否线性，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 45
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "linear",
+      "usageExamples": [
+        "linear"
+      ]
+    },
+    {
+      "name": "disableStepIndicators",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 182,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用步进指示器，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 46
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disableStepIndicators={false}"
+    },
+    {
+      "name": "renderStepIndicator",
+      "type": "(props: StepIndicatorProps) => ReactNode",
+      "required": false,
+      "description": "自定义步骤指示器的渲染函数，接收当前步骤、状态与点击接口。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 47
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((props: StepIndicatorProps) => ReactNode) | undefined"
+      },
+      "codeExample": "renderStepIndicator={(props) => (\"示例\")}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "showFooter",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 184,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示底部栏，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 48
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "showFooter={true}"
+    },
+    {
+      "name": "backButtonText",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Back'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 185,
+        "kind": "parameter"
+      },
+      "defaultValue": "Back",
+      "description": "背面按钮文字，控制 stepper 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 49
+      },
+      "codeExample": "backButtonText=\"上一步\"",
+      "usageExamples": [
+        "backButtonText=\"上一步\""
+      ]
+    },
+    {
+      "name": "nextButtonText",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Continue'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 186,
+        "kind": "parameter"
+      },
+      "defaultValue": "Continue",
+      "description": "下一步按钮文字，控制 stepper 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 50
+      },
+      "codeExample": "nextButtonText=\"继续\"",
+      "usageExamples": [
+        "nextButtonText=\"继续\""
+      ]
+    },
+    {
+      "name": "completeButtonText",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'Complete'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 187,
+        "kind": "parameter"
+      },
+      "defaultValue": "Complete",
+      "description": "完成按钮文字，控制 stepper 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 51
+      },
+      "codeExample": "completeButtonText=\"完成\"",
+      "usageExamples": [
+        "completeButtonText=\"完成\""
+      ]
+    },
+    {
+      "name": "backButtonProps",
+      "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 188,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "背面按钮属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 52
+      },
+      "codeExample": "backButtonProps={{}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "nextButtonProps",
+      "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+      "required": false,
+      "defaultExpression": "{}",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 189,
+        "kind": "parameter"
+      },
+      "defaultValue": {},
+      "description": "下一步按钮属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 53
+      },
+      "codeExample": "nextButtonProps={{}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "completedContent",
+      "type": "ReactNode",
+      "required": false,
+      "defaultExpression": "null",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 368,
+        "kind": "implementation-fallback"
+      },
+      "defaultValue": null,
+      "defaultCondition": "nullish",
+      "description": "完成后内容，控制 stepper 的对应渲染或交互参数。",
+      "control": "code",
+      "valueKind": "react-node",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 54
+      },
+      "codeExample": "completedContent={<div style={{ padding: 24 }}><h3>准备完成</h3><p>这是示例流程，没有写入后台数据。</p></div>}",
+      "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+      "usageExamples": [
+        "completedContent={<div style={{ padding: 24 }}><h3>准备完成</h3><p>这是示例流程，没有写入后台数据。</p></div>}"
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "'dark' | 'light'",
+      "required": false,
+      "defaultExpression": "'dark'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 191,
+        "kind": "parameter"
+      },
+      "defaultValue": "dark",
+      "description": "主题，控制 stepper 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "dark",
+        "light"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 55
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "dark",
+          "light"
+        ]
+      },
+      "codeExample": "theme=\"light\"",
+      "usageExamples": [
+        "theme=\"light\""
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 56
+      },
+      "codeExample": "accentColor={palette.primary}",
+      "usageExamples": [
+        "accentColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "frame",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 193,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否外框，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 57
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "frame",
+      "usageExamples": [
+        "frame"
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "24",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 194,
+        "kind": "parameter"
+      },
+      "defaultValue": 24,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 58
+      },
+      "codeExample": "radius={20}",
+      "usageExamples": [
+        "radius={20}"
+      ]
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "440",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 195,
+        "kind": "parameter"
+      },
+      "defaultValue": 440,
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 59
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "width=\"100%\"",
+      "usageExamples": [
+        "width=\"100%\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 196,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 60
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "stepCircleContainerClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 197,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "步进圆形容器类名名称，控制 stepper 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 61
+      },
+      "codeExample": "stepCircleContainerClassName={\"\"}"
+    },
+    {
+      "name": "stepContainerClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 198,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "步进容器类名名称，控制 stepper 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 62
+      },
+      "codeExample": "stepContainerClassName={\"\"}"
+    },
+    {
+      "name": "contentClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 199,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "内容类名名称，控制 stepper 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 63
+      },
+      "codeExample": "contentClassName={\"\"}"
+    },
+    {
+      "name": "footerClassName",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 200,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "底部栏类名名称，控制 stepper 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 64
+      },
+      "codeExample": "footerClassName={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+        "line": 65
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [
+    {
+      "type": "Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'className' | 'style'>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    }
+  ],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component, { Step } from '../../../.upstream/src/ts-default/Components/Stepper/Stepper';\nimport { palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 使用真实Step具名子组件，输入、下一步、返回与完成状态均可操作。\n\nexport default function StepperDemo() {\n  const [status, setStatus] = useState(\"当前步骤：1\");\nconst [name, setName] = useState(/*__AW_STATE_state.name__*/);\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 440, position: 'relative', overflow: 'auto' }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ minHeight: 350, width: 'min(100%, 560px)', margin: '0 auto', padding: 18 }}><Component\n\n\nonStepChange={step => setStatus('当前步骤：' + step)}\nonFinalStepCompleted={() => setStatus('已完成示例配置')}\ncompletedContent={<div style={{ padding: 24 }}><h3>准备完成</h3><p>这是示例流程，没有写入后台数据。</p></div>} /*__AW_PROPS_t0__*/ ><Step title=\"选择目标\" description=\"定义任务\"><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></Step><Step title=\"填写名称\" description=\"方便识别\"><label>工作流名称<input className=\"aw-input\" value={name} onChange={event => setName(event.target.value)}  /*__AW_PROPS_t3__*/  /></label></Step><Step title=\"确认\" description=\"检查内容\"><h3>{name || '未命名工作流'}</h3><p>点击完成结束本地演示。</p></Step></Component></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Stepper",
+      "sourcePath": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 37
+          },
+          "codeExample": "children={<><Step title=\"选择目标\" description=\"定义任务\"><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></Step><Step title=\"填写名称\" description=\"方便识别\"><label>工作流名称<input className=\"aw-input\" value={name} onChange={event => setName(event.target.value)} placeholder=\"例如：资料整理\" /></label></Step><Step title=\"确认\" description=\"检查内容\"><h3>{name || '未命名工作流'}</h3><p>点击完成结束本地演示。</p></Step></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><Step title=\"选择目标\" description=\"定义任务\"><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></Step><Step title=\"填写名称\" description=\"方便识别\"><label>工作流名称<input className=\"aw-input\" value={name} onChange={event => setName(event.target.value)} placeholder=\"例如：资料整理\" /></label></Step><Step title=\"确认\" description=\"检查内容\"><h3>{name || '未命名工作流'}</h3><p>点击完成结束本地演示。</p></Step></>}"
+          ]
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "required": false,
+          "description": "每次调整的步进间隔或当前步骤，具体含义取决于组件。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 38
+          },
+          "codeExample": "step={1}"
+        },
+        {
+          "name": "initialStep",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 175,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "初始步进，控制 stepper 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 39
+          },
+          "codeExample": "initialStep={1}",
+          "usageExamples": [
+            "initialStep={1}"
+          ]
+        },
+        {
+          "name": "onStepChange",
+          "type": "(step: number) => void",
+          "required": false,
+          "defaultExpression": "() => {}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 176,
+            "kind": "parameter"
+          },
+          "description": "当前步骤改变时通知调用方，参数为新的步骤编号。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 40
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((step: number) => void) | undefined"
+          },
+          "codeExample": "onStepChange={step => setStatus('当前步骤：' + step)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onStepChange={step => setStatus('当前步骤：' + step)}"
+          ]
+        },
+        {
+          "name": "onFinalStepCompleted",
+          "type": "() => void",
+          "required": false,
+          "defaultExpression": "() => {}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 177,
+            "kind": "parameter"
+          },
+          "description": "最后一步确认完成时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 41
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onFinalStepCompleted={() => setStatus('已完成示例配置')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onFinalStepCompleted={() => setStatus('已完成示例配置')}"
+          ]
+        },
+        {
+          "name": "indicator",
+          "type": "'numbers' | 'dots' | 'bars'",
+          "required": false,
+          "defaultExpression": "'numbers'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 178,
+            "kind": "parameter"
+          },
+          "defaultValue": "numbers",
+          "description": "指示器，控制 stepper 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "numbers",
+            "dots",
+            "bars"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 42
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "numbers",
+              "dots",
+              "bars"
+            ]
+          },
+          "codeExample": "indicator={\"numbers\"}"
+        },
+        {
+          "name": "orientation",
+          "type": "'horizontal' | 'vertical'",
+          "required": false,
+          "defaultExpression": "'horizontal'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 179,
+            "kind": "parameter"
+          },
+          "defaultValue": "horizontal",
+          "description": "方向，控制 stepper 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "horizontal",
+            "vertical"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "horizontal",
+              "vertical"
+            ]
+          },
+          "codeExample": "orientation={\"horizontal\"}"
+        },
+        {
+          "name": "transition",
+          "type": "'slide' | 'fade' | 'none'",
+          "required": false,
+          "defaultExpression": "'slide'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 180,
+            "kind": "parameter"
+          },
+          "defaultValue": "slide",
+          "description": "动画的过渡配置对象，如 spring 的 stiffness、damping 或 duration。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "slide",
+            "fade",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 44
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "slide",
+              "fade",
+              "none"
+            ]
+          },
+          "codeExample": "transition=\"slide\"",
+          "usageExamples": [
+            "transition=\"slide\""
+          ]
+        },
+        {
+          "name": "linear",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 181,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否线性，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 45
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "linear",
+          "usageExamples": [
+            "linear"
+          ]
+        },
+        {
+          "name": "disableStepIndicators",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 182,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用步进指示器，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 46
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disableStepIndicators={false}"
+        },
+        {
+          "name": "renderStepIndicator",
+          "type": "(props: StepIndicatorProps) => ReactNode",
+          "required": false,
+          "description": "自定义步骤指示器的渲染函数，接收当前步骤、状态与点击接口。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 47
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((props: StepIndicatorProps) => ReactNode) | undefined"
+          },
+          "codeExample": "renderStepIndicator={(props) => (\"示例\")}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "showFooter",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 184,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示底部栏，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 48
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "showFooter={true}"
+        },
+        {
+          "name": "backButtonText",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Back'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 185,
+            "kind": "parameter"
+          },
+          "defaultValue": "Back",
+          "description": "背面按钮文字，控制 stepper 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 49
+          },
+          "codeExample": "backButtonText=\"上一步\"",
+          "usageExamples": [
+            "backButtonText=\"上一步\""
+          ]
+        },
+        {
+          "name": "nextButtonText",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Continue'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 186,
+            "kind": "parameter"
+          },
+          "defaultValue": "Continue",
+          "description": "下一步按钮文字，控制 stepper 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 50
+          },
+          "codeExample": "nextButtonText=\"继续\"",
+          "usageExamples": [
+            "nextButtonText=\"继续\""
+          ]
+        },
+        {
+          "name": "completeButtonText",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'Complete'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 187,
+            "kind": "parameter"
+          },
+          "defaultValue": "Complete",
+          "description": "完成按钮文字，控制 stepper 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 51
+          },
+          "codeExample": "completeButtonText=\"完成\"",
+          "usageExamples": [
+            "completeButtonText=\"完成\""
+          ]
+        },
+        {
+          "name": "backButtonProps",
+          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 188,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "背面按钮属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 52
+          },
+          "codeExample": "backButtonProps={{}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "nextButtonProps",
+          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "required": false,
+          "defaultExpression": "{}",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 189,
+            "kind": "parameter"
+          },
+          "defaultValue": {},
+          "description": "下一步按钮属性配置的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 53
+          },
+          "codeExample": "nextButtonProps={{}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "completedContent",
+          "type": "ReactNode",
+          "required": false,
+          "defaultExpression": "null",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 368,
+            "kind": "implementation-fallback"
+          },
+          "defaultValue": null,
+          "defaultCondition": "nullish",
+          "description": "完成后内容，控制 stepper 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 54
+          },
+          "codeExample": "completedContent={<div style={{ padding: 24 }}><h3>准备完成</h3><p>这是示例流程，没有写入后台数据。</p></div>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "completedContent={<div style={{ padding: 24 }}><h3>准备完成</h3><p>这是示例流程，没有写入后台数据。</p></div>}"
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "required": false,
+          "defaultExpression": "'dark'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 191,
+            "kind": "parameter"
+          },
+          "defaultValue": "dark",
+          "description": "主题，控制 stepper 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "dark",
+            "light"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 55
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "dark",
+              "light"
+            ]
+          },
+          "codeExample": "theme=\"light\"",
+          "usageExamples": [
+            "theme=\"light\""
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 56
+          },
+          "codeExample": "accentColor={palette.primary}",
+          "usageExamples": [
+            "accentColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "frame",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 193,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否外框，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 57
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "frame",
+          "usageExamples": [
+            "frame"
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "24",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 194,
+            "kind": "parameter"
+          },
+          "defaultValue": 24,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 58
+          },
+          "codeExample": "radius={20}",
+          "usageExamples": [
+            "radius={20}"
+          ]
+        },
+        {
+          "name": "width",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "440",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 195,
+            "kind": "parameter"
+          },
+          "defaultValue": 440,
+          "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 59
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "width=\"100%\"",
+          "usageExamples": [
+            "width=\"100%\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 196,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 60
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "stepCircleContainerClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 197,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "步进圆形容器类名名称，控制 stepper 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 61
+          },
+          "codeExample": "stepCircleContainerClassName={\"\"}"
+        },
+        {
+          "name": "stepContainerClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 198,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "步进容器类名名称，控制 stepper 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 62
+          },
+          "codeExample": "stepContainerClassName={\"\"}"
+        },
+        {
+          "name": "contentClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 199,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "内容类名名称，控制 stepper 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 63
+          },
+          "codeExample": "contentClassName={\"\"}"
+        },
+        {
+          "name": "footerClassName",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 200,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "底部栏类名名称，控制 stepper 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 64
+          },
+          "codeExample": "footerClassName={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 65
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'className' | 'style'>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "Step · t1",
+      "sourcePath": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 24
+          },
+          "codeExample": "children={<><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></>}",
+            "children={<><label>工作流名称<input className=\"aw-input\" value={name} onChange={event => setName(event.target.value)} placeholder=\"例如：资料整理\" /></label></>}",
+            "children={<><h3>{name || '未命名工作流'}</h3><p>点击完成结束本地演示。</p></>}"
+          ]
+        },
+        {
+          "name": "title",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件标题或原生元素提示文字。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 25
+          },
+          "codeExample": "title=\"选择目标\"",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "title=\"选择目标\"",
+            "title=\"填写名称\"",
+            "title=\"确认\""
+          ]
+        },
+        {
+          "name": "description",
+          "type": "ReactNode",
+          "required": false,
+          "description": "补充组件用途或当前展示内容的说明。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 26
+          },
+          "codeExample": "description=\"定义任务\"",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "description=\"定义任务\"",
+            "description=\"方便识别\"",
+            "description=\"检查内容\""
+          ]
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "required": false,
+          "description": "图标，控制 stepper 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 27
+          },
+          "codeExample": "icon={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t2",
+      "name": "Step · t2",
+      "sourcePath": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 24
+          },
+          "codeExample": "children={<><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></>}",
+            "children={<><label>工作流名称<input className=\"aw-input\" value={name} onChange={event => setName(event.target.value)} placeholder=\"例如：资料整理\" /></label></>}",
+            "children={<><h3>{name || '未命名工作流'}</h3><p>点击完成结束本地演示。</p></>}"
+          ]
+        },
+        {
+          "name": "title",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件标题或原生元素提示文字。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 25
+          },
+          "codeExample": "title=\"选择目标\"",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "title=\"选择目标\"",
+            "title=\"填写名称\"",
+            "title=\"确认\""
+          ]
+        },
+        {
+          "name": "description",
+          "type": "ReactNode",
+          "required": false,
+          "description": "补充组件用途或当前展示内容的说明。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 26
+          },
+          "codeExample": "description=\"定义任务\"",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "description=\"定义任务\"",
+            "description=\"方便识别\"",
+            "description=\"检查内容\""
+          ]
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "required": false,
+          "description": "图标，控制 stepper 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 27
+          },
+          "codeExample": "icon={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t3",
+      "name": "input",
+      "props": [
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className=\"aw-input\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value={name}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3215
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "ChangeEventHandler<HTMLInputElement> | undefined",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "usageExamples": [
+            "onChange={event => setName(event.target.value)}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3218
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string | undefined",
+          "required": false,
+          "description": "尚未填写或选择时显示的提示文字。",
+          "usageExamples": [
+            "placeholder=\"例如：资料整理\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3208
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "name": "Step · t4",
+      "sourcePath": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 24
+          },
+          "codeExample": "children={<><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><h3>创建工作流</h3><p>本示例将演示三步配置与完成状态。</p></>}",
+            "children={<><label>工作流名称<input className=\"aw-input\" value={name} onChange={event => setName(event.target.value)} placeholder=\"例如：资料整理\" /></label></>}",
+            "children={<><h3>{name || '未命名工作流'}</h3><p>点击完成结束本地演示。</p></>}"
+          ]
+        },
+        {
+          "name": "title",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件标题或原生元素提示文字。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 25
+          },
+          "codeExample": "title=\"选择目标\"",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "title=\"选择目标\"",
+            "title=\"填写名称\"",
+            "title=\"确认\""
+          ]
+        },
+        {
+          "name": "description",
+          "type": "ReactNode",
+          "required": false,
+          "description": "补充组件用途或当前展示内容的说明。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 26
+          },
+          "codeExample": "description=\"定义任务\"",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "description=\"定义任务\"",
+            "description=\"方便识别\"",
+            "description=\"检查内容\""
+          ]
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "required": false,
+          "description": "图标，控制 stepper 的对应渲染或交互参数。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/Stepper/Stepper.tsx",
+            "line": 27
+          },
+          "codeExample": "icon={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

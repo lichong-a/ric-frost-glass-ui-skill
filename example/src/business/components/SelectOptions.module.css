@@ -1,0 +1,18 @@
+/* Owned styles; CSS Modules namespace every component class and keyframe. */
+.aw-business-options, .aw-business-combo, .aw-business-combo-list, .aw-business-empty { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
+.aw-business-options { list-style:none; margin:0; padding:0; max-height:230px; overflow:auto }
+.aw-business-options button { width:100%; text-align:left; border:0; border-radius:8px; padding:10px 12px; min-height:42px; color:inherit; background:transparent; cursor:pointer }
+.aw-business-options button:hover, .aw-business-options [aria-selected=true] { background:var(--aw-color-action-primary); color:var(--aw-palette-ivory) }
+.aw-business-combo { position:relative }
+.aw-business-combo-list { position:absolute; top:calc(100% + 8px); inset-inline:0; padding:8px; z-index:10; background:var(--aw-surface-panel); border:1px solid var(--aw-color-border-control); border-radius:12px; box-shadow:var(--aw-shadow-popover) }
+.aw-business-empty { padding:24px; color:var(--aw-color-text-secondary); text-align:center }
+.aw-business-combo-list { padding:7px; border-radius:16px }
+.aw-business-options { display:grid; gap:3px; padding:2px }
+.aw-business-options [role=option] { background:transparent; color:inherit; border-radius:10px }
+.aw-business-options button { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:46px; padding:11px 13px; border-radius:10px; transition:background 180ms ease,color 180ms ease }
+.aw-business-options :is([data-active=true],[aria-selected=true]) > button { background:color-mix(in srgb,var(--aw-color-action-primary) 10%,var(--aw-surface-control)); color:var(--aw-color-action-primary) }
+.aw-business-options button:hover { background:color-mix(in srgb,var(--aw-color-action-primary) 14%,var(--aw-surface-control)); color:var(--aw-color-action-primary); translate:0 0 }
+.aw-business-combo-list { background:var(--aw-palette-ivory); }
+
+@media (prefers-reduced-motion:reduce) { .aw-business-options, .aw-business-options::before, .aw-business-options::after, .aw-business-combo, .aw-business-combo::before, .aw-business-combo::after, .aw-business-combo-list, .aw-business-combo-list::before, .aw-business-combo-list::after, .aw-business-empty, .aw-business-empty::before, .aw-business-empty::after { transition:none; animation:none; scroll-behavior:auto; } }
+[data-motion=reduce] .aw-business-options, [data-motion=reduce] .aw-business-options::before, [data-motion=reduce] .aw-business-options::after, [data-motion=reduce] .aw-business-combo, [data-motion=reduce] .aw-business-combo::before, [data-motion=reduce] .aw-business-combo::after, [data-motion=reduce] .aw-business-combo-list, [data-motion=reduce] .aw-business-combo-list::before, [data-motion=reduce] .aw-business-combo-list::after, [data-motion=reduce] .aw-business-empty, [data-motion=reduce] .aw-business-empty::before, [data-motion=reduce] .aw-business-empty::after { transition:none; animation:none; scroll-behavior:auto; }

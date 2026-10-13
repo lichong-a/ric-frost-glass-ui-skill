@@ -1,0 +1,1784 @@
+{
+  "version": 1,
+  "id": "floating-lines",
+  "name": "Floating Lines",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+  "demoPath": "src/demos/background/floating-lines.tsx",
+  "fields": [
+    {
+      "key": "t0.linesGradient",
+      "name": "linesGradient",
+      "label": "linesGradient · t0",
+      "description": "线条渐变的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "linesGradient"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#a6b39a",
+        "#c3ae88",
+        "#faf7f0"
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.backgroundColor",
+      "name": "backgroundColor",
+      "label": "背景颜色 · t0",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "backgroundColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#000000'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineCount",
+      "name": "lineCount",
+      "label": "lineCount · t0",
+      "description": "线条数量的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineCount"
+        }
+      ],
+      "type": "number | number[]",
+      "defaultValue": [
+        5,
+        5,
+        5
+      ],
+      "upstreamDefault": "[6]",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "number"
+            }
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineDistance",
+      "name": "lineDistance",
+      "label": "lineDistance · t0",
+      "description": "线条距离的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineDistance"
+        }
+      ],
+      "type": "number | number[]",
+      "defaultValue": [
+        5,
+        5,
+        5
+      ],
+      "upstreamDefault": "[5]",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "number"
+            }
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.animationSpeed",
+      "name": "animationSpeed",
+      "label": "animationSpeed · t0",
+      "description": "动画速度，控制 floating lines 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animationSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.5,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bendStrength",
+      "name": "bendStrength",
+      "label": "bendStrength · t0",
+      "description": "弯曲强度，控制 floating lines 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bendStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": -0.35,
+      "upstreamDefault": "-0.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.parallaxStrength",
+      "name": "parallaxStrength",
+      "label": "parallaxStrength · t0",
+      "description": "视差强度，控制 floating lines 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "parallaxStrength"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0.2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mixBlendMode",
+      "name": "mixBlendMode",
+      "label": "mixBlendMode · t0",
+      "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mixBlendMode"
+        }
+      ],
+      "type": "React.CSSProperties['mixBlendMode']",
+      "defaultValue": "normal",
+      "upstreamDefault": "'screen'",
+      "control": "select",
+      "options": [
+        {
+          "label": "color",
+          "value": "color"
+        },
+        {
+          "label": "-moz-initial",
+          "value": "-moz-initial"
+        },
+        {
+          "label": "inherit",
+          "value": "inherit"
+        },
+        {
+          "label": "initial",
+          "value": "initial"
+        },
+        {
+          "label": "revert",
+          "value": "revert"
+        },
+        {
+          "label": "revert-layer",
+          "value": "revert-layer"
+        },
+        {
+          "label": "unset",
+          "value": "unset"
+        },
+        {
+          "label": "overlay",
+          "value": "overlay"
+        },
+        {
+          "label": "normal",
+          "value": "normal"
+        },
+        {
+          "label": "saturation",
+          "value": "saturation"
+        },
+        {
+          "label": "multiply",
+          "value": "multiply"
+        },
+        {
+          "label": "color-burn",
+          "value": "color-burn"
+        },
+        {
+          "label": "color-dodge",
+          "value": "color-dodge"
+        },
+        {
+          "label": "darken",
+          "value": "darken"
+        },
+        {
+          "label": "difference",
+          "value": "difference"
+        },
+        {
+          "label": "exclusion",
+          "value": "exclusion"
+        },
+        {
+          "label": "hard-light",
+          "value": "hard-light"
+        },
+        {
+          "label": "hue",
+          "value": "hue"
+        },
+        {
+          "label": "lighten",
+          "value": "lighten"
+        },
+        {
+          "label": "luminosity",
+          "value": "luminosity"
+        },
+        {
+          "label": "screen",
+          "value": "screen"
+        },
+        {
+          "label": "soft-light",
+          "value": "soft-light"
+        },
+        {
+          "label": "plus-darker",
+          "value": "plus-darker"
+        },
+        {
+          "label": "plus-lighter",
+          "value": "plus-lighter"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.interactive",
+      "name": "interactive",
+      "label": "interactive · t0",
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "interactive"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.enabledWaves",
+      "name": "enabledWaves",
+      "label": "enabledWaves · t0",
+      "description": "启用波组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "enabledWaves"
+        }
+      ],
+      "type": "Array<'top' | 'middle' | 'bottom'>",
+      "defaultValue": [
+        "top",
+        "middle",
+        "bottom"
+      ],
+      "upstreamDefault": "['top', 'middle', 'bottom']",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bottomWavePosition",
+      "name": "bottomWavePosition",
+      "label": "bottomWavePosition · t0",
+      "description": "底部波形位置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bottomWavePosition"
+        }
+      ],
+      "type": "WavePosition",
+      "defaultValue": {
+        "x": 2,
+        "y": -0.7,
+        "rotate": -1
+      },
+      "upstreamDefault": "{ x: 2.0, y: -0.7, rotate: -1 }",
+      "control": "json",
+      "shape": {
+        "kind": "object",
+        "properties": {
+          "x": {
+            "kind": "number"
+          },
+          "y": {
+            "kind": "number"
+          },
+          "rotate": {
+            "kind": "number"
+          }
+        },
+        "required": [
+          "x",
+          "y",
+          "rotate"
+        ]
+      },
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bendRadius",
+      "name": "bendRadius",
+      "label": "bendRadius · t0",
+      "description": "弯曲半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bendRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 5,
+      "upstreamDefault": "5.0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.mouseDamping",
+      "name": "mouseDamping",
+      "label": "mouseDamping · t0",
+      "description": "鼠标阻尼，控制 floating lines 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "mouseDamping"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.05,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.parallax",
+      "name": "parallax",
+      "label": "parallax · t0",
+      "description": "是否视差，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "parallax"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lightMode",
+      "name": "lightMode",
+      "label": "lightMode · t0",
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lightMode"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "linesGradient",
+      "type": "string[]",
+      "required": false,
+      "description": "线条渐变的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 231
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "linesGradient={[palette.sage, palette.sand, palette.ivory]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "linesGradient={[palette.sage, palette.sand, palette.ivory]}"
+      ]
+    },
+    {
+      "name": "enabledWaves",
+      "type": "Array<'top' | 'middle' | 'bottom'>",
+      "required": false,
+      "defaultExpression": "['top', 'middle', 'bottom']",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 276,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "top",
+        "middle",
+        "bottom"
+      ],
+      "description": "启用波组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 232
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "\"top\" | \"bottom\" | \"middle\"",
+            "kind": "enum",
+            "options": [
+              "top",
+              "bottom",
+              "middle"
+            ]
+          }
+        ]
+      },
+      "codeExample": "enabledWaves={[\"top\",\"middle\",\"bottom\"]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "lineCount",
+      "type": "number | number[]",
+      "required": false,
+      "defaultExpression": "[6]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 277,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        6
+      ],
+      "description": "线条数量的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "union",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 233
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number[]",
+            "kind": "array",
+            "items": [
+              {
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "lineCount={[5, 5, 5]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "lineCount={[5, 5, 5]}"
+      ]
+    },
+    {
+      "name": "lineDistance",
+      "type": "number | number[]",
+      "required": false,
+      "defaultExpression": "[5]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 278,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        5
+      ],
+      "description": "线条距离的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "union",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 234
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number[]",
+            "kind": "array",
+            "items": [
+              {
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "lineDistance={[5, 5, 5]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "lineDistance={[5, 5, 5]}"
+      ]
+    },
+    {
+      "name": "topWavePosition",
+      "type": "WavePosition",
+      "required": false,
+      "description": "顶部波形位置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 235
+      },
+      "details": {
+        "kind": "object",
+        "fields": [
+          {
+            "name": "x",
+            "type": "number",
+            "required": true
+          },
+          {
+            "name": "y",
+            "type": "number",
+            "required": true
+          },
+          {
+            "name": "rotate",
+            "type": "number",
+            "required": true
+          }
+        ]
+      },
+      "codeExample": "topWavePosition={{ \"x\": 1, \"y\": 1, \"rotate\": 1 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "middleWavePosition",
+      "type": "WavePosition",
+      "required": false,
+      "description": "中层波形位置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 236
+      },
+      "details": {
+        "kind": "object",
+        "fields": [
+          {
+            "name": "x",
+            "type": "number",
+            "required": true
+          },
+          {
+            "name": "y",
+            "type": "number",
+            "required": true
+          },
+          {
+            "name": "rotate",
+            "type": "number",
+            "required": true
+          }
+        ]
+      },
+      "codeExample": "middleWavePosition={{ \"x\": 1, \"y\": 1, \"rotate\": 1 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "bottomWavePosition",
+      "type": "WavePosition",
+      "required": false,
+      "defaultExpression": "{ x: 2.0, y: -0.7, rotate: -1 }",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 281,
+        "kind": "parameter"
+      },
+      "defaultValue": {
+        "x": 2,
+        "y": -0.7,
+        "rotate": -1
+      },
+      "description": "底部波形位置的结构化配置；对象字段按完整类型传入并由组件读取。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 237
+      },
+      "details": {
+        "kind": "object",
+        "fields": [
+          {
+            "name": "x",
+            "type": "number",
+            "required": true
+          },
+          {
+            "name": "y",
+            "type": "number",
+            "required": true
+          },
+          {
+            "name": "rotate",
+            "type": "number",
+            "required": true
+          }
+        ]
+      },
+      "codeExample": "bottomWavePosition={{\"x\":2,\"y\":-0.7,\"rotate\":-1}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "animationSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 282,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "动画速度，控制 floating lines 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 238
+      },
+      "codeExample": "animationSpeed={0.5}",
+      "usageExamples": [
+        "animationSpeed={0.5}"
+      ]
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 283,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否交互，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 239
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "interactive",
+      "usageExamples": [
+        "interactive"
+      ]
+    },
+    {
+      "name": "bendRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "5.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 284,
+        "kind": "parameter"
+      },
+      "defaultValue": 5,
+      "description": "弯曲半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 240
+      },
+      "codeExample": "bendRadius={5}"
+    },
+    {
+      "name": "bendStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "-0.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 285,
+        "kind": "parameter"
+      },
+      "defaultValue": -0.5,
+      "description": "弯曲强度，控制 floating lines 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 241
+      },
+      "codeExample": "bendStrength={-0.35}",
+      "usageExamples": [
+        "bendStrength={-0.35}"
+      ]
+    },
+    {
+      "name": "mouseDamping",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 286,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "鼠标阻尼，控制 floating lines 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 242
+      },
+      "codeExample": "mouseDamping={0.05}"
+    },
+    {
+      "name": "parallax",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 287,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否视差，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 243
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "parallax={true}"
+    },
+    {
+      "name": "parallaxStrength",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 288,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.2,
+      "description": "视差强度，控制 floating lines 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 244
+      },
+      "codeExample": "parallaxStrength={0.12}",
+      "usageExamples": [
+        "parallaxStrength={0.12}"
+      ]
+    },
+    {
+      "name": "mixBlendMode",
+      "type": "React.CSSProperties['mixBlendMode']",
+      "required": false,
+      "defaultExpression": "'screen'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 289,
+        "kind": "parameter"
+      },
+      "defaultValue": "screen",
+      "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "color",
+        "-moz-initial",
+        "inherit",
+        "initial",
+        "revert",
+        "revert-layer",
+        "unset",
+        "overlay",
+        "normal",
+        "saturation",
+        "multiply",
+        "color-burn",
+        "color-dodge",
+        "darken",
+        "difference",
+        "exclusion",
+        "hard-light",
+        "hue",
+        "lighten",
+        "luminosity",
+        "screen",
+        "soft-light",
+        "plus-darker",
+        "plus-lighter"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 245
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "color",
+          "-moz-initial",
+          "inherit",
+          "initial",
+          "revert",
+          "revert-layer",
+          "unset",
+          "overlay",
+          "normal",
+          "saturation",
+          "multiply",
+          "color-burn",
+          "color-dodge",
+          "darken",
+          "difference",
+          "exclusion",
+          "hard-light",
+          "hue",
+          "lighten",
+          "luminosity",
+          "screen",
+          "soft-light",
+          "plus-darker",
+          "plus-lighter"
+        ]
+      },
+      "codeExample": "mixBlendMode=\"normal\"",
+      "usageExamples": [
+        "mixBlendMode=\"normal\""
+      ]
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#000000'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 290,
+        "kind": "parameter"
+      },
+      "defaultValue": "#000000",
+      "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 246
+      },
+      "codeExample": "backgroundColor={palette.ink}",
+      "usageExamples": [
+        "backgroundColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "lightMode",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 291,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否光照模式，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+        "line": 247
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "lightMode={false}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines';\n\n\n/** Agent Wan natural-tone preset for the real Floating Lines component. */\nexport default function FloatingLinesDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "FloatingLines",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+      "props": [
+        {
+          "name": "linesGradient",
+          "type": "string[]",
+          "required": false,
+          "description": "线条渐变的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 231
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "linesGradient={[palette.sage, palette.sand, palette.ivory]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "linesGradient={[palette.sage, palette.sand, palette.ivory]}"
+          ]
+        },
+        {
+          "name": "enabledWaves",
+          "type": "Array<'top' | 'middle' | 'bottom'>",
+          "required": false,
+          "defaultExpression": "['top', 'middle', 'bottom']",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 276,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "top",
+            "middle",
+            "bottom"
+          ],
+          "description": "启用波组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 232
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "\"top\" | \"bottom\" | \"middle\"",
+                "kind": "enum",
+                "options": [
+                  "top",
+                  "bottom",
+                  "middle"
+                ]
+              }
+            ]
+          },
+          "codeExample": "enabledWaves={[\"top\",\"middle\",\"bottom\"]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "lineCount",
+          "type": "number | number[]",
+          "required": false,
+          "defaultExpression": "[6]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 277,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            6
+          ],
+          "description": "线条数量的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "union",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 233
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number[]",
+                "kind": "array",
+                "items": [
+                  {
+                    "type": "number"
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "lineCount={[5, 5, 5]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "lineCount={[5, 5, 5]}"
+          ]
+        },
+        {
+          "name": "lineDistance",
+          "type": "number | number[]",
+          "required": false,
+          "defaultExpression": "[5]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 278,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            5
+          ],
+          "description": "线条距离的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "union",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 234
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number[]",
+                "kind": "array",
+                "items": [
+                  {
+                    "type": "number"
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "lineDistance={[5, 5, 5]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "lineDistance={[5, 5, 5]}"
+          ]
+        },
+        {
+          "name": "topWavePosition",
+          "type": "WavePosition",
+          "required": false,
+          "description": "顶部波形位置的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 235
+          },
+          "details": {
+            "kind": "object",
+            "fields": [
+              {
+                "name": "x",
+                "type": "number",
+                "required": true
+              },
+              {
+                "name": "y",
+                "type": "number",
+                "required": true
+              },
+              {
+                "name": "rotate",
+                "type": "number",
+                "required": true
+              }
+            ]
+          },
+          "codeExample": "topWavePosition={{ \"x\": 1, \"y\": 1, \"rotate\": 1 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "middleWavePosition",
+          "type": "WavePosition",
+          "required": false,
+          "description": "中层波形位置的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 236
+          },
+          "details": {
+            "kind": "object",
+            "fields": [
+              {
+                "name": "x",
+                "type": "number",
+                "required": true
+              },
+              {
+                "name": "y",
+                "type": "number",
+                "required": true
+              },
+              {
+                "name": "rotate",
+                "type": "number",
+                "required": true
+              }
+            ]
+          },
+          "codeExample": "middleWavePosition={{ \"x\": 1, \"y\": 1, \"rotate\": 1 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "bottomWavePosition",
+          "type": "WavePosition",
+          "required": false,
+          "defaultExpression": "{ x: 2.0, y: -0.7, rotate: -1 }",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 281,
+            "kind": "parameter"
+          },
+          "defaultValue": {
+            "x": 2,
+            "y": -0.7,
+            "rotate": -1
+          },
+          "description": "底部波形位置的结构化配置；对象字段按完整类型传入并由组件读取。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 237
+          },
+          "details": {
+            "kind": "object",
+            "fields": [
+              {
+                "name": "x",
+                "type": "number",
+                "required": true
+              },
+              {
+                "name": "y",
+                "type": "number",
+                "required": true
+              },
+              {
+                "name": "rotate",
+                "type": "number",
+                "required": true
+              }
+            ]
+          },
+          "codeExample": "bottomWavePosition={{\"x\":2,\"y\":-0.7,\"rotate\":-1}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "animationSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 282,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "动画速度，控制 floating lines 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 238
+          },
+          "codeExample": "animationSpeed={0.5}",
+          "usageExamples": [
+            "animationSpeed={0.5}"
+          ]
+        },
+        {
+          "name": "interactive",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 283,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否交互，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 239
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "interactive",
+          "usageExamples": [
+            "interactive"
+          ]
+        },
+        {
+          "name": "bendRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "5.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 284,
+            "kind": "parameter"
+          },
+          "defaultValue": 5,
+          "description": "弯曲半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 240
+          },
+          "codeExample": "bendRadius={5}"
+        },
+        {
+          "name": "bendStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "-0.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 285,
+            "kind": "parameter"
+          },
+          "defaultValue": -0.5,
+          "description": "弯曲强度，控制 floating lines 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 241
+          },
+          "codeExample": "bendStrength={-0.35}",
+          "usageExamples": [
+            "bendStrength={-0.35}"
+          ]
+        },
+        {
+          "name": "mouseDamping",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 286,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "鼠标阻尼，控制 floating lines 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 242
+          },
+          "codeExample": "mouseDamping={0.05}"
+        },
+        {
+          "name": "parallax",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 287,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否视差，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 243
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "parallax={true}"
+        },
+        {
+          "name": "parallaxStrength",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 288,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.2,
+          "description": "视差强度，控制 floating lines 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 244
+          },
+          "codeExample": "parallaxStrength={0.12}",
+          "usageExamples": [
+            "parallaxStrength={0.12}"
+          ]
+        },
+        {
+          "name": "mixBlendMode",
+          "type": "React.CSSProperties['mixBlendMode']",
+          "required": false,
+          "defaultExpression": "'screen'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 289,
+            "kind": "parameter"
+          },
+          "defaultValue": "screen",
+          "description": "效果图层与后方背景叠加时的 CSS 混合模式。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "color",
+            "-moz-initial",
+            "inherit",
+            "initial",
+            "revert",
+            "revert-layer",
+            "unset",
+            "overlay",
+            "normal",
+            "saturation",
+            "multiply",
+            "color-burn",
+            "color-dodge",
+            "darken",
+            "difference",
+            "exclusion",
+            "hard-light",
+            "hue",
+            "lighten",
+            "luminosity",
+            "screen",
+            "soft-light",
+            "plus-darker",
+            "plus-lighter"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 245
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "color",
+              "-moz-initial",
+              "inherit",
+              "initial",
+              "revert",
+              "revert-layer",
+              "unset",
+              "overlay",
+              "normal",
+              "saturation",
+              "multiply",
+              "color-burn",
+              "color-dodge",
+              "darken",
+              "difference",
+              "exclusion",
+              "hard-light",
+              "hue",
+              "lighten",
+              "luminosity",
+              "screen",
+              "soft-light",
+              "plus-darker",
+              "plus-lighter"
+            ]
+          },
+          "codeExample": "mixBlendMode=\"normal\"",
+          "usageExamples": [
+            "mixBlendMode=\"normal\""
+          ]
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#000000'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 290,
+            "kind": "parameter"
+          },
+          "defaultValue": "#000000",
+          "description": "背景颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 246
+          },
+          "codeExample": "backgroundColor={palette.ink}",
+          "usageExamples": [
+            "backgroundColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "lightMode",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 291,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否光照模式，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/FloatingLines/FloatingLines.tsx",
+            "line": 247
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "lightMode={false}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

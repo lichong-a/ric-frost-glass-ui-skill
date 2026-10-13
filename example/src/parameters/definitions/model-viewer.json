@@ -1,0 +1,2319 @@
+{
+  "version": 1,
+  "id": "model-viewer",
+  "name": "Model Viewer",
+  "sourcePath": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+  "demoPath": "src/demos/media/model-viewer.tsx",
+  "fields": [
+    {
+      "key": "t0.url",
+      "name": "url",
+      "label": "url · t0",
+      "description": "地址，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "url"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "@media/sample-object.gltf",
+      "control": "resource",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.width",
+      "name": "width",
+      "label": "宽度 · t0",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "width"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": "100%",
+      "upstreamDefault": "400",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.height",
+      "name": "height",
+      "label": "高度 · t0",
+      "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "height"
+        }
+      ],
+      "type": "number | string",
+      "defaultValue": 330,
+      "upstreamDefault": "400",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "string"
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.environment",
+      "name": "environment",
+      "label": "environment · t0",
+      "description": "环境，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "environment"
+        }
+      ],
+      "type": "ModelViewerEnvironment",
+      "defaultValue": "none",
+      "upstreamDefault": "'studio'",
+      "control": "select",
+      "options": [
+        {
+          "label": "apartment",
+          "value": "apartment"
+        },
+        {
+          "label": "city",
+          "value": "city"
+        },
+        {
+          "label": "dawn",
+          "value": "dawn"
+        },
+        {
+          "label": "forest",
+          "value": "forest"
+        },
+        {
+          "label": "lobby",
+          "value": "lobby"
+        },
+        {
+          "label": "night",
+          "value": "night"
+        },
+        {
+          "label": "park",
+          "value": "park"
+        },
+        {
+          "label": "studio",
+          "value": "studio"
+        },
+        {
+          "label": "sunset",
+          "value": "sunset"
+        },
+        {
+          "label": "warehouse",
+          "value": "warehouse"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.exposure",
+      "name": "exposure",
+      "label": "exposure · t0",
+      "description": "曝光，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "exposure"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoRotate",
+      "name": "autoRotate",
+      "label": "autoRotate · t0",
+      "description": "是否自动旋转，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoRotate"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoRotateSpeed",
+      "name": "autoRotateSpeed",
+      "label": "autoRotateSpeed · t0",
+      "description": "是否自动旋转速度，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoRotateSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.3,
+      "upstreamDefault": "0.4",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.dragRotate",
+      "name": "dragRotate",
+      "label": "dragRotate · t0",
+      "description": "是否拖动旋转，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "dragRotate"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.zoom",
+      "name": "zoom",
+      "label": "zoom · t0",
+      "description": "是否缩放，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "zoom"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.minZoom",
+      "name": "minZoom",
+      "label": "minZoom · t0",
+      "description": "最小缩放，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "minZoom"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.7,
+      "upstreamDefault": "0.7",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.maxZoom",
+      "name": "maxZoom",
+      "label": "maxZoom · t0",
+      "description": "最大缩放，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "maxZoom"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.7,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.hoverTilt",
+      "name": "hoverTilt",
+      "label": "hoverTilt · t0",
+      "description": "悬停倾斜，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "hoverTilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.15",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.float",
+      "name": "float",
+      "label": "float · t0",
+      "description": "浮动，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "float"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.3",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shadow",
+      "name": "shadow",
+      "label": "shadow · t0",
+      "description": "是否阴影，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shadow"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.shadowOpacity",
+      "name": "shadowOpacity",
+      "label": "shadowOpacity · t0",
+      "description": "阴影不透明度，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "shadowOpacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.18,
+      "upstreamDefault": "0.45",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.resetOnDoubleClick",
+      "name": "resetOnDoubleClick",
+      "label": "resetOnDoubleClick · t0",
+      "description": "是否重置双次点击，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "resetOnDoubleClick"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.environmentIntensity",
+      "name": "environmentIntensity",
+      "label": "environmentIntensity · t0",
+      "description": "环境强度，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "environmentIntensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1,
+      "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.autoRotateDelay",
+      "name": "autoRotateDelay",
+      "label": "autoRotateDelay · t0",
+      "description": "是否自动旋转延迟，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "autoRotateDelay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.turntable",
+      "name": "turntable",
+      "label": "turntable · t0",
+      "description": "是否旋转台，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "turntable"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intro",
+      "name": "intro",
+      "label": "intro · t0",
+      "description": "入场，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intro"
+        }
+      ],
+      "type": "ModelViewerIntro",
+      "defaultValue": "rise",
+      "upstreamDefault": "'rise'",
+      "control": "select",
+      "options": [
+        {
+          "label": "rise",
+          "value": "rise"
+        },
+        {
+          "label": "spin",
+          "value": "spin"
+        },
+        {
+          "label": "fade",
+          "value": "fade"
+        },
+        {
+          "label": "none",
+          "value": "none"
+        }
+      ],
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.startAngle",
+      "name": "startAngle",
+      "label": "startAngle · t0",
+      "description": "开始角度，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "startAngle"
+        }
+      ],
+      "type": "number",
+      "defaultValue": -30,
+      "upstreamDefault": "-30",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.tilt",
+      "name": "tilt",
+      "label": "tilt · t0",
+      "description": "倾斜，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.offsetX",
+      "name": "offsetX",
+      "label": "offsetX · t0",
+      "description": "偏移X轴，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "offsetX"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.offsetY",
+      "name": "offsetY",
+      "label": "offsetY · t0",
+      "description": "偏移Y轴，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "offsetY"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fit",
+      "name": "fit",
+      "label": "fit · t0",
+      "description": "适配，控制 model viewer 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fit"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.8,
+      "upstreamDefault": "0.8",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "url",
+      "type": "string",
+      "required": true,
+      "description": "地址，控制 model viewer 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 42
+      },
+      "codeExample": "url={import.meta.env.BASE_URL + 'media/sample-object.gltf'}",
+      "usageExamples": [
+        "url={import.meta.env.BASE_URL + 'media/sample-object.gltf'}"
+      ]
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 484,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 43
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "width=\"100%\"",
+      "usageExamples": [
+        "width=\"100%\""
+      ]
+    },
+    {
+      "name": "height",
+      "type": "number | string",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 485,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "scalar-union",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 44
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "codeExample": "height={330}",
+      "usageExamples": [
+        "height={330}"
+      ]
+    },
+    {
+      "name": "environment",
+      "type": "ModelViewerEnvironment",
+      "required": false,
+      "defaultExpression": "'studio'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 486,
+        "kind": "parameter"
+      },
+      "defaultValue": "studio",
+      "description": "环境，控制 model viewer 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "apartment",
+        "city",
+        "dawn",
+        "forest",
+        "lobby",
+        "night",
+        "park",
+        "studio",
+        "sunset",
+        "warehouse",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 45
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "apartment",
+          "city",
+          "dawn",
+          "forest",
+          "lobby",
+          "night",
+          "park",
+          "studio",
+          "sunset",
+          "warehouse",
+          "none"
+        ]
+      },
+      "codeExample": "environment=\"none\"",
+      "usageExamples": [
+        "environment=\"none\""
+      ]
+    },
+    {
+      "name": "environmentIntensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 487,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "环境强度，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 46
+      },
+      "codeExample": "environmentIntensity={1}"
+    },
+    {
+      "name": "exposure",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 488,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "曝光，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 47
+      },
+      "codeExample": "exposure={1}",
+      "usageExamples": [
+        "exposure={1}"
+      ]
+    },
+    {
+      "name": "autoRotate",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 489,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否自动旋转，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 48
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "autoRotate",
+      "usageExamples": [
+        "autoRotate"
+      ]
+    },
+    {
+      "name": "autoRotateSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.4",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 490,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.4,
+      "description": "是否自动旋转速度，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 49
+      },
+      "codeExample": "autoRotateSpeed={0.3}",
+      "usageExamples": [
+        "autoRotateSpeed={0.3}"
+      ]
+    },
+    {
+      "name": "autoRotateDelay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 491,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "是否自动旋转延迟，决定该分支的展示或交互行为。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 50
+      },
+      "codeExample": "autoRotateDelay={2}"
+    },
+    {
+      "name": "dragRotate",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 492,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否拖动旋转，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 51
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "dragRotate",
+      "usageExamples": [
+        "dragRotate"
+      ]
+    },
+    {
+      "name": "turntable",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 493,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否旋转台，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 52
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "turntable={false}"
+    },
+    {
+      "name": "zoom",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 494,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否缩放，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 53
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "zoom",
+      "usageExamples": [
+        "zoom"
+      ]
+    },
+    {
+      "name": "minZoom",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.7",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 495,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.7,
+      "description": "最小缩放，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 54
+      },
+      "codeExample": "minZoom={0.7}",
+      "usageExamples": [
+        "minZoom={0.7}"
+      ]
+    },
+    {
+      "name": "maxZoom",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 496,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "最大缩放，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 55
+      },
+      "codeExample": "maxZoom={1.7}",
+      "usageExamples": [
+        "maxZoom={1.7}"
+      ]
+    },
+    {
+      "name": "hoverTilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.15",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 497,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.15,
+      "description": "悬停倾斜，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 56
+      },
+      "codeExample": "hoverTilt={0.1}",
+      "usageExamples": [
+        "hoverTilt={0.1}"
+      ]
+    },
+    {
+      "name": "float",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 498,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.3,
+      "description": "浮动，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 57
+      },
+      "codeExample": "float={0.15}",
+      "usageExamples": [
+        "float={0.15}"
+      ]
+    },
+    {
+      "name": "shadow",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 499,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否阴影，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 58
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "shadow",
+      "usageExamples": [
+        "shadow"
+      ]
+    },
+    {
+      "name": "shadowOpacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.45",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 500,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.45,
+      "description": "阴影不透明度，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 59
+      },
+      "codeExample": "shadowOpacity={0.18}",
+      "usageExamples": [
+        "shadowOpacity={0.18}"
+      ]
+    },
+    {
+      "name": "intro",
+      "type": "ModelViewerIntro",
+      "required": false,
+      "defaultExpression": "'rise'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 501,
+        "kind": "parameter"
+      },
+      "defaultValue": "rise",
+      "description": "入场，控制 model viewer 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "rise",
+        "spin",
+        "fade",
+        "none"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 60
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "rise",
+          "spin",
+          "fade",
+          "none"
+        ]
+      },
+      "codeExample": "intro={\"rise\"}"
+    },
+    {
+      "name": "startAngle",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "-30",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 502,
+        "kind": "parameter"
+      },
+      "defaultValue": -30,
+      "description": "开始角度，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 61
+      },
+      "codeExample": "startAngle={-30}"
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 503,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "倾斜，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 62
+      },
+      "codeExample": "tilt={10}"
+    },
+    {
+      "name": "offsetX",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 504,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "偏移X轴，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 63
+      },
+      "codeExample": "offsetX={0}"
+    },
+    {
+      "name": "offsetY",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 505,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "偏移Y轴，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 64
+      },
+      "codeExample": "offsetY={0}"
+    },
+    {
+      "name": "fit",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.8",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 506,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.8,
+      "description": "适配，控制 model viewer 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 65
+      },
+      "codeExample": "fit={0.8}"
+    },
+    {
+      "name": "resetOnDoubleClick",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 507,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否重置双次点击，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 66
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "resetOnDoubleClick",
+      "usageExamples": [
+        "resetOnDoubleClick"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 508,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 67
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 68
+      },
+      "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "onModelLoaded",
+      "type": "() => void",
+      "required": false,
+      "description": "三维模型资源加载完成时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 69
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onModelLoaded={() => setStatus('本地GLTF模型已加载；拖动旋转，双击复位')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onModelLoaded={() => setStatus('本地GLTF模型已加载；拖动旋转，双击复位')}"
+      ]
+    },
+    {
+      "name": "ref",
+      "type": "Ref<ModelViewerHandle>",
+      "required": false,
+      "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+      "control": "code",
+      "valueKind": "ref",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+        "line": 70
+      },
+      "codeExample": "const elementRef = useRef<ModelViewerHandle | null>(null);\n// JSX: ref={elementRef}",
+      "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/ModelViewer/ModelViewer';\nimport { palette } from '../../shared/demo-support';\nimport { useState } from \"react\";\n// 使用自有sample-object.gltf与无HDR环境模式，避免外部模型或环境贴图依赖。\n// 此演示需要可用WebGL上下文；不支持时应显示能力提示，不声称效果已运行。\n\nexport default function ModelViewerDemo() {\n  const [status, setStatus] = useState(\"加载本地三维示例模型\");\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <div style={{ width: '100%', height: '100%' }}><div style={{ position: 'relative', height: 330, minHeight: 0, width: '100%' }}><Component\n\n\n\nonModelLoaded={() => setStatus('本地GLTF模型已加载；拖动旋转，双击复位')} /*__AW_PROPS_t0__*/  /></div><p role=\"status\" aria-live=\"polite\" style={{ margin: '12px 20px', fontSize: 14, color: palette.muted }}>{status}</p></div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "ModelViewer",
+      "sourcePath": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+      "props": [
+        {
+          "name": "url",
+          "type": "string",
+          "required": true,
+          "description": "地址，控制 model viewer 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 42
+          },
+          "codeExample": "url={import.meta.env.BASE_URL + 'media/sample-object.gltf'}",
+          "usageExamples": [
+            "url={import.meta.env.BASE_URL + 'media/sample-object.gltf'}"
+          ]
+        },
+        {
+          "name": "width",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 484,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 43
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "width=\"100%\"",
+          "usageExamples": [
+            "width=\"100%\""
+          ]
+        },
+        {
+          "name": "height",
+          "type": "number | string",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 485,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "容器或效果的高度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "scalar-union",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 44
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "codeExample": "height={330}",
+          "usageExamples": [
+            "height={330}"
+          ]
+        },
+        {
+          "name": "environment",
+          "type": "ModelViewerEnvironment",
+          "required": false,
+          "defaultExpression": "'studio'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 486,
+            "kind": "parameter"
+          },
+          "defaultValue": "studio",
+          "description": "环境，控制 model viewer 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "apartment",
+            "city",
+            "dawn",
+            "forest",
+            "lobby",
+            "night",
+            "park",
+            "studio",
+            "sunset",
+            "warehouse",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 45
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "apartment",
+              "city",
+              "dawn",
+              "forest",
+              "lobby",
+              "night",
+              "park",
+              "studio",
+              "sunset",
+              "warehouse",
+              "none"
+            ]
+          },
+          "codeExample": "environment=\"none\"",
+          "usageExamples": [
+            "environment=\"none\""
+          ]
+        },
+        {
+          "name": "environmentIntensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 487,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "环境强度，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 46
+          },
+          "codeExample": "environmentIntensity={1}"
+        },
+        {
+          "name": "exposure",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 488,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "曝光，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 47
+          },
+          "codeExample": "exposure={1}",
+          "usageExamples": [
+            "exposure={1}"
+          ]
+        },
+        {
+          "name": "autoRotate",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 489,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否自动旋转，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 48
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "autoRotate",
+          "usageExamples": [
+            "autoRotate"
+          ]
+        },
+        {
+          "name": "autoRotateSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.4",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 490,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.4,
+          "description": "是否自动旋转速度，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 49
+          },
+          "codeExample": "autoRotateSpeed={0.3}",
+          "usageExamples": [
+            "autoRotateSpeed={0.3}"
+          ]
+        },
+        {
+          "name": "autoRotateDelay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 491,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "是否自动旋转延迟，决定该分支的展示或交互行为。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 50
+          },
+          "codeExample": "autoRotateDelay={2}"
+        },
+        {
+          "name": "dragRotate",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 492,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否拖动旋转，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 51
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "dragRotate",
+          "usageExamples": [
+            "dragRotate"
+          ]
+        },
+        {
+          "name": "turntable",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 493,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否旋转台，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 52
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "turntable={false}"
+        },
+        {
+          "name": "zoom",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 494,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否缩放，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 53
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "zoom",
+          "usageExamples": [
+            "zoom"
+          ]
+        },
+        {
+          "name": "minZoom",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.7",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 495,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.7,
+          "description": "最小缩放，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 54
+          },
+          "codeExample": "minZoom={0.7}",
+          "usageExamples": [
+            "minZoom={0.7}"
+          ]
+        },
+        {
+          "name": "maxZoom",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 496,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "最大缩放，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 55
+          },
+          "codeExample": "maxZoom={1.7}",
+          "usageExamples": [
+            "maxZoom={1.7}"
+          ]
+        },
+        {
+          "name": "hoverTilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.15",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 497,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.15,
+          "description": "悬停倾斜，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 56
+          },
+          "codeExample": "hoverTilt={0.1}",
+          "usageExamples": [
+            "hoverTilt={0.1}"
+          ]
+        },
+        {
+          "name": "float",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 498,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.3,
+          "description": "浮动，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 57
+          },
+          "codeExample": "float={0.15}",
+          "usageExamples": [
+            "float={0.15}"
+          ]
+        },
+        {
+          "name": "shadow",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 499,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否阴影，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 58
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "shadow",
+          "usageExamples": [
+            "shadow"
+          ]
+        },
+        {
+          "name": "shadowOpacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.45",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 500,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.45,
+          "description": "阴影不透明度，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 59
+          },
+          "codeExample": "shadowOpacity={0.18}",
+          "usageExamples": [
+            "shadowOpacity={0.18}"
+          ]
+        },
+        {
+          "name": "intro",
+          "type": "ModelViewerIntro",
+          "required": false,
+          "defaultExpression": "'rise'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 501,
+            "kind": "parameter"
+          },
+          "defaultValue": "rise",
+          "description": "入场，控制 model viewer 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "rise",
+            "spin",
+            "fade",
+            "none"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 60
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "rise",
+              "spin",
+              "fade",
+              "none"
+            ]
+          },
+          "codeExample": "intro={\"rise\"}"
+        },
+        {
+          "name": "startAngle",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "-30",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 502,
+            "kind": "parameter"
+          },
+          "defaultValue": -30,
+          "description": "开始角度，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 61
+          },
+          "codeExample": "startAngle={-30}"
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 503,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "倾斜，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 62
+          },
+          "codeExample": "tilt={10}"
+        },
+        {
+          "name": "offsetX",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 504,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "偏移X轴，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 63
+          },
+          "codeExample": "offsetX={0}"
+        },
+        {
+          "name": "offsetY",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 505,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "偏移Y轴，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 64
+          },
+          "codeExample": "offsetY={0}"
+        },
+        {
+          "name": "fit",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.8",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 506,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.8,
+          "description": "适配，控制 model viewer 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 65
+          },
+          "codeExample": "fit={0.8}"
+        },
+        {
+          "name": "resetOnDoubleClick",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 507,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否重置双次点击，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 66
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "resetOnDoubleClick",
+          "usageExamples": [
+            "resetOnDoubleClick"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 508,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 67
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 68
+          },
+          "codeExample": "style={{ width: \"100%\", minHeight: 240 }}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "onModelLoaded",
+          "type": "() => void",
+          "required": false,
+          "description": "三维模型资源加载完成时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 69
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onModelLoaded={() => setStatus('本地GLTF模型已加载；拖动旋转，双击复位')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onModelLoaded={() => setStatus('本地GLTF模型已加载；拖动旋转，双击复位')}"
+          ]
+        },
+        {
+          "name": "ref",
+          "type": "Ref<ModelViewerHandle>",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/ModelViewer/ModelViewer.tsx",
+            "line": 70
+          },
+          "codeExample": "const elementRef = useRef<ModelViewerHandle | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

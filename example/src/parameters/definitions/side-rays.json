@@ -1,0 +1,952 @@
+{
+  "version": 1,
+  "id": "side-rays",
+  "name": "Side Rays",
+  "sourcePath": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+  "demoPath": "src/demos/background/side-rays.tsx",
+  "fields": [
+    {
+      "key": "t0.rayColor1",
+      "name": "rayColor1",
+      "label": "rayColor1 · t0",
+      "description": "射线第一颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rayColor1"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#EAB308'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rayColor2",
+      "name": "rayColor2",
+      "label": "rayColor2 · t0",
+      "description": "射线第二颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rayColor2"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#c3ae88",
+      "upstreamDefault": "'#96c8ff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.origin",
+      "name": "origin",
+      "label": "origin · t0",
+      "description": "起点，控制 side rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "origin"
+        }
+      ],
+      "type": "Origin",
+      "defaultValue": "top-right",
+      "upstreamDefault": "'top-right'",
+      "control": "select",
+      "options": [
+        {
+          "label": "top-right",
+          "value": "top-right"
+        },
+        {
+          "label": "top-left",
+          "value": "top-left"
+        },
+        {
+          "label": "bottom-right",
+          "value": "bottom-right"
+        },
+        {
+          "label": "bottom-left",
+          "value": "bottom-left"
+        }
+      ],
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.speed",
+      "name": "speed",
+      "label": "速度 · t0",
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "speed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.25,
+      "upstreamDefault": "2.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.intensity",
+      "name": "intensity",
+      "label": "intensity · t0",
+      "description": "强度，控制 side rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "intensity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.4,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spread",
+      "name": "spread",
+      "label": "展开距离 · t0",
+      "description": "展开间距，控制 side rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spread"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 2,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.saturation",
+      "name": "saturation",
+      "label": "saturation · t0",
+      "description": "饱和度，控制 side rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "saturation"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.6,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.opacity",
+      "name": "opacity",
+      "label": "透明度 · t0",
+      "description": "不透明度，控制 side rays 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。不透明度采用 0–1 的演示范围。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "opacity"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.9,
+      "upstreamDefault": "1.0",
+      "control": "range",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.tilt",
+      "name": "tilt",
+      "label": "tilt · t0",
+      "description": "倾斜，控制 side rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "tilt"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.blend",
+      "name": "blend",
+      "label": "混合程度 · t0",
+      "description": "混合，控制 side rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "blend"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.75,
+      "upstreamDefault": "0.75",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.falloff",
+      "name": "falloff",
+      "label": "falloff · t0",
+      "description": "衰减，控制 side rays 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "falloff"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.6,
+      "upstreamDefault": "1.6",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "speed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 39,
+        "kind": "parameter"
+      },
+      "defaultValue": 2.5,
+      "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 10
+      },
+      "codeExample": "speed={1.25}",
+      "usageExamples": [
+        "speed={1.25}"
+      ]
+    },
+    {
+      "name": "rayColor1",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#EAB308'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 40,
+        "kind": "parameter"
+      },
+      "defaultValue": "#EAB308",
+      "description": "射线第一颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 11
+      },
+      "codeExample": "rayColor1={palette.sage}",
+      "usageExamples": [
+        "rayColor1={palette.sage}"
+      ]
+    },
+    {
+      "name": "rayColor2",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#96c8ff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 41,
+        "kind": "parameter"
+      },
+      "defaultValue": "#96c8ff",
+      "description": "射线第二颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 12
+      },
+      "codeExample": "rayColor2={palette.sand}",
+      "usageExamples": [
+        "rayColor2={palette.sand}"
+      ]
+    },
+    {
+      "name": "intensity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 42,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "强度，控制 side rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 13
+      },
+      "codeExample": "intensity={1.4}",
+      "usageExamples": [
+        "intensity={1.4}"
+      ]
+    },
+    {
+      "name": "spread",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 43,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "展开间距，控制 side rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 14
+      },
+      "codeExample": "spread={2}",
+      "usageExamples": [
+        "spread={2}"
+      ]
+    },
+    {
+      "name": "origin",
+      "type": "Origin",
+      "required": false,
+      "defaultExpression": "'top-right'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 44,
+        "kind": "parameter"
+      },
+      "defaultValue": "top-right",
+      "description": "起点，控制 side rays 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "top-right",
+        "top-left",
+        "bottom-right",
+        "bottom-left"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "top-right",
+          "top-left",
+          "bottom-right",
+          "bottom-left"
+        ]
+      },
+      "codeExample": "origin=\"top-right\"",
+      "usageExamples": [
+        "origin=\"top-right\""
+      ]
+    },
+    {
+      "name": "tilt",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 45,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "倾斜，控制 side rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 16
+      },
+      "codeExample": "tilt={0}"
+    },
+    {
+      "name": "saturation",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 46,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "饱和度，控制 side rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 17
+      },
+      "codeExample": "saturation={0.6}",
+      "usageExamples": [
+        "saturation={0.6}"
+      ]
+    },
+    {
+      "name": "blend",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.75",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 47,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.75,
+      "description": "混合，控制 side rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 18
+      },
+      "codeExample": "blend={0.75}"
+    },
+    {
+      "name": "falloff",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.6",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 48,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.6,
+      "description": "衰减，控制 side rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 19
+      },
+      "codeExample": "falloff={1.6}"
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 49,
+        "kind": "parameter"
+      },
+      "defaultValue": 1,
+      "description": "不透明度，控制 side rays 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 20
+      },
+      "codeExample": "opacity={0.9}",
+      "usageExamples": [
+        "opacity={0.9}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 50,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+        "line": 21
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/SideRays/SideRays';\n\n\n/** Agent Wan natural-tone preset for the real Side Rays component. */\nexport default function SideRaysDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "SideRays",
+      "sourcePath": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+      "props": [
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 39,
+            "kind": "parameter"
+          },
+          "defaultValue": 2.5,
+          "description": "动画、流动或滚动的推进速度；不同效果使用各自的速度尺度。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 10
+          },
+          "codeExample": "speed={1.25}",
+          "usageExamples": [
+            "speed={1.25}"
+          ]
+        },
+        {
+          "name": "rayColor1",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#EAB308'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 40,
+            "kind": "parameter"
+          },
+          "defaultValue": "#EAB308",
+          "description": "射线第一颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 11
+          },
+          "codeExample": "rayColor1={palette.sage}",
+          "usageExamples": [
+            "rayColor1={palette.sage}"
+          ]
+        },
+        {
+          "name": "rayColor2",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#96c8ff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 41,
+            "kind": "parameter"
+          },
+          "defaultValue": "#96c8ff",
+          "description": "射线第二颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 12
+          },
+          "codeExample": "rayColor2={palette.sand}",
+          "usageExamples": [
+            "rayColor2={palette.sand}"
+          ]
+        },
+        {
+          "name": "intensity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 42,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "强度，控制 side rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 13
+          },
+          "codeExample": "intensity={1.4}",
+          "usageExamples": [
+            "intensity={1.4}"
+          ]
+        },
+        {
+          "name": "spread",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 43,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "展开间距，控制 side rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 14
+          },
+          "codeExample": "spread={2}",
+          "usageExamples": [
+            "spread={2}"
+          ]
+        },
+        {
+          "name": "origin",
+          "type": "Origin",
+          "required": false,
+          "defaultExpression": "'top-right'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 44,
+            "kind": "parameter"
+          },
+          "defaultValue": "top-right",
+          "description": "起点，控制 side rays 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "top-right",
+            "top-left",
+            "bottom-right",
+            "bottom-left"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "top-right",
+              "top-left",
+              "bottom-right",
+              "bottom-left"
+            ]
+          },
+          "codeExample": "origin=\"top-right\"",
+          "usageExamples": [
+            "origin=\"top-right\""
+          ]
+        },
+        {
+          "name": "tilt",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 45,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "倾斜，控制 side rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 16
+          },
+          "codeExample": "tilt={0}"
+        },
+        {
+          "name": "saturation",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 46,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "饱和度，控制 side rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 17
+          },
+          "codeExample": "saturation={0.6}",
+          "usageExamples": [
+            "saturation={0.6}"
+          ]
+        },
+        {
+          "name": "blend",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.75",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 47,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.75,
+          "description": "混合，控制 side rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 18
+          },
+          "codeExample": "blend={0.75}"
+        },
+        {
+          "name": "falloff",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.6",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 48,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.6,
+          "description": "衰减，控制 side rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 19
+          },
+          "codeExample": "falloff={1.6}"
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 49,
+            "kind": "parameter"
+          },
+          "defaultValue": 1,
+          "description": "不透明度，控制 side rays 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 20
+          },
+          "codeExample": "opacity={0.9}",
+          "usageExamples": [
+            "opacity={0.9}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 50,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Backgrounds/SideRays/SideRays.tsx",
+            "line": 21
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

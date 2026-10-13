@@ -1,0 +1,898 @@
+{
+  "version": 1,
+  "id": "business-select",
+  "name": "Select",
+  "sourcePath": "src/business/components/AnimatedSelect.tsx",
+  "demoPath": "src/business/demos/form/business-select.tsx",
+  "fields": [
+    {
+      "key": "t0.label",
+      "name": "label",
+      "label": "标签 · t0",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "默认空间",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.control",
+      "name": "control",
+      "label": "control · t0",
+      "description": "是否控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "control"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.label",
+      "name": "label",
+      "label": "标签 · t1",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "默认空间",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.options",
+      "name": "options",
+      "label": "选项 · t1",
+      "description": "可选择的候选项，显示标签与提交值按选项类型定义。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "options"
+        }
+      ],
+      "type": "readonly (string | { value: string; label: string })[]",
+      "defaultValue": [
+        "设计工作室",
+        "研发团队",
+        "运营空间",
+        "个人空间"
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "string"
+            },
+            {
+              "kind": "object",
+              "properties": {
+                "value": {
+                  "kind": "string"
+                },
+                "label": {
+                  "kind": "string"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ]
+            }
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.placeholder",
+      "name": "placeholder",
+      "label": "占位文字 · t1",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "placeholder"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "请选择",
+      "upstreamDefault": "'请选择'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t1.disabled",
+      "name": "disabled",
+      "label": "禁用 · t1",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "state.value",
+      "name": "value",
+      "label": "当前值",
+      "description": "示例的受控状态 value；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "设计工作室",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "state.multiple",
+      "name": "multiple",
+      "label": "多选",
+      "description": "示例的受控状态 multiple；面板与组件的原有回调同步更新。",
+      "scope": "state",
+      "type": "string[]",
+      "defaultValue": [
+        "设计工作室"
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "checked"
+        }
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "generatedId",
+      "defaultSource": {
+        "path": "src/business/components/AnimatedSelect.tsx",
+        "line": 18,
+        "kind": "implementation-fallback"
+      },
+      "defaultResolvedExpression": "useId()",
+      "defaultCondition": "nullish",
+      "description": "原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/AnimatedSelect.tsx",
+        "line": 14
+      },
+      "codeExample": "id={id}",
+      "usageExamples": [
+        "id={id}"
+      ]
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": true,
+      "description": "当前受控值，由调用方维护并随交互回调更新。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/AnimatedSelect.tsx",
+        "line": 14
+      },
+      "codeExample": "value={value}",
+      "usageExamples": [
+        "value={value}"
+      ]
+    },
+    {
+      "name": "options",
+      "type": "readonly (string | { value: string; label: string })[]",
+      "required": true,
+      "description": "可选择的候选项，显示标签与提交值按选项类型定义。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/AnimatedSelect.tsx",
+        "line": 14
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string | { value: string; label: string; }",
+            "kind": "union",
+            "variants": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "{ value: string; label: string; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "options={options}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "options={options}"
+      ]
+    },
+    {
+      "name": "onChange",
+      "type": "(value: string) => void",
+      "required": true,
+      "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": "src/business/components/AnimatedSelect.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(value: string) => void"
+      },
+      "codeExample": "onChange={setValue}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onChange={setValue}"
+      ]
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "向用户或辅助技术说明控件的名称。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/AnimatedSelect.tsx",
+        "line": 15
+      },
+      "codeExample": "label=\"默认空间\"",
+      "usageExamples": [
+        "label=\"默认空间\""
+      ]
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'请选择'",
+      "defaultSource": {
+        "path": "src/business/components/AnimatedSelect.tsx",
+        "line": 13,
+        "kind": "parameter"
+      },
+      "defaultValue": "请选择",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/AnimatedSelect.tsx",
+        "line": 15
+      },
+      "codeExample": "placeholder={\"请选择\"}"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": "src/business/components/AnimatedSelect.tsx",
+        "line": 13,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否禁用控件的用户交互。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": "src/business/components/AnimatedSelect.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "disabled={false}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useId, useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Field } from '../../components/Field';\nimport { AnimatedSelect } from '../../components/AnimatedSelect';\nimport { SpringCheckbox } from '../../components/SpringCheckbox';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function SelectDemo() {\n  const id = useId();\n  const options = ['设计工作室', '研发团队', '运营空间', '个人空间'];\n  const [value, setValue] = useState(/*__AW_STATE_state.value__*/);\n  const [multiple, setMultiple] = useState<string[]>(/*__AW_STATE_state.multiple__*/);\n  return <BusinessDemo title=\"Select · 下拉选择\" description=\"弹性展开的候选列表，单选与多选状态由调用方维护。\">\n    <Field  htmlFor={id} /*__AW_PROPS_t0__*/ ><AnimatedSelect id={id}  value={value}  onChange={setValue} /*__AW_PROPS_t1__*/  /></Field>\n    <fieldset className={cn('aw-business-fieldset')}><legend>同时参与的空间</legend>{options.map(item => <label data-ui=\"aw-business-choice\" className={cn(\"aw-business-choice\")} key={item}><SpringCheckbox checked={multiple.includes(item)} onChange={event => setMultiple(current => event.target.checked ? [...current, item] : current.filter(entry => entry !== item))} />{item}</label>)}</fieldset>\n    <p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">默认：{value}；参与：{multiple.join('、') || '无'}</p>\n  </BusinessDemo>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "Field",
+      "sourcePath": "src/business/components/Field.tsx",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "label=\"默认空间\"",
+          "usageExamples": [
+            "label=\"默认空间\""
+          ]
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "children={<><AnimatedSelect id={id} label=\"默认空间\" value={value} options={options} onChange={setValue} /></>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><AnimatedSelect id={id} label=\"默认空间\" value={value} options={options} onChange={setValue} /></>}"
+          ]
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "required": false,
+          "description": "与字段一起显示的帮助文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "hint={\"示例\"}"
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "(isControl ? children.props.id : undefined)",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "htmlFor={id}",
+          "usageExamples": [
+            "htmlFor={id}"
+          ]
+        },
+        {
+          "name": "control",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "control={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t1",
+      "name": "AnimatedSelect",
+      "sourcePath": "src/business/components/AnimatedSelect.tsx",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "generatedId",
+          "defaultSource": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 18,
+            "kind": "implementation-fallback"
+          },
+          "defaultResolvedExpression": "useId()",
+          "defaultCondition": "nullish",
+          "description": "原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 14
+          },
+          "codeExample": "id={id}",
+          "usageExamples": [
+            "id={id}"
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": true,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 14
+          },
+          "codeExample": "value={value}",
+          "usageExamples": [
+            "value={value}"
+          ]
+        },
+        {
+          "name": "options",
+          "type": "readonly (string | { value: string; label: string })[]",
+          "required": true,
+          "description": "可选择的候选项，显示标签与提交值按选项类型定义。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string | { value: string; label: string; }",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "{ value: string; label: string; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "label",
+                        "type": "string",
+                        "required": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "options={options}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "options={options}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "required": true,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(value: string) => void"
+          },
+          "codeExample": "onChange={setValue}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={setValue}"
+          ]
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "codeExample": "label=\"默认空间\"",
+          "usageExamples": [
+            "label=\"默认空间\""
+          ]
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'请选择'",
+          "defaultSource": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 13,
+            "kind": "parameter"
+          },
+          "defaultValue": "请选择",
+          "description": "尚未填写或选择时显示的提示文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "codeExample": "placeholder={\"请选择\"}"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 13,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t2",
+      "name": "SpringCheckbox",
+      "sourcePath": "src/business/components/SpringCheckbox.tsx",
+      "props": [
+        {
+          "name": "checked",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultExpression": "inner",
+          "defaultSource": {
+            "path": "src/business/components/SpringCheckbox.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "nullish",
+          "description": "当前受控勾选状态，调用方在变更回调中写回。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3185
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "checked={multiple.includes(item)}",
+          "usageExamples": [
+            "checked={multiple.includes(item)}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "ChangeEventHandler<HTMLInputElement> | undefined",
+          "required": false,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3218
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "details": {
+            "kind": "callback",
+            "signature": "ChangeEventHandler<HTMLInputElement> | undefined"
+          },
+          "codeExample": "onChange={event => setMultiple(current => event.target.checked ? [...current, item] : current.filter(entry => entry !== item))}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={event => setMultiple(current => event.target.checked ? [...current, item] : current.filter(entry => entry !== item))}"
+          ]
+        },
+        {
+          "name": "defaultChecked",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/SpringCheckbox.tsx",
+            "line": 9,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "非受控模式首次挂载时的勾选状态。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2691
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "defaultChecked={false}"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/SpringCheckbox.tsx",
+            "line": 9,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "InputHTMLAttributes<HTMLInputElement>",
+          "codeExample": "children={\"示例\"}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "InputHTMLAttributes<HTMLInputElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    }
+  ],
+  "apiScope": "component-props"
+}

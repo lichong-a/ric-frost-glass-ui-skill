@@ -1,6 +1,6 @@
 # InputNumber
 
-业务表单 · `business-inputnumber` · 中文意图：数字输入 / 数量调整 / 有界数值
+表单与选择 · `business-inputnumber` · 中文意图：数字输入 / 数量调整 / 有界数值
 
 ## 1. 什么场景使用
 
@@ -13,27 +13,113 @@
 ## 2. 只加载这一项
 
 1. 只读本指南，确认用途与边界。
-2. 只读 [src/business/demos/business-inputnumber.tsx](../../../src/business/demos/business-inputnumber.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
-3. 本例若导入 primitives，再定位该文件中被使用的符号，不加载其它示例。样式按需检索 [业务 Token 皮肤](../../../src/business/business.css) 中的对应类。
+2. 只读 [src/business/demos/form/business-inputnumber.tsx](../../../src/business/demos/form/business-inputnumber.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
+3. 本例从 components 按需导入独立控件；只读实际导入的 .tsx 及同名 .module.css。布局工具类也显式使用 CSS Modules，不给整块区域的 button/input 套统一动效。
 4. 涉及业务错误、权限、数据或异步行为时才追加对应契约：[05-input](../../contracts/05-input.md)。
 5. 预览库使用本项独立 import() 入口；复制到目标项目时也只接入所需组件和直接依赖。
 
-所有实现使用本项目已有 React、原生 HTML 和 CSS。完整交互、类型与回调以当前示例代码为准。
+所有实现使用本项目已有 React、原生语义控件、Motion 和 CSS。完整交互、类型与回调以当前示例代码为准；局部弹性、下拉、媒体与日历效果见 [交互动效指南](../motion-guide.md)。
 
 ## 3. 本例真实用法
 
 下面来自当前独立示例。默认导出是一个可运行实例；复制后把本地选项、数据与回调接到目标项目已有业务层，不把演示结果当作后端成功。
 
 ```tsx
+// 当前 InputNumber 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
+import ownedStyles0 from '../../components/DemoLayout.module.css';
+import ownedStyles1 from '../../components/Input.module.css';
+import { componentClasses } from '../../class-names';
 import { useState, useId } from 'react';
-import { BusinessDemo, Button, Field } from '../support';
+import { BusinessDemo } from '../../components/BusinessDemo';
+import { Button } from '../../components/Button';
+import { Field } from '../../components/Field';
 
+const ownedStyles={...ownedStyles0,...ownedStyles1};
+const cn=(names:string)=>componentClasses(ownedStyles,names);
 // 场景：数量、金额或有上下限的数值录入，明确单位、范围和步长。
 export default function InputNumberDemo() {
   const id = useId(); const [value, setValue] = useState<number | null>(12);
-  return <BusinessDemo title="InputNumber · 数值输入" description="数量范围 0–100，支持输入、增减和空值。"><Field label="批处理数量" htmlFor={id}><div className="aw-business-row"><Button variant="secondary" aria-label="减少数量" disabled={value === 0} onClick={() => setValue(Math.max(0,(value ?? 0)-1))}>−</Button><input id={id} type="number" style={{ width:120 }} min={0} max={100} step={1} value={value ?? ''} onChange={event => setValue(event.target.value === '' ? null : Math.min(100,Math.max(0,Math.round(Number(event.target.value)))))} /><Button variant="secondary" aria-label="增加数量" disabled={value === 100} onClick={() => setValue(Math.min(100,(value ?? 0)+1))}>+</Button></div></Field><p className="aw-business-status" role="status">数量：{value === null ? '未填写' : value}</p></BusinessDemo>;
+  return <BusinessDemo title="InputNumber · 数值输入" description="数量范围 0–100，支持输入、增减和空值。"><Field  htmlFor={id} label={"批处理数量"} control={false} ><div data-ui="aw-business-row" className={cn("aw-business-row")}><Button  aria-label="减少数量" disabled={value === 0} onClick={() => setValue(Math.max(0,(value ?? 0)-1))} variant={"secondary"} type={"button"} >−</Button><input className={cn('aw-business-input')} id={id}      value={value ?? ''} onChange={event => setValue(event.target.value === '' ? null : Math.min(100,Math.max(0,Math.round(Number(event.target.value)))))} type={"number"} style={{ "width": 120 }} min={0} max={100} step={1}  /><Button  aria-label="增加数量" disabled={value === 100} onClick={() => setValue(Math.min(100,(value ?? 0)+1))} variant={"secondary"} type={"button"} >+</Button></div></Field><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">数量：{value === null ? '未填写' : value}</p></BusinessDemo>;
 }
 ```
+
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `Field.label` | `string` | 是 | `未指定` | 向用户或辅助技术说明控件的名称。 |
+| `Field.children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Field.hint` | `string` | 否 | `未指定` | 与字段一起显示的帮助文字。 |
+| `Field.htmlFor` | `string` | 否 | `(isControl ? children.props.id : undefined)` | 关联控件的 id，让标签点击与辅助技术定位到该控件。 |
+| `Field.control` | `boolean` | 否 | `false` | 是否控制，决定该分支的展示或交互行为。 |
+| `Button · t1.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `Button · t1.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `Button · t1.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Button · t1.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t1.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+| `input.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `input.id` | `string \| undefined` | 否 | `未指定` | 原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。 |
+| `input.type` | `HTMLInputTypeAttribute \| undefined` | 否 | `未指定` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `input.style` | `CSSProperties \| undefined` | 否 | `未指定` | 容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。 |
+| `input.min` | `string \| number \| undefined` | 否 | `未指定` | 允许输入、拖动或选择的下限。 |
+| `input.max` | `string \| number \| undefined` | 否 | `未指定` | 允许输入、拖动或选择的上限。 |
+| `input.step` | `string \| number \| undefined` | 否 | `未指定` | 每次调整的步进间隔或当前步骤，具体含义取决于组件。 |
+| `input.value` | `string \| number \| readonly string[] \| undefined` | 否 | `未指定` | 当前受控值，由调用方维护并随交互回调更新。 |
+| `input.onChange` | `ChangeEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | 用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。 |
+
+本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
+
+**继承的原生属性：**
+
+- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+
+**children 的真实接入：**
+
+```tsx
+children={<><div data-ui="aw-business-row" className={cn("aw-business-row")}><Button variant="secondary" aria-label="减少数量" disabled={value === 0} onClick={() => setValue(Math.max(0,(value ?? 0)-1))}>−</Button><input className={cn('aw-business-input')} id={id} type="number" style={{ width:120 }} min={0} max={100} step={1} value={value ?? ''} onChange={event => setValue(event.target.value === '' ? null : Math.min(100,Math.max(0,Math.round(Number(event.target.value)))))} /><Button variant="secondary" aria-label="增加数量" disabled={value === 100} onClick={() => setValue(Math.min(100,(value ?? 0)+1))}>+</Button></div></>}
+```
+
+**children 的真实接入：**
+
+```tsx
+children={<>−</>}
+```
+
+**ref 的真实接入：**
+
+```tsx
+const elementRef = useRef<HTMLButtonElement | null>(null);
+// JSX: ref={elementRef}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.label` | `"批处理数量"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.control` | `false` | switch | 不限 ~ 不限 | 即时应用 |
+| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `t2.type` | `"number"` | text | 不限 ~ 不限 | 即时应用 |
+| `t2.style` | `{"width":120}` | json | 不限 ~ 不限 | 即时应用 |
+| `t2.min` | `0` | json | 不限 ~ 不限 | 即时应用 |
+| `t2.max` | `100` | json | 不限 ~ 不限 | 即时应用 |
+| `t2.step` | `1` | json | 不限 ~ 不限 | 即时应用 |
+| `t3.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t3.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `state.value` | `12` | json | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. 接入约束
 

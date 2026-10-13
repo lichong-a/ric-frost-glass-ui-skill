@@ -1,0 +1,672 @@
+{
+  "version": 1,
+  "id": "circular-gallery",
+  "name": "Circular Gallery",
+  "sourcePath": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+  "demoPath": "src/demos/media/circular-gallery.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "{ image: string; text: string }[]",
+      "defaultValue": [
+        {
+          "image": "@media/scene-1.svg",
+          "text": "山雾"
+        },
+        {
+          "image": "@media/scene-2.svg",
+          "text": "茶庭"
+        },
+        {
+          "image": "@media/scene-3.svg",
+          "text": "沙洲"
+        },
+        {
+          "image": "@media/scene-4.svg",
+          "text": "静水"
+        },
+        {
+          "image": "@media/scene-5.svg",
+          "text": "林间"
+        },
+        {
+          "image": "@media/scene-6.svg",
+          "text": "岩纹"
+        }
+      ],
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "image": {
+              "kind": "string"
+            },
+            "text": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "image",
+            "text"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.bend",
+      "name": "bend",
+      "label": "bend · t0",
+      "description": "弯曲，控制 circular gallery 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "bend"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.4,
+      "upstreamDefault": "3",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.textColor",
+      "name": "textColor",
+      "label": "文字颜色 · t0",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "textColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#ffffff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.borderRadius",
+      "name": "borderRadius",
+      "label": "borderRadius · t0",
+      "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "borderRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.06,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.font",
+      "name": "font",
+      "label": "font · t0",
+      "description": "字体，控制 circular gallery 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "font"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "600 24px sans-serif",
+      "upstreamDefault": "'bold 30px Figtree'",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scrollSpeed",
+      "name": "scrollSpeed",
+      "label": "scrollSpeed · t0",
+      "description": "滚动速度，控制 circular gallery 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scrollSpeed"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.1,
+      "upstreamDefault": "2",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.scrollEase",
+      "name": "scrollEase",
+      "label": "scrollEase · t0",
+      "description": "滚动缓动，控制 circular gallery 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "scrollEase"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.04,
+      "upstreamDefault": "0.05",
+      "control": "number",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "{ image: string; text: string }[]",
+      "required": false,
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 773
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "{ image: string; text: string; }",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "image",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "text",
+                "type": "string",
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={MEDIA.map((image, index) => ({ image, text: LABELS[index] }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={MEDIA.map((image, index) => ({ image, text: LABELS[index] }))}"
+      ]
+    },
+    {
+      "name": "bend",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "3",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 785,
+        "kind": "parameter"
+      },
+      "defaultValue": 3,
+      "description": "弯曲，控制 circular gallery 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 774
+      },
+      "codeExample": "bend={1.4}",
+      "usageExamples": [
+        "bend={1.4}"
+      ]
+    },
+    {
+      "name": "textColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#ffffff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 786,
+        "kind": "parameter"
+      },
+      "defaultValue": "#ffffff",
+      "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 775
+      },
+      "codeExample": "textColor={palette.ink}",
+      "usageExamples": [
+        "textColor={palette.ink}"
+      ]
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 787,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 776
+      },
+      "codeExample": "borderRadius={0.06}",
+      "usageExamples": [
+        "borderRadius={0.06}"
+      ]
+    },
+    {
+      "name": "font",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'bold 30px Figtree'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 788,
+        "kind": "parameter"
+      },
+      "defaultValue": "bold 30px Figtree",
+      "description": "字体，控制 circular gallery 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 777
+      },
+      "codeExample": "font=\"600 24px sans-serif\"",
+      "usageExamples": [
+        "font=\"600 24px sans-serif\""
+      ]
+    },
+    {
+      "name": "fontUrl",
+      "type": "string",
+      "required": false,
+      "description": "字体地址，控制 circular gallery 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 778
+      },
+      "codeExample": "fontUrl={\"示例\"}"
+    },
+    {
+      "name": "scrollSpeed",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "2",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 790,
+        "kind": "parameter"
+      },
+      "defaultValue": 2,
+      "description": "滚动速度，控制 circular gallery 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 779
+      },
+      "codeExample": "scrollSpeed={1.1}",
+      "usageExamples": [
+        "scrollSpeed={1.1}"
+      ]
+    },
+    {
+      "name": "scrollEase",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.05",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 791,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.05,
+      "description": "滚动缓动，控制 circular gallery 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+        "line": 780
+      },
+      "codeExample": "scrollEase={0.04}",
+      "usageExamples": [
+        "scrollEase={0.04}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/Components/CircularGallery/CircularGallery';\nimport { palette } from '../../shared/demo-support';\n\n// 拖动或滚动浏览真实WebGL弧面画廊，标签使用本地系统字体。\n// 此演示需要可用WebGL上下文；不支持时应显示能力提示，不声称效果已运行。\n\nexport default function CircularGalleryDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>\n      <Component\n\n  /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "CircularGallery",
+      "sourcePath": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "{ image: string; text: string }[]",
+          "required": false,
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 773
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "{ image: string; text: string; }",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "image",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "text",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={MEDIA.map((image, index) => ({ image, text: LABELS[index] }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={MEDIA.map((image, index) => ({ image, text: LABELS[index] }))}"
+          ]
+        },
+        {
+          "name": "bend",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "3",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 785,
+            "kind": "parameter"
+          },
+          "defaultValue": 3,
+          "description": "弯曲，控制 circular gallery 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 774
+          },
+          "codeExample": "bend={1.4}",
+          "usageExamples": [
+            "bend={1.4}"
+          ]
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#ffffff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 786,
+            "kind": "parameter"
+          },
+          "defaultValue": "#ffffff",
+          "description": "文字颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 775
+          },
+          "codeExample": "textColor={palette.ink}",
+          "usageExamples": [
+            "textColor={palette.ink}"
+          ]
+        },
+        {
+          "name": "borderRadius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 787,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "边框半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 776
+          },
+          "codeExample": "borderRadius={0.06}",
+          "usageExamples": [
+            "borderRadius={0.06}"
+          ]
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'bold 30px Figtree'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 788,
+            "kind": "parameter"
+          },
+          "defaultValue": "bold 30px Figtree",
+          "description": "字体，控制 circular gallery 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 777
+          },
+          "codeExample": "font=\"600 24px sans-serif\"",
+          "usageExamples": [
+            "font=\"600 24px sans-serif\""
+          ]
+        },
+        {
+          "name": "fontUrl",
+          "type": "string",
+          "required": false,
+          "description": "字体地址，控制 circular gallery 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 778
+          },
+          "codeExample": "fontUrl={\"示例\"}"
+        },
+        {
+          "name": "scrollSpeed",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "2",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 790,
+            "kind": "parameter"
+          },
+          "defaultValue": 2,
+          "description": "滚动速度，控制 circular gallery 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 779
+          },
+          "codeExample": "scrollSpeed={1.1}",
+          "usageExamples": [
+            "scrollSpeed={1.1}"
+          ]
+        },
+        {
+          "name": "scrollEase",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.05",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 791,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.05,
+          "description": "滚动缓动，控制 circular gallery 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/CircularGallery/CircularGallery.tsx",
+            "line": 780
+          },
+          "codeExample": "scrollEase={0.04}",
+          "usageExamples": [
+            "scrollEase={0.04}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

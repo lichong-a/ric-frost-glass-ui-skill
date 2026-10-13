@@ -1,0 +1,1435 @@
+{
+  "version": 1,
+  "id": "branched-menu",
+  "name": "Branched Menu",
+  "sourcePath": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+  "demoPath": "src/demos/navigation/branched-menu.tsx",
+  "fields": [
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "BranchedMenuItem[]",
+      "defaultValue": [
+        {
+          "label": "工作空间",
+          "children": [
+            {
+              "value": "skills",
+              "label": "技能与工具"
+            },
+            {
+              "value": "agents",
+              "label": "智能体"
+            },
+            {
+              "value": "knowledge",
+              "label": "知识库"
+            }
+          ]
+        },
+        {
+          "label": "设置",
+          "children": [
+            {
+              "value": "members",
+              "label": "成员管理"
+            },
+            {
+              "value": "preferences",
+              "label": "偏好设置"
+            }
+          ]
+        }
+      ],
+      "upstreamDefault": "DEFAULT_ITEMS",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "label": {
+              "kind": "string"
+            },
+            "value": {
+              "kind": "string"
+            },
+            "children": {
+              "kind": "array"
+            }
+          },
+          "required": [
+            "label"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.defaultOpen",
+      "name": "defaultOpen",
+      "label": "defaultOpen · t0",
+      "description": "非受控初始打开的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "defaultOpen"
+        }
+      ],
+      "type": "number | number[]",
+      "defaultValue": 0,
+      "upstreamDefault": "0",
+      "control": "json",
+      "shape": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "number"
+          },
+          {
+            "kind": "array",
+            "items": {
+              "kind": "number"
+            }
+          }
+        ]
+      },
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.defaultActive",
+      "name": "defaultActive",
+      "label": "defaultActive · t0",
+      "description": "非受控初始激活，控制 branched menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "defaultActive"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "skills",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.color",
+      "name": "color",
+      "label": "颜色 · t0",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "color"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#1f2d26",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#52604e",
+      "upstreamDefault": "'#f5f5f5'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineColor",
+      "name": "lineColor",
+      "label": "lineColor · t0",
+      "description": "线条颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#a6b39a",
+      "upstreamDefault": "'#3f3f46'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.width",
+      "name": "width",
+      "label": "宽度 · t0",
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "width"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 280,
+      "upstreamDefault": "240",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rowHeight",
+      "name": "rowHeight",
+      "label": "rowHeight · t0",
+      "description": "行高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rowHeight"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 44,
+      "upstreamDefault": "36",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.indent",
+      "name": "indent",
+      "label": "indent · t0",
+      "description": "缩进，控制 branched menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "indent"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 40,
+      "upstreamDefault": "40",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.trunk",
+      "name": "trunk",
+      "label": "trunk · t0",
+      "description": "主干，控制 branched menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "trunk"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 14,
+      "upstreamDefault": "14",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.radius",
+      "name": "radius",
+      "label": "圆角 · t0",
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "radius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 10,
+      "upstreamDefault": "10",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.lineWidth",
+      "name": "lineWidth",
+      "label": "lineWidth · t0",
+      "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "lineWidth"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.5,
+      "upstreamDefault": "1.5",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.fontSize",
+      "name": "fontSize",
+      "label": "字号 · t0",
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "fontSize"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 14,
+      "upstreamDefault": "14",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.drawDuration",
+      "name": "drawDuration",
+      "label": "drawDuration · t0",
+      "description": "绘制时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "drawDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 400,
+      "upstreamDefault": "400",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.foldDuration",
+      "name": "foldDuration",
+      "label": "foldDuration · t0",
+      "description": "折叠时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "foldDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 300,
+      "upstreamDefault": "300",
+      "control": "number",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "items",
+      "type": "BranchedMenuItem[]",
+      "required": false,
+      "defaultExpression": "DEFAULT_ITEMS",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 78,
+        "kind": "parameter"
+      },
+      "defaultResolvedExpression": "[\n  {\n    label: 'Getting started',\n    children: [\n      { value: 'install', label: 'Installation', icon: Download04Icon },\n      { value: 'quick', label: 'Quick start', icon: Rocket01Icon },\n      { value: 'config', label: 'Configuration', icon: Settings02Icon },\n      { value: 'theming', label: 'Theming', icon: PaintBoardIcon }\n    ]\n  },\n  {\n    label: 'Components',\n    children: [\n      { value: 'buttons', label: 'Buttons', icon: CursorPointer01Icon },\n      { value: 'typography', label: 'Typography', icon: TextFontIcon },\n      { value: 'overlays', label: 'Overlays', icon: Layers01Icon },\n      { value: 'toasts', label: 'Toasts', icon: Notification03Icon }\n    ]\n  }\n]",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "BranchedMenuItem",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "label",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "children",
+                "type": "BranchedMenuChild[]",
+                "required": false,
+                "kind": "array",
+                "items": [
+                  {
+                    "type": "BranchedMenuChild"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={items}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={items}"
+      ]
+    },
+    {
+      "name": "defaultOpen",
+      "type": "number | number[]",
+      "required": false,
+      "defaultExpression": "0",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 79,
+        "kind": "parameter"
+      },
+      "defaultValue": 0,
+      "description": "非受控初始打开的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "union",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "union",
+        "variants": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number[]",
+            "kind": "array",
+            "items": [
+              {
+                "type": "number"
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "defaultOpen={0}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "defaultOpen={0}"
+      ]
+    },
+    {
+      "name": "defaultActive",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 80,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "非受控初始激活，控制 branched menu 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 32
+      },
+      "codeExample": "defaultActive=\"skills\"",
+      "usageExamples": [
+        "defaultActive=\"skills\""
+      ]
+    },
+    {
+      "name": "onSelect",
+      "type": "(value: string, item: BranchedMenuChild | BranchedMenuItem) => void",
+      "required": false,
+      "description": "用户选择条目时通知调用方，参数为选中项的标识或数据。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((value: string, item: BranchedMenuChild | BranchedMenuItem) => void) | undefined"
+      },
+      "codeExample": "onSelect={(_, item) => setMessage(`当前选中：${item.label}`)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onSelect={(_, item) => setMessage(`当前选中：${item.label}`)}"
+      ]
+    },
+    {
+      "name": "onToggle",
+      "type": "(index: number, open: boolean) => void",
+      "required": false,
+      "description": "节点展开或收起时通知调用方，参数为目标节点的标识。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((index: number, open: boolean) => void) | undefined"
+      },
+      "codeExample": "onToggle={(index, open) => setMessage(`${items[index].label}：${open ? '展开' : '收起'}`)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onToggle={(index, open) => setMessage(`${items[index].label}：${open ? '展开' : '收起'}`)}"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 83,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 35
+      },
+      "codeExample": "color={palette.ink}",
+      "usageExamples": [
+        "color={palette.ink}"
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#f5f5f5'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 84,
+        "kind": "parameter"
+      },
+      "defaultValue": "#f5f5f5",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 36
+      },
+      "codeExample": "accentColor={palette.primary}",
+      "usageExamples": [
+        "accentColor={palette.primary}"
+      ]
+    },
+    {
+      "name": "lineColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#3f3f46'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 85,
+        "kind": "parameter"
+      },
+      "defaultValue": "#3f3f46",
+      "description": "线条颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 37
+      },
+      "codeExample": "lineColor={palette.sage}",
+      "usageExamples": [
+        "lineColor={palette.sage}"
+      ]
+    },
+    {
+      "name": "width",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "240",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 86,
+        "kind": "parameter"
+      },
+      "defaultValue": 240,
+      "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 38
+      },
+      "codeExample": "width={280}",
+      "usageExamples": [
+        "width={280}"
+      ]
+    },
+    {
+      "name": "rowHeight",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "36",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 87,
+        "kind": "parameter"
+      },
+      "defaultValue": 36,
+      "description": "行高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 39
+      },
+      "codeExample": "rowHeight={44}",
+      "usageExamples": [
+        "rowHeight={44}"
+      ]
+    },
+    {
+      "name": "indent",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "40",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 88,
+        "kind": "parameter"
+      },
+      "defaultValue": 40,
+      "description": "缩进，控制 branched menu 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 40
+      },
+      "codeExample": "indent={40}"
+    },
+    {
+      "name": "trunk",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "14",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 89,
+        "kind": "parameter"
+      },
+      "defaultValue": 14,
+      "description": "主干，控制 branched menu 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 41
+      },
+      "codeExample": "trunk={14}"
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "10",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 90,
+        "kind": "parameter"
+      },
+      "defaultValue": 10,
+      "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 42
+      },
+      "codeExample": "radius={10}"
+    },
+    {
+      "name": "lineWidth",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "1.5",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 91,
+        "kind": "parameter"
+      },
+      "defaultValue": 1.5,
+      "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 43
+      },
+      "codeExample": "lineWidth={1.5}"
+    },
+    {
+      "name": "fontSize",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "14",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 92,
+        "kind": "parameter"
+      },
+      "defaultValue": 14,
+      "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 44
+      },
+      "codeExample": "fontSize={14}"
+    },
+    {
+      "name": "drawDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "400",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 93,
+        "kind": "parameter"
+      },
+      "defaultValue": 400,
+      "description": "绘制时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 45
+      },
+      "codeExample": "drawDuration={400}"
+    },
+    {
+      "name": "foldDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "300",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 94,
+        "kind": "parameter"
+      },
+      "defaultValue": 300,
+      "description": "折叠时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 46
+      },
+      "codeExample": "foldDuration={300}"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 95,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+        "line": 47
+      },
+      "codeExample": "className={\"\"}"
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport BranchedMenu from '../../../.upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu';\nimport { DemoPanel } from '../../shared/demo-support';\nimport styles from '../../shared/micro-demos.module.css';\nimport {componentClasses} from '../../shared/class-names';\nconst cn=(names:string)=>componentClasses(styles,names);\n\nconst items = [\n  { label: '工作空间', children: [{ value: 'skills', label: '技能与工具' }, { value: 'agents', label: '智能体' }, { value: 'knowledge', label: '知识库' }] },\n  { label: '设置', children: [{ value: 'members', label: '成员管理' }, { value: 'preferences', label: '偏好设置' }] },\n];\nexport default function BranchedMenuDemo() {\n  const [message, setMessage] = useState('当前选中：技能与工具');\n  return <DemoPanel title=\"Branched Menu · 分支导航\"><div className={cn(\"aw-micro-stack\")}>\n    <BranchedMenu         onSelect={(_, item) => setMessage(`当前选中：${item.label}`)} onToggle={(index, open) => setMessage(`${items[index].label}：${open ? '展开' : '收起'}`)} /*__AW_PROPS_t0__*/  />\n    <p className={cn(\"aw-micro-status\")} role=\"status\" aria-live=\"polite\">{message}（本地演示导航）</p>\n  </div></DemoPanel>;\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "BranchedMenu",
+      "sourcePath": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "BranchedMenuItem[]",
+          "required": false,
+          "defaultExpression": "DEFAULT_ITEMS",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 78,
+            "kind": "parameter"
+          },
+          "defaultResolvedExpression": "[\n  {\n    label: 'Getting started',\n    children: [\n      { value: 'install', label: 'Installation', icon: Download04Icon },\n      { value: 'quick', label: 'Quick start', icon: Rocket01Icon },\n      { value: 'config', label: 'Configuration', icon: Settings02Icon },\n      { value: 'theming', label: 'Theming', icon: PaintBoardIcon }\n    ]\n  },\n  {\n    label: 'Components',\n    children: [\n      { value: 'buttons', label: 'Buttons', icon: CursorPointer01Icon },\n      { value: 'typography', label: 'Typography', icon: TextFontIcon },\n      { value: 'overlays', label: 'Overlays', icon: Layers01Icon },\n      { value: 'toasts', label: 'Toasts', icon: Notification03Icon }\n    ]\n  }\n]",
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "BranchedMenuItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "children",
+                    "type": "BranchedMenuChild[]",
+                    "required": false,
+                    "kind": "array",
+                    "items": [
+                      {
+                        "type": "BranchedMenuChild"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={items}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={items}"
+          ]
+        },
+        {
+          "name": "defaultOpen",
+          "type": "number | number[]",
+          "required": false,
+          "defaultExpression": "0",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 79,
+            "kind": "parameter"
+          },
+          "defaultValue": 0,
+          "description": "非受控初始打开的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "union",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "union",
+            "variants": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number[]",
+                "kind": "array",
+                "items": [
+                  {
+                    "type": "number"
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "defaultOpen={0}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "defaultOpen={0}"
+          ]
+        },
+        {
+          "name": "defaultActive",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 80,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "非受控初始激活，控制 branched menu 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 32
+          },
+          "codeExample": "defaultActive=\"skills\"",
+          "usageExamples": [
+            "defaultActive=\"skills\""
+          ]
+        },
+        {
+          "name": "onSelect",
+          "type": "(value: string, item: BranchedMenuChild | BranchedMenuItem) => void",
+          "required": false,
+          "description": "用户选择条目时通知调用方，参数为选中项的标识或数据。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((value: string, item: BranchedMenuChild | BranchedMenuItem) => void) | undefined"
+          },
+          "codeExample": "onSelect={(_, item) => setMessage(`当前选中：${item.label}`)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onSelect={(_, item) => setMessage(`当前选中：${item.label}`)}"
+          ]
+        },
+        {
+          "name": "onToggle",
+          "type": "(index: number, open: boolean) => void",
+          "required": false,
+          "description": "节点展开或收起时通知调用方，参数为目标节点的标识。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((index: number, open: boolean) => void) | undefined"
+          },
+          "codeExample": "onToggle={(index, open) => setMessage(`${items[index].label}：${open ? '展开' : '收起'}`)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onToggle={(index, open) => setMessage(`${items[index].label}：${open ? '展开' : '收起'}`)}"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 83,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 35
+          },
+          "codeExample": "color={palette.ink}",
+          "usageExamples": [
+            "color={palette.ink}"
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#f5f5f5'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 84,
+            "kind": "parameter"
+          },
+          "defaultValue": "#f5f5f5",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 36
+          },
+          "codeExample": "accentColor={palette.primary}",
+          "usageExamples": [
+            "accentColor={palette.primary}"
+          ]
+        },
+        {
+          "name": "lineColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#3f3f46'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 85,
+            "kind": "parameter"
+          },
+          "defaultValue": "#3f3f46",
+          "description": "线条颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 37
+          },
+          "codeExample": "lineColor={palette.sage}",
+          "usageExamples": [
+            "lineColor={palette.sage}"
+          ]
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "240",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 86,
+            "kind": "parameter"
+          },
+          "defaultValue": 240,
+          "description": "容器或效果的宽度，CSS 字符串与数值的支持以类型为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 38
+          },
+          "codeExample": "width={280}",
+          "usageExamples": [
+            "width={280}"
+          ]
+        },
+        {
+          "name": "rowHeight",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "36",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 87,
+            "kind": "parameter"
+          },
+          "defaultValue": 36,
+          "description": "行高度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 39
+          },
+          "codeExample": "rowHeight={44}",
+          "usageExamples": [
+            "rowHeight={44}"
+          ]
+        },
+        {
+          "name": "indent",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "40",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 88,
+            "kind": "parameter"
+          },
+          "defaultValue": 40,
+          "description": "缩进，控制 branched menu 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 40
+          },
+          "codeExample": "indent={40}"
+        },
+        {
+          "name": "trunk",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "14",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 89,
+            "kind": "parameter"
+          },
+          "defaultValue": 14,
+          "description": "主干，控制 branched menu 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 41
+          },
+          "codeExample": "trunk={14}"
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "10",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 90,
+            "kind": "parameter"
+          },
+          "defaultValue": 10,
+          "description": "半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 42
+          },
+          "codeExample": "radius={10}"
+        },
+        {
+          "name": "lineWidth",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "1.5",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 91,
+            "kind": "parameter"
+          },
+          "defaultValue": 1.5,
+          "description": "线条宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 43
+          },
+          "codeExample": "lineWidth={1.5}"
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "14",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 92,
+            "kind": "parameter"
+          },
+          "defaultValue": 14,
+          "description": "字体尺寸，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 44
+          },
+          "codeExample": "fontSize={14}"
+        },
+        {
+          "name": "drawDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "400",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 93,
+            "kind": "parameter"
+          },
+          "defaultValue": 400,
+          "description": "绘制时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 45
+          },
+          "codeExample": "drawDuration={400}"
+        },
+        {
+          "name": "foldDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "300",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 94,
+            "kind": "parameter"
+          },
+          "defaultValue": 300,
+          "description": "折叠时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 46
+          },
+          "codeExample": "foldDuration={300}"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 95,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Micro/BranchedMenu/BranchedMenu.tsx",
+            "line": 47
+          },
+          "codeExample": "className={\"\"}"
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

@@ -1,0 +1,1432 @@
+{
+  "version": 1,
+  "id": "staggered-menu",
+  "name": "Staggered Menu",
+  "sourcePath": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+  "demoPath": "src/demos/navigation/staggered-menu.tsx",
+  "fields": [
+    {
+      "key": "t0.position",
+      "name": "position",
+      "label": "位置 · t0",
+      "description": "位置，控制 staggered menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "position"
+        }
+      ],
+      "type": "'left' | 'right'",
+      "defaultValue": "right",
+      "upstreamDefault": "'right'",
+      "control": "select",
+      "options": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.items",
+      "name": "items",
+      "label": "数据项 · t0",
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "items"
+        }
+      ],
+      "type": "StaggeredMenuItem[]",
+      "defaultValue": [
+        {
+          "label": "工作台",
+          "ariaLabel": "选择工作台",
+          "link": "#section-0"
+        },
+        {
+          "label": "智能体",
+          "ariaLabel": "选择智能体",
+          "link": "#section-1"
+        },
+        {
+          "label": "技能",
+          "ariaLabel": "选择技能",
+          "link": "#section-2"
+        },
+        {
+          "label": "设置",
+          "ariaLabel": "选择设置",
+          "link": "#section-3"
+        }
+      ],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "label": {
+              "kind": "string"
+            },
+            "ariaLabel": {
+              "kind": "string"
+            },
+            "link": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "label",
+            "ariaLabel",
+            "link"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.socialItems",
+      "name": "socialItems",
+      "label": "socialItems · t0",
+      "description": "社交入口条目的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "socialItems"
+        }
+      ],
+      "type": "StaggeredMenuSocialItem[]",
+      "defaultValue": [],
+      "upstreamDefault": "[]",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "object",
+          "properties": {
+            "label": {
+              "kind": "string"
+            },
+            "link": {
+              "kind": "string"
+            }
+          },
+          "required": [
+            "label",
+            "link"
+          ]
+        }
+      },
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.displaySocials",
+      "name": "displaySocials",
+      "label": "displaySocials · t0",
+      "description": "是否显示社交入口组，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "displaySocials"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.displayItemNumbering",
+      "name": "displayItemNumbering",
+      "label": "displayItemNumbering · t0",
+      "description": "是否显示条目编号，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "displayItemNumbering"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.logoUrl",
+      "name": "logoUrl",
+      "label": "logoUrl · t0",
+      "description": "标志地址，控制 staggered menu 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "logoUrl"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "@media/agent-wan-mark.svg",
+      "upstreamDefault": "'/src/assets/logos/reactbits-gh-white.svg'",
+      "control": "resource",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.menuButtonColor",
+      "name": "menuButtonColor",
+      "label": "menuButtonColor · t0",
+      "description": "菜单按钮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "menuButtonColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#354c41",
+      "upstreamDefault": "'#fff'",
+      "control": "color",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.openMenuButtonColor",
+      "name": "openMenuButtonColor",
+      "label": "openMenuButtonColor · t0",
+      "description": "打开菜单按钮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "openMenuButtonColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#354c41",
+      "upstreamDefault": "'#fff'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.colors",
+      "name": "colors",
+      "label": "颜色列表 · t0",
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "colors"
+        }
+      ],
+      "type": "string[]",
+      "defaultValue": [
+        "#b4cabc",
+        "#5b876c"
+      ],
+      "upstreamDefault": "['#B497CF', '#5227FF']",
+      "control": "json",
+      "shape": {
+        "kind": "array",
+        "items": {
+          "kind": "string"
+        }
+      },
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accentColor",
+      "name": "accentColor",
+      "label": "强调颜色 · t0",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accentColor"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "#3f6651",
+      "upstreamDefault": "'#5227FF'",
+      "control": "color",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.closeOnClickAway",
+      "name": "closeOnClickAway",
+      "label": "closeOnClickAway · t0",
+      "description": "是否关闭点击移开，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "closeOnClickAway"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.isFixed",
+      "name": "isFixed",
+      "label": "isFixed · t0",
+      "description": "是否固定，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "isFixed"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.changeMenuColorOnOpen",
+      "name": "changeMenuColorOnOpen",
+      "label": "changeMenuColorOnOpen · t0",
+      "description": "是否改变菜单颜色打开，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "changeMenuColorOnOpen"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "true",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "position",
+      "type": "'left' | 'right'",
+      "required": false,
+      "defaultExpression": "'right'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 38,
+        "kind": "parameter"
+      },
+      "defaultValue": "right",
+      "description": "位置，控制 staggered menu 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "left",
+        "right"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 19
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "left",
+          "right"
+        ]
+      },
+      "codeExample": "position=\"right\"",
+      "usageExamples": [
+        "position=\"right\""
+      ]
+    },
+    {
+      "name": "colors",
+      "type": "string[]",
+      "required": false,
+      "defaultExpression": "['#B497CF', '#5227FF']",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 39,
+        "kind": "parameter"
+      },
+      "defaultValue": [
+        "#B497CF",
+        "#5227FF"
+      ],
+      "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 20
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "codeExample": "colors={['#b4cabc', '#5b876c']}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "colors={['#b4cabc', '#5b876c']}"
+      ]
+    },
+    {
+      "name": "items",
+      "type": "StaggeredMenuItem[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 40,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 21
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "StaggeredMenuItem",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "label",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "ariaLabel",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "link",
+                "type": "string",
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "items={['工作台', '智能体', '技能', '设置'].map((label, index) => ({\n          label, ariaLabel: '选择' + label, link: '#section-' + index,\n        }))}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "items={['工作台', '智能体', '技能', '设置'].map((label, index) => ({\n          label, ariaLabel: '选择' + label, link: '#section-' + index,\n        }))}"
+      ]
+    },
+    {
+      "name": "socialItems",
+      "type": "StaggeredMenuSocialItem[]",
+      "required": false,
+      "defaultExpression": "[]",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 41,
+        "kind": "parameter"
+      },
+      "defaultValue": [],
+      "description": "社交入口条目的有序数据集合；每一项按数组元素类型配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 22
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "StaggeredMenuSocialItem",
+            "kind": "object",
+            "fields": [
+              {
+                "name": "label",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "link",
+                "type": "string",
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      "codeExample": "socialItems={[]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+      "usageExamples": [
+        "socialItems={[]}"
+      ]
+    },
+    {
+      "name": "displaySocials",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 42,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示社交入口组，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 23
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "displaySocials={false}",
+      "usageExamples": [
+        "displaySocials={false}"
+      ]
+    },
+    {
+      "name": "displayItemNumbering",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 43,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否显示条目编号，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 24
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "displayItemNumbering",
+      "usageExamples": [
+        "displayItemNumbering"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 25
+      },
+      "codeExample": "className={\"示例\"}"
+    },
+    {
+      "name": "logoUrl",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'/src/assets/logos/reactbits-gh-white.svg'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 45,
+        "kind": "parameter"
+      },
+      "defaultValue": "/src/assets/logos/reactbits-gh-white.svg",
+      "description": "标志地址，控制 staggered menu 的对应渲染或交互参数。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 26
+      },
+      "codeExample": "logoUrl={LOGO}",
+      "usageExamples": [
+        "logoUrl={LOGO}"
+      ]
+    },
+    {
+      "name": "menuButtonColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#fff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 46,
+        "kind": "parameter"
+      },
+      "defaultValue": "#fff",
+      "description": "菜单按钮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 27
+      },
+      "codeExample": "menuButtonColor=\"#354c41\"",
+      "usageExamples": [
+        "menuButtonColor=\"#354c41\""
+      ]
+    },
+    {
+      "name": "openMenuButtonColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#fff'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 47,
+        "kind": "parameter"
+      },
+      "defaultValue": "#fff",
+      "description": "打开菜单按钮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 28
+      },
+      "codeExample": "openMenuButtonColor=\"#354c41\"",
+      "usageExamples": [
+        "openMenuButtonColor=\"#354c41\""
+      ]
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'#5227FF'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 49,
+        "kind": "parameter"
+      },
+      "defaultValue": "#5227FF",
+      "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+      "control": "color",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 29
+      },
+      "codeExample": "accentColor=\"#3f6651\"",
+      "usageExamples": [
+        "accentColor=\"#3f6651\""
+      ]
+    },
+    {
+      "name": "changeMenuColorOnOpen",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 48,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否改变菜单颜色打开，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 30
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "changeMenuColorOnOpen={true}"
+    },
+    {
+      "name": "closeOnClickAway",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "true",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 51,
+        "kind": "parameter"
+      },
+      "defaultValue": true,
+      "description": "是否关闭点击移开，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 31
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "closeOnClickAway",
+      "usageExamples": [
+        "closeOnClickAway"
+      ]
+    },
+    {
+      "name": "onMenuOpen",
+      "type": "() => void",
+      "required": false,
+      "description": "菜单打开时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 32
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onMenuOpen={() => setStatus('分层菜单已展开。')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onMenuOpen={() => setStatus('分层菜单已展开。')}"
+      ]
+    },
+    {
+      "name": "onMenuClose",
+      "type": "() => void",
+      "required": false,
+      "description": "菜单关闭时通知调用方。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 33
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onMenuClose={() => setStatus('分层菜单已收起。')}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+      "usageExamples": [
+        "onMenuClose={() => setStatus('分层菜单已收起。')}"
+      ]
+    },
+    {
+      "name": "isFixed",
+      "type": "boolean",
+      "required": false,
+      "defaultExpression": "false",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 50,
+        "kind": "parameter"
+      },
+      "defaultValue": false,
+      "description": "是否固定，决定该分支的展示或交互行为。",
+      "control": "boolean",
+      "valueKind": "boolean",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+        "line": 34
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          false,
+          true
+        ]
+      },
+      "codeExample": "isFixed={false}",
+      "usageExamples": [
+        "isFixed={false}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "import { useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu';\n\nimport styles from './staggered-menu.module.css';\n\nexport default function StaggeredMenuDemo() {\n  const [status, setStatus] = useState('点击 Menu 展开导航。');\n  return (\n    <section className={styles.stage} data-visual-demo=\"staggered-menu\"\n      onClickCapture={event => {\n        const link = (event.target as Element).closest('a');\n        if (link) { event.preventDefault(); setStatus('已选择：' + link.textContent); }\n      }}>\n      <div className={styles.intro}><span className={styles.eyebrow}>STAGGERED MENU</span><h2 className={styles.title}>一层一层，进入下一站。</h2><p className={styles.description}>打开菜单，查看分层遮罩和错峰入场。</p></div>\n      <Component\n\n\n        onMenuOpen={() => setStatus('分层菜单已展开。')}\n        onMenuClose={() => setStatus('分层菜单已收起。')} /*__AW_PROPS_t0__*/  />\n      <p className={styles.status} role=\"status\" aria-live=\"polite\">{status}</p>\n    </section>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "StaggeredMenu",
+      "sourcePath": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+      "props": [
+        {
+          "name": "position",
+          "type": "'left' | 'right'",
+          "required": false,
+          "defaultExpression": "'right'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 38,
+            "kind": "parameter"
+          },
+          "defaultValue": "right",
+          "description": "位置，控制 staggered menu 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "left",
+            "right"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 19
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "left",
+              "right"
+            ]
+          },
+          "codeExample": "position=\"right\"",
+          "usageExamples": [
+            "position=\"right\""
+          ]
+        },
+        {
+          "name": "colors",
+          "type": "string[]",
+          "required": false,
+          "defaultExpression": "['#B497CF', '#5227FF']",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 39,
+            "kind": "parameter"
+          },
+          "defaultValue": [
+            "#B497CF",
+            "#5227FF"
+          ],
+          "description": "颜色组的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 20
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "codeExample": "colors={['#b4cabc', '#5b876c']}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "colors={['#b4cabc', '#5b876c']}"
+          ]
+        },
+        {
+          "name": "items",
+          "type": "StaggeredMenuItem[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 40,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 21
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "StaggeredMenuItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "ariaLabel",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "link",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={['工作台', '智能体', '技能', '设置'].map((label, index) => ({\n          label, ariaLabel: '选择' + label, link: '#section-' + index,\n        }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={['工作台', '智能体', '技能', '设置'].map((label, index) => ({\n          label, ariaLabel: '选择' + label, link: '#section-' + index,\n        }))}"
+          ]
+        },
+        {
+          "name": "socialItems",
+          "type": "StaggeredMenuSocialItem[]",
+          "required": false,
+          "defaultExpression": "[]",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 41,
+            "kind": "parameter"
+          },
+          "defaultValue": [],
+          "description": "社交入口条目的有序数据集合；每一项按数组元素类型配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 22
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "StaggeredMenuSocialItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "link",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "socialItems={[]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "socialItems={[]}"
+          ]
+        },
+        {
+          "name": "displaySocials",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 42,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示社交入口组，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 23
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "displaySocials={false}",
+          "usageExamples": [
+            "displaySocials={false}"
+          ]
+        },
+        {
+          "name": "displayItemNumbering",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 43,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否显示条目编号，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 24
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "displayItemNumbering",
+          "usageExamples": [
+            "displayItemNumbering"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 25
+          },
+          "codeExample": "className={\"示例\"}"
+        },
+        {
+          "name": "logoUrl",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'/src/assets/logos/reactbits-gh-white.svg'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 45,
+            "kind": "parameter"
+          },
+          "defaultValue": "/src/assets/logos/reactbits-gh-white.svg",
+          "description": "标志地址，控制 staggered menu 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 26
+          },
+          "codeExample": "logoUrl={LOGO}",
+          "usageExamples": [
+            "logoUrl={LOGO}"
+          ]
+        },
+        {
+          "name": "menuButtonColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#fff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 46,
+            "kind": "parameter"
+          },
+          "defaultValue": "#fff",
+          "description": "菜单按钮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 27
+          },
+          "codeExample": "menuButtonColor=\"#354c41\"",
+          "usageExamples": [
+            "menuButtonColor=\"#354c41\""
+          ]
+        },
+        {
+          "name": "openMenuButtonColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#fff'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 47,
+            "kind": "parameter"
+          },
+          "defaultValue": "#fff",
+          "description": "打开菜单按钮颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 28
+          },
+          "codeExample": "openMenuButtonColor=\"#354c41\"",
+          "usageExamples": [
+            "openMenuButtonColor=\"#354c41\""
+          ]
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'#5227FF'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 49,
+            "kind": "parameter"
+          },
+          "defaultValue": "#5227FF",
+          "description": "强调颜色，传入组件支持的 CSS 或着色器颜色格式。",
+          "control": "color",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 29
+          },
+          "codeExample": "accentColor=\"#3f6651\"",
+          "usageExamples": [
+            "accentColor=\"#3f6651\""
+          ]
+        },
+        {
+          "name": "changeMenuColorOnOpen",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 48,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否改变菜单颜色打开，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 30
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "changeMenuColorOnOpen={true}"
+        },
+        {
+          "name": "closeOnClickAway",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "true",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 51,
+            "kind": "parameter"
+          },
+          "defaultValue": true,
+          "description": "是否关闭点击移开，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 31
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "closeOnClickAway",
+          "usageExamples": [
+            "closeOnClickAway"
+          ]
+        },
+        {
+          "name": "onMenuOpen",
+          "type": "() => void",
+          "required": false,
+          "description": "菜单打开时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 32
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onMenuOpen={() => setStatus('分层菜单已展开。')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onMenuOpen={() => setStatus('分层菜单已展开。')}"
+          ]
+        },
+        {
+          "name": "onMenuClose",
+          "type": "() => void",
+          "required": false,
+          "description": "菜单关闭时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 33
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onMenuClose={() => setStatus('分层菜单已收起。')}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onMenuClose={() => setStatus('分层菜单已收起。')}"
+          ]
+        },
+        {
+          "name": "isFixed",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 50,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否固定，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/Components/StaggeredMenu/StaggeredMenu.tsx",
+            "line": 34
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "isFixed={false}",
+          "usageExamples": [
+            "isFixed={false}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

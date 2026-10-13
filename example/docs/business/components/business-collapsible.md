@@ -1,6 +1,6 @@
 # Collapsible
 
-布局与流程 · `business-collapsible` · 中文意图：内容收起 / 单块展开 / 披露区域
+卡片与面板 · `business-collapsible` · 中文意图：内容收起 / 单块展开 / 披露区域
 
 ## 1. 什么场景使用
 
@@ -13,30 +13,91 @@
 ## 2. 只加载这一项
 
 1. 只读本指南，确认用途与边界。
-2. 只读 [src/business/demos/business-collapsible.tsx](../../../src/business/demos/business-collapsible.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
-3. 本例若导入 primitives，再定位该文件中被使用的符号，不加载其它示例。样式按需检索 [业务 Token 皮肤](../../../src/business/business.css) 中的对应类。
+2. 只读 [src/business/demos/cards/business-collapsible.tsx](../../../src/business/demos/cards/business-collapsible.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
+3. 本例从 components 按需导入独立控件；只读实际导入的 .tsx 及同名 .module.css。布局工具类也显式使用 CSS Modules，不给整块区域的 button/input 套统一动效。
 4. 涉及业务错误、权限、数据或异步行为时才追加对应契约：[07-segmented-tabs](../../contracts/07-segmented-tabs.md)、[18-auxiliary](../../contracts/18-auxiliary.md)。
 5. 预览库使用本项独立 import() 入口；复制到目标项目时也只接入所需组件和直接依赖。
 
-所有实现使用本项目已有 React、原生 HTML 和 CSS。完整交互、类型与回调以当前示例代码为准。
+所有实现使用本项目已有 React、原生语义控件、Motion 和 CSS。完整交互、类型与回调以当前示例代码为准；局部弹性、下拉、媒体与日历效果见 [交互动效指南](../motion-guide.md)。
 
 ## 3. 本例真实用法
 
 下面来自当前独立示例。默认导出是一个可运行实例；复制后把本地选项、数据与回调接到目标项目已有业务层，不把演示结果当作后端成功。
 
 ```tsx
-// Original Agent Wan demonstration using React and native browser controls.
-import { useState, useId } from 'react';
-import { BusinessDemo, Button } from '../support';
+// 当前 Collapsible 用法；所需实现和 CSS 与完整示例相同。
+// 预览框高度：560px（宿主设置，不是组件 Props）。
+import ownedStyles0 from '../../components/DemoLayout.module.css';
+import { componentClasses } from '../../class-names';
+import { useId, useState } from 'react';
+import { BusinessDemo } from '../../components/BusinessDemo';
+import { Button } from '../../components/Button';
+import { AnimatedCollapse } from '../../components/AnimatedCollapse';
 
-
+const ownedStyles={...ownedStyles0};
+const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function BusinessCollapsibleDemo() {
-  const [expanded,setExpanded]=useState(false); const id=useId();
-  return <BusinessDemo title="Collapsible" description="折叠附加说明，文本内容和展开状态保持一致。">
-    <Button variant="secondary" aria-expanded={expanded} aria-controls={id} onClick={()=>setExpanded(value=>!value)}>{expanded?'收起说明':'展开说明'}</Button><section id={id} hidden={!expanded} className="aw-business-item"><h3>附加说明</h3><p>资料来源、操作边界和恢复方式应随业务场景提供。</p></section>
+  const [expanded, setExpanded] = useState(false);
+  const id = useId();
+  return <BusinessDemo title="Collapsible" description="附加说明以高度过渡展开或折叠，收起内容退出键盘与辅助技术的访问路径。">
+    <Button  aria-expanded={expanded} aria-controls={id} onClick={() => setExpanded(value => !value)} variant={"secondary"} type={"button"} >{expanded ? '收起说明' : '展开说明'}</Button>
+    <AnimatedCollapse open={expanded} id={id}><section data-ui="aw-business-item" className={cn("aw-business-item")}><h3>附加说明</h3><p>资料来源、操作边界和恢复方式应随业务场景提供。</p></section></AnimatedCollapse>
   </BusinessDemo>;
 }
 ```
+
+### 完整组件 API
+
+| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+|---|---|---|---|---|
+| `open` | `boolean` | 是 | `未指定` | 是否展开或显示内容，由调用方控制。 |
+| `children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `id` | `string` | 否 | `未指定` | 原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。 |
+| `className` | `string` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `Button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `Button.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `Button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Button.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+
+**继承的原生属性：**
+
+- `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+
+**children 的真实接入：**
+
+```tsx
+children={<><section data-ui="aw-business-item" className={cn("aw-business-item")}><h3>附加说明</h3><p>资料来源、操作边界和恢复方式应随业务场景提供。</p></section></>}
+```
+
+**children 的真实接入：**
+
+```tsx
+children={<>{expanded ? '收起说明' : '展开说明'}</>}
+```
+
+**ref 的真实接入：**
+
+```tsx
+const elementRef = useRef<HTMLButtonElement | null>(null);
+// JSX: ref={elementRef}
+```
+
+### 本例配置与 DIY
+
+以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+
+| 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
+|---|---|---|---|---|
+| `t0.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `state.expanded` | `false` | switch | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
+
+### 演示容器设置
+
+- `height`：宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。；默认 `560`px，范围 320–1200。
+
+容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
 ## 4. 接入约束
 

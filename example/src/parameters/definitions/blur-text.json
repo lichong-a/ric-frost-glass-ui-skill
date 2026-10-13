@@ -1,0 +1,886 @@
+{
+  "version": 1,
+  "id": "blur-text",
+  "name": "Blur Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+  "demoPath": "src/demos/text/blur-text.tsx",
+  "fields": [
+    {
+      "key": "t0.text",
+      "name": "text",
+      "label": "文字内容 · t0",
+      "description": "显示或生成效果的文字内容。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "text"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "让智能体协作更清晰",
+      "upstreamDefault": "''",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.delay",
+      "name": "delay",
+      "label": "延迟 · t0",
+      "description": "开始动画或执行回调之前的等待时长。 以下范围仅限制此演示面板，不改变上游 API。每个文字单元开始的延迟。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "delay"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 70,
+      "upstreamDefault": "200",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 500,
+      "step": 10,
+      "unit": "ms"
+    },
+    {
+      "key": "t0.animateBy",
+      "name": "animateBy",
+      "label": "animateBy · t0",
+      "description": "动画单位，控制 blur text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "animateBy"
+        }
+      ],
+      "type": "'words' | 'letters'",
+      "defaultValue": "letters",
+      "upstreamDefault": "'words'",
+      "control": "select",
+      "options": [
+        {
+          "label": "words",
+          "value": "words"
+        },
+        {
+          "label": "letters",
+          "value": "letters"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.direction",
+      "name": "direction",
+      "label": "方向 · t0",
+      "description": "方向，控制 blur text 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "direction"
+        }
+      ],
+      "type": "'top' | 'bottom'",
+      "defaultValue": "top",
+      "upstreamDefault": "'top'",
+      "control": "select",
+      "options": [
+        {
+          "label": "top",
+          "value": "top"
+        },
+        {
+          "label": "bottom",
+          "value": "bottom"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.threshold",
+      "name": "threshold",
+      "label": "触发阈值 · t0",
+      "description": "阈值，控制 blur text 的对应渲染或交互参数。 以下范围仅限制此演示面板，不改变上游 API。IntersectionObserver 的可见比例阈值。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "threshold"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.1,
+      "upstreamDefault": "0.1",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "unit": "比例"
+    },
+    {
+      "key": "t0.rootMargin",
+      "name": "rootMargin",
+      "label": "观察边距 · t0",
+      "description": "IntersectionObserver 的视口边界扩展量，如 0px 或 -20% 0px。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rootMargin"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "0px",
+      "upstreamDefault": "'0px'",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.stepDuration",
+      "name": "stepDuration",
+      "label": "stepDuration · t0",
+      "description": "步进时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。 以下范围仅限制此演示面板，不改变上游 API。Motion 单步过渡时长。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "stepDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.22,
+      "upstreamDefault": "0.35",
+      "control": "range",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 0.05,
+      "max": 1,
+      "step": 0.01,
+      "unit": "s"
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 35,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 7
+      },
+      "codeExample": "text=\"让智能体协作更清晰\"",
+      "usageExamples": [
+        "text=\"让智能体协作更清晰\""
+      ]
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "200",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 36,
+        "kind": "parameter"
+      },
+      "defaultValue": 200,
+      "description": "开始动画或执行回调之前的等待时长。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 8
+      },
+      "codeExample": "delay={70}",
+      "usageExamples": [
+        "delay={70}"
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 37,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 9
+      },
+      "codeExample": "className={\"\"}"
+    },
+    {
+      "name": "animateBy",
+      "type": "'words' | 'letters'",
+      "required": false,
+      "defaultExpression": "'words'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 38,
+        "kind": "parameter"
+      },
+      "defaultValue": "words",
+      "description": "动画单位，控制 blur text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "words",
+        "letters"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "words",
+          "letters"
+        ]
+      },
+      "codeExample": "animateBy=\"letters\"",
+      "usageExamples": [
+        "animateBy=\"letters\""
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "'top' | 'bottom'",
+      "required": false,
+      "defaultExpression": "'top'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 39,
+        "kind": "parameter"
+      },
+      "defaultValue": "top",
+      "description": "方向，控制 blur text 的对应渲染或交互参数。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "top",
+        "bottom"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 11
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "top",
+          "bottom"
+        ]
+      },
+      "codeExample": "direction=\"top\"",
+      "usageExamples": [
+        "direction=\"top\""
+      ]
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.1",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 40,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.1,
+      "description": "阈值，控制 blur text 的对应渲染或交互参数。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 12
+      },
+      "codeExample": "threshold={0.1}",
+      "usageExamples": [
+        "threshold={0.1}"
+      ]
+    },
+    {
+      "name": "rootMargin",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "'0px'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 41,
+        "kind": "parameter"
+      },
+      "defaultValue": "0px",
+      "description": "IntersectionObserver 的视口边界扩展量，如 0px 或 -20% 0px。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 13
+      },
+      "codeExample": "rootMargin=\"0px\"",
+      "usageExamples": [
+        "rootMargin=\"0px\""
+      ]
+    },
+    {
+      "name": "animationFrom",
+      "type": "Record<string, string | number>",
+      "required": false,
+      "defaultExpression": "defaultFrom",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 85,
+        "kind": "implementation-fallback"
+      },
+      "defaultResolvedExpression": "useMemo(\n    () =>\n      direction === 'top' ? { filter: 'blur(10px)', opacity: 0, y: -50 } : { filter: 'blur(10px)', opacity: 0, y: 50 },\n    [direction]\n  )",
+      "defaultCondition": "nullish",
+      "description": "显现动画开始时的属性快照，如 filter、opacity 与 y；覆盖内置初始快照。",
+      "control": "code",
+      "valueKind": "object",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 14
+      },
+      "codeExample": "animationFrom={{}}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "animationTo",
+      "type": "Array<Record<string, string | number>>",
+      "required": false,
+      "defaultExpression": "defaultTo",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 86,
+        "kind": "implementation-fallback"
+      },
+      "defaultResolvedExpression": "useMemo(\n    () => [\n      {\n        filter: 'blur(5px)',\n        opacity: 0.5,\n        y: direction === 'top' ? 5 : -5\n      },\n      { filter: 'blur(0px)', opacity: 1, y: 0 }\n    ],\n    [direction]\n  )",
+      "defaultCondition": "nullish",
+      "description": "显现动画依次经过的属性快照列表，每一步按动画库支持的属性配置。",
+      "control": "code",
+      "valueKind": "array",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 15
+      },
+      "details": {
+        "kind": "array",
+        "items": [
+          {
+            "type": "Record<string, string | number>"
+          }
+        ]
+      },
+      "codeExample": "animationTo={[{}]}",
+      "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+    },
+    {
+      "name": "easing",
+      "type": "(t: number) => number",
+      "required": false,
+      "defaultExpression": "(t: number) => t",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 44,
+        "kind": "parameter"
+      },
+      "description": "动画进度的缓动曲线名称或函数，按类型传入。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 16
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "((t: number) => number) | undefined"
+      },
+      "codeExample": "easing={(t) => (1)}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "onAnimationComplete",
+      "type": "() => void",
+      "required": false,
+      "description": "动画全部结束时调用，供调用方更新后续界面状态。",
+      "control": "code",
+      "valueKind": "callback",
+      "editable": false,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 17
+      },
+      "details": {
+        "kind": "callback",
+        "signature": "(() => void) | undefined"
+      },
+      "codeExample": "onAnimationComplete={() => {}}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+    },
+    {
+      "name": "stepDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "0.35",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 46,
+        "kind": "parameter"
+      },
+      "defaultValue": 0.35,
+      "description": "步进时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+        "line": 18
+      },
+      "codeExample": "stepDuration={0.22}",
+      "usageExamples": [
+        "stepDuration={0.22}"
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/BlurText/BlurText';\nimport { palette } from '../../shared/demo-support';\n\n// 先模糊再清晰地逐字进入，不改变业务阅读面。\n\nexport default function BlurTextDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>\n      <Component\n   /*__AW_PROPS_t0__*/  />\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "BlurText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 35,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 7
+          },
+          "codeExample": "text=\"让智能体协作更清晰\"",
+          "usageExamples": [
+            "text=\"让智能体协作更清晰\""
+          ]
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "200",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 36,
+            "kind": "parameter"
+          },
+          "defaultValue": 200,
+          "description": "开始动画或执行回调之前的等待时长。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 8
+          },
+          "codeExample": "delay={70}",
+          "usageExamples": [
+            "delay={70}"
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 37,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 9
+          },
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "animateBy",
+          "type": "'words' | 'letters'",
+          "required": false,
+          "defaultExpression": "'words'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 38,
+            "kind": "parameter"
+          },
+          "defaultValue": "words",
+          "description": "动画单位，控制 blur text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "words",
+            "letters"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "words",
+              "letters"
+            ]
+          },
+          "codeExample": "animateBy=\"letters\"",
+          "usageExamples": [
+            "animateBy=\"letters\""
+          ]
+        },
+        {
+          "name": "direction",
+          "type": "'top' | 'bottom'",
+          "required": false,
+          "defaultExpression": "'top'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 39,
+            "kind": "parameter"
+          },
+          "defaultValue": "top",
+          "description": "方向，控制 blur text 的对应渲染或交互参数。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "top",
+            "bottom"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 11
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "top",
+              "bottom"
+            ]
+          },
+          "codeExample": "direction=\"top\"",
+          "usageExamples": [
+            "direction=\"top\""
+          ]
+        },
+        {
+          "name": "threshold",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.1",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 40,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.1,
+          "description": "阈值，控制 blur text 的对应渲染或交互参数。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 12
+          },
+          "codeExample": "threshold={0.1}",
+          "usageExamples": [
+            "threshold={0.1}"
+          ]
+        },
+        {
+          "name": "rootMargin",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'0px'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 41,
+            "kind": "parameter"
+          },
+          "defaultValue": "0px",
+          "description": "IntersectionObserver 的视口边界扩展量，如 0px 或 -20% 0px。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 13
+          },
+          "codeExample": "rootMargin=\"0px\"",
+          "usageExamples": [
+            "rootMargin=\"0px\""
+          ]
+        },
+        {
+          "name": "animationFrom",
+          "type": "Record<string, string | number>",
+          "required": false,
+          "defaultExpression": "defaultFrom",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 85,
+            "kind": "implementation-fallback"
+          },
+          "defaultResolvedExpression": "useMemo(\n    () =>\n      direction === 'top' ? { filter: 'blur(10px)', opacity: 0, y: -50 } : { filter: 'blur(10px)', opacity: 0, y: 50 },\n    [direction]\n  )",
+          "defaultCondition": "nullish",
+          "description": "显现动画开始时的属性快照，如 filter、opacity 与 y；覆盖内置初始快照。",
+          "control": "code",
+          "valueKind": "object",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 14
+          },
+          "codeExample": "animationFrom={{}}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "animationTo",
+          "type": "Array<Record<string, string | number>>",
+          "required": false,
+          "defaultExpression": "defaultTo",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 86,
+            "kind": "implementation-fallback"
+          },
+          "defaultResolvedExpression": "useMemo(\n    () => [\n      {\n        filter: 'blur(5px)',\n        opacity: 0.5,\n        y: direction === 'top' ? 5 : -5\n      },\n      { filter: 'blur(0px)', opacity: 1, y: 0 }\n    ],\n    [direction]\n  )",
+          "defaultCondition": "nullish",
+          "description": "显现动画依次经过的属性快照列表，每一步按动画库支持的属性配置。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "Record<string, string | number>"
+              }
+            ]
+          },
+          "codeExample": "animationTo={[{}]}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。"
+        },
+        {
+          "name": "easing",
+          "type": "(t: number) => number",
+          "required": false,
+          "defaultExpression": "(t: number) => t",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 44,
+            "kind": "parameter"
+          },
+          "description": "动画进度的缓动曲线名称或函数，按类型传入。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "((t: number) => number) | undefined"
+          },
+          "codeExample": "easing={(t) => (1)}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "onAnimationComplete",
+          "type": "() => void",
+          "required": false,
+          "description": "动画全部结束时调用，供调用方更新后续界面状态。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 17
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(() => void) | undefined"
+          },
+          "codeExample": "onAnimationComplete={() => {}}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
+        },
+        {
+          "name": "stepDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "0.35",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 46,
+            "kind": "parameter"
+          },
+          "defaultValue": 0.35,
+          "description": "步进时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/BlurText/BlurText.tsx",
+            "line": 18
+          },
+          "codeExample": "stepDuration={0.22}",
+          "usageExamples": [
+            "stepDuration={0.22}"
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}

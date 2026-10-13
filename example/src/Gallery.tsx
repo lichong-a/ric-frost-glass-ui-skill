@@ -1,9 +1,16 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 import { categories, entries } from './gallery-catalog';
 import { IsolatedPreview } from './runtime/IsolatedPreview';
 import type { MotionMode } from './runtime/types';
+import { loadDefinition } from './parameters/load';
+import { defaultValues, validateValues } from './parameters/validation';
+import { currentUsage } from './parameters/usage';
+import type { DemoValues, JsonValue, ParameterDefinition, ParameterField } from './parameters/types';
 
-const usageFiles = import.meta.glob(['./demos/*.tsx', './business/demos/*.tsx'], { query: '?raw', import: 'default' });
+const ParametersPanel = lazy(() => import('./parameters/ParametersPanel'));
+const ApiReference = lazy(() => import('./parameters/ParametersPanel').then(module => ({ default: module.ApiReference })));
+
+const usageFiles = import.meta.glob(['./demos/**/*.tsx', './business/demos/**/*.tsx'], { query: '?raw', import: 'default' });
 const guideFiles = import.meta.glob(['../docs/components/*.md', '../docs/business/components/*.md'], { query: '?raw', import: 'default' });
 const initialEntry = () => entries.find(entry => entry.id === window.location.hash.slice(1))?.id ?? 'glass-surface';
 const subtitleFor = (item: (typeof entries)[number]) => item.subtitle ?? item.aliases[0];
@@ -24,14 +31,54 @@ export function Gallery() {
   const [text, setText] = useState('');
   const [textState, setTextState] = useState('');
   const [copied, setCopied] = useState('');
+  const [definition, setDefinition] = useState<ParameterDefinition>();
+  const [parameterError, setParameterError] = useState('');
+  const [values, setValues] = useState<DemoValues>({});
+  const [configRevision, setConfigRevision] = useState(0);
+  const [rebuildVersion, setRebuildVersion] = useState(0);
+  const [resetVersion, setResetVersion] = useState(0);
+  const [codeMode, setCodeMode] = useState<'current' | 'full'>('current');
+  const remembered = useRef(new Map<string, DemoValues>());
   const searchRef = useRef<HTMLInputElement>(null);
   const entry = entries.find(item => item.id === selected)!;
   const filtered = useMemo(() => {
     const needle = query.trim().toLocaleLowerCase();
     return entries.filter(item => (category === 'all' || item.category === category) &&
-      (!needle || [item.name, item.id, item.description, ...item.aliases].join(' ').toLocaleLowerCase().includes(needle)));
+      (!needle || [item.name, item.id, item.description, ...item.aliases, ...((item as {tags?:string[]}).tags ?? [])].join(' ').toLocaleLowerCase().includes(needle)));
   }, [category, query]);
-  const position = entries.findIndex(item => item.id === selected);
+  const position = filtered.findIndex(item => item.id === selected);
+  const usage = definition?.id === selected ? currentUsage(definition, values) : '';
+
+  useEffect(() => {
+    let cancelled = false;
+    setDefinition(undefined); setParameterError('');
+    void loadDefinition(selected).then(next => {
+      if (cancelled) return;
+      const saved = remembered.current.get(selected);
+      const nextValues = saved && validateValues(next, saved) ? saved : defaultValues(next);
+      setValues(nextValues); setDefinition(next); setConfigRevision(value => value + 1);
+    }).catch(error => { if (!cancelled) setParameterError(error instanceof Error ? error.message : '参数定义加载失败'); });
+    return () => { cancelled = true; };
+  }, [selected]);
+
+  function updateValues(next: DemoValues, hostEdit = true) {
+    remembered.current.set(selected, next);
+    setValues(next);
+    // A controlled callback acknowledges the current host configuration. Only
+    // a new host edit supersedes it; sibling setters share the same revision.
+    if (hostEdit) setConfigRevision(value => value + 1);
+  }
+  function commitParameter(field: ParameterField, value: JsonValue) {
+    if (!definition || !validateValues(definition, { [field.key]: value })) return;
+    if (JSON.stringify(values[field.key]) === JSON.stringify(value)) return;
+    updateValues({ ...(remembered.current.get(selected) ?? values), [field.key]: value });
+    if (field.apply === 'rebuild') setRebuildVersion(version => version + 1);
+  }
+  function syncControlled(changes: DemoValues, revision: number) {
+    if (revision !== configRevision || !definition || !validateValues(definition, changes)) return;
+    const safe = Object.fromEntries(Object.entries(changes).filter(([key]) => definition.fields.some(field => field.key === key && field.scope === 'state')));
+    if (Object.keys(safe).length) updateValues({ ...(remembered.current.get(selected) ?? values), ...safe }, false);
+  }
 
   useEffect(() => {
     const update = () => { setSelected(initialEntry()); setCopied(''); };
@@ -45,14 +92,14 @@ export function Gallery() {
 
   useEffect(() => {
     document.title = `${entry.name} · Agent Wan 组件示例`;
-    if (view === 'preview') return;
+    if (view === 'preview' || (view === 'code' && codeMode === 'current')) return;
     let cancelled = false;
     setText(''); setTextState('正在读取…');
     const loader = view === 'code' ? usageFiles[`./${entry.demoPath.replace(/^src\//, '')}`] : guideFiles[`../${entry.guidePath ?? `docs/components/${entry.id}.md`}`];
     if (!loader) { setTextState('当前文件未包含在本次构建中，请在完整规范包中查看。'); return; }
     loader().then(value => { if (!cancelled) { setText(String(value)); setTextState(''); } }).catch(() => { if (!cancelled) setTextState('读取失败，请切换后重试。'); });
     return () => { cancelled = true; };
-  }, [entry, view]);
+  }, [entry, view, codeMode]);
 
   function select(id: string) {
     if (id !== selected) window.location.hash = id;
@@ -94,10 +141,10 @@ export function Gallery() {
       </aside>
 
       <main id="example" className="aw-example-workspace" tabIndex={-1}>
-        <div className="aw-page-eyebrow"><span>DESIGN / INTERACTION</span><span>{String(position + 1).padStart(3, '0')} / {entries.length}</span></div>
+        <div className="aw-page-eyebrow"><span>DESIGN / INTERACTION</span><span>{position >= 0 ? String(position + 1).padStart(3, '0') : '—'} / {filtered.length}</span></div>
         <section className="aw-selected-heading">
           <div><p className="aw-selected-category">{categories.find(item => item.id === entry.category)?.name}</p><h1>{entry.name}</h1><p className="aw-effect-description">{entry.description}</p></div>
-          <div className="aw-neighbor-controls"><button className="aw-icon-button" type="button" aria-label="上一个组件" disabled={position === 0} onClick={() => select(entries[position - 1].id)}>←</button><button className="aw-icon-button" type="button" aria-label="下一个组件" disabled={position === entries.length - 1} onClick={() => select(entries[position + 1].id)}>→</button></div>
+          <div className="aw-neighbor-controls"><button className="aw-icon-button" type="button" aria-label="上一个组件" disabled={position <= 0} onClick={() => select(filtered[position - 1].id)}>←</button><button className="aw-icon-button" type="button" aria-label="下一个组件" disabled={position < 0 || position >= filtered.length - 1} onClick={() => select(filtered[position + 1].id)}>→</button></div>
         </section>
         <div className="aw-example-meta"><span>{entry.aliases[0]}</span><span>TypeScript + CSS</span><span>{entry.id.startsWith('business-') ? '业务交互' : entry.webgl === 'none' ? 'DOM / Canvas' : entry.webgl.toUpperCase()}</span><span>自然色主题</span></div>
 
@@ -106,13 +153,21 @@ export function Gallery() {
             <div className="aw-example-tabs" role="tablist" aria-label="组件内容">
               {([['preview', '交互预览'], ['code', '用法源码'], ['guide', '接入说明']] as const).map(([id, label], index, all) => <button id={`tab-${id}`} key={id} type="button" role="tab" aria-selected={view === id} aria-controls={`panel-${id}`} tabIndex={view === id ? 0 : -1} onClick={() => setView(id)} onKeyDown={event => { if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) { event.preventDefault(); const next = event.key === 'Home' ? 0 : event.key === 'End' ? all.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + all.length) % all.length; setView(all[next][0]); document.getElementById(`tab-${all[next][0]}`)?.focus(); } }}>{label}</button>)}
             </div>
-            {view === 'preview' ? <div className="aw-playback-controls"><select aria-label="动态效果偏好" value={motion} onChange={event => setMotion(event.target.value as MotionMode)}><option value="system">跟随系统动效</option><option value="reduce">减少动态效果</option><option value="allow">允许本次动效</option></select><button type="button" className="aw-icon-button" aria-label={active ? '暂停预览并释放资源' : '继续预览'} onClick={() => setActive(value => !value)}><Icon name={active ? 'pause' : 'play'} /></button></div> : <button className="aw-copy-button" type="button" disabled={!text} onClick={() => copy(text)}><Icon name="copy" />复制</button>}
+            {view === 'preview' ? <div className="aw-playback-controls"><select aria-label="动态效果偏好" value={motion} onChange={event => setMotion(event.target.value as MotionMode)}><option value="system">跟随系统动效</option><option value="reduce">减少动态效果</option><option value="allow">允许本次动效</option></select><button type="button" className="aw-icon-button" aria-label={active ? '暂停预览并释放资源' : '继续预览'} onClick={() => setActive(value => !value)}><Icon name={active ? 'pause' : 'play'} /></button></div> : <button className="aw-copy-button" type="button" disabled={view === 'code' && codeMode === 'current' ? !usage : !text} onClick={() => copy(view === 'code' && codeMode === 'current' ? usage : text)}><Icon name="copy" />复制</button>}
           </div>
           <div className="aw-example-content-panel" id={`panel-${view}`} role="tabpanel" aria-labelledby={`tab-${view}`} tabIndex={0}>
-            {view === 'preview' ? <IsolatedPreview entry={entry} previewUrl={`${import.meta.env.BASE_URL}preview.html`} motion={motion} active={active} /> : <div className="aw-source-view">{textState ? <p role="status">{textState}</p> : <pre className={view === 'guide' ? 'aw-guide-text' : ''}><code>{text}</code></pre>}</div>}
+            {view === 'preview' ? definition?.id === entry.id ? <IsolatedPreview entry={entry} previewUrl={`${import.meta.env.BASE_URL}preview.html`} motion={motion} active={active} values={values} configRevision={configRevision} rebuildVersion={rebuildVersion} height={Number(values['container.height'] ?? entry.minHeight)} onValuesChange={syncControlled} /> : <p className="aw-preview-note" role="status">{parameterError || '正在读取本项参数…'}</p> : <>
+              {view === 'code' ? <div className="aw-preview-toolbar"><button className="aw-preview-button" type="button" aria-pressed={codeMode === 'current'} onClick={() => setCodeMode('current')}>当前配置用法</button><button className="aw-preview-button" type="button" aria-pressed={codeMode === 'full'} onClick={() => setCodeMode('full')}>完整示例源码</button></div> : definition ? <Suspense fallback={<p>正在读取参数表…</p>}><ApiReference definition={definition} values={values} /></Suspense> : null}
+              <div className="aw-source-view">{view === 'code' && codeMode === 'current' ? <pre><code>{usage || '正在读取当前配置…'}</code></pre> : textState ? <p role="status">{textState}</p> : <pre className={view === 'guide' ? 'aw-guide-text' : ''}><code>{text}</code></pre>}</div>
+            </>}
           </div>
           <div className="aw-example-footer"><span>{view === 'preview' ? '在预览区域内移动、点击或滚动，体验当前组件。' : entry.demoPath}</span></div>
         </section>
+
+        {view === 'preview' && definition?.id === entry.id ? <Suspense fallback={<p className="aw-preview-note">正在加载参数控件…</p>}><ParametersPanel key={`${entry.id}:${resetVersion}`} definition={definition} values={values} onCommit={commitParameter}
+          onReset={() => { updateValues(defaultValues(definition)); setResetVersion(value => value + 1); setRebuildVersion(value => value + 1); }}
+          onReplay={() => { setActive(true); setRebuildVersion(value => value + 1); }}
+          onCopy={kind => copy(kind === 'usage' ? usage : JSON.stringify({ component: entry.id, values }, null, 2))} /></Suspense> : null}
 
         <section className="aw-integration-grid" aria-label="组件集成信息">
           <article className="aw-detail-card aw-glass"><span className="aw-section-number">01</span><h2>带入你的界面</h2><p>从当前示例保留结构、Props 和交互，将内容替换为产品数据。颜色与材质继续使用 Agent Wan tokens。</p><button type="button" onClick={() => setView('code')}>查看独立用法 <span aria-hidden="true">↗</span></button></article>

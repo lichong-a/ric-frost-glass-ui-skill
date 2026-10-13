@@ -1,0 +1,303 @@
+{
+  "version": 1,
+  "id": "circular-text",
+  "name": "Circular Text",
+  "sourcePath": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+  "demoPath": "src/demos/text/circular-text.tsx",
+  "fields": [
+    {
+      "key": "t0.text",
+      "name": "text",
+      "label": "文字内容 · t0",
+      "description": "显示或生成效果的文字内容。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "text"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "AGENT·WAN·FLOW·",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.spinDuration",
+      "name": "spinDuration",
+      "label": "spinDuration · t0",
+      "description": "自转时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "spinDuration"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 26,
+      "upstreamDefault": "20",
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "container.height",
+      "name": "height",
+      "label": "预览框高度",
+      "description": "宿主 iframe 的预览框高度，单位 px；不传入组件 Props。此面板仅提供 320–1200px 的演示范围。",
+      "scope": "container",
+      "type": "number",
+      "defaultValue": 560,
+      "control": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "advanced": false,
+      "apply": "live"
+    }
+  ],
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": true,
+      "description": "显示或生成效果的文字内容。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+        "line": 8
+      },
+      "codeExample": "text=\"AGENT·WAN·FLOW·\"",
+      "usageExamples": [
+        "text=\"AGENT·WAN·FLOW·\""
+      ]
+    },
+    {
+      "name": "spinDuration",
+      "type": "number",
+      "required": false,
+      "defaultExpression": "20",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+        "line": 34,
+        "kind": "parameter"
+      },
+      "defaultValue": 20,
+      "description": "自转时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+      "control": "number",
+      "valueKind": "number",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+        "line": 9
+      },
+      "codeExample": "spinDuration={26}",
+      "usageExamples": [
+        "spinDuration={26}"
+      ]
+    },
+    {
+      "name": "onHover",
+      "type": "'slowDown' | 'speedUp' | 'pause' | 'goBonkers'",
+      "required": false,
+      "defaultExpression": "'speedUp'",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+        "line": 35,
+        "kind": "parameter"
+      },
+      "defaultValue": "speedUp",
+      "description": "悬停时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+      "control": "enum",
+      "valueKind": "enum",
+      "options": [
+        "slowDown",
+        "speedUp",
+        "pause",
+        "goBonkers"
+      ],
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+        "line": 10
+      },
+      "details": {
+        "kind": "enum",
+        "options": [
+          "slowDown",
+          "speedUp",
+          "pause",
+          "goBonkers"
+        ]
+      },
+      "codeExample": "onHover=\"pause\"",
+      "usageExamples": [
+        "onHover=\"pause\""
+      ]
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "defaultExpression": "''",
+      "defaultSource": {
+        "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+        "line": 36,
+        "kind": "parameter"
+      },
+      "defaultValue": "",
+      "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+      "control": "text",
+      "valueKind": "string",
+      "editable": true,
+      "source": {
+        "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+        "line": 11
+      },
+      "codeExample": "className=\"aw-rb-circular\"",
+      "usageExamples": [
+        "className=\"aw-rb-circular\""
+      ]
+    }
+  ],
+  "inherited": [],
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/CircularText/CircularText';\nimport { palette } from '../../shared/demo-support';\n\n// 环形排字缓慢旋转，悬停暂停。\n\nexport default function CircularTextDemo() {\n\n  return (\n    <div className=\"aw-demo-stage\" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>\n      <><style>{`.aw-rb-circular.circular-text { color: #52604e; font-weight: 650; }`}</style><Component   onHover=\"pause\" className=\"aw-rb-circular\" /*__AW_PROPS_t0__*/  /></>\n    </div>\n  );\n}\n",
+  "targets": [
+    {
+      "id": "t0",
+      "name": "CircularText",
+      "sourcePath": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "description": "显示或生成效果的文字内容。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+            "line": 8
+          },
+          "codeExample": "text=\"AGENT·WAN·FLOW·\"",
+          "usageExamples": [
+            "text=\"AGENT·WAN·FLOW·\""
+          ]
+        },
+        {
+          "name": "spinDuration",
+          "type": "number",
+          "required": false,
+          "defaultExpression": "20",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+            "line": 34,
+            "kind": "parameter"
+          },
+          "defaultValue": 20,
+          "description": "自转时长，决定动画或交互阶段的时间安排；单位以该组件源码为准。",
+          "control": "number",
+          "valueKind": "number",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+            "line": 9
+          },
+          "codeExample": "spinDuration={26}",
+          "usageExamples": [
+            "spinDuration={26}"
+          ]
+        },
+        {
+          "name": "onHover",
+          "type": "'slowDown' | 'speedUp' | 'pause' | 'goBonkers'",
+          "required": false,
+          "defaultExpression": "'speedUp'",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+            "line": 35,
+            "kind": "parameter"
+          },
+          "defaultValue": "speedUp",
+          "description": "悬停时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "slowDown",
+            "speedUp",
+            "pause",
+            "goBonkers"
+          ],
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+            "line": 10
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "slowDown",
+              "speedUp",
+              "pause",
+              "goBonkers"
+            ]
+          },
+          "codeExample": "onHover=\"pause\"",
+          "usageExamples": [
+            "onHover=\"pause\""
+          ]
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+            "line": 36,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": ".upstream/src/ts-default/TextAnimations/CircularText/CircularText.tsx",
+            "line": 11
+          },
+          "codeExample": "className=\"aw-rb-circular\"",
+          "usageExamples": [
+            "className=\"aw-rb-circular\""
+          ]
+        }
+      ],
+      "inherited": []
+    }
+  ],
+  "apiScope": "component-props"
+}
