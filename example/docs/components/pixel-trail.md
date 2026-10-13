@@ -44,7 +44,7 @@ export default function PixelTrailDemo() {
       <Component
 
 
-           gridSize={40} trailSize={0.16} maxAge={900} interpolate={5} color={"#b6f2cf"} trailColor={"#46bfc0"} shape={"square"} gap={0.08} decay={"shrink"} flow={0.65} gravity={0.25} sparkle={0.12} glow={0.5} shine={0.65} clickBurst={true} dpr={1.5} gooeyFilter={{ "strength": 2 }}  />
+           gridSize={40} trailSize={0.04} maxAge={900} interpolate={5} color={"#b6f2cf"} trailColor={"#46bfc0"} shape={"square"} gap={0.08} decay={"shrink"} flow={0.65} gravity={0.25} sparkle={0.12} glow={0.5} shine={0.65} clickBurst={true} dpr={1.5} gooeyFilter={{ "strength": 2 }}  />
       <div className={styles.caption}><span className={styles.eyebrow}>PIXEL TRAIL</span><h2 className={styles.title}>留下流动的像素</h2><p className={styles.hint}>移动指针绘制拖尾，点击释放像素。</p></div>
     </div>
   );
@@ -103,7 +103,7 @@ style={{ width: "100%", minHeight: 240 }}
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
 | `t0.gridSize` | `40` | range | 4 ~ 120 个/边 | 调节结束后重建 |
-| `t0.trailSize` | `0.16` | range | 0.01 ~ 0.6 比例 | 调节结束后重建 |
+| `t0.trailSize` | `0.04` | range | 0.01 ~ 0.6 比例 | 调节结束后重建 |
 | `t0.maxAge` | `900` | range | 50 ~ 3000 ms | 调节结束后重建 |
 | `t0.interpolate` | `5` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.color` | `"#b6f2cf"` | color | 不限 ~ 不限 | 调节结束后重建 |

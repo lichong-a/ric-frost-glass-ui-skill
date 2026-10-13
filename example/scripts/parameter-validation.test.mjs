@@ -13,6 +13,16 @@ const definition = { version: 1, id: 'cubes', name: 'Cubes', fields: [
   { key: 't0.gap', name: 'gap', scope: 'prop', target: 't0', control: 'range', defaultValue: 0.18, min: 0, max: 1 },
   { key: 't0.items', name: 'items', scope: 'prop', target: 't0', control: 'json', defaultValue: [{ id: 'a', height: 120 }], shape: { kind: 'array', items: { kind: 'object', required: ['id', 'height'], properties: { id: { kind: 'string' }, height: { kind: 'number' } } } } },
 ], targets: [{ id: 't0', name: 'Component' }], usageTemplate: 'export default function Demo() { return <Component /*__AW_PROPS_t0__*/ />; }' };
+test('unique task identities reject the entire invalid order configuration without rewriting IDs', () => {
+  const field = { ...definition.fields[1], uniqueBy: 'id' };
+  const guarded = { ...definition, fields: [field] };
+  const valid = [{ id: 'a', height: 100 }, { id: 'b', height: 200 }];
+  const duplicate = [{ id: 'a', height: 100 }, { id: 'a', height: 200 }];
+  assert.equal(validation.validateValues(guarded, { 't0.items': valid }), true);
+  assert.equal(validation.validateValues(guarded, { 't0.items': duplicate }), false);
+  assert.match(validation.validateField(field, duplicate), /唯一|重复/);
+  assert.deepEqual(duplicate.map(item => item.id), ['a', 'a']);
+});
 test('invalid field edits never form an accepted preview configuration', () => {
   assert.equal(validation.validateValues(definition, { 't0.gap': 0.5 }), true);
   assert.equal(validation.validateValues(definition, { 't0.gap': -3 }), false);

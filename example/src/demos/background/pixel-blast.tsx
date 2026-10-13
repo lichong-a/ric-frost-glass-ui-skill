@@ -1,28 +1,32 @@
 import Component from '../../../.upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast';
-import { palette } from '../../shared/demo-support';
+import styles from './pixel-blast.module.css';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Pixel Blast component. */
+/** Visible preset for the locked Pixel Blast component. */
 export default function PixelBlastDemo() {
   const { props: demoProps } = useDemoConfig();
   return (
-    <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
-      <div style={{ width: '100%', height: 560, position: 'relative' }}>
+    <div className={styles.stage} data-visual-demo="pixel-blast">
+      <div className={styles.effect}>
         <Component
-          color={palette.sage}
+          color="#b19eef"
           variant="square"
-          pixelSize={4}
+          pixelSize={5}
           patternScale={2}
-          patternDensity={0.85}
-          liquid
-          liquidStrength={0.035}
+          patternDensity={1.35}
+          liquid={false}
+          liquidStrength={0.12}
+          liquidRadius={1.2}
           enableRipples
-          rippleIntensityScale={0.8}
-          speed={0.25}
+          rippleIntensityScale={1.5}
+          rippleThickness={0.12}
+          speed={0.5}
+          edgeFade={0.15}
           transparent
           autoPauseOffscreen {...demoProps('t0')}
         />
       </div>
+      <p className={styles.hint}>点击触发像素波纹 · 可在参数区启用液体形变</p>
     </div>
   );
 }

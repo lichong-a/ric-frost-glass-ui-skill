@@ -183,6 +183,8 @@ function behaviorFor(c) {
 }
 function actualPermissionNotes(c) {
   const notes = {
+    'aero-shards': '原版使用 WebGPU。本例先检查适配器，支持时运行锁定原版；缺少适配器或原版初始化失败时自动使用带有“兼容预览”标记的 Canvas 2D 碎片风场。兼容路径保留移动、点击波纹和按住聚拢，降低碎片数量，材质、后处理和路径细节与 WebGPU 原版存在差异。',
+    'shape-waves': '原版使用 WebGPU。本例先检查适配器，支持时运行锁定原版；缺少适配器或原版初始化失败时自动使用带有“兼容预览”标记的 Canvas 2D 图形波场。兼容路径保留三种图形、文字遮罩、滚动波面与指针/点击响应，噪声和光晕与 WebGPU 原版存在差异。',
     'glass-surface': '本例未强制指定 renderer，沿用 auto：SVG / WebGL / CSS 由组件选择。提供 backdrop 不代表每个环境都必须先创建 WebGL 上下文。',
     'reflective-card': '本例初始不挂载相机组件；只有用户点击“启动摄像头反射”后才挂载并请求相机。没有许可时不能声称反射视频已经运行；停止或关闭预览后释放相关资源。',
     'voice-pill': '本例显式设置 reactive="simulated"，只演示波形、切换和计时，不请求麦克风、不录音。若产品需要真实音频模式，按实际 API 在用户主动操作后接入。',

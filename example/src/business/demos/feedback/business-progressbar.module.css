@@ -1,0 +1,101 @@
+.card {
+  position: relative;
+  display: grid;
+  gap: var(--aw-space-4);
+  padding: var(--aw-space-5);
+  color: var(--aw-color-text-primary);
+  background: var(--aw-surface-control);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-divider);
+  border-radius: var(--aw-radius-scale-r16);
+}
+
+.heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--aw-space-4);
+}
+
+.label {
+  font-size: var(--aw-font-size-body);
+  line-height: var(--aw-font-line-height-body);
+}
+
+.value {
+  flex: none;
+  color: var(--aw-color-action-primary);
+  font-size: var(--aw-font-size-component);
+  font-weight: var(--aw-font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.track {
+  block-size: var(--aw-space-3);
+  overflow: hidden;
+  background: var(--aw-surface-readonly);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-divider);
+  border-radius: var(--aw-radius-scale-pill);
+}
+
+.fill {
+  inline-size: 100%;
+  block-size: 100%;
+  background: linear-gradient(90deg, var(--aw-palette-scene-sage), var(--aw-color-action-primary));
+  border-radius: inherit;
+  transform-origin: left center;
+}
+
+.fill[data-complete='true'] {
+  background: var(--aw-color-state-success-fg);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: var(--aw-space-2);
+  margin: 0;
+  color: var(--aw-color-text-secondary);
+  font-size: var(--aw-font-size-caption);
+  line-height: var(--aw-font-line-height-caption);
+  font-variant-numeric: tabular-nums;
+}
+
+.status[data-complete='true'] {
+  color: var(--aw-color-state-success-fg);
+}
+
+.statusDot {
+  inline-size: var(--aw-space-2);
+  block-size: var(--aw-space-2);
+  background: var(--aw-palette-scene-sage);
+  border-radius: var(--aw-radius-scale-pill);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--aw-space-3);
+}
+
+.progressSemantics {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (forced-colors: active) {
+  .fill {
+    background: Highlight;
+    forced-color-adjust: none;
+  }
+
+  .track {
+    border-color: CanvasText;
+  }
+}

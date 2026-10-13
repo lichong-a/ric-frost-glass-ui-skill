@@ -27,19 +27,68 @@
 ```tsx
 // 当前 MeterGroup 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import { componentClasses } from '../../class-names';
+import { useState, type ChangeEvent } from 'react';
+import { motion } from 'motion/react';
 import { RangeSlider } from '../../components/RangeSlider';
-import { useState } from 'react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Field } from '../../components/Field';
+import { useBusinessReducedMotion } from '../../motion-preference';
+import styles from './business-metergroup.module.css';
 
-const ownedStyles={};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function BusinessMeterGroupDemo() {
-  const [knowledge,setKnowledge]=useState(45); const groups=[{label:'知识',value:knowledge,color:'var(--aw-palette-primary)'},{label:'文档',value:Math.round((100-knowledge)*0.6),color:'var(--aw-palette-sand)'},{label:'服务',value:100-knowledge-Math.round((100-knowledge)*0.6),color:'var(--aw-palette-terra)'}];
-  return <BusinessDemo title="MeterGroup" description="分组展示资料容量分配，调整知识占比后其他类别自动保持总和100%。">
-    <Field  label={`知识占比：${knowledge}%`} control={true} ><RangeSlider   value={knowledge} onChange={event=>setKnowledge(Number(event.target.value))} min={"0"} max={"100"}  /></Field><div style={{display:'flex',height:24,borderRadius:12,overflow:'hidden'}} aria-hidden="true">{groups.map(group=><div key={group.label} style={{width:`${group.value}%`,background:group.color}} />)}</div><ul>{groups.map(group=><li key={group.label}>{group.label}：<meter   value={group.value} aria-label={group.label+'占比'} min={"0"} max={"100"}  /> {group.value}%</li>)}</ul>
-  </BusinessDemo>;
+  const [knowledge, setKnowledge] = useState(45);
+  const reduced = useBusinessReducedMotion();
+  const groups = [
+    { label: '知识', value: knowledge, color: 'var(--aw-palette-primary)' },
+    { label: '文档', value: Math.round((100 - knowledge) * 0.6), color: 'var(--aw-palette-scene-sand)' },
+    { label: '服务', value: 100 - knowledge - Math.round((100 - knowledge) * 0.6), color: 'var(--aw-palette-effect-terra)' },
+  ];
+  const transition = { duration: reduced ? 0 : 0.4, ease: [0.22, 1, 0.36, 1] as const };
+
+  function changeKnowledge(event: ChangeEvent<HTMLInputElement>) {
+    setKnowledge(Number(event.target.value));
+  }
+
+  return (
+    <BusinessDemo title="MeterGroup" description="分组展示资料容量分配，调整知识占比后其他类别自动保持总和100%。">
+      <Field  label={`知识占比：${knowledge}%`} control={true} >
+        <RangeSlider   value={knowledge} onChange={changeKnowledge} min={"0"} max={"100"}  />
+      </Field>
+      <div className={styles.allocation} aria-hidden="true">
+        {groups.map(group => (
+          <motion.div
+            key={group.label}
+            className={styles.segment}
+            style={{ background: group.color }}
+            initial={false}
+            animate={{ width: `${group.value}%` }}
+            transition={transition}
+          />
+        ))}
+      </div>
+      <ul className={styles.legend} aria-label="资料容量分配">
+        {groups.map(group => (
+          <li key={group.label} className={styles.item}>
+            <div className={styles.heading}>
+              <span className={styles.dot} style={{ background: group.color }} aria-hidden="true" />
+              <span>{group.label}</span>
+              <span className={styles.value} aria-hidden="true">{group.value}%</span>
+            </div>
+            <meter className={styles.meterSemantics}   value={group.value} aria-label={group.label + '占比'} min={"0"} max={"100"} >{group.value}%</meter>
+            <div className={styles.track} aria-hidden="true">
+              <motion.span
+                className={styles.fill}
+                style={{ background: group.color }}
+                initial={false}
+                animate={{ scaleX: group.value / 100 }}
+                transition={transition}
+              />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </BusinessDemo>
+  );
 }
 ```
 
@@ -58,10 +107,12 @@ export default function BusinessMeterGroupDemo() {
 | `RangeSlider.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `RangeSlider.style` | `CSSProperties \| undefined` | 否 | `未指定` | 容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。 |
 | `RangeSlider.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `meter.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `meter.min` | `string \| number \| undefined` | 否 | `未指定` | 允许输入、拖动或选择的下限。 |
 | `meter.max` | `string \| number \| undefined` | 否 | `未指定` | 允许输入、拖动或选择的上限。 |
 | `meter.value` | `string \| number \| readonly string[] \| undefined` | 否 | `未指定` | 当前受控值，由调用方维护并随交互回调更新。 |
 | `meter.aria-label` | `string \| undefined` | 否 | `未指定` | 辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。 |
+| `meter.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
 
 本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
 
@@ -70,13 +121,14 @@ export default function BusinessMeterGroupDemo() {
 - `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `InputHTMLAttributes<HTMLInputElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 
 **children 的真实接入：**
 
 ```tsx
-children={<><RangeSlider min="0" max="100" value={knowledge} onChange={event=>setKnowledge(Number(event.target.value))} /></>}
+children={<><RangeSlider min="0" max="100" value={knowledge} onChange={changeKnowledge} /></>}
 ```
 
 **value 的真实接入：**

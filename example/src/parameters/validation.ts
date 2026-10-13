@@ -46,6 +46,18 @@ export function validateField(field: ParameterField, value: unknown): string | n
   if (['text', 'color', 'resource'].includes(field.control) && typeof value !== 'string' && !field.options) return '此参数需要字符串。';
   if (field.control === 'color' && typeof value === 'string' && !colorPickerParts(value)) return '请使用 3、4、6 或 8 位十六进制颜色，例如 #5227ff 或 #5227ff80。';
   if (field.shape && !matchesShape(value, field.shape)) return '数据结构或字段类型不符合本例要求，请参考默认配置。';
+  if (field.uniqueBy) {
+    if (!Array.isArray(value)) return '此配置需要具有唯一标识的对象数组。';
+    const identities = new Set<string>();
+    for (const item of value) {
+      if (!item || typeof item !== 'object' || Array.isArray(item) || !Object.hasOwn(item, field.uniqueBy)) return `每项都需要 ${field.uniqueBy} 标识。`;
+      const identity = item[field.uniqueBy];
+      if (typeof identity !== 'string' && typeof identity !== 'number') return `${field.uniqueBy} 标识需要字符串或数字。`;
+      const key = String(identity);
+      if (identities.has(key)) return `${field.uniqueBy} 标识必须唯一，重复项不会更新预览。`;
+      identities.add(key);
+    }
+  }
   function validResources(item: JsonValue): boolean {
     if (typeof item === 'string' && item.startsWith('@asset/')) return !!field.resources?.includes(item);
     if (Array.isArray(item)) return item.every(validResources);

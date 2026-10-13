@@ -59,7 +59,7 @@ export default function BusinessDrawerDemo() {
 | `Button · t0.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
 | `Button · t0.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `Button · t0.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
 | `Button · t0.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 | `SpringCheckbox.checked` | `boolean \| undefined` | 否 | `inner` | 当前受控勾选状态，调用方在变更回调中写回。 |
 | `SpringCheckbox.onChange` | `ChangeEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | 用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。 |
@@ -115,11 +115,11 @@ children={"示例"}
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t0.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 | `t1.title` | `"任务选项"` | text | 不限 ~ 不限 | 即时应用 |
 | `t3.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t3.variant` | `"primary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t3.variant` | `"primary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `state.open` | `false` | switch | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 | `state.notify` | `false` | switch | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 

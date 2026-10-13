@@ -27,20 +27,48 @@
 ```tsx
 // 当前 ContextMenu 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/Button.module.css';
-import ownedStyles1 from '../../components/DemoLayout.module.css';
-import { componentClasses } from '../../class-names';
-import { MenuSurface } from '../../components/MenuSurface';
-import { useState, useRef } from 'react';
+import { useId, useRef, useState } from 'react';
+import { Copy, Eye, FileText, MoreHorizontal, Star } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
+import { Button } from '../../components/Button';
+import { MenuSurface } from '../../components/MenuSurface';
 import { Popover } from '../../components/Popover';
+import styles from './business-contextmenu.module.css';
 
-const ownedStyles={...ownedStyles0,...ownedStyles1};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
+const actions = [
+  { label: '查看详情', icon: Eye },
+  { label: '复制名称', icon: Copy },
+  { label: '加入收藏', icon: Star }
+];
+
 export default function BusinessContextMenuDemo() {
-  const [open,setOpen]=useState(false); const [message,setMessage]=useState('请选择卡片动作。'); const anchor=useRef<HTMLElement>(null);
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState('请选择卡片动作。');
+  const anchor = useRef<HTMLElement>(null);
+  const menuId = useId();
+
+  async function selectAction(label: string) {
+    setOpen(false);
+    if (label !== '复制名称') { setMessage('已选择本地动作：' + label); return; }
+    try { await navigator.clipboard.writeText('资料整理'); setMessage('任务名称已复制。'); }
+    catch { setMessage('无法自动复制，请手动复制名称：资料整理。'); }
+  }
+
   return <BusinessDemo title="ContextMenu" description="在资料卡上右键打开菜单；键盘菜单键或Shift+F10也可打开。">
-    <article data-ui="aw-business-item" ref={anchor} className={cn("aw-business-item")} tabIndex={0} onContextMenu={event=>{event.preventDefault();setOpen(true);}} onKeyDown={event=>{if(event.key==='ContextMenu'||(event.shiftKey&&event.key==='F10')){event.preventDefault();setOpen(true);}}}><h3>资料整理</h3><p>右键或使用 Shift+F10 打开操作菜单。</p></article><Popover open={open} onClose={()=>setOpen(false)} anchorRef={anchor} minWidth={280} ><MenuSurface  label={"资料操作"} >{['查看详情','复制名称','加入收藏'].map(label=><button data-ui="aw-button"  role="menuitem" className={cn("aw-button")} key={label} onClick={async()=>{setOpen(false);if(label==='复制名称'){try{await navigator.clipboard.writeText('资料整理');setMessage('任务名称已复制。');}catch{setMessage('无法自动复制，请手动复制名称：资料整理。');}}else{setMessage('已选择本地动作：'+label);}}} type={"button"} >{label}</button>)}</MenuSurface></Popover><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">{message}</p>
+    <article data-ui="aw-business-item" ref={anchor} className={styles.card} tabIndex={0} onContextMenu={event => { event.preventDefault(); event.currentTarget.focus(); setOpen(true); }} onKeyDown={event => {
+      if (event.key === 'ContextMenu' || (event.shiftKey && event.key === 'F10')) { event.preventDefault(); event.currentTarget.focus(); setOpen(true); }
+    }}>
+      <span className={styles.cardIcon} aria-hidden="true"><FileText size={22} /></span>
+      <div className={styles.cardCopy}><span className={styles.eyebrow}>工作空间资料</span><h3 className={styles.cardTitle}>资料整理</h3><p className={styles.cardDescription}>右键或使用 Shift+F10 打开操作菜单。</p></div>
+      <Button  data-size="sm" className={styles.cardAction} aria-label="打开资料操作菜单" aria-haspopup="menu" aria-controls={open ? menuId : undefined} aria-expanded={open} onClick={() => { anchor.current?.focus(); setOpen(value => !value); }} variant={"ghost"} type={"button"} ><MoreHorizontal size={19} aria-hidden="true" /></Button>
+    </article>
+    <Popover open={open} onClose={() => setOpen(false)} anchorRef={anchor}  minWidth={240} >
+      <div id={menuId} className={styles.panel}>
+        <p className={styles.heading}>资料操作</p>
+        <MenuSurface  label={"资料操作"} >{actions.map(({ label, icon: Icon }) => <Button key={label}  className={styles.option} role="menuitem" tabIndex={-1} onClick={() => { void selectAction(label); }} variant={"ghost"} type={"button"} ><Icon className={styles.optionIcon} size={17} aria-hidden="true" /><span>{label}</span></Button>)}</MenuSurface>
+      </div>
+    </Popover>
+    <p data-ui="aw-business-status" className={styles.status} role="status">{message}</p>
   </BusinessDemo>;
 }
 ```
@@ -49,6 +77,11 @@ export default function BusinessContextMenuDemo() {
 
 | 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
 |---|---|---|---|---|
+| `Button · t0.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `Button · t0.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `Button · t0.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t0.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 | `Popover.open` | `boolean` | 是 | `未指定` | 是否展开或显示内容，由调用方控制。 |
 | `Popover.onClose` | `() => void` | 是 | `未指定` | 请求关闭弹层、对话框或提示时调用，调用方同步更新 open 状态。 |
 | `Popover.anchorRef` | `RefObject<HTMLElement \| null>` | 是 | `未指定` | 连接触发器 DOM 的 ref，供弹层定位及焦点返回使用。 |
@@ -56,27 +89,35 @@ export default function BusinessContextMenuDemo() {
 | `Popover.minWidth` | `number` | 否 | `280` | 最小宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
 | `MenuSurface.label` | `string` | 是 | `未指定` | 向用户或辅助技术说明控件的名称。 |
 | `MenuSurface.children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `button.data-ui` | `any` | 否 | `未指定` | 示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。 |
-| `button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `未指定` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
-| `button.role` | `AriaRole \| undefined` | 否 | `未指定` | 辅助技术使用的元素角色，须与实际键盘和交互行为相匹配。 |
-| `button.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
-| `button.key` | `Key \| null \| undefined` | 否 | `未指定` | React 列表项身份，用于更新时保持对应节点。 |
-| `button.onClick` | `MouseEventHandler<HTMLButtonElement> \| undefined` | 否 | `未指定` | 用户点击或通过键盘激活时触发的事件处理函数。 |
-| `button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
 
 本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
 
 **继承的原生属性：**
 
 - `DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
-- `DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+
+**children 的真实接入：**
+
+```tsx
+children={<><MoreHorizontal size={19} aria-hidden="true" /></>}
+```
+
+**ref 的真实接入：**
+
+```tsx
+const elementRef = useRef<HTMLButtonElement | null>(null);
+// JSX: ref={elementRef}
+```
 
 **onClose 的真实接入：**
 
 ```tsx
-onClose={()=>setOpen(false)}
+onClose={() => setOpen(false)}
 ```
 
 **anchorRef 的真实接入：**
@@ -89,13 +130,16 @@ const elementRef = useRef<HTMLElement | null>(null);
 **children 的真实接入：**
 
 ```tsx
-children={<><MenuSurface label="资料操作">{['查看详情','复制名称','加入收藏'].map(label=><button data-ui="aw-button" type="button" role="menuitem" className={cn("aw-button")} key={label} onClick={async()=>{setOpen(false);if(label==='复制名称'){try{await navigator.clipboard.writeText('资料整理');setMessage('任务名称已复制。');}catch{setMessage('无法自动复制，请手动复制名称：资料整理。');}}else{setMessage('已选择本地动作：'+label);}}}>{label}</button>)}</MenuSurface></>}
+children={<><div id={menuId} className={styles.panel}>
+        <p className={styles.heading}>资料操作</p>
+        <MenuSurface label="资料操作">{actions.map(({ label, icon: Icon }) => <Button key={label} variant="ghost" className={styles.option} role="menuitem" tabIndex={-1} onClick={() => { void selectAction(label); }}><Icon className={styles.optionIcon} size={17} aria-hidden="true" /><span>{label}</span></Button>)}</MenuSurface>
+      </div></>}
 ```
 
 **children 的真实接入：**
 
 ```tsx
-children={<>{['查看详情','复制名称','加入收藏'].map(label=><button data-ui="aw-button" type="button" role="menuitem" className={cn("aw-button")} key={label} onClick={async()=>{setOpen(false);if(label==='复制名称'){try{await navigator.clipboard.writeText('资料整理');setMessage('任务名称已复制。');}catch{setMessage('无法自动复制，请手动复制名称：资料整理。');}}else{setMessage('已选择本地动作：'+label);}}}>{label}</button>)}</>}
+children={<>{actions.map(({ label, icon: Icon }) => <Button key={label} variant="ghost" className={styles.option} role="menuitem" tabIndex={-1} onClick={() => { void selectAction(label); }}><Icon className={styles.optionIcon} size={17} aria-hidden="true" /><span>{label}</span></Button>)}</>}
 ```
 
 ### 本例配置与 DIY
@@ -104,9 +148,12 @@ children={<>{['查看详情','复制名称','加入收藏'].map(label=><button d
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.minWidth` | `280` | number | 不限 ~ 不限 | 即时应用 |
-| `t1.label` | `"资料操作"` | text | 不限 ~ 不限 | 即时应用 |
-| `t2.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `t0.variant` | `"ghost"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
+| `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `t1.minWidth` | `240` | number | 不限 ~ 不限 | 即时应用 |
+| `t2.label` | `"资料操作"` | text | 不限 ~ 不限 | 即时应用 |
+| `t3.variant` | `"ghost"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
+| `t3.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 | `state.open` | `false` | switch | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 
 ### 演示容器设置

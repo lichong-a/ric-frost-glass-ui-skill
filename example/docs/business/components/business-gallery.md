@@ -60,7 +60,7 @@ export default function BusinessGalleryDemo() {
 | `Button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
 | `Button.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `Button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
 | `Button.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 | `Dialog.open` | `boolean` | 是 | `!dialog.open` | 是否展开或显示内容，由调用方控制。 |
 | `Dialog.onClose` | `() => void` | 是 | `未指定` | 请求关闭弹层、对话框或提示时调用，调用方同步更新 open 状态。 |
@@ -119,7 +119,7 @@ children={<><MediaViewer sources={MEDIA} index={index} onChange={setIndex} label
 | `t0.label` | `"自然色图片集"` | text | 不限 ~ 不限 | 即时应用 |
 | `t0.thumbnails` | `true` | switch | 不限 ~ 不限 | 即时应用 |
 | `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t1.variant` | `"primary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t1.variant` | `"primary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t3.sources` | `["@media/scene-1.svg","@media/scene-2.svg","@media/scene-3.svg","@media/scene-4.svg","@media/scene-5.svg","@media/scene-6.svg"]` | json | 不限 ~ 不限 | 即时应用 |
 | `t3.label` | `"放大的自然色图片"` | text | 不限 ~ 不限 | 即时应用 |
 | `t3.thumbnails` | `false` | switch | 不限 ~ 不限 | 即时应用 |

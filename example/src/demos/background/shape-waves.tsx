@@ -1,16 +1,14 @@
-import { useState } from 'react';
+import type { ComponentProps } from 'react';
 import Component from '../../../.upstream/src/ts-default/Backgrounds/ShapeWaves/ShapeWaves';
 import { palette } from '../../shared/demo-support';
+import { useWebGPUCompatibility } from '../../effects/webgpu-compatibility/useWebGPUCompatibility';
+import { createShapeWavesCanvas } from '../../effects/webgpu-compatibility/shape-canvas';
+import styles from './shape-waves.module.css';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Shape Waves component. */
 export default function ShapeWavesDemo() {
   const { props: demoProps } = useDemoConfig();
-  const [error, setError] = useState<Error | null>(null);
-  if (error) throw error; // The preview ErrorBoundary shows GPU runtime failures.
-  return (
-    <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
-      <div style={{ width: '100%', height: 560, position: 'relative' }}>
+  const effect = useWebGPUCompatibility<ComponentProps<typeof Component>>(
         <Component
           text="AGENT WAN"
           fontFamily="system-ui, sans-serif"
@@ -24,10 +22,9 @@ export default function ShapeWavesDemo() {
           speed={0.55}
           glow={0.16}
           contrast={1.1}
-          interactive
-          onError={setError} {...demoProps('t0')}
-        />
-      </div>
-    </div>
+          interactive {...demoProps('t0')}
+        />,
+    createShapeWavesCanvas,
   );
+  return <div className={styles.stage} data-visual-demo="shape-waves">{effect}<p className={styles.hint}>移动指针点亮图形 · 点击释放波纹</p></div>;
 }

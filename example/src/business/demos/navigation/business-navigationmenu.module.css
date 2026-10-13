@@ -1,0 +1,22 @@
+.primaryNavigation { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; inline-size: fit-content; padding: 5px; color: var(--aw-color-text-primary); background: var(--aw-surface-control); border: 1px solid var(--aw-color-border-decorative); border-radius: 14px; }
+.navigationItem[data-variant='ghost'] { gap: 7px; border-radius: 9px; font-size: 13px; }
+.navigationItem[data-variant='ghost'][aria-current='page'] { color: var(--aw-palette-ivory); }
+.navigationLabel { position: relative; }
+.resourceTrigger[data-variant='ghost'] { gap: 7px; border-radius: 9px; font-size: 13px; }
+.resourceTrigger[data-selected='true'] { color: var(--aw-color-action-primary); background: color-mix(in srgb, var(--aw-color-action-primary) 9%, var(--aw-palette-ivory)); }
+.chevron { display: flex; }
+.resourceLayer { max-inline-size: 368px; overflow: hidden; }
+.resourceSurface { margin: 2px; padding: 7px; }
+.resourceNavigation { display: grid; gap: 5px; }
+.resourceItem[data-variant='ghost'] { inline-size: 100%; justify-content: flex-start; gap: 12px; padding: 10px; border-radius: 11px; text-align: start; white-space: normal; }
+.resourceItem[data-variant='ghost'][aria-current='page'] { color: var(--aw-color-action-primary); background: color-mix(in srgb, var(--aw-color-action-primary) 9%, var(--aw-palette-ivory)); }
+.resourceIcon { display: grid; place-items: center; flex: none; inline-size: 32px; block-size: 32px; color: var(--aw-color-action-primary); background: color-mix(in srgb, var(--aw-color-action-primary) 8%, var(--aw-palette-ivory)); border-radius: 9px; }
+.resourceCopy { display: grid; gap: 3px; }
+.resourceLabel { font-size: 13px; font-weight: 600; }
+.resourceDescription { color: var(--aw-color-text-secondary); font-size: 11px; line-height: 1.45; }
+.resourceArrow { flex: none; margin-inline-start: auto; color: var(--aw-color-text-secondary); }
+.workspace { padding: 20px; color: var(--aw-color-text-primary); background: var(--aw-surface-control); border: 1px solid var(--aw-color-border-decorative); border-radius: 14px; }
+.workspaceTitle { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
+.workspaceCopy { margin: 0; color: var(--aw-color-text-secondary); font-size: 13px; line-height: 1.7; }
+@media (prefers-reduced-motion: reduce) { .chevron { transition: none; animation: none; } }
+@media (forced-colors: active) { .navigationItem[data-variant='ghost'][aria-current='page'] { color: HighlightText; background: Highlight; } }

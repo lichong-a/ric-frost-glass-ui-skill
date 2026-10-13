@@ -27,19 +27,56 @@
 ```tsx
 // 当前 ProgressBar 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/DemoLayout.module.css';
-import { componentClasses } from '../../class-names';
-import { useState } from 'react';
+import { useId, useState } from 'react';
+import { motion } from 'motion/react';
+import { CheckCircle2 } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Button } from '../../components/Button';
+import { useBusinessReducedMotion } from '../../motion-preference';
+import styles from './business-progressbar.module.css';
 
-const ownedStyles={...ownedStyles0};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function BusinessProgressBarDemo() {
-  const [progress,setProgress]=useState(20);
-  return <BusinessDemo title="ProgressBar" description="本地步骤完成度由按钮驱动，终值限制在100%，可重置。">
-    <label>资料整理完成度<progress  value={progress}  max={"100"} style={{ "display": "block", "width": "100%", "height": 24 }} >{progress}%</progress></label><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">{progress}% {progress===100?'已完成':'处理中'}</p><div data-ui="aw-business-row" className={cn("aw-business-row")}><Button disabled={progress===100} onClick={()=>setProgress(value=>Math.min(100,value+20))} type={"button"} variant={"primary"} >完成下一步</Button><Button  onClick={()=>setProgress(0)} variant={"secondary"} type={"button"} >重置</Button></div>
-  </BusinessDemo>;
+  const [progress, setProgress] = useState(20);
+  const reduced = useBusinessReducedMotion();
+  const progressId = useId();
+  const complete = progress === 100;
+
+  function advance() {
+    setProgress(value => Math.min(100, value + 20));
+  }
+
+  function reset() {
+    setProgress(0);
+  }
+
+  return (
+    <BusinessDemo title="ProgressBar" description="本地步骤完成度由按钮驱动，终值限制在100%，可重置。">
+      <div className={styles.card}>
+        <div className={styles.heading}>
+          <label className={styles.label} htmlFor={progressId}>资料整理完成度</label>
+          <span className={styles.value} aria-hidden="true">{progress}%</span>
+        </div>
+        <progress id={progressId} className={styles.progressSemantics}  value={progress} max={"100"} >{progress}%</progress>
+        <div className={styles.track} aria-hidden="true">
+          <motion.div
+            className={styles.fill}
+            data-complete={complete}
+            initial={false}
+            animate={{ scaleX: progress / 100 }}
+            transition={{ duration: reduced ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </div>
+        <p className={styles.status} data-complete={complete} role="status" aria-atomic="true">
+          {complete ? <CheckCircle2 size={16} aria-hidden="true" /> : <span className={styles.statusDot} aria-hidden="true" />}
+          {progress}% {complete ? '已完成' : '处理中'}
+        </p>
+      </div>
+      <div className={styles.controls}>
+        <Button disabled={complete} onClick={advance} type={"button"} variant={"primary"} >完成下一步</Button>
+        <Button  onClick={reset} variant={"secondary"} type={"button"} >重置</Button>
+      </div>
+    </BusinessDemo>
+  );
 }
 ```
 
@@ -47,24 +84,26 @@ export default function BusinessProgressBarDemo() {
 
 | 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
 |---|---|---|---|---|
+| `progress.id` | `string \| undefined` | 否 | `未指定` | 原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。 |
+| `progress.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `progress.max` | `string \| number \| undefined` | 否 | `未指定` | 允许输入、拖动或选择的上限。 |
 | `progress.value` | `string \| number \| readonly string[] \| undefined` | 否 | `未指定` | 当前受控值，由调用方维护并随交互回调更新。 |
-| `progress.style` | `CSSProperties \| undefined` | 否 | `未指定` | 容器的 React 内联样式对象，尺寸、布局与 CSS 属性按 CSSProperties 传入。 |
 | `progress.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
 | `Button · t1.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
 | `Button · t1.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `Button · t1.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button · t1.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t1.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
 | `Button · t1.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 
 本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
 
 **继承的原生属性：**
 
+- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<ProgressHTMLAttributes<HTMLProgressElement>, HTMLProgressElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
-- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 
 **children 的真实接入：**
@@ -87,10 +126,9 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
 | `t0.max` | `"100"` | json | 不限 ~ 不限 | 即时应用 |
-| `t0.style` | `{"display":"block","width":"100%","height":24}` | json | 不限 ~ 不限 | 即时应用 |
 | `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t1.variant` | `"primary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t2.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t1.variant` | `"primary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
+| `t2.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t2.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 | `state.progress` | `20` | number | 0 ~ 100 | 即时应用；原组件回调同步受控值 |
 

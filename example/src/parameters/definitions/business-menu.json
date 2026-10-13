@@ -6,6 +6,52 @@
   "demoPath": "src/business/demos/navigation/business-menu.tsx",
   "fields": [
     {
+      "key": "t0.variant",
+      "name": "variant",
+      "label": "外观 · t0",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "variant"
+        }
+      ],
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
+      "defaultValue": "secondary",
+      "upstreamDefault": "'primary'",
+      "control": "select",
+      "options": [
+        {
+          "label": "primary",
+          "value": "primary"
+        },
+        {
+          "label": "secondary",
+          "value": "secondary"
+        },
+        {
+          "label": "danger",
+          "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
       "key": "t0.type",
       "name": "type",
       "label": "类型 · t0",
@@ -20,6 +66,7 @@
       ],
       "type": "\"button\" | \"reset\" | \"submit\" | undefined",
       "defaultValue": "button",
+      "upstreamDefault": "'button'",
       "control": "select",
       "options": [
         {
@@ -60,7 +107,7 @@
         }
       ],
       "type": "number",
-      "defaultValue": 280,
+      "defaultValue": 268,
       "upstreamDefault": "280",
       "control": "number",
       "advanced": false,
@@ -102,6 +149,52 @@
       ]
     },
     {
+      "key": "t3.variant",
+      "name": "variant",
+      "label": "外观 · t3",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "variant"
+        }
+      ],
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
+      "defaultValue": "ghost",
+      "upstreamDefault": "'primary'",
+      "control": "select",
+      "options": [
+        {
+          "label": "primary",
+          "value": "primary"
+        },
+        {
+          "label": "secondary",
+          "value": "secondary"
+        },
+        {
+          "label": "danger",
+          "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
+        }
+      ],
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
       "key": "t3.type",
       "name": "type",
       "label": "类型 · t3",
@@ -116,6 +209,7 @@
       ],
       "type": "\"button\" | \"reset\" | \"submit\" | undefined",
       "defaultValue": "button",
+      "upstreamDefault": "'button'",
       "control": "select",
       "options": [
         {
@@ -188,10 +282,10 @@
   "props": [],
   "inherited": [
     {
-      "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-      "tag": "button",
+      "tag": "div",
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     },
     {
@@ -200,159 +294,165 @@
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
       "tag": "p",
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "span",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     }
   ],
-  "usageTemplate": "import ownedStyles0 from '../../components/Button.module.css';\nimport ownedStyles1 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { MenuSurface } from '../../components/MenuSurface';\nimport { useState, useRef } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Popover } from '../../components/Popover';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessMenuDemo() {\n  const [open,setOpen]=useState(/*__AW_STATE_state.open__*/); const [message,setMessage]=useState('等待选择'); const anchor=useRef<HTMLButtonElement>(null);\n  return <BusinessDemo title=\"Menu\" description=\"使用按钮展开操作菜单，选择动作会记录本地结果。\">\n    <button data-ui=\"aw-button\"  className={cn(\"aw-button\")} ref={anchor} aria-haspopup=\"menu\" aria-expanded={open} onClick={()=>setOpen(value=>!value)} /*__AW_PROPS_t0__*/ >任务菜单</button><Popover open={open} onClose={()=>setOpen(false)} anchorRef={anchor} /*__AW_PROPS_t1__*/ ><MenuSurface  /*__AW_PROPS_t2__*/ >{['新建草稿','保存记录','归档资料'].map(label=><button data-ui=\"aw-button\"  role=\"menuitem\" className={cn(\"aw-button\")} key={label} onClick={()=>{setMessage(label+'：已更新当前示例状态。');setOpen(false);}} /*__AW_PROPS_t3__*/ >{label}</button>)}</MenuSurface></Popover><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">{message}</p>\n  </BusinessDemo>;\n}\n",
+  "usageTemplate": "import { useId, useRef, useState } from 'react';\nimport { Archive, ChevronRight, FilePlus, MoreHorizontal, Save } from 'lucide-react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { MenuSurface } from '../../components/MenuSurface';\nimport { Popover } from '../../components/Popover';\nimport styles from './business-menu.module.css';\n\nconst actions = [\n  { label: '新建草稿', description: '开始整理新的内容', icon: FilePlus },\n  { label: '保存记录', description: '记录当前工作进展', icon: Save },\n  { label: '归档资料', description: '整理已完成的内容', icon: Archive }\n];\n\nexport default function BusinessMenuDemo() {\n  const [open, setOpen] = useState(/*__AW_STATE_state.open__*/);\n  const [message, setMessage] = useState('等待选择');\n  const anchor = useRef<HTMLButtonElement>(null);\n  const menuId = useId();\n\n  return <BusinessDemo title=\"Menu\" description=\"使用按钮展开操作菜单，选择动作会记录本地结果。\">\n    <Button  className={styles.trigger} ref={anchor} aria-haspopup=\"menu\" aria-controls={open ? menuId : undefined} aria-expanded={open} onClick={() => setOpen(value => !value)} /*__AW_PROPS_t0__*/ ><MoreHorizontal size={19} aria-hidden=\"true\" />任务菜单</Button>\n    <Popover open={open} onClose={() => setOpen(false)} anchorRef={anchor}  /*__AW_PROPS_t1__*/ >\n      <div id={menuId} className={styles.panel}>\n        <p className={styles.heading}>当前任务</p>\n        <MenuSurface  /*__AW_PROPS_t2__*/ >{actions.map(({ label, description, icon: Icon }) => <Button key={label}  className={styles.option} role=\"menuitem\" tabIndex={-1} onClick={() => { setMessage(label + '：已更新当前示例状态。'); setOpen(false); }} /*__AW_PROPS_t3__*/ >\n          <Icon className={styles.optionIcon} size={18} aria-hidden=\"true\" />\n          <span className={styles.optionCopy}><span className={styles.optionLabel}>{label}</span><span className={styles.optionDescription}>{description}</span></span>\n          <ChevronRight className={styles.arrow} size={15} aria-hidden=\"true\" />\n        </Button>)}</MenuSurface>\n      </div>\n    </Popover>\n    <p data-ui=\"aw-business-status\" className={styles.status} role=\"status\">{message}</p>\n  </BusinessDemo>;\n}\n",
   "targets": [
     {
       "id": "t0",
-      "name": "button · t0",
+      "name": "Button · t0",
+      "sourcePath": "src/business/components/Button.tsx",
       "props": [
-        {
-          "name": "data-ui",
-          "type": "any",
-          "required": false,
-          "description": "示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。",
-          "usageExamples": [
-            "data-ui=\"aw-button\"",
-            "data-ui=\"aw-button\""
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>"
-        },
         {
           "name": "type",
           "type": "\"button\" | \"reset\" | \"submit\" | undefined",
           "required": false,
+          "defaultExpression": "'button'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "button",
           "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
-          "usageExamples": [
-            "type=\"button\"",
-            "type=\"button\""
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "button",
+            "reset",
+            "submit"
           ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "editable": true,
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
             "line": 2971
-          }
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              "button",
+              "reset",
+              "submit"
+            ]
+          },
+          "codeExample": "type={\"button\"}"
         },
         {
           "name": "className",
           "type": "string | undefined",
           "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
           "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
-          "usageExamples": [
-            "className={cn(\"aw-button\")}",
-            "className={cn(\"aw-button\")}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
             "line": 2700
-          }
-        },
-        {
-          "name": "ref",
-          "type": "Ref<HTMLButtonElement> | undefined",
-          "required": false,
-          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "className={styles.trigger}",
           "usageExamples": [
-            "ref={anchor}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 292
-          }
-        },
-        {
-          "name": "aria-haspopup",
-          "type": "boolean | \"grid\" | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"listbox\" | \"tree\" | undefined",
-          "required": false,
-          "description": "辅助技术的 haspopup 状态或说明；值须与控件当前可观察行为一致。",
-          "usageExamples": [
-            "aria-haspopup=\"menu\""
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2490
-          }
-        },
-        {
-          "name": "aria-expanded",
-          "type": "Booleanish | undefined",
-          "required": false,
-          "description": "辅助技术的 expanded 状态或说明；值须与控件当前可观察行为一致。",
-          "usageExamples": [
-            "aria-expanded={open}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2478
-          }
-        },
-        {
-          "name": "onClick",
-          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
-          "required": false,
-          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
-          "usageExamples": [
-            "onClick={()=>setOpen(value=>!value)}",
-            "onClick={()=>{setMessage(label+'：已更新当前示例状态。');setOpen(false);}}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2279
-          }
+            "className={styles.trigger}",
+            "className={styles.option}"
+          ]
         },
         {
           "name": "children",
           "type": "ReactNode",
           "required": false,
           "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
-          "usageExamples": [
-            "children={<>任务菜单</>}",
-            "children={<>{label}</>}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
             "line": 2171
-          }
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "children={<><MoreHorizontal size={19} aria-hidden=\"true\" />任务菜单</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><MoreHorizontal size={19} aria-hidden=\"true\" />任务菜单</>}",
+            "children={<><Icon className={styles.optionIcon} size={18} aria-hidden=\"true\" /><span className={styles.optionCopy}><span className={styles.optionLabel}>{label}</span><span className={styles.optionDescription}>{description}</span></span><ChevronRight className={styles.arrow} size={15} aria-hidden=\"true\" /></>}"
+          ]
         },
         {
-          "name": "role",
-          "type": "AriaRole | undefined",
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
           "required": false,
-          "description": "辅助技术使用的元素角色，须与实际键盘和交互行为相匹配。",
-          "usageExamples": [
-            "role=\"menuitem\""
+          "defaultExpression": "'primary'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "primary",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "primary",
+            "secondary",
+            "danger",
+            "ghost"
           ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "editable": true,
           "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2721
-          }
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "primary",
+              "secondary",
+              "danger",
+              "ghost"
+            ]
+          },
+          "codeExample": "variant=\"secondary\"",
+          "usageExamples": [
+            "variant=\"secondary\"",
+            "variant=\"ghost\""
+          ]
         },
         {
-          "name": "key",
-          "type": "Key | null | undefined",
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
           "required": false,
-          "description": "React 列表项身份，用于更新时保持对应节点。",
-          "usageExamples": [
-            "key={label}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
           "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 250
-          }
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "ref={anchor}"
+          ]
         }
       ],
       "inherited": [
         {
-          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
           "reference": "https://react.dev/reference/react-dom/components/common",
           "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
           "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
@@ -404,10 +504,10 @@
             "kind": "callback",
             "signature": "() => void"
           },
-          "codeExample": "onClose={()=>setOpen(false)}",
+          "codeExample": "onClose={() => setOpen(false)}",
           "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
           "usageExamples": [
-            "onClose={()=>setOpen(false)}"
+            "onClose={() => setOpen(false)}"
           ]
         },
         {
@@ -440,10 +540,10 @@
             "path": "src/business/components/Popover.tsx",
             "line": 11
           },
-          "codeExample": "children={<><MenuSurface label=\"任务菜单\">{['新建草稿','保存记录','归档资料'].map(label=><button data-ui=\"aw-button\" type=\"button\" role=\"menuitem\" className={cn(\"aw-button\")} key={label} onClick={()=>{setMessage(label+'：已更新当前示例状态。');setOpen(false);}}>{label}</button>)}</MenuSurface></>}",
+          "codeExample": "children={<><div id={menuId} className={styles.panel}>\n        <p className={styles.heading}>当前任务</p>\n        <MenuSurface label=\"任务菜单\">{actions.map(({ label, description, icon: Icon }) => <Button key={label} variant=\"ghost\" className={styles.option} role=\"menuitem\" tabIndex={-1} onClick={() => { setMessage(label + '：已更新当前示例状态。'); setOpen(false); }}>\n          <Icon className={styles.optionIcon} size={18} aria-hidden=\"true\" />\n          <span className={styles.optionCopy}><span className={styles.optionLabel}>{label}</span><span className={styles.optionDescription}>{description}</span></span>\n          <ChevronRight className={styles.arrow} size={15} aria-hidden=\"true\" />\n        </Button>)}</MenuSurface>\n      </div></>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<><MenuSurface label=\"任务菜单\">{['新建草稿','保存记录','归档资料'].map(label=><button data-ui=\"aw-button\" type=\"button\" role=\"menuitem\" className={cn(\"aw-button\")} key={label} onClick={()=>{setMessage(label+'：已更新当前示例状态。');setOpen(false);}}>{label}</button>)}</MenuSurface></>}"
+            "children={<><div id={menuId} className={styles.panel}>\n        <p className={styles.heading}>当前任务</p>\n        <MenuSurface label=\"任务菜单\">{actions.map(({ label, description, icon: Icon }) => <Button key={label} variant=\"ghost\" className={styles.option} role=\"menuitem\" tabIndex={-1} onClick={() => { setMessage(label + '：已更新当前示例状态。'); setOpen(false); }}>\n          <Icon className={styles.optionIcon} size={18} aria-hidden=\"true\" />\n          <span className={styles.optionCopy}><span className={styles.optionLabel}>{label}</span><span className={styles.optionDescription}>{description}</span></span>\n          <ChevronRight className={styles.arrow} size={15} aria-hidden=\"true\" />\n        </Button>)}</MenuSurface>\n      </div></>}"
           ]
         },
         {
@@ -465,7 +565,10 @@
             "path": "src/business/components/Popover.tsx",
             "line": 11
           },
-          "codeExample": "minWidth={280}"
+          "codeExample": "minWidth={268}",
+          "usageExamples": [
+            "minWidth={268}"
+          ]
         }
       ],
       "inherited": []
@@ -485,7 +588,7 @@
           "editable": true,
           "source": {
             "path": "src/business/components/MenuSurface.tsx",
-            "line": 7
+            "line": 4
           },
           "codeExample": "label=\"任务菜单\"",
           "usageExamples": [
@@ -502,12 +605,12 @@
           "editable": false,
           "source": {
             "path": "src/business/components/MenuSurface.tsx",
-            "line": 7
+            "line": 4
           },
-          "codeExample": "children={<>{['新建草稿','保存记录','归档资料'].map(label=><button data-ui=\"aw-button\" type=\"button\" role=\"menuitem\" className={cn(\"aw-button\")} key={label} onClick={()=>{setMessage(label+'：已更新当前示例状态。');setOpen(false);}}>{label}</button>)}</>}",
+          "codeExample": "children={<>{actions.map(({ label, description, icon: Icon }) => <Button key={label} variant=\"ghost\" className={styles.option} role=\"menuitem\" tabIndex={-1} onClick={() => { setMessage(label + '：已更新当前示例状态。'); setOpen(false); }}>\n          <Icon className={styles.optionIcon} size={18} aria-hidden=\"true\" />\n          <span className={styles.optionCopy}><span className={styles.optionLabel}>{label}</span><span className={styles.optionDescription}>{description}</span></span>\n          <ChevronRight className={styles.arrow} size={15} aria-hidden=\"true\" />\n        </Button>)}</>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<>{['新建草稿','保存记录','归档资料'].map(label=><button data-ui=\"aw-button\" type=\"button\" role=\"menuitem\" className={cn(\"aw-button\")} key={label} onClick={()=>{setMessage(label+'：已更新当前示例状态。');setOpen(false);}}>{label}</button>)}</>}"
+            "children={<>{actions.map(({ label, description, icon: Icon }) => <Button key={label} variant=\"ghost\" className={styles.option} role=\"menuitem\" tabIndex={-1} onClick={() => { setMessage(label + '：已更新当前示例状态。'); setOpen(false); }}>\n          <Icon className={styles.optionIcon} size={18} aria-hidden=\"true\" />\n          <span className={styles.optionCopy}><span className={styles.optionLabel}>{label}</span><span className={styles.optionDescription}>{description}</span></span>\n          <ChevronRight className={styles.arrow} size={15} aria-hidden=\"true\" />\n        </Button>)}</>}"
           ]
         }
       ],
@@ -515,153 +618,152 @@
     },
     {
       "id": "t3",
-      "name": "button · t3",
+      "name": "Button · t3",
+      "sourcePath": "src/business/components/Button.tsx",
       "props": [
-        {
-          "name": "data-ui",
-          "type": "any",
-          "required": false,
-          "description": "示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。",
-          "usageExamples": [
-            "data-ui=\"aw-button\"",
-            "data-ui=\"aw-button\""
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>"
-        },
         {
           "name": "type",
           "type": "\"button\" | \"reset\" | \"submit\" | undefined",
           "required": false,
+          "defaultExpression": "'button'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "button",
           "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
-          "usageExamples": [
-            "type=\"button\"",
-            "type=\"button\""
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "button",
+            "reset",
+            "submit"
           ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "editable": true,
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
             "line": 2971
-          }
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              "button",
+              "reset",
+              "submit"
+            ]
+          },
+          "codeExample": "type={\"button\"}"
         },
         {
           "name": "className",
           "type": "string | undefined",
           "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
           "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
-          "usageExamples": [
-            "className={cn(\"aw-button\")}",
-            "className={cn(\"aw-button\")}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
             "line": 2700
-          }
-        },
-        {
-          "name": "ref",
-          "type": "Ref<HTMLButtonElement> | undefined",
-          "required": false,
-          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "className={styles.trigger}",
           "usageExamples": [
-            "ref={anchor}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 292
-          }
-        },
-        {
-          "name": "aria-haspopup",
-          "type": "boolean | \"grid\" | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"listbox\" | \"tree\" | undefined",
-          "required": false,
-          "description": "辅助技术的 haspopup 状态或说明；值须与控件当前可观察行为一致。",
-          "usageExamples": [
-            "aria-haspopup=\"menu\""
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2490
-          }
-        },
-        {
-          "name": "aria-expanded",
-          "type": "Booleanish | undefined",
-          "required": false,
-          "description": "辅助技术的 expanded 状态或说明；值须与控件当前可观察行为一致。",
-          "usageExamples": [
-            "aria-expanded={open}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2478
-          }
-        },
-        {
-          "name": "onClick",
-          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
-          "required": false,
-          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
-          "usageExamples": [
-            "onClick={()=>setOpen(value=>!value)}",
-            "onClick={()=>{setMessage(label+'：已更新当前示例状态。');setOpen(false);}}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2279
-          }
+            "className={styles.trigger}",
+            "className={styles.option}"
+          ]
         },
         {
           "name": "children",
           "type": "ReactNode",
           "required": false,
           "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
-          "usageExamples": [
-            "children={<>任务菜单</>}",
-            "children={<>{label}</>}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
             "line": 2171
-          }
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "children={<><MoreHorizontal size={19} aria-hidden=\"true\" />任务菜单</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<><MoreHorizontal size={19} aria-hidden=\"true\" />任务菜单</>}",
+            "children={<><Icon className={styles.optionIcon} size={18} aria-hidden=\"true\" /><span className={styles.optionCopy}><span className={styles.optionLabel}>{label}</span><span className={styles.optionDescription}>{description}</span></span><ChevronRight className={styles.arrow} size={15} aria-hidden=\"true\" /></>}"
+          ]
         },
         {
-          "name": "role",
-          "type": "AriaRole | undefined",
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
           "required": false,
-          "description": "辅助技术使用的元素角色，须与实际键盘和交互行为相匹配。",
-          "usageExamples": [
-            "role=\"menuitem\""
+          "defaultExpression": "'primary'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "primary",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "primary",
+            "secondary",
+            "danger",
+            "ghost"
           ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "editable": true,
           "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2721
-          }
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "primary",
+              "secondary",
+              "danger",
+              "ghost"
+            ]
+          },
+          "codeExample": "variant=\"secondary\"",
+          "usageExamples": [
+            "variant=\"secondary\"",
+            "variant=\"ghost\""
+          ]
         },
         {
-          "name": "key",
-          "type": "Key | null | undefined",
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
           "required": false,
-          "description": "React 列表项身份，用于更新时保持对应节点。",
-          "usageExamples": [
-            "key={label}"
-          ],
-          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
           "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 250
-          }
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
+          "usageExamples": [
+            "ref={anchor}"
+          ]
         }
       ],
       "inherited": [
         {
-          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
           "reference": "https://react.dev/reference/react-dom/components/common",
           "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
           "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"

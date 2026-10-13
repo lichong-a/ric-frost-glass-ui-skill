@@ -56,7 +56,7 @@ export default function BusinessOverlayManagerDemo() {
 | `Button · t0.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
 | `Button · t0.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `Button · t0.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
 | `Button · t0.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 
 **继承的原生属性：**
@@ -95,14 +95,14 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
 | `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t0.variant` | `"primary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t0.variant` | `"primary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t1.title` | `"第一层：编辑"` | text | 不限 ~ 不限 | 即时应用 |
 | `t2.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t2.variant` | `"primary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t2.variant` | `"primary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t3.title` | `"第二层：确认"` | text | 不限 ~ 不限 | 即时应用 |
 | `t4.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t4.variant` | `"primary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t5.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t4.variant` | `"primary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
+| `t5.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t5.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 | `state.stack` | `[]` | json | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 

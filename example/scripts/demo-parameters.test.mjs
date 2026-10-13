@@ -10,6 +10,35 @@ import { parseDemo, parameterizeDemo, renderUsage, staticValue, staticEnvironmen
 const expression = source => parseDemo(`const result = ${source};`, 'fixture.ts').statements[0].declarationList.declarations[0].initializer;
 const prop = (name, type, extras = {}) => ({ name, type, required: false, description: `Actual ${name} contract.`, ...extras });
 
+test('derived data totals retain authored expressions without becoming independent DIY controls', () => {
+  const source = `import Component from '../../../.upstream/Foo';
+const items = ['a', 'b', 'c'];
+export default function Demo(){return <Component total={items.length} speed={1} />;}`;
+  const properties = [prop('total', 'number', { required: true }), prop('speed', 'number', { defaultValue: 1 })];
+  const { definition, instrumented } = parameterizeDemo({ id: 'foo', name: 'Foo', sourcePath: '.upstream/Foo.tsx', demoPath: 'src/demos/data/foo.tsx', source,
+    api: { props: properties, targets: [{ name: 'Component', native: false, props: properties }] },
+    annotations: { components: { foo: { 'prop.total': { editable: false } } } },
+  });
+  assert.equal(definition.fields.some(field => field.name === 'total'), false);
+  assert.equal(definition.props.some(property => property.name === 'total'), true);
+  assert.match(instrumented, /total=\{items\.length\}/);
+  assert.match(renderUsage(definition), /total=\{items\.length\}/);
+  assert.equal(definition.fields.some(field => field.name === 'speed'), true);
+});
+
+test('pagination capacity binds the same controlled state used by content and pager', () => {
+  const source = `import {useState} from 'react';
+import Pager from '../../business/components/Pager';
+export default function Demo(){const [size,setSize]=useState(3);return <Pager pageSize={size} onChange={setSize} />;}`;
+  const props = [prop('pageSize', 'number', { required: true }), prop('onChange', '(value:number)=>void', { required: true })];
+  const result = parameterizeDemo({ id: 'foo', name: 'Foo', sourcePath: 'src/business/demos/data/foo.tsx', demoPath: 'src/business/demos/data/foo.tsx', source, api: { props, targets: [{ name: 'Pager', native: false, props }] } });
+  const field = result.definition.fields.find(field => field.key === 'state.size');
+  assert.ok(field, 'pageSize is a controlled public value');
+  assert.deepEqual(field.bindings, [{ target: 't0', name: 'pageSize' }]);
+  assert.equal(result.definition.fields.some(field => field.key === 't0.pageSize'), false);
+  assert.match(result.instrumented, /useDemoState\('state\.size', 3\)/);
+});
+
 test('static data interpreter resolves Vite resources, arrays, maps and constants without executing source', () => {
   const bindings = new Map([
     ['palette', { primary: '#52604e', ink: '#1f2d26' }],

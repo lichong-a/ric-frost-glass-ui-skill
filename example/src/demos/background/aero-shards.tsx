@@ -1,16 +1,14 @@
-import { useState } from 'react';
+import type { ComponentProps } from 'react';
 import Component from '../../../.upstream/src/ts-default/Backgrounds/AeroShards/AeroShards';
 import { palette } from '../../shared/demo-support';
+import { useWebGPUCompatibility } from '../../effects/webgpu-compatibility/useWebGPUCompatibility';
+import { createAeroShardsCanvas } from '../../effects/webgpu-compatibility/aero-canvas';
+import styles from './aero-shards.module.css';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Aero Shards component. */
 export default function AeroShardsDemo() {
   const { props: demoProps } = useDemoConfig();
-  const [error, setError] = useState<Error | null>(null);
-  if (error) throw error; // The preview ErrorBoundary shows GPU runtime failures.
-  return (
-    <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
-      <div style={{ width: '100%', height: 560, position: 'relative' }}>
+  const effect = useWebGPUCompatibility<ComponentProps<typeof Component>>(
         <Component
           backgroundColor={palette.ink}
           shardColor={palette.sage}
@@ -25,10 +23,9 @@ export default function AeroShardsDemo() {
           bloom={0.12}
           grain={0.025}
           chromaticAberration={0}
-          interaction="repel"
-          onError={setError} {...demoProps('t0')}
-        />
-      </div>
-    </div>
+          interaction="repel" {...demoProps('t0')}
+        />,
+    createAeroShardsCanvas,
   );
+  return <div className={styles.stage} data-visual-demo="aero-shards">{effect}<p className={styles.hint}>移动指针拨动碎片 · 按住聚拢 · 点击扩散</p></div>;
 }

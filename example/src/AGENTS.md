@@ -8,6 +8,10 @@
   buttons or labels supplied by an embedded upstream component.
 - Dropdowns use an opaque reading surface, following Glide Select. Underlying text
   must not be visible through the menu. Preserve keyboard selection and focus return.
+- Layout CSS Modules must not reference another control's legacy class. Even a
+  nested `.aw-button` selector exports that key and can replace Button's namespace
+  when style maps are merged. Reuse the Button component or an owned control class;
+  retain the Vite CSS-module namespace regression.
 - Keep frozen upstream files intact. Any upstream integration fix must use the existing
   locked adapter and a meaningful regression test.
 - Validate pointer-driven demos with real mouse down, movement while held, and mouse up
@@ -19,9 +23,16 @@
 - Parameter APIs come from actual frozen/owned source. Definitions, editor fields,
   iframe configuration and copyable TSX must agree. Keep callback/ref/ReactNode
   values in genuine source; transient animation state is not configuration.
+- Keep a pager's content and controls on the same normalized page/capacity. Derived
+  totals remain authored expressions, not independent DIY overrides. Editable
+  reorder datasets reject duplicate IDs before configuration dispatch.
 - Canonical authored demos live in `catalog/demo-source-templates.json`. Routine
   regeneration must preserve the restored demos and their CSS Modules. Capture only
   authored source, then regenerate definitions, code and docs together.
 - Gallery shell and business controls use the existing tokens. Effect canvases may
   use original colors, dark surfaces and visible intensity. A shared skin must not
   suppress shadows, light spill, edge decay or pointer gestures.
+- Aero Shards and Shape Waves select their own renderer. Preserve the locked WebGPU
+  implementation on supported devices and the explicitly labelled Canvas alternative
+  elsewhere. Do not restore a mandatory WebGPU gate or replace navigator.gpu/vgpu
+  globally. Document the compatibility renderer's visual and performance differences.

@@ -60,7 +60,7 @@
           "name": "variant"
         }
       ],
-      "type": "'primary' | 'secondary' | 'danger'",
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
       "defaultValue": "primary",
       "upstreamDefault": "'primary'",
       "control": "select",
@@ -76,6 +76,10 @@
         {
           "label": "danger",
           "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
         }
       ],
       "advanced": false,
@@ -117,15 +121,15 @@
       ]
     },
     {
-      "key": "t2.label",
+      "key": "t3.label",
       "name": "label",
-      "label": "标签 · t2",
+      "label": "标签 · t3",
       "description": "向用户或辅助技术说明控件的名称。",
       "scope": "prop",
-      "target": "t2",
+      "target": "t3",
       "bindings": [
         {
-          "target": "t2",
+          "target": "t3",
           "name": "label"
         }
       ],
@@ -144,15 +148,15 @@
       ]
     },
     {
-      "key": "t2.control",
+      "key": "t3.control",
       "name": "control",
-      "label": "control · t2",
+      "label": "control · t3",
       "description": "是否控制，决定该分支的展示或交互行为。",
       "scope": "prop",
-      "target": "t2",
+      "target": "t3",
       "bindings": [
         {
-          "target": "t2",
+          "target": "t3",
           "name": "control"
         }
       ],
@@ -160,7 +164,7 @@
       "defaultValue": false,
       "upstreamDefault": "false",
       "control": "switch",
-      "advanced": false,
+      "advanced": true,
       "apply": "live",
       "resources": [
         "@asset/restoration/chromatic-bloom.svg",
@@ -172,15 +176,15 @@
       ]
     },
     {
-      "key": "t3.autoFocus",
+      "key": "t4.autoFocus",
       "name": "autoFocus",
-      "label": "autoFocus · t3",
+      "label": "autoFocus · t4",
       "description": "是否自动焦点，决定该分支的展示或交互行为。",
       "scope": "prop",
-      "target": "t3",
+      "target": "t4",
       "bindings": [
         {
-          "target": "t3",
+          "target": "t4",
           "name": "autoFocus"
         }
       ],
@@ -199,15 +203,88 @@
       ]
     },
     {
-      "key": "t4.type",
-      "name": "type",
-      "label": "类型 · t4",
-      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "key": "t4.placeholder",
+      "name": "placeholder",
+      "label": "占位文字 · t4",
+      "description": "尚未填写或选择时显示的提示文字。",
       "scope": "prop",
       "target": "t4",
       "bindings": [
         {
           "target": "t4",
+          "name": "placeholder"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "搜索任务、资料或设置",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t5.variant",
+      "name": "variant",
+      "label": "外观 · t5",
+      "description": "选择组件内置的外观或效果变体。",
+      "scope": "prop",
+      "target": "t5",
+      "bindings": [
+        {
+          "target": "t5",
+          "name": "variant"
+        }
+      ],
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
+      "defaultValue": "ghost",
+      "upstreamDefault": "'primary'",
+      "control": "select",
+      "options": [
+        {
+          "label": "primary",
+          "value": "primary"
+        },
+        {
+          "label": "secondary",
+          "value": "secondary"
+        },
+        {
+          "label": "danger",
+          "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
+        }
+      ],
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t5.type",
+      "name": "type",
+      "label": "类型 · t5",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+      "scope": "prop",
+      "target": "t5",
+      "bindings": [
+        {
+          "target": "t5",
           "name": "type"
         }
       ],
@@ -287,7 +364,51 @@
       ],
       "bindings": [
         {
-          "target": "t3",
+          "target": "t4",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "key": "state.category",
+      "name": "category",
+      "label": "命令分类",
+      "description": "示例的受控状态 category；面板与组件的原有回调同步更新。 选项对应本例的四个实际分类；未知分类不更新预览。",
+      "scope": "state",
+      "type": "string",
+      "defaultValue": "all",
+      "control": "select",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "options": [
+        {
+          "label": "全部",
+          "value": "all"
+        },
+        {
+          "label": "任务",
+          "value": "tasks"
+        },
+        {
+          "label": "资料",
+          "value": "files"
+        },
+        {
+          "label": "设置",
+          "value": "settings"
+        }
+      ],
+      "bindings": [
+        {
+          "target": "t2",
           "name": "value"
         }
       ]
@@ -312,10 +433,31 @@
   "props": [],
   "inherited": [
     {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "div",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
       "type": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
       "tag": "input",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "section",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "span",
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     },
     {
@@ -343,11 +485,11 @@
       "type": "DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-      "tag": "section",
+      "tag": "kbd",
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     }
   ],
-  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport ownedStyles1 from '../../components/Input.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { Field } from '../../components/Field';\nimport { Dialog } from '../../components/Dialog';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessCommandMenuDemo() {\n  const [open,setOpen]=useState(/*__AW_STATE_state.open__*/); const [query,setQuery]=useState(/*__AW_STATE_state.query__*/); const [active,setActive]=useState(0); const [message,setMessage]=useState('尚未选择命令'); const commands=['查看任务','查看资料','查看设置']; const visible=commands.filter(label=>label.includes(query)); function execute(label:string){setMessage('当前入口：'+label);setOpen(false);}\n  return <BusinessDemo title=\"CommandMenu\" description=\"打开命令面板搜索当前页面动作；支持上下键选择、Enter执行与Escape关闭。\">\n    <Button onClick={()=>{setQuery('');setActive(0);setOpen(true);}} /*__AW_PROPS_t0__*/ >打开命令面板</Button><Dialog open={open}  onClose={()=>setOpen(false)} /*__AW_PROPS_t1__*/ ><Field  /*__AW_PROPS_t2__*/ ><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")}  value={query} aria-controls=\"business-command-results\" onChange={event=>{setQuery(event.target.value);setActive(0);}} onKeyDown={event=>{if(!visible.length)return;if(['ArrowDown','ArrowUp'].includes(event.key)){event.preventDefault();setActive(value=>(value+(event.key==='ArrowDown'?1:-1)+visible.length)%visible.length);}if(event.key==='Enter'){event.preventDefault();execute(visible[active]);}}} /*__AW_PROPS_t3__*/  /></Field><ul id=\"business-command-results\">{visible.map((label,index)=><li key={label}><Button variant={active===index?'primary':'secondary'} onClick={()=>execute(label)} /*__AW_PROPS_t4__*/ >{label}</Button></li>)}</ul>{!visible.length?<p role=\"status\">没有匹配的命令。</p>:null}</Dialog><section data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")} role=\"status\">{message}</section>\n  </BusinessDemo>;\n}\n",
+  "usageTemplate": "import inputStyles from '../../components/Input.module.css';\nimport { useEffect, useId, useState } from 'react';\nimport { ArrowDown, ArrowUp, CornerDownLeft, Files, ListTodo, Search, Settings } from 'lucide-react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { CommandTabs } from '../../components/CommandTabs';\nimport { Dialog } from '../../components/Dialog';\nimport { Field } from '../../components/Field';\nimport { commandIndexForKey, commandSelectionIndex, filterCommandEntries } from '../../components/command-menu-state';\nimport styles from './business-commandmenu.module.css';\n\nconst commands = [\n  { id: 'tasks', label: '查看任务', category: 'tasks', description: '打开当前工作空间的任务入口', icon: ListTodo },\n  { id: 'files', label: '查看资料', category: 'files', description: '打开当前工作空间的资料入口', icon: Files },\n  { id: 'settings', label: '查看设置', category: 'settings', description: '打开当前工作空间的设置入口', icon: Settings }\n];\nconst categories = [{ value: 'all', label: '全部' }, { value: 'tasks', label: '任务' }, { value: 'files', label: '资料' }, { value: 'settings', label: '设置' }];\n\nexport default function BusinessCommandMenuDemo() {\n  const [open, setOpen] = useState(/*__AW_STATE_state.open__*/);\n  const [query, setQuery] = useState(/*__AW_STATE_state.query__*/);\n  const [category, setCategory] = useState(/*__AW_STATE_state.category__*/);\n  const [active, setActive] = useState(0);\n  const [message, setMessage] = useState('尚未选择命令');\n  const prefix = useId();\n  const panelId = `${prefix}-command-panel`;\n  const visible = filterCommandEntries(commands, query, category);\n  const selectedIndex = commandSelectionIndex(active, visible.length);\n  const selectedCommand = selectedIndex === null ? undefined : visible[selectedIndex];\n  const tabs = categories.map(item => ({ ...item, count: filterCommandEntries(commands, query, item.value).length }));\n\n  // DIY parameters change the filters directly, without invoking the input callbacks.\n  useEffect(() => { setActive(0); }, [query, category]);\n\n  function execute(label: string) { setMessage('当前入口：' + label); setOpen(false); }\n\n  return <BusinessDemo title=\"CommandMenu\" description=\"打开命令面板搜索当前页面动作；支持上下键选择、Enter执行与Escape关闭。\">\n    <Button className={styles.trigger} onClick={() => { setQuery(''); setCategory('all'); setActive(0); setOpen(true); }} /*__AW_PROPS_t0__*/ ><Search size={17} aria-hidden=\"true\" />打开命令面板</Button>\n    <Dialog open={open}  onClose={() => setOpen(false)} /*__AW_PROPS_t1__*/ >\n      <div className={styles.commandPanel}>\n        <CommandTabs items={tabs} value={category} idPrefix={prefix} panelId={panelId} onValueChange={value => { setCategory(value); setActive(0); }} />\n        <Field  /*__AW_PROPS_t3__*/ ><input data-ui=\"aw-business-input\" className={inputStyles['aw-business-input']}  role=\"combobox\" aria-expanded={open} aria-autocomplete=\"list\" aria-controls=\"business-command-results\" aria-activedescendant={selectedCommand ? `${prefix}-command-${selectedCommand.id}` : undefined}  value={query} onChange={event => { setQuery(event.target.value); setActive(0); }} onKeyDown={event => {\n          if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {\n            const next = commandIndexForKey(selectedIndex ?? 0, visible.length, event.key);\n            if (next !== null) { event.preventDefault(); setActive(next); }\n          }\n          if (event.key === 'Enter' && selectedCommand) { event.preventDefault(); execute(selectedCommand.label); }\n        }} /*__AW_PROPS_t4__*/  /></Field>\n        <section id={panelId} role=\"tabpanel\" aria-labelledby={`${prefix}-category-${category}`} className={styles.resultsPanel}>\n          <div className={styles.resultHeading}><span>可运行的命令</span><span>{visible.length} 条</span></div>\n          <ul id=\"business-command-results\" role=\"listbox\" aria-label=\"可运行的命令\" className={styles.results}>\n            {visible.map(({ id, label, description, icon: Icon }, index) => <li key={id} role=\"presentation\" className={styles.result}><Button id={`${prefix}-command-${id}`}  role=\"option\" aria-selected={selectedIndex === index} tabIndex={-1} className={styles.commandItem} onPointerMove={() => setActive(index)} onClick={() => execute(label)} /*__AW_PROPS_t5__*/ >\n              <span className={styles.commandIcon}><Icon size={18} aria-hidden=\"true\" /></span><span className={styles.commandCopy}><span className={styles.commandLabel}>{label}</span><span className={styles.commandDescription}>{description}</span></span><CornerDownLeft className={styles.enterIcon} size={15} aria-hidden=\"true\" />\n            </Button></li>)}\n          </ul>\n          {!visible.length ? <p role=\"status\" className={styles.empty}>没有匹配的命令。</p> : null}\n        </section>\n        <div className={styles.keyboardHelp} aria-hidden=\"true\"><span className={styles.keyHint}><kbd className={styles.key}><ArrowUp size={11} /><ArrowDown size={11} /></kbd>选择</span><span className={styles.keyHint}><kbd className={styles.key}>Enter</kbd>执行</span><span className={styles.keyHint}><kbd className={styles.key}>Esc</kbd>关闭</span></div>\n      </div>\n    </Dialog>\n    <section data-ui=\"aw-business-item\" className={styles.status} role=\"status\">{message}</section>\n  </BusinessDemo>;\n}\n",
   "targets": [
     {
       "id": "t0",
@@ -409,7 +551,11 @@
             "line": 2700
           },
           "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "className={\"\"}"
+          "codeExample": "className={styles.trigger}",
+          "usageExamples": [
+            "className={styles.trigger}",
+            "className={styles.commandItem}"
+          ]
         },
         {
           "name": "children",
@@ -424,16 +570,16 @@
             "line": 2171
           },
           "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>打开命令面板</>}",
+          "codeExample": "children={<><Search size={17} aria-hidden=\"true\" />打开命令面板</>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<>打开命令面板</>}",
-            "children={<>{label}</>}"
+            "children={<><Search size={17} aria-hidden=\"true\" />打开命令面板</>}",
+            "children={<><span className={styles.commandIcon}><Icon size={18} aria-hidden=\"true\" /></span><span className={styles.commandCopy}><span className={styles.commandLabel}>{label}</span><span className={styles.commandDescription}>{description}</span></span><CornerDownLeft className={styles.enterIcon} size={15} aria-hidden=\"true\" /></>}"
           ]
         },
         {
           "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
           "required": false,
           "defaultExpression": "'primary'",
           "defaultSource": {
@@ -448,7 +594,8 @@
           "options": [
             "primary",
             "secondary",
-            "danger"
+            "danger",
+            "ghost"
           ],
           "editable": true,
           "source": {
@@ -460,12 +607,13 @@
             "options": [
               "primary",
               "secondary",
-              "danger"
+              "danger",
+              "ghost"
             ]
           },
-          "codeExample": "variant={active===index?'primary':'secondary'}",
+          "codeExample": "variant=\"ghost\"",
           "usageExamples": [
-            "variant={active===index?'primary':'secondary'}"
+            "variant=\"ghost\""
           ]
         },
         {
@@ -545,10 +693,10 @@
             "kind": "callback",
             "signature": "() => void"
           },
-          "codeExample": "onClose={()=>setOpen(false)}",
+          "codeExample": "onClose={() => setOpen(false)}",
           "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
           "usageExamples": [
-            "onClose={()=>setOpen(false)}"
+            "onClose={() => setOpen(false)}"
           ]
         },
         {
@@ -580,10 +728,10 @@
             "path": "src/business/components/Dialog.tsx",
             "line": 10
           },
-          "codeExample": "children={<><Field label=\"搜索页面命令\"><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} autoFocus value={query} aria-controls=\"business-command-results\" onChange={event=>{setQuery(event.target.value);setActive(0);}} onKeyDown={event=>{if(!visible.length)return;if(['ArrowDown','ArrowUp'].includes(event.key)){event.preventDefault();setActive(value=>(value+(event.key==='ArrowDown'?1:-1)+visible.length)%visible.length);}if(event.key==='Enter'){event.preventDefault();execute(visible[active]);}}} /></Field><ul id=\"business-command-results\">{visible.map((label,index)=><li key={label}><Button variant={active===index?'primary':'secondary'} onClick={()=>execute(label)}>{label}</Button></li>)}</ul>{!visible.length?<p role=\"status\">没有匹配的命令。</p>:null}</>}",
+          "codeExample": "children={<><div className={styles.commandPanel}>\n        <CommandTabs items={tabs} value={category} idPrefix={prefix} panelId={panelId} onValueChange={value => { setCategory(value); setActive(0); }} />\n        <Field label=\"搜索页面命令\"><input data-ui=\"aw-business-input\" className={inputStyles['aw-business-input']} autoFocus role=\"combobox\" aria-expanded={open} aria-autocomplete=\"list\" aria-controls=\"business-command-results\" aria-activedescendant={selectedCommand ? `${prefix}-command-${selectedCommand.id}` : undefined} placeholder=\"搜索任务、资料或设置\" value={query} onChange={event => { setQuery(event.target.value); setActive(0); }} onKeyDown={event => {\n          if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {\n            const next = commandIndexForKey(selectedIndex ?? 0, visible.length, event.key);\n            if (next !== null) { event.preventDefault(); setActive(next); }\n          }\n          if (event.key === 'Enter' && selectedCommand) { event.preventDefault(); execute(selectedCommand.label); }\n        }} /></Field>\n        <section id={panelId} role=\"tabpanel\" aria-labelledby={`${prefix}-category-${category}`} className={styles.resultsPanel}>\n          <div className={styles.resultHeading}><span>可运行的命令</span><span>{visible.length} 条</span></div>\n          <ul id=\"business-command-results\" role=\"listbox\" aria-label=\"可运行的命令\" className={styles.results}>\n            {visible.map(({ id, label, description, icon: Icon }, index) => <li key={id} role=\"presentation\" className={styles.result}><Button id={`${prefix}-command-${id}`} variant=\"ghost\" role=\"option\" aria-selected={selectedIndex === index} tabIndex={-1} className={styles.commandItem} onPointerMove={() => setActive(index)} onClick={() => execute(label)}>\n              <span className={styles.commandIcon}><Icon size={18} aria-hidden=\"true\" /></span><span className={styles.commandCopy}><span className={styles.commandLabel}>{label}</span><span className={styles.commandDescription}>{description}</span></span><CornerDownLeft className={styles.enterIcon} size={15} aria-hidden=\"true\" />\n            </Button></li>)}\n          </ul>\n          {!visible.length ? <p role=\"status\" className={styles.empty}>没有匹配的命令。</p> : null}\n        </section>\n        <div className={styles.keyboardHelp} aria-hidden=\"true\"><span className={styles.keyHint}><kbd className={styles.key}><ArrowUp size={11} /><ArrowDown size={11} /></kbd>选择</span><span className={styles.keyHint}><kbd className={styles.key}>Enter</kbd>执行</span><span className={styles.keyHint}><kbd className={styles.key}>Esc</kbd>关闭</span></div>\n      </div></>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<><Field label=\"搜索页面命令\"><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} autoFocus value={query} aria-controls=\"business-command-results\" onChange={event=>{setQuery(event.target.value);setActive(0);}} onKeyDown={event=>{if(!visible.length)return;if(['ArrowDown','ArrowUp'].includes(event.key)){event.preventDefault();setActive(value=>(value+(event.key==='ArrowDown'?1:-1)+visible.length)%visible.length);}if(event.key==='Enter'){event.preventDefault();execute(visible[active]);}}} /></Field><ul id=\"business-command-results\">{visible.map((label,index)=><li key={label}><Button variant={active===index?'primary':'secondary'} onClick={()=>execute(label)}>{label}</Button></li>)}</ul>{!visible.length?<p role=\"status\">没有匹配的命令。</p>:null}</>}"
+            "children={<><div className={styles.commandPanel}>\n        <CommandTabs items={tabs} value={category} idPrefix={prefix} panelId={panelId} onValueChange={value => { setCategory(value); setActive(0); }} />\n        <Field label=\"搜索页面命令\"><input data-ui=\"aw-business-input\" className={inputStyles['aw-business-input']} autoFocus role=\"combobox\" aria-expanded={open} aria-autocomplete=\"list\" aria-controls=\"business-command-results\" aria-activedescendant={selectedCommand ? `${prefix}-command-${selectedCommand.id}` : undefined} placeholder=\"搜索任务、资料或设置\" value={query} onChange={event => { setQuery(event.target.value); setActive(0); }} onKeyDown={event => {\n          if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {\n            const next = commandIndexForKey(selectedIndex ?? 0, visible.length, event.key);\n            if (next !== null) { event.preventDefault(); setActive(next); }\n          }\n          if (event.key === 'Enter' && selectedCommand) { event.preventDefault(); execute(selectedCommand.label); }\n        }} /></Field>\n        <section id={panelId} role=\"tabpanel\" aria-labelledby={`${prefix}-category-${category}`} className={styles.resultsPanel}>\n          <div className={styles.resultHeading}><span>可运行的命令</span><span>{visible.length} 条</span></div>\n          <ul id=\"business-command-results\" role=\"listbox\" aria-label=\"可运行的命令\" className={styles.results}>\n            {visible.map(({ id, label, description, icon: Icon }, index) => <li key={id} role=\"presentation\" className={styles.result}><Button id={`${prefix}-command-${id}`} variant=\"ghost\" role=\"option\" aria-selected={selectedIndex === index} tabIndex={-1} className={styles.commandItem} onPointerMove={() => setActive(index)} onClick={() => execute(label)}>\n              <span className={styles.commandIcon}><Icon size={18} aria-hidden=\"true\" /></span><span className={styles.commandCopy}><span className={styles.commandLabel}>{label}</span><span className={styles.commandDescription}>{description}</span></span><CornerDownLeft className={styles.enterIcon} size={15} aria-hidden=\"true\" />\n            </Button></li>)}\n          </ul>\n          {!visible.length ? <p role=\"status\" className={styles.empty}>没有匹配的命令。</p> : null}\n        </section>\n        <div className={styles.keyboardHelp} aria-hidden=\"true\"><span className={styles.keyHint}><kbd className={styles.key}><ArrowUp size={11} /><ArrowDown size={11} /></kbd>选择</span><span className={styles.keyHint}><kbd className={styles.key}>Enter</kbd>执行</span><span className={styles.keyHint}><kbd className={styles.key}>Esc</kbd>关闭</span></div>\n      </div></>}"
           ]
         },
         {
@@ -620,6 +768,131 @@
     },
     {
       "id": "t2",
+      "name": "CommandTabs",
+      "sourcePath": "src/business/components/CommandTabs.tsx",
+      "props": [
+        {
+          "name": "items",
+          "type": "readonly CommandTabItem[]",
+          "required": true,
+          "description": "参与渲染或交互的条目列表，每项字段和可选内容按完整类型传入。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/CommandTabs.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "CommandTabItem",
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "value",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "label",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "count",
+                    "type": "number",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "items={tabs}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "items={tabs}"
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": true,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/CommandTabs.tsx",
+            "line": 16
+          },
+          "codeExample": "value={category}",
+          "usageExamples": [
+            "value={category}"
+          ]
+        },
+        {
+          "name": "onValueChange",
+          "type": "(value: string) => void",
+          "required": true,
+          "description": "交互产生新的值时通知调用方。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/CommandTabs.tsx",
+            "line": 16
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(value: string) => void"
+          },
+          "codeExample": "onValueChange={value => { setCategory(value); setActive(0); }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onValueChange={value => { setCategory(value); setActive(0); }}"
+          ]
+        },
+        {
+          "name": "idPrefix",
+          "type": "string",
+          "required": true,
+          "description": "标识前缀，控制 business commandmenu 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/CommandTabs.tsx",
+            "line": 16
+          },
+          "codeExample": "idPrefix={prefix}",
+          "usageExamples": [
+            "idPrefix={prefix}"
+          ]
+        },
+        {
+          "name": "panelId",
+          "type": "string",
+          "required": true,
+          "description": "面板标识，控制 business commandmenu 的对应渲染或交互参数。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/CommandTabs.tsx",
+            "line": 16
+          },
+          "codeExample": "panelId={panelId}",
+          "usageExamples": [
+            "panelId={panelId}"
+          ]
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t3",
       "name": "Field",
       "sourcePath": "src/business/components/Field.tsx",
       "props": [
@@ -652,10 +925,10 @@
             "path": "src/business/components/Field.tsx",
             "line": 7
           },
-          "codeExample": "children={<><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} autoFocus value={query} aria-controls=\"business-command-results\" onChange={event=>{setQuery(event.target.value);setActive(0);}} onKeyDown={event=>{if(!visible.length)return;if(['ArrowDown','ArrowUp'].includes(event.key)){event.preventDefault();setActive(value=>(value+(event.key==='ArrowDown'?1:-1)+visible.length)%visible.length);}if(event.key==='Enter'){event.preventDefault();execute(visible[active]);}}} /></>}",
+          "codeExample": "children={<><input data-ui=\"aw-business-input\" className={inputStyles['aw-business-input']} autoFocus role=\"combobox\" aria-expanded={open} aria-autocomplete=\"list\" aria-controls=\"business-command-results\" aria-activedescendant={selectedCommand ? `${prefix}-command-${selectedCommand.id}` : undefined} placeholder=\"搜索任务、资料或设置\" value={query} onChange={event => { setQuery(event.target.value); setActive(0); }} onKeyDown={event => {\n          if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {\n            const next = commandIndexForKey(selectedIndex ?? 0, visible.length, event.key);\n            if (next !== null) { event.preventDefault(); setActive(next); }\n          }\n          if (event.key === 'Enter' && selectedCommand) { event.preventDefault(); execute(selectedCommand.label); }\n        }} /></>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} autoFocus value={query} aria-controls=\"business-command-results\" onChange={event=>{setQuery(event.target.value);setActive(0);}} onKeyDown={event=>{if(!visible.length)return;if(['ArrowDown','ArrowUp'].includes(event.key)){event.preventDefault();setActive(value=>(value+(event.key==='ArrowDown'?1:-1)+visible.length)%visible.length);}if(event.key==='Enter'){event.preventDefault();execute(visible[active]);}}} /></>}"
+            "children={<><input data-ui=\"aw-business-input\" className={inputStyles['aw-business-input']} autoFocus role=\"combobox\" aria-expanded={open} aria-autocomplete=\"list\" aria-controls=\"business-command-results\" aria-activedescendant={selectedCommand ? `${prefix}-command-${selectedCommand.id}` : undefined} placeholder=\"搜索任务、资料或设置\" value={query} onChange={event => { setQuery(event.target.value); setActive(0); }} onKeyDown={event => {\n          if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {\n            const next = commandIndexForKey(selectedIndex ?? 0, visible.length, event.key);\n            if (next !== null) { event.preventDefault(); setActive(next); }\n          }\n          if (event.key === 'Enter' && selectedCommand) { event.preventDefault(); execute(selectedCommand.label); }\n        }} /></>}"
           ]
         },
         {
@@ -725,7 +998,7 @@
       "inherited": []
     },
     {
-      "id": "t3",
+      "id": "t4",
       "name": "input",
       "props": [
         {
@@ -744,7 +1017,7 @@
           "required": false,
           "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
           "usageExamples": [
-            "className={cn(\"aw-business-input\")}"
+            "className={inputStyles['aw-business-input']}"
           ],
           "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
           "source": {
@@ -767,17 +1040,45 @@
           }
         },
         {
-          "name": "value",
-          "type": "string | number | readonly string[] | undefined",
+          "name": "role",
+          "type": "AriaRole | undefined",
           "required": false,
-          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "description": "辅助技术使用的元素角色，须与实际键盘和交互行为相匹配。",
           "usageExamples": [
-            "value={query}"
+            "role=\"combobox\""
           ],
           "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
-            "line": 3215
+            "line": 2721
+          }
+        },
+        {
+          "name": "aria-expanded",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "description": "辅助技术的 expanded 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-expanded={open}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2478
+          }
+        },
+        {
+          "name": "aria-autocomplete",
+          "type": "\"inline\" | \"none\" | \"list\" | \"both\" | undefined",
+          "required": false,
+          "description": "辅助技术的 autocomplete 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-autocomplete=\"list\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2402
           }
         },
         {
@@ -795,12 +1096,54 @@
           }
         },
         {
+          "name": "aria-activedescendant",
+          "type": "string | undefined",
+          "required": false,
+          "description": "辅助技术的 activedescendant 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-activedescendant={selectedCommand ? `${prefix}-command-${selectedCommand.id}` : undefined}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2395
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string | undefined",
+          "required": false,
+          "description": "尚未填写或选择时显示的提示文字。",
+          "usageExamples": [
+            "placeholder=\"搜索任务、资料或设置\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3208
+          }
+        },
+        {
+          "name": "value",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "usageExamples": [
+            "value={query}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3215
+          }
+        },
+        {
           "name": "onChange",
           "type": "ChangeEventHandler<HTMLInputElement> | undefined",
           "required": false,
           "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
           "usageExamples": [
-            "onChange={event=>{setQuery(event.target.value);setActive(0);}}"
+            "onChange={event => { setQuery(event.target.value); setActive(0); }}"
           ],
           "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
           "source": {
@@ -814,7 +1157,7 @@
           "required": false,
           "description": "身份标识down时执行的回调；按签名接收事件或结果，调用方在函数中同步业务状态。",
           "usageExamples": [
-            "onKeyDown={event=>{if(!visible.length)return;if(['ArrowDown','ArrowUp'].includes(event.key)){event.preventDefault();setActive(value=>(value+(event.key==='ArrowDown'?1:-1)+visible.length)%visible.length);}if(event.key==='Enter'){event.preventDefault();execute(visible[active]);}}}"
+            "onKeyDown={event => {\n          if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {\n            const next = commandIndexForKey(selectedIndex ?? 0, visible.length, event.key);\n            if (next !== null) { event.preventDefault(); setActive(next); }\n          }\n          if (event.key === 'Enter' && selectedCommand) { event.preventDefault(); execute(selectedCommand.label); }\n        }}"
           ],
           "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
           "source": {
@@ -833,8 +1176,8 @@
       ]
     },
     {
-      "id": "t4",
-      "name": "Button · t4",
+      "id": "t5",
+      "name": "Button · t5",
       "sourcePath": "src/business/components/Button.tsx",
       "props": [
         {
@@ -892,7 +1235,11 @@
             "line": 2700
           },
           "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "className={\"\"}"
+          "codeExample": "className={styles.trigger}",
+          "usageExamples": [
+            "className={styles.trigger}",
+            "className={styles.commandItem}"
+          ]
         },
         {
           "name": "children",
@@ -907,16 +1254,16 @@
             "line": 2171
           },
           "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>打开命令面板</>}",
+          "codeExample": "children={<><Search size={17} aria-hidden=\"true\" />打开命令面板</>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<>打开命令面板</>}",
-            "children={<>{label}</>}"
+            "children={<><Search size={17} aria-hidden=\"true\" />打开命令面板</>}",
+            "children={<><span className={styles.commandIcon}><Icon size={18} aria-hidden=\"true\" /></span><span className={styles.commandCopy}><span className={styles.commandLabel}>{label}</span><span className={styles.commandDescription}>{description}</span></span><CornerDownLeft className={styles.enterIcon} size={15} aria-hidden=\"true\" /></>}"
           ]
         },
         {
           "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
           "required": false,
           "defaultExpression": "'primary'",
           "defaultSource": {
@@ -931,7 +1278,8 @@
           "options": [
             "primary",
             "secondary",
-            "danger"
+            "danger",
+            "ghost"
           ],
           "editable": true,
           "source": {
@@ -943,12 +1291,13 @@
             "options": [
               "primary",
               "secondary",
-              "danger"
+              "danger",
+              "ghost"
             ]
           },
-          "codeExample": "variant={active===index?'primary':'secondary'}",
+          "codeExample": "variant=\"ghost\"",
           "usageExamples": [
-            "variant={active===index?'primary':'secondary'}"
+            "variant=\"ghost\""
           ]
         },
         {

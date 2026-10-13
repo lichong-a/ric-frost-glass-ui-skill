@@ -27,20 +27,45 @@
 ```tsx
 // 当前 Popover 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/Button.module.css';
-import ownedStyles1 from '../../components/DemoLayout.module.css';
-import { componentClasses } from '../../class-names';
-import { useState, useRef } from 'react';
+import { useId, useRef, useState } from 'react';
+import { motion } from 'motion/react';
+import { CalendarDays, Check, ChevronDown, Columns3, List } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Button } from '../../components/Button';
+import { MenuSurface } from '../../components/MenuSurface';
 import { Popover } from '../../components/Popover';
+import { controlSpring, useBusinessReducedMotion } from '../../motion-preference';
+import styles from './business-popover.module.css';
 
-const ownedStyles={...ownedStyles0,...ownedStyles1};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
+const views = [
+  { label: '列表', description: '逐项浏览资料与任务', icon: List },
+  { label: '看板', description: '按阶段组织当前工作', icon: Columns3 },
+  { label: '日历', description: '按日期查看计划安排', icon: CalendarDays }
+];
+
 export default function BusinessPopoverDemo() {
-  const [open,setOpen]=useState(false); const [choice,setChoice]=useState('未选择'); const anchor=useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState(false);
+  const [choice, setChoice] = useState('未选择');
+  const anchor = useRef<HTMLButtonElement>(null);
+  const menuId = useId();
+  const reduced = useBusinessReducedMotion();
+
   return <BusinessDemo title="Popover" description="围绕触发按钮定位浮层，选择内容后关闭，外点和Escape也可关闭。">
-    <button data-ui="aw-button"  className={cn("aw-button")} ref={anchor} aria-expanded={open} onClick={()=>setOpen(value=>!value)} type={"button"} >选择视图</button><Popover open={open} onClose={()=>setOpen(false)} anchorRef={anchor} minWidth={280} ><div data-ui="aw-business-list" className={cn("aw-business-list")}>{['列表','看板','日历'].map(label=><Button key={label}  onClick={()=>{setChoice(label);setOpen(false);}} variant={"secondary"} type={"button"} >{label}</Button>)}</div></Popover><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">当前视图：{choice}</p>
+    <Button  className={styles.trigger} ref={anchor} aria-haspopup="menu" aria-controls={open ? menuId : undefined} aria-expanded={open} onClick={() => setOpen(value => !value)} variant={"secondary"} type={"button"} >
+      <List size={17} aria-hidden="true" />选择视图
+      <motion.span className={styles.chevron} aria-hidden="true" animate={{ rotate: open ? 180 : 0 }} transition={reduced ? { duration: 0 } : controlSpring}><ChevronDown size={16} /></motion.span>
+    </Button>
+    <Popover open={open} onClose={() => setOpen(false)} anchorRef={anchor}  minWidth={264} >
+      <div id={menuId} className={styles.panel}>
+        <p className={styles.heading}>视图模式</p>
+        <MenuSurface  label={"视图模式"} >{views.map(({ label, description, icon: Icon }) => <Button key={label}  className={styles.option} role="menuitem" tabIndex={-1} data-selected={choice === label} onClick={() => { setChoice(label); setOpen(false); }} variant={"ghost"} type={"button"} >
+          <Icon className={styles.optionIcon} size={18} aria-hidden="true" />
+          <span className={styles.optionCopy}><span className={styles.optionLabel}>{label}</span><span className={styles.optionDescription}>{description}</span></span>
+          {choice === label ? <Check className={styles.check} size={16} aria-hidden="true" /> : null}
+        </Button>)}</MenuSurface>
+      </div>
+    </Popover>
+    <p data-ui="aw-business-status" className={styles.status} role="status">当前视图：{choice}</p>
   </BusinessDemo>;
 }
 ```
@@ -54,28 +79,22 @@ export default function BusinessPopoverDemo() {
 | `anchorRef` | `RefObject<HTMLElement \| null>` | 是 | `未指定` | 连接触发器 DOM 的 ref，供弹层定位及焦点返回使用。 |
 | `children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
 | `minWidth` | `number` | 否 | `280` | 最小宽度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。 |
-| `button.data-ui` | `any` | 否 | `未指定` | 示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。 |
-| `button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `未指定` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
-| `button.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
-| `button.ref` | `Ref<HTMLButtonElement> \| undefined` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
-| `button.aria-expanded` | `Booleanish \| undefined` | 否 | `未指定` | 辅助技术的 expanded 状态或说明；值须与控件当前可观察行为一致。 |
-| `button.onClick` | `MouseEventHandler<HTMLButtonElement> \| undefined` | 否 | `未指定` | 用户点击或通过键盘激活时触发的事件处理函数。 |
-| `button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
-| `Button.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
-| `Button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
-| `Button.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+| `Button · t0.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `Button · t0.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `Button · t0.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t0.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+| `MenuSurface.label` | `string` | 是 | `未指定` | 向用户或辅助技术说明控件的名称。 |
+| `MenuSurface.children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
 
 **继承的原生属性：**
 
-- `DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 
 **onClose 的真实接入：**
 
 ```tsx
-onClose={()=>setOpen(false)}
+onClose={() => setOpen(false)}
 ```
 
 **anchorRef 的真实接入：**
@@ -88,13 +107,21 @@ const elementRef = useRef<HTMLElement | null>(null);
 **children 的真实接入：**
 
 ```tsx
-children={<><div data-ui="aw-business-list" className={cn("aw-business-list")}>{['列表','看板','日历'].map(label=><Button key={label} variant="secondary" onClick={()=>{setChoice(label);setOpen(false);}}>{label}</Button>)}</div></>}
+children={<><div id={menuId} className={styles.panel}>
+        <p className={styles.heading}>视图模式</p>
+        <MenuSurface label="视图模式">{views.map(({ label, description, icon: Icon }) => <Button key={label} variant="ghost" className={styles.option} role="menuitem" tabIndex={-1} data-selected={choice === label} onClick={() => { setChoice(label); setOpen(false); }}>
+          <Icon className={styles.optionIcon} size={18} aria-hidden="true" />
+          <span className={styles.optionCopy}><span className={styles.optionLabel}>{label}</span><span className={styles.optionDescription}>{description}</span></span>
+          {choice === label ? <Check className={styles.check} size={16} aria-hidden="true" /> : null}
+        </Button>)}</MenuSurface>
+      </div></>}
 ```
 
 **children 的真实接入：**
 
 ```tsx
-children={<>{label}</>}
+children={<><List size={17} aria-hidden="true" />选择视图
+      <motion.span className={styles.chevron} aria-hidden="true" animate={{ rotate: open ? 180 : 0 }} transition={reduced ? { duration: 0 } : controlSpring}><ChevronDown size={16} /></motion.span></>}
 ```
 
 **ref 的真实接入：**
@@ -104,16 +131,28 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 // JSX: ref={elementRef}
 ```
 
+**children 的真实接入：**
+
+```tsx
+children={<>{views.map(({ label, description, icon: Icon }) => <Button key={label} variant="ghost" className={styles.option} role="menuitem" tabIndex={-1} data-selected={choice === label} onClick={() => { setChoice(label); setOpen(false); }}>
+          <Icon className={styles.optionIcon} size={18} aria-hidden="true" />
+          <span className={styles.optionCopy}><span className={styles.optionLabel}>{label}</span><span className={styles.optionDescription}>{description}</span></span>
+          {choice === label ? <Check className={styles.check} size={16} aria-hidden="true" /> : null}
+        </Button>)}</>}
+```
+
 ### 本例配置与 DIY
 
 以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
+| `t0.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t1.minWidth` | `280` | number | 不限 ~ 不限 | 即时应用 |
-| `t2.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t2.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `t1.minWidth` | `264` | number | 不限 ~ 不限 | 即时应用 |
+| `t2.label` | `"视图模式"` | text | 不限 ~ 不限 | 即时应用 |
+| `t3.variant` | `"ghost"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
+| `t3.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 | `state.open` | `false` | switch | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 
 ### 演示容器设置

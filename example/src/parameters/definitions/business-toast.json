@@ -60,7 +60,7 @@
           "name": "variant"
         }
       ],
-      "type": "'primary' | 'secondary' | 'danger'",
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
       "defaultValue": "primary",
       "upstreamDefault": "'primary'",
       "control": "select",
@@ -76,6 +76,10 @@
         {
           "label": "danger",
           "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
         }
       ],
       "advanced": false,
@@ -102,7 +106,7 @@
           "name": "variant"
         }
       ],
-      "type": "'primary' | 'secondary' | 'danger'",
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
       "defaultValue": "secondary",
       "upstreamDefault": "'primary'",
       "control": "select",
@@ -118,6 +122,10 @@
         {
           "label": "danger",
           "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
         }
       ],
       "advanced": false,
@@ -174,90 +182,6 @@
       ]
     },
     {
-      "key": "t2.variant",
-      "name": "variant",
-      "label": "外观 · t2",
-      "description": "选择组件内置的外观或效果变体。",
-      "scope": "prop",
-      "target": "t2",
-      "bindings": [
-        {
-          "target": "t2",
-          "name": "variant"
-        }
-      ],
-      "type": "'primary' | 'secondary' | 'danger'",
-      "defaultValue": "secondary",
-      "upstreamDefault": "'primary'",
-      "control": "select",
-      "options": [
-        {
-          "label": "primary",
-          "value": "primary"
-        },
-        {
-          "label": "secondary",
-          "value": "secondary"
-        },
-        {
-          "label": "danger",
-          "value": "danger"
-        }
-      ],
-      "advanced": false,
-      "apply": "live",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
-      "key": "t2.type",
-      "name": "type",
-      "label": "类型 · t2",
-      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
-      "scope": "prop",
-      "target": "t2",
-      "bindings": [
-        {
-          "target": "t2",
-          "name": "type"
-        }
-      ],
-      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
-      "defaultValue": "button",
-      "upstreamDefault": "'button'",
-      "control": "select",
-      "options": [
-        {
-          "label": "button",
-          "value": "button"
-        },
-        {
-          "label": "reset",
-          "value": "reset"
-        },
-        {
-          "label": "submit",
-          "value": "submit"
-        }
-      ],
-      "advanced": false,
-      "apply": "live",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
       "key": "container.height",
       "name": "height",
       "label": "预览框高度",
@@ -277,21 +201,21 @@
   "props": [],
   "inherited": [
     {
-      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
-      "reference": "https://react.dev/reference/react-dom/components/common",
-      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-      "tag": "div",
-      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
-    },
-    {
       "type": "DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
       "tag": "span",
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "div",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     }
   ],
-  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState, useEffect } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessToastDemo() {\n  const [notice,setNotice]=useState<string|null>(null); const [sequence,setSequence]=useState(0); useEffect(()=>{if(!notice)return;const timer=window.setTimeout(()=>setNotice(null),4000);return()=>window.clearTimeout(timer);},[notice,sequence]);\n  return <BusinessDemo title=\"Toast\" description=\"短消息在本地出现，可手动关闭，4秒后自动移除；卸载时清理计时器。\">\n    <div data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}><Button onClick={()=>{setSequence(value=>value+1);setNotice('本地草稿已保存。');}} /*__AW_PROPS_t0__*/ >显示成功提示</Button><Button  onClick={()=>{setSequence(value=>value+1);setNotice('可以继续完善草稿内容。');}} /*__AW_PROPS_t1__*/ >显示普通提示</Button></div>{notice?<div data-ui=\"aw-business-item\" className={cn(\"aw-business-item aw-business-row\")} role=\"status\" style={{position:'fixed',right:20,bottom:20,zIndex:100,maxWidth:'calc(100% - 40px)'}}><span>{notice}</span><Button  aria-label=\"关闭提示\" onClick={()=>setNotice(null)} /*__AW_PROPS_t2__*/ >关闭</Button></div>:null}\n  </BusinessDemo>;\n}\n",
+  "usageTemplate": "import { useCallback, useEffect, useRef, useState, type MouseEvent, type Ref } from 'react';\nimport { AnimatePresence, motion, useIsPresent } from 'motion/react';\nimport { CheckCircle2, Info } from 'lucide-react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { useBusinessReducedMotion } from '../../motion-preference';\nimport styles from './business-toast.module.css';\n\nfunction ToastNotice({ notice, reduced, innerRef, onDismiss }: {\n  notice: string;\n  reduced: boolean;\n  innerRef: Ref<HTMLDivElement>;\n  onDismiss: () => void;\n}) {\n  const present = useIsPresent();\n  const success = notice === '本地草稿已保存。';\n  const Icon = success ? CheckCircle2 : Info;\n\n  return (\n    <motion.div\n      ref={innerRef}\n      className={styles.toast}\n      data-tone={success ? 'success' : 'info'}\n      role=\"status\"\n      aria-atomic=\"true\"\n      inert={!present}\n      aria-hidden={!present || undefined}\n      initial={reduced ? false : { opacity: 0, y: 20, scale: 0.96 }}\n      animate={{ opacity: 1, y: 0, scale: 1 }}\n      exit={{ opacity: 0, y: reduced ? 0 : 12, scale: reduced ? 1 : 0.97 }}\n      transition={{ duration: reduced ? 0 : 0.2, ease: [0.22, 1, 0.36, 1] }}\n    >\n      <span className={styles.icon} aria-hidden=\"true\"><Icon size={20} /></span>\n      <span className={styles.text}>{notice}</span>\n      <Button variant=\"ghost\" data-size=\"sm\" aria-label=\"关闭提示\" onClick={onDismiss}>关闭</Button>\n    </motion.div>\n  );\n}\n\nexport default function BusinessToastDemo() {\n  const [notice, setNotice] = useState<string | null>(null);\n  const [sequence, setSequence] = useState(0);\n  const reduced = useBusinessReducedMotion();\n  const noticeRef = useRef<HTMLDivElement>(null);\n  const triggerRef = useRef<HTMLButtonElement | null>(null);\n\n  const dismissNotice = useCallback(() => {\n    // Return keyboard focus before the departing notification becomes inert.\n    if (noticeRef.current?.contains(document.activeElement)) triggerRef.current?.focus();\n    setNotice(null);\n  }, []);\n\n  useEffect(() => {\n    if (!notice) return;\n    const timer = window.setTimeout(dismissNotice, 4000);\n    return () => window.clearTimeout(timer);\n  }, [notice, sequence, dismissNotice]);\n\n  function showSuccess(event: MouseEvent<HTMLButtonElement>) {\n    triggerRef.current = event.currentTarget;\n    setSequence(value => value + 1);\n    setNotice('本地草稿已保存。');\n  }\n\n  function showInfo(event: MouseEvent<HTMLButtonElement>) {\n    triggerRef.current = event.currentTarget;\n    setSequence(value => value + 1);\n    setNotice('可以继续完善草稿内容。');\n  }\n\n  return (\n    <BusinessDemo title=\"Toast\" description=\"短消息在本地出现，可手动关闭，4秒后自动移除；卸载时清理计时器。\">\n      <div className={styles.controls}>\n        <Button onClick={showSuccess} /*__AW_PROPS_t0__*/ >显示成功提示</Button>\n        <Button  onClick={showInfo} /*__AW_PROPS_t1__*/ >显示普通提示</Button>\n      </div>\n      <div className={styles.viewport}>\n        <AnimatePresence mode=\"wait\">\n          {notice ? (\n            <ToastNotice\n              key={sequence}\n              notice={notice}\n              reduced={reduced}\n              innerRef={noticeRef}\n              onDismiss={dismissNotice}\n            />\n          ) : null}\n        </AnimatePresence>\n      </div>\n    </BusinessDemo>\n  );\n}\n",
   "targets": [
     {
       "id": "t0",
@@ -368,17 +292,17 @@
             "line": 2171
           },
           "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>显示成功提示</>}",
+          "codeExample": "children={<>关闭</>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
+            "children={<>关闭</>}",
             "children={<>显示成功提示</>}",
-            "children={<>显示普通提示</>}",
-            "children={<>关闭</>}"
+            "children={<>显示普通提示</>}"
           ]
         },
         {
           "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
           "required": false,
           "defaultExpression": "'primary'",
           "defaultSource": {
@@ -393,7 +317,8 @@
           "options": [
             "primary",
             "secondary",
-            "danger"
+            "danger",
+            "ghost"
           ],
           "editable": true,
           "source": {
@@ -405,11 +330,13 @@
             "options": [
               "primary",
               "secondary",
-              "danger"
+              "danger",
+              "ghost"
             ]
           },
-          "codeExample": "variant=\"secondary\"",
+          "codeExample": "variant=\"ghost\"",
           "usageExamples": [
+            "variant=\"ghost\"",
             "variant=\"secondary\""
           ]
         },
@@ -513,17 +440,17 @@
             "line": 2171
           },
           "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>显示成功提示</>}",
+          "codeExample": "children={<>关闭</>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
+            "children={<>关闭</>}",
             "children={<>显示成功提示</>}",
-            "children={<>显示普通提示</>}",
-            "children={<>关闭</>}"
+            "children={<>显示普通提示</>}"
           ]
         },
         {
           "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
           "required": false,
           "defaultExpression": "'primary'",
           "defaultSource": {
@@ -538,7 +465,8 @@
           "options": [
             "primary",
             "secondary",
-            "danger"
+            "danger",
+            "ghost"
           ],
           "editable": true,
           "source": {
@@ -550,156 +478,13 @@
             "options": [
               "primary",
               "secondary",
-              "danger"
+              "danger",
+              "ghost"
             ]
           },
-          "codeExample": "variant=\"secondary\"",
+          "codeExample": "variant=\"ghost\"",
           "usageExamples": [
-            "variant=\"secondary\""
-          ]
-        },
-        {
-          "name": "ref",
-          "type": "Ref<HTMLButtonElement>",
-          "required": false,
-          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
-          "control": "code",
-          "valueKind": "ref",
-          "editable": false,
-          "source": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8
-          },
-          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
-          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
-        }
-      ],
-      "inherited": [
-        {
-          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "reference": "https://react.dev/reference/react-dom/components/common",
-          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
-        }
-      ]
-    },
-    {
-      "id": "t2",
-      "name": "Button · t2",
-      "sourcePath": "src/business/components/Button.tsx",
-      "props": [
-        {
-          "name": "type",
-          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
-          "required": false,
-          "defaultExpression": "'button'",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "button",
-          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
-          "control": "enum",
-          "valueKind": "enum",
-          "options": [
-            "button",
-            "reset",
-            "submit"
-          ],
-          "editable": true,
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2971
-          },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "details": {
-            "kind": "enum",
-            "options": [
-              "button",
-              "reset",
-              "submit"
-            ]
-          },
-          "codeExample": "type={\"button\"}"
-        },
-        {
-          "name": "className",
-          "type": "string | undefined",
-          "required": false,
-          "defaultExpression": "''",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "",
-          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
-          "control": "text",
-          "valueKind": "string",
-          "editable": true,
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2700
-          },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "className={\"\"}"
-        },
-        {
-          "name": "children",
-          "type": "ReactNode",
-          "required": false,
-          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
-          "control": "code",
-          "valueKind": "react-node",
-          "editable": false,
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2171
-          },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>显示成功提示</>}",
-          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
-          "usageExamples": [
-            "children={<>显示成功提示</>}",
-            "children={<>显示普通提示</>}",
-            "children={<>关闭</>}"
-          ]
-        },
-        {
-          "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
-          "required": false,
-          "defaultExpression": "'primary'",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "primary",
-          "description": "选择组件内置的外观或效果变体。",
-          "control": "enum",
-          "valueKind": "enum",
-          "options": [
-            "primary",
-            "secondary",
-            "danger"
-          ],
-          "editable": true,
-          "source": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8
-          },
-          "details": {
-            "kind": "enum",
-            "options": [
-              "primary",
-              "secondary",
-              "danger"
-            ]
-          },
-          "codeExample": "variant=\"secondary\"",
-          "usageExamples": [
+            "variant=\"ghost\"",
             "variant=\"secondary\""
           ]
         },

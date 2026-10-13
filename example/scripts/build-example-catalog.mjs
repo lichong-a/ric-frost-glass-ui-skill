@@ -25,9 +25,9 @@ const entries = catalog.components.map(item => {
   sourcePath:`.upstream/${item.sourceRoot}/${item.id}.tsx`,
   demoPath:demoPathFor(directory, item.slug),
   motion:['micro','components'].includes(item.category)?'interactive':'continuous',
-  // GlassSurface auto-selects SVG/WebGL/CSS itself; a mandatory GPU gate would
-  // incorrectly suppress its supported SVG/CSS paths.
-  webgl:item.slug==='glass-surface'?'none':['shape-waves','aero-shards'].includes(item.slug)?'webgpu':item.capabilities.webGL?(item.slug==='paper-crumple'?'webgl2':'webgl'):'none',
+  // These demos select their own supported renderer. A mandatory GPU gate would
+  // suppress GlassSurface's SVG/CSS or the two WebGPU effects' Canvas alternatives.
+  webgl:['glass-surface','shape-waves','aero-shards'].includes(item.slug)?'none':item.capabilities.webGL?(item.slug==='paper-crumple'?'webgl2':'webgl'):'none',
   minHeight:previewHeights[item.slug] ?? 560,
   };
 });

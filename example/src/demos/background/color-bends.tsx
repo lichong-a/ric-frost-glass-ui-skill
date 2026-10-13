@@ -1,23 +1,23 @@
 import Component from '../../../.upstream/src/ts-default/Backgrounds/ColorBends/ColorBends';
-import { palette } from '../../shared/demo-support';
+import styles from './color-bends.module.css';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Color Bends component. */
+/** Visible preset for the locked Color Bends component. */
 export default function ColorBendsDemo() {
   const { props: demoProps } = useDemoConfig();
   return (
-    <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
-      <div style={{ width: '100%', height: 560, position: 'relative' }}>
+    <div className={styles.stage} data-visual-demo="color-bends">
+      <div className={styles.effect}>
         <Component
-          colors={[palette.sage, palette.sand, palette.ivory]}
+          colors={["#ff5c7a", "#8a5cff", "#00d4ff"]}
           transparent={false}
-          speed={0.12}
-          frequency={0.7}
-          warpStrength={0.8}
-          iterations={2}
+          speed={0.2}
+          frequency={1}
+          warpStrength={1}
+          iterations={1}
           noise={0.04}
-          intensity={1.1}
-          mouseInfluence={0.5}
+          intensity={1.5}
+          mouseInfluence={1}
           parallax={0.2} {...demoProps('t0')}
         />
       </div>

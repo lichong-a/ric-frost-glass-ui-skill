@@ -36,13 +36,13 @@ node scripts/example.mjs setup --component color-bends
 // 当前 Color Bends 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
 import Component from '../../../.upstream/src/ts-default/Backgrounds/ColorBends/ColorBends';
+import styles from './color-bends.module.css';
 
-
-/** Agent Wan natural-tone preset for the real Color Bends component. */
+/** Visible preset for the locked Color Bends component. */
 export default function ColorBendsDemo() {
   return (
-    <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
-      <div style={{ width: '100%', height: 560, position: 'relative' }}>
+    <div className={styles.stage} data-visual-demo="color-bends">
+      <div className={styles.effect}>
         <Component
 
 
@@ -53,7 +53,7 @@ export default function ColorBendsDemo() {
 
 
 
-           colors={["#a6b39a", "#c3ae88", "#faf7f0"]} transparent={false} speed={0.12} frequency={0.7} warpStrength={0.8} iterations={2} noise={0.04} intensity={1.1} mouseInfluence={0.5} parallax={0.2} rotation={90} autoRotate={0} scale={1} bandWidth={6}
+           colors={["#ff5c7a", "#8a5cff", "#00d4ff"]} transparent={false} speed={0.2} frequency={1} warpStrength={1} iterations={1} noise={0.04} intensity={1.5} mouseInfluence={1} parallax={0.2} rotation={90} autoRotate={0} scale={1} bandWidth={6}
         />
       </div>
     </div>
@@ -92,7 +92,7 @@ style={{ width: "100%", minHeight: 240 }}
 **colors 的真实接入：**
 
 ```tsx
-colors={[palette.sage, palette.sand, palette.ivory]}
+colors={["#ff5c7a", "#8a5cff", "#00d4ff"]}
 ```
 
 ### 本例配置与 DIY
@@ -101,15 +101,15 @@ colors={[palette.sage, palette.sand, palette.ivory]}
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.colors` | `["#a6b39a","#c3ae88","#faf7f0"]` | json | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.colors` | `["#ff5c7a","#8a5cff","#00d4ff"]` | json | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.transparent` | `false` | switch | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.speed` | `0.12` | number | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.frequency` | `0.7` | number | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.warpStrength` | `0.8` | number | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.iterations` | `2` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.speed` | `0.2` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.frequency` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.warpStrength` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.iterations` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.noise` | `0.04` | number | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.intensity` | `1.1` | number | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.mouseInfluence` | `0.5` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.intensity` | `1.5` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.mouseInfluence` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.parallax` | `0.2` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.rotation` | `90` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.autoRotate` | `0` | number | 不限 ~ 不限 | 调节结束后重建 |

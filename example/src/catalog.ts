@@ -4823,7 +4823,7 @@ export const entries: CatalogEntry[] = [
     "sourcePath": ".upstream/src/ts-default/Backgrounds/ShapeWaves/ShapeWaves.tsx",
     "demoPath": "src/demos/background/shape-waves.tsx",
     "motion": "continuous",
-    "webgl": "webgpu",
+    "webgl": "none",
     "minHeight": 560
   },
   {
@@ -4853,7 +4853,7 @@ export const entries: CatalogEntry[] = [
     "sourcePath": ".upstream/src/ts-default/Backgrounds/AeroShards/AeroShards.tsx",
     "demoPath": "src/demos/background/aero-shards.tsx",
     "motion": "continuous",
-    "webgl": "webgpu",
+    "webgl": "none",
     "minHeight": 560
   },
   {

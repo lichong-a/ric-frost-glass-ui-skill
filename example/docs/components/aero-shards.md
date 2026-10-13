@@ -35,17 +35,15 @@ node scripts/example.mjs setup --component aero-shards
 ```tsx
 // 当前 Aero Shards 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import { useState } from 'react';
+import type { ComponentProps } from 'react';
 import Component from '../../../.upstream/src/ts-default/Backgrounds/AeroShards/AeroShards';
 
+import { useWebGPUCompatibility } from '../../effects/webgpu-compatibility/useWebGPUCompatibility';
+import { createAeroShardsCanvas } from '../../effects/webgpu-compatibility/aero-canvas';
+import styles from './aero-shards.module.css';
 
-/** Agent Wan natural-tone preset for the real Aero Shards component. */
 export default function AeroShardsDemo() {
-  const [error, setError] = useState<Error | null>(null);
-  if (error) throw error; // The preview ErrorBoundary shows GPU runtime failures.
-  return (
-    <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
-      <div style={{ width: '100%', height: 560, position: 'relative' }}>
+  const effect = useWebGPUCompatibility<ComponentProps<typeof Component>>(
         <Component
 
 
@@ -60,12 +58,11 @@ export default function AeroShardsDemo() {
 
 
 
-
-          onError={setError} backgroundColor={"#1f2d26"} shardColor={"#a6b39a"} accentColor={"#c3ae88"} material={"pearl"} detail={"balanced"} flow={"stream"} density={1.1} speed={0.5} spin={0.6} glow={0.4} bloom={0.12} grain={0.025} chromaticAberration={0} interaction={"repel"} placement={"full"} rippleIntensity={1} holdToGather={true} effect={"none"} scale={1} spread={1} depth={1} shardSize={1.1} stretch={1} turbulence={1} edgeSoftness={2} transitionDuration={1} interactionRadius={1.5} interactionStrength={0.5} paused={false}
-        />
-      </div>
-    </div>
+           backgroundColor={"#1f2d26"} shardColor={"#a6b39a"} accentColor={"#c3ae88"} material={"pearl"} detail={"balanced"} flow={"stream"} density={1.1} speed={0.5} spin={0.6} glow={0.4} bloom={0.12} grain={0.025} chromaticAberration={0} interaction={"repel"} placement={"full"} rippleIntensity={1} holdToGather={true} effect={"none"} scale={1} spread={1} depth={1} shardSize={1.1} stretch={1} turbulence={1} edgeSoftness={2} transitionDuration={1} interactionRadius={1.5} interactionStrength={0.5} paused={false}
+        />,
+    createAeroShardsCanvas,
   );
+  return <div className={styles.stage} data-visual-demo="aero-shards">{effect}<p className={styles.hint}>移动指针拨动碎片 · 按住聚拢 · 点击扩散</p></div>;
 }
 
 ```
@@ -109,7 +106,7 @@ export default function AeroShardsDemo() {
 **onError 的真实接入：**
 
 ```tsx
-onError={setError}
+onError={(error) => {}}
 ```
 
 ### 本例配置与 DIY
@@ -162,10 +159,10 @@ onError={setError}
 
 ## 5. 加载、动效与降级
 
-本例实际配置：设备访问与音频行为以本例真实 Props 和显式回调为准。capabilities 是源码扫描提示，不能据此声称已请求相机、录音或播放音频。
+本例实际配置：原版使用 WebGPU。本例先检查适配器，支持时运行锁定原版；缺少适配器或原版初始化失败时自动使用带有“兼容预览”标记的 Canvas 2D 碎片风场。兼容路径保留移动、点击波纹和按住聚拢，降低碎片数量，材质、后处理和路径细节与 WebGPU 原版存在差异。
 
 - 依赖清单：`react`、`vgpu`。安装前复用目标项目的兼容版本，不重复加载。
-- 运行类型：本例预览入口声明需 WebGPU；这是当前示例的运行配置，不是仅凭源码关键词推断。此说明不等于浏览器运行证明。
+- 运行类型：本例预览入口不要求预先通过图形接口检查；实际组件内部的可选渲染分支由源码和本例 Props 决定。此说明不等于浏览器运行证明。
 - 动效策略：按需启用的持续 / 高运动效果。
 - 示例库降级：动态偏好或能力检查不满足时先不挂载本项，显示原因；减少运动时可明确选择仅播放本次。
 - 业务接入的静态降级要求：保留可读内容与原生交互，并提供当前组件的静态状态

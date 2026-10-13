@@ -1705,15 +1705,12 @@
         "kind": "callback",
         "signature": "((error: Error) => void) | undefined"
       },
-      "codeExample": "onError={setError}",
-      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
-      "usageExamples": [
-        "onError={setError}"
-      ]
+      "codeExample": "onError={(error) => {}}",
+      "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
     }
   ],
   "inherited": [],
-  "usageTemplate": "import { useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/Backgrounds/AeroShards/AeroShards';\n\n\n/** Agent Wan natural-tone preset for the real Aero Shards component. */\nexport default function AeroShardsDemo() {\n  const [error, setError] = useState<Error | null>(null);\n  if (error) throw error; // The preview ErrorBoundary shows GPU runtime failures.\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n          onError={setError} /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "usageTemplate": "import type { ComponentProps } from 'react';\nimport Component from '../../../.upstream/src/ts-default/Backgrounds/AeroShards/AeroShards';\n\nimport { useWebGPUCompatibility } from '../../effects/webgpu-compatibility/useWebGPUCompatibility';\nimport { createAeroShardsCanvas } from '../../effects/webgpu-compatibility/aero-canvas';\nimport styles from './aero-shards.module.css';\n\nexport default function AeroShardsDemo() {\n  const effect = useWebGPUCompatibility<ComponentProps<typeof Component>>(\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />,\n    createAeroShardsCanvas,\n  );\n  return <div className={styles.stage} data-visual-demo=\"aero-shards\">{effect}<p className={styles.hint}>移动指针拨动碎片 · 按住聚拢 · 点击扩散</p></div>;\n}\n",
   "targets": [
     {
       "id": "t0",
@@ -2502,11 +2499,8 @@
             "kind": "callback",
             "signature": "((error: Error) => void) | undefined"
           },
-          "codeExample": "onError={setError}",
-          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
-          "usageExamples": [
-            "onError={setError}"
-          ]
+          "codeExample": "onError={(error) => {}}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。"
         }
       ],
       "inherited": []

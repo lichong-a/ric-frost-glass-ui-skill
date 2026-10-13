@@ -6,7 +6,7 @@ import ts from 'typescript';
 const unknown = Symbol('not a static JSON expression');
 const baseUrl = Symbol('Vite deployment base');
 const forbiddenKeys = new Set(['__proto__', 'prototype', 'constructor']);
-const controlledProperties = new Set(['value', 'values', 'checked', 'defaultChecked', 'pressed', 'aria-pressed', 'aria-valuenow', 'selected', 'selection', 'selectedKeys', 'active', 'activeIndex', 'selectedIndex', 'index', 'page', 'open', 'expanded', 'position', 'date', 'endDate', 'items']);
+const controlledProperties = new Set(['value', 'values', 'checked', 'defaultChecked', 'pressed', 'aria-pressed', 'aria-valuenow', 'selected', 'selection', 'selectedKeys', 'active', 'activeIndex', 'selectedIndex', 'index', 'page', 'pageSize', 'open', 'expanded', 'position', 'date', 'endDate', 'items']);
 const transientNames = /^(?:hover(?:ed)?|particles?|timers?|count|status|message|loading|busy|touched|dragging|isDragging|revision|tick|elapsed|progressStatus|error)$/i;
 const nonEditableProperties = /^(?:key|ref|children|className|id|htmlFor|role|data-|aria-(?!label$)|dangerouslySetInnerHTML|on[A-Z]|render[A-Z])/;
 const nativeTags = new Set(['input', 'textarea', 'select', 'option', 'button', 'progress', 'meter', 'details', 'img', 'video', 'audio']);
@@ -459,8 +459,12 @@ function controlFor(property, value) {
   return { control: 'json', shape: detailsShape(property.details) ?? declaredShape ?? valueShape(value) };
 }
 
+function fieldAnnotation(annotations, id, scope, name, key) {
+  return { ...(annotations?.components?.[id]?.[`${scope}.*`] ?? {}), ...(annotations?.components?.[id]?.[`${scope}.${name}`] ?? {}), ...(annotations?.components?.[id]?.[key] ?? {}) };
+}
+
 function fieldFor({ id, target, property, value, scope = 'prop', key, annotations, rebuild }) {
-  const annotation = { ...(annotations?.components?.[id]?.[`${scope}.*`] ?? {}), ...(annotations?.components?.[id]?.[`${scope}.${property.name}`] ?? {}), ...(annotations?.components?.[id]?.[key ?? `${target}.${property.name}`] ?? {}) };
+  const annotation = fieldAnnotation(annotations, id, scope, property.name, key ?? `${target}.${property.name}`);
   const field = {
     key: key ?? `${target}.${property.name}`,
     name: property.name,
@@ -477,7 +481,10 @@ function fieldFor({ id, target, property, value, scope = 'prop', key, annotation
     apply: scope === 'prop' && (rebuild || /^(?:initial|default)[A-Z]/.test(property.name)) ? 'rebuild' : 'live',
     resources: (annotations.resources ?? []).map(option => option.value).filter(resource => resource.startsWith('@asset/')),
   };
-  for (const name of ['control', 'min', 'max', 'step', 'unit', 'options', 'shape', 'advanced', 'apply']) if (Object.hasOwn(annotation, name)) field[name] = annotation[name];
+  for (const name of ['control', 'min', 'max', 'step', 'unit', 'options', 'shape', 'uniqueBy', 'advanced', 'apply']) if (Object.hasOwn(annotation, name)) field[name] = annotation[name];
+  if (field.uniqueBy !== undefined && (typeof field.uniqueBy !== 'string' || !Array.isArray(value) || value.some(item => !item || typeof item !== 'object' || !Object.hasOwn(item, field.uniqueBy)))) {
+    throw new Error(`Unique identity annotation must reference a real default item property: ${id}:${field.key}`);
+  }
   if (field.control === 'resource' && /^(?:src|image|imageSrc|imageUrl|poster|texture|textureUrl)$/.test(property.name)) {
     const resources = annotations.resources ?? [];
     const available = resources.some(option => option.value === value) ? resources : [{ label: '当前资源', value }, ...resources];
@@ -694,6 +701,9 @@ export function parameterizeDemo({ id, name, sourcePath, demoPath, source, api, 
       const propName = attribute.name.text;
       const property = props.get(propName);
       seen.add(propName);
+      // Derived data stays in the authored expression and complete API table.
+      // Overriding a pager total separately from its dataset would split one view.
+      if (fieldAnnotation(annotations, id, 'prop', propName, `${target.id}.${propName}`).editable === false) continue;
       if (!property || nonEditableProperties.test(propName) || codeOnlyProperty(property)) continue;
       const alias = target.tag === 'img' && propName === 'src' && ts.isJsxExpression(attribute.initializer) && resourceAliases.find(item => item.expression === attribute.initializer.expression?.getText(file));
       if (alias) {
@@ -712,6 +722,7 @@ export function parameterizeDemo({ id, name, sourcePath, demoPath, source, api, 
     // Native inherited signatures remain documented, but receive no invented defaults.
     if (!target.api.native) {
       for (const property of target.api.props ?? []) {
+        if (fieldAnnotation(annotations, id, 'prop', property.name, `${target.id}.${property.name}`).editable === false) continue;
         if (seen.has(property.name) || property.required || nonEditableProperties.test(property.name) || codeOnlyProperty(property) || (property.inheritedFrom && !property.defaultSource) || !Object.hasOwn(property, 'defaultValue') || !isSerializable(property.defaultValue)) continue;
         if (/^default[A-Z]/.test(property.name) && seen.has(property.name[7].toLowerCase() + property.name.slice(8))) continue;
         if (/^initial[A-Z]/.test(property.name) && ['value', 'checked', 'index', 'activeIndex', 'selectedIndex'].some(name => seen.has(name))) continue;
@@ -727,6 +738,7 @@ export function parameterizeDemo({ id, name, sourcePath, demoPath, source, api, 
     usageEdits.push({ start: position, end: position, text: ` /*__AW_PROPS_${target.id}__*/ ` });
   }
   for (const state of states.filter(item => controlled.has(item.name))) {
+    if (fieldAnnotation(annotations, id, 'state', state.name, `state.${state.name}`).editable === false) continue;
     const type = state.call.typeArguments?.[0]?.getText() ?? (Array.isArray(state.value) ? 'array' : typeof state.value);
     const property = { name: state.name, type, description: `示例的受控状态 ${state.name}；面板与组件的原有回调同步更新。`, options: stateOptions(state, bindings, targets) };
     const field = fieldFor({ id, property, value: state.value, scope: 'state', key: `state.${state.name}`, annotations, rebuild: false });

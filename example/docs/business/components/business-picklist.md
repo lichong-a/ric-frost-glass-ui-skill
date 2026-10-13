@@ -27,22 +27,63 @@
 ```tsx
 // 当前 PickList 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/DemoLayout.module.css';
-import ownedStyles1 from '../../components/Input.module.css';
-import { componentClasses } from '../../class-names';
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Button } from '../../components/Button';
 import { Field } from '../../components/Field';
+import { controlSpring, useBusinessReducedMotion } from '../../motion-preference';
 import { workItems } from '../../data';
+import inputStyles from '../../components/Input.module.css';
+import styles from './business-picklist.module.css';
 
-const ownedStyles={...ownedStyles0,...ownedStyles1};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function BusinessPickListDemo() {
-  const [chosen,setChosen]=useState<string[]>([]); const [query,setQuery]=useState("");
-  return <BusinessDemo title="PickList" description="在候选任务与已选任务之间移动条目，保留每项唯一身份。">
-    <Field  label={"搜索候选"} control={false} ><input data-ui="aw-business-input" className={cn("aw-business-input")} value={query} onChange={event=>setQuery(event.target.value)} /></Field><div data-ui="aw-business-grid" className={cn("aw-business-grid")}><section data-ui="aw-business-item" className={cn("aw-business-item")}><h3>候选任务</h3>{workItems.filter(item=>!chosen.includes(item.id)&&item.title.includes(query)).map(item=><div data-ui="aw-business-row" className={cn("aw-business-row")} key={item.id}><span>{item.title}</span><Button aria-label={'加入'+item.title} onClick={()=>setChosen(current=>[...current,item.id])} type={"button"} variant={"primary"} >加入 →</Button></div>)}{!workItems.some(item=>!chosen.includes(item.id)&&item.title.includes(query))?<p>没有候选项。</p>:null}</section><section data-ui="aw-business-item" className={cn("aw-business-item")}><h3>已选任务</h3>{chosen.map(id=>{const item=workItems.find(item=>item.id===id)!;return <div data-ui="aw-business-row" className={cn("aw-business-row")} key={id}><span>{item.title}</span><Button  aria-label={'移除'+item.title} onClick={()=>setChosen(current=>current.filter(value=>value!==id))} variant={"secondary"} type={"button"} >← 移除</Button></div>;})}{!chosen.length?<p>尚未选择任务。</p>:null}</section></div><Button  disabled={!chosen.length} onClick={()=>setChosen([])} variant={"secondary"} type={"button"} >移除全部</Button>
-  </BusinessDemo>;
+  const [chosen, setChosen] = useState<string[]>([]);
+  const [query, setQuery] = useState("");
+  const reduced = useBusinessReducedMotion();
+  const available = workItems.filter(item => !chosen.includes(item.id) && item.title.includes(query));
+  const selected = chosen.flatMap(id => workItems.filter(item => item.id === id));
+  const transition = reduced ? { duration: 0 } : controlSpring;
+  return (
+    <BusinessDemo title="PickList" description="在候选任务与已选任务之间移动条目，保留每项唯一身份。">
+      <Field  label={"搜索候选"} control={false} ><input data-ui="aw-business-input" className={inputStyles['aw-business-input']} value={query}  onChange={event => setQuery(event.target.value)} placeholder={"输入任务名称"}  /></Field>
+      <div className={styles.columns}>
+        <section className={styles.panel} aria-label="候选任务">
+          <div className={styles.panelHeader}><h3 className={styles.heading}>候选任务</h3><span className={styles.count}>{available.length} 项</span></div>
+          <ul className={styles.list}>
+            <AnimatePresence initial={false} mode="popLayout">
+              {available.map(item => (
+                <motion.li data-ui="aw-business-row" className={styles.card} key={item.id} layout={!reduced} initial={reduced ? false : { opacity: 0 }} animate={{ opacity: 1 }} exit={reduced ? { opacity: 1 } : { opacity: 0 }} transition={transition}>
+                  <span className={styles.task}>{item.title}<span className={styles.category}>{item.category} · {item.quantity} 项</span></span>
+                  <Button data-size="sm" aria-label={'加入' + item.title} onClick={() => setChosen(current => current.includes(item.id) ? current : [...current, item.id])} type={"button"} variant={"primary"} >加入<ArrowRight size={14} aria-hidden="true" /></Button>
+                </motion.li>
+              ))}
+            </AnimatePresence>
+          </ul>
+          {!available.length ? <p className={styles.empty}>没有候选项。</p> : null}
+        </section>
+        <section className={styles.panel} data-selected="true" aria-label="已选任务">
+          <div className={styles.panelHeader}><h3 className={styles.heading}>已选任务</h3><span className={styles.count}>{chosen.length} 项</span></div>
+          <ul className={styles.list}>
+            <AnimatePresence initial={false} mode="popLayout">
+              {selected.map(item => (
+                <motion.li data-ui="aw-business-row" className={styles.card} key={item.id} layout={!reduced} initial={reduced ? false : { opacity: 0 }} animate={{ opacity: 1 }} exit={reduced ? { opacity: 1 } : { opacity: 0 }} transition={transition}>
+                  <span className={styles.task}>{item.title}<span className={styles.category}>{item.category} · {item.quantity} 项</span></span>
+                  <Button  data-size="sm" aria-label={'移除' + item.title} onClick={() => setChosen(current => current.filter(value => value !== item.id))} variant={"ghost"} type={"button"} ><ArrowLeft size={14} aria-hidden="true" />移除</Button>
+                </motion.li>
+              ))}
+            </AnimatePresence>
+          </ul>
+          {!chosen.length ? <p className={styles.empty}>尚未选择任务。</p> : null}
+        </section>
+      </div>
+      <div className={styles.footer}>
+        <Button  data-size="sm" disabled={!chosen.length} onClick={() => setChosen([])} variant={"secondary"} type={"button"} >移除全部</Button>
+        <p className={styles.status} role="status">已选择 {chosen.length} 项任务。</p>
+      </div>
+    </BusinessDemo>
+  );
 }
 ```
 
@@ -58,11 +99,12 @@ export default function BusinessPickListDemo() {
 | `input.data-ui` | `any` | 否 | `未指定` | 示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。 |
 | `input.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `input.value` | `string \| number \| readonly string[] \| undefined` | 否 | `未指定` | 当前受控值，由调用方维护并随交互回调更新。 |
+| `input.placeholder` | `string \| undefined` | 否 | `未指定` | 尚未填写或选择时显示的提示文字。 |
 | `input.onChange` | `ChangeEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | 用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。 |
 | `Button · t2.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
 | `Button · t2.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `Button · t2.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button · t2.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t2.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
 | `Button · t2.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 
 本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
@@ -74,19 +116,20 @@ export default function BusinessPickListDemo() {
 - `DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 
 **children 的真实接入：**
 
 ```tsx
-children={<><input data-ui="aw-business-input" className={cn("aw-business-input")} value={query} onChange={event=>setQuery(event.target.value)} /></>}
+children={<><input data-ui="aw-business-input" className={inputStyles['aw-business-input']} value={query} placeholder="输入任务名称" onChange={event => setQuery(event.target.value)} /></>}
 ```
 
 **children 的真实接入：**
 
 ```tsx
-children={<>加入 →</>}
+children={<>加入<ArrowRight size={14} aria-hidden="true" /></>}
 ```
 
 **ref 的真实接入：**
@@ -104,11 +147,12 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 |---|---|---|---|---|
 | `t0.label` | `"搜索候选"` | text | 不限 ~ 不限 | 即时应用 |
 | `t0.control` | `false` | switch | 不限 ~ 不限 | 即时应用 |
+| `t1.placeholder` | `"输入任务名称"` | text | 不限 ~ 不限 | 即时应用 |
 | `t2.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t2.variant` | `"primary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t3.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t2.variant` | `"primary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
+| `t3.variant` | `"ghost"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t3.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t4.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t4.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t4.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 | `state.query` | `""` | text | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 

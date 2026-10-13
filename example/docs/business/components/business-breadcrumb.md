@@ -27,18 +27,47 @@
 ```tsx
 // 当前 Breadcrumb 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/DemoLayout.module.css';
-import { componentClasses } from '../../class-names';
-import { useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { AnimatePresence, motion, useIsPresent } from 'motion/react';
+import { ArrowUpRight, Bot, ChevronRight, FileText, House } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Button } from '../../components/Button';
+import { controlSpring, useBusinessReducedMotion } from '../../motion-preference';
+import styles from './business-breadcrumb.module.css';
 
-const ownedStyles={...ownedStyles0};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
+function BreadcrumbStep({ children, reduced }: { children: ReactNode; reduced: boolean }) {
+  const present = useIsPresent();
+  return <motion.li className={styles.step} inert={!present} aria-hidden={!present || undefined} layout={reduced ? false : 'position'} initial={reduced ? false : { opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} exit={reduced ? { opacity: 0 } : { opacity: 0, x: -6 }} transition={reduced ? { duration: 0 } : controlSpring}>{children}</motion.li>;
+}
+
 export default function BusinessBreadcrumbDemo() {
-  const [level,setLevel]=useState(2); const path=['工作空间','智能体','资料助理'];
+  const [level, setLevel] = useState(2);
+  const currentCrumb = useRef<HTMLSpanElement>(null);
+  const moveFocus = useRef(false);
+  const path = ['工作空间', '智能体', '资料助理'];
+  const icons = [House, Bot, FileText];
+  const reduced = useBusinessReducedMotion();
+
+  useEffect(() => {
+    if (!moveFocus.current) return;
+    currentCrumb.current?.focus();
+    moveFocus.current = false;
+  }, [level]);
+
   return <BusinessDemo title="Breadcrumb" description="沿工作空间层级返回父节点，当前节点保持明确语义。">
-    <nav aria-label="面包屑"><ol data-ui="aw-business-row" className={cn("aw-business-row")}>{path.slice(0,level+1).map((label,index)=><li key={label}>{index===level?<span aria-current="page">{label}</span>:<Button  onClick={()=>setLevel(index)} variant={"secondary"} type={"button"} >{label}</Button>}</li>)}</ol></nav><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">当前节点：{path[level]}</p><Button  onClick={()=>setLevel(2)} variant={"secondary"} type={"button"} >返回资料助理</Button>
+    <nav aria-label="面包屑" className={styles.navigation} data-motion={reduced ? 'reduce' : 'allow'}>
+      <ol data-ui="aw-business-row" className={styles.trail}>
+        <AnimatePresence initial={false}>{path.slice(0, level + 1).map((label, index) => {
+          const Icon = icons[index];
+          return <BreadcrumbStep key={label} reduced={reduced}>
+            {index ? <ChevronRight className={styles.separator} size={13} aria-hidden="true" /> : null}
+            {index === level ? <span ref={currentCrumb} tabIndex={-1} className={styles.current} aria-current="page"><Icon size={14} aria-hidden="true" /><span>{label}</span></span> : <Button  data-size="sm" className={styles.crumb} onClick={() => { moveFocus.current = true; setLevel(index); }} variant={"ghost"} type={"button"} ><Icon size={14} aria-hidden="true" /><span>{label}</span></Button>}
+          </BreadcrumbStep>;
+        })}</AnimatePresence>
+      </ol>
+    </nav>
+    <p data-ui="aw-business-status" className={styles.status} role="status">当前节点：{path[level]}</p>
+    <Button  data-size="sm" className={styles.returnAction} onClick={() => setLevel(2)} variant={"ghost"} type={"button"} >返回资料助理<ArrowUpRight size={14} aria-hidden="true" /></Button>
   </BusinessDemo>;
 }
 ```
@@ -50,7 +79,7 @@ export default function BusinessBreadcrumbDemo() {
 | `Button · t0.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
 | `Button · t0.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `Button · t0.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
 | `Button · t0.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 
 本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
@@ -59,7 +88,6 @@ export default function BusinessBreadcrumbDemo() {
 
 - `DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<OlHTMLAttributes<HTMLOListElement>, HTMLOListElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
-- `DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
@@ -67,7 +95,7 @@ export default function BusinessBreadcrumbDemo() {
 **children 的真实接入：**
 
 ```tsx
-children={<>{label}</>}
+children={<><Icon size={14} aria-hidden="true" /><span>{label}</span></>}
 ```
 
 **ref 的真实接入：**
@@ -83,9 +111,9 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t0.variant` | `"ghost"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t1.variant` | `"ghost"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 
 ### 演示容器设置

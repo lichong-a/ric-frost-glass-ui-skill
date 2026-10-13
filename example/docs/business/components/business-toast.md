@@ -27,19 +27,97 @@
 ```tsx
 // 当前 Toast 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/DemoLayout.module.css';
-import { componentClasses } from '../../class-names';
-import { useState, useEffect } from 'react';
+import { useCallback, useEffect, useRef, useState, type MouseEvent, type Ref } from 'react';
+import { AnimatePresence, motion, useIsPresent } from 'motion/react';
+import { CheckCircle2, Info } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Button } from '../../components/Button';
+import { useBusinessReducedMotion } from '../../motion-preference';
+import styles from './business-toast.module.css';
 
-const ownedStyles={...ownedStyles0};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
+function ToastNotice({ notice, reduced, innerRef, onDismiss }: {
+  notice: string;
+  reduced: boolean;
+  innerRef: Ref<HTMLDivElement>;
+  onDismiss: () => void;
+}) {
+  const present = useIsPresent();
+  const success = notice === '本地草稿已保存。';
+  const Icon = success ? CheckCircle2 : Info;
+
+  return (
+    <motion.div
+      ref={innerRef}
+      className={styles.toast}
+      data-tone={success ? 'success' : 'info'}
+      role="status"
+      aria-atomic="true"
+      inert={!present}
+      aria-hidden={!present || undefined}
+      initial={reduced ? false : { opacity: 0, y: 20, scale: 0.96 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: reduced ? 0 : 12, scale: reduced ? 1 : 0.97 }}
+      transition={{ duration: reduced ? 0 : 0.2, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <span className={styles.icon} aria-hidden="true"><Icon size={20} /></span>
+      <span className={styles.text}>{notice}</span>
+      <Button variant="ghost" data-size="sm" aria-label="关闭提示" onClick={onDismiss}>关闭</Button>
+    </motion.div>
+  );
+}
+
 export default function BusinessToastDemo() {
-  const [notice,setNotice]=useState<string|null>(null); const [sequence,setSequence]=useState(0); useEffect(()=>{if(!notice)return;const timer=window.setTimeout(()=>setNotice(null),4000);return()=>window.clearTimeout(timer);},[notice,sequence]);
-  return <BusinessDemo title="Toast" description="短消息在本地出现，可手动关闭，4秒后自动移除；卸载时清理计时器。">
-    <div data-ui="aw-business-row" className={cn("aw-business-row")}><Button onClick={()=>{setSequence(value=>value+1);setNotice('本地草稿已保存。');}} type={"button"} variant={"primary"} >显示成功提示</Button><Button  onClick={()=>{setSequence(value=>value+1);setNotice('可以继续完善草稿内容。');}} variant={"secondary"} type={"button"} >显示普通提示</Button></div>{notice?<div data-ui="aw-business-item" className={cn("aw-business-item aw-business-row")} role="status" style={{position:'fixed',right:20,bottom:20,zIndex:100,maxWidth:'calc(100% - 40px)'}}><span>{notice}</span><Button  aria-label="关闭提示" onClick={()=>setNotice(null)} variant={"secondary"} type={"button"} >关闭</Button></div>:null}
-  </BusinessDemo>;
+  const [notice, setNotice] = useState<string | null>(null);
+  const [sequence, setSequence] = useState(0);
+  const reduced = useBusinessReducedMotion();
+  const noticeRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+
+  const dismissNotice = useCallback(() => {
+    // Return keyboard focus before the departing notification becomes inert.
+    if (noticeRef.current?.contains(document.activeElement)) triggerRef.current?.focus();
+    setNotice(null);
+  }, []);
+
+  useEffect(() => {
+    if (!notice) return;
+    const timer = window.setTimeout(dismissNotice, 4000);
+    return () => window.clearTimeout(timer);
+  }, [notice, sequence, dismissNotice]);
+
+  function showSuccess(event: MouseEvent<HTMLButtonElement>) {
+    triggerRef.current = event.currentTarget;
+    setSequence(value => value + 1);
+    setNotice('本地草稿已保存。');
+  }
+
+  function showInfo(event: MouseEvent<HTMLButtonElement>) {
+    triggerRef.current = event.currentTarget;
+    setSequence(value => value + 1);
+    setNotice('可以继续完善草稿内容。');
+  }
+
+  return (
+    <BusinessDemo title="Toast" description="短消息在本地出现，可手动关闭，4秒后自动移除；卸载时清理计时器。">
+      <div className={styles.controls}>
+        <Button onClick={showSuccess} type={"button"} variant={"primary"} >显示成功提示</Button>
+        <Button  onClick={showInfo} variant={"secondary"} type={"button"} >显示普通提示</Button>
+      </div>
+      <div className={styles.viewport}>
+        <AnimatePresence mode="wait">
+          {notice ? (
+            <ToastNotice
+              key={sequence}
+              notice={notice}
+              reduced={reduced}
+              innerRef={noticeRef}
+              onDismiss={dismissNotice}
+            />
+          ) : null}
+        </AnimatePresence>
+      </div>
+    </BusinessDemo>
+  );
 }
 ```
 
@@ -50,21 +128,21 @@ export default function BusinessToastDemo() {
 | `Button · t0.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
 | `Button · t0.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `Button · t0.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
 | `Button · t0.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 
 本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
 
 **继承的原生属性：**
 
-- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 
 **children 的真实接入：**
 
 ```tsx
-children={<>显示成功提示</>}
+children={<>关闭</>}
 ```
 
 **ref 的真实接入：**
@@ -81,11 +159,9 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
 | `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t0.variant` | `"primary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t0.variant` | `"primary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
+| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t2.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t2.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 
 ### 演示容器设置
 

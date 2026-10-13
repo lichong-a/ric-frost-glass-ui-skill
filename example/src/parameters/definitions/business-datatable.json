@@ -49,7 +49,7 @@
       "defaultValue": false,
       "upstreamDefault": "false",
       "control": "switch",
-      "advanced": false,
+      "advanced": true,
       "apply": "live",
       "resources": [
         "@asset/restoration/chromatic-bloom.svg",
@@ -61,36 +61,48 @@
       ]
     },
     {
-      "key": "t2.variant",
-      "name": "variant",
-      "label": "外观 · t2",
-      "description": "选择组件内置的外观或效果变体。",
+      "key": "t1.placeholder",
+      "name": "placeholder",
+      "label": "占位文字 · t1",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "scope": "prop",
+      "target": "t1",
+      "bindings": [
+        {
+          "target": "t1",
+          "name": "placeholder"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "搜索任务或类别",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t2.label",
+      "name": "label",
+      "label": "标签 · t2",
+      "description": "向用户或辅助技术说明控件的名称。",
       "scope": "prop",
       "target": "t2",
       "bindings": [
         {
           "target": "t2",
-          "name": "variant"
+          "name": "label"
         }
       ],
-      "type": "'primary' | 'secondary' | 'danger'",
-      "defaultValue": "secondary",
-      "upstreamDefault": "'primary'",
-      "control": "select",
-      "options": [
-        {
-          "label": "primary",
-          "value": "primary"
-        },
-        {
-          "label": "secondary",
-          "value": "secondary"
-        },
-        {
-          "label": "danger",
-          "value": "danger"
-        }
-      ],
+      "type": "string",
+      "defaultValue": "每页数量",
+      "control": "text",
       "advanced": false,
       "apply": "live",
       "resources": [
@@ -103,21 +115,131 @@
       ]
     },
     {
-      "key": "t2.type",
+      "key": "t2.control",
+      "name": "control",
+      "label": "control · t2",
+      "description": "是否控制，决定该分支的展示或交互行为。",
+      "scope": "prop",
+      "target": "t2",
+      "bindings": [
+        {
+          "target": "t2",
+          "name": "control"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": true,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.label",
+      "name": "label",
+      "label": "标签 · t3",
+      "description": "向用户或辅助技术说明控件的名称。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "label"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "每页数量",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.placeholder",
+      "name": "placeholder",
+      "label": "占位文字 · t3",
+      "description": "尚未填写或选择时显示的提示文字。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "placeholder"
+        }
+      ],
+      "type": "string",
+      "defaultValue": "请选择",
+      "upstreamDefault": "'请选择'",
+      "control": "text",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t3.disabled",
+      "name": "disabled",
+      "label": "禁用 · t3",
+      "description": "是否禁用控件的用户交互。",
+      "scope": "prop",
+      "target": "t3",
+      "bindings": [
+        {
+          "target": "t3",
+          "name": "disabled"
+        }
+      ],
+      "type": "boolean",
+      "defaultValue": false,
+      "upstreamDefault": "false",
+      "control": "switch",
+      "advanced": true,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t4.type",
       "name": "type",
-      "label": "类型 · t2",
+      "label": "类型 · t4",
       "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
       "scope": "prop",
-      "target": "t2",
+      "target": "t4",
       "bindings": [
         {
-          "target": "t2",
+          "target": "t4",
           "name": "type"
         }
       ],
       "type": "\"button\" | \"reset\" | \"submit\" | undefined",
       "defaultValue": "button",
-      "upstreamDefault": "'button'",
       "control": "select",
       "options": [
         {
@@ -133,48 +255,6 @@
           "value": "submit"
         }
       ],
-      "advanced": false,
-      "apply": "live",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
-      "key": "t3.variant",
-      "name": "variant",
-      "label": "外观 · t3",
-      "description": "选择组件内置的外观或效果变体。",
-      "scope": "prop",
-      "target": "t3",
-      "bindings": [
-        {
-          "target": "t3",
-          "name": "variant"
-        }
-      ],
-      "type": "'primary' | 'secondary' | 'danger'",
-      "defaultValue": "secondary",
-      "upstreamDefault": "'primary'",
-      "control": "select",
-      "options": [
-        {
-          "label": "primary",
-          "value": "primary"
-        },
-        {
-          "label": "secondary",
-          "value": "secondary"
-        },
-        {
-          "label": "danger",
-          "value": "danger"
-        }
-      ],
       "advanced": true,
       "apply": "live",
       "resources": [
@@ -187,63 +267,35 @@
       ]
     },
     {
-      "key": "t3.type",
+      "key": "t5.type",
       "name": "type",
-      "label": "类型 · t3",
+      "label": "类型 · t5",
       "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
-      "scope": "prop",
-      "target": "t3",
-      "bindings": [
-        {
-          "target": "t3",
-          "name": "type"
-        }
-      ],
-      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
-      "defaultValue": "button",
-      "upstreamDefault": "'button'",
-      "control": "select",
-      "options": [
-        {
-          "label": "button",
-          "value": "button"
-        },
-        {
-          "label": "reset",
-          "value": "reset"
-        },
-        {
-          "label": "submit",
-          "value": "submit"
-        }
-      ],
-      "advanced": true,
-      "apply": "live",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
-      "key": "t5.pageSize",
-      "name": "pageSize",
-      "label": "每页数量 · t5",
-      "description": "每页显示的条目数量。",
       "scope": "prop",
       "target": "t5",
       "bindings": [
         {
           "target": "t5",
-          "name": "pageSize"
+          "name": "type"
         }
       ],
-      "type": "number",
-      "defaultValue": 3,
-      "control": "number",
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "control": "select",
+      "options": [
+        {
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
+        }
+      ],
       "advanced": true,
       "apply": "live",
       "resources": [
@@ -285,7 +337,7 @@
       "key": "state.page",
       "name": "page",
       "label": "当前页",
-      "description": "示例的受控状态 page；面板与组件的原有回调同步更新。",
+      "description": "示例的受控状态 page；面板与组件的原有回调同步更新。 零基页码；超出实际结果范围时同步回最后有效页。",
       "scope": "state",
       "type": "number",
       "defaultValue": 0,
@@ -300,10 +352,41 @@
         "@asset/restoration/solar-dunes.svg",
         "@asset/restoration/vermilion-fold.svg"
       ],
+      "min": 0,
+      "step": 1,
       "bindings": [
         {
-          "target": "t5",
+          "target": "t7",
           "name": "page"
+        }
+      ]
+    },
+    {
+      "key": "state.pageSize",
+      "name": "pageSize",
+      "label": "每页数量",
+      "description": "示例的受控状态 pageSize；面板与组件的原有回调同步更新。 本例编辑器范围为每页 1–100 项；每页数量、内容切片和分页控件共同更新。",
+      "scope": "state",
+      "type": "number",
+      "defaultValue": 3,
+      "control": "number",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ],
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "bindings": [
+        {
+          "target": "t7",
+          "name": "pageSize"
         }
       ]
     },
@@ -334,7 +417,7 @@
       ],
       "bindings": [
         {
-          "target": "t4",
+          "target": "t6",
           "name": "checked"
         }
       ]
@@ -359,6 +442,13 @@
   "props": [],
   "inherited": [
     {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "div",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
       "type": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
@@ -366,10 +456,10 @@
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     },
     {
-      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-      "tag": "div",
+      "tag": "span",
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     },
     {
@@ -401,6 +491,13 @@
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     },
     {
+      "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "button",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
       "type": "DetailedHTMLProps<HTMLAttributes<HTMLTableSectionElement>, HTMLTableSectionElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
@@ -422,11 +519,11 @@
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     }
   ],
-  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport ownedStyles1 from '../../components/Input.module.css';\nimport { componentClasses } from '../../class-names';\nimport { SpringCheckbox } from '../../components/SpringCheckbox';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { Field } from '../../components/Field';\nimport { workItems } from '../../data';\nimport { Pager } from '../../components/Pager';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessDataTableDemo() {\n  const [query,setQuery]=useState(/*__AW_STATE_state.query__*/);\n  const [sort,setSort]=useState<'title'|'quantity'>('title');\n  const [ascending,setAscending]=useState(true);\n  const [page,setPage]=useState(/*__AW_STATE_state.page__*/);\n  const [selected,setSelected]=useState<string[]>(/*__AW_STATE_state.selected__*/);\n  const filtered=workItems.filter(item=>item.title.includes(query)||item.category.includes(query)).sort((a,b)=>(sort==='title'?a.title.localeCompare(b.title,'zh-CN'):a.quantity-b.quantity)*(ascending?1:-1));\n  function order(field:'title'|'quantity'){setAscending(field===sort?!ascending:true);setSort(field);setPage(0);}\n  return <BusinessDemo title=\"DataTable\" description=\"在本地任务表中搜索、排序、勾选和分页；没有网络写入。\">\n    <Field  /*__AW_PROPS_t0__*/ ><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} value={query} onChange={event=>{setQuery(event.target.value);setPage(0);}} /></Field>\n    <div style={{overflowX:'auto'}}><table data-ui=\"aw-business-table\" className={cn(\"aw-business-table\")}><thead><tr><th scope=\"col\">选择</th><th scope=\"col\" aria-sort={sort==='title'?(ascending?'ascending':'descending'):'none'}><Button  onClick={()=>order('title')} /*__AW_PROPS_t2__*/ >任务 ↕</Button></th><th scope=\"col\">类别</th><th scope=\"col\" aria-sort={sort==='quantity'?(ascending?'ascending':'descending'):'none'}><Button  onClick={()=>order('quantity')} /*__AW_PROPS_t3__*/ >数量 ↕</Button></th></tr></thead><tbody>{filtered.slice(page*3,page*3+3).map(item=><tr key={item.id}><td><SpringCheckbox aria-label={'选择'+item.title} checked={selected.includes(item.id)} onChange={event=>setSelected(current=>event.target.checked?[...current,item.id]:current.filter(id=>id!==item.id))} /></td><td>{item.title}</td><td>{item.category}</td><td>{item.quantity}</td></tr>)}{!filtered.length?<tr><td colSpan={4}>没有符合条件的任务。</td></tr>:null}</tbody></table></div>\n    <Pager page={page}  total={filtered.length} onChange={setPage} /*__AW_PROPS_t5__*/  /><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">已选择 {selected.length} 项。</p>\n  </BusinessDemo>;\n}\n",
+  "usageTemplate": "import { useEffect, useState } from 'react';\nimport { ArrowDown, ArrowDownUp, ArrowUp, Search } from 'lucide-react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { SpringCheckbox } from '../../components/SpringCheckbox';\nimport { Field } from '../../components/Field';\nimport { AnimatedSelect } from '../../components/AnimatedSelect';\nimport { Pager } from '../../components/Pager';\nimport { pagerState } from '../../components/pager-state';\nimport { workItems } from '../../data';\nimport inputStyles from '../../components/Input.module.css';\nimport styles from '../../components/DataTable.module.css';\n\nexport default function BusinessDataTableDemo() {\n  const [query, setQuery] = useState(/*__AW_STATE_state.query__*/);\n  const [sort, setSort] = useState<'title' | 'quantity'>('title');\n  const [ascending, setAscending] = useState(true);\n  const [page, setPage] = useState(/*__AW_STATE_state.page__*/);\n  const [pageSize, setPageSize] = useState(/*__AW_STATE_state.pageSize__*/);\n  const [selected, setSelected] = useState<string[]>(/*__AW_STATE_state.selected__*/);\n  const filtered = workItems\n    .filter(item => item.title.includes(query) || item.category.includes(query))\n    .sort((a, b) => (sort === 'title' ? a.title.localeCompare(b.title, 'zh-CN') : a.quantity - b.quantity) * (ascending ? 1 : -1));\n  const pagination = pagerState(page, pageSize, filtered.length);\n  const visible = filtered.slice(pagination.start, pagination.end);\n  const sizes = [...new Set([1, 3, 6, pagination.pageSize])].sort((a, b) => a - b);\n  useEffect(() => {\n    if (page !== pagination.current) setPage(pagination.current);\n    if (pageSize !== pagination.pageSize) setPageSize(pagination.pageSize);\n  }, [page, pageSize, pagination.current, pagination.pageSize, setPage, setPageSize]);\n  function order(field: 'title' | 'quantity') {\n    setAscending(field === sort ? !ascending : true);\n    setSort(field);\n    setPage(0);\n  }\n  function sortIcon(field: 'title' | 'quantity') {\n    const Icon = sort !== field ? ArrowDownUp : ascending ? ArrowUp : ArrowDown;\n    return <Icon size={15} aria-hidden=\"true\" />;\n  }\n  return (\n    <BusinessDemo title=\"DataTable\" description=\"在本地任务表中搜索、排序、勾选和分页；没有网络写入。\">\n      <div className={styles.toolbar}>\n        <Field  /*__AW_PROPS_t0__*/ >\n          <input data-ui=\"aw-business-input\" className={inputStyles['aw-business-input']} value={query}  onChange={event => { setQuery(event.target.value); setPage(0); }} /*__AW_PROPS_t1__*/  />\n        </Field>\n        <Field   /*__AW_PROPS_t2__*/ >\n          <AnimatedSelect  value={String(pagination.pageSize)} options={sizes.map(size => ({ value: String(size), label: `${size} 项` }))} onChange={value => { setPageSize(Number(value)); setPage(0); }} /*__AW_PROPS_t3__*/  />\n        </Field>\n        <span className={styles.resultCount}><Search size={14} aria-hidden=\"true\" />共 {filtered.length} 项任务</span>\n      </div>\n      <div className={styles.tableWrap} role=\"region\" aria-label=\"任务表格\" tabIndex={0}>\n        <table data-ui=\"aw-business-table\" className={styles.table}>\n          <thead className={styles.head}>\n            <tr>\n              <th scope=\"col\" className={`${styles.headCell} ${styles.selectionColumn}`}>选择</th>\n              <th scope=\"col\" className={styles.headCell} aria-sort={sort === 'title' ? (ascending ? 'ascending' : 'descending') : 'none'}>\n                <button  className={styles.sortControl} data-active={sort === 'title'} aria-label={`任务，点击按${sort === 'title' && ascending ? '降序' : '升序'}排列`} onClick={() => order('title')} /*__AW_PROPS_t4__*/ >任务{sortIcon('title')}</button>\n              </th>\n              <th scope=\"col\" className={styles.headCell}>类别</th>\n              <th scope=\"col\" className={`${styles.headCell} ${styles.numberColumn}`} aria-sort={sort === 'quantity' ? (ascending ? 'ascending' : 'descending') : 'none'}>\n                <button  className={styles.sortControl} data-active={sort === 'quantity'} aria-label={`数量，点击按${sort === 'quantity' && ascending ? '降序' : '升序'}排列`} onClick={() => order('quantity')} /*__AW_PROPS_t5__*/ >数量{sortIcon('quantity')}</button>\n              </th>\n            </tr>\n          </thead>\n          <tbody className={styles.body}>\n            {visible.map(item => (\n              <tr key={item.id} className={styles.row} data-selected={selected.includes(item.id)}>\n                <td className={styles.bodyCell}><SpringCheckbox aria-label={'选择' + item.title} checked={selected.includes(item.id)} onChange={event => setSelected(current => event.target.checked ? (current.includes(item.id) ? current : [...current, item.id]) : current.filter(id => id !== item.id))} /></td>\n                <td className={`${styles.bodyCell} ${styles.taskTitle}`}>{item.title}</td>\n                <td className={styles.bodyCell}><span className={styles.category}>{item.category}</span></td>\n                <td className={`${styles.bodyCell} ${styles.quantity}`}>{item.quantity}</td>\n              </tr>\n            ))}\n            {!filtered.length ? <tr><td className={styles.empty} colSpan={4}>没有符合条件的任务。</td></tr> : null}\n          </tbody>\n        </table>\n      </div>\n      <Pager page={page} pageSize={pageSize} total={filtered.length} onChange={setPage} />\n      <p data-ui=\"aw-business-status\" className={styles.status} role=\"status\">已选择 {selected.length} 项。</p>\n    </BusinessDemo>\n  );\n}\n",
   "targets": [
     {
       "id": "t0",
-      "name": "Field",
+      "name": "Field · t0",
       "sourcePath": "src/business/components/Field.tsx",
       "props": [
         {
@@ -443,7 +540,8 @@
           },
           "codeExample": "label=\"搜索任务\"",
           "usageExamples": [
-            "label=\"搜索任务\""
+            "label=\"搜索任务\"",
+            "label=\"每页数量\""
           ]
         },
         {
@@ -458,10 +556,11 @@
             "path": "src/business/components/Field.tsx",
             "line": 7
           },
-          "codeExample": "children={<><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} value={query} onChange={event=>{setQuery(event.target.value);setPage(0);}} /></>}",
+          "codeExample": "children={<><input data-ui=\"aw-business-input\" className={inputStyles['aw-business-input']} value={query} placeholder=\"搜索任务或类别\" onChange={event => { setQuery(event.target.value); setPage(0); }} /></>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<><input data-ui=\"aw-business-input\" className={cn(\"aw-business-input\")} value={query} onChange={event=>{setQuery(event.target.value);setPage(0);}} /></>}"
+            "children={<><input data-ui=\"aw-business-input\" className={inputStyles['aw-business-input']} value={query} placeholder=\"搜索任务或类别\" onChange={event => { setQuery(event.target.value); setPage(0); }} /></>}",
+            "children={<><AnimatedSelect label=\"每页数量\" value={String(pagination.pageSize)} options={sizes.map(size => ({ value: String(size), label: `${size} 项` }))} onChange={value => { setPageSize(Number(value)); setPage(0); }} /></>}"
           ]
         },
         {
@@ -525,7 +624,10 @@
               true
             ]
           },
-          "codeExample": "control={false}"
+          "codeExample": "control",
+          "usageExamples": [
+            "control"
+          ]
         }
       ],
       "inherited": []
@@ -550,7 +652,7 @@
           "required": false,
           "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
           "usageExamples": [
-            "className={cn(\"aw-business-input\")}"
+            "className={inputStyles['aw-business-input']}"
           ],
           "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
           "source": {
@@ -573,12 +675,26 @@
           }
         },
         {
+          "name": "placeholder",
+          "type": "string | undefined",
+          "required": false,
+          "description": "尚未填写或选择时显示的提示文字。",
+          "usageExamples": [
+            "placeholder=\"搜索任务或类别\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 3208
+          }
+        },
+        {
           "name": "onChange",
           "type": "ChangeEventHandler<HTMLInputElement> | undefined",
           "required": false,
           "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
           "usageExamples": [
-            "onChange={event=>{setQuery(event.target.value);setPage(0);}}"
+            "onChange={event => { setQuery(event.target.value); setPage(0); }}"
           ],
           "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
           "source": {
@@ -598,286 +714,392 @@
     },
     {
       "id": "t2",
-      "name": "Button · t2",
-      "sourcePath": "src/business/components/Button.tsx",
+      "name": "Field · t2",
+      "sourcePath": "src/business/components/Field.tsx",
       "props": [
         {
-          "name": "type",
-          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
-          "required": false,
-          "defaultExpression": "'button'",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "button",
-          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
-          "control": "enum",
-          "valueKind": "enum",
-          "options": [
-            "button",
-            "reset",
-            "submit"
-          ],
-          "editable": true,
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2971
-          },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "details": {
-            "kind": "enum",
-            "options": [
-              "button",
-              "reset",
-              "submit"
-            ]
-          },
-          "codeExample": "type={\"button\"}"
-        },
-        {
-          "name": "className",
-          "type": "string | undefined",
-          "required": false,
-          "defaultExpression": "''",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "",
-          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
           "control": "text",
           "valueKind": "string",
           "editable": true,
           "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2700
+            "path": "src/business/components/Field.tsx",
+            "line": 7
           },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "className={\"\"}"
+          "codeExample": "label=\"搜索任务\"",
+          "usageExamples": [
+            "label=\"搜索任务\"",
+            "label=\"每页数量\""
+          ]
         },
         {
           "name": "children",
           "type": "ReactNode",
-          "required": false,
+          "required": true,
           "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
           "control": "code",
           "valueKind": "react-node",
           "editable": false,
           "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2171
+            "path": "src/business/components/Field.tsx",
+            "line": 7
           },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>任务 ↕</>}",
+          "codeExample": "children={<><input data-ui=\"aw-business-input\" className={inputStyles['aw-business-input']} value={query} placeholder=\"搜索任务或类别\" onChange={event => { setQuery(event.target.value); setPage(0); }} /></>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<>任务 ↕</>}",
-            "children={<>数量 ↕</>}"
+            "children={<><input data-ui=\"aw-business-input\" className={inputStyles['aw-business-input']} value={query} placeholder=\"搜索任务或类别\" onChange={event => { setQuery(event.target.value); setPage(0); }} /></>}",
+            "children={<><AnimatedSelect label=\"每页数量\" value={String(pagination.pageSize)} options={sizes.map(size => ({ value: String(size), label: `${size} 项` }))} onChange={value => { setPageSize(Number(value)); setPage(0); }} /></>}"
           ]
         },
         {
-          "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
+          "name": "hint",
+          "type": "string",
           "required": false,
-          "defaultExpression": "'primary'",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "primary",
-          "description": "选择组件内置的外观或效果变体。",
-          "control": "enum",
-          "valueKind": "enum",
-          "options": [
-            "primary",
-            "secondary",
-            "danger"
-          ],
+          "description": "与字段一起显示的帮助文字。",
+          "control": "text",
+          "valueKind": "string",
           "editable": true,
           "source": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "hint={\"示例\"}"
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "(isControl ? children.props.id : undefined)",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 11,
+            "kind": "implementation-fallback"
+          },
+          "defaultCondition": "falsy",
+          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
+          },
+          "codeExample": "htmlFor={\"示例\"}"
+        },
+        {
+          "name": "control",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否控制，决定该分支的展示或交互行为。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Field.tsx",
+            "line": 7
           },
           "details": {
             "kind": "enum",
             "options": [
-              "primary",
-              "secondary",
-              "danger"
+              false,
+              true
             ]
           },
-          "codeExample": "variant=\"secondary\"",
+          "codeExample": "control",
           "usageExamples": [
-            "variant=\"secondary\""
+            "control"
           ]
-        },
-        {
-          "name": "ref",
-          "type": "Ref<HTMLButtonElement>",
-          "required": false,
-          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
-          "control": "code",
-          "valueKind": "ref",
-          "editable": false,
-          "source": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8
-          },
-          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
-          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
         }
       ],
-      "inherited": [
-        {
-          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "reference": "https://react.dev/reference/react-dom/components/common",
-          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
-        }
-      ]
+      "inherited": []
     },
     {
       "id": "t3",
-      "name": "Button · t3",
-      "sourcePath": "src/business/components/Button.tsx",
+      "name": "AnimatedSelect",
+      "sourcePath": "src/business/components/AnimatedSelect.tsx",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "generatedId",
+          "defaultSource": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 18,
+            "kind": "implementation-fallback"
+          },
+          "defaultResolvedExpression": "useId()",
+          "defaultCondition": "nullish",
+          "description": "原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 14
+          },
+          "codeExample": "id={\"示例\"}"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": true,
+          "description": "当前受控值，由调用方维护并随交互回调更新。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 14
+          },
+          "codeExample": "value={String(pagination.pageSize)}",
+          "usageExamples": [
+            "value={String(pagination.pageSize)}"
+          ]
+        },
+        {
+          "name": "options",
+          "type": "readonly (string | { value: string; label: string })[]",
+          "required": true,
+          "description": "可选择的候选项，显示标签与提交值按选项类型定义。",
+          "control": "code",
+          "valueKind": "array",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 14
+          },
+          "details": {
+            "kind": "array",
+            "items": [
+              {
+                "type": "string | { value: string; label: string; }",
+                "kind": "union",
+                "variants": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "{ value: string; label: string; }",
+                    "kind": "object",
+                    "fields": [
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "required": true
+                      },
+                      {
+                        "name": "label",
+                        "type": "string",
+                        "required": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "codeExample": "options={sizes.map(size => ({ value: String(size), label: `${size} 项` }))}",
+          "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
+          "usageExamples": [
+            "options={sizes.map(size => ({ value: String(size), label: `${size} 项` }))}"
+          ]
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "required": true,
+          "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
+          "control": "code",
+          "valueKind": "callback",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "callback",
+            "signature": "(value: string) => void"
+          },
+          "codeExample": "onChange={value => { setPageSize(Number(value)); setPage(0); }}",
+          "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
+          "usageExamples": [
+            "onChange={value => { setPageSize(Number(value)); setPage(0); }}"
+          ]
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "向用户或辅助技术说明控件的名称。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "codeExample": "label=\"每页数量\"",
+          "usageExamples": [
+            "label=\"每页数量\""
+          ]
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": false,
+          "defaultExpression": "'请选择'",
+          "defaultSource": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 13,
+            "kind": "parameter"
+          },
+          "defaultValue": "请选择",
+          "description": "尚未填写或选择时显示的提示文字。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "codeExample": "placeholder={\"请选择\"}"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultExpression": "false",
+          "defaultSource": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 13,
+            "kind": "parameter"
+          },
+          "defaultValue": false,
+          "description": "是否禁用控件的用户交互。",
+          "control": "boolean",
+          "valueKind": "boolean",
+          "editable": true,
+          "source": {
+            "path": "src/business/components/AnimatedSelect.tsx",
+            "line": 15
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              false,
+              true
+            ]
+          },
+          "codeExample": "disabled={false}"
+        }
+      ],
+      "inherited": []
+    },
+    {
+      "id": "t4",
+      "name": "button · t4",
       "props": [
         {
           "name": "type",
           "type": "\"button\" | \"reset\" | \"submit\" | undefined",
           "required": false,
-          "defaultExpression": "'button'",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "button",
           "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
-          "control": "enum",
-          "valueKind": "enum",
-          "options": [
-            "button",
-            "reset",
-            "submit"
+          "usageExamples": [
+            "type=\"button\"",
+            "type=\"button\""
           ],
-          "editable": true,
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
             "line": 2971
-          },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "details": {
-            "kind": "enum",
-            "options": [
-              "button",
-              "reset",
-              "submit"
-            ]
-          },
-          "codeExample": "type={\"button\"}"
+          }
         },
         {
           "name": "className",
           "type": "string | undefined",
           "required": false,
-          "defaultExpression": "''",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "",
           "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
-          "control": "text",
-          "valueKind": "string",
-          "editable": true,
+          "usageExamples": [
+            "className={styles.sortControl}",
+            "className={styles.sortControl}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
             "line": 2700
-          },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "className={\"\"}"
+          }
+        },
+        {
+          "name": "data-active",
+          "type": "boolean",
+          "required": false,
+          "description": "示例在 DOM 上使用的 active 数据标记，供局部样式或状态定位读取。",
+          "usageExamples": [
+            "data-active={sort === 'title'}",
+            "data-active={sort === 'quantity'}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>"
+        },
+        {
+          "name": "aria-label",
+          "type": "string | undefined",
+          "required": false,
+          "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-label={`任务，点击按${sort === 'title' && ascending ? '降序' : '升序'}排列`}",
+            "aria-label={`数量，点击按${sort === 'quantity' && ascending ? '降序' : '升序'}排列`}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2507
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => order('title')}",
+            "onClick={() => order('quantity')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
         },
         {
           "name": "children",
           "type": "ReactNode",
           "required": false,
           "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
-          "control": "code",
-          "valueKind": "react-node",
-          "editable": false,
+          "usageExamples": [
+            "children={<>任务{sortIcon('title')}</>}",
+            "children={<>数量{sortIcon('quantity')}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
             "line": 2171
-          },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>任务 ↕</>}",
-          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
-          "usageExamples": [
-            "children={<>任务 ↕</>}",
-            "children={<>数量 ↕</>}"
-          ]
-        },
-        {
-          "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
-          "required": false,
-          "defaultExpression": "'primary'",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "primary",
-          "description": "选择组件内置的外观或效果变体。",
-          "control": "enum",
-          "valueKind": "enum",
-          "options": [
-            "primary",
-            "secondary",
-            "danger"
-          ],
-          "editable": true,
-          "source": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8
-          },
-          "details": {
-            "kind": "enum",
-            "options": [
-              "primary",
-              "secondary",
-              "danger"
-            ]
-          },
-          "codeExample": "variant=\"secondary\"",
-          "usageExamples": [
-            "variant=\"secondary\""
-          ]
-        },
-        {
-          "name": "ref",
-          "type": "Ref<HTMLButtonElement>",
-          "required": false,
-          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
-          "control": "code",
-          "valueKind": "ref",
-          "editable": false,
-          "source": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8
-          },
-          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
-          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+          }
         }
       ],
       "inherited": [
         {
-          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
           "reference": "https://react.dev/reference/react-dom/components/common",
           "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
           "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
@@ -885,7 +1107,107 @@
       ]
     },
     {
-      "id": "t4",
+      "id": "t5",
+      "name": "button · t5",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "usageExamples": [
+            "type=\"button\"",
+            "type=\"button\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          }
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles.sortControl}",
+            "className={styles.sortControl}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
+          "name": "data-active",
+          "type": "boolean",
+          "required": false,
+          "description": "示例在 DOM 上使用的 active 数据标记，供局部样式或状态定位读取。",
+          "usageExamples": [
+            "data-active={sort === 'title'}",
+            "data-active={sort === 'quantity'}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>"
+        },
+        {
+          "name": "aria-label",
+          "type": "string | undefined",
+          "required": false,
+          "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-label={`任务，点击按${sort === 'title' && ascending ? '降序' : '升序'}排列`}",
+            "aria-label={`数量，点击按${sort === 'quantity' && ascending ? '降序' : '升序'}排列`}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2507
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement> | undefined",
+          "required": false,
+          "description": "用户点击或通过键盘激活时触发的事件处理函数。",
+          "usageExamples": [
+            "onClick={() => order('title')}",
+            "onClick={() => order('quantity')}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2279
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>任务{sortIcon('title')}</>}",
+            "children={<>数量{sortIcon('quantity')}</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          }
+        }
+      ],
+      "inherited": [
+        {
+          "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t6",
       "name": "SpringCheckbox",
       "sourcePath": "src/business/components/SpringCheckbox.tsx",
       "props": [
@@ -938,10 +1260,10 @@
             "kind": "callback",
             "signature": "ChangeEventHandler<HTMLInputElement> | undefined"
           },
-          "codeExample": "onChange={event=>setSelected(current=>event.target.checked?[...current,item.id]:current.filter(id=>id!==item.id))}",
+          "codeExample": "onChange={event => setSelected(current => event.target.checked ? (current.includes(item.id) ? current : [...current, item.id]) : current.filter(id => id !== item.id))}",
           "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
           "usageExamples": [
-            "onChange={event=>setSelected(current=>event.target.checked?[...current,item.id]:current.filter(id=>id!==item.id))}"
+            "onChange={event => setSelected(current => event.target.checked ? (current.includes(item.id) ? current : [...current, item.id]) : current.filter(id => id !== item.id))}"
           ]
         },
         {
@@ -1022,7 +1344,7 @@
       ]
     },
     {
-      "id": "t5",
+      "id": "t7",
       "name": "Pager",
       "sourcePath": "src/business/components/Pager.tsx",
       "props": [
@@ -1055,9 +1377,9 @@
             "path": "src/business/components/Pager.tsx",
             "line": 7
           },
-          "codeExample": "pageSize={3}",
+          "codeExample": "pageSize={pageSize}",
           "usageExamples": [
-            "pageSize={3}"
+            "pageSize={pageSize}"
           ]
         },
         {

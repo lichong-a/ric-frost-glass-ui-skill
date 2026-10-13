@@ -1,7 +1,17 @@
-/* Owned styles; CSS Modules namespace every component class and keyframe. */
-.aw-business-reorder { --aw-business-spring:cubic-bezier(.22,1.35,.38,1); --aw-business-ease:cubic-bezier(.22,1,.36,1); }
-.aw-business-reorder { display:grid; gap:10px; margin:0; padding-left:24px }
-.aw-business-reorder li { display:flex; align-items:center; justify-content:space-between; gap:12px }
-
-@media (prefers-reduced-motion:reduce) { .aw-business-reorder, .aw-business-reorder::before, .aw-business-reorder::after { transition:none; animation:none; scroll-behavior:auto; } }
-[data-motion=reduce] .aw-business-reorder, [data-motion=reduce] .aw-business-reorder::before, [data-motion=reduce] .aw-business-reorder::after { transition:none; animation:none; scroll-behavior:auto; }
+.root { display: grid; gap: 16px; min-width: 0; }
+.instructions { margin: 0; color: var(--aw-color-text-secondary); font-size: 13px; line-height: 1.7; }
+.list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.item { position: relative; display: flex; align-items: center; gap: 12px; min-width: 0; padding: 14px 16px 14px 10px; border: 1px solid var(--aw-color-border-decorative); border-radius: 14px; background: var(--aw-surface-control); }
+.item[data-dragging='true'] { border-color: var(--aw-color-action-primary); box-shadow: var(--aw-shadow-control-hover); }
+.handle { display: grid; flex: 0 0 36px; place-items: center; width: 36px; height: 44px; padding: 0; color: var(--aw-color-text-secondary); border: 1px solid transparent; border-radius: 9px; background: transparent; cursor: grab; touch-action: none; user-select: none; }
+.handle:hover { color: var(--aw-color-action-primary); background: var(--aw-surface-hover); }
+.handle:active { cursor: grabbing; }
+.handle:focus-visible { outline: 2px solid var(--aw-color-action-primary); outline-offset: 2px; }
+.position { flex: 0 0 22px; color: var(--aw-color-text-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.content { display: grid; gap: 3px; flex: 1; min-width: 0; }
+.title { color: var(--aw-color-text-primary); font-size: 14px; font-weight: 550; overflow-wrap: anywhere; }
+.category { color: var(--aw-color-text-secondary); font-size: 12px; }
+.actions { display: flex; flex: 0 0 auto; gap: 4px; }
+@media (pointer: coarse) { .handle { flex-basis: 44px; width: 44px; } }
+@media (width < 480px) { .item { gap: 8px; padding-inline: 6px 10px; } .position { display: none; } }
+@media (forced-colors: active) { .item[data-dragging='true'], .handle:focus-visible { border-color: Highlight; } }

@@ -35,17 +35,15 @@ node scripts/example.mjs setup --component shape-waves
 ```tsx
 // 当前 Shape Waves 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import { useState } from 'react';
+import type { ComponentProps } from 'react';
 import Component from '../../../.upstream/src/ts-default/Backgrounds/ShapeWaves/ShapeWaves';
 
+import { useWebGPUCompatibility } from '../../effects/webgpu-compatibility/useWebGPUCompatibility';
+import { createShapeWavesCanvas } from '../../effects/webgpu-compatibility/shape-canvas';
+import styles from './shape-waves.module.css';
 
-/** Agent Wan natural-tone preset for the real Shape Waves component. */
 export default function ShapeWavesDemo() {
-  const [error, setError] = useState<Error | null>(null);
-  if (error) throw error; // The preview ErrorBoundary shows GPU runtime failures.
-  return (
-    <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
-      <div style={{ width: '100%', height: 560, position: 'relative' }}>
+  const effect = useWebGPUCompatibility<ComponentProps<typeof Component>>(
         <Component
 
 
@@ -59,12 +57,11 @@ export default function ShapeWavesDemo() {
 
 
 
-
-          onError={setError} text={"AGENT WAN"} fontFamily={"system-ui, sans-serif"} fontWeight={600} textSize={0.5} shapes={"mixed"} cellSize={11} color={"#a6b39a"} hoverColor={"#faf7f0"} backgroundColor={"#1f2d26"} speed={0.55} glow={0.16} contrast={1.1} interactive={true} dotSize={0.75} scale={1} brightness={0.4} flow={0} direction={0} fade={0.25} splashRadius={40} splashStrength={0.4} intro={true} introDuration={1.6} introKey={0} paused={false}
-        />
-      </div>
-    </div>
+           text={"AGENT WAN"} fontFamily={"system-ui, sans-serif"} fontWeight={600} textSize={0.5} shapes={"mixed"} cellSize={11} color={"#a6b39a"} hoverColor={"#faf7f0"} backgroundColor={"#1f2d26"} speed={0.55} glow={0.16} contrast={1.1} interactive={true} dotSize={0.75} scale={1} brightness={0.4} flow={0} direction={0} fade={0.25} splashRadius={40} splashStrength={0.4} intro={true} introDuration={1.6} introKey={0} paused={false}
+        />,
+    createShapeWavesCanvas,
   );
+  return <div className={styles.stage} data-visual-demo="shape-waves">{effect}<p className={styles.hint}>移动指针点亮图形 · 点击释放波纹</p></div>;
 }
 
 ```
@@ -104,7 +101,7 @@ export default function ShapeWavesDemo() {
 **onError 的真实接入：**
 
 ```tsx
-onError={setError}
+onError={(error) => {}}
 ```
 
 ### 本例配置与 DIY
@@ -153,10 +150,10 @@ onError={setError}
 
 ## 5. 加载、动效与降级
 
-本例实际配置：设备访问与音频行为以本例真实 Props 和显式回调为准。capabilities 是源码扫描提示，不能据此声称已请求相机、录音或播放音频。
+本例实际配置：原版使用 WebGPU。本例先检查适配器，支持时运行锁定原版；缺少适配器或原版初始化失败时自动使用带有“兼容预览”标记的 Canvas 2D 图形波场。兼容路径保留三种图形、文字遮罩、滚动波面与指针/点击响应，噪声和光晕与 WebGPU 原版存在差异。
 
 - 依赖清单：`react`、`vgpu`。安装前复用目标项目的兼容版本，不重复加载。
-- 运行类型：本例预览入口声明需 WebGPU；这是当前示例的运行配置，不是仅凭源码关键词推断。此说明不等于浏览器运行证明。
+- 运行类型：本例预览入口不要求预先通过图形接口检查；实际组件内部的可选渲染分支由源码和本例 Props 决定。此说明不等于浏览器运行证明。
 - 动效策略：按需启用的持续 / 高运动效果。
 - 示例库降级：动态偏好或能力检查不满足时先不挂载本项，显示原因；减少运动时可明确选择仅播放本次。
 - 业务接入的静态降级要求：保留可读内容与原生交互，并提供当前组件的静态状态

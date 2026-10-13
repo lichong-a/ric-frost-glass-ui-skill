@@ -27,21 +27,46 @@
 ```tsx
 // 当前 SplitButton 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/Button.module.css';
-import ownedStyles1 from '../../components/DemoLayout.module.css';
-import { componentClasses } from '../../class-names';
-import { MenuSurface } from '../../components/MenuSurface';
-import { useState, useRef } from 'react';
+import { useId, useRef, useState } from 'react';
+import { motion } from 'motion/react';
+import { Archive, Check, ChevronDown, Copy, Save } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Button } from '../../components/Button';
+import { MenuSurface } from '../../components/MenuSurface';
 import { Popover } from '../../components/Popover';
+import { controlSpring, useBusinessReducedMotion } from '../../motion-preference';
+import styles from './business-splitbutton.module.css';
 
-const ownedStyles={...ownedStyles0,...ownedStyles1};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
+const actions = [
+  { label: '保存草稿', icon: Save },
+  { label: '复制为新草稿', icon: Copy },
+  { label: '归档记录', icon: Archive }
+];
+
 export default function BusinessSplitButtonDemo() {
-  const [open,setOpen]=useState(false); const [action,setAction]=useState('保存草稿'); const [message,setMessage]=useState('尚未执行'); const anchor=useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState(false);
+  const [action, setAction] = useState('保存草稿');
+  const [message, setMessage] = useState('尚未执行');
+  const anchor = useRef<HTMLButtonElement>(null);
+  const menuId = useId();
+  const reduced = useBusinessReducedMotion();
+
   return <BusinessDemo title="SplitButton" description="主按钮执行当前动作，独立下拉按钮允许选择其他动作。">
-    <div data-ui="aw-business-row" className={cn("aw-business-row")}><Button onClick={()=>setMessage('已选择本地动作：'+action)} type={"button"} variant={"primary"} >{action}</Button><button data-ui="aw-button"  className={cn("aw-button")} ref={anchor}  aria-haspopup="menu" aria-expanded={open} onClick={()=>setOpen(value=>!value)} type={"button"} aria-label={"选择其他动作"} >⌄</button></div><Popover open={open} onClose={()=>setOpen(false)} anchorRef={anchor} minWidth={280} ><MenuSurface  label={"其他动作"} >{['保存草稿','复制为新草稿','归档记录'].map(label=><button data-ui="aw-button"  className={cn("aw-button")} role="menuitem" key={label} onClick={()=>{setAction(label);setOpen(false);}} type={"button"} >{label}</button>)}</MenuSurface></Popover><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">{message}</p>
+    <div data-ui="aw-business-row" className={styles.splitControl} role="group" aria-label="执行或选择草稿动作">
+      <Button className={styles.mainAction} onClick={() => setMessage('已选择本地动作：' + action)} type={"button"} variant={"primary"} ><Save size={17} aria-hidden="true" />{action}</Button>
+      <Button  className={styles.toggleAction} ref={anchor} aria-label="选择其他动作" aria-haspopup="menu" aria-controls={open ? menuId : undefined} aria-expanded={open} onClick={() => setOpen(value => !value)} variant={"secondary"} type={"button"} >
+        <motion.span className={styles.chevron} aria-hidden="true" animate={{ rotate: open ? 180 : 0 }} transition={reduced ? { duration: 0 } : controlSpring}><ChevronDown size={17} /></motion.span>
+      </Button>
+    </div>
+    <Popover open={open} onClose={() => setOpen(false)} anchorRef={anchor}  minWidth={236} >
+      <div id={menuId} className={styles.panel}>
+        <p className={styles.heading}>选择执行动作</p>
+        <MenuSurface  label={"其他动作"} >{actions.map(({ label, icon: Icon }) => <Button key={label}  className={styles.option} role="menuitem" tabIndex={-1} data-selected={action === label} onClick={() => { setAction(label); setOpen(false); }} variant={"ghost"} type={"button"} >
+          <Icon className={styles.optionIcon} size={17} aria-hidden="true" /><span>{label}</span>{action === label ? <Check className={styles.check} size={16} aria-hidden="true" /> : null}
+        </Button>)}</MenuSurface>
+      </div>
+    </Popover>
+    <p data-ui="aw-business-status" className={styles.status} role="status">{message}</p>
   </BusinessDemo>;
 }
 ```
@@ -50,22 +75,11 @@ export default function BusinessSplitButtonDemo() {
 
 | 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
 |---|---|---|---|---|
-| `Button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
-| `Button.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
-| `Button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
-| `Button.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
-| `button · t1.data-ui` | `any` | 否 | `未指定` | 示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。 |
-| `button · t1.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `未指定` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
-| `button · t1.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
-| `button · t1.ref` | `Ref<HTMLButtonElement> \| undefined` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
-| `button · t1.aria-label` | `string \| undefined` | 否 | `未指定` | 辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。 |
-| `button · t1.aria-haspopup` | `boolean \| "grid" \| "dialog" \| "menu" \| "true" \| "false" \| "listbox" \| "tree" \| undefined` | 否 | `未指定` | 辅助技术的 haspopup 状态或说明；值须与控件当前可观察行为一致。 |
-| `button · t1.aria-expanded` | `Booleanish \| undefined` | 否 | `未指定` | 辅助技术的 expanded 状态或说明；值须与控件当前可观察行为一致。 |
-| `button · t1.onClick` | `MouseEventHandler<HTMLButtonElement> \| undefined` | 否 | `未指定` | 用户点击或通过键盘激活时触发的事件处理函数。 |
-| `button · t1.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `button · t1.role` | `AriaRole \| undefined` | 否 | `未指定` | 辅助技术使用的元素角色，须与实际键盘和交互行为相匹配。 |
-| `button · t1.key` | `Key \| null \| undefined` | 否 | `未指定` | React 列表项身份，用于更新时保持对应节点。 |
+| `Button · t0.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `Button · t0.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `Button · t0.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t0.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 | `Popover.open` | `boolean` | 是 | `未指定` | 是否展开或显示内容，由调用方控制。 |
 | `Popover.onClose` | `() => void` | 是 | `未指定` | 请求关闭弹层、对话框或提示时调用，调用方同步更新 open 状态。 |
 | `Popover.anchorRef` | `RefObject<HTMLElement \| null>` | 是 | `未指定` | 连接触发器 DOM 的 ref，供弹层定位及焦点返回使用。 |
@@ -79,14 +93,14 @@ export default function BusinessSplitButtonDemo() {
 **继承的原生属性：**
 
 - `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
-- `DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 
 **children 的真实接入：**
 
 ```tsx
-children={<>{action}</>}
+children={<><Save size={17} aria-hidden="true" />{action}</>}
 ```
 
 **ref 的真实接入：**
@@ -99,7 +113,7 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 **onClose 的真实接入：**
 
 ```tsx
-onClose={()=>setOpen(false)}
+onClose={() => setOpen(false)}
 ```
 
 **anchorRef 的真实接入：**
@@ -112,13 +126,20 @@ const elementRef = useRef<HTMLElement | null>(null);
 **children 的真实接入：**
 
 ```tsx
-children={<><MenuSurface label="其他动作">{['保存草稿','复制为新草稿','归档记录'].map(label=><button data-ui="aw-button" type="button" className={cn("aw-button")} role="menuitem" key={label} onClick={()=>{setAction(label);setOpen(false);}}>{label}</button>)}</MenuSurface></>}
+children={<><div id={menuId} className={styles.panel}>
+        <p className={styles.heading}>选择执行动作</p>
+        <MenuSurface label="其他动作">{actions.map(({ label, icon: Icon }) => <Button key={label} variant="ghost" className={styles.option} role="menuitem" tabIndex={-1} data-selected={action === label} onClick={() => { setAction(label); setOpen(false); }}>
+          <Icon className={styles.optionIcon} size={17} aria-hidden="true" /><span>{label}</span>{action === label ? <Check className={styles.check} size={16} aria-hidden="true" /> : null}
+        </Button>)}</MenuSurface>
+      </div></>}
 ```
 
 **children 的真实接入：**
 
 ```tsx
-children={<>{['保存草稿','复制为新草稿','归档记录'].map(label=><button data-ui="aw-button" type="button" className={cn("aw-button")} role="menuitem" key={label} onClick={()=>{setAction(label);setOpen(false);}}>{label}</button>)}</>}
+children={<>{actions.map(({ label, icon: Icon }) => <Button key={label} variant="ghost" className={styles.option} role="menuitem" tabIndex={-1} data-selected={action === label} onClick={() => { setAction(label); setOpen(false); }}>
+          <Icon className={styles.optionIcon} size={17} aria-hidden="true" /><span>{label}</span>{action === label ? <Check className={styles.check} size={16} aria-hidden="true" /> : null}
+        </Button>)}</>}
 ```
 
 ### 本例配置与 DIY
@@ -128,11 +149,12 @@ children={<>{['保存草稿','复制为新草稿','归档记录'].map(label=><bu
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
 | `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t0.variant` | `"primary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t0.variant` | `"primary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
+| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t1.aria-label` | `"选择其他动作"` | text | 不限 ~ 不限 | 即时应用 |
-| `t2.minWidth` | `280` | number | 不限 ~ 不限 | 即时应用 |
+| `t2.minWidth` | `236` | number | 不限 ~ 不限 | 即时应用 |
 | `t3.label` | `"其他动作"` | text | 不限 ~ 不限 | 即时应用 |
+| `t4.variant` | `"ghost"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t4.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 | `state.open` | `false` | switch | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 

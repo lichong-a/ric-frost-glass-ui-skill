@@ -6,7 +6,7 @@ export default function PixelTrailDemo() {
   const { props: demoProps } = useDemoConfig();
   return (
     <div className={styles.stage} data-visual-demo="pixel-trail">
-      <Component gridSize={40} trailSize={0.16} maxAge={900} interpolate={5}
+      <Component gridSize={40} trailSize={0.04} maxAge={900} interpolate={5}
         color="#b6f2cf" trailColor="#46bfc0" shape="square" gap={0.08}
         decay="shrink" flow={0.65} gravity={0.25} sparkle={0.12} glow={0.5}
         shine={0.65} clickBurst dpr={1.5} {...demoProps('t0')} />

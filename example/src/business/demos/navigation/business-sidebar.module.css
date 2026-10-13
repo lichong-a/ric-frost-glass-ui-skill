@@ -1,0 +1,18 @@
+.toggle { align-self: flex-start; gap: 8px; }
+.workspace { display: grid; grid-template-columns: minmax(0, 176px) minmax(0, 1fr); align-items: stretch; gap: 14px; transition: grid-template-columns 280ms cubic-bezier(.22, 1, .36, 1); }
+.workspace[data-collapsed='true'] { grid-template-columns: minmax(0, 64px) minmax(0, 1fr); }
+.sidebar { min-inline-size: 0; padding: 8px; background: var(--aw-surface-control); border: 1px solid var(--aw-color-border-decorative); border-radius: 15px; }
+.sidebarHeading { display: flex; align-items: center; justify-content: center; min-block-size: 38px; margin-block-end: 6px; color: var(--aw-color-text-secondary); font-size: 11px; font-weight: 600; letter-spacing: .08em; white-space: nowrap; overflow: hidden; }
+.sidebarNavigation { display: flex; flex-direction: column; gap: 6px; }
+.navigationItem[data-variant='ghost'] { inline-size: 100%; justify-content: flex-start; gap: 10px; min-block-size: 44px; padding: 10px; border-radius: 10px; text-align: start; font-size: 13px; }
+.navigationItem[data-variant='ghost'][aria-current='page'] { color: var(--aw-color-action-primary); background: color-mix(in srgb, var(--aw-color-action-primary) 10%, var(--aw-palette-ivory)); border-color: color-mix(in srgb, var(--aw-color-action-primary) 16%, transparent); }
+.navigationItem[data-collapsed='true'] { justify-content: center; padding-inline: 4px; }
+.pageIcon { flex: none; }
+.pageLabel { white-space: nowrap; }
+.pageNumber { display: grid; place-items: center; inline-size: 20px; block-size: 20px; font-weight: 600; }
+.content { min-inline-size: 0; min-block-size: 166px; padding: 20px; color: var(--aw-color-text-primary); background: var(--aw-surface-control); border: 1px solid var(--aw-color-border-decorative); border-radius: 15px; }
+.contentTitle { margin: 0 0 10px; font-size: 18px; font-weight: 600; }
+.contentCopy { margin: 0; color: var(--aw-color-text-secondary); font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; }
+.workspace[data-motion='reduce'] { transition: none; }
+@media (prefers-reduced-motion: reduce) { .workspace { transition: none; } }
+@media (width < 480px) { .workspace { grid-template-columns: minmax(0, 140px) minmax(0, 1fr); gap: 10px; } .content { padding: 15px; } }

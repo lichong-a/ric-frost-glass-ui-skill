@@ -27,32 +27,86 @@
 ```tsx
 // 当前 DataTable 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：680px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/DemoLayout.module.css';
-import ownedStyles1 from '../../components/Input.module.css';
-import { componentClasses } from '../../class-names';
-import { SpringCheckbox } from '../../components/SpringCheckbox';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ArrowDown, ArrowDownUp, ArrowUp, Search } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
-import { Button } from '../../components/Button';
+import { SpringCheckbox } from '../../components/SpringCheckbox';
 import { Field } from '../../components/Field';
-import { workItems } from '../../data';
+import { AnimatedSelect } from '../../components/AnimatedSelect';
 import { Pager } from '../../components/Pager';
+import { pagerState } from '../../components/pager-state';
+import { workItems } from '../../data';
+import inputStyles from '../../components/Input.module.css';
+import styles from '../../components/DataTable.module.css';
 
-const ownedStyles={...ownedStyles0,...ownedStyles1};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function BusinessDataTableDemo() {
-  const [query,setQuery]=useState("");
-  const [sort,setSort]=useState<'title'|'quantity'>('title');
-  const [ascending,setAscending]=useState(true);
-  const [page,setPage]=useState(0);
-  const [selected,setSelected]=useState<string[]>([]);
-  const filtered=workItems.filter(item=>item.title.includes(query)||item.category.includes(query)).sort((a,b)=>(sort==='title'?a.title.localeCompare(b.title,'zh-CN'):a.quantity-b.quantity)*(ascending?1:-1));
-  function order(field:'title'|'quantity'){setAscending(field===sort?!ascending:true);setSort(field);setPage(0);}
-  return <BusinessDemo title="DataTable" description="在本地任务表中搜索、排序、勾选和分页；没有网络写入。">
-    <Field  label={"搜索任务"} control={false} ><input data-ui="aw-business-input" className={cn("aw-business-input")} value={query} onChange={event=>{setQuery(event.target.value);setPage(0);}} /></Field>
-    <div style={{overflowX:'auto'}}><table data-ui="aw-business-table" className={cn("aw-business-table")}><thead><tr><th scope="col">选择</th><th scope="col" aria-sort={sort==='title'?(ascending?'ascending':'descending'):'none'}><Button  onClick={()=>order('title')} variant={"secondary"} type={"button"} >任务 ↕</Button></th><th scope="col">类别</th><th scope="col" aria-sort={sort==='quantity'?(ascending?'ascending':'descending'):'none'}><Button  onClick={()=>order('quantity')} variant={"secondary"} type={"button"} >数量 ↕</Button></th></tr></thead><tbody>{filtered.slice(page*3,page*3+3).map(item=><tr key={item.id}><td><SpringCheckbox aria-label={'选择'+item.title} checked={selected.includes(item.id)} onChange={event=>setSelected(current=>event.target.checked?[...current,item.id]:current.filter(id=>id!==item.id))} /></td><td>{item.title}</td><td>{item.category}</td><td>{item.quantity}</td></tr>)}{!filtered.length?<tr><td colSpan={4}>没有符合条件的任务。</td></tr>:null}</tbody></table></div>
-    <Pager page={page}  total={filtered.length} onChange={setPage} pageSize={3}  /><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">已选择 {selected.length} 项。</p>
-  </BusinessDemo>;
+  const [query, setQuery] = useState("");
+  const [sort, setSort] = useState<'title' | 'quantity'>('title');
+  const [ascending, setAscending] = useState(true);
+  const [page, setPage] = useState(0);
+  const [pageSize, setPageSize] = useState(3);
+  const [selected, setSelected] = useState<string[]>([]);
+  const filtered = workItems
+    .filter(item => item.title.includes(query) || item.category.includes(query))
+    .sort((a, b) => (sort === 'title' ? a.title.localeCompare(b.title, 'zh-CN') : a.quantity - b.quantity) * (ascending ? 1 : -1));
+  const pagination = pagerState(page, pageSize, filtered.length);
+  const visible = filtered.slice(pagination.start, pagination.end);
+  const sizes = [...new Set([1, 3, 6, pagination.pageSize])].sort((a, b) => a - b);
+  useEffect(() => {
+    if (page !== pagination.current) setPage(pagination.current);
+    if (pageSize !== pagination.pageSize) setPageSize(pagination.pageSize);
+  }, [page, pageSize, pagination.current, pagination.pageSize, setPage, setPageSize]);
+  function order(field: 'title' | 'quantity') {
+    setAscending(field === sort ? !ascending : true);
+    setSort(field);
+    setPage(0);
+  }
+  function sortIcon(field: 'title' | 'quantity') {
+    const Icon = sort !== field ? ArrowDownUp : ascending ? ArrowUp : ArrowDown;
+    return <Icon size={15} aria-hidden="true" />;
+  }
+  return (
+    <BusinessDemo title="DataTable" description="在本地任务表中搜索、排序、勾选和分页；没有网络写入。">
+      <div className={styles.toolbar}>
+        <Field  label={"搜索任务"} control={false} >
+          <input data-ui="aw-business-input" className={inputStyles['aw-business-input']} value={query}  onChange={event => { setQuery(event.target.value); setPage(0); }} placeholder={"搜索任务或类别"}  />
+        </Field>
+        <Field   label={"每页数量"} control={true} >
+          <AnimatedSelect  value={String(pagination.pageSize)} options={sizes.map(size => ({ value: String(size), label: `${size} 项` }))} onChange={value => { setPageSize(Number(value)); setPage(0); }} label={"每页数量"} placeholder={"请选择"} disabled={false}  />
+        </Field>
+        <span className={styles.resultCount}><Search size={14} aria-hidden="true" />共 {filtered.length} 项任务</span>
+      </div>
+      <div className={styles.tableWrap} role="region" aria-label="任务表格" tabIndex={0}>
+        <table data-ui="aw-business-table" className={styles.table}>
+          <thead className={styles.head}>
+            <tr>
+              <th scope="col" className={`${styles.headCell} ${styles.selectionColumn}`}>选择</th>
+              <th scope="col" className={styles.headCell} aria-sort={sort === 'title' ? (ascending ? 'ascending' : 'descending') : 'none'}>
+                <button  className={styles.sortControl} data-active={sort === 'title'} aria-label={`任务，点击按${sort === 'title' && ascending ? '降序' : '升序'}排列`} onClick={() => order('title')} type={"button"} >任务{sortIcon('title')}</button>
+              </th>
+              <th scope="col" className={styles.headCell}>类别</th>
+              <th scope="col" className={`${styles.headCell} ${styles.numberColumn}`} aria-sort={sort === 'quantity' ? (ascending ? 'ascending' : 'descending') : 'none'}>
+                <button  className={styles.sortControl} data-active={sort === 'quantity'} aria-label={`数量，点击按${sort === 'quantity' && ascending ? '降序' : '升序'}排列`} onClick={() => order('quantity')} type={"button"} >数量{sortIcon('quantity')}</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody className={styles.body}>
+            {visible.map(item => (
+              <tr key={item.id} className={styles.row} data-selected={selected.includes(item.id)}>
+                <td className={styles.bodyCell}><SpringCheckbox aria-label={'选择' + item.title} checked={selected.includes(item.id)} onChange={event => setSelected(current => event.target.checked ? (current.includes(item.id) ? current : [...current, item.id]) : current.filter(id => id !== item.id))} /></td>
+                <td className={`${styles.bodyCell} ${styles.taskTitle}`}>{item.title}</td>
+                <td className={styles.bodyCell}><span className={styles.category}>{item.category}</span></td>
+                <td className={`${styles.bodyCell} ${styles.quantity}`}>{item.quantity}</td>
+              </tr>
+            ))}
+            {!filtered.length ? <tr><td className={styles.empty} colSpan={4}>没有符合条件的任务。</td></tr> : null}
+          </tbody>
+        </table>
+      </div>
+      <Pager page={page} pageSize={pageSize} total={filtered.length} onChange={setPage} />
+      <p data-ui="aw-business-status" className={styles.status} role="status">已选择 {selected.length} 项。</p>
+    </BusinessDemo>
+  );
 }
 ```
 
@@ -60,20 +114,29 @@ export default function BusinessDataTableDemo() {
 
 | 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
 |---|---|---|---|---|
-| `Field.label` | `string` | 是 | `未指定` | 向用户或辅助技术说明控件的名称。 |
-| `Field.children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Field.hint` | `string` | 否 | `未指定` | 与字段一起显示的帮助文字。 |
-| `Field.htmlFor` | `string` | 否 | `(isControl ? children.props.id : undefined)` | 关联控件的 id，让标签点击与辅助技术定位到该控件。 |
-| `Field.control` | `boolean` | 否 | `false` | 是否控制，决定该分支的展示或交互行为。 |
+| `Field · t0.label` | `string` | 是 | `未指定` | 向用户或辅助技术说明控件的名称。 |
+| `Field · t0.children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Field · t0.hint` | `string` | 否 | `未指定` | 与字段一起显示的帮助文字。 |
+| `Field · t0.htmlFor` | `string` | 否 | `(isControl ? children.props.id : undefined)` | 关联控件的 id，让标签点击与辅助技术定位到该控件。 |
+| `Field · t0.control` | `boolean` | 否 | `false` | 是否控制，决定该分支的展示或交互行为。 |
 | `input.data-ui` | `any` | 否 | `未指定` | 示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。 |
 | `input.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `input.value` | `string \| number \| readonly string[] \| undefined` | 否 | `未指定` | 当前受控值，由调用方维护并随交互回调更新。 |
+| `input.placeholder` | `string \| undefined` | 否 | `未指定` | 尚未填写或选择时显示的提示文字。 |
 | `input.onChange` | `ChangeEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | 用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。 |
-| `Button · t2.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
-| `Button · t2.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
-| `Button · t2.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button · t2.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
-| `Button · t2.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+| `AnimatedSelect.id` | `string` | 否 | `generatedId` | 原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。 |
+| `AnimatedSelect.value` | `string` | 是 | `未指定` | 当前受控值，由调用方维护并随交互回调更新。 |
+| `AnimatedSelect.options` | `readonly (string \| { value: string; label: string })[]` | 是 | `未指定` | 可选择的候选项，显示标签与提交值按选项类型定义。 |
+| `AnimatedSelect.onChange` | `(value: string) => void` | 是 | `未指定` | 用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。 |
+| `AnimatedSelect.label` | `string` | 是 | `未指定` | 向用户或辅助技术说明控件的名称。 |
+| `AnimatedSelect.placeholder` | `string` | 否 | `'请选择'` | 尚未填写或选择时显示的提示文字。 |
+| `AnimatedSelect.disabled` | `boolean` | 否 | `false` | 是否禁用控件的用户交互。 |
+| `button · t4.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `未指定` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `button · t4.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `button · t4.data-active` | `boolean` | 否 | `未指定` | 示例在 DOM 上使用的 active 数据标记，供局部样式或状态定位读取。 |
+| `button · t4.aria-label` | `string \| undefined` | 否 | `未指定` | 辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。 |
+| `button · t4.onClick` | `MouseEventHandler<HTMLButtonElement> \| undefined` | 否 | `未指定` | 用户点击或通过键盘激活时触发的事件处理函数。 |
+| `button · t4.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
 | `SpringCheckbox.checked` | `boolean \| undefined` | 否 | `inner` | 当前受控勾选状态，调用方在变更回调中写回。 |
 | `SpringCheckbox.onChange` | `ChangeEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | 用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。 |
 | `SpringCheckbox.defaultChecked` | `boolean \| undefined` | 否 | `false` | 非受控模式首次挂载时的勾选状态。 |
@@ -88,40 +151,40 @@ export default function BusinessDataTableDemo() {
 
 **继承的原生属性：**
 
-- `DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>, HTMLTableElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLTableSectionElement>, HTMLTableSectionElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<ThHTMLAttributes<HTMLTableHeaderCellElement>, HTMLTableHeaderCellElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<TdHTMLAttributes<HTMLTableDataCellElement>, HTMLTableDataCellElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
-- `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `InputHTMLAttributes<HTMLInputElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 
 **children 的真实接入：**
 
 ```tsx
-children={<><input data-ui="aw-business-input" className={cn("aw-business-input")} value={query} onChange={event=>{setQuery(event.target.value);setPage(0);}} /></>}
+children={<><input data-ui="aw-business-input" className={inputStyles['aw-business-input']} value={query} placeholder="搜索任务或类别" onChange={event => { setQuery(event.target.value); setPage(0); }} /></>}
 ```
 
-**children 的真实接入：**
+**options 的真实接入：**
 
 ```tsx
-children={<>任务 ↕</>}
-```
-
-**ref 的真实接入：**
-
-```tsx
-const elementRef = useRef<HTMLButtonElement | null>(null);
-// JSX: ref={elementRef}
+options={sizes.map(size => ({ value: String(size), label: `${size} 项` }))}
 ```
 
 **onChange 的真实接入：**
 
 ```tsx
-onChange={event=>setSelected(current=>event.target.checked?[...current,item.id]:current.filter(id=>id!==item.id))}
+onChange={value => { setPageSize(Number(value)); setPage(0); }}
+```
+
+**onChange 的真实接入：**
+
+```tsx
+onChange={event => setSelected(current => event.target.checked ? (current.includes(item.id) ? current : [...current, item.id]) : current.filter(id => id !== item.id))}
 ```
 
 **children 的真实接入：**
@@ -144,13 +207,17 @@ onChange={setPage}
 |---|---|---|---|---|
 | `t0.label` | `"搜索任务"` | text | 不限 ~ 不限 | 即时应用 |
 | `t0.control` | `false` | switch | 不限 ~ 不限 | 即时应用 |
-| `t2.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t2.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t3.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t3.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t5.pageSize` | `3` | number | 不限 ~ 不限 | 即时应用 |
+| `t1.placeholder` | `"搜索任务或类别"` | text | 不限 ~ 不限 | 即时应用 |
+| `t2.label` | `"每页数量"` | text | 不限 ~ 不限 | 即时应用 |
+| `t2.control` | `true` | switch | 不限 ~ 不限 | 即时应用 |
+| `t3.label` | `"每页数量"` | text | 不限 ~ 不限 | 即时应用 |
+| `t3.placeholder` | `"请选择"` | text | 不限 ~ 不限 | 即时应用 |
+| `t3.disabled` | `false` | switch | 不限 ~ 不限 | 即时应用 |
+| `t4.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `t5.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 | `state.query` | `""` | text | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
-| `state.page` | `0` | number | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
+| `state.page` | `0` | number | 0 ~ 不限 | 即时应用；原组件回调同步受控值 |
+| `state.pageSize` | `3` | number | 1 ~ 100 | 即时应用；原组件回调同步受控值 |
 | `state.selected` | `[]` | json | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 
 ### 演示容器设置

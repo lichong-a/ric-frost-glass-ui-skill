@@ -18,7 +18,7 @@
           "name": "variant"
         }
       ],
-      "type": "'primary' | 'secondary' | 'danger'",
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
       "defaultValue": "secondary",
       "upstreamDefault": "'primary'",
       "control": "select",
@@ -34,6 +34,10 @@
         {
           "label": "danger",
           "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
         }
       ],
       "advanced": false,
@@ -93,7 +97,7 @@
       "key": "state.items",
       "name": "items",
       "label": "数据项",
-      "description": "示例的受控状态 items；面板与组件的原有回调同步更新。",
+      "description": "示例的受控状态 items；面板与组件的原有回调同步更新。 每项任务的 id 必须唯一；重复 ID 保留最后有效顺序，不改写任务身份。",
       "scope": "state",
       "type": "array",
       "defaultValue": [
@@ -171,6 +175,7 @@
         "@asset/restoration/solar-dunes.svg",
         "@asset/restoration/vermilion-fold.svg"
       ],
+      "uniqueBy": "id",
       "bindings": [
         {
           "target": "t0",
@@ -206,7 +211,7 @@
       "editable": false,
       "source": {
         "path": "src/business/components/ReorderItems.tsx",
-        "line": 11
+        "line": 72
       },
       "details": {
         "kind": "array",
@@ -255,7 +260,7 @@
       "editable": false,
       "source": {
         "path": "src/business/components/ReorderItems.tsx",
-        "line": 11
+        "line": 72
       },
       "details": {
         "kind": "callback",
@@ -269,7 +274,7 @@
     }
   ],
   "inherited": [],
-  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { workItems } from '../../data';\nimport { ReorderItems } from '../../components/ReorderItems';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessOrderListDemo() {\n  const [items,setItems]=useState(/*__AW_STATE_state.items__*/);\n  return <BusinessDemo title=\"OrderList\" description=\"用上下移按钮重新排列本地任务，排序结果即时保存到当前示例状态。\">\n    <ReorderItems items={items} onChange={setItems} /><Button  onClick={()=>setItems(workItems)} /*__AW_PROPS_t1__*/ >恢复初始顺序</Button><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">当前顺序：{items.map(item=>item.title).join('、')}</p>\n  </BusinessDemo>;\n}\n",
+  "usageTemplate": "import { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { workItems } from '../../data';\nimport { ReorderItems } from '../../components/ReorderItems';\nimport styles from './business-orderlist.module.css';\n\nexport default function BusinessOrderListDemo() {\n  const [items, setItems] = useState(/*__AW_STATE_state.items__*/);\n  return (\n    <BusinessDemo title=\"OrderList\" description=\"拖动任务把手重新排列，也可用键盘或上下移按钮调整；顺序保留在当前示例状态。\">\n      <ReorderItems items={items} onChange={setItems} />\n      <div className={styles.footer}>\n        <Button  data-size=\"sm\" onClick={() => setItems(workItems)} /*__AW_PROPS_t1__*/ >恢复初始顺序</Button>\n        <p data-ui=\"aw-business-status\" className={styles.status} role=\"status\">当前顺序：{items.map(item => item.title).join('、')}</p>\n      </div>\n    </BusinessDemo>\n  );\n}\n",
   "targets": [
     {
       "id": "t0",
@@ -286,7 +291,7 @@
           "editable": false,
           "source": {
             "path": "src/business/components/ReorderItems.tsx",
-            "line": 11
+            "line": 72
           },
           "details": {
             "kind": "array",
@@ -335,7 +340,7 @@
           "editable": false,
           "source": {
             "path": "src/business/components/ReorderItems.tsx",
-            "line": 11
+            "line": 72
           },
           "details": {
             "kind": "callback",
@@ -433,7 +438,7 @@
         },
         {
           "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
           "required": false,
           "defaultExpression": "'primary'",
           "defaultSource": {
@@ -448,7 +453,8 @@
           "options": [
             "primary",
             "secondary",
-            "danger"
+            "danger",
+            "ghost"
           ],
           "editable": true,
           "source": {
@@ -460,7 +466,8 @@
             "options": [
               "primary",
               "secondary",
-              "danger"
+              "danger",
+              "ghost"
             ]
           },
           "codeExample": "variant=\"secondary\"",

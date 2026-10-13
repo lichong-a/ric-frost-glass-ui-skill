@@ -18,7 +18,7 @@
           "name": "variant"
         }
       ],
-      "type": "'primary' | 'secondary' | 'danger'",
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
       "defaultValue": "secondary",
       "upstreamDefault": "'primary'",
       "control": "select",
@@ -34,6 +34,10 @@
         {
           "label": "danger",
           "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
         }
       ],
       "advanced": false,
@@ -90,90 +94,6 @@
       ]
     },
     {
-      "key": "t1.variant",
-      "name": "variant",
-      "label": "外观 · t1",
-      "description": "选择组件内置的外观或效果变体。",
-      "scope": "prop",
-      "target": "t1",
-      "bindings": [
-        {
-          "target": "t1",
-          "name": "variant"
-        }
-      ],
-      "type": "'primary' | 'secondary' | 'danger'",
-      "defaultValue": "secondary",
-      "upstreamDefault": "'primary'",
-      "control": "select",
-      "options": [
-        {
-          "label": "primary",
-          "value": "primary"
-        },
-        {
-          "label": "secondary",
-          "value": "secondary"
-        },
-        {
-          "label": "danger",
-          "value": "danger"
-        }
-      ],
-      "advanced": false,
-      "apply": "live",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
-      "key": "t1.type",
-      "name": "type",
-      "label": "类型 · t1",
-      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
-      "scope": "prop",
-      "target": "t1",
-      "bindings": [
-        {
-          "target": "t1",
-          "name": "type"
-        }
-      ],
-      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
-      "defaultValue": "button",
-      "upstreamDefault": "'button'",
-      "control": "select",
-      "options": [
-        {
-          "label": "button",
-          "value": "button"
-        },
-        {
-          "label": "reset",
-          "value": "reset"
-        },
-        {
-          "label": "submit",
-          "value": "submit"
-        }
-      ],
-      "advanced": false,
-      "apply": "live",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
       "key": "container.height",
       "name": "height",
       "label": "预览框高度",
@@ -193,13 +113,6 @@
   "props": [],
   "inherited": [
     {
-      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
-      "reference": "https://react.dev/reference/react-dom/components/common",
-      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-      "tag": "div",
-      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
-    },
-    {
       "type": "DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
@@ -207,18 +120,25 @@
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     },
     {
-      "type": "DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>",
+      "type": "DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-      "tag": "p",
+      "tag": "button",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "ul",
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     }
   ],
-  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\n\nconst ownedStyles={...ownedStyles0};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessChipDemo() {\n  const initial=['知识','文档','服务']; const [chips,setChips]=useState(initial);\n  return <BusinessDemo title=\"Chip\" description=\"移除已选关键词，空状态保留恢复入口。\">\n    <div data-ui=\"aw-business-row\" className={cn(\"aw-business-row\")}>{chips.map(label=><span data-ui=\"aw-business-item\" key={label} className={cn(\"aw-business-item aw-business-row\")}><span>{label}</span><Button  aria-label={'移除'+label} onClick={()=>setChips(current=>current.filter(item=>item!==label))} /*__AW_PROPS_t0__*/ >×</Button></span>)}</div>{!chips.length?<p role=\"status\">所有关键词已移除。</p>:null}<Button  onClick={()=>setChips(initial)} /*__AW_PROPS_t1__*/ >恢复关键词</Button>\n  </BusinessDemo>;\n}\n",
+  "usageTemplate": "import { useCallback, useRef, useState } from 'react';\nimport { AnimatePresence, motion, useIsPresent } from 'motion/react';\nimport { X } from 'lucide-react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { useBusinessReducedMotion } from '../../motion-preference';\nimport styles from './business-chip.module.css';\n\nfunction KeywordChip({ label, reduced, onRemove, registerButton }: {\n  label: string;\n  reduced: boolean;\n  onRemove: (label: string) => void;\n  registerButton: (label: string, node: HTMLButtonElement | null) => void;\n}) {\n  const present = useIsPresent();\n\n  function remove() {\n    onRemove(label);\n  }\n\n  const buttonRef = useCallback((node: HTMLButtonElement | null) => {\n    registerButton(label, node);\n  }, [label, registerButton]);\n\n  return (\n    <motion.li\n      className={styles.chip}\n      data-motion={reduced ? 'reduce' : 'allow'}\n      layout={reduced ? false : 'position'}\n      inert={!present}\n      aria-hidden={!present || undefined}\n      initial={reduced ? false : { opacity: 0, y: 6, scale: 0.9 }}\n      animate={{ opacity: 1, y: 0, scale: 1 }}\n      exit={{ opacity: 0, y: reduced ? 0 : -4, scale: reduced ? 1 : 0.88 }}\n      transition={{ duration: reduced ? 0 : 0.18 }}\n    >\n      <span className={styles.label}>{label}</span>\n      <button ref={buttonRef} className={styles.remove} type=\"button\" aria-label={'移除' + label} onClick={remove}>\n        <X size={12} aria-hidden=\"true\" />\n      </button>\n    </motion.li>\n  );\n}\n\nexport default function BusinessChipDemo() {\n  const initial = ['知识', '文档', '服务'];\n  const [chips, setChips] = useState(initial);\n  const reduced = useBusinessReducedMotion();\n  const chipButtons = useRef(new Map<string, HTMLButtonElement>());\n  const restoreRef = useRef<HTMLButtonElement>(null);\n\n  const registerButton = useCallback((label: string, node: HTMLButtonElement | null) => {\n    if (node) chipButtons.current.set(label, node);\n    else chipButtons.current.delete(label);\n  }, []);\n\n  function removeChip(label: string) {\n    const index = chips.indexOf(label);\n    const next = chips.filter(item => item !== label);\n    const moveFocus = chipButtons.current.get(label) === document.activeElement;\n    setChips(next);\n    if (moveFocus) {\n      const nextLabel = next[Math.min(index, next.length - 1)];\n      const nextButton = nextLabel ? chipButtons.current.get(nextLabel) : restoreRef.current;\n      nextButton?.focus();\n    }\n  }\n\n  function restoreChips() {\n    setChips(initial);\n  }\n\n  return (\n    <BusinessDemo title=\"Chip\" description=\"移除已选关键词，空状态保留恢复入口。\">\n      <ul className={styles.list} aria-label=\"已选关键词\">\n        <AnimatePresence initial={false}>\n          {chips.map(label => (\n            <KeywordChip key={label} label={label} reduced={reduced} onRemove={removeChip} registerButton={registerButton} />\n          ))}\n        </AnimatePresence>\n      </ul>\n      <AnimatePresence>\n        {!chips.length ? (\n          <motion.p\n            className={styles.empty}\n            role=\"status\"\n            initial={reduced ? false : { opacity: 0, y: 4 }}\n            animate={{ opacity: 1, y: 0 }}\n            exit={{ opacity: 0 }}\n            transition={{ duration: reduced ? 0 : 0.16 }}\n          >所有关键词已移除。</motion.p>\n        ) : null}\n      </AnimatePresence>\n      <Button ref={restoreRef}  data-size=\"sm\" onClick={restoreChips} /*__AW_PROPS_t0__*/ >恢复关键词</Button>\n    </BusinessDemo>\n  );\n}\n",
   "targets": [
     {
       "id": "t0",
-      "name": "Button · t0",
+      "name": "Button",
       "sourcePath": "src/business/components/Button.tsx",
       "props": [
         {
@@ -291,16 +211,15 @@
             "line": 2171
           },
           "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>×</>}",
+          "codeExample": "children={<>恢复关键词</>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<>×</>}",
             "children={<>恢复关键词</>}"
           ]
         },
         {
           "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
           "required": false,
           "defaultExpression": "'primary'",
           "defaultSource": {
@@ -315,7 +234,8 @@
           "options": [
             "primary",
             "secondary",
-            "danger"
+            "danger",
+            "ghost"
           ],
           "editable": true,
           "source": {
@@ -327,7 +247,8 @@
             "options": [
               "primary",
               "secondary",
-              "danger"
+              "danger",
+              "ghost"
             ]
           },
           "codeExample": "variant=\"secondary\"",
@@ -348,151 +269,10 @@
             "line": 8
           },
           "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
-          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
-        }
-      ],
-      "inherited": [
-        {
-          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "reference": "https://react.dev/reference/react-dom/components/common",
-          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
-        }
-      ]
-    },
-    {
-      "id": "t1",
-      "name": "Button · t1",
-      "sourcePath": "src/business/components/Button.tsx",
-      "props": [
-        {
-          "name": "type",
-          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
-          "required": false,
-          "defaultExpression": "'button'",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "button",
-          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
-          "control": "enum",
-          "valueKind": "enum",
-          "options": [
-            "button",
-            "reset",
-            "submit"
-          ],
-          "editable": true,
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2971
-          },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "details": {
-            "kind": "enum",
-            "options": [
-              "button",
-              "reset",
-              "submit"
-            ]
-          },
-          "codeExample": "type={\"button\"}"
-        },
-        {
-          "name": "className",
-          "type": "string | undefined",
-          "required": false,
-          "defaultExpression": "''",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "",
-          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
-          "control": "text",
-          "valueKind": "string",
-          "editable": true,
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2700
-          },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "className={\"\"}"
-        },
-        {
-          "name": "children",
-          "type": "ReactNode",
-          "required": false,
-          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
-          "control": "code",
-          "valueKind": "react-node",
-          "editable": false,
-          "source": {
-            "path": "node_modules/@types/react/index.d.ts",
-            "line": 2171
-          },
-          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>×</>}",
-          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<>×</>}",
-            "children={<>恢复关键词</>}"
+            "ref={restoreRef}"
           ]
-        },
-        {
-          "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
-          "required": false,
-          "defaultExpression": "'primary'",
-          "defaultSource": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8,
-            "kind": "parameter"
-          },
-          "defaultValue": "primary",
-          "description": "选择组件内置的外观或效果变体。",
-          "control": "enum",
-          "valueKind": "enum",
-          "options": [
-            "primary",
-            "secondary",
-            "danger"
-          ],
-          "editable": true,
-          "source": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8
-          },
-          "details": {
-            "kind": "enum",
-            "options": [
-              "primary",
-              "secondary",
-              "danger"
-            ]
-          },
-          "codeExample": "variant=\"secondary\"",
-          "usageExamples": [
-            "variant=\"secondary\""
-          ]
-        },
-        {
-          "name": "ref",
-          "type": "Ref<HTMLButtonElement>",
-          "required": false,
-          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
-          "control": "code",
-          "valueKind": "ref",
-          "editable": false,
-          "source": {
-            "path": "src/business/components/Button.tsx",
-            "line": 8
-          },
-          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
-          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
         }
       ],
       "inherited": [

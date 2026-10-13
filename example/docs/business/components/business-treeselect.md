@@ -70,7 +70,7 @@ export default function BusinessTreeSelectDemo() {
 | `Button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
 | `Button.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `Button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
 | `Button.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 | `Popover.open` | `boolean` | 是 | `未指定` | 是否展开或显示内容，由调用方控制。 |
 | `Popover.onClose` | `() => void` | 是 | `未指定` | 请求关闭弹层、对话框或提示时调用，调用方同步更新 open 状态。 |
@@ -155,7 +155,7 @@ onToggle={key=>setExpanded(current=>current.includes(key)?current.filter(value=>
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
 | `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 | `t2.minWidth` | `280` | number | 不限 ~ 不限 | 即时应用 |
 | `t3.nodes` | `[{"key":"workspace","label":"工作空间","children":[{"key":"agents","label":"智能体","children":[{"key":"research","label":"资料助理"},{"key":"service","label":"服务助理"}]},{"key":"skills","label":"技能","children":[{"key":"writing","label":"文档写作"},{"key":"search","label":"知识检索"}]}]}]` | json | 不限 ~ 不限 | 即时应用 |

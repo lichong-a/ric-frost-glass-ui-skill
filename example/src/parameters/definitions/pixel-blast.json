@@ -19,7 +19,7 @@
         }
       ],
       "type": "string",
-      "defaultValue": "#a6b39a",
+      "defaultValue": "#b19eef",
       "upstreamDefault": "'#B497CF'",
       "control": "color",
       "advanced": false,
@@ -93,7 +93,7 @@
         }
       ],
       "type": "number",
-      "defaultValue": 4,
+      "defaultValue": 5,
       "upstreamDefault": "3",
       "control": "number",
       "advanced": false,
@@ -149,7 +149,7 @@
         }
       ],
       "type": "number",
-      "defaultValue": 0.85,
+      "defaultValue": 1.35,
       "upstreamDefault": "1",
       "control": "number",
       "advanced": false,
@@ -177,7 +177,7 @@
         }
       ],
       "type": "boolean",
-      "defaultValue": true,
+      "defaultValue": false,
       "upstreamDefault": "false",
       "control": "switch",
       "advanced": false,
@@ -205,8 +205,36 @@
         }
       ],
       "type": "number",
-      "defaultValue": 0.035,
+      "defaultValue": 0.12,
       "upstreamDefault": "0.1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.liquidRadius",
+      "name": "liquidRadius",
+      "label": "liquidRadius · t0",
+      "description": "液体半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "liquidRadius"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 1.2,
+      "upstreamDefault": "1",
       "control": "number",
       "advanced": true,
       "apply": "rebuild",
@@ -261,8 +289,36 @@
         }
       ],
       "type": "number",
-      "defaultValue": 0.8,
+      "defaultValue": 1.5,
       "upstreamDefault": "1",
+      "control": "number",
+      "advanced": true,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.rippleThickness",
+      "name": "rippleThickness",
+      "label": "rippleThickness · t0",
+      "description": "波纹厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "rippleThickness"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.12,
+      "upstreamDefault": "0.1",
       "control": "number",
       "advanced": true,
       "apply": "rebuild",
@@ -289,10 +345,38 @@
         }
       ],
       "type": "number",
-      "defaultValue": 0.25,
+      "defaultValue": 0.5,
       "upstreamDefault": "0.5",
       "control": "number",
       "advanced": false,
+      "apply": "rebuild",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.edgeFade",
+      "name": "edgeFade",
+      "label": "edgeFade · t0",
+      "description": "边缘淡出，控制 pixel blast 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "edgeFade"
+        }
+      ],
+      "type": "number",
+      "defaultValue": 0.15,
+      "upstreamDefault": "0.5",
+      "control": "number",
+      "advanced": true,
       "apply": "rebuild",
       "resources": [
         "@asset/restoration/chromatic-bloom.svg",
@@ -388,34 +472,6 @@
       ]
     },
     {
-      "key": "t0.liquidRadius",
-      "name": "liquidRadius",
-      "label": "liquidRadius · t0",
-      "description": "液体半径，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
-      "scope": "prop",
-      "target": "t0",
-      "bindings": [
-        {
-          "target": "t0",
-          "name": "liquidRadius"
-        }
-      ],
-      "type": "number",
-      "defaultValue": 1,
-      "upstreamDefault": "1",
-      "control": "number",
-      "advanced": true,
-      "apply": "rebuild",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
       "key": "t0.pixelSizeJitter",
       "name": "pixelSizeJitter",
       "label": "pixelSizeJitter · t0",
@@ -431,34 +487,6 @@
       "type": "number",
       "defaultValue": 0,
       "upstreamDefault": "0",
-      "control": "number",
-      "advanced": true,
-      "apply": "rebuild",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
-      "key": "t0.rippleThickness",
-      "name": "rippleThickness",
-      "label": "rippleThickness · t0",
-      "description": "波纹厚度，决定几何、布局或绘制尺寸；数值与 CSS 字符串支持按类型设置。",
-      "scope": "prop",
-      "target": "t0",
-      "bindings": [
-        {
-          "target": "t0",
-          "name": "rippleThickness"
-        }
-      ],
-      "type": "number",
-      "defaultValue": 0.1,
-      "upstreamDefault": "0.1",
       "control": "number",
       "advanced": true,
       "apply": "rebuild",
@@ -515,34 +543,6 @@
       "type": "number",
       "defaultValue": 4.5,
       "upstreamDefault": "4.5",
-      "control": "number",
-      "advanced": true,
-      "apply": "rebuild",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
-      "key": "t0.edgeFade",
-      "name": "edgeFade",
-      "label": "edgeFade · t0",
-      "description": "边缘淡出，控制 pixel blast 的对应渲染或交互参数。",
-      "scope": "prop",
-      "target": "t0",
-      "bindings": [
-        {
-          "target": "t0",
-          "name": "edgeFade"
-        }
-      ],
-      "type": "number",
-      "defaultValue": 0.5,
-      "upstreamDefault": "0.5",
       "control": "number",
       "advanced": true,
       "apply": "rebuild",
@@ -659,9 +659,9 @@
         "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
         "line": 36
       },
-      "codeExample": "pixelSize={4}",
+      "codeExample": "pixelSize={5}",
       "usageExamples": [
-        "pixelSize={4}"
+        "pixelSize={5}"
       ]
     },
     {
@@ -683,9 +683,9 @@
         "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
         "line": 37
       },
-      "codeExample": "color={palette.sage}",
+      "codeExample": "color=\"#b19eef\"",
       "usageExamples": [
-        "color={palette.sage}"
+        "color=\"#b19eef\""
       ]
     },
     {
@@ -796,9 +796,9 @@
         "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
         "line": 42
       },
-      "codeExample": "patternDensity={0.85}",
+      "codeExample": "patternDensity={1.35}",
       "usageExamples": [
-        "patternDensity={0.85}"
+        "patternDensity={1.35}"
       ]
     },
     {
@@ -827,9 +827,9 @@
           true
         ]
       },
-      "codeExample": "liquid",
+      "codeExample": "liquid={false}",
       "usageExamples": [
-        "liquid"
+        "liquid={false}"
       ]
     },
     {
@@ -851,9 +851,9 @@
         "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
         "line": 44
       },
-      "codeExample": "liquidStrength={0.035}",
+      "codeExample": "liquidStrength={0.12}",
       "usageExamples": [
-        "liquidStrength={0.035}"
+        "liquidStrength={0.12}"
       ]
     },
     {
@@ -875,7 +875,10 @@
         "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
         "line": 45
       },
-      "codeExample": "liquidRadius={1}"
+      "codeExample": "liquidRadius={1.2}",
+      "usageExamples": [
+        "liquidRadius={1.2}"
+      ]
     },
     {
       "name": "pixelSizeJitter",
@@ -948,9 +951,9 @@
         "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
         "line": 48
       },
-      "codeExample": "rippleIntensityScale={0.8}",
+      "codeExample": "rippleIntensityScale={1.5}",
       "usageExamples": [
-        "rippleIntensityScale={0.8}"
+        "rippleIntensityScale={1.5}"
       ]
     },
     {
@@ -972,7 +975,10 @@
         "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
         "line": 49
       },
-      "codeExample": "rippleThickness={0.1}"
+      "codeExample": "rippleThickness={0.12}",
+      "usageExamples": [
+        "rippleThickness={0.12}"
+      ]
     },
     {
       "name": "rippleSpeed",
@@ -1066,9 +1072,9 @@
         "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
         "line": 53
       },
-      "codeExample": "speed={0.25}",
+      "codeExample": "speed={0.5}",
       "usageExamples": [
-        "speed={0.25}"
+        "speed={0.5}"
       ]
     },
     {
@@ -1121,7 +1127,10 @@
         "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
         "line": 55
       },
-      "codeExample": "edgeFade={0.5}"
+      "codeExample": "edgeFade={0.15}",
+      "usageExamples": [
+        "edgeFade={0.15}"
+      ]
     },
     {
       "name": "noiseAmount",
@@ -1146,7 +1155,7 @@
     }
   ],
   "inherited": [],
-  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast';\n\n\n/** Agent Wan natural-tone preset for the real Pixel Blast component. */\nexport default function PixelBlastDemo() {\n  return (\n    <div className=\"aw-demo-stage\" data-layout=\"full\" data-canvas=\"dark\">\n      <div style={{ width: '100%', height: 560, position: 'relative' }}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n    </div>\n  );\n}\n",
+  "usageTemplate": "import Component from '../../../.upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast';\nimport styles from './pixel-blast.module.css';\n\n/** Visible preset for the locked Pixel Blast component. */\nexport default function PixelBlastDemo() {\n  return (\n    <div className={styles.stage} data-visual-demo=\"pixel-blast\">\n      <div className={styles.effect}>\n        <Component\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n           /*__AW_PROPS_t0__*/\n        />\n      </div>\n      <p className={styles.hint}>点击触发像素波纹 · 可在参数区启用液体形变</p>\n    </div>\n  );\n}\n",
   "targets": [
     {
       "id": "t0",
@@ -1211,9 +1220,9 @@
             "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
             "line": 36
           },
-          "codeExample": "pixelSize={4}",
+          "codeExample": "pixelSize={5}",
           "usageExamples": [
-            "pixelSize={4}"
+            "pixelSize={5}"
           ]
         },
         {
@@ -1235,9 +1244,9 @@
             "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
             "line": 37
           },
-          "codeExample": "color={palette.sage}",
+          "codeExample": "color=\"#b19eef\"",
           "usageExamples": [
-            "color={palette.sage}"
+            "color=\"#b19eef\""
           ]
         },
         {
@@ -1348,9 +1357,9 @@
             "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
             "line": 42
           },
-          "codeExample": "patternDensity={0.85}",
+          "codeExample": "patternDensity={1.35}",
           "usageExamples": [
-            "patternDensity={0.85}"
+            "patternDensity={1.35}"
           ]
         },
         {
@@ -1379,9 +1388,9 @@
               true
             ]
           },
-          "codeExample": "liquid",
+          "codeExample": "liquid={false}",
           "usageExamples": [
-            "liquid"
+            "liquid={false}"
           ]
         },
         {
@@ -1403,9 +1412,9 @@
             "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
             "line": 44
           },
-          "codeExample": "liquidStrength={0.035}",
+          "codeExample": "liquidStrength={0.12}",
           "usageExamples": [
-            "liquidStrength={0.035}"
+            "liquidStrength={0.12}"
           ]
         },
         {
@@ -1427,7 +1436,10 @@
             "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
             "line": 45
           },
-          "codeExample": "liquidRadius={1}"
+          "codeExample": "liquidRadius={1.2}",
+          "usageExamples": [
+            "liquidRadius={1.2}"
+          ]
         },
         {
           "name": "pixelSizeJitter",
@@ -1500,9 +1512,9 @@
             "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
             "line": 48
           },
-          "codeExample": "rippleIntensityScale={0.8}",
+          "codeExample": "rippleIntensityScale={1.5}",
           "usageExamples": [
-            "rippleIntensityScale={0.8}"
+            "rippleIntensityScale={1.5}"
           ]
         },
         {
@@ -1524,7 +1536,10 @@
             "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
             "line": 49
           },
-          "codeExample": "rippleThickness={0.1}"
+          "codeExample": "rippleThickness={0.12}",
+          "usageExamples": [
+            "rippleThickness={0.12}"
+          ]
         },
         {
           "name": "rippleSpeed",
@@ -1618,9 +1633,9 @@
             "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
             "line": 53
           },
-          "codeExample": "speed={0.25}",
+          "codeExample": "speed={0.5}",
           "usageExamples": [
-            "speed={0.25}"
+            "speed={0.5}"
           ]
         },
         {
@@ -1673,7 +1688,10 @@
             "path": ".upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast.tsx",
             "line": 55
           },
-          "codeExample": "edgeFade={0.5}"
+          "codeExample": "edgeFade={0.15}",
+          "usageExamples": [
+            "edgeFade={0.15}"
+          ]
         },
         {
           "name": "noiseAmount",

@@ -45,7 +45,7 @@ export default function SwarmCursorDemo() {
     <div className={styles.stage} data-visual-demo="swarm-cursor">
       <Component
 
-          color={"#c5efd9"} accentColor={"#ffffff"} count={12} size={12} speed={2.5} spread={90} wander={0.25} trail={0.8} glow={0.8} opacity={1} scatterOnClick={true} style={{ "width": "100%", "height": "100%" }} merge={0.77} separation={0.15} enabled={true} >
+          color={"#c5efd9"} accentColor={"#ffffff"} count={12} size={3} speed={2.5} spread={90} wander={0.25} trail={0.8} glow={0.8} opacity={1} scatterOnClick={true} style={{ "width": "100%", "height": "100%" }} merge={0.77} separation={0.15} enabled={true} >
         <div className={styles.content}>
           <span className={styles.eyebrow}>SWARM CURSOR</span>
           <h2 className={styles.title}>随指针流动</h2>
@@ -123,7 +123,7 @@ style={{ width: '100%', height: '100%' }}
 | `t0.color` | `"#c5efd9"` | color | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.accentColor` | `"#ffffff"` | color | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.count` | `12` | range | 1 ~ 120 个 | 调节结束后重建 |
-| `t0.size` | `12` | range | 2 ~ 36 px | 调节结束后重建 |
+| `t0.size` | `3` | range | 2 ~ 36 px | 调节结束后重建 |
 | `t0.speed` | `2.5` | range | 0.1 ~ 5 倍率 | 调节结束后重建 |
 | `t0.spread` | `90` | range | 20 ~ 240 px | 调节结束后重建 |
 | `t0.wander` | `0.25` | number | 不限 ~ 不限 | 调节结束后重建 |

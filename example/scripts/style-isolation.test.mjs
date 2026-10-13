@@ -4,8 +4,21 @@ import { readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import postcss from 'postcss';
+import { preprocessCSS } from 'vite';
 
 const source = fileURLToPath(new URL('../src/', import.meta.url));
+
+test('merging layout styles retains the button component own CSS namespace', async () => {
+  const directory = path.join(source, 'business/components');
+  const compile = async name => {
+    const filename = path.join(directory, `${name}.module.css`);
+    return (await preprocessCSS(await readFile(filename, 'utf8'), filename, {})).modules;
+  };
+  const [button, layout] = await Promise.all([compile('Button'), compile('DemoLayout')]);
+  const merged = { ...button, ...layout };
+  assert.ok(button['aw-button']);
+  assert.equal(merged['aw-button'], button['aw-button'], 'layout references must not replace the button skin with an unrelated module class');
+});
 
 test('business component modules never inject page selectors or universal motion rules', async () => {
   const directory = path.join(source, 'business/components');

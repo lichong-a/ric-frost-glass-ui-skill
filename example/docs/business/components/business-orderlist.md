@@ -27,21 +27,24 @@
 ```tsx
 // 当前 OrderList 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/DemoLayout.module.css';
-import { componentClasses } from '../../class-names';
 import { useState } from 'react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Button } from '../../components/Button';
 import { workItems } from '../../data';
 import { ReorderItems } from '../../components/ReorderItems';
+import styles from './business-orderlist.module.css';
 
-const ownedStyles={...ownedStyles0};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function BusinessOrderListDemo() {
-  const [items,setItems]=useState([{ "id": "a", "title": "资料整理", "category": "知识", "quantity": 12 }, { "id": "b", "title": "合同校对", "category": "文档", "quantity": 8 }, { "id": "c", "title": "客户跟进", "category": "服务", "quantity": 20 }, { "id": "d", "title": "会议纪要", "category": "文档", "quantity": 6 }, { "id": "e", "title": "工单分配", "category": "服务", "quantity": 16 }, { "id": "f", "title": "技能归档", "category": "知识", "quantity": 9 }]);
-  return <BusinessDemo title="OrderList" description="用上下移按钮重新排列本地任务，排序结果即时保存到当前示例状态。">
-    <ReorderItems items={items} onChange={setItems} /><Button  onClick={()=>setItems(workItems)} variant={"secondary"} type={"button"} >恢复初始顺序</Button><p data-ui="aw-business-status" className={cn("aw-business-status")} role="status">当前顺序：{items.map(item=>item.title).join('、')}</p>
-  </BusinessDemo>;
+  const [items, setItems] = useState([{ "id": "a", "title": "资料整理", "category": "知识", "quantity": 12 }, { "id": "b", "title": "合同校对", "category": "文档", "quantity": 8 }, { "id": "c", "title": "客户跟进", "category": "服务", "quantity": 20 }, { "id": "d", "title": "会议纪要", "category": "文档", "quantity": 6 }, { "id": "e", "title": "工单分配", "category": "服务", "quantity": 16 }, { "id": "f", "title": "技能归档", "category": "知识", "quantity": 9 }]);
+  return (
+    <BusinessDemo title="OrderList" description="拖动任务把手重新排列，也可用键盘或上下移按钮调整；顺序保留在当前示例状态。">
+      <ReorderItems items={items} onChange={setItems} />
+      <div className={styles.footer}>
+        <Button  data-size="sm" onClick={() => setItems(workItems)} variant={"secondary"} type={"button"} >恢复初始顺序</Button>
+        <p data-ui="aw-business-status" className={styles.status} role="status">当前顺序：{items.map(item => item.title).join('、')}</p>
+      </div>
+    </BusinessDemo>
+  );
 }
 ```
 
@@ -54,7 +57,7 @@ export default function BusinessOrderListDemo() {
 | `Button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
 | `Button.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `Button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
 | `Button.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 
 **继承的原生属性：**
@@ -92,7 +95,7 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 | `state.items` | `[{"id":"a","title":"资料整理","category":"知识","quantity":12},{"id":"b","title":"合同校对","category":"文档","quantity":8},{"id":"c","title":"客户跟进","category":"服务","quantity":20},{"id":"d","title":"会议纪要","category":"文档","quantity":6},{"id":"e","title":"工单分配","category":"服务","quantity":16},{"id":"f","title":"技能归档","category":"知识","quantity":9}]` | json | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 

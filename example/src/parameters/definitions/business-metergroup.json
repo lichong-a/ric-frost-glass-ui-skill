@@ -256,6 +256,13 @@
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     },
     {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "span",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
       "type": "DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
@@ -263,7 +270,7 @@
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     }
   ],
-  "usageTemplate": "import { componentClasses } from '../../class-names';\nimport { RangeSlider } from '../../components/RangeSlider';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Field } from '../../components/Field';\n\nconst ownedStyles={};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessMeterGroupDemo() {\n  const [knowledge,setKnowledge]=useState(/*__AW_STATE_state.knowledge__*/); const groups=[{label:'知识',value:knowledge,color:'var(--aw-palette-primary)'},{label:'文档',value:Math.round((100-knowledge)*0.6),color:'var(--aw-palette-sand)'},{label:'服务',value:100-knowledge-Math.round((100-knowledge)*0.6),color:'var(--aw-palette-terra)'}];\n  return <BusinessDemo title=\"MeterGroup\" description=\"分组展示资料容量分配，调整知识占比后其他类别自动保持总和100%。\">\n    <Field  label={`知识占比：${knowledge}%`} /*__AW_PROPS_t0__*/ ><RangeSlider   value={knowledge} onChange={event=>setKnowledge(Number(event.target.value))} /*__AW_PROPS_t1__*/  /></Field><div style={{display:'flex',height:24,borderRadius:12,overflow:'hidden'}} aria-hidden=\"true\">{groups.map(group=><div key={group.label} style={{width:`${group.value}%`,background:group.color}} />)}</div><ul>{groups.map(group=><li key={group.label}>{group.label}：<meter   value={group.value} aria-label={group.label+'占比'} /*__AW_PROPS_t2__*/  /> {group.value}%</li>)}</ul>\n  </BusinessDemo>;\n}\n",
+  "usageTemplate": "import { useState, type ChangeEvent } from 'react';\nimport { motion } from 'motion/react';\nimport { RangeSlider } from '../../components/RangeSlider';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Field } from '../../components/Field';\nimport { useBusinessReducedMotion } from '../../motion-preference';\nimport styles from './business-metergroup.module.css';\n\nexport default function BusinessMeterGroupDemo() {\n  const [knowledge, setKnowledge] = useState(/*__AW_STATE_state.knowledge__*/);\n  const reduced = useBusinessReducedMotion();\n  const groups = [\n    { label: '知识', value: knowledge, color: 'var(--aw-palette-primary)' },\n    { label: '文档', value: Math.round((100 - knowledge) * 0.6), color: 'var(--aw-palette-scene-sand)' },\n    { label: '服务', value: 100 - knowledge - Math.round((100 - knowledge) * 0.6), color: 'var(--aw-palette-effect-terra)' },\n  ];\n  const transition = { duration: reduced ? 0 : 0.4, ease: [0.22, 1, 0.36, 1] as const };\n\n  function changeKnowledge(event: ChangeEvent<HTMLInputElement>) {\n    setKnowledge(Number(event.target.value));\n  }\n\n  return (\n    <BusinessDemo title=\"MeterGroup\" description=\"分组展示资料容量分配，调整知识占比后其他类别自动保持总和100%。\">\n      <Field  label={`知识占比：${knowledge}%`} /*__AW_PROPS_t0__*/ >\n        <RangeSlider   value={knowledge} onChange={changeKnowledge} /*__AW_PROPS_t1__*/  />\n      </Field>\n      <div className={styles.allocation} aria-hidden=\"true\">\n        {groups.map(group => (\n          <motion.div\n            key={group.label}\n            className={styles.segment}\n            style={{ background: group.color }}\n            initial={false}\n            animate={{ width: `${group.value}%` }}\n            transition={transition}\n          />\n        ))}\n      </div>\n      <ul className={styles.legend} aria-label=\"资料容量分配\">\n        {groups.map(group => (\n          <li key={group.label} className={styles.item}>\n            <div className={styles.heading}>\n              <span className={styles.dot} style={{ background: group.color }} aria-hidden=\"true\" />\n              <span>{group.label}</span>\n              <span className={styles.value} aria-hidden=\"true\">{group.value}%</span>\n            </div>\n            <meter className={styles.meterSemantics}   value={group.value} aria-label={group.label + '占比'} /*__AW_PROPS_t2__*/ >{group.value}%</meter>\n            <div className={styles.track} aria-hidden=\"true\">\n              <motion.span\n                className={styles.fill}\n                style={{ background: group.color }}\n                initial={false}\n                animate={{ scaleX: group.value / 100 }}\n                transition={transition}\n              />\n            </div>\n          </li>\n        ))}\n      </ul>\n    </BusinessDemo>\n  );\n}\n",
   "targets": [
     {
       "id": "t0",
@@ -299,10 +306,10 @@
             "path": "src/business/components/Field.tsx",
             "line": 7
           },
-          "codeExample": "children={<><RangeSlider min=\"0\" max=\"100\" value={knowledge} onChange={event=>setKnowledge(Number(event.target.value))} /></>}",
+          "codeExample": "children={<><RangeSlider min=\"0\" max=\"100\" value={knowledge} onChange={changeKnowledge} /></>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<><RangeSlider min=\"0\" max=\"100\" value={knowledge} onChange={event=>setKnowledge(Number(event.target.value))} /></>}"
+            "children={<><RangeSlider min=\"0\" max=\"100\" value={knowledge} onChange={changeKnowledge} /></>}"
           ]
         },
         {
@@ -566,6 +573,20 @@
       "name": "meter",
       "props": [
         {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "usageExamples": [
+            "className={styles.meterSemantics}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          }
+        },
+        {
           "name": "min",
           "type": "string | number | undefined",
           "required": false,
@@ -613,12 +634,26 @@
           "required": false,
           "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
           "usageExamples": [
-            "aria-label={group.label+'占比'}"
+            "aria-label={group.label + '占比'}"
           ],
           "inheritedFrom": "DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>",
           "source": {
             "path": "node_modules/@types/react/index.d.ts",
             "line": 2507
+          }
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "usageExamples": [
+            "children={<>{group.value}%</>}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<MeterHTMLAttributes<HTMLMeterElement>, HTMLMeterElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
           }
         }
       ],

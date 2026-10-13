@@ -36,13 +36,13 @@ node scripts/example.mjs setup --component pixel-blast
 // 当前 Pixel Blast 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
 import Component from '../../../.upstream/src/ts-default/Backgrounds/PixelBlast/PixelBlast';
+import styles from './pixel-blast.module.css';
 
-
-/** Agent Wan natural-tone preset for the real Pixel Blast component. */
+/** Visible preset for the locked Pixel Blast component. */
 export default function PixelBlastDemo() {
   return (
-    <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
-      <div style={{ width: '100%', height: 560, position: 'relative' }}>
+    <div className={styles.stage} data-visual-demo="pixel-blast">
+      <div className={styles.effect}>
         <Component
 
 
@@ -55,9 +55,13 @@ export default function PixelBlastDemo() {
 
 
 
-           color={"#a6b39a"} variant={"square"} pixelSize={4} patternScale={2} patternDensity={0.85} liquid={true} liquidStrength={0.035} enableRipples={true} rippleIntensityScale={0.8} speed={0.25} transparent={true} autoPauseOffscreen={true} antialias={true} liquidRadius={1} pixelSizeJitter={0} rippleThickness={0.1} rippleSpeed={0.3} liquidWobbleSpeed={4.5} edgeFade={0.5} noiseAmount={0}
+
+
+
+           color={"#b19eef"} variant={"square"} pixelSize={5} patternScale={2} patternDensity={1.35} liquid={false} liquidStrength={0.12} liquidRadius={1.2} enableRipples={true} rippleIntensityScale={1.5} rippleThickness={0.12} speed={0.5} edgeFade={0.15} transparent={true} autoPauseOffscreen={true} antialias={true} pixelSizeJitter={0} rippleSpeed={0.3} liquidWobbleSpeed={4.5} noiseAmount={0}
         />
       </div>
+      <p className={styles.hint}>点击触发像素波纹 · 可在参数区启用液体形变</p>
     </div>
   );
 }
@@ -103,25 +107,25 @@ style={{ width: "100%", minHeight: 240 }}
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.color` | `"#a6b39a"` | color | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.color` | `"#b19eef"` | color | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.variant` | `"square"` | select | "square" / "circle" / "triangle" / "diamond" | 调节结束后重建 |
-| `t0.pixelSize` | `4` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.pixelSize` | `5` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.patternScale` | `2` | number | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.patternDensity` | `0.85` | number | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.liquid` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.liquidStrength` | `0.035` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.patternDensity` | `1.35` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.liquid` | `false` | switch | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.liquidStrength` | `0.12` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.liquidRadius` | `1.2` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.enableRipples` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.rippleIntensityScale` | `0.8` | number | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.speed` | `0.25` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.rippleIntensityScale` | `1.5` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.rippleThickness` | `0.12` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.speed` | `0.5` | number | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.edgeFade` | `0.15` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.transparent` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.autoPauseOffscreen` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.antialias` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.liquidRadius` | `1` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.pixelSizeJitter` | `0` | number | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.rippleThickness` | `0.1` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.rippleSpeed` | `0.3` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.liquidWobbleSpeed` | `4.5` | number | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.edgeFade` | `0.5` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.noiseAmount` | `0` | number | 不限 ~ 不限 | 调节结束后重建 |
 
 ### 演示容器设置

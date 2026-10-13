@@ -27,18 +27,37 @@
 ```tsx
 // 当前 Sidebar 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：680px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/DemoLayout.module.css';
-import { componentClasses } from '../../class-names';
 import { useState } from 'react';
+import { Files, LayoutDashboard, PanelLeftClose, PanelLeftOpen, Settings } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Button } from '../../components/Button';
+import { AnimatedSwap } from '../../components/AnimatedSwap';
+import { useBusinessReducedMotion } from '../../motion-preference';
+import styles from './business-sidebar.module.css';
 
-const ownedStyles={...ownedStyles0};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function BusinessSidebarDemo() {
-  const [collapsed,setCollapsed]=useState(false); const [page,setPage]=useState('概览');
+  const [collapsed, setCollapsed] = useState(false);
+  const [page, setPage] = useState("概览");
+  const reduced = useBusinessReducedMotion();
+  const pages = ['概览', '资料', '设置'];
+  const icons = [LayoutDashboard, Files, Settings];
+
   return <BusinessDemo title="Sidebar" description="折叠侧边导航并切换内容页，选择状态与折叠状态独立保存。">
-    <Button  aria-expanded={!collapsed} onClick={()=>setCollapsed(value=>!value)} variant={"secondary"} type={"button"} >{collapsed?'展开侧栏':'折叠侧栏'}</Button><div data-ui="aw-business-row" className={cn("aw-business-row")} style={{alignItems:'stretch'}}><aside data-ui="aw-business-item" className={cn("aw-business-item")} style={{width:collapsed?64:180}} aria-label="工作空间侧栏"><nav aria-label="工作区导航">{['概览','资料','设置'].map((label,index)=><Button  key={label} aria-label={label} aria-current={page===label?'page':undefined} onClick={()=>setPage(label)} variant={"secondary"} type={"button"} >{collapsed?index+1:label}</Button>)}</nav></aside><section data-ui="aw-business-item" className={cn("aw-business-item")} style={{flex:1}}><h3>{page}</h3><p>当前示例中的{page}内容。</p></section></div>
+    <Button  data-size="sm" className={styles.toggle} aria-expanded={!collapsed} aria-controls="business-workspace-sidebar" onClick={() => setCollapsed(value => !value)} variant={"secondary"} type={"button"} >
+      {collapsed ? <PanelLeftOpen size={16} aria-hidden="true" /> : <PanelLeftClose size={16} aria-hidden="true" />}{collapsed ? '展开侧栏' : '折叠侧栏'}
+    </Button>
+    <div data-ui="aw-business-row" className={styles.workspace} data-collapsed={collapsed} data-motion={reduced ? 'reduce' : 'allow'}>
+      <aside id="business-workspace-sidebar" data-ui="aw-business-item" className={styles.sidebar} aria-label="工作空间侧栏">
+        <div className={styles.sidebarHeading}>{collapsed ? 'AW' : '工作空间'}</div>
+        <nav className={styles.sidebarNavigation} aria-label="工作区导航">{pages.map((label, index) => {
+          const Icon = icons[index];
+          return <Button  className={styles.navigationItem} data-collapsed={collapsed} key={label} aria-label={label} aria-current={page === label ? 'page' : undefined} onClick={() => setPage(label)} variant={"ghost"} type={"button"} >
+            {collapsed ? <span className={styles.pageNumber}>{index + 1}</span> : <><Icon className={styles.pageIcon} size={17} aria-hidden="true" /><span className={styles.pageLabel}>{label}</span></>}
+          </Button>;
+        })}</nav>
+      </aside>
+      <section data-ui="aw-business-item" className={styles.content}><AnimatedSwap value={page}><h3 className={styles.contentTitle}>{page}</h3><p className={styles.contentCopy}>当前示例中的{page}内容。</p></AnimatedSwap></section>
+    </div>
   </BusinessDemo>;
 }
 ```
@@ -50,8 +69,11 @@ export default function BusinessSidebarDemo() {
 | `Button · t0.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
 | `Button · t0.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `Button · t0.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
 | `Button · t0.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+| `AnimatedSwap.children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `AnimatedSwap.value` | `string \| number` | 是 | `未指定` | 当前受控值，由调用方维护并随交互回调更新。 |
+| `AnimatedSwap.className` | `string` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 
 本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
 
@@ -59,6 +81,7 @@ export default function BusinessSidebarDemo() {
 
 - `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
@@ -66,7 +89,7 @@ export default function BusinessSidebarDemo() {
 **children 的真实接入：**
 
 ```tsx
-children={<>{collapsed?'展开侧栏':'折叠侧栏'}</>}
+children={<>{collapsed ? <PanelLeftOpen size={16} aria-hidden="true" /> : <PanelLeftClose size={16} aria-hidden="true" />}{collapsed ? '展开侧栏' : '折叠侧栏'}</>}
 ```
 
 **ref 的真实接入：**
@@ -76,16 +99,23 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 // JSX: ref={elementRef}
 ```
 
+**children 的真实接入：**
+
+```tsx
+children={<><h3 className={styles.contentTitle}>{page}</h3><p className={styles.contentCopy}>当前示例中的{page}内容。</p></>}
+```
+
 ### 本例配置与 DIY
 
 以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t0.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t1.variant` | `"ghost"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `state.page` | `"概览"` | text | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 
 ### 演示容器设置
 

@@ -1,0 +1,51 @@
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--aw-space-3);
+}
+
+.viewport {
+  position: fixed;
+  inset-inline-end: var(--aw-space-5);
+  inset-block-end: var(--aw-space-5);
+  z-index: 100;
+  inline-size: min(380px, calc(100% - 2 * var(--aw-space-5)));
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--aw-space-3);
+  padding: var(--aw-space-4);
+  color: var(--aw-color-text-primary);
+  background: var(--aw-palette-ivory);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-control);
+  border-radius: var(--aw-radius-scale-r16);
+  box-shadow: var(--aw-shadow-control-hover);
+  pointer-events: auto;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  inline-size: var(--aw-space-8);
+  block-size: var(--aw-space-8);
+  color: var(--aw-color-state-info-fg);
+  background: var(--aw-color-state-info-bg);
+  border-radius: var(--aw-radius-scale-pill);
+}
+
+.toast[data-tone='success'] .icon {
+  color: var(--aw-color-state-success-fg);
+  background: var(--aw-color-state-success-bg);
+}
+
+.text {
+  flex: 1;
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+  font-size: var(--aw-font-size-body);
+  line-height: var(--aw-font-line-height-body);
+}

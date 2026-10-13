@@ -27,21 +27,48 @@
 ```tsx
 // 当前 Paginator 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import { componentClasses } from '../../class-names';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Field } from '../../components/Field';
-import { workItems } from '../../data';
 import { Pager } from '../../components/Pager';
+import { pagerState } from '../../components/pager-state';
 import { AnimatedSelect } from '../../components/AnimatedSelect';
+import { useBusinessReducedMotion } from '../../motion-preference';
+import { workItems } from '../../data';
+import styles from './business-paginator.module.css';
 
-const ownedStyles={};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
 export default function BusinessPaginatorDemo() {
-  const [page,setPage]=useState(0); const [size,setSize]=useState(2);
-  return <BusinessDemo title="Paginator" description="分页浏览本地记录，页容量改变时回到第一页。">
-    <Field  label={"每页数量"} control={false} ><AnimatedSelect  value={String(size)} onChange={value=>{setSize(Number(value));setPage(0);}}  label={"每页数量"} options={[{ "value": "2", "label": "2 项" }, { "value": "3", "label": "3 项" }]} placeholder={"请选择"} disabled={false}  /></Field><ul>{workItems.slice(page*size,page*size+size).map(item=><li key={item.id}>{item.title}</li>)}</ul><Pager page={page} pageSize={size}  onChange={setPage} total={6}  />
-  </BusinessDemo>;
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(2);
+  const reduced = useBusinessReducedMotion();
+  const pagination = pagerState(page, size, workItems.length);
+  const visible = workItems.slice(pagination.start, pagination.end);
+  const sizes = [...new Set([1, 2, 3, pagination.pageSize])].sort((a, b) => a - b);
+  useEffect(() => {
+    if (page !== pagination.current) setPage(pagination.current);
+    if (size !== pagination.pageSize) setSize(pagination.pageSize);
+  }, [page, size, pagination.current, pagination.pageSize, setPage, setSize]);
+  return (
+    <BusinessDemo title="Paginator" description="分页浏览本地记录，页容量改变时回到第一页。">
+      <div className={styles.toolbar}>
+        <Field  label={"每页数量"} control={false} ><AnimatedSelect  value={String(pagination.pageSize)} onChange={value => { setSize(Number(value)); setPage(0); }} options={sizes.map(value => ({ value: String(value), label: `${value} 项` }))} label={"每页数量"} placeholder={"请选择"} disabled={false}  /></Field>
+        <p className={styles.range}>{pagination.total ? `正在浏览第 ${pagination.first}–${pagination.end} 项` : '没有可浏览的记录。'}</p>
+      </div>
+      <ul className={styles.list} aria-label="当前页任务">
+        <AnimatePresence initial={false} mode="popLayout">
+          {visible.map(item => (
+            <motion.li key={item.id} className={styles.item} layout={!reduced} initial={reduced ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? { opacity: 1 } : { opacity: 0 }} transition={{ duration: reduced ? 0 : 0.18 }}>
+              <span className={styles.index}>{String(workItems.indexOf(item) + 1).padStart(2, '0')}</span>
+              <span className={styles.title}>{item.title}<span className={styles.category}>{item.category}</span></span>
+              <span className={styles.quantity}>{item.quantity} 项</span>
+            </motion.li>
+          ))}
+        </AnimatePresence>
+      </ul>
+      <Pager page={page} pageSize={size} total={workItems.length} onChange={setPage} />
+    </BusinessDemo>
+  );
 }
 ```
 
@@ -75,19 +102,19 @@ onChange={setPage}
 **children 的真实接入：**
 
 ```tsx
-children={<><AnimatedSelect label="每页数量" value={String(size)} onChange={value=>{setSize(Number(value));setPage(0);}} options={[{value:"2",label:"2 项"},{value:"3",label:"3 项"}]} /></>}
+children={<><AnimatedSelect label="每页数量" value={String(pagination.pageSize)} onChange={value => { setSize(Number(value)); setPage(0); }} options={sizes.map(value => ({ value: String(value), label: `${value} 项` }))} /></>}
 ```
 
 **options 的真实接入：**
 
 ```tsx
-options={[{value:"2",label:"2 项"},{value:"3",label:"3 项"}]}
+options={sizes.map(value => ({ value: String(value), label: `${value} 项` }))}
 ```
 
 **onChange 的真实接入：**
 
 ```tsx
-onChange={value=>{setSize(Number(value));setPage(0);}}
+onChange={value => { setSize(Number(value)); setPage(0); }}
 ```
 
 ### 本例配置与 DIY
@@ -99,12 +126,10 @@ onChange={value=>{setSize(Number(value));setPage(0);}}
 | `t0.label` | `"每页数量"` | text | 不限 ~ 不限 | 即时应用 |
 | `t0.control` | `false` | switch | 不限 ~ 不限 | 即时应用 |
 | `t1.label` | `"每页数量"` | text | 不限 ~ 不限 | 即时应用 |
-| `t1.options` | `[{"value":"2","label":"2 项"},{"value":"3","label":"3 项"}]` | json | 不限 ~ 不限 | 即时应用 |
 | `t1.placeholder` | `"请选择"` | text | 不限 ~ 不限 | 即时应用 |
 | `t1.disabled` | `false` | switch | 不限 ~ 不限 | 即时应用 |
-| `t2.total` | `6` | number | 不限 ~ 不限 | 即时应用 |
-| `state.page` | `0` | number | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
-| `state.size` | `2` | number | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
+| `state.page` | `0` | number | 0 ~ 不限 | 即时应用；原组件回调同步受控值 |
+| `state.size` | `2` | number | 1 ~ 100 | 即时应用；原组件回调同步受控值 |
 
 ### 演示容器设置
 

@@ -88,68 +88,6 @@
       ]
     },
     {
-      "key": "t1.options",
-      "name": "options",
-      "label": "选项 · t1",
-      "description": "可选择的候选项，显示标签与提交值按选项类型定义。",
-      "scope": "prop",
-      "target": "t1",
-      "bindings": [
-        {
-          "target": "t1",
-          "name": "options"
-        }
-      ],
-      "type": "readonly (string | { value: string; label: string })[]",
-      "defaultValue": [
-        {
-          "value": "2",
-          "label": "2 项"
-        },
-        {
-          "value": "3",
-          "label": "3 项"
-        }
-      ],
-      "control": "json",
-      "shape": {
-        "kind": "array",
-        "items": {
-          "kind": "union",
-          "variants": [
-            {
-              "kind": "string"
-            },
-            {
-              "kind": "object",
-              "properties": {
-                "value": {
-                  "kind": "string"
-                },
-                "label": {
-                  "kind": "string"
-                }
-              },
-              "required": [
-                "value",
-                "label"
-              ]
-            }
-          ]
-        }
-      },
-      "advanced": false,
-      "apply": "live",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
       "key": "t1.placeholder",
       "name": "placeholder",
       "label": "占位文字 · t1",
@@ -194,34 +132,7 @@
       "defaultValue": false,
       "upstreamDefault": "false",
       "control": "switch",
-      "advanced": true,
-      "apply": "live",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
-      "key": "t2.total",
-      "name": "total",
-      "label": "总数 · t2",
-      "description": "参与分页的记录总数。",
-      "scope": "prop",
-      "target": "t2",
-      "bindings": [
-        {
-          "target": "t2",
-          "name": "total"
-        }
-      ],
-      "type": "number",
-      "defaultValue": 6,
-      "control": "number",
-      "advanced": true,
+      "advanced": false,
       "apply": "live",
       "resources": [
         "@asset/restoration/chromatic-bloom.svg",
@@ -236,7 +147,7 @@
       "key": "state.page",
       "name": "page",
       "label": "当前页",
-      "description": "示例的受控状态 page；面板与组件的原有回调同步更新。",
+      "description": "示例的受控状态 page；面板与组件的原有回调同步更新。 零基页码；超出实际结果范围时同步回最后有效页。",
       "scope": "state",
       "type": "number",
       "defaultValue": 0,
@@ -251,6 +162,8 @@
         "@asset/restoration/solar-dunes.svg",
         "@asset/restoration/vermilion-fold.svg"
       ],
+      "min": 0,
+      "step": 1,
       "bindings": [
         {
           "target": "t2",
@@ -262,7 +175,7 @@
       "key": "state.size",
       "name": "size",
       "label": "尺寸",
-      "description": "示例的受控状态 size；面板与组件的原有回调同步更新。",
+      "description": "示例的受控状态 size；面板与组件的原有回调同步更新。 本例编辑器范围为每页 1–100 项；每页数量、内容切片和分页控件共同更新。",
       "scope": "state",
       "type": "number",
       "defaultValue": 2,
@@ -277,10 +190,13 @@
         "@asset/restoration/solar-dunes.svg",
         "@asset/restoration/vermilion-fold.svg"
       ],
+      "min": 1,
+      "max": 100,
+      "step": 1,
       "bindings": [
         {
-          "target": "t1",
-          "name": "value"
+          "target": "t2",
+          "name": "pageSize"
         }
       ]
     },
@@ -377,7 +293,7 @@
     }
   ],
   "inherited": [],
-  "usageTemplate": "import { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Field } from '../../components/Field';\nimport { workItems } from '../../data';\nimport { Pager } from '../../components/Pager';\nimport { AnimatedSelect } from '../../components/AnimatedSelect';\n\nconst ownedStyles={};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessPaginatorDemo() {\n  const [page,setPage]=useState(/*__AW_STATE_state.page__*/); const [size,setSize]=useState(/*__AW_STATE_state.size__*/);\n  return <BusinessDemo title=\"Paginator\" description=\"分页浏览本地记录，页容量改变时回到第一页。\">\n    <Field  /*__AW_PROPS_t0__*/ ><AnimatedSelect  value={String(size)} onChange={value=>{setSize(Number(value));setPage(0);}}  /*__AW_PROPS_t1__*/  /></Field><ul>{workItems.slice(page*size,page*size+size).map(item=><li key={item.id}>{item.title}</li>)}</ul><Pager page={page} pageSize={size}  onChange={setPage} /*__AW_PROPS_t2__*/  />\n  </BusinessDemo>;\n}\n",
+  "usageTemplate": "import { useEffect, useState } from 'react';\nimport { AnimatePresence, motion } from 'motion/react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Field } from '../../components/Field';\nimport { Pager } from '../../components/Pager';\nimport { pagerState } from '../../components/pager-state';\nimport { AnimatedSelect } from '../../components/AnimatedSelect';\nimport { useBusinessReducedMotion } from '../../motion-preference';\nimport { workItems } from '../../data';\nimport styles from './business-paginator.module.css';\n\nexport default function BusinessPaginatorDemo() {\n  const [page, setPage] = useState(/*__AW_STATE_state.page__*/);\n  const [size, setSize] = useState(/*__AW_STATE_state.size__*/);\n  const reduced = useBusinessReducedMotion();\n  const pagination = pagerState(page, size, workItems.length);\n  const visible = workItems.slice(pagination.start, pagination.end);\n  const sizes = [...new Set([1, 2, 3, pagination.pageSize])].sort((a, b) => a - b);\n  useEffect(() => {\n    if (page !== pagination.current) setPage(pagination.current);\n    if (size !== pagination.pageSize) setSize(pagination.pageSize);\n  }, [page, size, pagination.current, pagination.pageSize, setPage, setSize]);\n  return (\n    <BusinessDemo title=\"Paginator\" description=\"分页浏览本地记录，页容量改变时回到第一页。\">\n      <div className={styles.toolbar}>\n        <Field  /*__AW_PROPS_t0__*/ ><AnimatedSelect  value={String(pagination.pageSize)} onChange={value => { setSize(Number(value)); setPage(0); }} options={sizes.map(value => ({ value: String(value), label: `${value} 项` }))} /*__AW_PROPS_t1__*/  /></Field>\n        <p className={styles.range}>{pagination.total ? `正在浏览第 ${pagination.first}–${pagination.end} 项` : '没有可浏览的记录。'}</p>\n      </div>\n      <ul className={styles.list} aria-label=\"当前页任务\">\n        <AnimatePresence initial={false} mode=\"popLayout\">\n          {visible.map(item => (\n            <motion.li key={item.id} className={styles.item} layout={!reduced} initial={reduced ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? { opacity: 1 } : { opacity: 0 }} transition={{ duration: reduced ? 0 : 0.18 }}>\n              <span className={styles.index}>{String(workItems.indexOf(item) + 1).padStart(2, '0')}</span>\n              <span className={styles.title}>{item.title}<span className={styles.category}>{item.category}</span></span>\n              <span className={styles.quantity}>{item.quantity} 项</span>\n            </motion.li>\n          ))}\n        </AnimatePresence>\n      </ul>\n      <Pager page={page} pageSize={size} total={workItems.length} onChange={setPage} />\n    </BusinessDemo>\n  );\n}\n",
   "targets": [
     {
       "id": "t0",
@@ -413,10 +329,10 @@
             "path": "src/business/components/Field.tsx",
             "line": 7
           },
-          "codeExample": "children={<><AnimatedSelect label=\"每页数量\" value={String(size)} onChange={value=>{setSize(Number(value));setPage(0);}} options={[{value:\"2\",label:\"2 项\"},{value:\"3\",label:\"3 项\"}]} /></>}",
+          "codeExample": "children={<><AnimatedSelect label=\"每页数量\" value={String(pagination.pageSize)} onChange={value => { setSize(Number(value)); setPage(0); }} options={sizes.map(value => ({ value: String(value), label: `${value} 项` }))} /></>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<><AnimatedSelect label=\"每页数量\" value={String(size)} onChange={value=>{setSize(Number(value));setPage(0);}} options={[{value:\"2\",label:\"2 项\"},{value:\"3\",label:\"3 项\"}]} /></>}"
+            "children={<><AnimatedSelect label=\"每页数量\" value={String(pagination.pageSize)} onChange={value => { setSize(Number(value)); setPage(0); }} options={sizes.map(value => ({ value: String(value), label: `${value} 项` }))} /></>}"
           ]
         },
         {
@@ -524,9 +440,9 @@
             "path": "src/business/components/AnimatedSelect.tsx",
             "line": 14
           },
-          "codeExample": "value={String(size)}",
+          "codeExample": "value={String(pagination.pageSize)}",
           "usageExamples": [
-            "value={String(size)}"
+            "value={String(pagination.pageSize)}"
           ]
         },
         {
@@ -571,10 +487,10 @@
               }
             ]
           },
-          "codeExample": "options={[{value:\"2\",label:\"2 项\"},{value:\"3\",label:\"3 项\"}]}",
+          "codeExample": "options={sizes.map(value => ({ value: String(value), label: `${value} 项` }))}",
           "controlExplanation": "复合值按完整类型编写代码，本例通过真实用法展示。",
           "usageExamples": [
-            "options={[{value:\"2\",label:\"2 项\"},{value:\"3\",label:\"3 项\"}]}"
+            "options={sizes.map(value => ({ value: String(value), label: `${value} 项` }))}"
           ]
         },
         {
@@ -593,10 +509,10 @@
             "kind": "callback",
             "signature": "(value: string) => void"
           },
-          "codeExample": "onChange={value=>{setSize(Number(value));setPage(0);}}",
+          "codeExample": "onChange={value => { setSize(Number(value)); setPage(0); }}",
           "controlExplanation": "回调由调用方提供函数，本例通过真实用法展示。",
           "usageExamples": [
-            "onChange={value=>{setSize(Number(value));setPage(0);}}"
+            "onChange={value => { setSize(Number(value)); setPage(0); }}"
           ]
         },
         {

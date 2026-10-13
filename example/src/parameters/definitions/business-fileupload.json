@@ -6,19 +6,100 @@
   "demoPath": "src/business/demos/data/business-fileupload.tsx",
   "fields": [
     {
-      "key": "t0.label",
-      "name": "label",
-      "label": "标签 · t0",
-      "description": "向用户或辅助技术说明控件的名称。",
+      "key": "t0.type",
+      "name": "type",
+      "label": "类型 · t0",
+      "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
       "scope": "prop",
       "target": "t0",
       "bindings": [
         {
           "target": "t0",
-          "name": "label"
+          "name": "type"
         }
       ],
-      "type": "string",
+      "type": "HTMLInputTypeAttribute | undefined",
+      "defaultValue": "file",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.accept",
+      "name": "accept",
+      "label": "accept · t0",
+      "description": "accept，控制 input 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "accept"
+        }
+      ],
+      "type": "string | undefined",
+      "defaultValue": "image/*,.txt,.csv",
+      "control": "text",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.multiple",
+      "name": "multiple",
+      "label": "多选 · t0",
+      "description": "multiple，控制 input 的对应渲染或交互参数。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "multiple"
+        }
+      ],
+      "type": "boolean | undefined",
+      "defaultValue": true,
+      "control": "switch",
+      "advanced": false,
+      "apply": "live",
+      "resources": [
+        "@asset/restoration/chromatic-bloom.svg",
+        "@asset/restoration/mineral-tide.svg",
+        "@asset/restoration/nocturne-orbit.svg",
+        "@asset/restoration/prismatic-canopy.svg",
+        "@asset/restoration/solar-dunes.svg",
+        "@asset/restoration/vermilion-fold.svg"
+      ]
+    },
+    {
+      "key": "t0.aria-label",
+      "name": "aria-label",
+      "label": "aria-label · t0",
+      "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
+      "scope": "prop",
+      "target": "t0",
+      "bindings": [
+        {
+          "target": "t0",
+          "name": "aria-label"
+        }
+      ],
+      "type": "string | undefined",
       "defaultValue": "选择本地文件",
       "control": "text",
       "advanced": false,
@@ -33,21 +114,21 @@
       ]
     },
     {
-      "key": "t0.hint",
-      "name": "hint",
-      "label": "hint · t0",
-      "description": "与字段一起显示的帮助文字。",
+      "key": "t0.tabIndex",
+      "name": "tabIndex",
+      "label": "tabIndex · t0",
+      "description": "键盘 Tab 导航的焦点顺序。",
       "scope": "prop",
       "target": "t0",
       "bindings": [
         {
           "target": "t0",
-          "name": "hint"
+          "name": "tabIndex"
         }
       ],
-      "type": "string",
-      "defaultValue": "支持图片、TXT、CSV。",
-      "control": "text",
+      "type": "number | undefined",
+      "defaultValue": -1,
+      "control": "number",
       "advanced": false,
       "apply": "live",
       "resources": [
@@ -60,22 +141,40 @@
       ]
     },
     {
-      "key": "t0.control",
-      "name": "control",
-      "label": "control · t0",
-      "description": "是否控制，决定该分支的展示或交互行为。",
+      "key": "t1.variant",
+      "name": "variant",
+      "label": "外观 · t1",
+      "description": "选择组件内置的外观或效果变体。",
       "scope": "prop",
-      "target": "t0",
+      "target": "t1",
       "bindings": [
         {
-          "target": "t0",
-          "name": "control"
+          "target": "t1",
+          "name": "variant"
         }
       ],
-      "type": "boolean",
-      "defaultValue": false,
-      "upstreamDefault": "false",
-      "control": "switch",
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
+      "defaultValue": "secondary",
+      "upstreamDefault": "'primary'",
+      "control": "select",
+      "options": [
+        {
+          "label": "primary",
+          "value": "primary"
+        },
+        {
+          "label": "secondary",
+          "value": "secondary"
+        },
+        {
+          "label": "danger",
+          "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
+        }
+      ],
       "advanced": false,
       "apply": "live",
       "resources": [
@@ -100,63 +199,24 @@
           "name": "type"
         }
       ],
-      "type": "HTMLInputTypeAttribute | undefined",
-      "defaultValue": "file",
-      "control": "text",
-      "advanced": false,
-      "apply": "live",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
-      "key": "t1.accept",
-      "name": "accept",
-      "label": "accept · t1",
-      "description": "accept，控制 input 的对应渲染或交互参数。",
-      "scope": "prop",
-      "target": "t1",
-      "bindings": [
+      "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+      "defaultValue": "button",
+      "upstreamDefault": "'button'",
+      "control": "select",
+      "options": [
         {
-          "target": "t1",
-          "name": "accept"
+          "label": "button",
+          "value": "button"
+        },
+        {
+          "label": "reset",
+          "value": "reset"
+        },
+        {
+          "label": "submit",
+          "value": "submit"
         }
       ],
-      "type": "string | undefined",
-      "defaultValue": "image/*,.txt,.csv",
-      "control": "text",
-      "advanced": false,
-      "apply": "live",
-      "resources": [
-        "@asset/restoration/chromatic-bloom.svg",
-        "@asset/restoration/mineral-tide.svg",
-        "@asset/restoration/nocturne-orbit.svg",
-        "@asset/restoration/prismatic-canopy.svg",
-        "@asset/restoration/solar-dunes.svg",
-        "@asset/restoration/vermilion-fold.svg"
-      ]
-    },
-    {
-      "key": "t1.multiple",
-      "name": "multiple",
-      "label": "多选 · t1",
-      "description": "multiple，控制 input 的对应渲染或交互参数。",
-      "scope": "prop",
-      "target": "t1",
-      "bindings": [
-        {
-          "target": "t1",
-          "name": "multiple"
-        }
-      ],
-      "type": "boolean | undefined",
-      "defaultValue": true,
-      "control": "switch",
       "advanced": false,
       "apply": "live",
       "resources": [
@@ -181,8 +241,8 @@
           "name": "variant"
         }
       ],
-      "type": "'primary' | 'secondary' | 'danger'",
-      "defaultValue": "secondary",
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
+      "defaultValue": "ghost",
       "upstreamDefault": "'primary'",
       "control": "select",
       "options": [
@@ -197,9 +257,13 @@
         {
           "label": "danger",
           "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
         }
       ],
-      "advanced": false,
+      "advanced": true,
       "apply": "live",
       "resources": [
         "@asset/restoration/chromatic-bloom.svg",
@@ -265,8 +329,8 @@
           "name": "variant"
         }
       ],
-      "type": "'primary' | 'secondary' | 'danger'",
-      "defaultValue": "secondary",
+      "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
+      "defaultValue": "ghost",
       "upstreamDefault": "'primary'",
       "control": "select",
       "options": [
@@ -281,6 +345,10 @@
         {
           "label": "danger",
           "value": "danger"
+        },
+        {
+          "label": "ghost",
+          "value": "ghost"
         }
       ],
       "advanced": true,
@@ -363,10 +431,17 @@
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     },
     {
-      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-      "tag": "div",
+      "tag": "span",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "h3",
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     },
     {
@@ -377,149 +452,47 @@
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     },
     {
+      "type": "DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>",
+      "reference": "https://react.dev/reference/react-dom/components/common",
+      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+      "tag": "div",
+      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+    },
+    {
       "type": "DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement>",
       "reference": "https://react.dev/reference/react-dom/components/common",
       "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
       "tag": "ul",
       "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
-    },
-    {
-      "type": "DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>",
-      "reference": "https://react.dev/reference/react-dom/components/common",
-      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-      "tag": "li",
-      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
-    },
-    {
-      "type": "DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>",
-      "reference": "https://react.dev/reference/react-dom/components/common",
-      "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
-      "tag": "span",
-      "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
     }
   ],
-  "usageTemplate": "import ownedStyles0 from '../../components/DemoLayout.module.css';\nimport ownedStyles1 from '../../components/Input.module.css';\nimport { componentClasses } from '../../class-names';\nimport { useState } from 'react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { Field } from '../../components/Field';\n\nconst ownedStyles={...ownedStyles0,...ownedStyles1};\nconst cn=(names:string)=>componentClasses(ownedStyles,names);\nexport default function BusinessFileUploadDemo() {\n  const [files,setFiles]=useState<File[]>([]); const [message,setMessage]=useState('请选择文件，每项最多1MiB、总数最多5项。'); function select(incoming:File[]){const allowed=incoming.filter(file=>file.size<=1048576&&(file.type.startsWith('image/')||/\\.(txt|csv)$/i.test(file.name)));const unique=[...files];allowed.forEach(file=>{if(!unique.some(current=>current.name===file.name&&current.size===file.size&&current.lastModified===file.lastModified))unique.push(file);});setFiles(unique.slice(0,5));setMessage(`${allowed.length}项符合类型和大小限制，${incoming.length-allowed.length}项未加入。仅保留前5项，尚未发送文件。`);}\n  return <BusinessDemo title=\"FileUpload\" description=\"真实选择本地图片、文本或CSV文件，验证大小和类型，支持移除；文件保留在浏览器内。\">\n    <Field   /*__AW_PROPS_t0__*/ ><input className={cn('aw-business-input')}    onChange={event=>{select(Array.from(event.target.files??[]));event.target.value='';}} /*__AW_PROPS_t1__*/  /></Field><div data-ui=\"aw-business-item\" className={cn(\"aw-business-item\")} onDragOver={event=>event.preventDefault()} onDrop={event=>{event.preventDefault();select(Array.from(event.dataTransfer.files));}}><p>也可将文件拖到这里。</p><ul>{files.map(file=><li data-ui=\"aw-business-row\" key={`${file.name}-${file.size}-${file.lastModified}`} className={cn(\"aw-business-row\")}><span>{file.name} · {Math.ceil(file.size/1024)} KiB</span><Button  aria-label={'移除'+file.name} onClick={()=>setFiles(current=>current.filter(item=>item!==file))} /*__AW_PROPS_t2__*/ >移除</Button></li>)}</ul>{!files.length?<p>尚未选择文件。</p>:null}</div><Button  disabled={!files.length} onClick={()=>{setFiles([]);setMessage('本地选择已清空。');}} /*__AW_PROPS_t3__*/ >移除全部</Button><p data-ui=\"aw-business-status\" className={cn(\"aw-business-status\")} role=\"status\">{message}</p>\n  </BusinessDemo>;\n}\n",
+  "usageTemplate": "import { useId, useRef, useState, type DragEvent } from 'react';\nimport { AnimatePresence, motion } from 'motion/react';\nimport { Check, FileText, Image as ImageIcon, Upload, X } from 'lucide-react';\nimport { BusinessDemo } from '../../components/BusinessDemo';\nimport { Button } from '../../components/Button';\nimport { useBusinessReducedMotion } from '../../motion-preference';\nimport { LOCAL_FILE_LIMIT, localFileKey, selectLocalFiles } from '../../components/local-file-selection';\nimport styles from '../../components/FileUpload.module.css';\n\nexport default function BusinessFileUploadDemo() {\n  const [selection, setSelection] = useState<{ files: File[]; message: string; hasWarnings: boolean }>({\n    files: [], message: '请选择文件，每项最多 1 MiB、总数最多 5 项。', hasWarnings: false,\n  });\n  const [dragOver, setDragOver] = useState(false);\n  const input = useRef<HTMLInputElement>(null);\n  const dragDepth = useRef(0);\n  const hintId = useId();\n  const reduced = useBusinessReducedMotion();\n  const { files, message, hasWarnings } = selection;\n  function select(incoming: File[]) {\n    if (!incoming.length) return;\n    setSelection(current => {\n      const result = selectLocalFiles(current.files, incoming);\n      const details = [\n        `新增 ${result.added} 项`,\n        result.rejected ? `${result.rejected} 项类型或大小不符` : '',\n        result.duplicates ? `${result.duplicates} 项重复` : '',\n        result.overflow ? `${result.overflow} 项超过五项容量` : '',\n      ].filter(Boolean).join('，');\n      return { files: result.files, message: `${details}。文件仍仅保存在本地。`, hasWarnings: result.rejected > 0 || result.overflow > 0 };\n    });\n  }\n  function enter(event: DragEvent<HTMLDivElement>) {\n    if (!event.dataTransfer.types.includes('Files')) return;\n    event.preventDefault();\n    dragDepth.current++;\n    setDragOver(true);\n  }\n  function leave() {\n    dragDepth.current = Math.max(0, dragDepth.current - 1);\n    if (!dragDepth.current) setDragOver(false);\n  }\n  function drop(event: DragEvent<HTMLDivElement>) {\n    event.preventDefault();\n    dragDepth.current = 0;\n    setDragOver(false);\n    select(Array.from(event.dataTransfer.files));\n  }\n  function remove(file: File) {\n    setSelection(current => ({ files: current.files.filter(item => localFileKey(item) !== localFileKey(file)), message: `已移除 ${file.name}，剩余文件仅保存在本地。`, hasWarnings: false }));\n  }\n  return (\n    <BusinessDemo title=\"FileUpload\" description=\"真实选择本地图片、文本或 CSV 文件，验证大小和类型，支持移除；文件保留在浏览器内。\">\n      <input ref={input} className={styles.nativeInput}      onChange={event => { select(Array.from(event.target.files ?? [])); event.target.value = ''; }} /*__AW_PROPS_t0__*/  />\n      <motion.div className={styles.dropZone} data-dragover={dragOver} role=\"group\" aria-label=\"选择或拖放本地文件\" onDragEnter={enter} onDragLeave={leave} onDragOver={event => { event.preventDefault(); event.dataTransfer.dropEffect = 'copy'; }} onDrop={drop} animate={{ borderColor: dragOver ? 'var(--aw-color-action-primary)' : 'var(--aw-color-border-control)' }} transition={{ duration: reduced ? 0 : 0.18 }}>\n        <span className={styles.uploadIcon}><Upload size={25} aria-hidden=\"true\" /></span>\n        <h3 className={styles.dropTitle}>{dragOver ? '松开以选择文件' : '将文件拖放到这里'}</h3>\n        <p id={hintId} className={styles.hint}>图片、TXT 或 CSV · 每项最多 1 MiB · 最多 {LOCAL_FILE_LIMIT} 项</p>\n        <Button  data-size=\"sm\" aria-describedby={hintId} onClick={() => input.current?.click()} /*__AW_PROPS_t1__*/ >选择本地文件</Button>\n        <span className={styles.localNote}>文件仅在本地，不会上传。</span>\n      </motion.div>\n      <div className={styles.listHeader}>\n        <h3 className={styles.listTitle}>已选文件 <span className={styles.count}>{files.length} / {LOCAL_FILE_LIMIT}</span></h3>\n        <Button  data-size=\"sm\" disabled={!files.length} onClick={() => { setSelection({ files: [], message: '本地选择已清空。', hasWarnings: false }); }} /*__AW_PROPS_t2__*/ >移除全部</Button>\n      </div>\n      <ul className={styles.list} aria-label=\"已选文件\">\n        <AnimatePresence initial={false} mode=\"popLayout\">\n          {files.map(file => {\n            const Icon = file.type.startsWith('image/') ? ImageIcon : FileText;\n            return (\n              <motion.li data-ui=\"aw-business-row\" className={styles.file} key={localFileKey(file)} layout={!reduced} initial={reduced ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? { opacity: 1 } : { opacity: 0 }} transition={{ duration: reduced ? 0 : 0.18 }}>\n                <span className={styles.fileIcon}><Icon size={19} aria-hidden=\"true\" /></span>\n                <span className={styles.fileInfo}><span className={styles.fileName}>{file.name}</span><span className={styles.fileSize}>{Math.ceil(file.size / 1024)} KiB</span></span>\n                <span className={styles.ready}><Check size={13} aria-hidden=\"true\" />本地就绪</span>\n                <Button  data-size=\"sm\" data-icon-only=\"true\" aria-label={'移除' + file.name} onClick={() => remove(file)} /*__AW_PROPS_t3__*/ ><X size={16} aria-hidden=\"true\" /></Button>\n              </motion.li>\n            );\n          })}\n        </AnimatePresence>\n      </ul>\n      {!files.length ? <p className={styles.empty}>尚未选择文件。选择后可在这里查看和移除。</p> : null}\n      <p data-ui=\"aw-business-status\" className={styles.status} data-warning={hasWarnings} role=\"status\">{message}</p>\n    </BusinessDemo>\n  );\n}\n",
   "targets": [
     {
       "id": "t0",
-      "name": "Field",
-      "sourcePath": "src/business/components/Field.tsx",
-      "props": [
-        {
-          "name": "label",
-          "type": "string",
-          "required": true,
-          "description": "向用户或辅助技术说明控件的名称。",
-          "control": "text",
-          "valueKind": "string",
-          "editable": true,
-          "source": {
-            "path": "src/business/components/Field.tsx",
-            "line": 7
-          },
-          "codeExample": "label=\"选择本地文件\"",
-          "usageExamples": [
-            "label=\"选择本地文件\""
-          ]
-        },
-        {
-          "name": "children",
-          "type": "ReactNode",
-          "required": true,
-          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
-          "control": "code",
-          "valueKind": "react-node",
-          "editable": false,
-          "source": {
-            "path": "src/business/components/Field.tsx",
-            "line": 7
-          },
-          "codeExample": "children={<><input className={cn('aw-business-input')} type=\"file\" accept=\"image/*,.txt,.csv\" multiple onChange={event=>{select(Array.from(event.target.files??[]));event.target.value='';}} /></>}",
-          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
-          "usageExamples": [
-            "children={<><input className={cn('aw-business-input')} type=\"file\" accept=\"image/*,.txt,.csv\" multiple onChange={event=>{select(Array.from(event.target.files??[]));event.target.value='';}} /></>}"
-          ]
-        },
-        {
-          "name": "hint",
-          "type": "string",
-          "required": false,
-          "description": "与字段一起显示的帮助文字。",
-          "control": "text",
-          "valueKind": "string",
-          "editable": true,
-          "source": {
-            "path": "src/business/components/Field.tsx",
-            "line": 7
-          },
-          "codeExample": "hint=\"支持图片、TXT、CSV。\"",
-          "usageExamples": [
-            "hint=\"支持图片、TXT、CSV。\""
-          ]
-        },
-        {
-          "name": "htmlFor",
-          "type": "string",
-          "required": false,
-          "defaultExpression": "(isControl ? children.props.id : undefined)",
-          "defaultSource": {
-            "path": "src/business/components/Field.tsx",
-            "line": 11,
-            "kind": "implementation-fallback"
-          },
-          "defaultCondition": "falsy",
-          "description": "关联控件的 id，让标签点击与辅助技术定位到该控件。",
-          "control": "text",
-          "valueKind": "string",
-          "editable": true,
-          "source": {
-            "path": "src/business/components/Field.tsx",
-            "line": 7
-          },
-          "codeExample": "htmlFor={\"示例\"}"
-        },
-        {
-          "name": "control",
-          "type": "boolean",
-          "required": false,
-          "defaultExpression": "false",
-          "defaultSource": {
-            "path": "src/business/components/Field.tsx",
-            "line": 7,
-            "kind": "parameter"
-          },
-          "defaultValue": false,
-          "description": "是否控制，决定该分支的展示或交互行为。",
-          "control": "boolean",
-          "valueKind": "boolean",
-          "editable": true,
-          "source": {
-            "path": "src/business/components/Field.tsx",
-            "line": 7
-          },
-          "details": {
-            "kind": "enum",
-            "options": [
-              false,
-              true
-            ]
-          },
-          "codeExample": "control={false}"
-        }
-      ],
-      "inherited": []
-    },
-    {
-      "id": "t1",
       "name": "input",
       "props": [
+        {
+          "name": "ref",
+          "type": "Ref<HTMLInputElement> | undefined",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "usageExamples": [
+            "ref={input}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 292
+          }
+        },
         {
           "name": "className",
           "type": "string | undefined",
           "required": false,
           "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
           "usageExamples": [
-            "className={cn('aw-business-input')}"
+            "className={styles.nativeInput}"
           ],
           "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
           "source": {
@@ -570,12 +543,40 @@
           }
         },
         {
+          "name": "aria-label",
+          "type": "string | undefined",
+          "required": false,
+          "description": "辅助技术的 label 状态或说明；值须与控件当前可观察行为一致。",
+          "usageExamples": [
+            "aria-label=\"选择本地文件\""
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2507
+          }
+        },
+        {
+          "name": "tabIndex",
+          "type": "number | undefined",
+          "required": false,
+          "description": "键盘 Tab 导航的焦点顺序。",
+          "usageExamples": [
+            "tabIndex={-1}"
+          ],
+          "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2713
+          }
+        },
+        {
           "name": "onChange",
           "type": "ChangeEventHandler<HTMLInputElement> | undefined",
           "required": false,
           "description": "用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。",
           "usageExamples": [
-            "onChange={event=>{select(Array.from(event.target.files??[]));event.target.value='';}}"
+            "onChange={event => { select(Array.from(event.target.files ?? [])); event.target.value = ''; }}"
           ],
           "inheritedFrom": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
           "source": {
@@ -587,6 +588,154 @@
       "inherited": [
         {
           "type": "DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>",
+          "reference": "https://react.dev/reference/react-dom/components/common",
+          "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
+          "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
+        }
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "Button · t1",
+      "sourcePath": "src/business/components/Button.tsx",
+      "props": [
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\" | undefined",
+          "required": false,
+          "defaultExpression": "'button'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "button",
+          "description": "原生输入或按钮的行为类型；按钮类型会影响表单提交。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "button",
+            "reset",
+            "submit"
+          ],
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2971
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "details": {
+            "kind": "enum",
+            "options": [
+              "button",
+              "reset",
+              "submit"
+            ]
+          },
+          "codeExample": "type={\"button\"}"
+        },
+        {
+          "name": "className",
+          "type": "string | undefined",
+          "required": false,
+          "defaultExpression": "''",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "",
+          "description": "附加在组件容器上的 CSS 类名，用于调用方的局部样式。",
+          "control": "text",
+          "valueKind": "string",
+          "editable": true,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2700
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "className={\"\"}"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。",
+          "control": "code",
+          "valueKind": "react-node",
+          "editable": false,
+          "source": {
+            "path": "node_modules/@types/react/index.d.ts",
+            "line": 2171
+          },
+          "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
+          "codeExample": "children={<>选择本地文件</>}",
+          "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
+          "usageExamples": [
+            "children={<>选择本地文件</>}",
+            "children={<>移除全部</>}",
+            "children={<><X size={16} aria-hidden=\"true\" /></>}"
+          ]
+        },
+        {
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
+          "required": false,
+          "defaultExpression": "'primary'",
+          "defaultSource": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8,
+            "kind": "parameter"
+          },
+          "defaultValue": "primary",
+          "description": "选择组件内置的外观或效果变体。",
+          "control": "enum",
+          "valueKind": "enum",
+          "options": [
+            "primary",
+            "secondary",
+            "danger",
+            "ghost"
+          ],
+          "editable": true,
+          "source": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "details": {
+            "kind": "enum",
+            "options": [
+              "primary",
+              "secondary",
+              "danger",
+              "ghost"
+            ]
+          },
+          "codeExample": "variant=\"secondary\"",
+          "usageExamples": [
+            "variant=\"secondary\"",
+            "variant=\"ghost\""
+          ]
+        },
+        {
+          "name": "ref",
+          "type": "Ref<HTMLButtonElement>",
+          "required": false,
+          "description": "连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。",
+          "control": "code",
+          "valueKind": "ref",
+          "editable": false,
+          "source": {
+            "path": "src/business/components/Button.tsx",
+            "line": 8
+          },
+          "codeExample": "const elementRef = useRef<HTMLButtonElement | null>(null);\n// JSX: ref={elementRef}",
+          "controlExplanation": "ref 连接实际 DOM 或组件句柄，本例通过真实用法展示。"
+        }
+      ],
+      "inherited": [
+        {
+          "type": "ButtonHTMLAttributes<HTMLButtonElement>",
           "reference": "https://react.dev/reference/react-dom/components/common",
           "mdnReference": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes",
           "description": "继承该 React 原生属性类型的字段与事件；具体约束以安装的 @types/react 及原生元素语义为准。"
@@ -668,16 +817,17 @@
             "line": 2171
           },
           "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>移除</>}",
+          "codeExample": "children={<>选择本地文件</>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<>移除</>}",
-            "children={<>移除全部</>}"
+            "children={<>选择本地文件</>}",
+            "children={<>移除全部</>}",
+            "children={<><X size={16} aria-hidden=\"true\" /></>}"
           ]
         },
         {
           "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
           "required": false,
           "defaultExpression": "'primary'",
           "defaultSource": {
@@ -692,7 +842,8 @@
           "options": [
             "primary",
             "secondary",
-            "danger"
+            "danger",
+            "ghost"
           ],
           "editable": true,
           "source": {
@@ -704,12 +855,14 @@
             "options": [
               "primary",
               "secondary",
-              "danger"
+              "danger",
+              "ghost"
             ]
           },
           "codeExample": "variant=\"secondary\"",
           "usageExamples": [
-            "variant=\"secondary\""
+            "variant=\"secondary\"",
+            "variant=\"ghost\""
           ]
         },
         {
@@ -812,16 +965,17 @@
             "line": 2171
           },
           "inheritedFrom": "ButtonHTMLAttributes<HTMLButtonElement>",
-          "codeExample": "children={<>移除</>}",
+          "codeExample": "children={<>选择本地文件</>}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "children={<>移除</>}",
-            "children={<>移除全部</>}"
+            "children={<>选择本地文件</>}",
+            "children={<>移除全部</>}",
+            "children={<><X size={16} aria-hidden=\"true\" /></>}"
           ]
         },
         {
           "name": "variant",
-          "type": "'primary' | 'secondary' | 'danger'",
+          "type": "'primary' | 'secondary' | 'danger' | 'ghost'",
           "required": false,
           "defaultExpression": "'primary'",
           "defaultSource": {
@@ -836,7 +990,8 @@
           "options": [
             "primary",
             "secondary",
-            "danger"
+            "danger",
+            "ghost"
           ],
           "editable": true,
           "source": {
@@ -848,12 +1003,14 @@
             "options": [
               "primary",
               "secondary",
-              "danger"
+              "danger",
+              "ghost"
             ]
           },
           "codeExample": "variant=\"secondary\"",
           "usageExamples": [
-            "variant=\"secondary\""
+            "variant=\"secondary\"",
+            "variant=\"ghost\""
           ]
         },
         {

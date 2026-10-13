@@ -8,7 +8,7 @@ export default function SwarmCursorDemo() {
   const [status, setStatus] = useState('移动指针聚集粒子，点击使它们散开。');
   return (
     <div className={styles.stage} data-visual-demo="swarm-cursor">
-      <Component color="#c5efd9" accentColor="#ffffff" count={12} size={12}
+      <Component color="#c5efd9" accentColor="#ffffff" count={12} size={3}
         speed={2.5} spread={90} wander={0.25} trail={0.8} glow={0.8} opacity={1}
         scatterOnClick style={{ width: '100%', height: '100%' }} {...demoProps('t0')}>
         <div className={styles.content}>

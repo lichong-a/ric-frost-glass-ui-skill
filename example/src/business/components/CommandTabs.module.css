@@ -1,0 +1,16 @@
+.tabList { position: relative; isolation: isolate; display: flex; gap: 4px; inline-size: fit-content; max-inline-size: 100%; box-sizing: border-box; padding: 5px; color: var(--aw-color-text-secondary); background: var(--aw-palette-ivory); border: 1px solid var(--aw-color-border-decorative); border-radius: 999px; }
+.filterDefinitions { position: absolute; inline-size: 0; block-size: 0; pointer-events: none; }
+.liquidLayer { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.selection { position: absolute; inset-block: 5px; inset-inline-start: 0; border-radius: 999px; background: color-mix(in srgb, var(--aw-color-action-primary) 17%, var(--aw-palette-ivory)); }
+.drop { position: absolute; inset-block-start: calc(50% - 9px); inset-inline-start: 0; inline-size: 18px; block-size: 18px; border-radius: 50%; background: color-mix(in srgb, var(--aw-color-action-primary) 17%, var(--aw-palette-ivory)); }
+.tab { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-block-size: 38px; padding: 8px 12px; border: 0; border-radius: 999px; color: var(--aw-color-text-secondary); background: transparent; font: inherit; font-size: 12px; font-weight: 550; line-height: 1.4; white-space: nowrap; cursor: pointer; transition: color 180ms ease, background-color 180ms ease; }
+.tab[aria-selected='true'] { color: var(--aw-color-action-primary); }
+.tabList[data-ready='false'] .tab[aria-selected='true'] { background: color-mix(in srgb, var(--aw-color-action-primary) 17%, var(--aw-palette-ivory)); }
+.tab:not([aria-selected='true']):hover { color: var(--aw-color-action-primary); background: color-mix(in srgb, var(--aw-color-action-primary) 6%, var(--aw-palette-ivory)); }
+.tab:focus-visible { outline: 2px solid var(--aw-color-action-primary); outline-offset: 3px; }
+.count { display: grid; place-items: center; min-inline-size: 17px; block-size: 17px; padding-inline: 3px; box-sizing: border-box; border-radius: 6px; background: color-mix(in srgb, var(--aw-color-action-primary) 8%, var(--aw-palette-ivory)); font-size: 10px; font-weight: 600; }
+.tabList[data-motion='reduce'] .tab { transition: none; }
+@media (prefers-reduced-motion: reduce) { .tab { transition: none; } }
+@media (pointer: coarse) { .tab { min-block-size: 44px; } }
+@media (width < 420px) { .tabList { gap: 2px; padding: 4px; } .tab { gap: 4px; padding-inline: 8px; font-size: 11px; } }
+@media (forced-colors: active) { .liquidLayer { display: none; } .tab[aria-selected='true'] { color: HighlightText; background: Highlight; } .tab:focus-visible { outline-color: Highlight; } }

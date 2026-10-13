@@ -1320,6 +1320,75 @@
         "label": "跑马灯循环时长",
         "description": "以下范围仅限制此演示面板，不改变上游 API。GSAP 跑马灯循环的 duration；值越大，循环越慢。"
       }
+    },
+    "pixel-blast": {
+      "t0.liquid": {
+        "advanced": false
+      }
+    },
+    "business-commandmenu": {
+      "state.category": {
+        "label": "命令分类",
+        "control": "select",
+        "advanced": false,
+        "description": "选项对应本例的四个实际分类；未知分类不更新预览。",
+        "options": [
+          {
+            "label": "全部",
+            "value": "all"
+          },
+          {
+            "label": "任务",
+            "value": "tasks"
+          },
+          {
+            "label": "资料",
+            "value": "files"
+          },
+          {
+            "label": "设置",
+            "value": "settings"
+          }
+        ]
+      }
+    },
+    "business-orderlist": {
+      "state.items": {
+        "uniqueBy": "id",
+        "description": "每项任务的 id 必须唯一；重复 ID 保留最后有效顺序，不改写任务身份。"
+      }
+    },
+    "business-datatable": {
+      "prop.total": {
+        "editable": false
+      },
+      "state.page": {
+        "min": 0,
+        "step": 1,
+        "description": "零基页码；超出实际结果范围时同步回最后有效页。"
+      },
+      "state.pageSize": {
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "description": "本例编辑器范围为每页 1–100 项；每页数量、内容切片和分页控件共同更新。"
+      }
+    },
+    "business-paginator": {
+      "prop.total": {
+        "editable": false
+      },
+      "state.page": {
+        "min": 0,
+        "step": 1,
+        "description": "零基页码；超出实际结果范围时同步回最后有效页。"
+      },
+      "state.size": {
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "description": "本例编辑器范围为每页 1–100 项；每页数量、内容切片和分页控件共同更新。"
+      }
     }
   }
 }

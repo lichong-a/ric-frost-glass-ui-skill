@@ -21,6 +21,8 @@ export type ParameterField = {
   advanced: boolean;
   apply: 'live' | 'rebuild';
   shape?: ValueShape;
+  /** An editor constraint for object arrays whose rendered rows require stable IDs. */
+  uniqueBy?: string;
   /** Known local resource tokens; also used when resources appear in JSON data. */
   resources?: string[];
   bindings?: { target: string; name: string }[];

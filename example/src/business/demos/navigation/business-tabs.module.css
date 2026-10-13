@@ -1,0 +1,13 @@
+.tabList { display: flex; flex-wrap: wrap; gap: 5px; inline-size: fit-content; max-inline-size: 100%; padding: 5px; background: var(--aw-surface-control); border: 1px solid var(--aw-color-border-decorative); border-radius: 15px; box-shadow: var(--aw-shadow-control); }
+.tab { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-block-size: 42px; padding: 10px 17px; color: var(--aw-color-text-secondary); background: transparent; border: 0; border-radius: 10px; font: inherit; font-size: 13px; font-weight: 550; line-height: 1.4; white-space: nowrap; cursor: pointer; transition: color 180ms ease, background-color 180ms ease; }
+.tab:not([aria-selected='true']):hover { color: var(--aw-color-action-primary); background: var(--aw-surface-hover); }
+.tab[aria-selected='true'] { color: var(--aw-palette-ivory); }
+.tab:focus-visible { outline: 2px solid var(--aw-color-action-primary); outline-offset: 3px; }
+.tabIcon, .tabLabel { position: relative; }
+.panel { padding: 20px; color: var(--aw-color-text-primary); background: var(--aw-surface-control); border: 1px solid var(--aw-color-border-decorative); border-radius: 14px; }
+.panelTitle { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
+.panelCopy { margin: 0; color: var(--aw-color-text-secondary); font-size: 13px; line-height: 1.7; }
+.tabList[data-motion='reduce'] .tab { transition: none; }
+@media (prefers-reduced-motion: reduce) { .tab { transition: none; } }
+@media (pointer: coarse) { .tab { min-block-size: 44px; } }
+@media (forced-colors: active) { .tab[aria-selected='true'] { color: HighlightText; background: Highlight; } .tab:focus-visible { outline-color: Highlight; } }

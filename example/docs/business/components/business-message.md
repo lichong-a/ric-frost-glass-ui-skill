@@ -27,21 +27,98 @@
 ```tsx
 // 当前 Message 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/DemoLayout.module.css';
-import ownedStyles1 from '../../components/Input.module.css';
-import { componentClasses } from '../../class-names';
-import { useState } from 'react';
+import { useId, useRef, useState, type ChangeEvent, type FormEvent } from 'react';
+import { AnimatePresence, motion, useIsPresent } from 'motion/react';
+import { CheckCircle2, CircleAlert } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Button } from '../../components/Button';
 import { Field } from '../../components/Field';
+import inputStyles from '../../components/Input.module.css';
+import { useBusinessReducedMotion } from '../../motion-preference';
+import styles from './business-message.module.css';
 
-const ownedStyles={...ownedStyles0,...ownedStyles1};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
+type Message = { text: string; error: boolean };
+
+function MessageNotice({ message, id, reduced, onDismiss }: {
+  message: Message;
+  id: string;
+  reduced: boolean;
+  onDismiss: () => void;
+}) {
+  const present = useIsPresent();
+  const Icon = message.error ? CircleAlert : CheckCircle2;
+
+  return (
+    <motion.div
+      className={styles.message}
+      data-tone={message.error ? 'error' : 'success'}
+      role={message.error ? 'alert' : 'status'}
+      inert={!present}
+      aria-hidden={!present || undefined}
+      initial={reduced ? false : { opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: reduced ? 0 : -6 }}
+      transition={{ duration: reduced ? 0 : 0.18 }}
+    >
+      <Icon className={styles.icon} size={18} aria-hidden="true" />
+      <span id={id} className={styles.messageText}>{message.text}</span>
+      <Button variant="ghost" data-size="sm" aria-label="关闭消息" onClick={onDismiss}>关闭</Button>
+    </motion.div>
+  );
+}
+
 export default function BusinessMessageDemo() {
-  const [value,setValue]=useState(""); const [message,setMessage]=useState<{text:string;error:boolean}|null>(null);
-  return <BusinessDemo title="Message" description="根据本地表单校验呈现成功或错误信息，关闭后可重新提交。">
-    <form onSubmit={event=>{event.preventDefault();setMessage(value.trim()?{text:'名称已在当前页面校验通过。',error:false}:{text:'请先填写名称。',error:true});}}><Field  label={"名称"} control={false} ><input data-ui="aw-business-input" className={cn("aw-business-input")} value={value} onChange={event=>setValue(event.target.value)} /></Field><Button  type={"submit"} variant={"primary"} >校验</Button></form>{message?<div data-ui="aw-business-item" className={cn("aw-business-item aw-business-row")} role={message.error?'alert':'status'} style={{borderLeft:`4px solid var(${message.error?'--aw-palette-terra':'--aw-color-action-primary'})`}}><span>{message.text}</span><Button  aria-label="关闭消息" onClick={()=>setMessage(null)} variant={"secondary"} type={"button"} >关闭</Button></div>:null}
-  </BusinessDemo>;
+  const [value, setValue] = useState("");
+  const [message, setMessage] = useState<Message | null>(null);
+  const reduced = useBusinessReducedMotion();
+  const inputRef = useRef<HTMLInputElement>(null);
+  const messageId = useId();
+
+  function changeValue(event: ChangeEvent<HTMLInputElement>) {
+    setValue(event.target.value);
+  }
+
+  function validate(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setMessage(value.trim()
+      ? { text: '名称已在当前页面校验通过。', error: false }
+      : { text: '请先填写名称。', error: true });
+  }
+
+  function dismissMessage() {
+    setMessage(null);
+    inputRef.current?.focus();
+  }
+
+  return (
+    <BusinessDemo title="Message" description="根据本地表单校验呈现成功或错误信息，关闭后可重新提交。">
+      <form className={styles.form} onSubmit={validate}>
+        <Field  label={"名称"} control={false} >
+          <input
+            ref={inputRef}
+            data-ui="aw-business-input"
+            className={inputStyles['aw-business-input']}
+            value={value}
+            aria-invalid={message?.error || undefined}
+            aria-describedby={message ? messageId : undefined}
+            onChange={changeValue}
+          />
+        </Field>
+        <Button className={styles.submit}  type={"submit"} variant={"primary"} >校验</Button>
+      </form>
+      <AnimatePresence mode="wait">
+        {message ? (
+          <MessageNotice
+            key={message.error ? 'error' : 'success'}
+            message={message}
+            id={messageId}
+            reduced={reduced}
+            onDismiss={dismissMessage}
+          />
+        ) : null}
+      </AnimatePresence>
+    </BusinessDemo>
+  );
 }
 ```
 
@@ -54,36 +131,46 @@ export default function BusinessMessageDemo() {
 | `Field.hint` | `string` | 否 | `未指定` | 与字段一起显示的帮助文字。 |
 | `Field.htmlFor` | `string` | 否 | `(isControl ? children.props.id : undefined)` | 关联控件的 id，让标签点击与辅助技术定位到该控件。 |
 | `Field.control` | `boolean` | 否 | `false` | 是否控制，决定该分支的展示或交互行为。 |
+| `input.ref` | `Ref<HTMLInputElement> \| undefined` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 | `input.data-ui` | `any` | 否 | `未指定` | 示例在 DOM 上使用的 ui 数据标记，供局部样式或状态定位读取。 |
 | `input.className` | `string \| undefined` | 否 | `未指定` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
 | `input.value` | `string \| number \| readonly string[] \| undefined` | 否 | `未指定` | 当前受控值，由调用方维护并随交互回调更新。 |
+| `input.aria-invalid` | `boolean \| "true" \| "false" \| "grammar" \| "spelling" \| undefined` | 否 | `未指定` | 辅助技术的 invalid 状态或说明；值须与控件当前可观察行为一致。 |
+| `input.aria-describedby` | `string \| undefined` | 否 | `未指定` | 辅助技术的 describedby 状态或说明；值须与控件当前可观察行为一致。 |
 | `input.onChange` | `ChangeEventHandler<HTMLInputElement> \| undefined` | 否 | `未指定` | 用户改变值或条目顺序时通知调用方；回调参数类型就是应写回的值或原生事件。 |
-| `Button · t2.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
-| `Button · t2.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
-| `Button · t2.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button · t2.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
-| `Button · t2.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+| `Button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `Button.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `Button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Button.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 
 本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
 
 **继承的原生属性：**
 
+- `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
-- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
-- `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 
 **children 的真实接入：**
 
 ```tsx
-children={<><input data-ui="aw-business-input" className={cn("aw-business-input")} value={value} onChange={event=>setValue(event.target.value)} /></>}
+children={<><input
+            ref={inputRef}
+            data-ui="aw-business-input"
+            className={inputStyles['aw-business-input']}
+            value={value}
+            aria-invalid={message?.error || undefined}
+            aria-describedby={message ? messageId : undefined}
+            onChange={changeValue}
+          /></>}
 ```
 
 **children 的真实接入：**
 
 ```tsx
-children={<>校验</>}
+children={<>关闭</>}
 ```
 
 **ref 的真实接入：**
@@ -102,9 +189,7 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 | `t0.label` | `"名称"` | text | 不限 ~ 不限 | 即时应用 |
 | `t0.control` | `false` | switch | 不限 ~ 不限 | 即时应用 |
 | `t2.type` | `"submit"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t2.variant` | `"primary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t3.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t3.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
+| `t2.variant` | `"primary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `state.value` | `""` | text | 不限 ~ 不限 | 即时应用；原组件回调同步受控值 |
 
 ### 演示容器设置

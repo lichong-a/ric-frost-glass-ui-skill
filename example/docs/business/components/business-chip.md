@@ -27,19 +27,102 @@
 ```tsx
 // 当前 Chip 用法；所需实现和 CSS 与完整示例相同。
 // 预览框高度：560px（宿主设置，不是组件 Props）。
-import ownedStyles0 from '../../components/DemoLayout.module.css';
-import { componentClasses } from '../../class-names';
-import { useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
+import { AnimatePresence, motion, useIsPresent } from 'motion/react';
+import { X } from 'lucide-react';
 import { BusinessDemo } from '../../components/BusinessDemo';
 import { Button } from '../../components/Button';
+import { useBusinessReducedMotion } from '../../motion-preference';
+import styles from './business-chip.module.css';
 
-const ownedStyles={...ownedStyles0};
-const cn=(names:string)=>componentClasses(ownedStyles,names);
+function KeywordChip({ label, reduced, onRemove, registerButton }: {
+  label: string;
+  reduced: boolean;
+  onRemove: (label: string) => void;
+  registerButton: (label: string, node: HTMLButtonElement | null) => void;
+}) {
+  const present = useIsPresent();
+
+  function remove() {
+    onRemove(label);
+  }
+
+  const buttonRef = useCallback((node: HTMLButtonElement | null) => {
+    registerButton(label, node);
+  }, [label, registerButton]);
+
+  return (
+    <motion.li
+      className={styles.chip}
+      data-motion={reduced ? 'reduce' : 'allow'}
+      layout={reduced ? false : 'position'}
+      inert={!present}
+      aria-hidden={!present || undefined}
+      initial={reduced ? false : { opacity: 0, y: 6, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: reduced ? 0 : -4, scale: reduced ? 1 : 0.88 }}
+      transition={{ duration: reduced ? 0 : 0.18 }}
+    >
+      <span className={styles.label}>{label}</span>
+      <button ref={buttonRef} className={styles.remove} type="button" aria-label={'移除' + label} onClick={remove}>
+        <X size={12} aria-hidden="true" />
+      </button>
+    </motion.li>
+  );
+}
+
 export default function BusinessChipDemo() {
-  const initial=['知识','文档','服务']; const [chips,setChips]=useState(initial);
-  return <BusinessDemo title="Chip" description="移除已选关键词，空状态保留恢复入口。">
-    <div data-ui="aw-business-row" className={cn("aw-business-row")}>{chips.map(label=><span data-ui="aw-business-item" key={label} className={cn("aw-business-item aw-business-row")}><span>{label}</span><Button  aria-label={'移除'+label} onClick={()=>setChips(current=>current.filter(item=>item!==label))} variant={"secondary"} type={"button"} >×</Button></span>)}</div>{!chips.length?<p role="status">所有关键词已移除。</p>:null}<Button  onClick={()=>setChips(initial)} variant={"secondary"} type={"button"} >恢复关键词</Button>
-  </BusinessDemo>;
+  const initial = ['知识', '文档', '服务'];
+  const [chips, setChips] = useState(initial);
+  const reduced = useBusinessReducedMotion();
+  const chipButtons = useRef(new Map<string, HTMLButtonElement>());
+  const restoreRef = useRef<HTMLButtonElement>(null);
+
+  const registerButton = useCallback((label: string, node: HTMLButtonElement | null) => {
+    if (node) chipButtons.current.set(label, node);
+    else chipButtons.current.delete(label);
+  }, []);
+
+  function removeChip(label: string) {
+    const index = chips.indexOf(label);
+    const next = chips.filter(item => item !== label);
+    const moveFocus = chipButtons.current.get(label) === document.activeElement;
+    setChips(next);
+    if (moveFocus) {
+      const nextLabel = next[Math.min(index, next.length - 1)];
+      const nextButton = nextLabel ? chipButtons.current.get(nextLabel) : restoreRef.current;
+      nextButton?.focus();
+    }
+  }
+
+  function restoreChips() {
+    setChips(initial);
+  }
+
+  return (
+    <BusinessDemo title="Chip" description="移除已选关键词，空状态保留恢复入口。">
+      <ul className={styles.list} aria-label="已选关键词">
+        <AnimatePresence initial={false}>
+          {chips.map(label => (
+            <KeywordChip key={label} label={label} reduced={reduced} onRemove={removeChip} registerButton={registerButton} />
+          ))}
+        </AnimatePresence>
+      </ul>
+      <AnimatePresence>
+        {!chips.length ? (
+          <motion.p
+            className={styles.empty}
+            role="status"
+            initial={reduced ? false : { opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reduced ? 0 : 0.16 }}
+          >所有关键词已移除。</motion.p>
+        ) : null}
+      </AnimatePresence>
+      <Button ref={restoreRef}  data-size="sm" onClick={restoreChips} variant={"secondary"} type={"button"} >恢复关键词</Button>
+    </BusinessDemo>
+  );
 }
 ```
 
@@ -47,25 +130,25 @@ export default function BusinessChipDemo() {
 
 | 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
 |---|---|---|---|---|
-| `Button · t0.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
-| `Button · t0.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
-| `Button · t0.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
-| `Button · t0.variant` | `'primary' \| 'secondary' \| 'danger'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
-| `Button · t0.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
+| `Button.type` | `"button" \| "reset" \| "submit" \| undefined` | 否 | `'button'` | 原生输入或按钮的行为类型；按钮类型会影响表单提交。 |
+| `Button.className` | `string \| undefined` | 否 | `''` | 附加在组件容器上的 CSS 类名，用于调用方的局部样式。 |
+| `Button.children` | `ReactNode` | 否 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
+| `Button.variant` | `'primary' \| 'secondary' \| 'danger' \| 'ghost'` | 否 | `'primary'` | 选择组件内置的外观或效果变体。 |
+| `Button.ref` | `Ref<HTMLButtonElement>` | 否 | `未指定` | 连接实际 DOM 元素或组件命令句柄，支持类型声明中的 ref 形式。 |
 
 本示例函数不接收额外公开 Props，能力由原生元素与上述叶组件组合；下面列出实际继承类型和可编辑示例配置。
 
 **继承的原生属性：**
 
-- `DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
-- `DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
+- `DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 - `ButtonHTMLAttributes<HTMLButtonElement>`：见[完整类型与原生属性](https://react.dev/reference/react-dom/components/common)。
 
 **children 的真实接入：**
 
 ```tsx
-children={<>×</>}
+children={<>恢复关键词</>}
 ```
 
 **ref 的真实接入：**
@@ -81,10 +164,8 @@ const elementRef = useRef<HTMLButtonElement | null>(null);
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
+| `t0.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" / "ghost" | 即时应用 |
 | `t0.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
-| `t1.variant` | `"secondary"` | select | "primary" / "secondary" / "danger" | 即时应用 |
-| `t1.type` | `"button"` | select | "button" / "reset" / "submit" | 即时应用 |
 
 ### 演示容器设置
 

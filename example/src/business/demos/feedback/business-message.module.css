@@ -1,0 +1,48 @@
+.form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--aw-space-5);
+}
+
+.submit {
+  justify-self: end;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  gap: var(--aw-space-3);
+  min-inline-size: 0;
+  padding: var(--aw-space-3) var(--aw-space-4);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-divider);
+  border-inline-start: var(--aw-space-1) solid var(--aw-color-state-success-fg);
+  border-radius: var(--aw-radius-scale-r12);
+  color: var(--aw-color-state-success-fg);
+  background: var(--aw-color-state-success-bg);
+}
+
+.message[data-tone='error'] {
+  color: var(--aw-color-state-danger-fg);
+  background: var(--aw-color-state-danger-bg);
+  border-inline-start-color: var(--aw-color-state-danger-fg);
+}
+
+.icon {
+  flex: none;
+}
+
+.messageText {
+  flex: 1;
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+  font-size: var(--aw-font-size-body);
+  line-height: var(--aw-font-line-height-body);
+}
+
+@media (max-width: 480px) {
+  .form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--aw-space-3);
+  }
+}

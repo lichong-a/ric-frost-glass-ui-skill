@@ -1,0 +1,87 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--aw-space-2);
+  min-block-size: calc(var(--aw-space-6) + var(--aw-space-1));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aw-space-1);
+  min-inline-size: 0;
+  block-size: calc(var(--aw-space-6) + var(--aw-space-1));
+  padding-inline: var(--aw-space-3) var(--aw-space-1);
+  color: var(--aw-color-action-primary);
+  background: var(--aw-surface-selected);
+  border: var(--aw-stroke-hairline) solid var(--aw-color-border-divider);
+  border-radius: var(--aw-radius-scale-pill);
+  transition: background-color var(--aw-duration-control) var(--aw-easing-standard), border-color var(--aw-duration-control) var(--aw-easing-standard);
+}
+
+.chip:focus-within {
+  background: var(--aw-surface-selected-hover);
+  border-color: var(--aw-color-action-primary);
+}
+
+.label {
+  font-size: var(--aw-font-size-caption);
+  line-height: var(--aw-font-line-height-caption);
+}
+
+.remove {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  inline-size: var(--aw-space-6);
+  block-size: var(--aw-space-6);
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: var(--aw-radius-scale-pill);
+  cursor: pointer;
+  transition: color var(--aw-duration-control) var(--aw-easing-standard), background-color var(--aw-duration-control) var(--aw-easing-standard);
+}
+
+.remove:hover {
+  color: var(--aw-color-text-on-primary);
+  background: var(--aw-color-action-primary);
+}
+
+.remove:focus-visible {
+  outline: var(--aw-stroke-focus) solid var(--aw-color-focus);
+  outline-offset: var(--aw-space-half);
+}
+
+.empty {
+  margin: 0;
+  color: var(--aw-color-text-muted);
+  font-size: var(--aw-font-size-body);
+  line-height: var(--aw-font-line-height-body);
+}
+
+.chip[data-motion='reduce'], .chip[data-motion='reduce'] .remove {
+  transition: none;
+}
+
+@media (pointer: coarse) {
+  .chip {
+    block-size: auto;
+  }
+
+  .remove {
+    inline-size: var(--aw-control-touch-target);
+    block-size: var(--aw-control-touch-target);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip, .remove {
+    transition: none;
+  }
+}
