@@ -1,6 +1,6 @@
 # 背景与光效
 
-66 个组件。页面背景、纹理、粒子与空间光效。每项只有一个主分类，原来源与组合／微交互作为用途标签保留。
+66 个组件。页面背景、纹理、粒子与空间光效。每项只有一个主用途；来源与组合／微交互作为标签保留。没有精确名称或需要同类比较时才读本页，选定一项后停止扩展。
 
 | 组件 | 用途 | 来源与标签 |
 |---|---|---|
@@ -70,3 +70,5 @@
 | [Shape Grid](../components/shape-grid.md) | 图形网格漂移并响应指针 | react-bits、React Bits、backgrounds、动态背景、背景与光效、按需挂载 |
 | [Liquid Chrome](../components/liquid-chrome.md) | 反射表面保留流动的液态纹理 | react-bits、React Bits、backgrounds、动态背景、背景与光效、按需挂载 |
 | [Balatro](../components/balatro.md) | 保留旋转流纹与可调交互的着色器效果 | react-bits、React Bits、backgrounds、动态背景、背景与光效、按需挂载 |
+
+选定一个组件后只读它的指南、示例与实际依赖；返回 [任务路由](../task-router.md)。

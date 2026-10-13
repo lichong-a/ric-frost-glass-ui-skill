@@ -26,6 +26,7 @@ export default function AeroShardsDemo() {
           interaction="repel" {...demoProps('t0')}
         />,
     createAeroShardsCanvas,
+    { componentName: 'Aero Shards' },
   );
   return <div className={styles.stage} data-visual-demo="aero-shards">{effect}<p className={styles.hint}>移动指针拨动碎片 · 按住聚拢 · 点击扩散</p></div>;
 }

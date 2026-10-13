@@ -1,6 +1,6 @@
 import type { ShapeWavesProps } from '../../../.upstream/src/ts-default/Backgrounds/ShapeWaves/ShapeWaves';
 import { shapeCell } from './shape-model';
-import { startCanvas, type CanvasFrame } from './canvas-loop';
+import { startCanvas, type CanvasFrame, type CanvasLifecycle } from './canvas-loop';
 
 export function paintShapeWaves(context: CanvasRenderingContext2D, frame: CanvasFrame, props: ShapeWavesProps, mask?: Uint8ClampedArray, introElapsed = frame.time) {
   const { width, height, time, pointer } = frame;
@@ -32,7 +32,7 @@ export function paintShapeWaves(context: CanvasRenderingContext2D, frame: Canvas
   context.globalAlpha = 1; context.shadowBlur = 0;
 }
 
-export function createShapeWavesCanvas(canvas: HTMLCanvasElement, getProps: () => ShapeWavesProps) {
+export function createShapeWavesCanvas(canvas: HTMLCanvasElement, getProps: () => ShapeWavesProps, lifecycle?: CanvasLifecycle) {
   let mask: Uint8ClampedArray | undefined, signature = '', introStarted = 0, introKey: ShapeWavesProps['introKey'];
   return startCanvas(canvas, getProps, (context, frame, props) => {
     if (props.introKey !== introKey) { introKey = props.introKey; introStarted = frame.time; }
@@ -52,5 +52,5 @@ export function createShapeWavesCanvas(canvas: HTMLCanvasElement, getProps: () =
       }
     }
     paintShapeWaves(context, frame, props, mask, frame.time - introStarted);
-  });
+  }, undefined, lifecycle);
 }

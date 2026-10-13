@@ -13,7 +13,7 @@
 ## 2. 只加载这一项
 
 1. 只读本指南，确认用途与边界。
-2. 只读 [src/business/demos/scroll/business-animateonscroll.tsx](../../../src/business/demos/scroll/business-animateonscroll.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
+2. 只读 [src/business/demos/scroll/business-animateonscroll.tsx](../../../src/business/demos/scroll/business-animateonscroll.tsx)；需核对 API 与 DIY 配置时读 [本项参数记录](../../../src/parameters/definitions/business-animateonscroll.json)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
 3. 本例从 components 按需导入独立控件；只读实际导入的 .tsx 及同名 .module.css。布局工具类也显式使用 CSS Modules，不给整块区域的 button/input 套统一动效。
 4. 涉及业务错误、权限、数据或异步行为时才追加对应契约：[19-overlays-keyboard](../../contracts/19-overlays-keyboard.md)、[18-auxiliary](../../contracts/18-auxiliary.md)。
 5. 预览库使用本项独立 import() 入口；复制到目标项目时也只接入所需组件和直接依赖。
@@ -45,7 +45,11 @@ export default function BusinessAnimateOnScrollDemo() {
 
 ### 完整组件 API
 
-| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+源码默认值来自本包业务实现；本例默认配置来自独立示例，两者可能不同。
+
+本例默认导出是可运行演示入口。下表无前缀参数属于 [MotionSurface](../../../src/business/components/MotionSurface.tsx) 的组件 API，带前缀参数属于对应叶组件；这些参数不表示演示函数本身接收相同 Props。
+
+| 参数 | 类型 | 必填 | 源码默认值 | 中文说明 |
 |---|---|---|---|---|
 | `children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
 
@@ -57,7 +61,7 @@ children={<><article data-ui="aw-business-item" className={cn("aw-business-item"
 
 ### 本例配置与 DIY
 
-以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+以下范围属于本例编辑器的可用范围，组件 API 保持上述类型与约束。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
 
 本项使用 React 节点、回调和业务数据组合；这些内容保持真实 TSX 接入，未伪装成普通文本控件。
 
@@ -81,4 +85,4 @@ children={<><article data-ui="aw-business-item" className={cn("aw-business-item"
 
 能力对照：animated-content、fade-content 是已有相邻效果；通用业务行为按本例补齐。
 
-选型有疑问时返回 [基础辅助](../categories/utility.md)，先比较最多 2–3 项。
+选型有疑问时返回 [滚动与转场](../categories/scroll.md)，先比较最多 2–3 项。

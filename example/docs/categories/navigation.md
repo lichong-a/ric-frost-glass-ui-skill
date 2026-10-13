@@ -1,6 +1,6 @@
 # 导航与菜单
 
-17 个组件。页面导航、命令查找与菜单选择。每项只有一个主分类，原来源与组合／微交互作为用途标签保留。
+17 个组件。页面导航、命令查找与菜单选择。每项只有一个主用途；来源与组合／微交互作为标签保留。没有精确名称或需要同类比较时才读本页，选定一项后停止扩展。
 
 | 组件 | 用途 | 来源与标签 |
 |---|---|---|
@@ -21,3 +21,5 @@
 | [NavigationMenu](../business/components/business-navigationmenu.md) | 页面或模块之间导航，有清晰的当前项和目标 | business、业务基础、business-navigation、业务导航、原生 React |
 | [Sidebar](../business/components/business-sidebar.md) | 工作区需要持续的模块导航与可收起侧栏 | business、业务基础、business-navigation、业务导航、原生 React |
 | [CommandMenu](../business/components/business-commandmenu.md) | 很多动作需要统一搜索、方向键选择和Enter触发 | business、业务基础、business-navigation、业务导航、原生 React |
+
+选定一个组件后只读它的指南、示例与实际依赖；返回 [任务路由](../task-router.md)。

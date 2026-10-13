@@ -23,11 +23,11 @@
 | `theme.css` | 消费变量的基础样式；不承担数据与复杂交互逻辑 |
 | `CSS_API.md` | 实际类名、状态属性与组件 Props 到 DOM 的接入映射 |
 | [示例维护说明](../../README.md) | 303 个独立示例的运行方式与集成说明 |
-| `example/docs/components/` | 逐组件真实用法、源码路径、依赖和验收项 |
+| `example/docs/components/`、`example/docs/business/components/` | 分别提供效果与业务组件的真实用法、源码路径、依赖和验收项 |
 | `example/scripts/find-component.mjs` | 按英文名称、slug 或中文意图定位单组件 |
 | `COMPONENT_CONTRACTS.md` | 下拉、切换、表格、导入等状态及键盘行为 |
 | `ACCEPTANCE.md` | 复现检查、状态检查与截图验收要求 |
-| `VALIDATION_REPORT.md` | 本版本实际执行的检查结果及验证范围 |
+| `VALIDATION_REPORT.md` | 初始规范包阶段的历史检查及验证范围；当前修改需重新运行维护检查 |
 | `references/01-skills-page.png` | 完整页面基准 |
 | `references/02-topbar-dropdowns.png` | 顶栏下拉参考 |
 | `references/03-foundation-components.png` | 基础组件参考 |

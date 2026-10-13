@@ -13,7 +13,7 @@
 ## 2. 只加载这一项
 
 1. 只读本指南，确认用途与边界。
-2. 只读 [src/business/demos/form/business-inputcolor.tsx](../../../src/business/demos/form/business-inputcolor.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
+2. 只读 [src/business/demos/form/business-inputcolor.tsx](../../../src/business/demos/form/business-inputcolor.tsx)；需核对 API 与 DIY 配置时读 [本项参数记录](../../../src/parameters/definitions/business-inputcolor.json)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
 3. 本例从 components 按需导入独立控件；只读实际导入的 .tsx 及同名 .module.css。布局工具类也显式使用 CSS Modules，不给整块区域的 button/input 套统一动效。
 4. 涉及业务错误、权限、数据或异步行为时才追加对应契约：[05-input](../../contracts/05-input.md)。
 5. 预览库使用本项独立 import() 入口；复制到目标项目时也只接入所需组件和直接依赖。
@@ -46,7 +46,11 @@ export default function InputColorDemo() {
 
 ### 完整组件 API
 
-| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+源码默认值来自本包业务实现；本例默认配置来自独立示例，两者可能不同。
+
+本例默认导出是由原生元素与叶组件组成的演示函数，不接收公开 Props。下表按叶组件前缀列出实际 API；原生属性类型单独注明。
+
+| 参数 | 类型 | 必填 | 源码默认值 | 中文说明 |
 |---|---|---|---|---|
 | `Field.label` | `string` | 是 | `未指定` | 向用户或辅助技术说明控件的名称。 |
 | `Field.children` | `ReactNode` | 是 | `未指定` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
@@ -76,7 +80,7 @@ children={<><div data-ui="aw-business-row" className={cn("aw-business-row")}><in
 
 ### 本例配置与 DIY
 
-以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+以下范围属于本例编辑器的可用范围，组件 API 保持上述类型与约束。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
@@ -105,4 +109,4 @@ children={<><div data-ui="aw-business-row" className={cn("aw-business-row")}><in
 
 能力对照：此前没有独立可运行业务示例，规范和 CSS 不作为运行覆盖。
 
-选型有疑问时返回 [业务表单](../categories/form.md)，先比较最多 2–3 项。
+选型有疑问时返回 [表单与选择](../categories/form.md)，先比较最多 2–3 项。

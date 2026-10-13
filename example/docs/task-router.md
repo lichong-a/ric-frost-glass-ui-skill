@@ -1,34 +1,31 @@
 # 按任务渐进加载
 
-本次清单：215 个组件；日期 2026-10-12；固定版本 `2139cb3098d4fedc6264f13e50dcb4694224ba7c`。每项对应独立示例；有明确名称时直接读取当前指南。名称查询直接到单组件文档，不必先读类别。
+本次清单：303 个组件；日期 2026-10-12。每项对应独立示例；有明确名称时直接查询单组件指南，无需先读类别。
 
-## 1. 按已有信息定位
+1. 有精确名称：运行 `find-component.mjs "名称" --exact`，只读命中指南。
+2. 只有中文场景：运行 `find-component.mjs "中文意图" --limit 3`，最多比较 2–3 项。
+3. 只知道用途：先读下方一个用途类别；来源分类、family、micro 与 components 用 `--tag` 过滤。
+4. 单组件指南 → 自有示例 → 实际导入的源码、共享符号和样式 → 当前任务涉及的契约。禁止加载完整索引、所有 Props 或全量源码。
 
-| 用户已有信息 | 下一步 |
-|---|---|
-| 精确英文名或 slug | 运行 `find-component.mjs "名称" --exact`，只读返回的单组件文档 |
-| 中文效果意图 | 运行 `find-component.mjs "中文意图" --limit 5`，先看最相关一项 |
-| 只知道类别或要比较方案 | 只读下方对应类别页，选出 1–3 项再读组件文档 |
-| 只要求普通业务控件 | 读取基础规范/契约分片；不强行选一个装饰效果 |
-| 用户明确要求全部组件 | 按十三个用途分类分批实现和逐项核对清单；每个任务只加载分配的组件文档 |
+普通业务先看 [业务路由](business/task-router.md)；明确要求装饰效果时再看 [效果路由](effects/task-router.md)。
 
-## 2. 十三个用途分类
+## 用途分类
 
 | 类别 | 组件数 | 用途 |
 |---|---:|---|
 | [文字动效](categories/text.md) | 28 | 标题、正文、字符与字形的动态表达 |
 | [背景与光效](categories/background.md) | 66 | 页面背景、纹理、粒子与空间光效 |
 | [指针与轨迹](categories/pointer.md) | 16 | 指针形态、悬停响应与移动轨迹 |
-| [滚动与转场](categories/scroll.md) | 10 | 滚动触发、进入视口与状态转场 |
-| [媒体与轮播](categories/media.md) | 28 | 图片、图集、轮播、模型与媒体比较 |
-| [卡片与面板](categories/cards.md) | 20 | 对象卡片、阅读面与内容面板 |
-| [表单与选择](categories/form.md) | 14 | 文本输入、数值调整、选项与字段语义 |
-| [按钮与操作](categories/actions.md) | 8 | 动作入口、提交、快捷操作与撤销 |
-| [导航与菜单](categories/navigation.md) | 10 | 页面导航、命令查找与菜单选择 |
-| [数据与文件](categories/data.md) | 7 | 记录、层级、列表、文件与结果浏览 |
-| [布局与流程](categories/layout.md) | 1 | 工作区分隔、内容布局与顺序流程 |
-| [状态与反馈](categories/feedback.md) | 6 | 等待、进度、通知与结果状态 |
-| [弹层与辅助](categories/overlay.md) | 1 | 对话框、提示、浮层与焦点辅助 |
+| [滚动与转场](categories/scroll.md) | 12 | 滚动触发、进入视口与状态转场 |
+| [媒体与轮播](categories/media.md) | 31 | 图片、图集、轮播、模型与媒体比较 |
+| [卡片与面板](categories/cards.md) | 24 | 对象卡片、阅读面与内容面板 |
+| [表单与选择](categories/form.md) | 45 | 文本输入、数值调整、选项与字段语义 |
+| [按钮与操作](categories/actions.md) | 13 | 动作入口、提交、快捷操作与撤销 |
+| [导航与菜单](categories/navigation.md) | 17 | 页面导航、命令查找与菜单选择 |
+| [数据与文件](categories/data.md) | 18 | 记录、层级、列表、文件与结果浏览 |
+| [布局与流程](categories/layout.md) | 7 | 工作区分隔、内容布局与顺序流程 |
+| [状态与反馈](categories/feedback.md) | 16 | 等待、进度、通知与结果状态 |
+| [弹层与辅助](categories/overlay.md) | 10 | 对话框、提示、浮层与焦点辅助 |
 
 ## 3. 页面与基础行为
 
@@ -39,7 +36,7 @@
 | 表格 / 筛选 / 行操作 / 分页 | [表格](spec/10-table.md)、[DataTable](contracts/11-data-table.md) | [RowActions](contracts/12-row-actions.md)、[Pagination](contracts/16-pagination.md) |
 | 菜单 / 各类弹窗 / 四向抽屉 / 提示 | [浮层](spec/11-overlays.md)、[浮层与键盘](contracts/19-overlays-keyboard.md) | [确认弹窗](contracts/14-confirm-dialog.md)、[抽屉与Tooltip](contracts/17-drawer-tooltip.md) |
 | 租户切换 / 导入与扫描 | [TenantSwitcher](contracts/08-tenant-switcher.md) 或 [ImportDialog](contracts/13-import-dialog.md) | 只读取所涉状态和失败回退 |
-| 状态 / 计时 / 四角Notice / Toast / 空态 | [反馈](spec/12-feedback.md)、[反馈契约](contracts/15-feedback.md) | Micro 中按具体名称检索；真实任务与示例数据分开 |
+| 状态 / 计时 / 四角Notice / Toast / 空态 | [反馈](spec/12-feedback.md)、[反馈契约](contracts/15-feedback.md) | 用具体名称或 --tag micro 检索；真实任务与示例数据分开 |
 | 动效 / 指针 / Canvas / WebGL | [效果与降级](effects-policy.md) | 只读所选组件的实际依赖与源码 |
 | 统一滚动条 / 长正文与局部滚动 | [尺寸与滚动条](spec/06-geometry.md)、[滚动条样式入口](../../CSS_API.md) | 表格、弹窗或抽屉只追加自身相关契约 |
 | 接入 Token / 主题 / Portal | [CSS API](../../CSS_API.md) | [工程接入](spec/14-integration.md) |

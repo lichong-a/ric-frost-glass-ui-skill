@@ -57,7 +57,9 @@ export default function DodgeFieldDemo() {
 
 ### 完整组件 API
 
-| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+源码默认值来自锁定效果实现及已声明的本包适配；本例默认配置来自独立示例，两者可能不同。
+
+| 参数 | 类型 | 必填 | 源码默认值 | 中文说明 |
 |---|---|---|---|---|
 | `children` | `ReactNode \| ((state: DodgeFieldState) => ReactNode)` | 否 | `(<br>          <button type="button" className="dodge-field__pill" aria-label={taunts[0]}><br>            <span className="dodge-field__labels"><br>              {taunts.map((taunt, i) => (<br>                <span<br>                  key={`${taunt}-${i}`}<br>                  className="dodge-field__label"<br>                  data-active={i === index ? 'true' : 'false'}<br>                  aria-hidden="true"<br>                ><br>                  {taunt}<br>                </span><br>              ))}<br>            </span><br>          </button><br>        )` | 组件内显示的内容；字符串、ReactNode 与 JSX 的支持范围由类型声明决定。 |
 | `taunts` | `string[]` | 否 | `DEFAULT_TAUNTS` | 提示短句的有序数据集合；每一项按数组元素类型配置。 |
@@ -127,7 +129,7 @@ style={{ width: "100%", minHeight: 240 }}
 
 ### 本例配置与 DIY
 
-以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+以下范围属于本例编辑器的可用范围，组件 API 保持上述类型与约束。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
@@ -183,4 +185,4 @@ style={{ width: "100%", minHeight: 240 }}
 5. 只激活本项；切换或卸载后停止其持续工作。
 6. 减少运动与不可用情形保留本节所述等价内容或功能。
 
-只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [指针与轨迹](../categories/pointer.md)；否则直接完成当前组件。
+只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [指针与轨迹](../effects/categories/pointer.md)；否则直接完成当前组件。

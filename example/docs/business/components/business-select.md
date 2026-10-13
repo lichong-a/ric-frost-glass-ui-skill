@@ -13,7 +13,7 @@
 ## 2. 只加载这一项
 
 1. 只读本指南，确认用途与边界。
-2. 只读 [src/business/demos/form/business-select.tsx](../../../src/business/demos/form/business-select.tsx)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
+2. 只读 [src/business/demos/form/business-select.tsx](../../../src/business/demos/form/business-select.tsx)；需核对 API 与 DIY 配置时读 [本项参数记录](../../../src/parameters/definitions/business-select.json)；共享基础有需要才读 [support.tsx](../../../src/business/support.tsx)。
 3. 本例从 components 按需导入独立控件；只读实际导入的 .tsx 及同名 .module.css。布局工具类也显式使用 CSS Modules，不给整块区域的 button/input 套统一动效。
 4. 涉及业务错误、权限、数据或异步行为时才追加对应契约：[06-select](../../contracts/06-select.md)。
 5. 预览库使用本项独立 import() 入口；复制到目标项目时也只接入所需组件和直接依赖。
@@ -52,7 +52,11 @@ export default function SelectDemo() {
 
 ### 完整组件 API
 
-| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+源码默认值来自本包业务实现；本例默认配置来自独立示例，两者可能不同。
+
+本例默认导出是可运行演示入口。下表无前缀参数属于 [AnimatedSelect](../../../src/business/components/AnimatedSelect.tsx) 的组件 API，带前缀参数属于对应叶组件；这些参数不表示演示函数本身接收相同 Props。
+
+| 参数 | 类型 | 必填 | 源码默认值 | 中文说明 |
 |---|---|---|---|---|
 | `id` | `string` | 否 | `generatedId` | 原生控件或容器的唯一标识，用于标签关联、焦点与无障碍引用。 |
 | `value` | `string` | 是 | `未指定` | 当前受控值，由调用方维护并随交互回调更新。 |
@@ -108,7 +112,7 @@ children={"示例"}
 
 ### 本例配置与 DIY
 
-以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+以下范围属于本例编辑器的可用范围，组件 API 保持上述类型与约束。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
@@ -141,4 +145,4 @@ children={"示例"}
 
 能力对照：此前没有独立可运行业务示例，规范和 CSS 不作为运行覆盖。
 
-选型有疑问时返回 [业务表单](../categories/form.md)，先比较最多 2–3 项。
+选型有疑问时返回 [表单与选择](../categories/form.md)，先比较最多 2–3 项。

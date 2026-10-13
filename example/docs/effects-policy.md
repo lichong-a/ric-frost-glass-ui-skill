@@ -41,6 +41,8 @@ node scripts/example.mjs setup --component <slug>
 | 相机、麦克风无权限 | 仅在用户主动点击对应功能后请求；拒绝后保留替代输入 / 图片，并说明状态 |
 | 减少透明度或 backdrop-filter 不可用 | 使用 Token 中的稳定底色与可辨边界 |
 
+Aero Shards 与 Shape Waves 原版使用 WebGPU：适配器检查最多等待 1.5 秒，原版渲染最多等待 15 秒首帧 guard。检查失败或原版失效时默认显示可读不可用提示；用户手动选择“运行兼容预览”后才挂载带标记的 Canvas 2D 近似实现，并保留它与原版的差异说明。兼容预览不能作为原版渲染成功的证明。资源重建时取消旧检查并释放旧资源。
+
 ## 6. Agent UI 的真实状态
 
 Thought Line、Call Chip、Status Mark、Lattice Loader、Refine Frame、Voice Pill 和 Prompt Bar 只呈现业务层明确提供的公开状态、步骤摘要、内容与计时。不要编造模型隐藏推理、工具成功或录音结果。演示计时/状态必须标为示例，生产中以真实任务事件为准。

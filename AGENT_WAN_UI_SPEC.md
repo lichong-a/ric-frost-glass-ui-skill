@@ -51,11 +51,11 @@
 | `theme.css` | 消费变量的基础样式；不承担数据与复杂交互逻辑 |
 | `CSS_API.md` | 实际类名、状态属性与组件 Props 到 DOM 的接入映射 |
 | [示例维护说明](example/README.md) | 303 个独立示例的运行方式与集成说明 |
-| `example/docs/components/` | 逐组件真实用法、源码路径、依赖和验收项 |
+| `example/docs/components/`、`example/docs/business/components/` | 分别提供效果与业务组件的真实用法、源码路径、依赖和验收项 |
 | `example/scripts/find-component.mjs` | 按英文名称、slug 或中文意图定位单组件 |
 | `COMPONENT_CONTRACTS.md` | 下拉、切换、表格、导入等状态及键盘行为 |
 | `ACCEPTANCE.md` | 复现检查、状态检查与截图验收要求 |
-| `VALIDATION_REPORT.md` | 本版本实际执行的检查结果及验证范围 |
+| `VALIDATION_REPORT.md` | 初始规范包阶段的历史检查及验证范围；当前修改需重新运行维护检查 |
 | `references/01-skills-page.png` | 完整页面基准 |
 | `references/02-topbar-dropdowns.png` | 顶栏下拉参考 |
 | `references/03-foundation-components.png` | 基础组件参考 |
@@ -707,9 +707,9 @@ node scripts/validate-tokens.mjs
 
 ### 14.6 组件示例与按需引导
 
-示例库包含 **303 个独立入口**：215 个交互效果与 88 个业务基础能力。效果目录包含文字动画 33、动画效果 41、组合组件 48、微交互 34、背景效果 59。每个身份计为一项，不重复统计语言或样式变体。基础能力覆盖表单、数据、导航、弹层、状态、媒体与辅助语义，按场景选择并逐项读取。
+示例库包含 **303 个独立入口**：215 个交互效果与 88 个业务基础能力。上游来源统计为文字动画 33、动画效果 41、组合组件 48、微交互 34、背景效果 59；这些是来源标签，不是当前用途分类。全部组件共用 13 个用途分类，按业务目标选择并逐项读取。每个身份计为一项，不重复统计语言或样式变体。
 
-每个组件包含独立的 `src/demos/<slug>.tsx`、明确的 lazy import 以及 `docs/components/<slug>.md`。文档写明可观察的效果机制、真实 Props 用法、依赖、源文件、资源与验收要求。目录页支持英文名、中文意图与类别查询；选中项在独立 iframe 中运行，切换、暂停或离开预览区域会销毁旧实例。
+效果示例使用 `example/src/demos/<用途>/<slug>.tsx` 与 `example/docs/components/<slug>.md`；业务示例使用 `example/src/business/demos/<用途>/<id>.tsx` 与 `example/docs/business/components/<id>.md`。实际路径来自用途目录元数据和查询结果，不按组件名称猜测目录。各项都有明确的 lazy import，文档写明真实 Props、依赖、资源与验收要求。目录页支持英文名、中文意图与主用途查询；来源标签可另行过滤。选中项在独立 iframe 中运行，切换、暂停或离开预览区域会销毁旧实例。
 
 ```bash
 node scripts/example.mjs setup
@@ -723,7 +723,7 @@ node scripts/find-component.mjs "毛玻璃卡片" --limit 3
 
 颜色继续以 `tokens.json` 为唯一源。v1.1 增加 `palette.effectSage`、`palette.effectSand`、`palette.effectTerra` 三个低饱和效果色；`src/shared/palette.generated.ts` 由 Token 生成，供需要实际颜色字符串的 Canvas / WebGL 参数使用。深墨色背景仅用于需要暗底观察的局部效果舞台，不定义一套新的业务暗色主题。
 
-系统减少运动时，演示先显示未挂载说明，用户可选择播放本次。这个说明不是逐效果静态重绘；生产页面需要按所选组件提供等价的静态内容或原生控制器。某项显示“已挂载”仅表示 React commit，不能据此判断 GPU 已出帧、图片已加载或交互已验收。实际检查记录见 `VALIDATION_REPORT.md`。
+系统减少运动时，演示先显示未挂载说明，用户可选择播放本次。这个说明不是逐效果静态重绘；生产页面需要按所选组件提供等价的静态内容或原生控制器。默认的“已挂载”仅表示 React commit；自行管理状态的 WebGPU 示例等待首帧标记，并在失败时保留恢复入口。两种状态都不代替图片、视觉和交互验收。历史规范包检查见 `VALIDATION_REPORT.md`，当前结果以本轮实际执行的维护检查为准。
 
 ## 15. 扩展到其他 Web 页面
 

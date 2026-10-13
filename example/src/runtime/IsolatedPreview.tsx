@@ -51,6 +51,10 @@ function PreviewFrame({ entry, previewUrl, motion = 'system', active = true, onS
   const [detail, setDetail] = useState<string>();
   const [slow, setSlow] = useState(false);
   const origin = window.location.origin;
+  const demoOwnsStatus = entry.statusMode === 'demo';
+  const statusLabel = demoOwnsStatus
+    ? status === 'unsupported' ? '原版暂不可用' : (status === 'ready' || status === 'loading') && detail ? detail : statusLabels[status]
+    : statusLabels[status];
 
   const sendPreferences = useCallback(() => {
     frameRef.current?.contentWindow?.postMessage({
@@ -113,13 +117,13 @@ function PreviewFrame({ entry, previewUrl, motion = 'system', active = true, onS
   return (
     <section className="aw-isolated-preview" aria-label={`${entry.name} 独立预览`}>
       <div className="aw-preview-toolbar">
-        <span className="aw-preview-status" role="status" aria-live="polite">{statusLabels[active && visible && intersecting ? status : 'paused']}</span>
+        <span className="aw-preview-status" role="status" aria-live="polite">{active && visible && intersecting ? statusLabel : statusLabels.paused}</span>
         <button type="button" className="aw-preview-button" onClick={onReload}>重新加载</button>
       </div>
       {slow ? <p className="aw-preview-note">组件仍在加载。如果长时间没有变化，可重新加载本次预览。</p> : null}
       {detail && status === 'error' ? <p className="aw-preview-note">{detail}</p> : null}
       <div ref={viewportRef} style={{ minHeight: normalizePreviewHeight(height ?? entry.minHeight) }}>
-      {active && visible && intersecting && status !== 'error' ? <iframe
+      {active && visible && intersecting && (status !== 'error' || demoOwnsStatus) ? <iframe
         ref={frameRef}
         src={source}
         title={`${entry.name} 组件交互演示`}

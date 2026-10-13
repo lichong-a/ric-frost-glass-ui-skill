@@ -4824,6 +4824,7 @@ export const entries: CatalogEntry[] = [
     "demoPath": "src/demos/background/shape-waves.tsx",
     "motion": "continuous",
     "webgl": "none",
+    "statusMode": "demo",
     "minHeight": 560
   },
   {
@@ -4854,6 +4855,7 @@ export const entries: CatalogEntry[] = [
     "demoPath": "src/demos/background/aero-shards.tsx",
     "motion": "continuous",
     "webgl": "none",
+    "statusMode": "demo",
     "minHeight": 560
   },
   {

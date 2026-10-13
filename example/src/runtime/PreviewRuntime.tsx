@@ -6,6 +6,7 @@ import type { MotionMode, PreviewRegistry, PreviewStatus } from './types';
 import { loadDefinition } from '../parameters/load';
 import { defaultValues, validateValues } from '../parameters/validation';
 import { DemoConfigProvider } from '../parameters/DemoConfig';
+import { DemoStatusProvider } from './DemoStatus';
 import type { DemoValues, JsonValue, ParameterDefinition } from '../parameters/types';
 
 function useSystemReducedMotion() {
@@ -38,6 +39,7 @@ export function PreviewRuntime({ registry }: { registry: PreviewRegistry }) {
   });
   const entry = registry.getEntry(config.id);
   const loader = registry.getLoader(config.id);
+  const demoOwnsStatus = entry?.statusMode === 'demo';
   const Demo = useMemo(() => loader ? lazy(loader) : null, [loader]);
   const [motion, setMotion] = useState<MotionMode>(config.motion);
   // Embedded previews wait for the host's motion/visibility preferences before
@@ -115,6 +117,10 @@ export function PreviewRuntime({ registry }: { registry: PreviewRegistry }) {
     if (!entry || !mayMount) {
       return () => { cancelled = true; };
     }
+    if (demoOwnsStatus) {
+      setGraphics({ available: true });
+      return () => { cancelled = true; };
+    }
     void detectGraphicsSupport(entry.webgl).then(result => {
       if (!cancelled) setGraphics(result);
     }).catch(() => {
@@ -123,10 +129,10 @@ export function PreviewRuntime({ registry }: { registry: PreviewRegistry }) {
     // requestAdapter has no AbortSignal; ignore late results after a pause,
     // selection change or unmount so they cannot remount an inactive effect.
     return () => { cancelled = true; };
-  }, [entry, mayMount]);
+  }, [entry, mayMount, demoOwnsStatus]);
 
   useEffect(() => {
-    if (!mayMount || !graphics?.available) return;
+    if (!mayMount || !graphics?.available || demoOwnsStatus) return;
     const fail = (reason: unknown) => {
       const message = describeError(reason);
       setRuntimeError(message);
@@ -147,7 +153,7 @@ export function PreviewRuntime({ registry }: { registry: PreviewRegistry }) {
       window.removeEventListener('unhandledrejection', onRejection);
       document.removeEventListener('webglcontextlost', onContextLost, true);
     };
-  }, [mayMount, graphics, report]);
+  }, [mayMount, graphics, report, demoOwnsStatus]);
 
   useEffect(() => {
     if (!entry || !Demo) report('error', '目录中没有此组件，或它缺少独立演示入口。');
@@ -207,8 +213,10 @@ export function PreviewRuntime({ registry }: { registry: PreviewRegistry }) {
     <main className="aw-preview-runtime" data-component={entry.id} data-motion={reduced && !startedByUser ? 'reduce' : 'allow'}>
       <PreviewErrorBoundary componentName={entry.name} onError={boundaryError} onRetry={reload}>
         <Suspense fallback={<Fallback title={`正在加载 ${entry.name}`} description="仅下载并挂载当前选中的组件。" busy />}>
-          <DemoConfigProvider values={parameters} onChange={changeValue}><Demo /></DemoConfigProvider>
-          <ReadySignal onReady={ready} />
+          <DemoConfigProvider values={parameters} onChange={changeValue}>
+            <DemoStatusProvider report={demoOwnsStatus ? report : undefined}><Demo /></DemoStatusProvider>
+          </DemoConfigProvider>
+          {!demoOwnsStatus ? <ReadySignal onReady={ready} /> : null}
         </Suspense>
       </PreviewErrorBoundary>
     </main>

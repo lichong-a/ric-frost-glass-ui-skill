@@ -66,9 +66,13 @@ node scripts/find-component.mjs "AutoComplete" --provider business --exact
 node scripts/find-component.mjs "排序分页" --provider business --limit 3
 node scripts/find-component.mjs "Glass Surface" --provider effects --exact
 node scripts/find-component.mjs "标题逐字出现" --provider effects --limit 3
+node scripts/find-component.mjs --category navigation --provider business --limit 10
+node scripts/find-component.mjs --category navigation --tag micro --provider effects
 ```
 
 读取顺序为 **目标 → 用途与替代边界 → 单项指南 → 实际示例 → 必要共享符号与契约**。有明确名称时直接读单项；需要比较时先读同类两三项，不加载全部 303 项源码。
+
+[全库用途导航](docs/task-router.md)统计全部 303 项；[业务场景导航](docs/business/task-router.md)统计 88 项；[效果导航](docs/effects/task-router.md)统计 215 项。三个入口共用 13 个用途分类，各自只展示对应范围。`--category` 选择主用途，`--tag` 过滤来源与标签；旧来源类别参数仍能查询，并提示改用标签过滤。
 
 ## 代码与文档
 
@@ -104,6 +108,8 @@ node scripts/find-component.mjs "标题逐字出现" --provider effects --limit 
 
 系统减少运动时，动态演示先显示未挂载提示，用户可以选择播放本次预览。缺少图形能力、加载失败或渲染错误时，保留原因与重试入口。“已挂载”仅表示 React 演示进入页面；字体、资源、GPU 与实际交互仍需在目标环境验收。
 
+Aero Shards 与 Shape Waves 等待原版首帧标记后才报告可用。WebGPU 不可用、启动超时或渲染失败时，预览框显示当前原因、重新检查和手动开启兼容演示的入口。Canvas 演示有明确标记，其材质与光效不等同于原版；兼容绘制失败也提供恢复入口。
+
 接入产品时保留已有路由、权限、状态和接口。示例中的任务计时、消息与短命令是本地演示；上传、模型执行、租户与事务需要真实业务服务。设备权限由用户主动触发，拒绝时保留等价入口。行为约束见 [组件契约](../COMPONENT_CONTRACTS.md)。
 
 ## 维护方式
@@ -120,6 +126,7 @@ node scripts/extract-parameters.mjs
 npm run parameters:build
 npm run docs:build
 npm run check:parameters
+npm run check:docs
 ```
 
 单项效果重新生成使用 `node scripts/build-demos.mjs --component cubes`；全部模板验证使用 `node scripts/build-parameters.mjs --check`。完整用法另外接受 TypeScript 检查，检查器在内存中替换成可复制源，不覆盖实际示例文件。
@@ -132,7 +139,9 @@ node scripts/example.mjs docs
 
 该入口同步单项指南、路由、检索索引、业务加载入口、根 Skill 与交接说明。不要手改生成目录作为第二套事实源。
 
-维护检查在示例目录使用现有 `check:coverage`、`check:parameters`、`check:types`、`test`、`build` 和 `check:build`；只报告实际执行过的项目。历史记录见 [验证报告](../VALIDATION_REPORT.md)，类型与运行条件分别见 `UPSTREAM_TYPE_COMPATIBILITY.md`、`UPSTREAM_RUNTIME_AUDIT.md`、`RESOURCE_AUDIT.md`。
+文档先在暂存目录合并并校验，再更新生成清单拥有的文件；手写文档保留。`node scripts/extract-parameters.mjs --check` 从实际源码重新提取 API 并比较记录，`npm run check:docs` 同时检查类型记录、类别计数、链接、锚点和指南中的参数表，检查过程不生成文档。
+
+维护检查在示例目录使用现有 `check:coverage`、`check:parameters`、`check:docs`、`check:types`、`test`、`build` 和 `check:build`；只报告实际执行过的项目。历史记录见 [验证报告](../VALIDATION_REPORT.md)，类型与运行条件分别见 `UPSTREAM_TYPE_COMPATIBILITY.md`、`UPSTREAM_RUNTIME_AUDIT.md`、`RESOURCE_AUDIT.md`。
 
 子路径构建时设置同一资源 base：
 

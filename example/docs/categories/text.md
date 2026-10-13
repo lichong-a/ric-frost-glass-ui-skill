@@ -1,6 +1,6 @@
 # 文字动效
 
-28 个组件。标题、正文、字符与字形的动态表达。每项只有一个主分类，原来源与组合／微交互作为用途标签保留。
+28 个组件。标题、正文、字符与字形的动态表达。每项只有一个主用途；来源与组合／微交互作为标签保留。没有精确名称或需要同类比较时才读本页，选定一项后停止扩展。
 
 | 组件 | 用途 | 来源与标签 |
 |---|---|---|
@@ -32,3 +32,5 @@
 | [Rotating Text](../components/rotating-text.md) | 多个短句按顺序旋转或翻转切换 | react-bits、React Bits、text-animations、文字动画、文字动效 |
 | [Glitch Text](../components/glitch-text.md) | 文字产生短暂通道错位和抖动 | react-bits、React Bits、text-animations、文字动画、文字动效、按需挂载 |
 | [Variable Proximity](../components/variable-proximity.md) | 字形参数随与指针的距离连续变化 | react-bits、React Bits、text-animations、文字动画、文字动效 |
+
+选定一个组件后只读它的指南、示例与实际依赖；返回 [任务路由](../task-router.md)。

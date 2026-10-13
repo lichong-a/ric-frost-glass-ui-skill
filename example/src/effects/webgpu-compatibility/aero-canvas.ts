@@ -1,6 +1,6 @@
 import type { AeroShardsProps } from '../../../.upstream/src/ts-default/Backgrounds/AeroShards/AeroShards';
 import { shardPose } from './aero-model';
-import { startCanvas, type CanvasFrame } from './canvas-loop';
+import { startCanvas, type CanvasFrame, type CanvasLifecycle } from './canvas-loop';
 
 export function paintAeroShards(context: CanvasRenderingContext2D, frame: CanvasFrame, props: AeroShardsProps) {
   const { width, height, time, pointer } = frame;
@@ -49,12 +49,12 @@ export function paintAeroShards(context: CanvasRenderingContext2D, frame: Canvas
   }
 }
 
-export function createAeroShardsCanvas(canvas: HTMLCanvasElement, getProps: () => AeroShardsProps) {
+export function createAeroShardsCanvas(canvas: HTMLCanvasElement, getProps: () => AeroShardsProps, lifecycle?: CanvasLifecycle) {
   let displayed: AeroShardsProps | undefined;
   return startCanvas(canvas, getProps, (context, frame, props) => {
     // Smooth numeric controls when changing presets, preserving live configuration.
     const amount = 1 - Math.exp(-frame.elapsed * 6 / Math.max(0.02, props.transitionDuration ?? 1));
     displayed = { ...props, spread: displayed ? (displayed.spread ?? 1) + ((props.spread ?? 1) - (displayed.spread ?? 1)) * amount : props.spread };
     paintAeroShards(context, frame, displayed);
-  });
+  }, undefined, lifecycle);
 }

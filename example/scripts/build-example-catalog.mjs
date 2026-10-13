@@ -25,9 +25,9 @@ const entries = catalog.components.map(item => {
   sourcePath:`.upstream/${item.sourceRoot}/${item.id}.tsx`,
   demoPath:demoPathFor(directory, item.slug),
   motion:['micro','components'].includes(item.category)?'interactive':'continuous',
-  // These demos select their own supported renderer. A mandatory GPU gate would
-  // suppress GlassSurface's SVG/CSS or the two WebGPU effects' Canvas alternatives.
+  // These demos own their graphics status. WebGPU starts by default; Canvas is opt-in.
   webgl:['glass-surface','shape-waves','aero-shards'].includes(item.slug)?'none':item.capabilities.webGL?(item.slug==='paper-crumple'?'webgl2':'webgl'):'none',
+  ...(['shape-waves','aero-shards'].includes(item.slug) ? { statusMode:'demo' } : {}),
   minHeight:previewHeights[item.slug] ?? 560,
   };
 });

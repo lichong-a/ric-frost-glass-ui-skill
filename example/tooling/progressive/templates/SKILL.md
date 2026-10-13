@@ -10,7 +10,7 @@ description: "Build and adapt Agent Wan natural-color frosted-glass React compon
 ## 渐进式执行
 
 1. 只读 [核心视觉约束](references/design-core.md)，明确目标项目、页面和业务行为。技术栈、状态、数据、权限与路由沿用目标项目。
-2. **普通业务先查基础组件**：输入、选择、数据、导航、临时交互、反馈使用 [业务场景路由](references/business/task-router.md)。文字入场、悬停、粒子与背景等明确要求的装饰效果，再查 [效果路由](references/task-router.md)。
+2. **普通业务先查基础组件**：输入、选择、数据、导航、临时交互、反馈使用 [业务场景路由](references/business/task-router.md)。文字入场、悬停、粒子与背景等明确要求的装饰效果，再查 [效果路由](references/effects/task-router.md)。需要跨来源比较时读 [全库用途路由](references/task-router.md) 中当前用途的一行。
 3. 有精确组件名直接查询；只有目标时用中文场景查询。脚本只输出命中项的用途、替代边界、指南与源码路径；不要把索引全文放入上下文。
 4. 只读命中指南的“什么场景使用”和“不适合或优先替代”。确需比较时最多先读同类 2–3 项。功能同名时用 `--provider business` 或 `--provider effects` 消歧。
 5. 单组件指南 → 自有示例 → 本例用到的共享符号和样式 → 当前任务涉及的契约。没有用到的共享函数、类别和组件不继续加载。
@@ -23,7 +23,9 @@ description: "Build and adapt Agent Wan natural-color frosted-glass React compon
 node scripts/find-component.mjs "AutoComplete" --provider business --exact
 node scripts/find-component.mjs "搜索建议" --provider business --limit 3
 node scripts/find-component.mjs "排序分页" --provider business --limit 3
+node scripts/find-component.mjs "导航" --category navigation --provider business --limit 3
 node scripts/find-component.mjs "Glass Surface" --provider effects --exact
+node scripts/find-component.mjs "完成勾选" --tag micro --provider effects --limit 3
 ```
 
 精确名称无需先读类别页。无工具时只在 `references/component-index.json` 中定向检索名称或别名，随后读取对应指南；不把全部匹配资源逐项展开。
@@ -64,7 +66,7 @@ node scripts/find-component.mjs "Glass Surface" --provider effects --exact
 
 外壳与业务控件保持茶绿、沙米、象牙白和深墨色的层次。效果画布保留锁定实现的原版配色、对比度和机制，允许深色背景和明显光效。业务专属逻辑留在业务模块，共享基础只管理被实际复用的交互。权限、租户、写入、数据格式和恢复规则沿用目标项目；前端限制不能代替可信服务端校验。
 
-组件只设一个主用途分类；微交互、组合组件与提供方保留为标签。每项参数记录区分完整 API、源码默认值、本例配置和容器设置。常用 DIY 控件在预览下方展开，高级参数折叠；用法源码随配置更新，函数、ref 和 React 节点保持真实 TSX。新样式采用组件私有 CSS Modules，不覆盖其他组件的事件与变换。
+组件只设一个主用途分类，用 `--category` 筛选；旧来源分类、family、micro、components、组合与提供方用 `--tag` 筛选。业务与效果路由分别只列自身实际用途子集，全库用途页合并两种来源。每项参数记录区分完整 API、源码默认值、本例配置和容器设置；业务源码默认值来自本包实现。安装依赖或官方实现后才存在的资源会在所选指南中明确标注。常用 DIY 控件在预览下方展开，高级参数折叠；用法源码随配置更新，函数、ref 和 React 节点保持真实 TSX。新样式采用组件私有 CSS Modules，不覆盖其他组件的事件与变换。
 
 保留所选效果的实际机制。减少运动时停用装饰过渡，但保留必要表单、导航和状态。文件示例只选择、验证和移除本地文件，真实上传需要既有接口和授权；终端示例只处理有限的本地命令，不执行 shell。示例数组和状态不代表真实业务结果。
 

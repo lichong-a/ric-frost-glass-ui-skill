@@ -32,12 +32,12 @@
 
 ## 图形与生命周期
 
-Shape Waves 与 Aero Shards 实际调用 WebGPU。预览先检查安全上下文、API 和图形适配器；运行时的 onError 继续交给错误边界。Paper Crumple 单独标记 WebGL 2。其他 GPU 项做 WebGL 能力预检，具体 Shader、Three 或设备支持仍需在目标浏览器验证。Glass Surface 的 auto 模式由组件自主选择 SVG / WebGL / CSS，不能因为源码包含 GL 分支而强制阻止其非 GPU 路径。
+Shape Waves 与 Aero Shards 的原版实际调用 WebGPU。两个示例自行检查安全上下文、API 和适配器；原版挂载后等待 `data-ready` 首帧标记，启动失败、超时或运行中失效时显示状态卡和重新检查入口。Canvas 兼容演示由用户主动开启，其材质与光效不同于原版。详情见 [Shape Waves](docs/components/shape-waves.md)、[Aero Shards](docs/components/aero-shards.md)。Paper Crumple 单独标记 WebGL 2。其他 GPU 项做 WebGL 能力预检，具体 Shader、Three 或设备支持仍需在目标浏览器验证。Glass Surface 的 auto 模式由组件自主选择 SVG / WebGL / CSS，不能因为源码包含 GL 分支而强制阻止其非 GPU 路径。
 
-选中项的代码和 CSS 只在自己的 iframe 中加载。切换、暂停、隐藏页面、离开预览区域、变更动态偏好或报告运行错误时，父页面会销毁相关 iframe；重新激活时创建新实例。这也处理了某些上游组件仅卸载 React 子树时不会完全停止全局动画循环的问题。iframe 用于样式和生命周期隔离，不能视作执行任意陌生代码的安全边界。
+选中项的代码和 CSS 只在自己的 iframe 中加载。切换、暂停、隐藏页面、离开预览区域、变更动态偏好或出现未被组件处理的运行错误时，父页面会销毁相关 iframe；重新激活时创建新实例。两个 WebGPU 示例在内部处理的可恢复失败保留状态卡，停止失败渲染器并提供重试。这也处理了某些上游组件仅卸载 React 子树时不会完全停止全局动画循环的问题。iframe 用于样式和生命周期隔离，不能视作执行任意陌生代码的安全边界。
 
 减少运动偏好下先显示未挂载说明，用户可明确播放本次；这不是为每种效果绘制等价静态图。业务页面应按所选组件提供等价静态内容或原生控制器。
 
 ## 验证边界
 
-类型、资源散列、静态映射与构建已按主验证记录执行。目录中的「已挂载」只表示 React commit；不能证明字体/纹理已完成加载、GPU 已出帧或每项交互已验收。当前会话没有进行浏览器、真实 GPU、设备授权、截图或屏幕阅读器检查。完整已执行结果见 `../VALIDATION_REPORT.md`，构建依赖图与资源分支细节见 `RESOURCE_AUDIT.md`。
+本文描述静态接入与恢复策略，不作为浏览器、真实 GPU、设备授权、截图或屏幕阅读器验收。默认目录状态中的「已挂载」只表示 React commit；两个自行报告状态的 WebGPU 示例还等待首帧标记，但该标记也不代替视觉和交互验收。历史检查见 [规范包历史验证记录](../VALIDATION_REPORT.md)，构建依赖图与资源分支细节见 [资源审计](RESOURCE_AUDIT.md)。

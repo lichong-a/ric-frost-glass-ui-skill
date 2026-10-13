@@ -1,6 +1,6 @@
 # 数据与文件
 
-18 个组件。记录、层级、列表、文件与结果浏览。每项只有一个主分类，原来源与组合／微交互作为用途标签保留。
+18 个组件。记录、层级、列表、文件与结果浏览。每项只有一个主用途；来源与组合／微交互作为标签保留。没有精确名称或需要同类比较时才读本页，选定一项后停止扩展。
 
 | 组件 | 用途 | 来源与标签 |
 |---|---|---|
@@ -22,3 +22,5 @@
 | [TreeTable](../business/components/business-treetable.md) | 层级记录需要同时比较多列数据并展开子记录 | business、业务基础、business-data、数据与文件、原生 React |
 | [FileUpload](../business/components/business-fileupload.md) | 用户选择本地文件，验证类型大小数量并能逐项移除 | business、业务基础、business-data、数据与文件、原生 React |
 | [Terminal](../business/components/business-terminal.md) | 产品确有受限文本命令入口时保留输入、历史和结果 | business、业务基础、business-utility、基础辅助、原生 React |
+
+选定一个组件后只读它的指南、示例与实际依赖；返回 [任务路由](../task-router.md)。

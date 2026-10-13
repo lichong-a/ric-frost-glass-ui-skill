@@ -88,3 +88,10 @@ test('new root helpers do not permit eager parameter panels, definitions or effe
   for (const name of ['gallery-catalog', 'validation', 'usage', 'load', 'DemoConfig', 'assets']) assert.equal(isAllowedRootSharedName(name), true, name);
   for (const name of ['ParametersPanel', 'spring-check', 'business-button', 'gsap', 'three', 'ogl', 'definitions', 'morph-slider']) assert.equal(isAllowedRootSharedName(name), false, name);
 });
+
+test('the lightweight demo status context may be shared without permitting GPU effects', () => {
+  assert.equal(isAllowedRootSharedName('DemoStatus'), true);
+  for (const name of ['backend', 'canvas-loop', 'aero-canvas', 'shape-canvas', 'useWebGPUCompatibility', 'vgpu']) {
+    assert.equal(isAllowedRootSharedName(name), false, name);
+  }
+});

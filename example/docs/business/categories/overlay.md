@@ -1,14 +1,17 @@
-# 弹层与焦点
+# 弹层与辅助
 
-仅在需要按场景选型时读本页；精确名称可直接查询单项指南，不顺序读取整个类别。
+9 个组件。对话框、提示、浮层与焦点辅助。每项只有一个主用途；来源与组合／微交互作为标签保留。没有精确名称或需要同类比较时才读本页，选定一项后停止扩展。
 
-| 组件 | 什么时候使用 | 什么时候换用其它能力 |
+| 组件 | 用途 | 来源与标签 |
 |---|---|---|
-| [Dialog](../components/business-dialog.md) | 任务需要临时阻断背景并收集确认或有限输入 | 补充信息用Popover；长编辑任务用Drawer或页面 |
-| [Drawer](../components/business-drawer.md) | 需要保留当前页面上下文，临时阅读详情、编辑属性或打开选项；左右侧适合详情与导航，上下侧适合短操作面板 | 简短确认用Dialog；永久导航用Sidebar |
-| [OverlayManager](../components/business-overlaymanager.md) | 多个临时浮层需要明确堆叠、最后打开先关闭和焦点恢复 | 单个浮层直接Dialog或Popover，不建立额外管理层 |
-| [Popover](../components/business-popover.md) | 锚点旁呈现少量可操作内容，Escape与外部点击可关闭 | 重要确认用Dialog；单句说明用Tooltip |
-| [Tooltip](../components/business-tooltip.md) | 简短说明在hover或focus出现，不承载必须完成的操作 | 可交互内容用Popover；关键规则保持常显 |
-| [Backdrop](../components/business-backdrop.md) | 临时浮层需要表达背景不可操作，并提供关闭入口 | 普通装饰背景不应阻断点击；模态优先Dialog |
+| [Dialog](../components/business-dialog.md) | 任务需要临时阻断背景并收集确认或有限输入 | business、业务基础、business-overlay、弹层与焦点、原生 React |
+| [Drawer](../components/business-drawer.md) | 需要保留当前页面上下文，临时阅读详情、编辑属性或打开选项；左右侧适合详情与导航，上下侧适合短操作面板 | business、业务基础、business-overlay、弹层与焦点、原生 React |
+| [OverlayManager](../components/business-overlaymanager.md) | 多个临时浮层需要明确堆叠、最后打开先关闭和焦点恢复 | business、业务基础、business-overlay、弹层与焦点、原生 React |
+| [Popover](../components/business-popover.md) | 锚点旁呈现少量可操作内容，Escape与外部点击可关闭 | business、业务基础、business-overlay、弹层与焦点、原生 React |
+| [Tooltip](../components/business-tooltip.md) | 简短说明在hover或focus出现，不承载必须完成的操作 | business、业务基础、business-overlay、弹层与焦点、原生 React |
+| [FocusTrap](../components/business-focustrap.md) | 临时任务区需要焦点限制，并能退出和恢复触发点 | business、业务基础、business-utility、基础辅助、原生 React |
+| [Backdrop](../components/business-backdrop.md) | 临时浮层需要表达背景不可操作，并提供关闭入口 | business、业务基础、business-overlay、弹层与焦点、原生 React |
+| [Portal](../components/business-portal.md) | 浮层需要挂到当前文档指定位置，保留主题与生命周期 | business、业务基础、business-utility、基础辅助、原生 React |
+| [VisuallyHidden](../components/business-visuallyhidden.md) | 补充给辅助技术的名称或说明，视觉布局不显示它 | business、业务基础、business-utility、基础辅助、原生 React |
 
-选定一个组件后只读它的文档、示例与必要共享符号。
+选定一个组件后只读它的指南、示例与实际依赖；返回 [任务路由](../task-router.md)。

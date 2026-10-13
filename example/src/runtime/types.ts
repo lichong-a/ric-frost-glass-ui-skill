@@ -12,6 +12,8 @@ export type PreviewEntry = {
   minHeight?: number;
   /** Relative path of the real component source, for disclosure and copy actions. */
   sourcePath?: string;
+  /** Defaults to runtime mount status. Only opt-in demos own first-frame readiness. */
+  statusMode?: 'runtime' | 'demo';
 };
 
 /** One adapter module per actual upstream component. */

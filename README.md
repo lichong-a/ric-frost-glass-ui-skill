@@ -40,7 +40,7 @@
 
 想比较方案时，只读一个类别并选择最多两三项；有精确名称时，直接查询单项指南。
 
-**[业务场景导航](example/docs/business/task-router.md)** · **[交互效果导航](example/docs/task-router.md)** · **[能力清单](example/docs/business/coverage.md)**
+**[全库用途导航](example/docs/task-router.md)** · **[业务场景导航](example/docs/business/task-router.md)** · **[交互效果导航](example/docs/effects/task-router.md)** · **[能力清单](example/docs/business/coverage.md)**
 
 ## 开始使用
 

@@ -32,7 +32,12 @@
 - Gallery shell and business controls use the existing tokens. Effect canvases may
   use original colors, dark surfaces and visible intensity. A shared skin must not
   suppress shadows, light spill, edge decay or pointer gestures.
-- Aero Shards and Shape Waves select their own renderer. Preserve the locked WebGPU
-  implementation on supported devices and the explicitly labelled Canvas alternative
-  elsewhere. Do not restore a mandatory WebGPU gate or replace navigator.gpu/vgpu
-  globally. Document the compatibility renderer's visual and performance differences.
+- Aero Shards and Shape Waves select their own renderer and report their own status.
+  Wait for the locked root's `data-ready` first-frame marker before reporting ready.
+  Unsupported or failed WebGPU renders show a recoverable state card; the labelled
+  Canvas alternative requires an explicit user action. Catch Canvas setup and paint
+  failures and release its loop resources. Never replace navigator.gpu/vgpu globally.
+- Progressive routes use the directory's purpose categories for all 303 entries and
+  the 88/215 provider subsets. Source families are tags, not a second taxonomy. Keep
+  legacy routes as short migration entries. Generate and validate both kit and skill
+  layouts before applying the owned-file manifest; preserve handwritten documents.

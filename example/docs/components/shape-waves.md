@@ -60,6 +60,7 @@ export default function ShapeWavesDemo() {
            text={"AGENT WAN"} fontFamily={"system-ui, sans-serif"} fontWeight={600} textSize={0.5} shapes={"mixed"} cellSize={11} color={"#a6b39a"} hoverColor={"#faf7f0"} backgroundColor={"#1f2d26"} speed={0.55} glow={0.16} contrast={1.1} interactive={true} dotSize={0.75} scale={1} brightness={0.4} flow={0} direction={0} fade={0.25} splashRadius={40} splashStrength={0.4} intro={true} introDuration={1.6} introKey={0} paused={false}
         />,
     createShapeWavesCanvas,
+    { componentName: 'Shape Waves' },
   );
   return <div className={styles.stage} data-visual-demo="shape-waves">{effect}<p className={styles.hint}>移动指针点亮图形 · 点击释放波纹</p></div>;
 }
@@ -68,7 +69,9 @@ export default function ShapeWavesDemo() {
 
 ### 完整组件 API
 
-| 参数 | 类型 | 必填 | 上游默认值 | 中文说明 |
+源码默认值来自锁定效果实现及已声明的本包适配；本例默认配置来自独立示例，两者可能不同。
+
+| 参数 | 类型 | 必填 | 源码默认值 | 中文说明 |
 |---|---|---|---|---|
 | `text` | `string` | 否 | `''` | 显示或生成效果的文字内容。 |
 | `fontFamily` | `string` | 否 | `'Geist, "Geist Sans", system-ui, sans-serif'` | 字体字族，控制 shape waves 的对应渲染或交互参数。 |
@@ -106,7 +109,7 @@ onError={(error) => {}}
 
 ### 本例配置与 DIY
 
-以下范围属于本例编辑器的可用范围，不改写上游 API。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
+以下范围属于本例编辑器的可用范围，组件 API 保持上述类型与约束。常用参数在预览下方展开，高级参数折叠；无效输入保留最后有效预览。需要重新初始化图形资源的字段在调节结束后重建。
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
@@ -150,7 +153,7 @@ onError={(error) => {}}
 
 ## 5. 加载、动效与降级
 
-本例实际配置：原版使用 WebGPU。本例先检查适配器，支持时运行锁定原版；缺少适配器或原版初始化失败时自动使用带有“兼容预览”标记的 Canvas 2D 图形波场。兼容路径保留三种图形、文字遮罩、滚动波面与指针/点击响应，噪声和光晕与 WebGPU 原版存在差异。
+本例实际配置：原版使用 WebGPU。本例给适配器检查设置 1.5 秒超时，支持时运行锁定原版；挂载后等待 data-ready 首帧标记，15 秒内没有首帧则停止本次启动。缺少适配器、检查失败、启动超时或原版渲染失效时，显示原因、“重新检查”和“打开兼容演示”。用户点击“打开兼容演示”后才挂载 Canvas 2D 图形波场，明确标为“Canvas 兼容演示”，并可通过“重试原版”恢复原版检查。兼容创建或绘制失败也返回状态卡，释放动画帧、观察器、事件与指针捕获。兼容路径保留三种图形、文字遮罩、变化波面与指针/点击响应；噪声和光晕与 WebGPU 原版存在差异。
 
 - 依赖清单：`react`、`vgpu`。安装前复用目标项目的兼容版本，不重复加载。
 - 运行类型：本例预览入口不要求预先通过图形接口检查；实际组件内部的可选渲染分支由源码和本例 Props 决定。此说明不等于浏览器运行证明。
@@ -170,4 +173,4 @@ onError={(error) => {}}
 5. 只激活本项；切换或卸载后停止其持续工作。
 6. 减少运动与不可用情形保留本节所述等价内容或功能。
 
-只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [背景与光效](../categories/background.md)；否则直接完成当前组件。
+只报告实际执行的构建、交互和视觉检查。选型需要同类比较时才返回 [背景与光效](../effects/categories/background.md)；否则直接完成当前组件。

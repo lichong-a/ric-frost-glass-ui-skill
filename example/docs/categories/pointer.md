@@ -1,6 +1,6 @@
 # 指针与轨迹
 
-16 个组件。指针形态、悬停响应与移动轨迹。每项只有一个主分类，原来源与组合／微交互作为用途标签保留。
+16 个组件。指针形态、悬停响应与移动轨迹。每项只有一个主用途；来源与组合／微交互作为标签保留。没有精确名称或需要同类比较时才读本页，选定一项后停止扩展。
 
 | 组件 | 用途 | 来源与标签 |
 |---|---|---|
@@ -20,3 +20,5 @@
 | [Splash Cursor](../components/splash-cursor.md) | 指针扰动产生液体波纹与水花 | react-bits、React Bits、animations、动画效果、指针与轨迹、按需挂载 |
 | [Blob Cursor](../components/blob-cursor.md) | 液滴随指针伸展并产生滴落或点击扩散 | react-bits、React Bits、animations、动画效果、指针与轨迹、按需挂载 |
 | [Dodge Field](../components/dodge-field.md) | 内容短暂避开指针后归位 | react-bits、React Bits、micro、微交互、指针与轨迹 |
+
+选定一个组件后只读它的指南、示例与实际依赖；返回 [任务路由](../task-router.md)。

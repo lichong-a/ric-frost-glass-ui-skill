@@ -1,6 +1,6 @@
 # 表单与选择
 
-45 个组件。文本输入、数值调整、选项与字段语义。每项只有一个主分类，原来源与组合／微交互作为用途标签保留。
+45 个组件。文本输入、数值调整、选项与字段语义。每项只有一个主用途；来源与组合／微交互作为标签保留。没有精确名称或需要同类比较时才读本页，选定一项后停止扩展。
 
 | 组件 | 用途 | 来源与标签 |
 |---|---|---|
@@ -21,7 +21,7 @@
 | [AutoComplete](../business/components/business-autocomplete.md) | 候选项较多且用户知道部分名称，需要边输入边筛选并选择明确对象 | business、业务基础、business-form、业务表单、原生 React |
 | [Checkbox](../business/components/business-checkbox.md) | 表单里的独立布尔选项，允许选中或取消 | business、业务基础、business-form、业务表单、原生 React |
 | [CheckboxGroup](../business/components/business-checkboxgroup.md) | 同一字段可同时选择多个候选，如通知渠道或权限组合 | business、业务基础、business-form、业务表单、原生 React |
-| [DatePicker](../business/components/business-datepicker.md) | 定制日历、月份过渡、键盘选日与起止区间 | business、业务基础、business-form、业务表单、原生 React |
+| [DatePicker](../business/components/business-datepicker.md) | 用户选择单日或起止日，日期值与时区语义明确 | business、业务基础、business-form、业务表单、原生 React |
 | [FloatLabel](../business/components/business-floatlabel.md) | 紧凑表单中需要输入前后始终可见的字段名称 | business、业务基础、business-form、业务表单、原生 React |
 | [IconField](../business/components/business-iconfield.md) | 用图标辅助识别搜索或字段用途，同时保留完整文本标签 | business、业务基础、business-form、业务表单、原生 React |
 | [IftaLabel](../business/components/business-iftalabel.md) | 需要常驻在输入框内部顶部的标签，适合密集设置页 | business、业务基础、business-form、业务表单、原生 React |
@@ -49,3 +49,5 @@
 | [Inplace](../business/components/business-inplace.md) | 短内容默认只读，用户明确进入编辑再保存或取消 | business、业务基础、business-panel、布局与流程、原生 React |
 | [CascadeSelect](../business/components/business-cascadeselect.md) | 选择必须沿父子依赖逐层展开，父项变化清除子项 | business、业务基础、business-form、业务表单、原生 React |
 | [TreeSelect](../business/components/business-treeselect.md) | 表单字段从层级目录中选择明确节点，支持搜索或展开 | business、业务基础、business-form、业务表单、原生 React |
+
+选定一个组件后只读它的指南、示例与实际依赖；返回 [任务路由](../task-router.md)。

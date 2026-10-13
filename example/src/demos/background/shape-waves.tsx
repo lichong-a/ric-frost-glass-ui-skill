@@ -25,6 +25,7 @@ export default function ShapeWavesDemo() {
           interactive {...demoProps('t0')}
         />,
     createShapeWavesCanvas,
+    { componentName: 'Shape Waves' },
   );
   return <div className={styles.stage} data-visual-demo="shape-waves">{effect}<p className={styles.hint}>移动指针点亮图形 · 点击释放波纹</p></div>;
 }

@@ -106,7 +106,7 @@ const rootSharedNames = new Set([
   'react-dom-client', 'client', 'jsx-runtime', 'scheduler',
   // These helpers carry metadata, validation and a React configuration context.
   // Parameter panels, definitions and implementations still load separately.
-  'validation', 'usage', 'load', 'DemoConfig', 'assets',
+  'validation', 'usage', 'load', 'DemoConfig', 'DemoStatus', 'assets',
 ]);
 export const isAllowedRootSharedName = name => rootSharedNames.has(name);
 

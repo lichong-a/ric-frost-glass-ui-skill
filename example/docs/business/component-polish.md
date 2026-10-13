@@ -52,4 +52,4 @@
 - 定向实际 React 默认 SSR、纯逻辑回归和 Vite CSS 转换均已运行。回调 smoke 使用 React/Motion/DOM 边界替身的部分不作为真实渲染或浏览器交互验收。
 - 实际浏览器复测未执行：本轮浏览器工具的 URL 安全策略拒绝了本地页面访问，没有使用其它浏览器、CDP、代理或 Playwright 绕过。需要在实际 iframe 中复测拖拽按下/移动/释放、焦点、液滴效果、通知离场、文件选择/拖放及移动断点。
 
-前面的六项 GPU/指针修改仍保留，详见 [GPU 预览修正](../gpu-preview-fixes.md)。本轮代码留在工作区，示例服务使用 `5174`；刷新后读取新的样式和参数默认值。
+这份整合记录对应 `176afa4` 的业务组件修复与当时的检查结果。GPU 后续状态与兼容行为以 [Aero Shards](../components/aero-shards.md)、[Shape Waves](../components/shape-waves.md) 的正式指南为准；当前参数以各项定义与示例为准。示例服务使用 `5174`。

@@ -11,7 +11,9 @@
 
 普通业务组件先读 references/business/task-router.md，或运行 scripts/find-component.mjs "组件名" --provider business --exact；只知道业务场景时用中文意图查询，比较最多2–3项。
 
-只读被选组件的“适用场景”和“替代边界”，然后按需读它的示例、共享符号、样式和契约。装饰效果用 --provider effects 定位，不读全目录。业务组件的使用方式以本包示例和类型为准。
+--category 只筛选当前主用途，例如 "导航" --category navigation --provider business --limit 3。旧来源分类、family、micro 与 components 用 --tag，例如 "完成勾选" --tag micro --provider effects --limit 3；来源标签不作为主分类。
+
+只读被选组件的“适用场景”和“替代边界”，然后按需读它的示例、共享符号、样式和契约。装饰效果从 references/effects/task-router.md 或用 --provider effects 定位；跨来源比较只读 references/task-router.md 中当前用途的一行。业务组件的使用方式以本包示例和类型为准。完整 API、源码默认值、本例 DIY 与容器设置分别核对，不把演示默认值当成组件契约。
 
 保留所选组件的效果机制与真实交互，用 Agent Wan 低饱和自然色与霜玻璃皮肤统一。普通业务页面只加入本次需求涉及的效果。高运动和持续动画在需要时加载，提供减少运动、功能失效和资源失败的可读降级。
 
