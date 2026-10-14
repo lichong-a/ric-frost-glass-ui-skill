@@ -6,6 +6,8 @@
 
 面向 React 页面与组件的设计规范、交互示例和渐进式 Skill。
 
+**[在线浏览组件示例](https://lichong-a.github.io/ric-frost-glass-ui-skill/)**
+
 [开始使用](#开始使用) · [浏览能力](#组件能力) · [交给 Agent](#交给-agent) · [视觉规范](AGENT_RIC_UI_SPEC.md)
 
 <img src="assets/readme/readme-hero-v02.png" width="920" alt="档案架上的多数资料保持闭合，角色只取出一册资料，沿一条纸带逐层展开当前工作需要的内容。" />
@@ -124,6 +126,19 @@ node scripts/example.mjs preview
 ```
 
 只接入当前需要的实现和直接依赖。保留输入语义、焦点路径、空数据、错误与取消处理；减少运动时停用装饰过渡，必要的操作继续可用。
+
+## 发布示例到 GitHub Pages
+
+[部署工作流](.github/workflows/deploy-pages.yml)在推送到 `main` 时构建并发布示例，也可以从 GitHub Actions 手动运行。工作流使用 Node.js 24、npm 锁文件及固定散列的上游资源，先完成 Token、文档、参数、TypeScript 和测试检查，再构建并校验全部 303 个示例。发布内容为 `example/dist/`。
+
+Pages 的构建来源设为 **GitHub Actions**。构建从 Pages 配置读取子路径，首页、隔离预览、图片、字体和模型使用同一资源 base。需要在本地检查项目路径时，在根目录执行：
+
+```bash
+node scripts/example.mjs build --base=/ric-frost-glass-ui-skill/
+node scripts/example.mjs preview --base=/ric-frost-glass-ui-skill/ --port 4187
+```
+
+如果后续部署需要回退，在 Actions 中选择上一次成功的部署并执行 **Re-run all jobs**，按该次运行的提交重新构建和发布；失败的构建不会进入发布步骤。部署详情中的站点地址与提交 SHA 用于核对发布版本。
 
 ---
 
