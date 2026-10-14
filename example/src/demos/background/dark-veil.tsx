@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/DarkVeil/Da
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Dark Veil component. */
+/** Agent Ric natural-tone preset for the real Dark Veil component. */
 export default function DarkVeilDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

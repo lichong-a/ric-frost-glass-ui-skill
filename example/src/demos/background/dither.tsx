@@ -10,7 +10,7 @@ function toRgb(hex: string): [number, number, number] {
   ];
 }
 
-/** Agent Wan natural-tone preset for the real Dither component. */
+/** Agent Ric natural-tone preset for the real Dither component. */
 export default function DitherDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

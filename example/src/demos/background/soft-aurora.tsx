@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/SoftAurora/
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Soft Aurora component. */
+/** Agent Ric natural-tone preset for the real Soft Aurora component. */
 export default function SoftAuroraDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

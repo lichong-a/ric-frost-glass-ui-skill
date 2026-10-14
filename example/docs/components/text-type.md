@@ -2,7 +2,7 @@
 
 文字动效 · `text-type` · 中文意图：打字机 / 逐字输入 / 打字效果
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -47,7 +47,7 @@ export default function TextTypeDemo() {
     <div className="aw-demo-stage" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>
       <Component
 
-cursorCharacter="▏"  text={["整理技能与工具", "编排多智能体工作流", "Agent Wan · 自然有序"]} typingSpeed={85} deletingSpeed={45} pauseDuration={2000} showCursor={true} textColors={["#1f2d26", "#52604e", "#64695f"]} hideCursorWhileTyping={false} cursorBlinkDuration={0.5} cursorClassName={""} as={"div"} initialDelay={0} loop={true} startOnVisible={false} reverseMode={false}  />
+cursorCharacter="▏"  text={["整理技能与工具", "编排多智能体工作流", "Agent Ric · 自然有序"]} typingSpeed={85} deletingSpeed={45} pauseDuration={2000} showCursor={true} textColors={["#1f2d26", "#52604e", "#64695f"]} hideCursorWhileTyping={false} cursorBlinkDuration={0.5} cursorClassName={""} as={"div"} initialDelay={0} loop={true} startOnVisible={false} reverseMode={false}  />
     </div>
   );
 }
@@ -93,7 +93,7 @@ cursorCharacter="▏"
 **text 的真实接入：**
 
 ```tsx
-text={['整理技能与工具', '编排多智能体工作流', 'Agent Wan · 自然有序']}
+text={['整理技能与工具', '编排多智能体工作流', 'Agent Ric · 自然有序']}
 ```
 
 **textColors 的真实接入：**
@@ -126,7 +126,7 @@ children={"示例"}
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.text` | `["整理技能与工具","编排多智能体工作流","Agent Wan · 自然有序"]` | json | 不限 ~ 不限 | 即时应用 |
+| `t0.text` | `["整理技能与工具","编排多智能体工作流","Agent Ric · 自然有序"]` | json | 不限 ~ 不限 | 即时应用 |
 | `t0.typingSpeed` | `85` | number | 不限 ~ 不限 | 即时应用 |
 | `t0.deletingSpeed` | `45` | number | 不限 ~ 不限 | 即时应用 |
 | `t0.pauseDuration` | `2000` | number | 不限 ~ 不限 | 即时应用 |
@@ -147,7 +147,7 @@ children={"示例"}
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
 - 标题按页面层级选择宋体或 UI 字体；正文保持无衬线。动画终态必须是完整、清晰、可复制的文字。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。

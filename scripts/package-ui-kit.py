@@ -22,7 +22,7 @@ def included(path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=ROOT.parent / "AGENT_WAN_UI_KIT.zip")
+    parser.add_argument("--output", type=Path, default=ROOT.parent / "ric-frost-glass-ui-skill.zip")
     args = parser.parse_args()
     project = ROOT / "example"
     manifest = json.loads((project / "catalog/upstream-manifest.json").read_text())
@@ -42,7 +42,7 @@ def main():
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(args.output, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for path in files:
-            archive.write(path, "agent-wan-ui/" + path.relative_to(ROOT).as_posix())
+            archive.write(path, "ric-frost-glass-ui-skill/" + path.relative_to(ROOT).as_posix())
     with zipfile.ZipFile(args.output) as archive:
         if archive.testzip() is not None:
             raise SystemExit("Archive CRC validation failed.")

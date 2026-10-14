@@ -2,7 +2,7 @@
 
 媒体与轮播 · `orbit-images` · 中文意图：轨道图片 / 图片环绕
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -48,7 +48,7 @@ export default function OrbitImagesDemo() {
       <Component
 
 
-centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Wan</span>} images={[import.meta.env.BASE_URL + "media/scene-1.svg", import.meta.env.BASE_URL + "media/scene-2.svg", import.meta.env.BASE_URL + "media/scene-3.svg", import.meta.env.BASE_URL + "media/scene-4.svg", import.meta.env.BASE_URL + "media/scene-5.svg", import.meta.env.BASE_URL + "media/scene-6.svg"]} altPrefix={"自然色图像"} shape={"ellipse"} radiusX={220} radiusY={75} rotation={-6} duration={36} itemSize={62} responsive={true} showPath={true} pathColor={"#a6b39a"} pathWidth={1} width={"100%"} height={340} baseWidth={1400} radius={300} starPoints={5} starInnerRatio={0.5} direction={"normal"} fill={true} easing={"linear"} paused={false}  />
+centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Ric</span>} images={[import.meta.env.BASE_URL + "media/scene-1.svg", import.meta.env.BASE_URL + "media/scene-2.svg", import.meta.env.BASE_URL + "media/scene-3.svg", import.meta.env.BASE_URL + "media/scene-4.svg", import.meta.env.BASE_URL + "media/scene-5.svg", import.meta.env.BASE_URL + "media/scene-6.svg"]} altPrefix={"自然色图像"} shape={"ellipse"} radiusX={220} radiusY={75} rotation={-6} duration={36} itemSize={62} responsive={true} showPath={true} pathColor={"#a6b39a"} pathWidth={1} width={"100%"} height={340} baseWidth={1400} radius={300} starPoints={5} starInnerRatio={0.5} direction={"normal"} fill={true} easing={"linear"} paused={false}  />
     </div>
   );
 }
@@ -96,7 +96,7 @@ images={MEDIA}
 **centerContent 的真实接入：**
 
 ```tsx
-centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Wan</span>}
+centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Ric</span>}
 ```
 
 ### 本例配置与 DIY
@@ -134,9 +134,9 @@ centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Wan</spa
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
-- 容器、状态色、边界与焦点使用 Agent Wan 规范；交互命中区不随视觉形变缩小。
+- 容器、状态色、边界与焦点使用 Agent Ric 规范；交互命中区不随视觉形变缩小。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 

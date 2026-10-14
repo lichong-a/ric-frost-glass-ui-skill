@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/DotField/Do
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Dot Field component. */
+/** Agent Ric natural-tone preset for the real Dot Field component. */
 export default function DotFieldDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

@@ -2,7 +2,7 @@
 
 文字动效 · `masked-heading` · 中文意图：遮罩标题 / 图片文字 / 网格渐变标题
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -47,7 +47,7 @@ export default function MaskedHeadingDemo() {
     <div className="aw-demo-stage" style={{ width: '100%', minWidth: 0, minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>
       <Component
 
-  text={"AGENT WAN"} src={import.meta.env.BASE_URL + "media/scene-2.svg"} reveal={"wipe"} trigger={"mount"} align={"center"} parallax={14} drift={8} fillScale={1.15} saturation={0.6} weight={800} style={{ "fontSize": "clamp(48px, 9vw, 100px)", "width": "100%" }} tag={"h2"} mediaType={"image"} poster={""} brightness={1} grayscale={false} duration={1.1} stagger={0.09} tracking={-0.03} lineHeight={1.06} textScale={0.115}  />
+  text={"AGENT RIC"} src={import.meta.env.BASE_URL + "media/scene-2.svg"} reveal={"wipe"} trigger={"mount"} align={"center"} parallax={14} drift={8} fillScale={1.15} saturation={0.6} weight={800} style={{ "fontSize": "clamp(48px, 9vw, 100px)", "width": "100%" }} tag={"h2"} mediaType={"image"} poster={""} brightness={1} grayscale={false} duration={1.1} stagger={0.09} tracking={-0.03} lineHeight={1.06} textScale={0.115}  />
     </div>
   );
 }
@@ -99,7 +99,7 @@ style={{ fontSize: 'clamp(48px, 9vw, 100px)', width: '100%' }}
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.text` | `"AGENT WAN"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.text` | `"AGENT RIC"` | text | 不限 ~ 不限 | 即时应用 |
 | `t0.src` | `"@media/scene-2.svg"` | resource | "@asset/restoration/chromatic-bloom.svg" / "@asset/restoration/mineral-tide.svg" / "@asset/restoration/nocturne-orbit.svg" / "@asset/restoration/prismatic-canopy.svg" / "@asset/restoration/solar-dunes.svg" / "@asset/restoration/vermilion-fold.svg" / "@media/scene-1.svg" / "@media/scene-2.svg" / "@media/scene-3.svg" / "@media/scene-4.svg" / "@media/scene-5.svg" / "@media/scene-6.svg" | 即时应用 |
 | `t0.reveal` | `"wipe"` | select | "rise" / "wipe" / "fade" / "none" | 即时应用 |
 | `t0.trigger` | `"mount"` | select | "view" / "mount" / "hover" | 即时应用 |
@@ -127,7 +127,7 @@ style={{ fontSize: 'clamp(48px, 9vw, 100px)', width: '100%' }}
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
 - 标题按页面层级选择宋体或 UI 字体；正文保持无衬线。动画终态必须是完整、清晰、可复制的文字。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。

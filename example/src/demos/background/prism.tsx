@@ -1,7 +1,7 @@
 import Component from '../../../.upstream/src/ts-default/Backgrounds/Prism/Prism';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Prism component. */
+/** Agent Ric natural-tone preset for the real Prism component. */
 export default function PrismDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

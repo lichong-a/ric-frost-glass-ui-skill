@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/RippleGrid/
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Ripple Grid component. */
+/** Agent Ric natural-tone preset for the real Ripple Grid component. */
 export default function RippleGridDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

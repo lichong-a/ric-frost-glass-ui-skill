@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Beams/Beams
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Beams component. */
+/** Agent Ric natural-tone preset for the real Beams component. */
 export default function BeamsDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

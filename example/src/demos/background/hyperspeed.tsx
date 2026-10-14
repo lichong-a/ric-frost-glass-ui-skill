@@ -3,7 +3,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Hyperspeed/
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Hyperspeed component. */
+/** Agent Ric natural-tone preset for the real Hyperspeed component. */
 export default function HyperspeedDemo() {
   const { props: demoProps } = useDemoConfig();
   const [boosting, setBoosting] = useState(false);

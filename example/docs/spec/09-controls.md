@@ -60,4 +60,4 @@ Tooltip 使用稳定深色底和浅字，约 8 px 圆角，最大宽 280 px；�
 
 ---
 
-规范来源：[AGENT_WAN_UI_SPEC.md](../../../AGENT_WAN_UI_SPEC.md)。本文件由主规范按章节生成；修改主规范后重新生成，不独立维护第二套规则。
+规范来源：[AGENT_RIC_UI_SPEC.md](../../../AGENT_RIC_UI_SPEC.md)。本文件由主规范按章节生成；修改主规范后重新生成，不独立维护第二套规则。

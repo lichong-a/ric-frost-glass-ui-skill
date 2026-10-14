@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Ferrofluid/
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Ferrofluid component. */
+/** Agent Ric natural-tone preset for the real Ferrofluid component. */
 export default function FerrofluidDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

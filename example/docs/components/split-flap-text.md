@@ -2,7 +2,7 @@
 
 文字动效 · `split-flap-text` · 中文意图：翻牌文字 / 机场翻牌 / 机械字符牌
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -48,7 +48,7 @@ export default function SplitFlapTextDemo() {
       <Component
 
 
-     words={["AGENT WAN", "FLOW READY", "SKILL SYNC"]} flipDuration={0.12} stagger={0.035} cycleDelay={3200} charset={"alphanumeric"} flipsPerChar={5} tileColor={"#52604e"} textColor={"#faf7f0"} tileRadius={10} gap={4} fontSize={32} loop={true} padTo={10} style={{  }}  />
+     words={["AGENT RIC", "FLOW READY", "SKILL SYNC"]} flipDuration={0.12} stagger={0.035} cycleDelay={3200} charset={"alphanumeric"} flipsPerChar={5} tileColor={"#52604e"} textColor={"#faf7f0"} tileRadius={10} gap={4} fontSize={32} loop={true} padTo={10} style={{  }}  />
     </div>
   );
 }
@@ -86,7 +86,7 @@ export default function SplitFlapTextDemo() {
 **words 的真实接入：**
 
 ```tsx
-words={['AGENT WAN', 'FLOW READY', 'SKILL SYNC']}
+words={['AGENT RIC', 'FLOW READY', 'SKILL SYNC']}
 ```
 
 **charset 的真实接入：**
@@ -113,7 +113,7 @@ children={"示例"}
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.words` | `["AGENT WAN","FLOW READY","SKILL SYNC"]` | json | 不限 ~ 不限 | 即时应用 |
+| `t0.words` | `["AGENT RIC","FLOW READY","SKILL SYNC"]` | json | 不限 ~ 不限 | 即时应用 |
 | `t0.flipDuration` | `0.12` | number | 不限 ~ 不限 | 即时应用 |
 | `t0.stagger` | `0.035` | number | 不限 ~ 不限 | 即时应用 |
 | `t0.cycleDelay` | `3200` | number | 不限 ~ 不限 | 即时应用 |
@@ -136,7 +136,7 @@ children={"示例"}
 
 本组件在当前锁定依赖组合下使用明确的类型兼容规则。移植或升级前按需读取 [上游类型兼容说明](../../UPSTREAM_TYPE_COMPATIBILITY.md) 中的对应条目；官方安装文件保持原始字节，不能把本项目的检查结果描述为原始源码未经适配即零诊断。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
 - 标题按页面层级选择宋体或 UI 字体；正文保持无衬线。动画终态必须是完整、清晰、可复制的文字。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。

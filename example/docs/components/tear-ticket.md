@@ -2,7 +2,7 @@
 
 卡片与面板 · `tear-ticket` · 中文意图：撕票 / 票根撕开
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -45,7 +45,7 @@ const cn=(names:string)=>componentClasses(styles,names);
 export default function TearTicketDemo() {
   const [torn, setTorn] = useState(false);
   return <DemoPanel title="Tear Ticket · 撕取票据"><div className={cn("aw-micro-stack")}>
-    <TearTicket torn={torn} onTear={() => setTorn(true)}           stub={<div className={cn("aw-micro-card")} style={{ padding: 14 }}><strong>DEMO</strong><span>撕取</span></div>} width={320} height={210} stubSize={86} radius={20} background={"rgb(250 247 240 / 0.82)"} color={"#1f2d26"} stubBackground={"#a6b39a"} border={true} borderColor={"rgba(82,96,78,.22)"} ariaLabel={"拖动撕取演示票据"} image={""} imageAlt={""} scrim={true} imageRadius={8} orientation={"horizontal"} holes={12} holeSize={6} notch={3} roughness={0} tearAngle={30} stretch={30} resistance={0.45} rotate={4} tilt={true} tiltMax={9} tiltReach={260} parallax={6} perspective={1000} borderWidth={1} recenter={true} disabled={false} ><div className={cn("aw-micro-card")}><span>AGENT WAN</span><h3 style={{ fontSize: 23 }}>工作坊通行证</h3><p>本地交互示例<br />拖动右侧票根</p></div></TearTicket>
+    <TearTicket torn={torn} onTear={() => setTorn(true)}           stub={<div className={cn("aw-micro-card")} style={{ padding: 14 }}><strong>DEMO</strong><span>撕取</span></div>} width={320} height={210} stubSize={86} radius={20} background={"rgb(250 247 240 / 0.82)"} color={"#1f2d26"} stubBackground={"#a6b39a"} border={true} borderColor={"rgba(82,96,78,.22)"} ariaLabel={"拖动撕取演示票据"} image={""} imageAlt={""} scrim={true} imageRadius={8} orientation={"horizontal"} holes={12} holeSize={6} notch={3} roughness={0} tearAngle={30} stretch={30} resistance={0.45} rotate={4} tilt={true} tiltMax={9} tiltReach={260} parallax={6} perspective={1000} borderWidth={1} recenter={true} disabled={false} ><div className={cn("aw-micro-card")}><span>AGENT RIC</span><h3 style={{ fontSize: 23 }}>工作坊通行证</h3><p>本地交互示例<br />拖动右侧票根</p></div></TearTicket>
     <div className={cn("aw-micro-controls")}><button className={styles['aw-micro-action']}  onClick={() => setTorn(false)} type={"button"} >恢复票据</button></div>
     <p className={cn("aw-micro-status")} role="status" aria-live="polite">票根：{torn ? '已撕取' : '完整'}</p>
   </div></DemoPanel>;
@@ -108,7 +108,7 @@ export default function TearTicketDemo() {
 **children 的真实接入：**
 
 ```tsx
-children={<><div className={cn("aw-micro-card")}><span>AGENT WAN</span><h3 style={{ fontSize: 23 }}>工作坊通行证</h3><p>本地交互示例<br />拖动右侧票根</p></div></>}
+children={<><div className={cn("aw-micro-card")}><span>AGENT RIC</span><h3 style={{ fontSize: 23 }}>工作坊通行证</h3><p>本地交互示例<br />拖动右侧票根</p></div></>}
 ```
 
 **stub 的真实接入：**
@@ -168,9 +168,9 @@ onTear={() => setTorn(true)}
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
-- 容器、状态色、边界与焦点使用 Agent Wan 规范；交互命中区不随视觉形变缩小。
+- 容器、状态色、边界与焦点使用 Agent Ric 规范；交互命中区不随视觉形变缩小。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 

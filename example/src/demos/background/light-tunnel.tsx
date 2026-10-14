@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/LightTunnel
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Light Tunnel component. */
+/** Agent Ric natural-tone preset for the real Light Tunnel component. */
 export default function LightTunnelDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

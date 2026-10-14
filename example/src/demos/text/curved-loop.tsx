@@ -10,7 +10,7 @@ export default function CurvedLoopDemo() {
   
   return (
     <div className="aw-demo-stage" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>
-      <><style>{`.curved-loop-jacket { min-height: 300px; }.aw-rb-curved { fill: #52604e; font-size: 5rem; }`}</style><Component marqueeText="AGENT WAN · QUIET CRAFT ·" speed={1.4} curveAmount={160} direction="right" interactive className="aw-rb-curved" {...demoProps('t0')} /></>
+      <><style>{`.curved-loop-jacket { min-height: 300px; }.aw-rb-curved { fill: #52604e; font-size: 5rem; }`}</style><Component marqueeText="AGENT RIC · QUIET CRAFT ·" speed={1.4} curveAmount={160} direction="right" interactive className="aw-rb-curved" {...demoProps('t0')} /></>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Lightfall/L
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Lightfall component. */
+/** Agent Ric natural-tone preset for the real Lightfall component. */
 export default function LightfallDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

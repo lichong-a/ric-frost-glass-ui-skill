@@ -2,7 +2,7 @@
 
 背景与光效 · `letter-glitch` · 中文意图：字符矩阵 / 字母故障
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -37,7 +37,7 @@ node scripts/example.mjs setup --component letter-glitch
 import Component from '../../../.upstream/src/ts-default/Backgrounds/LetterGlitch/LetterGlitch';
 
 
-/** Agent Wan natural-tone preset for the real Letter Glitch component. */
+/** Agent Ric natural-tone preset for the real Letter Glitch component. */
 export default function LetterGlitchDemo() {
   return (
     <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
@@ -49,7 +49,7 @@ export default function LetterGlitchDemo() {
 
 
 
-           glitchColors={["#52604e", "#a6b39a", "#c3ae88"]} glitchSpeed={120} centerVignette={false} outerVignette={true} smooth={true} backgroundColor={"#1f2d26"} characters={"AGENTWAN/0123456789<>{}[]+-="} lightMode={false}
+           glitchColors={["#52604e", "#a6b39a", "#c3ae88"]} glitchSpeed={120} centerVignette={false} outerVignette={true} smooth={true} backgroundColor={"#1f2d26"} characters={"AGENTRIC/0123456789<>{}[]+-="} lightMode={false}
         />
       </div>
     </div>
@@ -92,7 +92,7 @@ glitchColors={[palette.primary, palette.sage, palette.sand]}
 | `t0.outerVignette` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.smooth` | `true` | switch | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.backgroundColor` | `"#1f2d26"` | color | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.characters` | `"AGENTWAN/0123456789<>{}[]+-="` | text | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.characters` | `"AGENTRIC/0123456789<>{}[]+-="` | text | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.lightMode` | `false` | switch | 不限 ~ 不限 | 调节结束后重建 |
 
 ### 演示容器设置
@@ -101,7 +101,7 @@ glitchColors={[palette.primary, palette.sage, palette.sand]}
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
 - 画布优先保留 React Bits 的原版配色与可观察强度，背景有独立边界并为光晕预留空间；业务正文使用稳定阅读面。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。

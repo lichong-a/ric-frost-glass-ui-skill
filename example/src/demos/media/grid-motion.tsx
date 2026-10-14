@@ -2,9 +2,9 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/GridMotion/
 import { palette, MEDIA } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-const items = [...MEDIA.map((src, index) => ({ src, alt: `自然色场景 ${index + 1}` })), 'AGENT WAN', '技能编排', '知识检索', '工作空间'];
+const items = [...MEDIA.map((src, index) => ({ src, alt: `自然色场景 ${index + 1}` })), 'AGENT RIC', '技能编排', '知识检索', '工作空间'];
 
-/** Agent Wan natural-tone preset for the real Grid Motion component. */
+/** Agent Ric natural-tone preset for the real Grid Motion component. */
 export default function GridMotionDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

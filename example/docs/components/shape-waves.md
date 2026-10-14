@@ -2,7 +2,7 @@
 
 背景与光效 · `shape-waves` · 中文意图：图形波浪 / 几何波场
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -57,7 +57,7 @@ export default function ShapeWavesDemo() {
 
 
 
-           text={"AGENT WAN"} fontFamily={"system-ui, sans-serif"} fontWeight={600} textSize={0.5} shapes={"mixed"} cellSize={11} color={"#a6b39a"} hoverColor={"#faf7f0"} backgroundColor={"#1f2d26"} speed={0.55} glow={0.16} contrast={1.1} interactive={true} dotSize={0.75} scale={1} brightness={0.4} flow={0} direction={0} fade={0.25} splashRadius={40} splashStrength={0.4} intro={true} introDuration={1.6} introKey={0} paused={false}
+           text={"AGENT RIC"} fontFamily={"system-ui, sans-serif"} fontWeight={600} textSize={0.5} shapes={"mixed"} cellSize={11} color={"#a6b39a"} hoverColor={"#faf7f0"} backgroundColor={"#1f2d26"} speed={0.55} glow={0.16} contrast={1.1} interactive={true} dotSize={0.75} scale={1} brightness={0.4} flow={0} direction={0} fade={0.25} splashRadius={40} splashStrength={0.4} intro={true} introDuration={1.6} introKey={0} paused={false}
         />,
     createShapeWavesCanvas,
     { componentName: 'Shape Waves' },
@@ -113,7 +113,7 @@ onError={(error) => {}}
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.text` | `"AGENT WAN"` | text | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.text` | `"AGENT RIC"` | text | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.fontFamily` | `"system-ui, sans-serif"` | text | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.fontWeight` | `600` | json | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.textSize` | `0.5` | number | 不限 ~ 不限 | 调节结束后重建 |
@@ -145,7 +145,7 @@ onError={(error) => {}}
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
 - 画布优先保留 React Bits 的原版配色与可观察强度，背景有独立边界并为光晕预留空间；业务正文使用稳定阅读面。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。

@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Scanner/Sca
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Scanner component. */
+/** Agent Ric natural-tone preset for the real Scanner component. */
 export default function ScannerDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

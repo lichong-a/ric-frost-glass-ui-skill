@@ -39,7 +39,7 @@ export default function ScrollVelocityDemo() {
         <section ref={contentRef} className={styles.content} style={{ minHeight: viewportHeight }} tabIndex={-1} aria-label="滚动速度文字效果" data-scroll-screen="content">
           {viewportHeight > 0 ? <Component
             scrollContainerRef={scrollRef}
-            texts={['AGENT WAN ·', 'QUIET FLOW ·']}
+            texts={['AGENT RIC ·', 'QUIET FLOW ·']}
             velocity={100}
             numCopies={6}
             damping={50}

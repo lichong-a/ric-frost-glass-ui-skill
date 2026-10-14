@@ -17,12 +17,12 @@
 
 | 组件 | 实际资源配置 |
 |---|---|
-| Fluid Glass | 三个 GLB 由 setup 获取；其 Draco 解码器从锁定的 Three npm 包复制并校验 SHA-256，缺失时使用带散列保护的官方版本 URL。GLB、Draco 与本地 Roboto Flex 的路径按 Vite base 生成；标题为 Agent Wan。 |
+| Fluid Glass | 三个 GLB 由 setup 获取；其 Draco 解码器从锁定的 Three npm 包复制并校验 SHA-256，缺失时使用带散列保护的官方版本 URL。GLB、Draco 与本地 Roboto Flex 的路径按 Vite base 生成；标题为 Agent Ric。 |
 | Model Viewer | 使用自有、嵌入缓冲区且无压缩的 sample-object.gltf；`environment="none"`，不请求外部 HDR。 |
 | Text Pressure | fontUrl 指向本地 CSS，再加载真实可变字体。 |
 | Variable Proximity | 原 CSS 的 Google Fonts 导入在构建时剥离，预览使用本地可变字体。 |
 | Circular Gallery | 字体显式为 `600 24px sans-serif`，源码因此不进入默认 Figtree 远程字体分支；图片均为本地素材。 |
-| Staggered Menu | 显式使用本包 Agent Wan 图标，覆盖上游开发目录中的默认路径。 |
+| Staggered Menu | 显式使用本包 Agent Ric 图标，覆盖上游开发目录中的默认路径。 |
 | Paper Crumple / Refine Frame | 使用自有 SVG 纹理或本地内嵌图像，具备实际像素输入。 |
 | 各图片画廊 / Shader | 用本地 MEDIA / items 传参；Fluid Glass 等无法传入的默认图片 URL 在构建适配层转为本地素材。 |
 

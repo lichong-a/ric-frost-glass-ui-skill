@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/MicroSlats/
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Micro Slats component. */
+/** Agent Ric natural-tone preset for the real Micro Slats component. */
 export default function MicroSlatsDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

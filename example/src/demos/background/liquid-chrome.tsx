@@ -10,7 +10,7 @@ function toRgb(hex: string): [number, number, number] {
   ];
 }
 
-/** Agent Wan natural-tone preset for the real Liquid Chrome component. */
+/** Agent Ric natural-tone preset for the real Liquid Chrome component. */
 export default function LiquidChromeDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

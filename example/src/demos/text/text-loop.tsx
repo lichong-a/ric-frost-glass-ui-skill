@@ -10,7 +10,7 @@ export default function TextLoopDemo() {
   
   return (
     <div className="aw-demo-stage" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>
-      <Component text="AGENT WAN · FLOW" shape="wave" speed={45} direction="forward"
+      <Component text="AGENT RIC · FLOW" shape="wave" speed={45} direction="forward"
 separator="·" curviness={65} fontSize={44} fontWeight={650} letterSpacing={1}
 color={palette.ink} ribbon ribbonColor={palette.sage} ribbonWidth={72} pauseOnHover {...demoProps('t0')} />
     </div>

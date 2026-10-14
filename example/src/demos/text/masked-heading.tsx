@@ -10,7 +10,7 @@ export default function MaskedHeadingDemo() {
   
   return (
     <div className="aw-demo-stage" style={{ width: '100%', minWidth: 0, minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>
-      <Component text="AGENT WAN" src={MEDIA[1]} reveal="wipe" trigger="mount"
+      <Component text="AGENT RIC" src={MEDIA[1]} reveal="wipe" trigger="mount"
 align="center" parallax={14} drift={8} fillScale={1.15} saturation={0.6}
 weight={800} style={{ fontSize: 'clamp(48px, 9vw, 100px)', width: '100%' }} {...demoProps('t0')} />
     </div>

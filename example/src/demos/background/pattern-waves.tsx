@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/PatternWave
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Pattern Waves component. */
+/** Agent Ric natural-tone preset for the real Pattern Waves component. */
 export default function PatternWavesDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

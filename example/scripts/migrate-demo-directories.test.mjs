@@ -14,7 +14,7 @@ const fixtureDirectory = () => createComponentDirectory({
   ],
 });
 async function fixture(t) {
-  const root = await mkdtemp(path.join(tmpdir(), 'agent-wan-taxonomy-'));
+  const root = await mkdtemp(path.join(tmpdir(), 'agent-ric-taxonomy-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   await mkdir(path.join(root, 'src/demos'), { recursive: true });
   await mkdir(path.join(root, 'src/business/demos'), { recursive: true });

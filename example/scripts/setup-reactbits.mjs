@@ -70,7 +70,7 @@ const extra = assets.files.filter(file => !selected || !file.components || file.
 const jobs = [...files, ...extra];
 let cursor = 0, finished = 0, processed = 0;
 const errors = [];
-console.log(`Preparing ${components.length} Agent Wan effect components at ${manifest.sources.commit.slice(0,12)}.`);
+console.log(`Preparing ${components.length} Agent Ric effect components at ${manifest.sources.commit.slice(0,12)}.`);
 console.log('Prepared implementations remain in the local cache and are excluded from template archives. Resource declarations are kept in notices/.');
 await Promise.all(Array.from({ length: 6 }, async () => {
   while (cursor < jobs.length) {

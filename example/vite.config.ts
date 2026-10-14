@@ -8,7 +8,7 @@ let publicBase = '/';
 
 export default defineConfig({
   plugins: [
-    { name:'agent-wan-upstream-integration', enforce:'pre',
+    { name:'ric-frost-glass-ui-skill-upstream-integration', enforce:'pre',
       configResolved(config) { publicBase = config.base; },
       transform(code,id) {
         const typed = adaptUpstreamTypes(code,id);

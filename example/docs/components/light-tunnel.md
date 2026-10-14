@@ -2,7 +2,7 @@
 
 背景与光效 · `light-tunnel` · 中文意图：光隧道 / 径向光纤
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -38,7 +38,7 @@ node scripts/example.mjs setup --component light-tunnel
 import Component from '../../../.upstream/src/ts-default/Backgrounds/LightTunnel/LightTunnel';
 
 
-/** Agent Wan natural-tone preset for the real Light Tunnel component. */
+/** Agent Ric natural-tone preset for the real Light Tunnel component. */
 export default function LightTunnelDemo() {
   return (
     <div className="aw-demo-stage" data-layout="full" data-canvas="dark">
@@ -143,7 +143,7 @@ export default function LightTunnelDemo() {
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
 - 画布优先保留 React Bits 的原版配色与可观察强度，背景有独立边界并为光晕预留空间；业务正文使用稳定阅读面。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。

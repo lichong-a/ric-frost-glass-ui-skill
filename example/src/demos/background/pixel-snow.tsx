@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/PixelSnow/P
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Pixel Snow component. */
+/** Agent Ric natural-tone preset for the real Pixel Snow component. */
 export default function PixelSnowDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

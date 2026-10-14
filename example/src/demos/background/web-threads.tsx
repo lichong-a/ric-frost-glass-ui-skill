@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/WebThreads/
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Web Threads component. */
+/** Agent Ric natural-tone preset for the real Web Threads component. */
 export default function WebThreadsDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

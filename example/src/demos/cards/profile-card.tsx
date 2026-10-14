@@ -12,7 +12,7 @@ export default function ProfileCardDemo() {
   return (
     <div className="aw-demo-stage" style={{ width: '100%', height: 620, position: 'relative', overflow: 'hidden' }}>
       <div style={{ width: '100%', height: '100%' }}><div style={{ height: 550, display: 'grid', placeItems: 'center' }}><Component avatarUrl={MEDIA[2]} miniAvatarUrl={MEDIA[2]} iconUrl={LOGO}
-name="Agent Wan" title="智能体协作工作台" handle="agent-wan" status="示例在线"
+name="Agent Ric" title="智能体协作工作台" handle="agent-ric" status="示例在线"
 statusColor={palette.primary} contactText="查看资料" showUserInfo
 theme="light" backdropColor={palette.canvas} radius={20} holo={0.18}
 glare={0.18} enableTilt tiltStrength={7} parallax={4} enableMobileTilt={false}

@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/LineWaves/L
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Line Waves component. */
+/** Agent Ric natural-tone preset for the real Line Waves component. */
 export default function LineWavesDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

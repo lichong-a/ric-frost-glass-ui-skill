@@ -10,7 +10,7 @@ export default function ShapeWavesDemo() {
   const { props: demoProps } = useDemoConfig();
   const effect = useWebGPUCompatibility<ComponentProps<typeof Component>>(
         <Component
-          text="AGENT WAN"
+          text="AGENT RIC"
           fontFamily="system-ui, sans-serif"
           fontWeight={600}
           textSize={0.5}

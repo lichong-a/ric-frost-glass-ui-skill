@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/GhostFibers
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Ghost Fibers component. */
+/** Agent Ric natural-tone preset for the real Ghost Fibers component. */
 export default function GhostFibersDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

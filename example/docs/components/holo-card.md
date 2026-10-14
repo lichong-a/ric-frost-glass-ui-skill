@@ -2,7 +2,7 @@
 
 卡片与面板 · `holo-card` · 中文意图：全息卡片 / 收藏卡
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -49,7 +49,7 @@ export default function HoloCardDemo() {
       <Component
 
 
-idle={false}  image={import.meta.env.BASE_URL + "media/scene-1.svg"} backImage={import.meta.env.BASE_URL + "media/scene-4.svg"} alt={"Agent Wan自然色收藏卡"} preset={"gold"} intensity={0.3} edgeSparkle={0.2} frame={2} glare={0.2} foilColor={"#c3ae88"} width={250} radius={20} tiltMax={8} hoverScale={1.025} shadow={true} scale={1}  />
+idle={false}  image={import.meta.env.BASE_URL + "media/scene-1.svg"} backImage={import.meta.env.BASE_URL + "media/scene-4.svg"} alt={"Agent Ric自然色收藏卡"} preset={"gold"} intensity={0.3} edgeSparkle={0.2} frame={2} glare={0.2} foilColor={"#c3ae88"} width={250} radius={20} tiltMax={8} hoverScale={1.025} shadow={true} scale={1}  />
     </div>
   );
 }
@@ -95,7 +95,7 @@ style={{ width: "100%", minHeight: 240 }}
 |---|---|---|---|---|
 | `t0.image` | `"@media/scene-1.svg"` | resource | "@asset/restoration/chromatic-bloom.svg" / "@asset/restoration/mineral-tide.svg" / "@asset/restoration/nocturne-orbit.svg" / "@asset/restoration/prismatic-canopy.svg" / "@asset/restoration/solar-dunes.svg" / "@asset/restoration/vermilion-fold.svg" / "@media/scene-1.svg" / "@media/scene-2.svg" / "@media/scene-3.svg" / "@media/scene-4.svg" / "@media/scene-5.svg" / "@media/scene-6.svg" | 调节结束后重建 |
 | `t0.backImage` | `"@media/scene-4.svg"` | resource | 不限 ~ 不限 | 调节结束后重建 |
-| `t0.alt` | `"Agent Wan自然色收藏卡"` | text | 不限 ~ 不限 | 调节结束后重建 |
+| `t0.alt` | `"Agent Ric自然色收藏卡"` | text | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.preset` | `"gold"` | select | "bursts" / "stars" / "shards" / "cosmos" / "rainbow" / "swirl" / "glitter" / "gold" | 调节结束后重建 |
 | `t0.intensity` | `0.3` | number | 不限 ~ 不限 | 调节结束后重建 |
 | `t0.edgeSparkle` | `0.2` | number | 不限 ~ 不限 | 调节结束后重建 |
@@ -115,9 +115,9 @@ style={{ width: "100%", minHeight: 240 }}
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
-- 容器、状态色、边界与焦点使用 Agent Wan 规范；交互命中区不随视觉形变缩小。
+- 容器、状态色、边界与焦点使用 Agent Ric 规范；交互命中区不随视觉形变缩小。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 - 保留折射、光晕或反光的可观察变化；本例允许深色画布和原版高光强度，阅读文字应保持清晰。

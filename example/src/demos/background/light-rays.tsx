@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/LightRays/L
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Light Rays component. */
+/** Agent Ric natural-tone preset for the real Light Rays component. */
 export default function LightRaysDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

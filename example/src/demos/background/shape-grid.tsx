@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/ShapeGrid/S
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Shape Grid component. */
+/** Agent Ric natural-tone preset for the real Shape Grid component. */
 export default function ShapeGridDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

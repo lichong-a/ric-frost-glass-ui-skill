@@ -19,7 +19,7 @@ async function write(root, file, content) {
 }
 
 async function fixture(t, mode = 'kit') {
-  const root = await mkdtemp(path.join(tmpdir(), 'agent-wan-doc-audit-'));
+  const root = await mkdtemp(path.join(tmpdir(), 'agent-ric-doc-audit-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   const docs = mode === 'kit' ? 'example/docs' : 'references/example';
   const example = mode === 'kit' ? 'example' : 'assets/ui-kit/example';

@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Aurora/Auro
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Aurora component. */
+/** Agent Ric natural-tone preset for the real Aurora component. */
 export default function AuroraDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

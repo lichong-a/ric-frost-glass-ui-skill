@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Silk/Silk';
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Silk component. */
+/** Agent Ric natural-tone preset for the real Silk component. */
 export default function SilkDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

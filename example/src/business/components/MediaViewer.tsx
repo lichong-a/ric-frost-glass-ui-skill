@@ -25,7 +25,7 @@ export function MediaViewer({ sources, index, onChange, label, thumbnails = fals
     else if (event.key === 'End') onChange(sources.length - 1);
     else move(event.key === 'ArrowLeft' ? -1 : 1);
   }}>
-    <MorphImage source={sources[index]} identity={index} alt={`自然色示意图${index + 1}`} caption={<><span>AGENT WAN / NATURAL PALETTE</span><strong>自然色影像 <span>{String(index + 1).padStart(2, '0')}</span></strong></>} />
+    <MorphImage source={sources[index]} identity={index} alt={`自然色示意图${index + 1}`} caption={<><span>AGENT RIC / NATURAL PALETTE</span><strong>自然色影像 <span>{String(index + 1).padStart(2, '0')}</span></strong></>} />
     <div data-ui="aw-business-media-controls" className={cn("aw-business-media-controls")}><Button className={cn("aw-business-media-control")} variant="secondary" aria-label="上一张" onClick={() => move(-1)}><ArrowLeft size={17} />上一张</Button>
       <div data-ui="aw-business-media-dots" className={cn("aw-business-media-dots")} role="group" aria-label="图片位置">{sources.map((source, position) => <button className={cn('aw-business-button-feedback')} type="button" key={source} aria-label={`转到图片${position + 1}`} aria-pressed={index === position} onClick={() => onChange(position)}>
         <motion.span aria-hidden="true" animate={{ width: index === position ? 28 : 7 }} transition={reduced ? { duration: 0 } : controlSpring} /></button>)}</div>

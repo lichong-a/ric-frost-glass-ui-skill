@@ -11,7 +11,7 @@ export default function HoloCardDemo() {
   
   return (
     <div className="aw-demo-stage" style={{ width: '100%', minHeight: 340, position: 'relative', display: 'grid', placeItems: 'center', padding: 24, color: palette.ink }}>
-      <Component image={MEDIA[0]} backImage={MEDIA[3]} alt="Agent Wan自然色收藏卡"
+      <Component image={MEDIA[0]} backImage={MEDIA[3]} alt="Agent Ric自然色收藏卡"
 preset="gold" intensity={0.3} edgeSparkle={0.2} frame={2} glare={0.2}
 foilColor={palette.sand} width={250} radius={20} tiltMax={8} hoverScale={1.025}
 idle={false} shadow {...demoProps('t0')} />

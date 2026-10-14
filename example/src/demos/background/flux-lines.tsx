@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/FluxLines/F
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Flux Lines component. */
+/** Agent Ric natural-tone preset for the real Flux Lines component. */
 export default function FluxLinesDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

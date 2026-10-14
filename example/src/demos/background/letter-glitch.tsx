@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/LetterGlitc
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Letter Glitch component. */
+/** Agent Ric natural-tone preset for the real Letter Glitch component. */
 export default function LetterGlitchDemo() {
   const { props: demoProps } = useDemoConfig();
   return (
@@ -15,7 +15,7 @@ export default function LetterGlitchDemo() {
           outerVignette
           smooth
           backgroundColor={palette.ink}
-          characters="AGENTWAN/0123456789<>{}[]+-=" {...demoProps('t0')}
+          characters="AGENTRIC/0123456789<>{}[]+-=" {...demoProps('t0')}
         />
       </div>
     </div>

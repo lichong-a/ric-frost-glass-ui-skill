@@ -2,7 +2,7 @@ import { GridScan as Component } from '../../../.upstream/src/ts-default/Backgro
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Grid Scan component. */
+/** Agent Ric natural-tone preset for the real Grid Scan component. */
 export default function GridScanDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

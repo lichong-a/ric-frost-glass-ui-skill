@@ -47,7 +47,7 @@ test('FluidGlass uses local Draco and font assets while preserving its two text 
   const transformed = adaptUpstream(source, '/p/.upstream/Components/FluidGlass/FluidGlass.tsx');
   assert.match(transformed, /useGLTF\(glb, "\/assets\/draco\/"\)/);
   assert.equal((transformed.match(/<Text font="\/assets\/fonts\/RobotoFlex\.ttf"/g) || []).length, 2);
-  assert.match(transformed, /Agent Wan/);
+  assert.match(transformed, /Agent Ric/);
   assert.match(transformed, /Other label/);
   assert.match(transformed, /const quality = 0.8;/);
 });

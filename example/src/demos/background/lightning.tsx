@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Lightning/L
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Lightning component. */
+/** Agent Ric natural-tone preset for the real Lightning component. */
 export default function LightningDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

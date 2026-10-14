@@ -14,7 +14,7 @@ export default function BubbleMenuDemo() {
         if (link) { event.preventDefault(); setStatus('已选择：' + link.textContent); }
       }}>
       {!menuOpen && <div className={styles.intro}><span className={styles.eyebrow}>BUBBLE MENU</span><h2 className={styles.title}>让创意自由展开</h2><p className={styles.description}>展开导航，选择下一处灵感。</p></div>}
-      <Component logo={<strong className={styles.logo}>Agent Wan</strong>}
+      <Component logo={<strong className={styles.logo}>Agent Ric</strong>}
         items={['工作台', '智能体', '技能', '设置'].map((label, index) => ({
           label, href: '#section-' + index, ariaLabel: label, rotation: [-8, 8, -6, 6][index],
           hoverStyles: { bgColor: '#c2e3ce', textColor: '#10251d' },

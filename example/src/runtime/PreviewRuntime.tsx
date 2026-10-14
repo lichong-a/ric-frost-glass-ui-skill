@@ -226,7 +226,7 @@ export function PreviewRuntime({ registry }: { registry: PreviewRegistry }) {
 function Fallback({ title, description, action, onAction, busy = false }: { title: string; description: string; action?: string; onAction?: () => void; busy?: boolean }) {
   return (
     <section className="aw-preview-fallback" role="status" aria-live="polite" aria-busy={busy}>
-      <p className="aw-preview-eyebrow">Agent Wan · 组件预览</p>
+      <p className="aw-preview-eyebrow">Agent Ric · 组件预览</p>
       <h2>{title}</h2>
       <p>{description}</p>
       {action && onAction ? <button type="button" className="aw-preview-button" onClick={onAction}>{action}</button> : null}

@@ -19,7 +19,7 @@
 | 运行资源 | 使用范围 | 证据与处理 |
 | --- | --- | --- |
 | `/media/scene-1.svg` 至 `/media/scene-6.svg` | 图片画廊、卡片、背景纹理、图片交互 | `src/shared/demo-support.tsx` 的 `MEDIA` 指向 6 张本地 SVG；对应文件没有外部图片或字体依赖。 |
-| `/media/agent-wan-mark.svg` | 画廊品牌、导航、卡片图标 | `LOGO` 显式覆盖相关组件的默认 Logo。 |
+| `/media/agent-ric-mark.svg` | 画廊品牌、导航、卡片图标 | `LOGO` 显式覆盖相关组件的默认 Logo。 |
 | `/media/sample-object.gltf` | ModelViewer | 自有 GLTF，二进制缓冲以 data URI 内嵌；没有 Draco、外部纹理或外部二进制引用。 |
 | `/assets/fonts/demo-fonts.css` | TextPressure、VariableProximity，以及预览页字体声明 | CSS 的相对 `./RobotoFlex.ttf` 指向同一目录内的本地字体。 |
 | `/assets/fonts/RobotoFlex.ttf` | 可变字体示例、FluidGlass 的三维文字 | `catalog/asset-lock.json` 锁定 Google Fonts 仓库提交及字节摘要；OFL 说明在 `notices/RobotoFlex-OFL.txt`。 |
@@ -36,7 +36,7 @@ PaperCrumple、RefineFrame 和 ElectricLogo 还使用自有 data SVG。Shredder 
 
 上游 `FluidGlass.tsx` 在 `ModeWrapper` 中调用 `useGLTF(glb)`。当前 Drei 的默认 Draco 路径是 Google 托管的解码器目录；由于 `lens.glb` 确实需要 Draco，该默认地址会在透镜加载时被使用。适配代码已将这一处调用改为 `useGLTF(glb, '/assets/draco/')`。Drei 的第二参数支持字符串解码器路径，使用该路径创建实际的 `DRACOLoader`。
 
-上游两个 `<Text>` 标签原本没有传入字体。当前 Troika 会为没有覆盖的文字查询默认的 Unicode 字体解析 CDN。适配代码现为两个标签显式设置 `font="/assets/fonts/RobotoFlex.ttf"`，并将透镜示例标题设为 `Agent Wan`。在当前安装的 Troika 解析器上进行的纯字体解析确认，已核验的标题及导航字符均被该 TTF 覆盖并产生 glyph。这个检查没有生成或观察画面。
+上游两个 `<Text>` 标签原本没有传入字体。当前 Troika 会为没有覆盖的文字查询默认的 Unicode 字体解析 CDN。适配代码现为两个标签显式设置 `font="/assets/fonts/RobotoFlex.ttf"`，并将透镜示例标题设为 `Agent Ric`。在当前安装的 Troika 解析器上进行的纯字体解析确认，已核验的标题及导航字符均被该 TTF 覆盖并产生 glyph。这个检查没有生成或观察画面。
 
 如果以后把三维文字改为该字体未覆盖的字符，需要同时提供覆盖那些字符的本地字体，否则 Troika 的缺字回退仍可能使用外部字体解析服务。
 

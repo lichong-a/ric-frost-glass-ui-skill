@@ -272,10 +272,10 @@
         "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
         "line": 37
       },
-      "codeExample": "texts={['AGENT WAN ·', 'QUIET FLOW ·']}",
+      "codeExample": "texts={['AGENT RIC ·', 'QUIET FLOW ·']}",
       "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
       "usageExamples": [
-        "texts={['AGENT WAN ·', 'QUIET FLOW ·']}"
+        "texts={['AGENT RIC ·', 'QUIET FLOW ·']}"
       ]
     },
     {
@@ -545,7 +545,7 @@
     }
   ],
   "inherited": [],
-  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport { useLayoutEffect, useRef, useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity';\nimport styles from './scroll-velocity.module.css';\n\nexport default function ScrollVelocityDemo() {\n  const scrollRef = useRef<HTMLDivElement>(null!);\n  const contentRef = useRef<HTMLElement>(null);\n  const [viewportHeight, setViewportHeight] = useState(0);\n\n  useLayoutEffect(() => {\n    const scroller = scrollRef.current;\n    const measure = () => setViewportHeight(scroller.clientHeight);\n    measure();\n    const observer = new ResizeObserver(measure);\n    observer.observe(scroller);\n    return () => observer.disconnect();\n  }, []);\n\n  const startScrolling = () => {\n    scrollRef.current.scrollTo({\n      top: viewportHeight,\n      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'\n    });\n    contentRef.current?.focus({ preventScroll: true });\n  };\n\n  return (\n    <div className={styles.stage}>\n      <div ref={scrollRef} className={styles.scroller} role=\"region\" aria-label=\"Scroll Velocity 滚动演示\" tabIndex={0}>\n        <section className={styles.intro} style={{ height: viewportHeight }} data-scroll-screen=\"intro\">\n          <p className={styles.eyebrow}>SCROLL VELOCITY</p>\n          <h2 className={styles.heading}>用滚动速度推动文字</h2>\n          <p className={styles.guide}>在预览区域内向下滚动。下一屏的两行文字会随滚动加速，反向滚动时改变方向。</p>\n          <button className={styles.startButton}  onClick={startScrolling} /*__AW_PROPS_t0__*/ >开始滚动 ↓</button>\n        </section>\n        <section ref={contentRef} className={styles.content} style={{ minHeight: viewportHeight }} tabIndex={-1} aria-label=\"滚动速度文字效果\" data-scroll-screen=\"content\">\n          {viewportHeight > 0 ? <Component\n            scrollContainerRef={scrollRef}\n            texts={['AGENT WAN ·', 'QUIET FLOW ·']}\n\n\n\n\n\n            parallaxClassName={styles.parallax}\n            scrollerClassName={styles.textScroller}\n            className={styles.copy} /*__AW_PROPS_t1__*/\n          /> : null}\n        </section>\n      </div>\n    </div>\n  );\n}\n",
+  "usageTemplate": "// Authored integration demo; implementation is installed from the pinned official source.\nimport { useLayoutEffect, useRef, useState } from 'react';\nimport Component from '../../../.upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity';\nimport styles from './scroll-velocity.module.css';\n\nexport default function ScrollVelocityDemo() {\n  const scrollRef = useRef<HTMLDivElement>(null!);\n  const contentRef = useRef<HTMLElement>(null);\n  const [viewportHeight, setViewportHeight] = useState(0);\n\n  useLayoutEffect(() => {\n    const scroller = scrollRef.current;\n    const measure = () => setViewportHeight(scroller.clientHeight);\n    measure();\n    const observer = new ResizeObserver(measure);\n    observer.observe(scroller);\n    return () => observer.disconnect();\n  }, []);\n\n  const startScrolling = () => {\n    scrollRef.current.scrollTo({\n      top: viewportHeight,\n      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'\n    });\n    contentRef.current?.focus({ preventScroll: true });\n  };\n\n  return (\n    <div className={styles.stage}>\n      <div ref={scrollRef} className={styles.scroller} role=\"region\" aria-label=\"Scroll Velocity 滚动演示\" tabIndex={0}>\n        <section className={styles.intro} style={{ height: viewportHeight }} data-scroll-screen=\"intro\">\n          <p className={styles.eyebrow}>SCROLL VELOCITY</p>\n          <h2 className={styles.heading}>用滚动速度推动文字</h2>\n          <p className={styles.guide}>在预览区域内向下滚动。下一屏的两行文字会随滚动加速，反向滚动时改变方向。</p>\n          <button className={styles.startButton}  onClick={startScrolling} /*__AW_PROPS_t0__*/ >开始滚动 ↓</button>\n        </section>\n        <section ref={contentRef} className={styles.content} style={{ minHeight: viewportHeight }} tabIndex={-1} aria-label=\"滚动速度文字效果\" data-scroll-screen=\"content\">\n          {viewportHeight > 0 ? <Component\n            scrollContainerRef={scrollRef}\n            texts={['AGENT RIC ·', 'QUIET FLOW ·']}\n\n\n\n\n\n            parallaxClassName={styles.parallax}\n            scrollerClassName={styles.textScroller}\n            className={styles.copy} /*__AW_PROPS_t1__*/\n          /> : null}\n        </section>\n      </div>\n    </div>\n  );\n}\n",
   "targets": [
     {
       "id": "t0",
@@ -659,10 +659,10 @@
             "path": ".upstream/src/ts-default/TextAnimations/ScrollVelocity/ScrollVelocity.tsx",
             "line": 37
           },
-          "codeExample": "texts={['AGENT WAN ·', 'QUIET FLOW ·']}",
+          "codeExample": "texts={['AGENT RIC ·', 'QUIET FLOW ·']}",
           "controlExplanation": "内容通过 JSX 组合，本例通过真实用法展示。",
           "usageExamples": [
-            "texts={['AGENT WAN ·', 'QUIET FLOW ·']}"
+            "texts={['AGENT RIC ·', 'QUIET FLOW ·']}"
           ]
         },
         {

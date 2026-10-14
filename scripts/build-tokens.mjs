@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Agent Wan custom token compiler. Node.js standard library only; no npm install. */
+/** Agent Ric custom token compiler. Node.js standard library only; no npm install. */
 import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
@@ -17,8 +17,8 @@ export function cssName(path) {
 }
 
 export function flattenTokens(document) {
-  if (document.format !== 'agent-wan-ui/custom-tokens@1') {
-    throw new Error('Unsupported token format: expected agent-wan-ui/custom-tokens@1. This is a custom format, not DTCG.');
+  if (document.format !== 'ric-frost-glass-ui-skill/custom-tokens@1') {
+    throw new Error('Unsupported token format: expected ric-frost-glass-ui-skill/custom-tokens@1. This is a custom format, not DTCG.');
   }
   const tokens = new Map();
   const names = new Map();
@@ -94,7 +94,7 @@ export function renderTokens(model) {
     '/*',
     ' * GENERATED FILE — do not edit. Author tokens.json, then run:',
     ' *   node scripts/build-tokens.mjs',
-    ' * Format: agent-wan-ui/custom-tokens@1 (custom JSON; not DTCG).',
+    ' * Format: ric-frost-glass-ui-skill/custom-tokens@1 (custom JSON; not DTCG).',
     ` * Source SHA-256: ${model.sourceHash}`,
     ' * CSS aliases preserve token references; each comment records its resolved value.',
     ' * Place aw-theme on html/body or the shared ancestor of the app and its portals.',

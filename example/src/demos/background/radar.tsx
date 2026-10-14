@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Radar/Radar
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Radar component. */
+/** Agent Ric natural-tone preset for the real Radar component. */
 export default function RadarDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

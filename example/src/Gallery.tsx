@@ -91,7 +91,7 @@ export function Gallery() {
   }, []);
 
   useEffect(() => {
-    document.title = `${entry.name} · Agent Wan 组件示例`;
+    document.title = `${entry.name} · Agent Ric 组件示例`;
     if (view === 'preview' || (view === 'code' && codeMode === 'current')) return;
     let cancelled = false;
     setText(''); setTextState('正在读取…');
@@ -118,9 +118,9 @@ export function Gallery() {
       workspace?.scrollIntoView({ block: 'start' });
     }}>跳到组件示例</a>
     <header className="aw-gallery-header aw-glass" data-material="frame">
-      <a className="aw-gallery-brand" href="#glass-surface" onClick={() => select('glass-surface')} aria-label="Agent Wan 组件示例首页">
-        <img src={`${import.meta.env.BASE_URL}media/agent-wan-mark.svg`} alt="" width="34" height="34" />
-        <span>Agent Wan<span className="aw-brand-caption">自然色霜玻璃 · 组件示例</span></span>
+      <a className="aw-gallery-brand" href="#glass-surface" onClick={() => select('glass-surface')} aria-label="Agent Ric 组件示例首页">
+        <img src={`${import.meta.env.BASE_URL}media/agent-ric-mark.svg`} alt="" width="34" height="34" />
+        <span>Agent Ric<span className="aw-brand-caption">自然色霜玻璃 · 组件示例</span></span>
       </a>
       <div className="aw-header-end"><span className="aw-release">{entries.length} 个组件 · v1.1</span></div>
     </header>
@@ -170,8 +170,8 @@ export function Gallery() {
           onCopy={kind => copy(kind === 'usage' ? usage : JSON.stringify({ component: entry.id, values }, null, 2))} /></Suspense> : null}
 
         <section className="aw-integration-grid" aria-label="组件集成信息">
-          <article className="aw-detail-card aw-glass"><span className="aw-section-number">01</span><h2>带入你的界面</h2><p>从当前示例保留结构、Props 和交互，将内容替换为产品数据。颜色与材质继续使用 Agent Wan tokens。</p><button type="button" onClick={() => setView('code')}>查看独立用法 <span aria-hidden="true">↗</span></button></article>
-          <article className="aw-detail-card aw-glass"><span className="aw-section-number">02</span><h2>按需交给 Agent</h2><p>Skill 先读取核心视觉规则，再定位当前组件文档；只继续加载该组件需要的规范章节与源文件。</p><button type="button" onClick={() => copy(`使用 Agent Wan 自然色霜玻璃规范实现 ${entry.name}。先查询 ${entry.id} 对应组件指南，再读取必要的 token、契约和示例文件，保留该组件的关键交互。`)}>复制 Agent 指令 <span aria-hidden="true">↗</span></button></article>
+          <article className="aw-detail-card aw-glass"><span className="aw-section-number">01</span><h2>带入你的界面</h2><p>从当前示例保留结构、Props 和交互，将内容替换为产品数据。颜色与材质继续使用 Agent Ric tokens。</p><button type="button" onClick={() => setView('code')}>查看独立用法 <span aria-hidden="true">↗</span></button></article>
+          <article className="aw-detail-card aw-glass"><span className="aw-section-number">02</span><h2>按需交给 Agent</h2><p>Skill 先读取核心视觉规则，再定位当前组件文档；只继续加载该组件需要的规范章节与源文件。</p><button type="button" onClick={() => copy(`使用 Agent Ric 自然色霜玻璃规范实现 ${entry.name}。先查询 ${entry.id} 对应组件指南，再读取必要的 token、契约和示例文件，保留该组件的关键交互。`)}>复制 Agent 指令 <span aria-hidden="true">↗</span></button></article>
           <article className="aw-detail-card aw-glass"><span className="aw-section-number">03</span><h2>使用边界</h2><p>只接入当前任务需要的组件。保留真实数据、状态与操作，必要时提供减少动效、错误提示和恢复入口。</p></article>
         </section>
         <p className="aw-gallery-footnote">演示采用本地素材与本地状态。摄像头组件由明确操作开启；模拟语音与任务状态会在示例中标注。</p>

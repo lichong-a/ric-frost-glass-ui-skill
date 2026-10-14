@@ -4,7 +4,7 @@ import { useDemoConfig } from '../../parameters/DemoConfig';
 
 const ballColors = [palette.primary, palette.sage, palette.sand, palette.ivory].map(color => Number.parseInt(color.slice(1), 16));
 
-/** Agent Wan natural-tone preset for the real Ballpit component. */
+/** Agent Ric natural-tone preset for the real Ballpit component. */
 export default function BallpitDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

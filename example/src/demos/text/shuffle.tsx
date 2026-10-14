@@ -11,7 +11,7 @@ export default function ShuffleDemo() {
   
   return (
     <div className="aw-demo-stage" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>
-      <Component text="AGENT WAN" shuffleDirection="right" duration={0.32}
+      <Component text="AGENT RIC" shuffleDirection="right" duration={0.32}
 animationMode="evenodd" shuffleTimes={1} stagger={0.035} threshold={0.1}
 triggerOnce triggerOnHover respectReducedMotion colorFrom={palette.sage}
 colorTo={palette.ink} style={{ fontSize: 'clamp(40px, 7vw, 76px)' }} {...demoProps('t0')} />

@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Galaxy/Gala
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Galaxy component. */
+/** Agent Ric natural-tone preset for the real Galaxy component. */
 export default function GalaxyDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

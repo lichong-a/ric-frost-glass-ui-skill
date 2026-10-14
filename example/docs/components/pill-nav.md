@@ -2,7 +2,7 @@
 
 导航与菜单 · `pill-nav` · 中文意图：胶囊导航 / 滑动导航高亮
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -42,7 +42,7 @@ import { MemoryRouter, useLocation } from "react-router-dom";
 // MemoryRouter提供真实路由上下文；activeHref来自useLocation，不使用固定选中项。
 
 export default function PillNavDemo() {
-  function RoutedExample() { const location = useLocation(); return <div style={{ padding: 28, color: palette.ink }}><Component    activeHref={location.pathname}      logo={import.meta.env.BASE_URL + "media/agent-wan-mark.svg"} logoAlt={"Agent Wan"} items={[{ "label": "工作台", "href": "/overview" }, { "label": "智能体", "href": "/agents" }, { "label": "技能", "href": "/skills" }, { "label": "设置", "href": "/settings" }]} baseColor={"#52604e"} pillColor={"#faf7f0"} hoveredPillTextColor={"#faf7f0"} pillTextColor={"#1f2d26"} ease={"power2.out"} initialLoadAnimation={true}  /><p role="status" style={{ paddingTop: 190, color: palette.muted }}>当前示例路由：{location.pathname}</p></div>; }
+  function RoutedExample() { const location = useLocation(); return <div style={{ padding: 28, color: palette.ink }}><Component    activeHref={location.pathname}      logo={import.meta.env.BASE_URL + "media/agent-ric-mark.svg"} logoAlt={"Agent Ric"} items={[{ "label": "工作台", "href": "/overview" }, { "label": "智能体", "href": "/agents" }, { "label": "技能", "href": "/skills" }, { "label": "设置", "href": "/settings" }]} baseColor={"#52604e"} pillColor={"#faf7f0"} hoveredPillTextColor={"#faf7f0"} pillTextColor={"#1f2d26"} ease={"power2.out"} initialLoadAnimation={true}  /><p role="status" style={{ paddingTop: 190, color: palette.muted }}>当前示例路由：{location.pathname}</p></div>; }
   return (
     <div className="aw-demo-stage" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>
       <MemoryRouter initialEntries={["/overview"]}><RoutedExample /></MemoryRouter>
@@ -89,8 +89,8 @@ onMobileMenuClick={() => {}}
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.logo` | `"@media/agent-wan-mark.svg"` | resource | 不限 ~ 不限 | 即时应用 |
-| `t0.logoAlt` | `"Agent Wan"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.logo` | `"@media/agent-ric-mark.svg"` | resource | 不限 ~ 不限 | 即时应用 |
+| `t0.logoAlt` | `"Agent Ric"` | text | 不限 ~ 不限 | 即时应用 |
 | `t0.items` | `[{"label":"工作台","href":"/overview"},{"label":"智能体","href":"/agents"},{"label":"技能","href":"/skills"},{"label":"设置","href":"/settings"}]` | json | 不限 ~ 不限 | 即时应用 |
 | `t0.baseColor` | `"#52604e"` | color | 不限 ~ 不限 | 即时应用 |
 | `t0.pillColor` | `"#faf7f0"` | color | 不限 ~ 不限 | 即时应用 |
@@ -105,9 +105,9 @@ onMobileMenuClick={() => {}}
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
-- 容器、状态色、边界与焦点使用 Agent Wan 规范；交互命中区不随视觉形变缩小。
+- 容器、状态色、边界与焦点使用 Agent Ric 规范；交互命中区不随视觉形变缩小。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 

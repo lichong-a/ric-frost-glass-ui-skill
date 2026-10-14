@@ -2,7 +2,7 @@
 
 导航与菜单 · `card-nav` · 中文意图：卡片导航 / 导航展开面板
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -45,7 +45,7 @@ export default function CardNavDemo() {
   const [status, setStatus] = useState('点击菜单按钮展开三个导航卡片');
   return (
     <div className="aw-demo-stage" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>
-      <div style={{ position: 'relative', width: '100%', maxWidth: 800, height: 420 }} onClickCapture={event => { const target = event.target as Element; const link = target.closest('a'); if (link) { event.preventDefault(); setStatus('已选择：' + link.textContent); } else if (target.closest('.card-nav-cta-button')) { setStatus('开始使用按钮已点击'); } }}><Component         logo={import.meta.env.BASE_URL + "media/agent-wan-mark.svg"} logoAlt={"Agent Wan"} items={[{ "label": "构建", "bgColor": "#e8e4d7", "textColor": "#1f2d26", "links": [{ "label": "智能体", "href": "#agents", "ariaLabel": "选择智能体" }, { "label": "工作流", "href": "#flows", "ariaLabel": "选择工作流" }] }, { "label": "资源", "bgColor": "#a6b39a", "textColor": "#1f2d26", "links": [{ "label": "技能", "href": "#skills", "ariaLabel": "选择技能" }, { "label": "知识", "href": "#knowledge", "ariaLabel": "选择知识" }] }, { "label": "管理", "bgColor": "#faf7f0", "textColor": "#1f2d26", "links": [{ "label": "空间", "href": "#spaces", "ariaLabel": "选择空间" }, { "label": "设置", "href": "#settings", "ariaLabel": "选择设置" }] }]} baseColor={"#faf7f0"} menuColor={"#1f2d26"} buttonBgColor={"#52604e"} buttonTextColor={"#faf7f0"} ease={"power3.out"}  /><p role="status" aria-live="polite" style={{ position: 'absolute', left: 24, bottom: 12, color: palette.muted }}>{status}</p></div>
+      <div style={{ position: 'relative', width: '100%', maxWidth: 800, height: 420 }} onClickCapture={event => { const target = event.target as Element; const link = target.closest('a'); if (link) { event.preventDefault(); setStatus('已选择：' + link.textContent); } else if (target.closest('.card-nav-cta-button')) { setStatus('开始使用按钮已点击'); } }}><Component         logo={import.meta.env.BASE_URL + "media/agent-ric-mark.svg"} logoAlt={"Agent Ric"} items={[{ "label": "构建", "bgColor": "#e8e4d7", "textColor": "#1f2d26", "links": [{ "label": "智能体", "href": "#agents", "ariaLabel": "选择智能体" }, { "label": "工作流", "href": "#flows", "ariaLabel": "选择工作流" }] }, { "label": "资源", "bgColor": "#a6b39a", "textColor": "#1f2d26", "links": [{ "label": "技能", "href": "#skills", "ariaLabel": "选择技能" }, { "label": "知识", "href": "#knowledge", "ariaLabel": "选择知识" }] }, { "label": "管理", "bgColor": "#faf7f0", "textColor": "#1f2d26", "links": [{ "label": "空间", "href": "#spaces", "ariaLabel": "选择空间" }, { "label": "设置", "href": "#settings", "ariaLabel": "选择设置" }] }]} baseColor={"#faf7f0"} menuColor={"#1f2d26"} buttonBgColor={"#52604e"} buttonTextColor={"#faf7f0"} ease={"power3.out"}  /><p role="status" aria-live="polite" style={{ position: 'absolute', left: 24, bottom: 12, color: palette.muted }}>{status}</p></div>
     </div>
   );
 }
@@ -80,8 +80,8 @@ items={[{ label: '构建', bgColor: palette.canvas, textColor: palette.ink, link
 
 | 参数 / 实例 | 本例默认配置 | 控件 | 演示范围 / 单位 | 应用方式 |
 |---|---|---|---|---|
-| `t0.logo` | `"@media/agent-wan-mark.svg"` | resource | 不限 ~ 不限 | 即时应用 |
-| `t0.logoAlt` | `"Agent Wan"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.logo` | `"@media/agent-ric-mark.svg"` | resource | 不限 ~ 不限 | 即时应用 |
+| `t0.logoAlt` | `"Agent Ric"` | text | 不限 ~ 不限 | 即时应用 |
 | `t0.items` | `[{"label":"构建","bgColor":"#e8e4d7","textColor":"#1f2d26","links":[{"label":"智能体","href":"#agents","ariaLabel":"选择智能体"},{"label":"工作流","href":"#flows","ariaLabel":"选择工作流"}]},{"label":"资源","bgColor":"#a6b39a","textColor":"#1f2d26","links":[{"label":"技能","href":"#skills","ariaLabel":"选择技能"},{"label":"知识","href":"#knowledge","ariaLabel":"选择知识"}]},{"label":"管理","bgColor":"#faf7f0","textColor":"#1f2d26","links":[{"label":"空间","href":"#spaces","ariaLabel":"选择空间"},{"label":"设置","href":"#settings","ariaLabel":"选择设置"}]}]` | json | 不限 ~ 不限 | 即时应用 |
 | `t0.baseColor` | `"#faf7f0"` | color | 不限 ~ 不限 | 即时应用 |
 | `t0.menuColor` | `"#1f2d26"` | color | 不限 ~ 不限 | 即时应用 |
@@ -95,9 +95,9 @@ items={[{ label: '构建', bgColor: palette.canvas, textColor: palette.ink, link
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
-- 容器、状态色、边界与焦点使用 Agent Wan 规范；交互命中区不随视觉形变缩小。
+- 容器、状态色、边界与焦点使用 Agent Ric 规范；交互命中区不随视觉形变缩小。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 

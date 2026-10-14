@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Balatro/Bal
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Balatro component. */
+/** Agent Ric natural-tone preset for the real Balatro component. */
 export default function BalatroDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

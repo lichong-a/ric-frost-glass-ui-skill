@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/PrismaticBu
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Prismatic Burst component. */
+/** Agent Ric natural-tone preset for the real Prismatic Burst component. */
 export default function PrismaticBurstDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

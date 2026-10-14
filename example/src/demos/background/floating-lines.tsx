@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/FloatingLin
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Floating Lines component. */
+/** Agent Ric natural-tone preset for the real Floating Lines component. */
 export default function FloatingLinesDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

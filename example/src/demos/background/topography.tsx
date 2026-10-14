@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Topography/
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Topography component. */
+/** Agent Ric natural-tone preset for the real Topography component. */
 export default function TopographyDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

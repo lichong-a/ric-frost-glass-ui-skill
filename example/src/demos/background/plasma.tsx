@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Plasma/Plas
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Plasma component. */
+/** Agent Ric natural-tone preset for the real Plasma component. */
 export default function PlasmaDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

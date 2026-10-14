@@ -75,7 +75,7 @@ export function adaptUpstream(code, id, { base = '/' } = {}) {
     }
     changed = changed.replace('useGLTF(glb)', `useGLTF(glb, ${JSON.stringify(assetUrl('assets/draco/'))})`)
       .replaceAll('<Text\n', `<Text font=${JSON.stringify(assetUrl('assets/fonts/RobotoFlex.ttf'))}\n`)
-      .replace('      React Bits\n', '      Agent Wan\n');
+      .replace('      React Bits\n', '      Agent Ric\n');
   }
   // Replace upstream's stock image defaults with authored, local demonstration media.
   // Props supplied by an individual wrapper remain the first choice.

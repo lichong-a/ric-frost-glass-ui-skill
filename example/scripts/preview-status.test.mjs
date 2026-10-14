@@ -115,7 +115,7 @@ for (const [statusMode, expectedMounted] of [['demo', true], [undefined, false]]
       const frame = dom.container.querySelector('iframe');
       const url = new URL(frame.getAttribute('src'));
       const event = new Event('message');
-      Object.assign(event, { origin: dom.window.location.origin, source: frame.contentWindow, data: { protocol: 'agent-wan-reactbits/v1', channel: url.searchParams.get('channel'), componentId: entry.id, type: 'status', status: 'error', detail: 'recoverable demo failure' } });
+      Object.assign(event, { origin: dom.window.location.origin, source: frame.contentWindow, data: { protocol: 'ric-frost-glass-ui-skill/preview/v1', channel: url.searchParams.get('channel'), componentId: entry.id, type: 'status', status: 'error', detail: 'recoverable demo failure' } });
       await act(async () => dom.window.dispatchEvent(event));
       assert.equal(dom.container.querySelector('iframe') === frame, expectedMounted);
     } finally { await act(async () => root.unmount()); dom.restore(); }
@@ -132,7 +132,7 @@ async function mountRuntime(statusMode, { gpu, Demo } = {}) {
   try {
     await act(async () => root.render(createElement(PreviewRuntime, { registry: { getEntry: () => entry, getLoader: () => loader, entries: [entry] } })));
     await act(async () => {
-      const envelope = { protocol: 'agent-wan-reactbits/v1', channel: 'test-channel', componentId: entry.id };
+      const envelope = { protocol: 'ric-frost-glass-ui-skill/preview/v1', channel: 'test-channel', componentId: entry.id };
       dom.hostMessage({ ...envelope, type: 'preferences', active: true, motion: 'allow' });
       dom.hostMessage({ ...envelope, type: 'configuration', revision: 0, values: {} });
     });

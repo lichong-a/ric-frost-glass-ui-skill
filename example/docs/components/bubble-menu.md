@@ -2,7 +2,7 @@
 
 导航与菜单 · `bubble-menu` · 中文意图：气泡菜单 / 展开圆形菜单
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -49,7 +49,7 @@ export default function BubbleMenuDemo() {
         if (link) { event.preventDefault(); setStatus('已选择：' + link.textContent); }
       }}>
       {!menuOpen && <div className={styles.intro}><span className={styles.eyebrow}>BUBBLE MENU</span><h2 className={styles.title}>让创意自由展开</h2><p className={styles.description}>展开导航，选择下一处灵感。</p></div>}
-      <Component logo={<strong className={styles.logo}>Agent Wan</strong>}
+      <Component logo={<strong className={styles.logo}>Agent Ric</strong>}
 
 
 
@@ -83,7 +83,7 @@ export default function BubbleMenuDemo() {
 **logo 的真实接入：**
 
 ```tsx
-logo={<strong className={styles.logo}>Agent Wan</strong>}
+logo={<strong className={styles.logo}>Agent Ric</strong>}
 ```
 
 **onMenuClick 的真实接入：**
@@ -128,9 +128,9 @@ items={['工作台', '智能体', '技能', '设置'].map((label, index) => ({
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
-- 容器、状态色、边界与焦点使用 Agent Wan 规范；交互命中区不随视觉形变缩小。
+- 容器、状态色、边界与焦点使用 Agent Ric 规范；交互命中区不随视觉形变缩小。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 

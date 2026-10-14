@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/FaultyTermi
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Faulty Terminal component. */
+/** Agent Ric natural-tone preset for the real Faulty Terminal component. */
 export default function FaultyTerminalDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

@@ -13,7 +13,7 @@ export default function OrbitImagesDemo() {
       <Component images={MEDIA} altPrefix="自然色图像" shape="ellipse" radiusX={220}
 radiusY={75} rotation={-6} duration={36} itemSize={62} responsive
 showPath pathColor={palette.sage} pathWidth={1} width="100%" height={340}
-centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Wan</span>} {...demoProps('t0')} />
+centerContent={<span style={{ color: palette.ink, fontSize: 24 }}>Agent Ric</span>} {...demoProps('t0')} />
     </div>
   );
 }

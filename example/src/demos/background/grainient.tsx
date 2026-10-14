@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Grainient/G
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Grainient component. */
+/** Agent Ric natural-tone preset for the real Grainient component. */
 export default function GrainientDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

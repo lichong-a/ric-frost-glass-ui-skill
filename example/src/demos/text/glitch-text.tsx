@@ -7,7 +7,7 @@ export default function GlitchTextDemo() {
   const { props: demoProps } = useDemoConfig();
   return (
     <div className={styles.stage}>
-      <Component speed={1} enableShadows={true} enableOnHover={false} className={styles.text} {...demoProps('t0')}>AGENT WAN</Component>
+      <Component speed={1} enableShadows={true} enableOnHover={false} className={styles.text} {...demoProps('t0')}>AGENT RIC</Component>
       <p className={styles.guide}>观察红蓝重影与文字切片的循环错位。</p>
     </div>
   );

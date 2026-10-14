@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Waves/Waves
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Waves component. */
+/** Agent Ric natural-tone preset for the real Waves component. */
 export default function WavesDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

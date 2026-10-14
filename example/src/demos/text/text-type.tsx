@@ -10,7 +10,7 @@ export default function TextTypeDemo() {
   
   return (
     <div className="aw-demo-stage" style={{ width: '100%', minHeight: 300, display: 'grid', placeItems: 'center', color: palette.ink, fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 650, padding: 24 }}>
-      <Component text={['整理技能与工具', '编排多智能体工作流', 'Agent Wan · 自然有序']}
+      <Component text={['整理技能与工具', '编排多智能体工作流', 'Agent Ric · 自然有序']}
 typingSpeed={85} deletingSpeed={45} pauseDuration={2000} showCursor
 cursorCharacter="▏" textColors={[palette.ink, palette.primary, palette.muted]} {...demoProps('t0')} />
     </div>

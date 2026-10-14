@@ -35,7 +35,7 @@ function run(script, parameters, failure) {
   if (result.error) throw result.error;
   if (result.status !== 0) throw new Error(`${failure} (exit ${result.status ?? result.signal}). Existing docs were not replaced.`);
 }
-const staging = await mkdtemp(path.join(tmpdir(), 'agent-wan-progressive-'));
+const staging = await mkdtemp(path.join(tmpdir(), 'agent-ric-progressive-'));
 try {
   const parameters = [
     '--catalog', path.join(exampleRoot, 'catalog/upstream-manifest.json'),

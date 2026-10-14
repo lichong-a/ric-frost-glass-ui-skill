@@ -17,7 +17,7 @@
 | 文件 | 用途 |
 |---|---|
 | `AGENT_HANDOFF.md` | 给 Agent 的入口与任务提示词 |
-| `AGENT_WAN_UI_SPEC.md` | 本文件；完整视觉、布局、组件和工程规范 |
+| `AGENT_RIC_UI_SPEC.md` | 本文件；完整视觉、布局、组件和工程规范 |
 | `tokens.json` | 颜色、尺寸、材质、动效、组件别名的唯一数值源 |
 | `tokens.css` | 生成后的 CSS 自定义属性 |
 | `theme.css` | 消费变量的基础样式；不承担数据与复杂交互逻辑 |
@@ -37,4 +37,4 @@
 
 ---
 
-规范来源：[AGENT_WAN_UI_SPEC.md](../../../AGENT_WAN_UI_SPEC.md)。本文件由主规范按章节生成；修改主规范后重新生成，不独立维护第二套规则。
+规范来源：[AGENT_RIC_UI_SPEC.md](../../../AGENT_RIC_UI_SPEC.md)。本文件由主规范按章节生成；修改主规范后重新生成，不独立维护第二套规则。

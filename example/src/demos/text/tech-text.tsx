@@ -11,7 +11,7 @@ export default function TechTextDemo() {
   
   return (
     <div className="aw-demo-stage" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>
-      <Component text="Agent Wan" fontFamily="sans-serif" fontWeight={650} fontSize={100}
+      <Component text="Agent Ric" fontFamily="sans-serif" fontWeight={650} fontSize={100}
 color={palette.ink} accentColor={palette.primary} reveal="letter"
 dashLength={4} dashGap={2} specks={8} reach={110} speed={0.55} {...demoProps('t0')} />
     </div>

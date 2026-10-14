@@ -1,7 +1,7 @@
 import type { MotionMode, PreviewStatus } from './types';
 import type { DemoValues } from '../parameters/types';
 
-export const PREVIEW_PROTOCOL = 'agent-wan-reactbits/v1' as const;
+export const PREVIEW_PROTOCOL = 'ric-frost-glass-ui-skill/preview/v1' as const;
 
 export type FrameMessage = {
   protocol: typeof PREVIEW_PROTOCOL;

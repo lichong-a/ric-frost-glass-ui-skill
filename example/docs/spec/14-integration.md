@@ -86,4 +86,4 @@ node scripts/find-component.mjs "毛玻璃卡片" --limit 3
 
 ---
 
-规范来源：[AGENT_WAN_UI_SPEC.md](../../../AGENT_WAN_UI_SPEC.md)。本文件由主规范按章节生成；修改主规范后重新生成，不独立维护第二套规则。
+规范来源：[AGENT_RIC_UI_SPEC.md](../../../AGENT_RIC_UI_SPEC.md)。本文件由主规范按章节生成；修改主规范后重新生成，不独立维护第二套规则。

@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Orb/Orb';
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Orb component. */
+/** Agent Ric natural-tone preset for the real Orb component. */
 export default function OrbDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

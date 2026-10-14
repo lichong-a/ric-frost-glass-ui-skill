@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/AcidSquares
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Acid Squares component. */
+/** Agent Ric natural-tone preset for the real Acid Squares component. */
 export default function AcidSquaresDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

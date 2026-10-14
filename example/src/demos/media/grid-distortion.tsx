@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/GridDistort
 import { MEDIA } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Grid Distortion component. */
+/** Agent Ric natural-tone preset for the real Grid Distortion component. */
 export default function GridDistortionDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

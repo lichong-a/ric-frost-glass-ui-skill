@@ -11,7 +11,7 @@ export default function ParticleTextDemo() {
   
   return (
     <div className="aw-demo-stage" style={{ width: '100%', height: 360, position: 'relative', overflow: 'hidden', color: palette.ink }}>
-      <Component text="AGENT WAN" color={palette.primary} highlightColor={palette.ink}
+      <Component text="AGENT RIC" color={palette.primary} highlightColor={palette.ink}
 particleSize={2} density={5} scatter={100} gatherDuration={1100} stagger={180}
 pointerRepel={28} repelRadius={95} idleDrift={0.25} trigger="click"
 fontSize="clamp(44px, 8vw, 86px)" fontWeight={700} glow={false} {...demoProps('t0')} />

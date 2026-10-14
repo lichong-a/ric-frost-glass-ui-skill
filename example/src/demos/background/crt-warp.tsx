@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/CRTWarp/CRT
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real CRT Warp component. */
+/** Agent Ric natural-tone preset for the real CRT Warp component. */
 export default function CRTWarpDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

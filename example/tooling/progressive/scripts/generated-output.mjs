@@ -72,7 +72,7 @@ async function optionalRead(filename) {
 }
 async function replaceFile(filename, body) {
   await mkdir(path.dirname(filename), { recursive: true });
-  const temporary = `${filename}.agent-wan-${randomUUID()}.tmp`;
+  const temporary = `${filename}.agent-ric-${randomUUID()}.tmp`;
   try {
     await writeFile(temporary, body, { flag: 'wx' });
     await rename(temporary, filename);

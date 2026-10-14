@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/Threads/Thr
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Threads component. */
+/** Agent Ric natural-tone preset for the real Threads component. */
 export default function ThreadsDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

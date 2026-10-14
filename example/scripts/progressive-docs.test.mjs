@@ -28,7 +28,7 @@ async function fixture(root) {
   await save(root, 'example/catalog/use-categories.json', { ...use, total: ids.size, components: use.components.filter(item => ids.has(item.id)) });
   await save(root, 'example/catalog/upstream-manifest.json', { ...catalog, total: effects.length, components: effects });
   await save(root, 'example/catalog/business-catalog.json', { ...business, total: businessEntries.length, components: businessEntries });
-  await save(root, 'AGENT_WAN_UI_SPEC.md', Array.from({ length: 17 }, (_, index) => `## ${index + 1}. Specification\n\nFixture section.\n`).join('\n'));
+  await save(root, 'AGENT_RIC_UI_SPEC.md', Array.from({ length: 17 }, (_, index) => `## ${index + 1}. Specification\n\nFixture section.\n`).join('\n'));
   await save(root, 'COMPONENT_CONTRACTS.md', Array.from({ length: 22 }, (_, index) => `## ${index}. Contract\n\nFixture contract.\n`).join('\n'));
   await save(root, 'example/docs/business/motion-guide.md', '# Authored motion guide\n\n[Button](../../src/business/components/Button.tsx)\n');
   await save(root, 'example/src/parameters/usage.ts', await readFile(path.join(exampleRoot, 'src/parameters/usage.ts'), 'utf8'));
@@ -98,7 +98,7 @@ test('business API rows identify the leaf contract separately from the demonstra
 
 for (const mode of ['kit', 'skill']) {
   test(`${mode} generation joins purpose routes, provider views and source-category migration without live output writes`, async t => {
-    const temporary = await mkdtemp(path.join(tmpdir(), 'agent-wan-doc-fixture-'));
+    const temporary = await mkdtemp(path.join(tmpdir(), 'agent-ric-doc-fixture-'));
     t.after(() => rm(temporary, { recursive: true, force: true }));
     const source = path.join(temporary, 'source');
     const first = path.join(temporary, 'first');
@@ -161,7 +161,7 @@ for (const mode of ['kit', 'skill']) {
   });
 }
 test('rebuild refuses a changed implementation even when API cache and definitions agree with each other', async t => {
-  const temporary = await mkdtemp(path.join(tmpdir(), 'agent-wan-doc-fresh-'));
+  const temporary = await mkdtemp(path.join(tmpdir(), 'agent-ric-doc-fresh-'));
   t.after(() => rm(temporary, { recursive: true, force: true }));
   const source = path.join(temporary, 'source');
   const sourceExample = path.join(source, 'example');
@@ -179,7 +179,7 @@ test('rebuild refuses a changed implementation even when API cache and definitio
   const buttonDefinition = JSON.parse(cachedDefinition);
   const cachedVariant = buttonDefinition.props.find(prop => prop.name === 'variant');
   assert.equal(cachedVariant.defaultExpression, actual.components['business-button'].props.find(prop => prop.name === 'variant').defaultExpression);
-  await save(source, 'AGENT_WAN_UI_SPEC.md', Array.from({ length: 17 }, (_, index) => `## ${index + 1}. Specification\n\nFixture section.\n`).join('\n'));
+  await save(source, 'AGENT_RIC_UI_SPEC.md', Array.from({ length: 17 }, (_, index) => `## ${index + 1}. Specification\n\nFixture section.\n`).join('\n'));
   await save(source, 'COMPONENT_CONTRACTS.md', Array.from({ length: 22 }, (_, index) => `## ${index}. Contract\n\nFixture contract.\n`).join('\n'));
   await save(source, 'example/docs/business/motion-guide.md', '# Authored motion guide\n');
   // The real source validator imported by the rebuild entry must reject before
@@ -200,7 +200,7 @@ test('rebuild refuses a changed implementation even when API cache and definitio
 });
 
 async function overlayFixture(t) {
-  const root = await mkdtemp(path.join(tmpdir(), 'agent-wan-doc-apply-'));
+  const root = await mkdtemp(path.join(tmpdir(), 'agent-ric-doc-apply-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   const target = path.join(root, 'target');
   const staging = path.join(root, 'staging');
@@ -247,7 +247,7 @@ test('a tampered generated manifest cannot overwrite application sources', async
   assert.equal(await readFile(path.join(options.targetRoot, 'example/src/main.tsx'), 'utf8'), 'application source');
 });
 test('a partial catalog cannot bypass the source preflight through an accepting docs checker', async t => {
-  const temporary = await mkdtemp(path.join(tmpdir(), 'agent-wan-doc-rebuild-'));
+  const temporary = await mkdtemp(path.join(tmpdir(), 'agent-ric-doc-rebuild-'));
   t.after(() => rm(temporary, { recursive: true, force: true }));
   const source = path.join(temporary, 'source');
   const target = path.join(temporary, 'target');
@@ -262,7 +262,7 @@ test('a partial catalog cannot bypass the source preflight through an accepting 
 });
 for (const mode of ['kit', 'skill']) {
   test(`${mode} read-only rebuild requires complete source coverage and leaves current docs untouched`, async t => {
-    const temporary = await mkdtemp(path.join(tmpdir(), 'agent-wan-doc-check-'));
+    const temporary = await mkdtemp(path.join(tmpdir(), 'agent-ric-doc-check-'));
     t.after(() => rm(temporary, { recursive: true, force: true }));
     const source = path.join(temporary, 'source');
     await fixture(source);

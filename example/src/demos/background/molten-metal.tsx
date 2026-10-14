@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/MoltenMetal
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Molten Metal component. */
+/** Agent Ric natural-tone preset for the real Molten Metal component. */
 export default function MoltenMetalDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

@@ -7,7 +7,7 @@ import { useDemoConfig } from '../../parameters/DemoConfig';
 
 export default function PillNavDemo() {
   const { props: demoProps } = useDemoConfig();
-  function RoutedExample() { const location = useLocation(); return <div style={{ padding: 28, color: palette.ink }}><Component logo={LOGO} logoAlt="Agent Wan" items={[{ label: '工作台', href: '/overview' }, { label: '智能体', href: '/agents' }, { label: '技能', href: '/skills' }, { label: '设置', href: '/settings' }]} activeHref={location.pathname} baseColor={palette.primary} pillColor={palette.ivory} hoveredPillTextColor={palette.ivory} pillTextColor={palette.ink} ease="power2.out" {...demoProps('t0')} /><p role="status" style={{ paddingTop: 190, color: palette.muted }}>当前示例路由：{location.pathname}</p></div>; }
+  function RoutedExample() { const location = useLocation(); return <div style={{ padding: 28, color: palette.ink }}><Component logo={LOGO} logoAlt="Agent Ric" items={[{ label: '工作台', href: '/overview' }, { label: '智能体', href: '/agents' }, { label: '技能', href: '/skills' }, { label: '设置', href: '/settings' }]} activeHref={location.pathname} baseColor={palette.primary} pillColor={palette.ivory} hoveredPillTextColor={palette.ivory} pillTextColor={palette.ink} ease="power2.out" {...demoProps('t0')} /><p role="status" style={{ paddingTop: 190, color: palette.muted }}>当前示例路由：{location.pathname}</p></div>; }
   return (
     <div className="aw-demo-stage" style={{ width: '100%', height: 400, position: 'relative', overflow: 'hidden', color: palette.ink }}>
       <MemoryRouter initialEntries={["/overview"]}><RoutedExample /></MemoryRouter>

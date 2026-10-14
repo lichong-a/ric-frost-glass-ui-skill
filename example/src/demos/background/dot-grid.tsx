@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/DotGrid/Dot
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Dot Grid component. */
+/** Agent Ric natural-tone preset for the real Dot Grid component. */
 export default function DotGridDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

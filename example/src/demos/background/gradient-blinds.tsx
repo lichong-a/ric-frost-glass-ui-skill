@@ -2,7 +2,7 @@ import Component from '../../../.upstream/src/ts-default/Backgrounds/GradientBli
 import { palette } from '../../shared/demo-support';
 import { useDemoConfig } from '../../parameters/DemoConfig';
 
-/** Agent Wan natural-tone preset for the real Gradient Blinds component. */
+/** Agent Ric natural-tone preset for the real Gradient Blinds component. */
 export default function GradientBlindsDemo() {
   const { props: demoProps } = useDemoConfig();
   return (

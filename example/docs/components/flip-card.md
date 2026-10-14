@@ -2,7 +2,7 @@
 
 卡片与面板 · `flip-card` · 中文意图：翻面卡片 / 双面卡
 
-目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-wan-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
+目录：[效果](#1-必须保留) · [资源](#2-只读本组件的资源) · [参数](#3-本例参数与-api) · [皮肤](#4-agent-ric-皮肤) · [运行与降级](#5-加载动效与降级) · [验收](#6-验收本组件)
 
 ## 1. 必须保留
 
@@ -45,7 +45,7 @@ const cn=(names:string)=>componentClasses(styles,names);
 export default function FlipCardDemo() {
   const [flipped, setFlipped] = useState(false);
   return <DemoPanel title="Flip Card · 翻转信息卡"><div className={cn("aw-micro-stack")}>
-    <FlipCard flipped={flipped} onFlipChange={setFlipped}           front={<div className={cn("aw-micro-card")}><span>AGENT WAN</span><h3>霜玻璃<br />设计系统</h3><p>正面 · 点击或拖动翻转</p></div>} back={<div className={cn("aw-micro-card")}><h3>清晰与克制</h3><p>自然色、浅阅读面、可验证的交互状态。</p><p>背面 · 再次点击返回</p></div>} width={280} height={340} radius={20} background={"rgb(250 247 240 / 0.82)"} color={"#1f2d26"} shadowColor={"#52604e"} shadowOpacity={0.16} glareOpacity={0.12} tiltMax={6} ariaLabel={"点击翻转 Agent Wan 信息卡"} axis={"y"} flipOnClick={true} draggable={true} dragDistance={0} tilt={true} glare={true} hoverScale={1.03} perspective={1100} stiffness={170} damping={20} shadow={true} disabled={false}  />
+    <FlipCard flipped={flipped} onFlipChange={setFlipped}           front={<div className={cn("aw-micro-card")}><span>AGENT RIC</span><h3>霜玻璃<br />设计系统</h3><p>正面 · 点击或拖动翻转</p></div>} back={<div className={cn("aw-micro-card")}><h3>清晰与克制</h3><p>自然色、浅阅读面、可验证的交互状态。</p><p>背面 · 再次点击返回</p></div>} width={280} height={340} radius={20} background={"rgb(250 247 240 / 0.82)"} color={"#1f2d26"} shadowColor={"#52604e"} shadowOpacity={0.16} glareOpacity={0.12} tiltMax={6} ariaLabel={"点击翻转 Agent Ric 信息卡"} axis={"y"} flipOnClick={true} draggable={true} dragDistance={0} tilt={true} glare={true} hoverScale={1.03} perspective={1100} stiffness={170} damping={20} shadow={true} disabled={false}  />
     <div className={cn("aw-micro-controls")}><button className={styles['aw-micro-action']}  onClick={() => setFlipped(value => !value)} type={"button"} >翻转卡片</button></div>
     <p className={cn("aw-micro-status")} role="status" aria-live="polite">当前：{flipped ? '背面' : '正面'}</p>
   </div></DemoPanel>;
@@ -99,7 +99,7 @@ export default function FlipCardDemo() {
 **front 的真实接入：**
 
 ```tsx
-front={<div className={cn("aw-micro-card")}><span>AGENT WAN</span><h3>霜玻璃<br />设计系统</h3><p>正面 · 点击或拖动翻转</p></div>}
+front={<div className={cn("aw-micro-card")}><span>AGENT RIC</span><h3>霜玻璃<br />设计系统</h3><p>正面 · 点击或拖动翻转</p></div>}
 ```
 
 **back 的真实接入：**
@@ -129,7 +129,7 @@ onFlipChange={setFlipped}
 | `t0.shadowOpacity` | `0.16` | number | 不限 ~ 不限 | 即时应用 |
 | `t0.glareOpacity` | `0.12` | number | 不限 ~ 不限 | 即时应用 |
 | `t0.tiltMax` | `6` | number | 不限 ~ 不限 | 即时应用 |
-| `t0.ariaLabel` | `"点击翻转 Agent Wan 信息卡"` | text | 不限 ~ 不限 | 即时应用 |
+| `t0.ariaLabel` | `"点击翻转 Agent Ric 信息卡"` | text | 不限 ~ 不限 | 即时应用 |
 | `t0.axis` | `"y"` | select | "x" / "y" | 即时应用 |
 | `t0.flipOnClick` | `true` | switch | 不限 ~ 不限 | 即时应用 |
 | `t0.draggable` | `true` | switch | 不限 ~ 不限 | 即时应用 |
@@ -150,9 +150,9 @@ onFlipChange={setFlipped}
 
 容器选项属于示例宿主，不是组件 Props。同页切换记住各自配置，刷新恢复默认。使用“恢复默认”“重播”“复制当前用法／配置”可重新体验和导出；滚动进度、粒子位置等瞬时状态不会写入配置。
 
-## 4. Agent Wan 皮肤
+## 4. Agent Ric 皮肤
 
-- 容器、状态色、边界与焦点使用 Agent Wan 规范；交互命中区不随视觉形变缩小。
+- 容器、状态色、边界与焦点使用 Agent Ric 规范；交互命中区不随视觉形变缩小。
 - 组件库外壳与基础控件沿用主题 Token；效果画布通过真实 Props 保留原版配色和可观察强度。
 - 保留实际效果结构，不用一张背景图或统一 hover 卡片代替该组件。
 

@@ -1,9 +1,9 @@
 ---
-name: artifact-template-agent-wan-frost-glass-ui
-description: "Build and adapt Agent Wan natural-color frosted-glass React components and pages. Use for business forms, autocomplete, tables, dialogs, navigation, feedback, media and accessibility helpers, as well as requested text, animation and background effects. Choose by concrete business scenario, load only the selected component guide and necessary source, and preserve existing product contracts."
+name: ric-frost-glass-ui-skill
+description: "Build and adapt Agent Ric natural-color frosted-glass React components and pages. Use for business forms, autocomplete, tables, dialogs, navigation, feedback, media and accessibility helpers, as well as requested text, animation and background effects. Choose by concrete business scenario, load only the selected component guide and necessary source, and preserve existing product contracts."
 ---
 
-# Agent Wan Frost Glass UI
+# ric-frost-glass-ui-skill
 
 按业务目标选择本包自有基础组件或用户要求的效果，保持自然色霜玻璃规范。资源路径相对本技能根目录。入口保持简短；不要启动时读取完整规范、全部 Token、整个索引或所有源码。
 

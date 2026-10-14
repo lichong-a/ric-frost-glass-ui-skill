@@ -1,4 +1,4 @@
-# Agent Wan Skill 维护与使用
+# Agent Ric Skill 维护与使用
 
 本包包含 303 个独立示例：88 个业务基础能力与 215 个交互效果。Skill 名称、设计值和四张视觉基准图保持稳定，按实际场景逐层读取资料。
 
@@ -27,7 +27,7 @@ node scripts/find-component.mjs "思考过程" --provider effects --limit 3
 ## 任务提示词
 
 ```text
-使用 Agent Wan Frost Glass UI 完成当前页面。
+使用 Agent Ric Frost Glass UI 完成当前页面。
 先按英文名称或中文场景定位组件，读取用途与优先替代边界。
 只加载当前指南、实际示例及必要依赖，保持已有数据、权限与路由。
 界面沿用自然色霜玻璃规范，状态和回调连接真实业务。
